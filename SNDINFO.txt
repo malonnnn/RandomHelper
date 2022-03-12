@@ -14,6 +14,15 @@ monster/ar2dth dsar2dth
 weapons/firbfi dsfirbfi
 weapons/hellex dshellex
 
+// Arachnophyte
+arachnophyte/sight dsaphsit
+$RANDOM arachnophyte/pain { arachnophyte/pain1 arachnophyte/pain2 arachnophyte/pain3 }
+arachnophyte/pain1 dsaphpn1
+arachnophyte/pain2 dsaphpn2
+arachnophyte/pain3 dsaphpn3
+arachnophyte/death dsaphdth
+arachnophyte/engine dsapheng
+
 $random marauder/speech { marauder/speech1 marauder/speech2 marauder/speech3 marauder/speech4 marauder/speech5 marauder/speech6 }
 marauder/speech1 				martnt1
 marauder/speech2 				martnt2

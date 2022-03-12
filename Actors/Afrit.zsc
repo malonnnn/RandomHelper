@@ -37,11 +37,13 @@ Class Afrit : ACtor
     FRIT AABBCCDD 2 Bright A_Chase();
     Loop;
   Melee:
+    TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
     TNT1 A 0 A_Jump(64, "Melee2");
     FRIT ST 6 Bright A_FaceTarget();
     FRIT U 6 Bright A_CustomComboAttack("AfritBall", 44, 10, "Baron/Melee");
     Goto See;
   Melee2:
+    TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
     FRIT E 6 Bright A_FaceTarget();
     FRIT F 6 Bright A_SpawnProjectile("HellFire", 44);
     FRIT G 6 Bright A_FaceTarget();

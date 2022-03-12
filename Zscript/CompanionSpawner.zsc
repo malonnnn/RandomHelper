@@ -41,6 +41,8 @@ class CompanionSpawner : RandomSpawner
     DropItem "Afrit";
     DropItem "Marauder";
     DropItem "ArchonOfHell";
+    DropItem "Arachnophyte";
+    DropItem "Belphegor";
   }
 
   override void PostSpawn(Actor companion){

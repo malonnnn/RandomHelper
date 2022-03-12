@@ -63,6 +63,7 @@ class Marauder : Actor // Originally made by Spectre on YouTube. Rebalanced and 
 			MAUD A 0 Bright A_TakeInventory("DontMeleeAgain");
 			Loop;
 		Missile:
+			TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
 			MAUD U 0 A_JumpIfInventory("DogCharge", 3, "MissileDog");
 			MAUD U 0 A_JumpIfCloser(200,"MissileSSG");
 			MAUD U 0 A_JumpIfCloser(300,"MissileCharge");
@@ -202,6 +203,7 @@ class MarauderDog : Actor
 		+DONTFALL
 		+NOICEDEATH
 		+DONTHARMSPECIES
+		+FRIENDLY
 		Obituary "%o was slaughtered by a Marauder.";
 		SeeSound "dog/sight"; // Included
 		DeathSound "marauderdog/death";
@@ -217,6 +219,7 @@ class MarauderDog : Actor
 			MDOG AABBCCDD 2 Bright A_Chase;
 			Loop;
 		Melee:
+			TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
 			MDOG EF 4 Bright A_FaceTarget;
 			MDOG G 4 Bright A_SargAttack;
 			Goto See;
