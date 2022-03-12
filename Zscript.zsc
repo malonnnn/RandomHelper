@@ -1,0 +1,20 @@
+version "4.8.0"
+
+#include "Zscript/Utilities.zsc"
+
+#include "Zscript/DeployerGun.zsc"
+
+#include "Zscript/CustomEvents.zsc"
+#include "Zscript/CustomPlayer.zsc"
+
+#include "Zscript/CompanionSpawner.zsc"
+
+#include "Zscript/GenericWeapons.zsc"
+#include "Actors/MarineWeapons.zsc"
+
+#include "Actors/MarineCompanions.zsc"
+#include "Actors/MonsterCompanions.zsc"
+#include "Actors/MurderBall.zsc"
+#include "Actors/Afrit.zsc"
+#include "Actors/Marauder.zsc"
+#include "Actors/ArchonOfHell.zsc"

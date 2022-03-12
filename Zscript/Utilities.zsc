@@ -1,0 +1,15 @@
+class GlobalVariables : EventHandler
+{
+  Array<Actor> companions;
+}
+
+class Utilities
+{
+  static int angleToMoveDir(double angle){
+    int moveDir = Actor.Normalize180(angle);
+    if (moveDir < 0){
+      moveDir += 360;
+    }
+    return ((moveDir+22.5) / 45) % 8;
+  }
+}

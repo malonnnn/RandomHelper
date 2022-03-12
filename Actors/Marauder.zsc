@@ -1,0 +1,258 @@
+class Marauder : Actor // Originally made by Spectre on YouTube. Rebalanced and improved by yours truly
+{
+	Default
+	{
+		//$Category Monsters
+		Health 800;
+		Radius 20;
+		Height 56;
+		Speed 25;
+		GibHealth 100;
+		PainChance 256;
+		Mass 800;
+		MeleeRange 100;
+		MONSTER;
+		+BOSS
+		+FLOORCLIP
+		+NOTARGET
+		+MISSILEMORE
+		+MISSILEEVENMORE
+		+DONTHARMSPECIES
+		SeeSound "marauder/speech";
+		DeathSound "marauder/death";
+		PainSound "marauder/pain";
+		ActiveSound "marauder/speech";
+		Obituary "%o was slaughtered by a Marauder.";
+	}
+	States
+	{
+		// Comments written by yours truly. YOU'RE WELCOME
+		Spawn:
+			MAUD A 0
+			{
+				bNoRadiusDmg = 1;	//
+				bNoBlood = 1;		// These flags are set here for consistency
+				bNoDamage = 1;	//
+			}
+			MAUD AB 10 A_Look;
+			Loop;
+		See:
+			MAUD A 0 A_TakeInventory("ShieldDown");			// Shield is available
+			MAUD A 0
+			{
+				bNoRadiusDmg = 1;	//
+				bNoBlood = 1;		// These will get unset when the Marauder's shield isn't available
+				bNoDamage = 1;			//
+			}
+			MAUD A 2 A_Chase;		//
+			MAUD A 0 A_FaceTarget;	// damn you zandronum
+			MAUD A 2 A_Chase;		// let me use mah anonymous functions
+			MAUD A 0 A_FaceTarget;	//
+			MAUD B 2 A_Chase;
+			MAUD B 0 A_FaceTarget;
+			MAUD B 2 A_Chase;
+			MAUD B 0 A_FaceTarget;
+			MAUD C 2 A_Chase;
+			MAUD C 0 A_FaceTarget;
+			MAUD C 2 A_Chase;
+			MAUD C 0 A_FaceTarget;
+			MAUD D 2 A_Chase;
+			MAUD D 0 A_FaceTarget;
+			MAUD D 2 A_Chase;
+			MAUD D 0 A_FaceTarget;
+			MAUD A 0 Bright A_TakeInventory("DontMeleeAgain");
+			Loop;
+		Missile:
+			MAUD U 0 A_JumpIfInventory("DogCharge", 3, "MissileDog");
+			MAUD U 0 A_JumpIfCloser(200,"MissileSSG");
+			MAUD U 0 A_JumpIfCloser(300,"MissileCharge");
+			// Axe attack
+			MAUD U 7 A_FaceTarget;
+			MAUD V 7 A_SpawnProjectile("MarauderAxe");
+			Goto See;
+		MissileDog:		// Summon doggy
+			MAUD U 0 A_TakeInventory("DogCharge");
+			MAUD U 7 A_FaceTarget;
+			MAUD V 7 A_SpawnItemEx("MarauderDog", 64);
+			Goto See;
+		MissileSSG:		// SSG attack
+			MAUD E 0 Bright A_GiveInventory("ShieldDown", 1);		//
+			MAUD E 0 Bright 
+			{
+				bNoRadiusDmg = 0;			// You can shoot him I guess
+				bNoBlood = 0;				// but you'll get really hurt
+				bNoDamage = 0;;				//
+			}
+			MAUD E 7 A_FaceTarget;
+			MAUD F 0 Bright A_StartSound("weapons/sshotf");
+			MAUD F 5 Bright A_CustomBulletAttack(8, 7, 5, 3);
+			MAUD E 5 A_FaceTarget;
+			Goto See;
+		MissileCharge:	// Charge attack
+			MAUD W 0 Bright A_JumpIfInventory("DontMeleeAgain", 1, "See");
+			MAUD W 0 Bright A_GiveInventory("DontMeleeAgain");
+			MAUD W 0 Bright A_GiveInventory("ShieldDown");			//
+			MAUD W 0 Bright
+			{
+				bNoRadiusDmg = 0;			// shoot him shoot him shoot him
+				bNoBlood = 0;				// shoot him shoot him shoot him
+				bNoDamage = 0;				//
+			}
+			MAUD W 0 Bright A_StartSound("Marauder/Charge");
+			MAUD W 0 Bright A_Recoil(-10);
+			MAUD W 4 Bright A_FaceTarget;
+			MAUD W 0 Bright A_Recoil(-10);
+			MAUD W 4 Bright A_FaceTarget;
+			MAUD W 0 Bright A_Recoil(-10);
+			MAUD W 4 Bright A_FaceTarget;
+			MAUD W 0 Bright A_Recoil(-10);
+			MAUD V 6 A_CustomMeleeAttack(random(1,8)*15,"Marauder/Melee");
+			Goto See;
+		Pain:	// Technically because of how the ShieldDown system works this is the raised shield state
+			MAUD X 0
+			{
+				bNoPain = 1;	// Prevents stunlocking in PainReal state
+				A_JumpIfInventory("ShieldDown", 1, "PainReal");
+				bNoPain = 0;	// Shield should stay up as long as it needs to
+			}
+			MAUD X 35;
+			MAUD X 0
+			{
+				A_GiveInventory("DogCharge");	// Executed last to allow SSG hitscans to pass through
+				bNoPain = 0;	// Self-explanatory
+			}
+			Goto See;
+		PainReal:
+			MAUD G 20 A_Pain;
+			MAUD G 0 A_TakeInventory("ShieldDown");			//
+			MAUD G 0 Bright
+			{
+				bNoRadiusDmg = 1;	// Shield is
+				bNoBlood = 1;		// ready again
+				bNoDamage = 1;			//
+				bNoPain = 0;	// Self-explanatory
+			}
+			Goto See;
+		Pain.Telefrag:
+			// intentional fall-through
+		Pain.Massacre:
+			MAUD G 0 A_Die("Extreme"); // Workaround for disgusting NODAMAGE hack
+		Death:
+			MAUD H 5;
+			MAUD I 5 A_Scream;
+			MAUD J 5 A_NoBlocking;
+			MAUD KLM 5;
+			MAUD N -1;
+			Stop;
+		XDeath:
+			MAUD O 5;
+			MAUD P 5 A_XScream;
+			MAUD Q 5 A_NoBlocking;
+			MAUD RS 5;
+			MAUD T -1 A_BossDeath;
+			Stop;
+	}
+}
+
+class MarauderAxe : Actor
+{
+	Default
+	{
+		Scale 1.4;
+		Radius 14;
+		Height 12;
+		Speed 25;
+		Damage 8;
+		Projectile;
+		-NOBLOCKMAP
+		-ACTIVATEIMPACT
+		-ACTIVATEPCROSS
+		+WINDTHRUST
+		SeeSound "axe/see";
+		DeathSound "axe/death";
+		Species "Companion";
+		DamageType "Companion";
+	}
+	States
+	{
+		Spawn:
+			SPAX A 3 BRIGHT A_StartSound("axe/see");
+			SPAX BC 3 BRIGHT;
+			Loop;
+		Death:
+			SPAX DEF 6 BRIGHT;
+			Stop;
+	}
+}
+
+class MarauderDog : Actor
+{
+	Default
+	{
+		Health 10;
+		Speed 20;
+		PainChance 0;
+		Radius 15;
+		Height 35;
+		Mass 100;
+		RenderStyle "Add";
+		Monster;
+		+NOBLOOD
+		+JUMPDOWN
+		+DONTFALL
+		+NOICEDEATH
+		+DONTHARMSPECIES
+		Obituary "%o was slaughtered by a Marauder.";
+		SeeSound "dog/sight"; // Included
+		DeathSound "marauderdog/death";
+		Species "Companion";
+		DamageType "Companion";
+	}
+	States
+	{
+		Spawn:
+			MDOG AB 10 Bright A_Look;
+			Loop;
+		See:
+			MDOG AABBCCDD 2 Bright A_Chase;
+			Loop;
+		Melee:
+			MDOG EF 4 Bright A_FaceTarget;
+			MDOG G 4 Bright A_SargAttack;
+			Goto See;
+		Death:
+			MDOG I 0 A_Scream;
+			MDOG I 8 A_NoBlocking;
+			MDOG J 8;
+			MDOG K 8;
+			MDOG L -1;
+			Stop;
+	}
+}
+
+class DontMeleeAgain : Inventory
+{
+	Default
+	{
+		+Inventory.UNDROPPABLE
+		Inventory.MaxAmount 1;
+	}
+}
+
+class ShieldDown : Inventory
+{
+	Default
+	{
+		+Inventory.UNDROPPABLE
+		Inventory.MaxAmount 1;
+	}
+}
+
+class DogCharge : Inventory
+{
+	Default
+	{
+		+Inventory.UNDROPPABLE
+		Inventory.MaxAmount 3;
+	}
+}

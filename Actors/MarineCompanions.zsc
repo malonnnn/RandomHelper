@@ -1,0 +1,889 @@
+class MarineCompanion : Actor {
+
+  Default
+  {
+    Radius 20;
+    Height 56;
+    Speed 15;
+    AttackSound "ALPist/FIRE";
+    PainSound "Ally/Pain";
+    DeathSound "Ally/Death";
+    Decal "BulletChip";
+    MaxStepHeight 24;
+    MaxDropoffHeight 24;
+  }
+}
+
+class MarineCompanionFist : MarineCompanion
+{
+  Default
+  {
+    Obituary "%o was punched in the face!";
+    MeleeThreshold 64;
+    MeleeRange 64;
+  }
+  States
+  {
+    Spawn:
+      ALY1 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      loop;
+    See:
+      ALY1 AABBCCDD 3 A_Chase;
+      loop;
+    Melee:
+      ALY1 E 3 A_FaceTarget;
+      ALY1 E 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ALY1 F 5 A_CustomMeleeAttack(random(3, 10) * 8,"Ally/PunchImpact","Ally/Fist","Companion");
+      ALY1 E 5 A_Jump(64,"Missile");
+      ALY1 A 3;
+      Goto See;
+    Missile:
+      ALY1 A 10 A_FaceTarget;
+      ALY1 A 5 A_StartSound("Ally/PunchChargeReady");
+      ALY1 E 5 A_FaceTarget;
+      ALY1 E 0 A_StartSound("Ally/PunchChargeJump");
+      ALY1 A 10 A_SkullAttack;
+      ALY1 E 5 A_Gravity;
+      ALY1 E 0 A_FaceTarget;
+      ALY1 F 5 A_CustomMeleeAttack(random(3, 10) * 8,"Ally/PunchImpact","Ally/Fist","Companion");
+      ALY1 E 5 A_FaceTarget;
+      ALY1 F 5 A_CustomMeleeAttack(random(3, 10) * 8,"Ally/PunchImpact","Ally/Fist","Companion");
+      goto See;
+    Pain:
+      ALY1 G 5 A_Pain;
+      ALY1 G 3;
+      Goto See;
+    Death:
+      ALY1 H 3;
+      ALY1 I 3 A_Scream;
+      ALY1 J 3;
+      ALY1 KLM 5;
+      ALY1 N -1 A_NoBlocking;
+      Stop;
+    XDeath:
+      ALY1 O 5;
+      ALY1 P 5 A_XScream;
+      ALY1 QRSTUV 5;
+      ALY1 W -1 A_NoBlocking;
+      Stop;
+  }
+}
+
+class MarineCompanionPistol : MarineCompanion
+{
+  Default
+  {
+    Obituary "%o was killed by a marines's reckless shooting!";
+    AttackSound "ALPist/FIRE";
+  }
+  States
+  {
+    Spawn:
+      ALY2 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      loop;
+    See:
+      ALY2 ABCD 6 A_Chase;
+      loop;
+    Missile:
+      ALY2 E 7 A_FaceTarget;
+      ALY2 E 1 A_Jump(96, "10mmBurst");
+      ALY2 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ALY2 F 2 BRIGHT A_CustomBulletAttack(4.5,5.5,1,3,"CompanionBulletPuff");
+      ALY2 E 3;
+      goto See;
+    10mmBurst:
+      ALY2 F 3 BRIGHT A_CustomBulletAttack(4.5,5.5,1,3,"CompanionBulletPuff");
+      ALY2 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ALY2 E 1;
+      ALY2 F 3 BRIGHT A_CustomBulletAttack(4.5,5.5,1,3,"CompanionBulletPuff");
+      ALY2 E 1;
+      ALY2 F 3 BRIGHT A_CustomBulletAttack(4.5,5.5,1,3,"CompanionBulletPuff");
+      ALY2 E 3;
+      goto See;
+    Pain:
+      ALY2 G 5 A_Pain;
+      ALY2 G 3;
+      goto See;
+    Death:
+      ALY2 H 3;
+      ALY2 I 3 A_Scream;
+      ALY2 J 3;
+      ALY2 KLM 5;
+      ALY2 N -1 A_NoBlocking;
+      Stop;
+    XDeath:
+      ALY2 O 5;
+      ALY2 P 5 A_XScream;
+      ALY2 QRSTUV 5;
+      ALY2 W -1 A_NoBlocking;
+      Stop;
+  }
+}
+
+class MarineCompanionMG : MarineCompanion
+{
+  Default
+  {
+    Obituary "%o was just careless around that Machinegunner!";
+    AttackSound "ALMG/Fire";
+  }
+  States
+  {
+    Spawn:
+      ALY3 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      Loop;
+    See:
+      ALY3 ABCD 6 A_Chase;
+      loop;
+    Missile:
+      ALY3 E 7 A_FaceTarget;
+      ALY3 E 0 A_Jump(96,"MGRapidFireShot");
+      ALY3 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ALY3 F 0 A_FaceTarget;
+      ALY3 F 1 BRIGHT A_CustomBulletAttack(3,4,1,4,"CompanionBulletPuff");
+      ALY3 E 2;
+      ALY3 F 2 BRIGHT A_CustomBulletAttack(5,6,1,4,"CompanionBulletPuff");
+      ALY3 E 2;
+      ALY3 F 2 BRIGHT A_CustomBulletAttack(7,8,1,4,"CompanionBulletPuff");
+      ALY3 E 7;
+      goto See;
+    MGRapidFireShot:
+      ALY3 E 7 A_FaceTarget;
+      ALY3 E 0 A_FaceTarget;
+      ALY3 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ALY3 F 3 BRIGHT A_CustomBulletAttack(3,4,1,4,"CompanionBulletPuff");
+      ALY3 E 1 A_CPosRefire;
+      goto MGRapidFireShot+2;
+    Pain:
+      ALY3 G 5 A_Pain;
+      ALY3 G 3;
+      goto See;
+    Death:
+      ALY3 H 3;
+      ALY3 I 3 A_Scream;
+      ALY3 J 3;
+      ALY3 KLM 5;
+      ALY3 N -1 A_NoBlocking;
+      Stop;
+    XDeath:
+      ALY3 O 5;
+      ALY3 P 5 A_XScream;
+      ALY3 QRSTUV 5;
+      ALY3 W -1 A_NoBlocking;
+      Stop;
+  }
+}
+
+class MarineCompanionCG : MarineCompanion
+{
+  Default
+  {
+    Obituary "%o was caught in a Companion's Crossfire!";
+    AttackSound "chainguy/attack";
+  }
+  States
+  {
+    Spawn:
+      ALY4 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      loop;
+    See:
+      ALY4 ABCD 6 A_Chase;
+      loop;
+    Missile:
+      ALY4 X 10 A_FaceTarget;
+      ALY4 E 1 A_FaceTarget;
+      ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "CompanionBulletPuff");
+      ALY4 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ALY4 F 1 A_CPosRefire;
+      goto Missile+2;
+    Pain:
+      ALY4 G 5 A_Pain;
+      ALY4 G 3;
+      goto See;
+    Death:
+      ALY4 H 3;
+      ALY4 I 3 A_Scream;
+      ALY4 J 3;
+      ALY4 KLM 5;
+      ALY4 N -1 A_NoBlocking;
+      Stop;
+    XDeath:
+      ALY4 O 5;
+      ALY4 P 5 A_XScream;
+      ALY4 QRSTUV 5;
+      ALY4 W -1 A_NoBlocking;
+      Stop;
+  }
+}
+
+class MarineCompanionSG : MarineCompanion
+{
+  Default
+  {
+    Obituary "%o was shot by an Companion!";
+    AttackSound "Shotguy/attack";
+  }
+  States
+  {
+    Spawn:
+      ALY5 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      loop;
+    See:
+      ALY5 ABCD 6 A_Chase;
+      loop;
+    Missile:
+      ALY5 E 10 FAST A_FaceTarget;
+      ALY5 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ALY5 F 1 BRIGHT A_CustomBulletAttack (5.3, 4.5, 7, 3, "CompanionBulletPuff", 0);
+      ALY5 E 20;
+      goto See;
+    Pain:
+      ALY5 G 5 A_Pain;
+      ALY5 G 3;
+      goto See;
+    Death:
+      ALY5 H 3;
+      ALY5 I 3 A_Scream;
+      ALY5 J 3;
+      ALY5 KLM 5;
+      ALY5 N -1 A_NoBlocking;
+      Stop;
+    XDeath:
+      ALY5 O 5;
+      ALY5 P 5 A_XScream;
+      ALY5 QRSTUV 5;
+      ALY5 W -1 A_NoBlocking;
+      Stop;
+  }
+}
+
+class MarineCompanionMinigun : MarineCompanion
+{
+  Default
+  {
+    Obituary "%o was turned into mincemeat by a marines's Minigun!";
+    AttackSound "ALMini/ALMinigun";
+  }
+  States
+  {
+    Spawn:
+      ALY6 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      loop;
+    See:
+      ALY6 ABCD 6 A_Chase;
+      loop;
+    Missile:
+      ALY6 E 10 A_FaceTarget;
+      ALY6 F 5 A_FaceTarget;
+      ALY6 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ALY6 G 2 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "CompanionBulletPuff");
+      ALY6 F 2 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "CompanionBulletPuff");
+      ALY6 F 0 A_SpidRefire;
+      goto Missile+2;
+    Pain:
+      ALY6 H 5 A_Pain;
+      ALY6 H 3;
+      goto See ;
+    Death:
+      ALY6 I 3;
+      ALY6 J 3 A_Scream;
+      ALY6 K 3;
+      ALY6 LMN 5;
+      ALY6 O -1 A_NoBlocking;
+      Stop;
+    XDeath:
+      ALY6 P 5;
+      ALY6 Q 5 A_XScream;
+      ALY6 RSTUVW 5;
+      ALY6 X -1 A_NoBlocking;
+      Stop;
+  }
+}
+
+class MarineCompanionChainsaw : MarineCompanion
+{
+  Default
+  {
+    MeleeThreshold 64;
+    MeleeRange 64;
+    Obituary "%o was stupid enough to stand in front of a chainsaw attack!";
+    SeeSound "ALCSaw/Sight";
+  }
+States
+{
+  Spawn:
+    ALY7 ABCD 6
+    {
+      A_Wander(CHF_NORANDOMTURN);
+      A_Look();
+    }
+    loop;
+  See:
+    ALY7 AA 4 A_Chase;
+    ALY7 B 0 A_StartSound("weapons/sawidle");
+    ALY7 BB 4 A_Chase;
+    ALY7 C 0 A_StartSound("weapons/sawidle");
+    ALY7 CC 4 A_Chase;
+    ALY7 D 0 A_StartSound("weapons/sawidle");
+    ALY7 DD 4 A_Chase;
+    ALY7 A 0 A_StartSound("weapons/sawidle");
+    Goto See;
+  Melee:
+    ALY7 E 1 A_FaceTarget;
+    ALY7 F 9 Fast A_M_Saw("weapons/sawfull","weapons/sawhit",3,"CompanionBulletPuff");
+    ALY7 F 0 A_JumpIfCloser(72,"Melee");
+    Goto See;
+  Pain:
+    ALY7 G 5 A_Pain;
+    ALY7 G 3;
+    Goto See;
+  Death: 
+    ALY7 H 3;
+    ALY7 I 3 A_Scream;
+    ALY7 J 5;
+    ALY7 KLM 5;
+    ALY7 N -1 A_NoBlocking;
+    Stop;
+  XDeath:
+    ALY7 O 5;
+    ALY7 P 5 A_XScream;
+    ALY7 Q 5;
+    ALY7 RSTUV 5;
+    ALY7 W -1 A_NoBlocking;
+    Stop;
+  }
+}
+
+class MarineCompanionPlasma : MarineCompanion
+{
+  Default
+  {
+    Obituary "%o was vapourised by friendly fire!";
+    AttackSound "grunt/attack";
+  }
+  States
+  {
+    Spawn:
+      ALY8 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      loop;
+    See:
+      ALY8 ABCD 6 A_Chase;
+      Loop;
+    Missile:
+      ALY8 E 10 A_FaceTarget;
+      TNT1 A 0 A_FaceTarget;
+      ALY8 F 1 BRIGHT A_SpawnProjectile("CompanionPlasmaBall");
+      ALY8 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ALY8 E 1 A_MonsterRefire(0, "See");
+      goto Missile+2;
+    Pain:
+      ALY8 G 5 A_Pain;
+      ALY8 G 3;
+      goto See;
+    Death:
+      ALY8 H 3 A_Scream;
+      ALY8 J 3;
+      ALY8 KLM 5;
+      ALY8 N -1 A_NoBlocking;
+      Stop;
+    XDeath:
+      ALY8 O 5;
+      ALY8 P 5 A_XScream;
+      ALY8 QRSTUV 5;
+      ALY8 W -1 A_NoBlocking;
+      Stop;
+  }
+}
+
+class MarineCompanionRocket : MarineCompanion
+{
+  Default
+  {
+    Obituary "%o was blown up after a marines's rocket exploded!";
+  }
+  States
+  {
+    Spawn:
+      ALY9 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      loop;
+    See:
+      ALY9 ABCD 6 A_Chase;
+      Loop;
+    Missile:
+      ALY9 E 0 A_Jump(128,"Missile2");
+      ALY9 E 10 A_FaceTarget;
+      ALY9 F 10 BRIGHT A_SpawnProjectile("CompanionRocket",24,8);
+      ALY9 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ALY9 E 10 A_FaceTarget;
+      goto See;
+    Missile2:
+      ALY9 E 10 A_FaceTarget;
+      ALY9 F 10 BRIGHT A_SpawnProjectile("CompanionRocket",24,8);
+      ALY9 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ALY9 E 5;
+      ALY9 E 10 A_FaceTarget;
+      ALY9 F 10 BRIGHT A_SpawnProjectile("CompanionRocket",24,8);
+      ALY9 E 5;
+      ALY9 E 10 A_FaceTarget;
+      ALY9 F 10 BRIGHT A_SpawnProjectile("CompanionRocket",24,8);
+      ALY9 E 10 A_FaceTarget;
+      goto See;
+    CancelAttack:
+      ALY9 A 0 Fast A_FaceTarget;
+      ALY9 DCBA 4 Fast A_Recoil(6);
+      goto See;
+    Pain:
+      ALY9 G 5 A_Pain;
+      ALY9 G 3;
+      goto See;
+    Death:
+      ALY9 H 3;
+      ALY9 I 3 A_Scream;
+      ALY9 J 3;
+      ALY9 KLM 5;
+      ALY9 N -1 A_NoBlocking;
+      Stop;
+    XDeath:
+      ALY9 O 5;
+      ALY9 P 5 A_XScream;
+      ALY9 QRSTUV 5;
+      ALY9 W -1 A_NoBlocking;
+      Stop;
+  }
+ }
+
+class MarineCompanionBFG9000 : MarineCompanion
+{
+  Default
+  {
+    Obituary "%o was wiped out by a BFG Blast!";
+  }
+  States
+  {
+    Spawn:
+      AL10 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      loop;
+    See:
+      AL10 ABCD 6 A_Chase;
+      Loop;
+    Missile:
+      AL10 E 0 A_FaceTarget;
+      AL10 E 20 A_StartSound ("weapons/bfgf");
+      AL10 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      AL10 F 10 Bright;
+      AL10 F 10 Bright A_SpawnProjectile("CompanionBFGBall");
+      AL10 E 20;
+      goto See;
+    Pain:
+      AL10 G 3;
+      AL10 G 3 A_Pain;
+      goto See;
+    Death:
+      AL10 H 3;
+      AL10 I 3 A_Scream;
+      AL10 J 3;
+      AL10 KLM 5;
+      AL10 N -1 A_NoBlocking;
+      Stop;
+    XDeath:
+      AL10 O 5;
+      AL10 P 5 A_XScream;
+      AL10 QRSTU 5;
+      AL10 V -1 A_NoBlocking;
+      Stop;
+  }
+}
+
+class MarineCompanionSSG : MarineCompanion
+{
+  Default
+  {
+    Obituary "%o was blown in two by a marines's Super-Shotgun!";
+    AttackSound "ALSSG/Fire";
+  }
+  States
+  {
+    Spawn:
+      AL11 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      loop;
+    See:
+      AL11 ABCD 6 A_Chase;
+      loop;
+    Missile:
+      AL11 E 10 A_FaceTarget;
+      AL11 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      AL11 F 3 BRIGHT A_CustomBulletAttack(11.2, 7.1, 20, 3, "CompanionBulletPuff");
+      AL11 E 20;
+      AL11 A 10 A_FaceTarget;
+      goto See;
+    Pain:
+      AL11 G 5 A_Pain;
+      AL11 G 3;
+      goto See;
+    Death:
+      AL11 H 3;
+      AL11 I 3 A_Scream;
+      ALY5 J 3;
+      ALY5 KLM 5;
+      ALY5 N -1 A_NoBlocking;
+      Stop;
+    XDeath:
+      AL11 O 5;
+      AL11 P 5 A_XScream;
+      AL11 QRSTUV 5;
+      AL11 W -1 A_NoBlocking;
+      Stop;
+  }
+}
+
+class MarineCompanionRailgun : MarineCompanion
+{
+  Default
+  {
+    Obituary "%o was railed by a marine.";
+    AttackSound "weapons/railgf";
+  }
+  States
+  {
+    Spawn:
+      AL12 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      loop;
+    See:
+      AL12 ABCD 6 A_Chase;
+      loop;
+    Missile:
+      AL12 E 10 A_FaceTarget;
+      AL12 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      AL12 F 8 Bright A_CustomRailgun (random(50,100),0,"4B0082","4682B4",0,1,0, "CompanionBulletPuff");
+      AL12 E 8 A_SpidRefire;
+      goto Missile+1;
+    CancelAttack:
+      AL12 A 0 Fast A_FaceTarget;
+      AL12 DCBA 4 Fast A_Recoil(6);
+      goto See;
+    Pain:
+      AL12 G 5 A_Pain;
+      AL12 G 3;
+      goto See;
+    Death:
+      AL12 H 3;
+      AL12 I 3 A_Scream;
+      AL12 JKLM 5;
+      AL12 N -1 A_NoBlocking;
+      Stop;
+    XDeath:
+      AL12 O 5;
+      AL12 P 5 A_XScream;
+      AL12 Q 5;
+      AL12 RSTUV 5;
+      AL12 W -1 A_NoBlocking;
+      Stop;
+  }
+}
+
+class MarineCompanionHSMissile : MarineCompanion
+{
+  Default
+  {
+    Obituary "Your Companion's homing missile hit the wrong target!";
+  }
+  States
+  {
+    Spawn:
+      AL13 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      loop;
+    See:
+      AL13 ABCD 6 A_Chase;
+      loop;
+    Missile:
+      AL13 E 15 A_FaceTarget;
+      AL13 E 5 A_StartSound("Ally/SeekerReady");
+      AL13 E 5 A_FaceTarget;
+      AL13 E 0 A_StartSound("Ally/Seeker");
+      AL13 F 8 Bright A_SpawnProjectile("HeatSeekingMissile",32,16);
+      AL13 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      AL13 E 20 A_FaceTarget;
+      goto See;
+    CancelAttack:
+      AL13 A 0 Fast A_FaceTarget;
+      AL13 DCBA 4 Fast A_Recoil(6);
+      goto See;
+    Pain:
+      AL13 G 5 A_Pain;
+      AL13 G 3;
+      goto See;
+    Death:
+      AL13 H 3;
+      AL13 I 3 A_Scream;
+      AL13 JKLM 5;
+      AL13 N -1 A_NoBlocking;
+      Stop;
+    XDeath:
+      TNT1 A 0
+      {
+        bNoGravity = true;
+      }
+      AL13 O 5;
+      AL13 P 5 A_XScream;
+      AL13 Q 5;
+      AL13 RSTUV 5;
+      AL13 W -1 A_NoBlocking;
+      Stop;
+  }
+}
+
+class MarineCompanionGL : MarineCompanion
+{
+  Default
+  {
+    MaxTargetRange 256;
+    Obituary "%o was blown up by a marine's grenade.";
+  }
+  States
+  {
+    Spawn:
+      AL14 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      loop;
+    See:
+      AL14 ABCD 6 A_Chase;
+      loop;
+    Missile:
+      AL14 E 10 A_FaceTarget;
+      AL14 F 3 A_StartSound("Ally/Grenfire");
+      AL14 F 7 Bright A_SpawnProjectile("CompanionGrenade");
+      AL14 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      AL14 E 5 A_StartSound("Ally/Reload1");
+      AL14 E 5 A_StartSound("Ally/Reload2");
+      AL14 E 5 A_StartSound("Ally/Reload3");
+      goto See;
+    CancelAttack:
+      AL14 A 0 Fast A_FaceTarget;
+      AL14 DCBA 4 Fast A_Recoil(6);
+      goto See;
+    Pain:
+      AL14 G 3;
+      AL14 G 3 A_Pain;
+      goto See;
+    Death:
+      AL14 H 3;
+      AL14 I 3 A_Scream;
+      AL14 JKLM 5;
+      AL14 N -1 A_NoBlocking;
+      Stop;
+    XDeath:
+      AL14 O 5;
+      AL14 P 5 A_XScream;
+      AL14 Q 5;
+      AL14 RSTUV 5;
+      AL14 W -1 A_NoBlocking;
+      Stop;
+  }
+}
+
+class MarineCompanionBFG10K : MarineCompanion
+{
+  Default
+  {
+    Obituary "%o was wiped out by manic BFG Blasts!";
+  }
+  States
+  {
+    Spawn:
+      AL15 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      loop;
+    See:
+      AL15 ABCD 6 A_Chase;
+      loop;
+    Missile:
+      AL15 E 10 A_FaceTarget;
+      AL15 E 30 A_StartSound ("BFG10kMarine/ShotStart");
+      AL15 E 0 A_FaceTarget;
+      AL15 F 5 Bright A_CustomBulletAttack(2,2,1,30,"CompanionBFG10kShot");
+      AL15 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      AL15 E 5 A_SpidRefire;
+      goto Missile+4;
+    CancelAttack:
+      AL15 A 0 Fast A_FaceTarget;
+      AL15 DCBA 4 Fast A_Recoil(6);
+      goto See;
+    Pain:
+      AL15 G 3;
+      AL15 G 3 A_Pain;
+      goto See;
+    Death:
+      AL15 H 3;
+      AL15 I 3 A_Scream;
+      AL15 JKLM 5;
+      AL15 N -1 A_NoBlocking;
+      Stop;
+    XDeath:
+      AL15 O 5;
+      AL15 P 5 A_XScream;
+      AL15 Q 5;
+      AL15 RSTUV 5;
+      AL15 W -1 A_NoBlocking;
+      Stop;
+  }
+}
+
+class MarineCompanionFlamethrower : MarineCompanion
+{
+  Default
+  {
+    Obituary "%o was toasted by a marines's Flamethrower!";
+    AttackSound "Marine/flamer";
+    Decal "Scorch";
+    MeleeThreshold 300;
+    MeleeRange 512;
+    -AVOIDMELEE
+  }
+  States
+  {
+    Spawn:
+      AL16 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      loop;
+    See:
+      AL16 ABCD 6 A_Chase;
+      loop;
+    Melee:
+      AL16 E 5 A_FaceTarget;
+      AL16 E 5 A_StartSound("Marine/FlameReady");
+      AL16 E 0 A_FaceTarget;
+      AL16 F 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      AL16 F 1 Bright A_SpawnProjectile("CompanionFire");
+      AL16 F 1 Bright A_SpawnProjectile("CompanionFire");
+      AL16 F 1 Bright A_SpawnProjectile("CompanionFire");
+      AL16 F 0 A_CheckRange(530,"See");
+      AL16 E 1 A_SpidRefire;
+      goto Melee+3;
+    Pain:
+      AL16 G 5 A_Pain;
+      AL16 G 3;
+      goto See;
+    Death:
+      AL16 H 3;
+      AL16 I 3 A_Scream;
+      AL16 JKLM 5;
+      AL16 N -1 A_NoBlocking;
+      Stop;
+    XDeath:
+      AL16 O 5;
+      AL16 P 5 A_XScream;
+      AL16 Q 5;
+      AL16 RSTUV 5;
+      AL16 W -1;
+      Stop;
+  }
+}
+
+class MarineCompanionSniper : MarineCompanion
+{
+  Default
+  {
+    Obituary "%o's Allied Sniper must be blind!!";
+  }
+  States
+  {
+    Spawn:
+      AL17 ABCD 6
+      {
+        A_Wander(CHF_NORANDOMTURN);
+        A_Look();
+      }
+      loop;
+    See:
+      AL17 ABCD 6 A_Chase;
+      Loop;
+    Missile:
+      AL17 E 10 A_FaceTarget;
+      AL17 F 0 A_StartSound("Marine/SniperFire");
+      AL17 F 0 A_AlertMonsters(0,AMF_TARGETEMITTER);
+      AL17 F 10 A_CustomBulletAttack(0, 0, 1, random(79,161), "CompanionBulletPuff");
+      AL17 E 10 A_StartSound("Marine/SniperReload");
+      AL17 E 10 A_FaceTarget;
+      AL17 E 10 A_CposRefire;
+      goto Missile+1;
+    CancelAttack:
+      AL17 A 0 Fast A_FaceTarget;
+      AL17 DCBA 4 Fast A_Recoil(6);
+      goto See;
+    Pain:
+      AL17 G 3;
+      AL17 G 3 A_Pain;
+      goto See;
+    Death:
+      AL17 H 3;
+      AL17 I 3 A_Scream;
+      AL17 J 3 A_NoBlocking;
+      AL17 KLM 3;
+      AL17 N -1;
+      Stop;
+    XDeath:
+      AL17 O 5;
+      AL17 P 5 A_XScream;
+      AL17 Q 5 A_NoBlocking;
+      AL17 RSTUVW 5;
+      AL17 X -1;
+      Stop;
+  }
+}

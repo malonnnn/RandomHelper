@@ -1,0 +1,55 @@
+class MurderBall : Actor
+{
+  Default
+  {
+    Radius 20;
+    Height 20;
+    MONSTER;
+    +QUICKTORETALIATE
+    +SLIDESONWALLS
+    +JUMPDOWN
+    +PUSHABLE
+    +NOBLOCKMONST
+    -COUNTKILL
+    +AVOIDMELEE
+    +ALWAYSFAST
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    -HARMFRIENDS
+    +DONTHARMSPECIES
+    +FLOAT;
+    +NOGRAVITY;
+  }
+  States
+  {
+    Spawn:
+      BERS B 1
+      {
+        self.A_Wander(CHF_NORANDOMTURN);
+      }
+      BERS A 0 A_LookEx(0, 0, 9999, 0, 360, "Missile");
+      loop;
+    See:
+      BERS A 1
+      {
+        A_Chase();
+        A_Recoil(-1);
+        Return ResolveState(Null);
+      }
+      Loop;
+    Missile:
+      TNT1 A 0 A_ChangeVelocity(random(2,10), random(-10,10), random(1,2),CVF_RELATIVE);
+      TNT1 A 0 A_StartSound("weapons/plasmaf");
+      BERS A 1 Bright A_Chase(NULL,NULL,CHF_FASTCHASE);
+      BERS A 1 Bright 
+      {
+        A_CustomRailgun(4000,0,"FF0000","FF0000",RGF_FULLBRIGHT,1,0, "CompanionBulletPuff",0,0,0,1,0,0,null,0,270,0,0);
+        A_LookEx(0, 0, 9999, 0, 360, "Missile");
+        A_AlertMonsters(0, AMF_TARGETEMITTER);
+      }
+      Goto See;
+    Death:
+      Stop;
+  }
+}
+

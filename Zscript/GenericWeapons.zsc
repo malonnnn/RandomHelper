@@ -1,0 +1,119 @@
+class CompanionBulletPuff : BulletPuff
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+  }
+}
+
+class CompanionRocket: Rocket
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+  }
+}
+
+class CompanionBFGBall: BFGBall
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+  }
+  States
+	{
+    Spawn:
+      BFS1 AB 4 Bright;
+      Loop;
+    Death:
+      BFE1 AB 8 Bright;
+      BFE1 C 8 Bright A_BFGSpray;
+      BFE1 DEF 8 Bright;
+      Stop;
+	}
+}
+
+class CompanionBFGExtra : BFGExtra replaces BFGExtra
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+ZDOOMTRANS
+		RenderStyle "Add";
+		Alpha 0.75;
+    Species "Companion";
+		DamageType "Companion";
+	}
+	States
+	{
+	Spawn:
+		BFE2 ABCD 8 Bright;
+		Stop;
+	}
+}
+
+class CompanionPlasmaBall: PlasmaBall
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+  }
+}
+
+class CompanionArachnotronPlasma : ArachnotronPlasma{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+  }
+}
+
+class CompanionBaronBall : BaronBall
+{
+	Default
+	{
+    Species "Companion";
+    DamageType "Companion";
+  }
+}
+
+class CompanionCacodemonBall : CacodemonBall
+{
+	Default
+	{
+    Species "Companion";
+    DamageType "Companion";
+  }
+}
+
+class CompanionDoomImpBall : DoomImpBall
+{
+	Default
+	{
+    Species "Companion";
+    DamageType "Companion";
+  }
+}
+
+class CompanionFatShot : FatShot
+{
+	Default
+	{
+    Species "Companion";
+    DamageType "Companion";
+  }
+}
+
+class CompanionRevenantTracer : RevenantTracer
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+  }
+}

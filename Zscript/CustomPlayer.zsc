@@ -1,0 +1,10 @@
+class MyDoomGuy : DoomPlayer {
+  Default
+  {
+    Player.startitem "BioPipeBombLauncher";
+    +THRUSPECIES
+    Species "Companion";
+    DamageType "Companion";
+    DamageFactor "Companion", 0.0;
+  }
+}
