@@ -4,7 +4,7 @@ class CustomEvents : EventHandler
     if(e.Thing && e.Thing.bIsMonster && !e.Thing.bFriendly) {
 
       Actor Companion;
-	    Companion = Actor.Spawn("CompanionAmmo", e.Thing.pos);
+	    Companion = Actor.Spawn("CompanionItemSpawner", e.Thing.pos);
 
       if(e.Thing.bIsMonster && !e.Thing.bFriendly && e.Thing.target && e.Thing.target.GetSpecies() == "Companion"){
         Actor pp = Actor.Spawn("PatrolPoint", e.Thing.pos);
@@ -47,7 +47,7 @@ class CustomEvents : EventHandler
       e.Thing.Destroy();
     }
 
-    if(!(e.Thing is "CompanionAmmo") && e.Thing is "Ammo"){
+    if(e.Thing is "Ammo"){
       e.Thing.Destroy();
     }
   }

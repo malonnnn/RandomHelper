@@ -1,15 +1,15 @@
-Class MyStatusBar : BaseStatusBar {
-	HUDFont noMonospaceSmallfont;
-	HUDFont monospaceSmallfont;
-	HUDFont shadowSmallfont;
-
-  HUDFont mHUDFont;
+class MyStatusBar : BaseStatusBar
+{
+	HUDFont mHUDFont;
 	HUDFont mIndexFont;
 	HUDFont mAmountFont;
 	InventoryBarState diparms;
 	
-	override void Init() {
-    Super.Init();
+	HUDFont mMM2SmallFont;
+
+	override void Init()
+	{
+		Super.Init();
 		SetSize(32, 320, 200);
 
 		// Create the font used for the fullscreen HUD
@@ -19,35 +19,31 @@ Class MyStatusBar : BaseStatusBar {
 		mIndexFont = HUDFont.Create(fnt, fnt.GetCharWidth("0"), Mono_CellLeft);
 		mAmountFont = HUDFont.Create("INDEXFONT");
 		diparms = InventoryBarState.Create();
+
 		
-		// smallfont is a built in Font object in ZScript - if you have your own font
-		// and want to use that instead, you should initialize it like this:
-		// Font myFont = "<FONT NAME>";
-		
-		// this font will not be monospaced when drawn
-		noMonospaceSmallfont = HUDFont.Create(smallfont);
-		// this font will be monospaced when drawn,
-		// and each character will be spaced based on the width of the "0" character
-		monospaceSmallfont = HUDFont.Create(smallfont, smallfont.GetCharWidth("0"), true);
-		// this font will not be monospaced, but will cast a shadow 8 pixels to the right and 8 pixels to the left
-		shadowSmallfont = HUDFont.Create(smallfont, 0, false, 8, 8);
+		fnt = "SMALLFONT";
+		mMM2SmallFont = HUDFont.Create(fnt);
 	}
-	
-	override void Draw (int state, double TicFrac) {
+
+	override void Draw (int state, double TicFrac)
+	{
 		Super.Draw (state, TicFrac);
-		
-		if (state == HUD_StatusBar) {
+
+		if (state == HUD_StatusBar)
+		{
 			BeginStatusBar();
-			DrawMainBar();
+			DrawMainBar (TicFrac);
 		}
-		else if (state == HUD_Fullscreen) {
+		else if (state == HUD_Fullscreen)
+		{
 			BeginHUD();
-			DrawFullScreenStuff();
+			DrawFullScreenStuff ();
 		}
 	}
-	
-	void DrawMainBar() {
-    DrawImage("STBAR", (0, 168), DI_ITEM_OFFSETS);
+
+	protected void DrawMainBar (double TicFrac)
+	{
+		DrawImage("STBAR", (0, 168), DI_ITEM_OFFSETS);
 		DrawImage("STTPRCNT", (90, 171), DI_ITEM_OFFSETS);
 		DrawImage("STTPRCNT", (221, 171), DI_ITEM_OFFSETS);
 		
@@ -89,14 +85,11 @@ Class MyStatusBar : BaseStatusBar {
 		{
 			DrawInventoryBar(diparms, (48, 169), 7, DI_ITEM_LEFT_TOP);
 		}
-
-    // custom message
-    int amt1, maxamt;
-    [amt1, maxamt] = GetAmount("CompanionAmmo");
-    DrawString(mIndexFont, FormatNumber(amt1, 3), (159,120), DI_TEXT_ALIGN_CENTER);
+		Vector2 moneyPos = (0,0);
+		DrawString(mMM2SmallFont, "$ "..GetAmount("CompanionAmmo"), (moneyPos.x+160,moneyPos.y+160), DI_TEXT_ALIGN_CENTER|DI_SCREEN_VCENTER|DI_SCREEN_HCENTER, Font.CR_GOLD);
 	}
-
-  protected virtual void DrawBarKeys()
+	
+	protected virtual void DrawBarKeys()
 	{
 		bool locks[6];
 		String image;
@@ -119,8 +112,8 @@ Class MyStatusBar : BaseStatusBar {
 		else image = "";
 		DrawImage(image, (239, 191), DI_ITEM_OFFSETS);
 	}
-
-  protected virtual void DrawBarAmmo()
+	
+	protected virtual void DrawBarAmmo()
 	{
 		int amt1, maxamt;
 		[amt1, maxamt] = GetAmount("Clip");
@@ -199,10 +192,8 @@ Class MyStatusBar : BaseStatusBar {
 			DrawInventoryBar(diparms, (0, 0), 7, DI_SCREEN_CENTER_BOTTOM, HX_SHADOW);
 		}
 
-    // custom message
-    int amt1, maxamt;
-    [amt1, maxamt] = GetAmount("CompanionAmmo");
-    DrawString(mIndexFont, FormatNumber(amt1, 3), (479,444), DI_TEXT_ALIGN_CENTER);
+		Vector2 moneyPos = (0, 0);
+		DrawString(mMM2SmallFont, "$ "..GetAmount("CompanionAmmo"), (moneyPos.x,moneyPos.y+230), DI_TEXT_ALIGN_CENTER|DI_SCREEN_VCENTER|DI_SCREEN_HCENTER, Font.CR_GOLD);
 	}
 	
 	protected virtual void DrawFullscreenKeys()

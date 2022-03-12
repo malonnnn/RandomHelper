@@ -1,9 +1,57 @@
+class CompanionItemSpawner : RandomSpawner
+{
+  Default
+  {
+    DropItem "MarineCompanionFistItem";
+    /*DropItem "MarineCompanionPistolItem";
+    DropItem "MarineCompanionMGItem";
+    DropItem "MarineCompanionCGItem";
+    DropItem "MarineCompanionSGItem";
+    DropItem "MarineCompanionSSGItem";
+    DropItem "MarineCompanionPlasmaItem";
+    DropItem "MarineCompanionBFG10KItem";
+    DropItem "MarineCompanionBFG9000Item";
+    DropItem "MarineCompanionSniperItem";
+    DropItem "MarineCompanionHSMissileItem";
+    DropItem "MarineCompanionGLItem";
+    DropItem "MarineCompanionFlamethrowerItem";
+    DropItem "MarineCompanionRocketItem";
+    DropItem "MarineCompanionRailgunItem";
+    DropItem "MarineCompanionChainsawItem";
+    DropItem "MarineCompanionMinigunItem";
+    DropItem "CompanionArachnotronItem";
+    DropItem "CompanionArchvileItem";
+    DropItem "CompanionBaronOfHellItem";
+    DropItem "CompanionCacodemonItem";
+    DropItem "CompanionChaingunGuyItem";
+    DropItem "CompanionCyberdemonItem";
+    DropItem "CompanionDemonItem";
+    DropItem "CompanionDoomImpItem";
+    DropItem "CompanionFatsoItem";
+    DropItem "CompanionHellKnightItem";
+    DropItem "CompanionLostSoulItem";
+    DropItem "CompanionPainElementalItem";
+    DropItem "CompanionRevenantItem";
+    DropItem "CompanionShotgunGuyItem";
+    DropItem "CompanionSpectreItem";
+    DropItem "CompanionSpiderMastermindItem";
+    DropItem "CompanionWolfensteinSSItem";
+    DropItem "CompanionZombieManItem";
+    DropItem "MurderBallItem";
+    DropItem "AfritItem";
+    DropItem "MarauderItem";
+    DropItem "ArchonOfHellItem";
+    DropItem "ArachnophyteItem";*/
+    DropItem "BelphegorItem";
+  }
+}
+
 class CompanionSpawner : RandomSpawner
 {
   Default
   {
-    /*DropItem "MarineCompanionFist";
-    DropItem "MarineCompanionPistol";
+    DropItem "MarineCompanionFist";
+    /*DropItem "MarineCompanionPistol";
     DropItem "MarineCompanionMG";
     DropItem "MarineCompanionCG";
     DropItem "MarineCompanionSG";
@@ -37,11 +85,11 @@ class CompanionSpawner : RandomSpawner
     DropItem "CompanionSpiderMastermind";
     DropItem "CompanionWolfensteinSS";
     DropItem "CompanionZombieMan";
-    DropItem "MurderBall";*/
+    DropItem "MurderBall";
     DropItem "Afrit";
     DropItem "Marauder";
     DropItem "ArchonOfHell";
-    DropItem "Arachnophyte";
+    DropItem "Arachnophyte";*/
     DropItem "Belphegor";
   }
 
