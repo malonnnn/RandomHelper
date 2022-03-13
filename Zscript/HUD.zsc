@@ -72,9 +72,11 @@ class MyStatusBar : BaseStatusBar
 		if (CPlayer.mo.InvSel != null && !Level.NoInventoryBar)
 		{
 			DrawInventoryIcon(CPlayer.mo.InvSel, (160, 198), DI_DIMDEPLETED);
-			if (CPlayer.mo.InvSel.Amount > 1)
+			if (CPlayer.mo.InvSel.Amount > 0)
 			{
-				DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.Amount), (175, 198-mIndexFont.mFont.GetHeight()), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
+				DrawString(mMM2SmallFont, "$", (149, 191), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
+				DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.cameraheight), (162, 199-mIndexFont.mFont.GetHeight()), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
+				DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.Amount), (176, 199-mIndexFont.mFont.GetHeight()), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
 			}
 		}
 		else
@@ -85,11 +87,6 @@ class MyStatusBar : BaseStatusBar
 		{
 			DrawInventoryBar(diparms, (48, 169), 7, DI_ITEM_LEFT_TOP);
 		}
-
-		Vector2 moneyPos = (0,0);
-		int amt1, maxamt;
-		[amt1, maxamt] = GetAmount("CompanionAmmo");
-		DrawString(mMM2SmallFont, "$ "..amt1, (moneyPos.x+160,moneyPos.y+160), DI_TEXT_ALIGN_CENTER|DI_SCREEN_VCENTER|DI_SCREEN_HCENTER, Font.CR_GOLD);
 	}
 	
 	protected virtual void DrawBarKeys()
@@ -194,11 +191,6 @@ class MyStatusBar : BaseStatusBar
 		{
 			DrawInventoryBar(diparms, (0, 0), 7, DI_SCREEN_CENTER_BOTTOM, HX_SHADOW);
 		}
-
-		Vector2 moneyPos = (0, 0);
-		int amt1, maxamt;
-		[amt1, maxamt] = GetAmount("CompanionAmmo");
-		DrawString(mMM2SmallFont, "$ "..amt1, (moneyPos.x,moneyPos.y+230), DI_TEXT_ALIGN_CENTER|DI_SCREEN_VCENTER|DI_SCREEN_HCENTER, Font.CR_GOLD);
 	}
 	
 	protected virtual void DrawFullscreenKeys()
