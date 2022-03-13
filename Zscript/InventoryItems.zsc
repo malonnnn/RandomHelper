@@ -16,6 +16,7 @@ Class CommonItemFeatures : CustomInventory
       TNT1 A 0
       {
         GiveInventory(GetClassName(), 1);
+        GiveInventory("CompanionAmmo", 1);
       }
       Stop;
     Use:

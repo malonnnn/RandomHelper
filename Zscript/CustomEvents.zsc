@@ -47,7 +47,8 @@ class CustomEvents : EventHandler
       e.Thing.Destroy();
     }
 
-    if(e.Thing is "Ammo"){
+    if(e.Thing is "Ammo" && !(e.Thing is "CompanionAmmo")){
+      Actor.Spawn("CompanionAmmo", e.Thing.pos);
       e.Thing.Destroy();
     }
   }

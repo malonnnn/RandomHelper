@@ -183,22 +183,23 @@ class CompanionAmmo : Ammo
 {
   Default
   {
-    -COUNTITEM
-    +INVENTORY.HUBPOWER
-    +SPRITEANGLE
-    SpriteAngle 180;
+    //+INVENTORY.HUBPOWER
+    //+SPRITEANGLE
+    //SpriteAngle 180;
+    Inventory.Amount 1;
     Inventory.MaxAmount 999;
     Inventory.InterHubAmount 999;
-    Scale 0.5;
 
-    Inventory.Amount 1;
 		Ammo.BackpackAmount 2;
-		Ammo.BackpackMaxAmount 2;
+		Ammo.BackpackMaxAmount 999;
   }
   States
 	{
     Spawn:
-      BIOC A 1;
-      Loop;
+      BIOC A -1
+			{
+				Console.printf("comapnion ammo summoned");
+			}
+      Stop;
 	}
 }

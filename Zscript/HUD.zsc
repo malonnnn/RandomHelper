@@ -85,8 +85,11 @@ class MyStatusBar : BaseStatusBar
 		{
 			DrawInventoryBar(diparms, (48, 169), 7, DI_ITEM_LEFT_TOP);
 		}
+
 		Vector2 moneyPos = (0,0);
-		DrawString(mMM2SmallFont, "$ "..GetAmount("CompanionAmmo"), (moneyPos.x+160,moneyPos.y+160), DI_TEXT_ALIGN_CENTER|DI_SCREEN_VCENTER|DI_SCREEN_HCENTER, Font.CR_GOLD);
+		int amt1, maxamt;
+		[amt1, maxamt] = GetAmount("CompanionAmmo");
+		DrawString(mMM2SmallFont, "$ "..amt1, (moneyPos.x+160,moneyPos.y+160), DI_TEXT_ALIGN_CENTER|DI_SCREEN_VCENTER|DI_SCREEN_HCENTER, Font.CR_GOLD);
 	}
 	
 	protected virtual void DrawBarKeys()
@@ -193,7 +196,9 @@ class MyStatusBar : BaseStatusBar
 		}
 
 		Vector2 moneyPos = (0, 0);
-		DrawString(mMM2SmallFont, "$ "..GetAmount("CompanionAmmo"), (moneyPos.x,moneyPos.y+230), DI_TEXT_ALIGN_CENTER|DI_SCREEN_VCENTER|DI_SCREEN_HCENTER, Font.CR_GOLD);
+		int amt1, maxamt;
+		[amt1, maxamt] = GetAmount("CompanionAmmo");
+		DrawString(mMM2SmallFont, "$ "..amt1, (moneyPos.x,moneyPos.y+230), DI_TEXT_ALIGN_CENTER|DI_SCREEN_VCENTER|DI_SCREEN_HCENTER, Font.CR_GOLD);
 	}
 	
 	protected virtual void DrawFullscreenKeys()

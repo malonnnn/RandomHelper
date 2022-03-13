@@ -6,5 +6,7 @@ class MyDoomGuy : DoomPlayer {
     Species "Companion";
     DamageType "Companion";
     DamageFactor "Companion", 0.0;
+
+    Player.StartItem "BelphegorItem", 1;
   }
 }
