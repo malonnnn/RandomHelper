@@ -3,7 +3,7 @@ class CompanionItemSpawner : RandomSpawner
   Default
   {
     DropItem "MarineCompanionFistItem";
-    /*DropItem "MarineCompanionPistolItem";
+    DropItem "MarineCompanionPistolItem";
     DropItem "MarineCompanionMGItem";
     DropItem "MarineCompanionCGItem";
     DropItem "MarineCompanionSGItem";
@@ -41,7 +41,7 @@ class CompanionItemSpawner : RandomSpawner
     DropItem "AfritItem";
     DropItem "MarauderItem";
     DropItem "ArchonOfHellItem";
-    DropItem "ArachnophyteItem";*/
+    DropItem "ArachnophyteItem";
     DropItem "BelphegorItem";
   }
 }
@@ -51,7 +51,7 @@ class CompanionSpawner : RandomSpawner
   Default
   {
     DropItem "MarineCompanionFist";
-    /*DropItem "MarineCompanionPistol";
+    DropItem "MarineCompanionPistol";
     DropItem "MarineCompanionMG";
     DropItem "MarineCompanionCG";
     DropItem "MarineCompanionSG";
@@ -89,7 +89,7 @@ class CompanionSpawner : RandomSpawner
     DropItem "Afrit";
     DropItem "Marauder";
     DropItem "ArchonOfHell";
-    DropItem "Arachnophyte";*/
+    DropItem "Arachnophyte";
     DropItem "Belphegor";
   }
 

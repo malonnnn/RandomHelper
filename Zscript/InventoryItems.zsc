@@ -19,6 +19,20 @@ Class CommonItemFeatures : CustomInventory
         GiveInventory("CompanionAmmo", 1);
       }
       Stop;
+  }
+}
+
+Class MarineCompanionFistItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Berserk Marine!";
+  }
+  States
+  {
+    Spawn:
+      ALY1 A -1;
+      Stop;
     Use:
       TNT1 A 0
       {
@@ -28,17 +42,683 @@ Class CommonItemFeatures : CustomInventory
   }
 }
 
-Class MarineCompanionFistItem : CommonItemFeatures
+Class MarineCompanionChainsawItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Berserk Marine!";
+    Inventory.PickupMessage "Got a Chainsaw Marine!";
+  }
+  States
+  {
+    Spawn:
+      ALY7 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarineCompanionPistolItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Pistol Marine!";
     Tag "Berserk Marine";
   }
   States
   {
     Spawn:
-      ALY1 A -1;
+      ALY2 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarineCompanionSGItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Shotgun Marine!";
+  }
+  States
+  {
+    Spawn:
+      ALY5 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarineCompanionSSGItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Super Shotgun Marine!";
+  }
+  States
+  {
+    Spawn:
+      AL11 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarineCompanionCGItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Chaingun Marine!";
+  }
+  States
+  {
+    Spawn:
+      ALY4 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarineCompanionRocketItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Rocket Launcher Marine!";
+  }
+  States
+  {
+    Spawn:
+      ALY9 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarineCompanionPlasmaItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Plasma Rifle Marine!";
+  }
+  States
+  {
+    Spawn:
+      ALY8 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarineCompanionBFG9000Item : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a BFG9000 Marine!";
+  }
+  States
+  {
+    Spawn:
+      AL10 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarineCompanionBFG10KItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a BFG10K Marine!";
+  }
+  States
+  {
+    Spawn:
+      AL15 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarineCompanionGLItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Grenade Launcher Marine!";
+  }
+  States
+  {
+    Spawn:
+      AL14 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarineCompanionHSMissileItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Heat Seeking Missile Marine!";
+  }
+  States
+  {
+    Spawn:
+      AL13 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarineCompanionRailgunItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Railgun Marine!";
+  }
+  States
+  {
+    Spawn:
+      AL12 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarineCompanionSniperItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Sniper Marine!";
+  }
+  States
+  {
+    Spawn:
+      AL17 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarineCompanionFlameThrowerItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Flame Thrower Marine!";
+  }
+  States
+  {
+    Spawn:
+      AL16 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarineCompanionMGItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Machine Gun Marine!";
+  }
+  States
+  {
+    Spawn:
+      ALY3 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarineCompanionMinigunItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Minigun Marine!";
+  }
+  States
+  {
+    Spawn:
+      ALY6 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionZombieManItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Zombie Man!";
+  }
+  States
+  {
+    Spawn:
+      POSS A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionShotgunGuyItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Shotgun Guy!";
+  }
+  States
+  {
+    Spawn:
+      SPOS A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionChaingunGuyItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Chaingun Guy!";
+  }
+  States
+  {
+    Spawn:
+      CPOS A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionDemonItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Demon!";
+  }
+  States
+  {
+    Spawn:
+      SARG A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionSpectreItem : CompanionDemonItem
+{
+  Default
+  {
+    RenderStyle "OptFuzzy";
+    Inventory.PickupMessage "Got a Spectre!";
+  }
+}
+
+class CompanionLostSoulItem : CommonItemFeatures
+{
+  Default
+  {
+    Scale 0.6;
+    Inventory.PickupMessage "Got a Lost Soul!";
+  }
+  States
+  {
+    Spawn:
+      SKUL A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionCacodemonItem : CommonItemFeatures
+{
+  Default
+  {
+    Scale 0.4;
+    Inventory.PickupMessage "Got a Cacodemon!";
+  }
+  States
+  {
+    Spawn:
+      HEAD A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionPainElementalItem : CommonItemFeatures
+{
+  Default
+  {
+    Scale 0.38;
+    Inventory.PickupMessage "Got a Pain Elemental!";
+  }
+  States
+  {
+    Spawn:
+      PAIN A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionBaronOfHellItem : CommonItemFeatures
+{
+  Default
+  {
+    Scale 0.4;
+    Inventory.PickupMessage "Got a Baron of Hell!";
+  }
+  States
+  {
+    Spawn:
+      BOSS A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionHellKnightItem : CompanionBaronOfHellItem
+{
+  Default
+  {
+    Scale 0.4;
+    Inventory.PickupMessage "Got a Hell Knight!";
+  }
+  States
+  {
+    Spawn:
+      BOS2 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionArachnotronItem : CommonItemFeatures
+{
+  Default
+  {
+    Scale 0.3;
+    Inventory.PickupMessage "Got an Arachnotron!";
+  }
+  States
+  {
+    Spawn:
+      BSPI A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionArchvileItem : CommonItemFeatures
+{
+  Default
+  {
+    Scale 0.35;
+    Inventory.PickupMessage "Got an Archvile!";
+  }
+  States
+  {
+    Spawn:
+      VILE A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionFatsoItem : CommonItemFeatures
+{
+  Default
+  {
+    Scale 0.4;
+    Inventory.PickupMessage "Got a Mancubus!";
+  }
+  States
+  {
+    Spawn:
+      FATT A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionCyberdemonItem : CommonItemFeatures
+{
+  Default
+  {
+    Scale 0.3;
+    Inventory.PickupMessage "Got a Cyberdemon!";
+  }
+  States
+  {
+    Spawn:
+      CYBR A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionSpiderMastermindItem : CommonItemFeatures
+{
+  Default
+  {
+    Scale 0.15;
+    Inventory.PickupMessage "Got a Spider Mastermind!";
+  }
+  States
+  {
+    Spawn:
+      SPID A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionWolfensteinSSItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a WolfensteinSS!";
+  }
+  States
+  {
+    Spawn:
+      SSWV A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionRevenantItem : CommonItemFeatures
+{
+  Default
+  {
+    Scale 0.35;
+    Inventory.PickupMessage "Got a Revenant!";
+  }
+  States
+  {
+    Spawn:
+      SKEL A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+class CompanionDoomImpItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got an Imp!";
+  }
+  States
+  {
+    Spawn:
+      TROO A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
       Stop;
   }
 }
@@ -49,12 +729,122 @@ Class BelphegorItem : CommonItemFeatures
   {
     Scale 0.4;
     Inventory.PickupMessage "Got a Belphegor!";
-    Tag "Belphegor";
   }
   States
   {
     Spawn:
       BOS3 A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class AfritItem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got an Afrit!";
+    Inventory.Icon "FRITV0";
+    Scale 0.25;
+  }
+  States
+  {
+    Spawn:
+      FRIT A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MarauderItem : CommonItemFeatures
+{
+  Default
+  {
+    Scale 0.48;
+    Inventory.PickupMessage "Got a Marauder!";
+  }
+  States
+  {
+    Spawn:
+      MAUD A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class ArachnophyteItem : CommonItemFeatures
+{
+  Default
+  {
+    Scale 0.2;
+    Inventory.PickupMessage "Got an Arachnophyte!";
+  }
+  States
+  {
+    Spawn:
+      MAUD A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class ArchonOfHellItem : CommonItemFeatures
+{
+  Default
+  {
+    Scale 0.4;
+    Inventory.PickupMessage "Got an Arachnophyte!";
+  }
+  States
+  {
+    Spawn:
+      MAUD A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
+      Stop;
+  }
+}
+
+Class MurderBallitem : CommonItemFeatures
+{
+  Default
+  {
+    Inventory.PickupMessage "Got a Murder Ball!";
+  }
+  States
+  {
+    Spawn:
+      BERS A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        Actor.Spawn(GetClassName(), pos);
+      }
       Stop;
   }
 }

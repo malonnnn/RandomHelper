@@ -482,7 +482,7 @@ class MarineCompanionRocket : MarineCompanion
       ALY9 W -1 A_NoBlocking;
       Stop;
   }
- }
+}
 
 class MarineCompanionBFG9000 : MarineCompanion
 {
