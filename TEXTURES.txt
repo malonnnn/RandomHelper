@@ -1,9 +1,6 @@
-// add new frame letter
-// value 0
-// then resize it
-sprite "FRITV0", 64, 128
+sprite optional FRITA1, 64, 128
 {
-   XScale 2.75
-   YScale 2.75
-   patch FRITV0, 0, 0
+   XScale 1.5
+   YScale 1.5
+   patch FRITA1, 0, 40
 }

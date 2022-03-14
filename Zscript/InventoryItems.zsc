@@ -855,10 +855,9 @@ Class AfritItem : CommonItemFeatures
   Default
   {
     Inventory.PickupMessage "Got an Afrit!";
-    Inventory.Icon "FRITV0";
-    Scale 0.25;
     Tag "Afrit";
     cameraheight 20;
+    //Inventory.Icon "FRITV0";
   }
   States
   {
