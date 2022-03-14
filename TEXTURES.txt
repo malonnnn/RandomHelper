@@ -1,6 +1,0 @@
-sprite optional FRITA1, 64, 128
-{
-   XScale 1.5
-   YScale 1.5
-   patch FRITA1, 0, 40
-}
