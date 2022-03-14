@@ -1,11 +1,10 @@
-class MyStatusBar : BaseStatusBar
+class MyStatusBar : MyBaseStatusBar
 {
 	HUDFont mHUDFont;
 	HUDFont mIndexFont;
 	HUDFont mAmountFont;
 	InventoryBarState diparms;
-	
-	HUDFont mMM2SmallFont;
+
 
 	override void Init()
 	{
@@ -74,8 +73,8 @@ class MyStatusBar : BaseStatusBar
 			DrawInventoryIcon(CPlayer.mo.InvSel, (160, 198), DI_DIMDEPLETED);
 			if (CPlayer.mo.InvSel.Amount > 0)
 			{
-				DrawString(mMM2SmallFont, "$", (149, 191), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
-				DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.cameraheight), (162, 199-mIndexFont.mFont.GetHeight()), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
+				//DrawString(mMM2SmallFont, "$", (149, 191), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
+				DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.cameraheight), (176, 199-mIndexFont.mFont.GetHeight()-23), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
 				DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.Amount), (176, 199-mIndexFont.mFont.GetHeight()), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
 			}
 		}

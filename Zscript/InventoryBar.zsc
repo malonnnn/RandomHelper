@@ -1,0 +1,105 @@
+class MyInventoryBarState : InventoryBarState
+{
+  
+	private static void Init(InventoryBarState me, HUDFont indexfont, int cr, double itemalpha, Vector2 innersize,	String leftgfx, String rightgfx, Vector2 arrowoffs, int flags)
+	{
+		me.itemalpha = itemalpha;
+		if (innersize == (0, 0))
+		{
+			me.boxofs = (2, 2);
+			me.innersize = me.boxsize - (4, 4);	// Default is based on Heretic's and Hexens icons.
+		}
+		else
+		{
+			me.innersize = innersize;
+			me.boxofs = (me.boxsize - me.innersize) / 2;
+		}
+		if (me.selector.IsValid())
+		{
+			Vector2 sel = TexMan.GetScaledSize(me.selector);
+			me.selectofs = (me.boxsize - sel) / 2;
+		}
+		me.left = TexMan.CheckForTexture(leftgfx, TexMan.TYPE_MiscPatch);
+		me.right = TexMan.CheckForTexture(rightgfx, TexMan.TYPE_MiscPatch);
+		me.arrowoffset = arrowoffs;
+		me.arrowoffset.Y += me.boxsize.Y/2;	// default is centered to the side of the box.
+		if (indexfont == null) 
+		{
+			me.amountfont = HUDFont.Create("INDEXFONT");
+			if (cr == Font.CR_UNTRANSLATED) cr = Font.CR_GOLD;
+		}
+		else me.amountfont = indexfont;
+		me.cr = cr;
+		me.flags = flags;
+	}	
+}
+
+class MyBaseStatusBar : BaseStatusBar
+{
+  HUDFont mMM2SmallFont;
+	void DrawInventoryBar(InventoryBarState parms, Vector2 position, int numfields, int flags = 0, double bgalpha = 1.)
+	{
+    mMM2SmallFont = HUDFont.Create("SMALLFONT");
+		double width = parms.boxsize.X * numfields;
+		[position, flags] = AdjustPosition(position, flags, width, parms.boxsize.Y);
+		
+		CPlayer.mo.InvFirst = ValidateInvFirst(numfields);
+		if (CPlayer.mo.InvFirst == null) return;	// Player has no listed inventory items.
+		
+		Vector2 boxsize = parms.boxsize;
+		// First draw all the boxes
+		for(int i = 0; i < numfields; i++)
+		{
+			DrawTexture(parms.box, position + (boxsize.X * i, 0), flags | DI_ITEM_LEFT_TOP, bgalpha);
+		}
+		
+		// now the items and the rest
+		
+		Vector2 itempos = position + boxsize / 2;
+		Vector2 textpos = position + boxsize - (1, 1 + parms.amountfont.mFont.GetHeight());
+
+		int i = 0;
+		Inventory item;
+		for(item = CPlayer.mo.InvFirst; item != NULL && i < numfields; item = item.NextInv())
+		{
+			for(int j = 0; j < 2; j++)
+			{
+				if (j ^ !!(flags & DI_DRAWCURSORFIRST))
+				{
+					if (item == CPlayer.mo.InvSel)
+					{
+						double flashAlpha = bgalpha;
+						if (flags & DI_ARTIFLASH) flashAlpha *= itemflashFade;
+						DrawTexture(parms.selector, position + parms.selectofs + (boxsize.X * i, 0), flags | DI_ITEM_LEFT_TOP, flashAlpha);
+					}
+				}
+				else
+				{
+					DrawInventoryIcon(item, itempos + (boxsize.X * i, 0), flags | DI_ITEM_CENTER | DI_DIMDEPLETED );
+				}
+			}
+			
+			if (parms.amountfont != null && (item.Amount > 0 || (flags & DI_ALWAYSSHOWCOUNTERS)))
+			{
+        vector2 origpos = textpos + (boxsize.X * i, 0);
+        vector2 numpos = (origpos.x, origpos.y-21);
+        //vector2 signpos = (origpos.x, origpos.y-1);
+        //DrawString(mMM2SmallFont, "$", signpos, flags | DI_TEXT_ALIGN_RIGHT, parms.cr, parms.itemalpha);
+        DrawString(parms.amountfont, FormatNumber(item.cameraheight), numpos ,flags | DI_TEXT_ALIGN_RIGHT, parms.cr, parms.itemalpha);
+				DrawString(parms.amountfont, FormatNumber(item.Amount, 0, 5), origpos, flags | DI_TEXT_ALIGN_RIGHT, parms.cr, parms.itemalpha);
+			}
+			i++;
+		}
+		// Is there something to the left?
+		if (CPlayer.mo.FirstInv() != CPlayer.mo.InvFirst)
+		{
+			DrawTexture(parms.left, position + (-parms.arrowoffset.X, parms.arrowoffset.Y), flags | DI_ITEM_RIGHT|DI_ITEM_VCENTER);
+		}
+		// Is there something to the right?
+		if (item != NULL)
+		{
+			DrawTexture(parms.right, position + parms.arrowoffset + (width, 0), flags | DI_ITEM_LEFT|DI_ITEM_VCENTER);
+		}
+	}
+}
+

@@ -1,5 +1,6 @@
 Class CommonItemFeatures : CustomInventory
 {
+  int price;
   Default
   {
     +Inventory.HubPower
@@ -9,7 +10,6 @@ Class CommonItemFeatures : CustomInventory
     Scale 0.5;
     SpriteAngle 180;
     Inventory.MaxAmount 999;
-    cameraheight 69;
   }
   States
   {
@@ -29,6 +29,7 @@ Class MarineCompanionFistItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Berserk Marine!";
     Tag "Berserk Marine";
+    cameraheight 5;
   }
   States
   {
@@ -38,42 +39,8 @@ Class MarineCompanionFistItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionFist", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionFist", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -85,6 +52,7 @@ Class MarineCompanionChainsawItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Chainsaw Marine!";
     Tag "Chainsaw Marine";
+    cameraheight 5;
   }
   States
   {
@@ -94,42 +62,8 @@ Class MarineCompanionChainsawItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionChainsaw", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionChainsaw", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -141,6 +75,7 @@ Class MarineCompanionPistolItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Pistol Marine!";
     Tag "Pistol Marine";
+    cameraheight 10;
   }
   States
   {
@@ -150,42 +85,8 @@ Class MarineCompanionPistolItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionPistol", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionPistol", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -197,6 +98,7 @@ Class MarineCompanionSGItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Shotgun Marine!";
     Tag "Shotgun Marine";
+    cameraheight 10;
   }
   States
   {
@@ -206,42 +108,8 @@ Class MarineCompanionSGItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionSG", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionSG", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -253,6 +121,7 @@ Class MarineCompanionSSGItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Super Shotgun Marine!";
     Tag "Super Shotgun Marine";
+    cameraheight 15;
   }
   States
   {
@@ -262,42 +131,8 @@ Class MarineCompanionSSGItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionSSG", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionSSG", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -309,6 +144,7 @@ Class MarineCompanionCGItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Chaingun Marine!";
     Tag "Chaingun Marine";
+    cameraheight 15;
   }
   States
   {
@@ -318,42 +154,8 @@ Class MarineCompanionCGItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionCG", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionCG", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -365,6 +167,7 @@ Class MarineCompanionRocketItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Rocket Launcher Marine!";
     Tag "Rocket Launcher Marine";
+    cameraheight 15;
   }
   States
   {
@@ -374,42 +177,8 @@ Class MarineCompanionRocketItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionRocket", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionRocket", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -421,6 +190,7 @@ Class MarineCompanionPlasmaItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Plasma Rifle Marine!";
     Tag "Plasma Rifle Marine";
+    cameraheight 15;
   }
   States
   {
@@ -430,42 +200,8 @@ Class MarineCompanionPlasmaItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionPlasma", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionPlasma", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -477,6 +213,7 @@ Class MarineCompanionBFG9000Item : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a BFG9000 Marine!";
     Tag "BFG9000 Marine";
+    cameraheight 30;
   }
   States
   {
@@ -486,42 +223,8 @@ Class MarineCompanionBFG9000Item : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionBFG9000", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionBFG9000", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -533,6 +236,7 @@ Class MarineCompanionBFG10KItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a BFG10K Marine!";
     Tag "BFG10K Marine";
+    cameraheight 30;
   }
   States
   {
@@ -542,42 +246,8 @@ Class MarineCompanionBFG10KItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionBFG10K", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionBFG10K", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -589,6 +259,7 @@ Class MarineCompanionGLItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Grenade Launcher Marine!";
     Tag "Grenade Launcher Marine";
+    cameraheight 15;
   }
   States
   {
@@ -598,42 +269,8 @@ Class MarineCompanionGLItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionGL", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionGL", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -645,6 +282,7 @@ Class MarineCompanionHSMissileItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Heat Seeking Missile Marine!";
     Tag "Heat Seeking Missile Marine";
+    cameraheight 20;
   }
   States
   {
@@ -654,42 +292,8 @@ Class MarineCompanionHSMissileItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionHSMissile", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionHSMissile", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -701,6 +305,7 @@ Class MarineCompanionRailgunItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Railgun Marine!";
     Tag "Railgun Marine";
+    cameraheight 10;
   }
   States
   {
@@ -710,42 +315,8 @@ Class MarineCompanionRailgunItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionRailgun", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionRailgun", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -757,6 +328,7 @@ Class MarineCompanionSniperItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Sniper Marine!";
     Tag "Sniper Marine";
+    cameraheight 15;
   }
   States
   {
@@ -766,42 +338,8 @@ Class MarineCompanionSniperItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionSniper", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionSniper", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -813,6 +351,7 @@ Class MarineCompanionFlameThrowerItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Flame Thrower Marine!";
     Tag "Flame Thrower Marine";
+    cameraheight 10;
   }
   States
   {
@@ -822,42 +361,8 @@ Class MarineCompanionFlameThrowerItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionFlameThrower", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionFlameThrower", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -869,6 +374,7 @@ Class MarineCompanionMGItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Machine Gun Marine!";
     Tag "Machine Gun Marine";
+    cameraheight 10;
   }
   States
   {
@@ -878,42 +384,8 @@ Class MarineCompanionMGItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionMG", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionMG", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -925,6 +397,7 @@ Class MarineCompanionMinigunItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Minigun Marine!";
     Tag "Minigun Marine";
+    cameraheight 20;
   }
   States
   {
@@ -934,42 +407,8 @@ Class MarineCompanionMinigunItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MarineCompanionMinigun", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MarineCompanionMinigun", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -981,6 +420,7 @@ class CompanionZombieManItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Zombie Man!";
     Tag "Zombie Man";
+    cameraheight 1;
   }
   States
   {
@@ -990,42 +430,8 @@ class CompanionZombieManItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionZombieMan", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionZombieMan", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1037,6 +443,7 @@ class CompanionShotgunGuyItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Shotgun Guy!";
     Tag "Shotgun Guy";
+    cameraheight 15;
   }
   States
   {
@@ -1046,42 +453,8 @@ class CompanionShotgunGuyItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionShotgunGuy", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionShotgunGuy", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1093,6 +466,7 @@ class CompanionChaingunGuyItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Chaingun Guy!";
     Tag "Chaingun Guy";
+    cameraheight 15;
   }
   States
   {
@@ -1102,42 +476,8 @@ class CompanionChaingunGuyItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionChaingunGuy", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionChaingunGuy", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1149,6 +489,7 @@ class CompanionDemonItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Demon!";
     Tag "Demon";
+    cameraheight 3;
   }
   States
   {
@@ -1158,42 +499,8 @@ class CompanionDemonItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionDemon", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionDemon", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1216,6 +523,7 @@ class CompanionLostSoulItem : CommonItemFeatures
     Scale 0.6;
     Inventory.PickupMessage "Got a Lost Soul!";
     Tag "Lost Soul";
+    cameraheight 2;
   }
   States
   {
@@ -1225,42 +533,8 @@ class CompanionLostSoulItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionLostSoul", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionLostSoul", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1273,6 +547,7 @@ class CompanionCacodemonItem : CommonItemFeatures
     Scale 0.4;
     Inventory.PickupMessage "Got a Cacodemon!";
     Tag "Cacodemon";
+    cameraheight 15;
   }
   States
   {
@@ -1282,42 +557,8 @@ class CompanionCacodemonItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionCacodemon", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionCacodemon", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1330,6 +571,7 @@ class CompanionPainElementalItem : CommonItemFeatures
     Scale 0.38;
     Inventory.PickupMessage "Got a Pain Elemental!";
     Tag "Pain Elemental";
+    cameraheight 15;
   }
   States
   {
@@ -1339,42 +581,8 @@ class CompanionPainElementalItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionPainElemental", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionPainElemental", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1387,6 +595,7 @@ class CompanionBaronOfHellItem : CommonItemFeatures
     Scale 0.4;
     Inventory.PickupMessage "Got a Baron of Hell!";
     Tag "Baron of Hell";
+    cameraheight 15;
   }
   States
   {
@@ -1396,42 +605,8 @@ class CompanionBaronOfHellItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionBaronOfHell", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionBaronOfHell", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1444,6 +619,7 @@ class CompanionHellKnightItem : CompanionBaronOfHellItem
     Scale 0.4;
     Inventory.PickupMessage "Got a Hell Knight!";
     Tag "Hell Knight";
+    cameraheight 7;
   }
   States
   {
@@ -1453,42 +629,8 @@ class CompanionHellKnightItem : CompanionBaronOfHellItem
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionHellKnight", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionHellKnight", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1501,6 +643,7 @@ class CompanionArachnotronItem : CommonItemFeatures
     Scale 0.3;
     Inventory.PickupMessage "Got an Arachnotron!";
     Tag "Arachnotron";
+    cameraheight 15;
   }
   States
   {
@@ -1510,42 +653,8 @@ class CompanionArachnotronItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionArachnotron", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionArachnotron", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1558,6 +667,7 @@ class CompanionArchvileItem : CommonItemFeatures
     Scale 0.35;
     Inventory.PickupMessage "Got an Archvile!";
     Tag "Archvile";
+    cameraheight 10;
   }
   States
   {
@@ -1567,42 +677,8 @@ class CompanionArchvileItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionArchvile", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionArchvile", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1615,6 +691,7 @@ class CompanionFatsoItem : CommonItemFeatures
     Scale 0.4;
     Inventory.PickupMessage "Got a Mancubus!";
     Tag "Mancubus";
+    cameraheight 15;
   }
   States
   {
@@ -1624,42 +701,8 @@ class CompanionFatsoItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionFatso", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionFatso", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1672,6 +715,7 @@ class CompanionCyberdemonItem : CommonItemFeatures
     Scale 0.3;
     Inventory.PickupMessage "Got a Cyberdemon!";
     Tag "Cyberdemon";
+    cameraheight 25;
   }
   States
   {
@@ -1681,42 +725,8 @@ class CompanionCyberdemonItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionCyberdemon", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionCyberdemon", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1729,6 +739,7 @@ class CompanionSpiderMastermindItem : CommonItemFeatures
     Scale 0.15;
     Inventory.PickupMessage "Got a Spider Mastermind!";
     Tag "Spider Mastermind";
+    cameraheight 25;
   }
   States
   {
@@ -1738,42 +749,8 @@ class CompanionSpiderMastermindItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionSpiderMastermind", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionSpiderMastermind", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1785,6 +762,7 @@ class CompanionWolfensteinSSItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Wolfenstein SS!";
     Tag "Wolfenstein SS";
+    cameraheight 4;
   }
   States
   {
@@ -1794,42 +772,8 @@ class CompanionWolfensteinSSItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionWolfensteinSS", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionWolfensteinSS", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1842,6 +786,7 @@ class CompanionRevenantItem : CommonItemFeatures
     Scale 0.35;
     Inventory.PickupMessage "Got a Revenant!";
     Tag "Revenant";
+    cameraheight 10;
   }
   States
   {
@@ -1851,42 +796,8 @@ class CompanionRevenantItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionRevenant", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionRevenant", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1898,6 +809,7 @@ class CompanionDoomImpItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got an Imp!";
     Tag "Imp";
+    cameraheight 3;
   }
   States
   {
@@ -1907,42 +819,8 @@ class CompanionDoomImpItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("CompanionDoomImp", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("CompanionDoomImp", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -1955,6 +833,7 @@ Class BelphegorItem : CommonItemFeatures
     Scale 0.4;
     Inventory.PickupMessage "Got a Belphegor!";
     Tag "Belphagor";
+    cameraheight 20;
   }
   States
   {
@@ -1964,42 +843,8 @@ Class BelphegorItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("Belphegor", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("Belphegor", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -2013,6 +858,7 @@ Class AfritItem : CommonItemFeatures
     Inventory.Icon "FRITV0";
     Scale 0.25;
     Tag "Afrit";
+    cameraheight 20;
   }
   States
   {
@@ -2022,42 +868,8 @@ Class AfritItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("Afrit", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("Afrit", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -2070,6 +882,7 @@ Class MarauderItem : CommonItemFeatures
     Scale 0.48;
     Inventory.PickupMessage "Got a Marauder!";
     Tag "Marauder";
+    cameraheight 20;
   }
   States
   {
@@ -2079,42 +892,8 @@ Class MarauderItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("Marauder", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("Marauder", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -2127,6 +906,7 @@ Class ArachnophyteItem : CommonItemFeatures
     Scale 0.2;
     Inventory.PickupMessage "Got an Arachnophyte!";
     Tag "Arachnophyte";
+    cameraheight 20;
   }
   States
   {
@@ -2136,42 +916,8 @@ Class ArachnophyteItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("Arachnophyte", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("Arachnophyte", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -2184,6 +930,7 @@ Class ArchonOfHellItem : CommonItemFeatures
     Scale 0.4;
     Inventory.PickupMessage "Got an Archon of Hell!";
     Tag "Archon of Hell";
+    cameraheight 20;
   }
   States
   {
@@ -2193,42 +940,8 @@ Class ArchonOfHellItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("ArchonOfHell", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("ArchonOfHell", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }
@@ -2239,6 +952,8 @@ Class MurderBallItem : CommonItemFeatures
   Default
   {
     Inventory.PickupMessage "Got a Murder Ball!";
+    Tag "Murder Ball";
+    cameraheight 100;
   }
   States
   {
@@ -2248,42 +963,8 @@ Class MurderBallItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
-        let p = players[PlayerNumber()].mo;
-        if(p.CountInv("CompanionAmmo") >= 69){
-          Actor companion = Actor.Spawn("MurderBall", pos);
-          companion.bFriendly = true;
-          companion.bQuickToRetaliate = true;
-          companion.bSlidesOnWalls = true;
-          companion.bNoBlockMonst = true;
-          companion.bCountKill = false;
-          companion.bAlwaysFast = true;
-          companion.bMissileMore = true;
-          companion.bMissileEvenMore = true;
-          companion.bHarmFriends = false;
-          companion.bDontHarmSpecies = true;
-          companion.bIsMonster = true;
-          companion.bSolid = true;
-          companion.bCanPushWalls = true;
-          companion.bCanUseWalls = true;
-          companion.bCanPass = true;
-          companion.bShootable = true;
-          companion.health = 1;
-          companion.MaxTargetRange = 2048;
-          companion.A_SetSpecies("Companion");
-          companion.ApplyDamageFactor("Companion", 0.0);
-
-          GlobalVariables g;
-          g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-          g.companions.Push(companion);
-
-          let p = players[PlayerNumber()].mo;
-          companion.Angle = p.Angle;
-          companion.movedir = Utilities.angleToMoveDir(p.Angle);
-          companion.TryWalk();
-          p.TakeInventory("CompanionAmmo", cameraheight);
-        }else{
-          console.printf("Not enough money");
-        }
+          let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+          return g.createCompanion("MurderBall", players[PlayerNumber()].mo, players[PlayerNumber()].mo.pos, false);
       }
       Stop;
   }

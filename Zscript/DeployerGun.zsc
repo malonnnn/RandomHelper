@@ -2,8 +2,9 @@ class BioPipebombLauncher : Weapon
 {
 	Default
 	{
+		+WEAPON.NOALERT
 		Weapon.Kickback 100;
-		Weapon.AmmoUse1 1;
+		Weapon.AmmoUse1 0;
 		Weapon.AmmoGive 12;
 		Weapon.AmmoType "CompanionAmmo";
 		Weapon.UpSound "Weapons/BioReady";
@@ -24,8 +25,23 @@ class BioPipebombLauncher : Weapon
 			Loop;
 		Fire:
 			TNT1 A 0 A_GunFlash;
-			TNT1 A 0 A_StartSound("Weapons/BioFire");
-			BPBL E 7 A_FireProjectile("BioProj");
+			TNT1 A 0
+			{
+				let p = players[PlayerNumber()].mo;
+				int price = int(p.InvSel.cameraheight);
+				int balance = int(p.CountInv("CompanionAmmo"));
+				String invItem = p.InvSel.GetClassName();
+				if(balance >= price)
+				{
+					A_StartSound("Weapons/BioFire");
+					A_FireProjectile("BioProj");
+					TakeInventory(invItem, 1);
+				}else{
+					console.printf("Price:"..price.." Balance:"..balance);
+        	console.printf("Not Enough Money");
+				}
+			}
+			BPBL E 7;
 			BPBL F 8;
 			BPBL G 7;
 			BPBL H 8;
@@ -86,7 +102,11 @@ class BioProj : Actor
 			TNT1 A 0
 			{
 				A_StartSound("Weapons/BioProj");
-				Actor companion = Actor.Spawn("CompanionSpawner", pos);
+				let p = players[PlayerNumber()].mo;
+				let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+				String className = p.InvSel.GetClassName();
+				className.StripRight("Item");
+        g.createCompanion(className, p, self.pos, true);
 			}
 			TNT1 A 0 A_SpawnItemEx("BioPuff",0,0,0,0,0,0,0,128);
 			BPBP DEF 6 Bright;

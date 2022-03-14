@@ -7,6 +7,8 @@ class MyDoomGuy : DoomPlayer {
     DamageType "Companion";
     DamageFactor "Companion", 0.0;
 
-    Player.StartItem "BelphegorItem", 1;
+    Player.StartItem "CompanionZombieManItem", 10;
+    Player.StartItem "CompanionAmmo", -1;
+    
   }
 }
