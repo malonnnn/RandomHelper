@@ -35,7 +35,6 @@ class BioPipebombLauncher : Weapon
 				{
 					A_StartSound("Weapons/BioFire");
 					A_FireProjectile("BioProj");
-					TakeInventory(invItem, 1);
 				}else{
 					console.printf("Price:"..price.." Balance:"..balance);
         	console.printf("Not Enough Money");
@@ -101,12 +100,22 @@ class BioProj : Actor
 			Goto ChangeTID;
 			TNT1 A 0
 			{
-				A_StartSound("Weapons/BioProj");
+
 				let p = players[PlayerNumber()].mo;
-				let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
-				String className = p.InvSel.GetClassName();
-				className.StripRight("Item");
-        g.createCompanion(className, p, self.pos, true);
+				int price = int(p.InvSel.cameraheight);
+				int balance = int(p.CountInv("CompanionAmmo"));
+
+				if(balance >= price)
+				{
+					A_StartSound("Weapons/BioProj");
+					String className = p.InvSel.GetClassName();
+					let g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+					className.StripRight("Item");
+					g.createCompanion(className, p, self.pos, true);
+				}else{
+					console.printf("Price:"..price.." Balance:"..balance);
+        	console.printf("Not Enough Money");
+				}
 			}
 			TNT1 A 0 A_SpawnItemEx("BioPuff",0,0,0,0,0,0,0,128);
 			BPBP DEF 6 Bright;

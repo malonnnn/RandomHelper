@@ -862,7 +862,7 @@ Class AfritItem : CommonItemFeatures
   States
   {
     Spawn:
-      FRIT V -1;
+      FRIT A -1;
       Stop;
     Use:
       TNT1 A 0

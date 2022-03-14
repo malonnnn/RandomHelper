@@ -20,6 +20,7 @@ class GlobalVariables : EventHandler
     }
     
     player.TakeInventory("CompanionAmmo", item.cameraheight);
+    player.TakeInventory(companionClass.."Item", item.cameraheight);
     item.Destroy();
     companion.bFriendly = true;
     companion.bQuickToRetaliate = true;

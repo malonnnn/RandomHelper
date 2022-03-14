@@ -70,6 +70,7 @@ class MyBaseStatusBar : BaseStatusBar
 					{
 						double flashAlpha = bgalpha;
 						if (flags & DI_ARTIFLASH) flashAlpha *= itemflashFade;
+						DrawString(mMM2SmallFont, CPlayer.mo.InvSel.GetTag(), (125, 150));
 						DrawTexture(parms.selector, position + parms.selectofs + (boxsize.X * i, 0), flags | DI_ITEM_LEFT_TOP, flashAlpha);
 					}
 				}

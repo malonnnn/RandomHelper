@@ -8,7 +8,6 @@ class MyDoomGuy : DoomPlayer {
     DamageFactor "Companion", 0.0;
 
     Player.StartItem "CompanionZombieManItem", 10;
-    Player.StartItem "AfritItem", 10;
     Player.StartItem "CompanionAmmo", -1;
     
   }

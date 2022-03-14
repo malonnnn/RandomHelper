@@ -13,8 +13,8 @@ class CompanionArachnotron : Arachnotron{
       }
       Loop;
     Missile:
-      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       BSPI A 20 bright A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       BSPI G 4 bright A_CompanionBspiAttack();
       BSPI H 4 bright;
       BSPI H 1 bright A_SpidRefire;
@@ -182,8 +182,8 @@ class CompanionChaingunGuy : ChaingunGuy{
       }
       Loop;
     Missile:
-      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       CPOS E 10 A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       CPOS FE 4 BRIGHT A_CompanionCPosAttack();
       CPOS F 1 A_CPosRefire;
       Goto Missile+1;
@@ -803,8 +803,8 @@ class CompanionSpiderMastermind : SpiderMastermind{
       }
       Loop;
     Missile:
-      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       SPID A 20 BRIGHT A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       SPID G 4 BRIGHT A_CompanionSPosAttackUseAtkSound();
       SPID H 4 BRIGHT A_CompanionSposAttackUseAtkSound();
       SPID H 1 BRIGHT A_SpidRefire;
@@ -852,9 +852,9 @@ class CompanionWolfensteinSS : WolfensteinSS{
       }
       Loop;
     Missile:
-      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       SSWV E 10 A_FaceTarget;
       SSWV F 10 A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       SSWV G 4 BRIGHT A_CompanionCPosAttack();
       SSWV F 6 A_FaceTarget;
       SSWV G 4 BRIGHT A_CompanionCPosAttack();
