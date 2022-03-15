@@ -3,7 +3,15 @@ class SetCompanionProperties : EventHandler
   override void WorldThingSpawned(WorldEvent e){
     if(e.Thing && e.Thing.bIsMonster)
     {
-      // if companion
+      // all creatures get these
+      e.Thing.bIsMonster = true;
+      e.Thing.bShootable = true;
+      e.Thing.bSolid = true;
+      e.Thing.bCanPushWalls = true;
+      e.Thing.bCanUseWalls = true;
+      e.Thing.bCanPass = true;
+
+      // companions only
       if(e.Thing.bFriendly) {
         e.Thing.bQuickToRetaliate = true;
         e.Thing.bSlidesOnWalls = true;
@@ -14,12 +22,6 @@ class SetCompanionProperties : EventHandler
         e.Thing.bMissileEvenMore = true;
         e.Thing.bHarmFriends = false;
         e.Thing.bDontHarmSpecies = true;
-        e.Thing.bIsMonster = true;
-        e.Thing.bSolid = true;
-        e.Thing.bCanPushWalls = true;
-        e.Thing.bCanUseWalls = true;
-        e.Thing.bCanPass = true;
-        e.Thing.bShootable = true;
         //e.Thing.health = 1;
         e.Thing.MaxTargetRange = 2048;
         e.Thing.A_SetSpecies("Companion");
