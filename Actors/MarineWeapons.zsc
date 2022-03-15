@@ -16,7 +16,6 @@ class HeatSeekingMissile : Actor
     Projectile;
     Species "Companion";
     DamageType "Companion";
-    DamageFactor "Companion", 0.0;
     SeeSound "Ally/Seeker";
     DeathSound "Seeker/Explode";
     Decal "Scorch";
@@ -68,7 +67,6 @@ class CompanionGrenade : Actor
     Projectile;
     Species "Companion";
     DamageType "Companion";
-    DamageFactor "Companion", 0.0;
   }
   States
   {
@@ -103,7 +101,6 @@ class CompanionBFG10kShot : Actor
     Damage 320;
     Species "Companion";
     DamageType "Companion";
-    DamageFactor "Companion", 0.0;
     RenderStyle "Add";
     Alpha 0.75;
     SeeSound "marine/bfg10kx";
@@ -138,7 +135,6 @@ class CompanionFire : Actor
     DeathSound "Marine/Scorch";
     Species "Companion";
     DamageType "Companion";
-    DamageFactor "Companion", 0.0;
   }
   States
   {
@@ -176,7 +172,6 @@ class CompanionDropFire : Actor
     Alpha 0.90;
     Species "Companion";
     DamageType "Companion";
-    DamageFactor "Companion", 0.0;
   }
   States
   {

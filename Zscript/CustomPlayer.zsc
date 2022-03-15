@@ -4,7 +4,6 @@ class MyDoomGuy : DoomPlayer {
     Player.startitem "BioPipeBombLauncher";
     +THRUSPECIES
     Species "Companion";
-    DamageType "Companion";
     DamageFactor "Companion", 0.0;
 
     Player.StartItem "CompanionZombieManItem", 10;

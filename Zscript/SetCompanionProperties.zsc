@@ -25,7 +25,7 @@ class SetCompanionProperties : EventHandler
         //e.Thing.health = 1;
         e.Thing.MaxTargetRange = 2048;
         e.Thing.A_SetSpecies("Companion");
-        e.Thing.ApplyDamageFactor("Companion", 0.0);
+        e.Thing.DamageFactor = 0.0;
         //e.Thing.SetStateLabel("See");
       }
     }

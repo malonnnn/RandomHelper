@@ -4,6 +4,8 @@ class CompanionBulletPuff : BulletPuff
   {
     Species "Companion";
     DamageType "Companion";
+    +DontHarmSpecies
+    -HarmFriends
   }
 }
 
