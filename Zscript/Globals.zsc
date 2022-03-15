@@ -1,0 +1,27 @@
+class Globals : EventHandler
+{
+  Array<Actor> companions;
+
+  Actor createCompanion(String companionClass, Vector3 pos, Actor player = null, int price = 0, String tag = "", bool allowReplace = false){
+    
+    // companion flags are set in SetCompanionProperties.zsc
+    Actor companion = Actor.Spawn(companionClass, pos, allowReplace);
+
+    if(player)
+    {
+      companion.Angle = player.angle;
+      companion.movedir = Utilities.angleToMoveDir(player.angle);
+    }
+    companion.TryWalk();
+    companions.push(companion);
+    if(tag != "")
+    {
+      console.printf("Summoned "..tag);
+    }
+
+    player.TakeInventory("CompanionAmmo", price);
+    
+    return companion;
+  }
+
+}

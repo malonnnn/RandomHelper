@@ -1,6 +1,7 @@
 version "4.8.0"
 
 #include "Zscript/Utilities.zsc"
+#include "Zscript/Globals.zsc"
 
 #include "Zscript/DeployerGun.zsc"
 
