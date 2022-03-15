@@ -74,7 +74,7 @@ class MyStatusBar : MyBaseStatusBar
 			if (CPlayer.mo.InvSel.Amount > 0)
 			{
 				//DrawString(mMM2SmallFont, "$", (149, 191), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
-				DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.cameraheight), (176, 199-mIndexFont.mFont.GetHeight()-23), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
+				DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.cameraheight), (176, 199-mIndexFont.mFont.GetHeight()-23), DI_TEXT_ALIGN_RIGHT, Font.CR_DARKGREEN);
 				DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.Amount), (176, 199-mIndexFont.mFont.GetHeight()), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
 			}
 		}
