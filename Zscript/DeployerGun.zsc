@@ -106,7 +106,7 @@ class BioProj : Actor
 					A_StartSound("Weapons/BioProj");
 					let g = Globals(EventHandler.Find("Globals"));
 					String className = p.InvSel.GetClassName();
-					//className.StripRight("Item"); // its bugged, maybe fixed one day
+					// className.StripRight("Item"); // its bugged, maybe fixed one day. "ArachnophyteItem".StripRight("Item") returns "Arachnophy"
 					className = className.Left(className.Length() - 4);
 					g.createCompanion(className, pos, p, price, p.InvSel.GetTag());
 				}
