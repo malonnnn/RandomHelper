@@ -2,21 +2,10 @@ class MurderBall : Actor
 {
   Default
   {
+    MONSTER;
+    +Friendly;
     Radius 20;
     Height 20;
-    MONSTER;
-    +QUICKTORETALIATE
-    +SLIDESONWALLS
-    +JUMPDOWN
-    +PUSHABLE
-    +NOBLOCKMONST
-    -COUNTKILL
-    +AVOIDMELEE
-    +ALWAYSFAST
-    +MISSILEMORE
-    +MISSILEEVENMORE
-    -HARMFRIENDS
-    +DONTHARMSPECIES
     +FLOAT;
     +NOGRAVITY;
   }

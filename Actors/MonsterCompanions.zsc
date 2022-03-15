@@ -2,6 +2,7 @@ class CompanionArachnotron : Arachnotron{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -35,6 +36,7 @@ class CompanionArchvile : Archvile{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -89,6 +91,7 @@ class CompanionBaronOfHell : BaronOfHell{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -130,6 +133,7 @@ class CompanionCacodemon : Cacodemon{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -171,6 +175,7 @@ class CompanionChaingunGuy : ChaingunGuy{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -208,6 +213,7 @@ class CompanionCyberdemon : Cyberdemon{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -243,6 +249,7 @@ class CompanionDemon : Demon{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -275,6 +282,7 @@ class CompanionDoomImp : DoomImp{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -315,6 +323,7 @@ class CompanionFatso : Fatso{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -394,6 +403,7 @@ class CompanionHellKnight : HellKnight{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -435,6 +445,7 @@ class CompanionLostSoul : LostSoul{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -487,6 +498,7 @@ class CompanionPainElemental : PainElemental{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -553,7 +565,9 @@ class CompanionPainElemental : PainElemental{
 		Vector3 spawnpos = pos + (0,0,8);
 		Vector3 destpos = spawnpos + move;
 
-		Actor other = Spawn(spawntype, spawnpos, ALLOW_REPLACE);
+		//Actor other = Spawn(spawntype, spawnpos, ALLOW_REPLACE);
+    let g = Globals(EventHandler.Find("Globals"));
+    Actor other = g.createCompanion("CompanionLostSoul", pos, null, 0, "", true);
 
 		if (other != null)
 		{
@@ -650,6 +664,7 @@ class CompanionRevenant : Revenant{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -712,6 +727,7 @@ class CompanionShotgunGuy : ShotgunGuy{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -760,6 +776,7 @@ class CompanionSpectre : Spectre{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -792,6 +809,7 @@ class CompanionSpiderMastermind : SpiderMastermind{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -841,6 +859,7 @@ class CompanionWolfensteinSS : WolfensteinSS{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {
@@ -881,6 +900,7 @@ class CompanionZombieMan : ZombieMan{
   Default
   {
     -CountKill
+    +Friendly
   }
   States
   {

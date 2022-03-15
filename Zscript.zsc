@@ -4,7 +4,6 @@ version "4.8.0"
 
 #include "Zscript/DeployerGun.zsc"
 
-#include "Zscript/CustomEvents.zsc"
 #include "Zscript/CustomPlayer.zsc"
 
 #include "Zscript/HUD.zsc"
@@ -13,6 +12,11 @@ version "4.8.0"
 #include "Zscript/CompanionSpawner.zsc"
 
 #include "Zscript/InventoryItems.zsc"
+
+#include "Zscript/SetCompanionProperties.zsc"
+#include "Zscript/CompanionItemReplacer.zsc"
+#include "Zscript/CompanionWalkToCorpse.zsc"
+#include "Zscript/RemoveDeadFriend.zsc"
 
 #include "Zscript/GenericWeapons.zsc"
 #include "Actors/MarineWeapons.zsc"

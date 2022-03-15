@@ -2,6 +2,8 @@ Class Arachnophyte : Actor
 {
   Default
   {
+    MONSTER;
+    +Friendly;
     Health 500;
     Radius 64;
     Height 100;
@@ -14,7 +16,6 @@ Class Arachnophyte : Actor
     ATTACKSOUND "spider/attack";
     OBITUARY "%o was perforated by an Arachnophyte.";
     Decal "Bulletchip";
-    MONSTER;
     +NoGravity
     +FloatBob
     +Float

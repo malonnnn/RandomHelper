@@ -1,0 +1,31 @@
+class SetCompanionProperties : EventHandler
+{
+  override void WorldThingSpawned(WorldEvent e){
+    if(e.Thing && e.Thing.bIsMonster)
+    {
+      // if companion
+      if(e.Thing.bFriendly) {
+        e.Thing.bQuickToRetaliate = true;
+        e.Thing.bSlidesOnWalls = true;
+        e.Thing.bNoBlockMonst = true;
+        e.Thing.bCountKill = false;
+        e.Thing.bAlwaysFast = true;
+        e.Thing.bMissileMore = true;
+        e.Thing.bMissileEvenMore = true;
+        e.Thing.bHarmFriends = false;
+        e.Thing.bDontHarmSpecies = true;
+        e.Thing.bIsMonster = true;
+        e.Thing.bSolid = true;
+        e.Thing.bCanPushWalls = true;
+        e.Thing.bCanUseWalls = true;
+        e.Thing.bCanPass = true;
+        e.Thing.bShootable = true;
+        //e.Thing.health = 1;
+        e.Thing.MaxTargetRange = 2048;
+        e.Thing.A_SetSpecies("Companion");
+        e.Thing.ApplyDamageFactor("Companion", 0.0);
+        //e.Thing.SetStateLabel("See");
+      }
+    }
+  }
+}

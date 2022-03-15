@@ -1,51 +1,29 @@
-class GlobalVariables : EventHandler
+class Globals : EventHandler
 {
   Array<Actor> companions;
 
-  bool createCompanion(String companionClass, Actor player, Vector3 pos, bool fromGun){
-
-    Actor item = Actor.Spawn(companionClass.."Item", pos);
-    Actor companion = Actor.Spawn(companionClass, pos);
-    if(!fromGun)
-    {
-      int price = int(item.cameraheight);
-      int balance = int(player.CountInv("CompanionAmmo"));
-      if(balance < price){
-        console.printf("Price:"..price.." Balance:"..balance);
-        console.printf("Not Enough Money");
-        item.Destroy();
-        companion.Destroy();
-        return false;
-      }
-    }
+  Actor createCompanion(String companionClass, Vector3 pos, Actor player = null, int price = 0, String tag = "", bool allowReplace = false){
     
-    player.TakeInventory("CompanionAmmo", item.cameraheight);
-    player.TakeInventory(companionClass.."Item", item.cameraheight);
-    item.Destroy();
-    companion.bFriendly = true;
-    companion.bQuickToRetaliate = true;
-    companion.bSlidesOnWalls = true;
-    companion.bNoBlockMonst = true;
-    companion.bCountKill = false;
-    companion.bAlwaysFast = true;
-    companion.bMissileMore = true;
-    companion.bMissileEvenMore = true;
-    companion.bHarmFriends = false;
-    companion.bDontHarmSpecies = true;
-    companion.bIsMonster = true;
-    companion.bSolid = true;
-    companion.bCanPushWalls = true;
-    companion.bCanUseWalls = true;
-    companion.bCanPass = true;
-    companion.bShootable = true;
-    //companion.health = 1;
-    companion.MaxTargetRange = 2048;
-    companion.A_SetSpecies("Companion");
-    companion.ApplyDamageFactor("Companion", 0.0);
-    companions.Push(companion);
-    console.printf("Summoned "..companion.GetTag());
-    return true;
+    // companion flags are set in SetCompanionProperties.zsc
+    Actor companion = Actor.Spawn(companionClass, pos, allowReplace);
+
+    if(player)
+    {
+      companion.Angle = player.angle;
+      companion.movedir = Utilities.angleToMoveDir(player.angle);
+    }
+    companion.TryWalk();
+    companions.push(companion);
+    if(tag != "")
+    {
+      console.printf("Summoned "..tag);
+    }
+
+    player.TakeInventory("CompanionAmmo", price);
+    
+    return companion;
   }
+
 }
 
 class Utilities
@@ -56,5 +34,15 @@ class Utilities
       moveDir += 360;
     }
     return ((moveDir+22.5) / 45) % 8;
+  }
+
+  static bool canAfford(int balance, int price){
+    if (balance >= price){
+      return true;
+    }else{
+      console.printf("Price:"..price.." Balance:"..balance);
+      console.printf("Not Enough Money");
+    }
+    return false;
   }
 }

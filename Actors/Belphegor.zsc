@@ -2,6 +2,8 @@ Class Belphegor : Actor
 {
   Default
   {
+    MONSTER;
+    +Friendly;
     Health 1500;
     Speed 8;
     Radius 24;
@@ -16,7 +18,6 @@ Class Belphegor : Actor
     REACTIONTIME 8;
     Obituary "%o was incinerated by a Belphegor.";
     HitObituary "the last thing %o saw was the Belphegor's abs.";
-    MONSTER;
     +FLOORCLIP
   }
 

@@ -1,0 +1,13 @@
+class RemoveDeadFriend : EventHandler
+{
+  override void WorldThingDied(WorldEvent e){
+    if(e.Thing.bFriendly)
+    {
+      let g = Globals(EventHandler.Find("Globals"));
+      int companionNumber = g.companions.Find(e.Thing);
+      if (companionNumber != g.companions.Size()){
+        g.companions.Delete(companionNumber);
+      }
+    }
+  }
+}

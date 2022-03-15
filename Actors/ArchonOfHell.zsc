@@ -2,6 +2,8 @@ Class ArchonOfHell : BaronOfHell
 {
   Default
   {
+    MONSTER;
+    +Friendly;
     Health 2000;
     Radius 24;
     Height 64;
@@ -14,7 +16,6 @@ Class ArchonOfHell : BaronOfHell
     SeeSound "monster/ar2sit";
     PainSound "baron/pain";
     DeathSound "monster/ar2dth";
-    Monster;
     +NoTarget
     +FloorClip
     +MissileMore

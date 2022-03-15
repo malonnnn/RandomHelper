@@ -116,8 +116,8 @@ class CompanionSpawner : RandomSpawner
     companion.A_SetSpecies("Companion");
     companion.ApplyDamageFactor("Companion", 0.0);
 
-    GlobalVariables g;
-    g = GlobalVariables(EventHandler.Find("GlobalVariables"));
+    Globals g;
+    g = Globals(EventHandler.Find("Globals"));
     g.companions.Push(companion);
 
     let p = players[PlayerNumber()].mo;

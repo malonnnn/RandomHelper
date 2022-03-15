@@ -2,6 +2,8 @@ Class Afrit : ACtor
 {
   Default
   {
+    MONSTER;
+    +Friendly;
     Health 800;
     Speed 6;
     Radius 24;
@@ -14,7 +16,6 @@ Class Afrit : ACtor
     ActiveSound "Baron/Active";
     Obituary "%o was scorched by an Afrit";
     HitObituary "%o found the Afrit too hot to handle.";
-    Monster;
     +NoGravity
     +NoBlood
     +Float

@@ -1,0 +1,42 @@
+class CompanionItemReplacer : EventHandler
+{
+
+  // spawn random companion item when enemy dies
+  override void WorldThingDied(WorldEvent e){
+    if(e.Thing.bIsMonster && !e.Thing.bFriendly) {
+      Actor.Spawn("CompanionItemSpawner", e.Thing.pos);
+    }
+  }
+
+  // replace all weapon drops with companion ammo
+  override void WorldThingSpawned(WorldEvent e){
+    if(e.Thing is "Shotgun"){
+      Actor.Spawn("CompanionAmmo", e.Thing.pos);
+      e.Thing.Destroy();
+    }else if(e.Thing is "SuperShotgun"){
+      Actor.Spawn("CompanionAmmo", e.Thing.pos);
+      e.Thing.Destroy();
+    }else if(e.Thing is "RocketLauncher"){
+      Actor.Spawn("CompanionAmmo", e.Thing.pos);
+      e.Thing.Destroy();
+    }else if(e.Thing is "Chaingun"){
+      Actor.Spawn("CompanionAmmo", e.Thing.pos);
+      e.Thing.Destroy();
+    }else if(e.Thing is "Chainsaw"){
+      Actor.Spawn("CompanionAmmo", e.Thing.pos);
+      e.Thing.Destroy();
+    }else if(e.Thing is "BFG9000"){
+      Actor.Spawn("CompanionAmmo", e.Thing.pos);
+      e.Thing.Destroy();
+    }else if(e.Thing is "PlasmaRifle"){
+      Actor.Spawn("CompanionAmmo", e.Thing.pos);
+      e.Thing.Destroy();
+    }
+
+    // replace all default ammo drops with companion ammo
+    if(e.Thing is "Ammo" && !(e.Thing is "CompanionAmmo")){
+      Actor.Spawn("CompanionAmmo", e.Thing.pos);
+      e.Thing.Destroy();
+    }
+  }
+}

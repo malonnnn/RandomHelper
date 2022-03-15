@@ -1,6 +1,6 @@
 gameinfo
 {
-    addEventHandlers = "CustomEvents", "GlobalVariables"
+    addEventHandlers = "Globals", "SetCompanionProperties", "CompanionItemReplacer", "CompanionWalkToCorpse", "RemoveDeadFriend"
     PlayerClasses = "MyDoomGuy"
     StatusBarClass = "MyStatusBar"
 }
