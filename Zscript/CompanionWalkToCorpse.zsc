@@ -3,9 +3,6 @@ class CompanionWalkToCorpse : EventHandler
   override void WorldThingDied(WorldEvent e){
     if(e.Thing && e.Thing.bIsMonster && !e.Thing.bFriendly) {
 
-      // spawn random companion item
-      Actor.Spawn("CompanionItemSpawner", e.Thing.pos);
-
       // makes companions walk over to last killed enemy corpse (if theres no threats around)
       if(e.Thing.bIsMonster && !e.Thing.bFriendly && e.Thing.target && e.Thing.target.GetSpecies() == "Companion"){
         Actor pp = Actor.Spawn("PatrolPoint", e.Thing.pos);
