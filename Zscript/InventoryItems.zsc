@@ -40,7 +40,7 @@ Class MarineCompanionFistItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionFist", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionFist", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Berserk Marine");
       }
       Stop;
   }
@@ -63,7 +63,7 @@ Class MarineCompanionChainsawItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionChainsaw", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionChainsaw", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Chainsaw Marine");
       }
       Stop;
   }
@@ -86,7 +86,7 @@ Class MarineCompanionPistolItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionPistol", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionPistol", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Pistol Marine");
       }
       Stop;
   }
@@ -109,7 +109,7 @@ Class MarineCompanionSGItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionSG", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionSG", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Shotgun Marine");
       }
       Stop;
   }
@@ -132,7 +132,7 @@ Class MarineCompanionSSGItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionSSG", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionSSG", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Super Shotgun Marine");
       }
       Stop;
   }
@@ -155,7 +155,7 @@ Class MarineCompanionCGItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionCG", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionCG", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Chaingun Marine");
       }
       Stop;
   }
@@ -178,7 +178,7 @@ Class MarineCompanionRocketItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionRocket", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionRocket", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Rocket Launcher Marine");
       }
       Stop;
   }
@@ -201,7 +201,7 @@ Class MarineCompanionPlasmaItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionPlasma", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionPlasma", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Plasma Rifle Marine");
       }
       Stop;
   }
@@ -224,7 +224,7 @@ Class MarineCompanionBFG9000Item : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionBFG9000", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionBFG9000", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "BFG9000 Marine");
       }
       Stop;
   }
@@ -247,7 +247,7 @@ Class MarineCompanionBFG10KItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionBFG10K", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionBFG10K", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "BFG10K Marine");
       }
       Stop;
   }
@@ -270,7 +270,7 @@ Class MarineCompanionGLItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionGL", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionGL", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Grenade Launcher Marine");
       }
       Stop;
   }
@@ -293,7 +293,7 @@ Class MarineCompanionHSMissileItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionHSMissile", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionHSMissile", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Heat Seeking Missile Marine");
       }
       Stop;
   }
@@ -316,7 +316,7 @@ Class MarineCompanionRailgunItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionRailgun", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionRailgun", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Railgun Marine");
       }
       Stop;
   }
@@ -339,7 +339,7 @@ Class MarineCompanionSniperItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionSniper", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionSniper", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Sniper Marine");
       }
       Stop;
   }
@@ -362,7 +362,7 @@ Class MarineCompanionFlameThrowerItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionFlameThrower", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionFlameThrower", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Flame Thrower Marine");
       }
       Stop;
   }
@@ -385,7 +385,7 @@ Class MarineCompanionMGItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionMG", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionMG", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Machine Gun Marine");
       }
       Stop;
   }
@@ -408,7 +408,7 @@ Class MarineCompanionMinigunItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionMinigun", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MarineCompanionMinigun", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Minigun Marine");
       }
       Stop;
   }
@@ -431,7 +431,7 @@ class CompanionZombieManItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionZombieMan", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionZombieMan", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Zombie Man");
       }
       Stop;
   }
@@ -454,7 +454,7 @@ class CompanionShotgunGuyItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionShotgunGuy", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionShotgunGuy", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Shotgun Guy");
       }
       Stop;
   }
@@ -477,7 +477,7 @@ class CompanionChaingunGuyItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionChaingunGuy", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionChaingunGuy", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Chaingun Guy");
       }
       Stop;
   }
@@ -500,7 +500,7 @@ class CompanionDemonItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionDemon", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionDemon", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Demon");
       }
       Stop;
   }
@@ -534,7 +534,7 @@ class CompanionLostSoulItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionLostSoul", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionLostSoul", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Lost Soul");
       }
       Stop;
   }
@@ -558,7 +558,7 @@ class CompanionCacodemonItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionCacodemon", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionCacodemon", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Cacodemon");
       }
       Stop;
   }
@@ -582,7 +582,7 @@ class CompanionPainElementalItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionPainElemental", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionPainElemental", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Pain Elemental");
       }
       Stop;
   }
@@ -606,7 +606,7 @@ class CompanionBaronOfHellItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionBaronOfHell", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionBaronOfHell", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Baron of Hell");
       }
       Stop;
   }
@@ -630,7 +630,7 @@ class CompanionHellKnightItem : CompanionBaronOfHellItem
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionHellKnight", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionHellKnight", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Hell Knight");
       }
       Stop;
   }
@@ -654,7 +654,7 @@ class CompanionArachnotronItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionArachnotron", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionArachnotron", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Arachnotron");
       }
       Stop;
   }
@@ -678,7 +678,7 @@ class CompanionArchvileItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionArchvile", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionArchvile", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Archvile");
       }
       Stop;
   }
@@ -702,7 +702,7 @@ class CompanionFatsoItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionFatso", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionFatso", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Mancubus");
       }
       Stop;
   }
@@ -726,7 +726,7 @@ class CompanionCyberdemonItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionCyberdemon", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionCyberdemon", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Cyberdemon");
       }
       Stop;
   }
@@ -750,7 +750,7 @@ class CompanionSpiderMastermindItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionSpiderMastermind", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionSpiderMastermind", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Spider Mastermind");
       }
       Stop;
   }
@@ -773,7 +773,7 @@ class CompanionWolfensteinSSItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionWolfensteinSS", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionWolfensteinSS", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Wolfenstein SS");
       }
       Stop;
   }
@@ -797,7 +797,7 @@ class CompanionRevenantItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionRevenant", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionRevenant", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Revenant");
       }
       Stop;
   }
@@ -820,7 +820,7 @@ class CompanionDoomImpItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionDoomImp", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("CompanionDoomImp", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Imp");
       }
       Stop;
   }
@@ -844,7 +844,7 @@ Class BelphegorItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("Belphegor", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("Belphegor", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Belphagor");
       }
       Stop;
   }
@@ -858,6 +858,7 @@ Class AfritItem : CommonItemFeatures
     Tag "Afrit";
     cameraHeight 20;
     Scale 0.4;
+    Inventory.Icon "FRITV0";
   }
   States
   {
@@ -868,7 +869,7 @@ Class AfritItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("Afrit", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("Afrit", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Afrit");
       }
       Stop;
   }
@@ -892,7 +893,7 @@ Class MarauderItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("Marauder", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("Marauder", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Marauder");
       }
       Stop;
   }
@@ -916,7 +917,7 @@ Class ArachnophyteItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("Arachnophyte", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("Arachnophyte", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Arachnophyte");
       }
       Stop;
   }
@@ -940,7 +941,7 @@ Class ArchonOfHellItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("ArchonOfHell", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("ArchonOfHell", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Archon of Hell");
       }
       Stop;
   }
@@ -963,7 +964,7 @@ Class MurderBallItem : CommonItemFeatures
       TNT1 A 0
       {
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MurderBall", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, self.GetTag());
+          return g.createCompanion("MurderBall", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Murder Ball");
       }
       Stop;
   }
