@@ -168,9 +168,6 @@ class BioProjAlt : Actor
 				{
 					spawnedAtLeastOne = true;
 					g.companions[i].SetOrigin(pos, true);
-					console.printf("species "..g.companions[i].species);
-					console.printf("damagetype "..g.companions[i].damagetype);
-					console.printf("damagefactor "..g.companions[i].damagefactor);
 				}
 			}
 			TNT1 A 0 A_SpawnItemEx("BioPuff",0,0,0,0,0,0,0,128);
@@ -223,10 +220,7 @@ class CompanionAmmo : Ammo
   States
 	{
     Spawn:
-      BIOC A -1
-			{
-				Console.printf("comapnion ammo summoned");
-			}
+      BIOC A -1;
       Stop;
 	}
 }

@@ -627,7 +627,6 @@ class CompanionZombieManItem : CommonItemFeatures
           let g = Globals(EventHandler.Find("Globals"));
           String className = invoker.GetClassName();
           className = className.Left(className.Length() - 4);
-          console.printf("presummon "..className);
           g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
           return true;
         }

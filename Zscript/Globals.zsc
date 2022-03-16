@@ -14,10 +14,6 @@ class Globals : EventHandler
     }
     companion.TryWalk();
     companions.push(companion);
-    if(tag != "")
-    {
-      console.printf("Summoned "..tag);
-    }
     
     return companion;
   }
