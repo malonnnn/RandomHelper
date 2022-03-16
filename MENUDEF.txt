@@ -6,6 +6,7 @@ AddOptionMenu "OptionsMenu"
 OptionMenu "ZDoomWarsOptions"
 {
 Title "ZDoom Wars Options"
-Option "Wad Scaling", "zdw_wadscale", "OnOff"
+Option "MegaWad Scaling", "zdw_wadscale", "OnOff"
 StaticText "ON = tougher companions only drop as you progress levels"
+StaticText "Unlocks happen on map 2, 4, 6 and 8"
 }

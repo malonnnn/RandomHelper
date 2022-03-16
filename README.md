@@ -47,7 +47,11 @@ Add `TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);` at appropriate locations
 Be careful it doesnt interfere with Goto+&lt;number&gt;
 
 # 7.
-Add classes to `CompanionSpawner.zsc`
+Add classes to `CompanionSpawner.zsc`,<br>
+Tier1 monsters get added to every tier.
+Tier2 monsters get added to every tier except Tier1.
+Tier3 monsters get added to every tier except Tier1, Tier2.
+Tier4 monsters get added to only "All" tier.
 
 # 8.
 Add their miniature item by copy-pasting an editing an existing one

@@ -1,1 +1,1 @@
-user bool zdw_wadscale;
+server bool zdw_wadscale;

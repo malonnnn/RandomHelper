@@ -1,4 +1,85 @@
-class CompanionItemSpawner : RandomSpawner
+class CompanionItemSpawnerTier1 : RandomSpawner
+{
+  Default
+  {
+    DropItem "MarineCompanionPistolItem", 255, 90;
+    DropItem "MarineCompanionSGItem", 255, 90;
+    DropItem "MarineCompanionChainsawItem", 255, 100;
+    DropItem "CompanionDemonItem", 255, 80;
+    DropItem "CompanionDoomImpItem", 255,90;
+    DropItem "CompanionLostSoulItem", 255, 80;
+    DropItem "CompanionShotgunGuyItem", 255, 90;
+    DropItem "CompanionSpectreItem", 255, 80;
+    DropItem "CompanionWolfensteinSSItem", 255, 80;
+    DropItem "CompanionZombieManItem", 255, 100;
+  }
+}
+
+class CompanionItemSpawnerTier2 : RandomSpawner
+{
+  Default
+  {
+    DropItem "MarineCompanionPistolItem", 255, 90;
+    DropItem "MarineCompanionSGItem", 255, 90;
+    DropItem "MarineCompanionChainsawItem", 255, 100;
+    DropItem "CompanionDemonItem", 255, 80;
+    DropItem "CompanionDoomImpItem", 255,90;
+    DropItem "CompanionLostSoulItem", 255, 80;
+    DropItem "CompanionShotgunGuyItem", 255, 90;
+    DropItem "CompanionSpectreItem", 255, 80;
+    DropItem "CompanionWolfensteinSSItem", 255, 80;
+    DropItem "CompanionZombieManItem", 255, 100;
+    DropItem "MarineCompanionSSGItem", 255, 70;
+    DropItem "MarineCompanionMGItem", 255, 70;
+    DropItem "MarineCompanionCGItem", 255, 70;
+    DropItem "MarineCompanionFistItem", 255, 60;
+    DropItem "CompanionArchvileItem", 255, 60;
+    DropItem "CompanionCacodemonItem", 255, 60;
+    DropItem "CompanionChaingunGuyItem", 255, 70;
+    DropItem "MarauderItem", 255, 60;
+    DropItem "CompanionHellKnightItem", 255, 50;
+    DropItem "MarineCompanionRailgunItem", 255, 50;
+    DropItem "MarineCompanionPlasmaItem", 255, 50;
+  }
+}
+
+class CompanionItemSpawnerTier3 : RandomSpawner
+{
+  Default
+  {
+    DropItem "MarineCompanionPistolItem", 255, 90;
+    DropItem "MarineCompanionSGItem", 255, 90;
+    DropItem "MarineCompanionChainsawItem", 255, 100;
+    DropItem "CompanionDemonItem", 255, 80;
+    DropItem "CompanionDoomImpItem", 255,90;
+    DropItem "CompanionLostSoulItem", 255, 80;
+    DropItem "CompanionShotgunGuyItem", 255, 90;
+    DropItem "CompanionSpectreItem", 255, 80;
+    DropItem "CompanionWolfensteinSSItem", 255, 80;
+    DropItem "CompanionZombieManItem", 255, 100;
+    DropItem "MarineCompanionSSGItem", 255, 70;
+    DropItem "MarineCompanionMGItem", 255, 70;
+    DropItem "MarineCompanionCGItem", 255, 70;
+    DropItem "MarineCompanionFistItem", 255, 60;
+    DropItem "CompanionArchvileItem", 255, 60;
+    DropItem "CompanionCacodemonItem", 255, 60;
+    DropItem "CompanionChaingunGuyItem", 255, 70;
+    DropItem "MarauderItem", 255, 60;
+    DropItem "CompanionHellKnightItem", 255, 50;
+    DropItem "MarineCompanionRailgunItem", 255, 50;
+    DropItem "MarineCompanionPlasmaItem", 255, 50;
+    DropItem "MarineCompanionGLItem", 255, 30;
+    DropItem "CompanionBaronOfHellItem", 255, 30;
+    DropItem "CompanionRevenantItem", 255, 30;
+    DropItem "CompanionPainElementalItem", 255, 40;
+    DropItem "CompanionFatsoItem", 255, 40;
+    DropItem "CompanionArachnotronItem", 255, 40;
+    DropItem "MarineCompanionFlamethrowerItem", 255, 30;
+    DropItem "MarineCompanionMinigunItem", 255, 30;
+  }
+}
+
+class CompanionItemSpawnerAll : RandomSpawner
 {
   Default
   {
