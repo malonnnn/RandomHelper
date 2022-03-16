@@ -5,6 +5,7 @@ class Marauder : Actor // Originally made by Spectre on YouTube. Rebalanced and 
 		//$Category Monsters
 		MONSTER;
     +Friendly;
+		DamageFactor "Companion", 0;
 		Health 800;
 		Radius 20;
 		Height 56;

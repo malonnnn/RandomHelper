@@ -6,6 +6,7 @@ class CompanionBulletPuff : BulletPuff
     DamageType "Companion";
     +DontHarmSpecies
     -HarmFriends
+    -DoHarmSpecies
   }
 }
 

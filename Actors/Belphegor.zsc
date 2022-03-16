@@ -4,6 +4,7 @@ Class Belphegor : Actor
   {
     MONSTER;
     +Friendly;
+    DamageFactor "Companion", 0;
     Health 1500;
     Speed 8;
     Radius 24;

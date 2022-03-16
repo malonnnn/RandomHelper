@@ -1,5 +1,9 @@
 How to add monsters
 
 #1. Convert decorate to ZScript
-#2. Give them explicit MonsterCombo + friendly flag
-#3. Add their classes to the CompanionSpawner
+#2. All monsters get `MonsterCombo`, `friendly`, and `DamageFactor "Companion", 0`
+#4. All projectiles get `Species "Companion"` and `DamageType "Companion"`
+    and all damagetypes changed to "Companion"
+#5. Add classes to CompanionSpawner.zsc
+#6. Add their miniature item by copy-pasting an editing an existing one
+    from InventoryItems.zsc

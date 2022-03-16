@@ -10,6 +10,7 @@ Class CommonItemFeatures : CustomInventory
     Scale 0.5;
     SpriteAngle 180;
     Inventory.MaxAmount 999;
+    DamageFactor "Companion", 0.0;
   }
   States
   {
@@ -39,8 +40,19 @@ Class MarineCompanionFistItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionFist", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Berserk Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -62,8 +74,19 @@ Class MarineCompanionChainsawItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionChainsaw", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Chainsaw Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -85,8 +108,19 @@ Class MarineCompanionPistolItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionPistol", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Pistol Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -108,8 +142,19 @@ Class MarineCompanionSGItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionSG", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Shotgun Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -131,8 +176,19 @@ Class MarineCompanionSSGItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionSSG", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Super Shotgun Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -154,8 +210,19 @@ Class MarineCompanionCGItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionCG", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Chaingun Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -177,8 +244,19 @@ Class MarineCompanionRocketItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionRocket", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Rocket Launcher Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -200,8 +278,19 @@ Class MarineCompanionPlasmaItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionPlasma", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Plasma Rifle Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -223,8 +312,19 @@ Class MarineCompanionBFG9000Item : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionBFG9000", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "BFG9000 Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -246,8 +346,19 @@ Class MarineCompanionBFG10KItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionBFG10K", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "BFG10K Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -269,8 +380,19 @@ Class MarineCompanionGLItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionGL", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Grenade Launcher Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -292,8 +414,19 @@ Class MarineCompanionHSMissileItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionHSMissile", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Heat Seeking Missile Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -315,8 +448,19 @@ Class MarineCompanionRailgunItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionRailgun", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Railgun Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -338,8 +482,19 @@ Class MarineCompanionSniperItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionSniper", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Sniper Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -361,8 +516,19 @@ Class MarineCompanionFlameThrowerItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionFlameThrower", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Flame Thrower Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -384,8 +550,19 @@ Class MarineCompanionMGItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionMG", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Machine Gun Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -407,8 +584,19 @@ Class MarineCompanionMinigunItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MarineCompanionMinigun", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Minigun Marine");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -430,8 +618,20 @@ class CompanionZombieManItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionZombieMan", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Zombie Man");
+          String className = invoker.GetClassName();
+          className = className.Left(className.Length() - 4);
+          console.printf("presummon "..className);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -453,8 +653,19 @@ class CompanionShotgunGuyItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionShotgunGuy", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Shotgun Guy");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -476,8 +687,19 @@ class CompanionChaingunGuyItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionChaingunGuy", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Chaingun Guy");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -499,8 +721,19 @@ class CompanionDemonItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionDemon", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Demon");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -533,8 +766,19 @@ class CompanionLostSoulItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionLostSoul", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Lost Soul");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -557,8 +801,19 @@ class CompanionCacodemonItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionCacodemon", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Cacodemon");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -581,8 +836,19 @@ class CompanionPainElementalItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionPainElemental", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Pain Elemental");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -605,8 +871,19 @@ class CompanionBaronOfHellItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionBaronOfHell", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Baron of Hell");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -629,8 +906,19 @@ class CompanionHellKnightItem : CompanionBaronOfHellItem
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionHellKnight", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Hell Knight");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -653,8 +941,19 @@ class CompanionArachnotronItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionArachnotron", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Arachnotron");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -677,8 +976,19 @@ class CompanionArchvileItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionArchvile", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Archvile");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -701,8 +1011,19 @@ class CompanionFatsoItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionFatso", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Mancubus");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -725,8 +1046,19 @@ class CompanionCyberdemonItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionCyberdemon", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Cyberdemon");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -749,8 +1081,19 @@ class CompanionSpiderMastermindItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionSpiderMastermind", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Spider Mastermind");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -772,8 +1115,19 @@ class CompanionWolfensteinSSItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionWolfensteinSS", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Wolfenstein SS");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -796,8 +1150,19 @@ class CompanionRevenantItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionRevenant", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Revenant");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -819,8 +1184,19 @@ class CompanionDoomImpItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("CompanionDoomImp", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Imp");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -843,8 +1219,19 @@ Class BelphegorItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("Belphegor", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Belphagor");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -856,9 +1243,9 @@ Class AfritItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got an Afrit!";
     Tag "Afrit";
-    cameraHeight 20;
     Scale 0.4;
     Inventory.Icon "FRITV0";
+    cameraHeight 20;
   }
   States
   {
@@ -868,8 +1255,19 @@ Class AfritItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("Afrit", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Afrit");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -892,8 +1290,19 @@ Class MarauderItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("Marauder", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Marauder");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -916,8 +1325,19 @@ Class ArachnophyteItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("Arachnophyte", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Arachnophyte");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -940,8 +1360,19 @@ Class ArchonOfHellItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("ArchonOfHell", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Archon of Hell");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }
@@ -963,8 +1394,19 @@ Class MurderBallItem : CommonItemFeatures
     Use:
       TNT1 A 0
       {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
           let g = Globals(EventHandler.Find("Globals"));
-          return g.createCompanion("MurderBall", players[PlayerNumber()].mo.pos, players[PlayerNumber()].mo, cameraHeight, "Murder Ball");
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
       }
       Stop;
   }

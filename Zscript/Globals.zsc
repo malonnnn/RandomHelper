@@ -18,8 +18,6 @@ class Globals : EventHandler
     {
       console.printf("Summoned "..tag);
     }
-
-    player.TakeInventory("CompanionAmmo", price);
     
     return companion;
   }

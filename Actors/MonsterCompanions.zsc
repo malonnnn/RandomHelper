@@ -3,6 +3,7 @@ class CompanionArachnotron : Arachnotron{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -37,6 +38,7 @@ class CompanionArchvile : Archvile{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -92,6 +94,7 @@ class CompanionBaronOfHell : BaronOfHell{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -134,6 +137,7 @@ class CompanionCacodemon : Cacodemon{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -176,6 +180,7 @@ class CompanionChaingunGuy : ChaingunGuy{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -214,6 +219,7 @@ class CompanionCyberdemon : Cyberdemon{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -250,6 +256,7 @@ class CompanionDemon : Demon{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -283,6 +290,7 @@ class CompanionDoomImp : DoomImp{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -324,6 +332,7 @@ class CompanionFatso : Fatso{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -404,6 +413,7 @@ class CompanionHellKnight : HellKnight{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -446,6 +456,7 @@ class CompanionLostSoul : LostSoul{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -499,6 +510,7 @@ class CompanionPainElemental : PainElemental{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -665,6 +677,7 @@ class CompanionRevenant : Revenant{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -728,6 +741,7 @@ class CompanionShotgunGuy : ShotgunGuy{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -777,6 +791,7 @@ class CompanionSpectre : Spectre{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -810,6 +825,7 @@ class CompanionSpiderMastermind : SpiderMastermind{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -860,6 +876,7 @@ class CompanionWolfensteinSS : WolfensteinSS{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {
@@ -901,6 +918,7 @@ class CompanionZombieMan : ZombieMan{
   {
     -CountKill
     +Friendly
+    DamageFactor "Companion", 0;
   }
   States
   {

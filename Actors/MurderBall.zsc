@@ -4,6 +4,7 @@ class MurderBall : Actor
   {
     MONSTER;
     +Friendly;
+    DamageFactor "Companion", 0;
     Radius 20;
     Height 20;
     +FLOAT;

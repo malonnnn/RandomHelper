@@ -109,6 +109,10 @@ class BioProj : Actor
 					// className.StripRight("Item"); // its bugged, maybe fixed one day. "ArachnophyteItem".StripRight("Item") returns "Arachnophy"
 					className = className.Left(className.Length() - 4);
 					g.createCompanion(className, pos, p, price, p.InvSel.GetTag());
+
+					// remove item from inventory since shot with gun and not pressed "activate item" button
+					p.TakeInventory(p.InvSel.GetClassName(), 1);
+					p.TakeInventory("CompanionAmmo", price);
 				}
 			}
 			TNT1 A 0 A_SpawnItemEx("BioPuff",0,0,0,0,0,0,0,128);
@@ -164,6 +168,9 @@ class BioProjAlt : Actor
 				{
 					spawnedAtLeastOne = true;
 					g.companions[i].SetOrigin(pos, true);
+					console.printf("species "..g.companions[i].species);
+					console.printf("damagetype "..g.companions[i].damagetype);
+					console.printf("damagefactor "..g.companions[i].damagefactor);
 				}
 			}
 			TNT1 A 0 A_SpawnItemEx("BioPuff",0,0,0,0,0,0,0,128);

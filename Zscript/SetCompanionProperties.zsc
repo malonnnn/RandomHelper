@@ -16,17 +16,18 @@ class SetCompanionProperties : EventHandler
         e.Thing.bQuickToRetaliate = true;
         e.Thing.bSlidesOnWalls = true;
         e.Thing.bNoBlockMonst = true;
-        e.Thing.bCountKill = false;
         e.Thing.bAlwaysFast = true;
         e.Thing.bMissileMore = true;
         e.Thing.bMissileEvenMore = true;
         e.Thing.bHarmFriends = false;
         e.Thing.bDontHarmSpecies = true;
-        //e.Thing.health = 1;
+        e.Thing.bDoHarmSpecies = false;
+        e.Thing.bDontHarmClass = true;
         e.Thing.MaxTargetRange = 2048;
         e.Thing.A_SetSpecies("Companion");
-        e.Thing.DamageFactor = 0.0;
-        //e.Thing.SetStateLabel("See");
+      // only enemies
+      }else{
+        e.Thing.bActivateMCross = true;
       }
     }
   }
