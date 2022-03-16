@@ -20,6 +20,7 @@ as well as<br>
 
 # 4.
 All puffs to be replaced with `"CompanionBulletPuff"`<br>
+<br>
 _This might mean altering the function to explicity add it in!_<br>
 Example:<br><br>
 `A_Explode (5);`
@@ -48,7 +49,7 @@ Add classes to `CompanionSpawner.zsc`
 Add their miniature item by copy-pasting an editing an existing one
 from `InventoryItems.zsc`
 
-Set their scale size such that they fit in the inventory bar.
+Set the `scale` such that they fit in the inventory bar.
 
 When setting the item sprite, use the spawn sprite from the companion.
 
