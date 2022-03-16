@@ -357,6 +357,7 @@ States
     ALY7 A 0 A_StartSound("weapons/sawidle");
     Goto See;
   Melee:
+    TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
     ALY7 E 1 A_FaceTarget;
     ALY7 F 9 Fast A_M_Saw("weapons/sawfull","weapons/sawhit",3,"CompanionBulletPuff");
     ALY7 F 0 A_JumpIfCloser(72,"Melee");

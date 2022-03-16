@@ -43,9 +43,13 @@ When you first start the mod, open the console and scroll up.
 It will tell you if there's any deprecated functions found.
 
 # 6.
-Add classes to `CompanionSpawner.zsc`
+Add `TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);` at appropriate locations
+Be careful it doesnt interfere with Goto+&lt;number&gt;
 
 # 7.
+Add classes to `CompanionSpawner.zsc`
+
+# 8.
 Add their miniature item by copy-pasting an editing an existing one
 from `InventoryItems.zsc`
 
@@ -53,7 +57,7 @@ Set the `scale` such that they fit in the inventory bar.
 
 When setting the item sprite, use the spawn sprite from the companion.
 
-# 8.
+# 9.
 OPTIONAL sometimes sprites don't fit in the hotbar correctly like this<br>
 https://i.imgur.com/9FDEc2m.png<br>
 This is because of transparent pixels and you must trim them like this:<br>

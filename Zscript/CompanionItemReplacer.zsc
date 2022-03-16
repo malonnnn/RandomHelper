@@ -7,8 +7,8 @@ class CompanionItemReplacer : EventHandler
       switch(Random(1,10))
       {
         case 1:
-        Actor.Spawn("CompanionItemSpawner", e.Thing.pos);
         case 2:
+        Actor.Spawn("CompanionItemSpawner", e.Thing.pos);
         case 3:
         case 4:
         Actor.Spawn("CompanionAmmo", e.Thing.pos);
