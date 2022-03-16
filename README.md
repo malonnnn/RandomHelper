@@ -2,27 +2,33 @@ How to add monsters
 
 #1. Convert decorate to ZScript
 
-#2. All monsters get `MonsterCombo`, `friendly`, and `DamageFactor "Companion", 0`
-    as well as `DamageTypes changed to "Companion" in their Melee states`
+#2. All monsters get `MonsterCombo`, `+friendly`, and `DamageFactor "Companion", 0`
+    as well as **DamageTypes changed to `"Companion"` in their Melee states**
 
 #3. All projectiles get `Species "Companion"`, `DamageType "Companion"`
-    as well as `DamageTypes changed to "Companion" in their Death states`
+    as well as **DamageTypes changed to `"Companion"` in their Death states**
 
 #4. All puffs to be replaced with `"CompanionBulletPuff"` in any damaging function where applicable.
     
-    `This might mean alterng the function to add explicit bulletpuff.`
-      A_Explode (5);
+    **This might mean altering the function to explicity add it in.**
+
+    Example:
+
+      `A_Explode (5);`
+
     becomes
-      A_Explode (5, -1, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion")
-    Where did you get those values after 5 and before "CompanionBulletPuff"? What do they mean?
-      A_Explode (damage, distance, flags, alert, fulldamagedistance, nails, naildamage, pufftype, damagetype)
-    Where to find it
+
+      `A_Explode (5, -1, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion")`
+
+    Where did you get those values after 5 and before `"CompanionBulletPuff"` and what do they mean?
+      `A_Explode (damage, distance, flags, alert, fulldamagedistance, nails, naildamage, pufftype, damagetype)`
+
+    Where I got it
       https://zdoom.org/wiki/A_Explode
-      Use the zdoom wiki.
         Find the rest here:
         https://zdoom.org/wiki/Action_functions#Generic_monster_attacks
     
-    You will have to replace any functions found in the Generic Monster Attacks
+    You will have to replace any functions found in the `Generic Monster Attacks`
     (typically you only have to replace 2 or 3)
 
 #5. Convert all deprecated functions to modern equivilants
