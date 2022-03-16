@@ -14,7 +14,7 @@ class CompanionItemSpawner : RandomSpawner
     DropItem "MarineCompanionSniperItem", 255, 20;
     DropItem "MarineCompanionHSMissileItem", 255, 20;
     DropItem "MarineCompanionGLItem", 255, 30;
-    DropItem "MarineCompanionFlamethrowerItm", 255, 30;
+    DropItem "MarineCompanionFlamethrowerItem", 255, 30;
     DropItem "MarineCompanionRocketItem", 255, 20;
     DropItem "MarineCompanionRailgunItem", 255, 50;
     DropItem "MarineCompanionChainsawItem", 255, 100;
