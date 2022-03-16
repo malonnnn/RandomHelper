@@ -1,0 +1,11 @@
+AddOptionMenu "OptionsMenu"
+{
+    Submenu "ZDoom Wars Options", "ZDoomWarsOptions"
+}
+
+OptionMenu "ZDoomWarsOptions"
+{
+Title "ZDoom Wars Options"
+Option "Wad Scaling", "zdw_wadscale", "OnOff"
+StaticText "ON = tougher companions only drop as you progress levels"
+}
