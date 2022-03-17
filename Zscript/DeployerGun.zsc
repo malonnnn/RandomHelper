@@ -212,7 +212,7 @@ class CompanionAmmo : Ammo
     //+INVENTORY.HUBPOWER
     //+SPRITEANGLE
     //SpriteAngle 180;
-    Inventory.Amount 1;
+    Inventory.Amount 2;
     Inventory.MaxAmount 999;
     Inventory.InterHubAmount 999;
 
