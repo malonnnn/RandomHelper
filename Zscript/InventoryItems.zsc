@@ -30,7 +30,7 @@ Class MarineCompanionFistItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Berserk Marine!";
     Tag "Berserk Marine";
-    cameraHeight 5;
+    cameraHeight 10;
   }
   States
   {
@@ -64,7 +64,7 @@ Class MarineCompanionChainsawItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Chainsaw Marine!";
     Tag "Chainsaw Marine";
-    cameraHeight 5;
+    cameraHeight 10;
   }
   States
   {
@@ -132,7 +132,7 @@ Class MarineCompanionSGItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Shotgun Marine!";
     Tag "Shotgun Marine";
-    cameraHeight 10;
+    cameraHeight 30;
   }
   States
   {
@@ -166,7 +166,7 @@ Class MarineCompanionSSGItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Super Shotgun Marine!";
     Tag "Super Shotgun Marine";
-    cameraHeight 15;
+    cameraHeight 10;
   }
   States
   {
@@ -540,7 +540,7 @@ Class MarineCompanionMGItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Machine Gun Marine!";
     Tag "Machine Gun Marine";
-    cameraHeight 10;
+    cameraHeight 40;
   }
   States
   {
@@ -574,7 +574,7 @@ Class MarineCompanionMinigunItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Minigun Marine!";
     Tag "Minigun Marine";
-    cameraHeight 20;
+    cameraHeight 50;
   }
   States
   {
@@ -642,7 +642,7 @@ class CompanionShotgunGuyItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Shotgun Guy!";
     Tag "Shotgun Guy";
-    cameraHeight 15;
+    cameraHeight 5;
   }
   States
   {

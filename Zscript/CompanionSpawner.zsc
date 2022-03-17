@@ -3,7 +3,6 @@ class CompanionItemSpawnerTier1 : RandomSpawner
   Default
   {
     DropItem "MarineCompanionPistolItem", 255, 90;
-    DropItem "MarineCompanionSGItem", 255, 90;
     DropItem "MarineCompanionChainsawItem", 255, 100;
     DropItem "CompanionDemonItem", 255, 80;
     DropItem "CompanionDoomImpItem", 255,90;
@@ -12,6 +11,7 @@ class CompanionItemSpawnerTier1 : RandomSpawner
     DropItem "CompanionSpectreItem", 255, 80;
     DropItem "CompanionWolfensteinSSItem", 255, 80;
     DropItem "CompanionZombieManItem", 255, 100;
+    DropItem "MarineCompanionFistItem", 255, 75;
   }
 }
 
@@ -20,7 +20,7 @@ class CompanionItemSpawnerTier2 : RandomSpawner
   Default
   {
     DropItem "MarineCompanionPistolItem", 255, 90;
-    DropItem "MarineCompanionSGItem", 255, 90;
+    DropItem "MarineCompanionSGItem", 255, 50;
     DropItem "MarineCompanionChainsawItem", 255, 100;
     DropItem "CompanionDemonItem", 255, 80;
     DropItem "CompanionDoomImpItem", 255,90;
@@ -32,7 +32,7 @@ class CompanionItemSpawnerTier2 : RandomSpawner
     DropItem "MarineCompanionSSGItem", 255, 70;
     DropItem "MarineCompanionMGItem", 255, 70;
     DropItem "MarineCompanionCGItem", 255, 70;
-    DropItem "MarineCompanionFistItem", 255, 60;
+    DropItem "MarineCompanionFistItem", 255, 75;
     DropItem "CompanionArchvileItem", 255, 60;
     DropItem "CompanionCacodemonItem", 255, 60;
     DropItem "CompanionChaingunGuyItem", 255, 70;
@@ -48,7 +48,7 @@ class CompanionItemSpawnerTier3 : RandomSpawner
   Default
   {
     DropItem "MarineCompanionPistolItem", 255, 90;
-    DropItem "MarineCompanionSGItem", 255, 90;
+    DropItem "MarineCompanionSGItem", 255, 50;
     DropItem "MarineCompanionChainsawItem", 255, 100;
     DropItem "CompanionDemonItem", 255, 80;
     DropItem "CompanionDoomImpItem", 255,90;
@@ -60,7 +60,7 @@ class CompanionItemSpawnerTier3 : RandomSpawner
     DropItem "MarineCompanionSSGItem", 255, 70;
     DropItem "MarineCompanionMGItem", 255, 70;
     DropItem "MarineCompanionCGItem", 255, 70;
-    DropItem "MarineCompanionFistItem", 255, 60;
+    DropItem "MarineCompanionFistItem", 255, 75;
     DropItem "CompanionArchvileItem", 255, 60;
     DropItem "CompanionCacodemonItem", 255, 60;
     DropItem "CompanionChaingunGuyItem", 255, 70;
@@ -83,11 +83,11 @@ class CompanionItemSpawnerAll : RandomSpawner
 {
   Default
   {
-    DropItem "MarineCompanionFistItem", 255, 60;
+    DropItem "MarineCompanionFistItem", 255, 75;
     DropItem "MarineCompanionPistolItem", 255, 80;
     DropItem "MarineCompanionMGItem", 255, 70;
     DropItem "MarineCompanionCGItem", 255, 70;
-    DropItem "MarineCompanionSGItem", 255, 90;
+    DropItem "MarineCompanionSGItem", 255, 50;
     DropItem "MarineCompanionSSGItem", 255, 70;
     DropItem "MarineCompanionPlasmaItem", 255, 50;
     DropItem "MarineCompanionBFG10KItem", 255, 10;
