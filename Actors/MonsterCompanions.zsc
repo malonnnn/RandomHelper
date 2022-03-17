@@ -8,7 +8,7 @@ class CompanionArachnotron : Arachnotron{
   States
   {
     Spawn:
-      BSPI ABCDEF 2
+      BSPI ABCDEF 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -43,7 +43,7 @@ class CompanionArchvile : Archvile{
   States
   {
     Spawn:
-      VILE ABCDEF 2
+      VILE ABCDEF 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -99,7 +99,7 @@ class CompanionBaronOfHell : BaronOfHell{
   States
   {
     Spawn:
-      BOSS ABCD 2
+      BOSS ABCD 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -142,7 +142,7 @@ class CompanionCacodemon : Cacodemon{
   States
   {
     Spawn:
-      HEAD A 2
+      HEAD A 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -185,7 +185,7 @@ class CompanionChaingunGuy : ChaingunGuy{
   States
   {
     Spawn:
-      CPOS ABCD 2
+      CPOS ABCD 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -224,7 +224,7 @@ class CompanionCyberdemon : Cyberdemon{
   States
   {
     Spawn:
-      CYBR ABCD 2
+      CYBR ABCD 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -261,7 +261,7 @@ class CompanionDemon : Demon{
   States
   {
     Spawn:
-      SARG ABCD 2
+      SARG ABCD 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -295,7 +295,7 @@ class CompanionDoomImp : DoomImp{
   States
   {
     Spawn:
-      TROO ABCD 2
+      TROO ABCD 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -337,7 +337,7 @@ class CompanionFatso : Fatso{
   States
   {
     Spawn:
-      FATT ABCDEF 2
+      FATT ABCDEF 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -418,7 +418,7 @@ class CompanionHellKnight : HellKnight{
   States
   {
     Spawn:
-      BOS2 ABCD 2
+      BOS2 ABCD 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -461,7 +461,7 @@ class CompanionLostSoul : LostSoul{
   States
   {
     Spawn:
-      SKUL AB 2 BRIGHT
+      SKUL AB 4 BRIGHT
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -515,7 +515,7 @@ class CompanionPainElemental : PainElemental{
   States
   {
     Spawn:
-      PAIN ABC 2
+      PAIN ABC 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -682,7 +682,7 @@ class CompanionRevenant : Revenant{
   States
   {
     Spawn:
-      SKEL ABCDEF 2
+      SKEL ABCDEF 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -746,7 +746,7 @@ class CompanionShotgunGuy : ShotgunGuy{
   States
   {
     Spawn:
-      SPOS ABCD 2
+      SPOS ABCD 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -796,7 +796,7 @@ class CompanionSpectre : Spectre{
   States
   {
     Spawn:
-      SARG ABCD 2
+      SARG ABCD 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -830,7 +830,7 @@ class CompanionSpiderMastermind : SpiderMastermind{
   States
   {
     Spawn:
-      SPID ABCDEF 2
+      SPID ABCDEF 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -881,7 +881,7 @@ class CompanionWolfensteinSS : WolfensteinSS{
   States
   {
     Spawn:
-      SSWV ABCD 2
+      SSWV ABCD 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
@@ -923,7 +923,7 @@ class CompanionZombieMan : ZombieMan{
   States
   {
     Spawn:
-      POSS ABCD 2
+      POSS ABCD 4
       {
         A_Wander(CHF_NORANDOMTURN);
         A_Look();
