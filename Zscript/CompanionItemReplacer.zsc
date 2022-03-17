@@ -10,8 +10,8 @@ class CompanionItemReplacer : EventHandler
         {
           case 1:
           case 2:
-          Actor.Spawn("CompanionItemSpawnerAll", e.Thing.pos);
           case 3:
+          Actor.Spawn("CompanionItemSpawnerAll", e.Thing.pos);
           case 4:
           case 5:
           case 6:
@@ -27,8 +27,8 @@ class CompanionItemReplacer : EventHandler
           {
             case 1:
             case 2:
-            Actor.Spawn("CompanionItemSpawnerTier1", e.Thing.pos);
             case 3:
+            Actor.Spawn("CompanionItemSpawnerTier1", e.Thing.pos);
             case 4:
             case 5:
             case 6:
@@ -43,8 +43,8 @@ class CompanionItemReplacer : EventHandler
           {
             case 1:
             case 2:
-            Actor.Spawn("CompanionItemSpawnerTier2", e.Thing.pos);
             case 3:
+            Actor.Spawn("CompanionItemSpawnerTier2", e.Thing.pos);
             case 4:
             case 5:
             case 6:
@@ -59,8 +59,8 @@ class CompanionItemReplacer : EventHandler
           {
             case 1:
             case 2:
-            Actor.Spawn("CompanionItemSpawnerTier3", e.Thing.pos);
             case 3:
+            Actor.Spawn("CompanionItemSpawnerTier3", e.Thing.pos);
             case 4:
             case 5:
             case 6:
@@ -75,8 +75,8 @@ class CompanionItemReplacer : EventHandler
           {
             case 1:
             case 2:
-            Actor.Spawn("CompanionItemSpawnerAll", e.Thing.pos);
             case 3:
+            Actor.Spawn("CompanionItemSpawnerAll", e.Thing.pos);
             case 4:
             case 5:
             case 6:
