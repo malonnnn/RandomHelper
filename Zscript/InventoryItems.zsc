@@ -30,7 +30,7 @@ Class MarineCompanionFistItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Berserk Marine!";
     Tag "Berserk Marine";
-    cameraHeight 10;
+    cameraHeight 20;
   }
   States
   {
@@ -64,7 +64,7 @@ Class MarineCompanionChainsawItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Chainsaw Marine!";
     Tag "Chainsaw Marine";
-    cameraHeight 10;
+    cameraHeight 20;
   }
   States
   {
@@ -98,7 +98,7 @@ Class MarineCompanionPistolItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Pistol Marine!";
     Tag "Pistol Marine";
-    cameraHeight 10;
+    cameraHeight 20;
   }
   States
   {
@@ -166,7 +166,7 @@ Class MarineCompanionSSGItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Super Shotgun Marine!";
     Tag "Super Shotgun Marine";
-    cameraHeight 10;
+    cameraHeight 50;
   }
   States
   {
@@ -200,7 +200,7 @@ Class MarineCompanionCGItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Chaingun Marine!";
     Tag "Chaingun Marine";
-    cameraHeight 15;
+    cameraHeight 50;
   }
   States
   {
@@ -234,7 +234,7 @@ Class MarineCompanionRocketItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Rocket Launcher Marine!";
     Tag "Rocket Launcher Marine";
-    cameraHeight 15;
+    cameraHeight 100;
   }
   States
   {
@@ -268,7 +268,7 @@ Class MarineCompanionPlasmaItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Plasma Rifle Marine!";
     Tag "Plasma Rifle Marine";
-    cameraHeight 15;
+    cameraHeight 70;
   }
   States
   {
@@ -302,7 +302,7 @@ Class MarineCompanionBFG9000Item : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a BFG9000 Marine!";
     Tag "BFG9000 Marine";
-    cameraHeight 30;
+    cameraHeight 150;
   }
   States
   {
@@ -336,7 +336,7 @@ Class MarineCompanionBFG10KItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a BFG10K Marine!";
     Tag "BFG10K Marine";
-    cameraHeight 30;
+    cameraHeight 150;
   }
   States
   {
@@ -370,7 +370,7 @@ Class MarineCompanionGLItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Grenade Launcher Marine!";
     Tag "Grenade Launcher Marine";
-    cameraHeight 15;
+    cameraHeight 70;
   }
   States
   {
@@ -404,7 +404,7 @@ Class MarineCompanionHSMissileItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Heat Seeking Missile Marine!";
     Tag "Heat Seeking Missile Marine";
-    cameraHeight 20;
+    cameraHeight 125;
   }
   States
   {
@@ -438,7 +438,7 @@ Class MarineCompanionRailgunItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Railgun Marine!";
     Tag "Railgun Marine";
-    cameraHeight 10;
+    cameraHeight 60;
   }
   States
   {
@@ -472,7 +472,7 @@ Class MarineCompanionSniperItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Sniper Marine!";
     Tag "Sniper Marine";
-    cameraHeight 15;
+    cameraHeight 80;
   }
   States
   {
@@ -506,7 +506,7 @@ Class MarineCompanionFlameThrowerItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Flame Thrower Marine!";
     Tag "Flame Thrower Marine";
-    cameraHeight 10;
+    cameraHeight 60;
   }
   States
   {
@@ -574,7 +574,7 @@ Class MarineCompanionMinigunItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Minigun Marine!";
     Tag "Minigun Marine";
-    cameraHeight 50;
+    cameraHeight 70;
   }
   States
   {
@@ -756,7 +756,7 @@ class CompanionLostSoulItem : CommonItemFeatures
     Scale 0.6;
     Inventory.PickupMessage "Got a Lost Soul!";
     Tag "Lost Soul";
-    cameraHeight 2;
+    cameraHeight 3;
   }
   States
   {
@@ -791,7 +791,7 @@ class CompanionCacodemonItem : CommonItemFeatures
     Scale 0.4;
     Inventory.PickupMessage "Got a Cacodemon!";
     Tag "Cacodemon";
-    cameraHeight 15;
+    cameraHeight 50;
   }
   States
   {
@@ -826,7 +826,7 @@ class CompanionPainElementalItem : CommonItemFeatures
     Scale 0.38;
     Inventory.PickupMessage "Got a Pain Elemental!";
     Tag "Pain Elemental";
-    cameraHeight 15;
+    cameraHeight 150;
   }
   States
   {
@@ -861,7 +861,7 @@ class CompanionBaronOfHellItem : CommonItemFeatures
     Scale 0.4;
     Inventory.PickupMessage "Got a Baron of Hell!";
     Tag "Baron of Hell";
-    cameraHeight 15;
+    cameraHeight 150;
   }
   States
   {
@@ -896,7 +896,7 @@ class CompanionHellKnightItem : CompanionBaronOfHellItem
     Scale 0.4;
     Inventory.PickupMessage "Got a Hell Knight!";
     Tag "Hell Knight";
-    cameraHeight 7;
+    cameraHeight 75;
   }
   States
   {
@@ -931,7 +931,7 @@ class CompanionArachnotronItem : CommonItemFeatures
     Scale 0.3;
     Inventory.PickupMessage "Got an Arachnotron!";
     Tag "Arachnotron";
-    cameraHeight 15;
+    cameraHeight 60;
   }
   States
   {
@@ -966,7 +966,7 @@ class CompanionArchvileItem : CommonItemFeatures
     Scale 0.35;
     Inventory.PickupMessage "Got an Archvile!";
     Tag "Archvile";
-    cameraHeight 10;
+    cameraHeight 30;
   }
   States
   {
@@ -1001,7 +1001,7 @@ class CompanionFatsoItem : CommonItemFeatures
     Scale 0.4;
     Inventory.PickupMessage "Got a Mancubus!";
     Tag "Mancubus";
-    cameraHeight 15;
+    cameraHeight 40;
   }
   States
   {
@@ -1036,7 +1036,7 @@ class CompanionCyberdemonItem : CommonItemFeatures
     Scale 0.28;
     Inventory.PickupMessage "Got a Cyberdemon!";
     Tag "Cyberdemon";
-    cameraHeight 25;
+    cameraHeight 250;
   }
   States
   {
@@ -1071,7 +1071,7 @@ class CompanionSpiderMastermindItem : CommonItemFeatures
     Scale 0.15;
     Inventory.PickupMessage "Got a Spider Mastermind!";
     Tag "Spider Mastermind";
-    cameraHeight 25;
+    cameraHeight 200;
   }
   States
   {
@@ -1105,7 +1105,7 @@ class CompanionWolfensteinSSItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Wolfenstein SS!";
     Tag "Wolfenstein SS";
-    cameraHeight 4;
+    cameraHeight 10;
   }
   States
   {
@@ -1140,7 +1140,7 @@ class CompanionRevenantItem : CommonItemFeatures
     Scale 0.35;
     Inventory.PickupMessage "Got a Revenant!";
     Tag "Revenant";
-    cameraHeight 10;
+    cameraHeight 60;
   }
   States
   {
@@ -1174,7 +1174,7 @@ class CompanionDoomImpItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got an Imp!";
     Tag "Imp";
-    cameraHeight 3;
+    cameraHeight 10;
   }
   States
   {
@@ -1209,7 +1209,7 @@ Class BelphegorItem : CommonItemFeatures
     Scale 0.4;
     Inventory.PickupMessage "Got a Belphegor!";
     Tag "Belphagor";
-    cameraHeight 20;
+    cameraHeight 100;
   }
   States
   {
@@ -1245,7 +1245,7 @@ Class AfritItem : CommonItemFeatures
     Tag "Afrit";
     Scale 0.4;
     Inventory.Icon "FRITV0";
-    cameraHeight 20;
+    cameraHeight 100;
   }
   States
   {
@@ -1280,7 +1280,7 @@ Class MarauderItem : CommonItemFeatures
     Scale 0.48;
     Inventory.PickupMessage "Got a Marauder!";
     Tag "Marauder";
-    cameraHeight 20;
+    cameraHeight 60;
   }
   States
   {
@@ -1315,7 +1315,7 @@ Class ArachnophyteItem : CommonItemFeatures
     Scale 0.2;
     Inventory.PickupMessage "Got an Arachnophyte!";
     Tag "Arachnophyte";
-    cameraHeight 20;
+    cameraHeight 200;
   }
   States
   {
@@ -1350,7 +1350,7 @@ Class ArchonOfHellItem : CommonItemFeatures
     Scale 0.4;
     Inventory.PickupMessage "Got an Archon of Hell!";
     Tag "Archon of Hell";
-    cameraHeight 20;
+    cameraHeight 100;
   }
   States
   {
@@ -1384,7 +1384,7 @@ Class MurderBallItem : CommonItemFeatures
   {
     Inventory.PickupMessage "Got a Murder Ball!";
     Tag "Murder Ball";
-    cameraHeight 100;
+    cameraHeight 999;
   }
   States
   {
