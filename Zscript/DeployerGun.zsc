@@ -28,12 +28,14 @@ class BioPipebombLauncher : Weapon
 			TNT1 A 0
 			{
 				let p = players[PlayerNumber()].mo;
-				int price = int(p.InvSel.cameraheight);
-				int balance = int(p.CountInv("CompanionAmmo"));
-				if(Utilities.canAfford(balance, price))
-				{
-					A_StartSound("Weapons/BioFire");
-					A_FireProjectile("BioProj");
+				if(p.InvSel){
+					int price = int(p.InvSel.cameraheight);
+					int balance = int(p.CountInv("CompanionAmmo"));
+					if(Utilities.canAfford(balance, price))
+					{
+						A_StartSound("Weapons/BioFire");
+						A_FireProjectile("BioProj");
+					}
 				}
 			}
 			BPBL E 7;

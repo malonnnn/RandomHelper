@@ -745,6 +745,7 @@ class CompanionSpectreItem : CompanionDemonItem
     RenderStyle "OptFuzzy";
     Inventory.PickupMessage "Got a Spectre!";
     Tag "Spectre";
+    Inventory.Icon "SARGZ0";
   }
 }
 
