@@ -59,8 +59,6 @@ from `InventoryItems.zsc`
 
 Set the `scale` such that they fit in the inventory bar.
 
-When setting the item sprite, use the spawn sprite from the companion.
-
 # 9.
 OPTIONAL sometimes sprites don't fit in the hotbar correctly like this<br>
 https://i.imgur.com/9FDEc2m.png<br>
@@ -69,3 +67,5 @@ https://i.imgur.com/XVKktdn.png<br>
 Then use the actor property `Inventory.Icon` to set it.<br>
 See the companion item AfritItem as an example from `InventoryItems.zsc`
 
+You will also need to edit the image in SLADE and set its OFFSET to (usually) MONSTER.<br>
+Photoshop sets png offsets to 0,0 - so you will always need to finish it in SLADE.
