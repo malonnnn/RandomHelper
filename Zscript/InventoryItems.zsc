@@ -28,8 +28,8 @@ Class MarineCompanionFistItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Berserk Marine!";
     Tag "Berserk Marine";
+    Inventory.PickupMessage "Got a Berserk Marine!";
     cameraHeight 20;
   }
   States
@@ -62,8 +62,8 @@ Class MarineCompanionChainsawItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Chainsaw Marine!";
     Tag "Chainsaw Marine";
+    Inventory.PickupMessage "Got a Chainsaw Marine!";
     cameraHeight 20;
   }
   States
@@ -96,8 +96,8 @@ Class MarineCompanionPistolItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Pistol Marine!";
     Tag "Pistol Marine";
+    Inventory.PickupMessage "Got a Pistol Marine!";
     cameraHeight 20;
   }
   States
@@ -130,8 +130,8 @@ Class MarineCompanionSGItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Shotgun Marine!";
     Tag "Shotgun Marine";
+    Inventory.PickupMessage "Got a Shotgun Marine!";
     cameraHeight 30;
   }
   States
@@ -164,8 +164,8 @@ Class MarineCompanionSSGItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Super Shotgun Marine!";
     Tag "Super Shotgun Marine";
+    Inventory.PickupMessage "Got a Super Shotgun Marine!";
     cameraHeight 50;
   }
   States
@@ -198,8 +198,8 @@ Class MarineCompanionCGItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Chaingun Marine!";
     Tag "Chaingun Marine";
+    Inventory.PickupMessage "Got a Chaingun Marine!";
     cameraHeight 50;
   }
   States
@@ -232,8 +232,8 @@ Class MarineCompanionRocketItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Rocket Launcher Marine!";
     Tag "Rocket Launcher Marine";
+    Inventory.PickupMessage "Got a Rocket Launcher Marine!";
     cameraHeight 100;
   }
   States
@@ -266,8 +266,8 @@ Class MarineCompanionPlasmaItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Plasma Rifle Marine!";
     Tag "Plasma Rifle Marine";
+    Inventory.PickupMessage "Got a Plasma Rifle Marine!";
     cameraHeight 70;
   }
   States
@@ -300,8 +300,8 @@ Class MarineCompanionBFG9000Item : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a BFG9000 Marine!";
     Tag "BFG9000 Marine";
+    Inventory.PickupMessage "Got a BFG9000 Marine!";
     cameraHeight 150;
   }
   States
@@ -334,8 +334,8 @@ Class MarineCompanionBFG10KItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a BFG10K Marine!";
     Tag "BFG10K Marine";
+    Inventory.PickupMessage "Got a BFG10K Marine!";
     cameraHeight 150;
   }
   States
@@ -368,8 +368,8 @@ Class MarineCompanionGLItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Grenade Launcher Marine!";
     Tag "Grenade Launcher Marine";
+    Inventory.PickupMessage "Got a Grenade Launcher Marine!";
     cameraHeight 70;
   }
   States
@@ -402,8 +402,8 @@ Class MarineCompanionHSMissileItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Heat Seeking Missile Marine!";
     Tag "Heat Seeking Missile Marine";
+    Inventory.PickupMessage "Got a Heat Seeking Missile Marine!";
     cameraHeight 125;
   }
   States
@@ -436,8 +436,8 @@ Class MarineCompanionRailgunItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Railgun Marine!";
     Tag "Railgun Marine";
+    Inventory.PickupMessage "Got a Railgun Marine!";
     cameraHeight 60;
   }
   States
@@ -470,8 +470,8 @@ Class MarineCompanionSniperItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Sniper Marine!";
     Tag "Sniper Marine";
+    Inventory.PickupMessage "Got a Sniper Marine!";
     cameraHeight 80;
   }
   States
@@ -504,8 +504,8 @@ Class MarineCompanionFlameThrowerItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Flame Thrower Marine!";
     Tag "Flame Thrower Marine";
+    Inventory.PickupMessage "Got a Flame Thrower Marine!";
     cameraHeight 60;
   }
   States
@@ -538,8 +538,8 @@ Class MarineCompanionMGItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Machine Gun Marine!";
     Tag "Machine Gun Marine";
+    Inventory.PickupMessage "Got a Machine Gun Marine!";
     cameraHeight 40;
   }
   States
@@ -572,8 +572,8 @@ Class MarineCompanionMinigunItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Minigun Marine!";
     Tag "Minigun Marine";
+    Inventory.PickupMessage "Got a Minigun Marine!";
     cameraHeight 70;
   }
   States
@@ -606,8 +606,8 @@ class CompanionZombieManItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Zombie Man!";
     Tag "Zombie Man";
+    Inventory.PickupMessage "Got a Zombie Man!";
     cameraHeight 1;
   }
   States
@@ -640,8 +640,8 @@ class CompanionShotgunGuyItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Shotgun Guy!";
     Tag "Shotgun Guy";
+    Inventory.PickupMessage "Got a Shotgun Guy!";
     cameraHeight 5;
   }
   States
@@ -674,8 +674,8 @@ class CompanionChaingunGuyItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Chaingun Guy!";
     Tag "Chaingun Guy";
+    Inventory.PickupMessage "Got a Chaingun Guy!";
     cameraHeight 15;
   }
   States
@@ -708,8 +708,8 @@ class CompanionDemonItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Demon!";
     Tag "Demon";
+    Inventory.PickupMessage "Got a Demon!";
     cameraHeight 3;
   }
   States
@@ -742,9 +742,9 @@ class CompanionSpectreItem : CompanionDemonItem
 {
   Default
   {
-    RenderStyle "OptFuzzy";
-    Inventory.PickupMessage "Got a Spectre!";
     Tag "Spectre";
+    Inventory.PickupMessage "Got a Spectre!";
+    RenderStyle "OptFuzzy";
     Inventory.Icon "SARGZ0";
   }
 }
@@ -753,10 +753,10 @@ class CompanionLostSoulItem : CommonItemFeatures
 {
   Default
   {
-    Scale 0.6;
-    Inventory.PickupMessage "Got a Lost Soul!";
     Tag "Lost Soul";
+    Inventory.PickupMessage "Got a Lost Soul!";
     cameraHeight 3;
+    Scale 0.6;
   }
   States
   {
@@ -788,10 +788,10 @@ class CompanionCacodemonItem : CommonItemFeatures
 {
   Default
   {
-    Scale 0.4;
-    Inventory.PickupMessage "Got a Cacodemon!";
     Tag "Cacodemon";
+    Inventory.PickupMessage "Got a Cacodemon!";
     cameraHeight 50;
+    Scale 0.4;
   }
   States
   {
@@ -823,10 +823,10 @@ class CompanionPainElementalItem : CommonItemFeatures
 {
   Default
   {
-    Scale 0.38;
-    Inventory.PickupMessage "Got a Pain Elemental!";
     Tag "Pain Elemental";
+    Inventory.PickupMessage "Got a Pain Elemental!";
     cameraHeight 150;
+    Scale 0.38;
   }
   States
   {
@@ -858,10 +858,10 @@ class CompanionBaronOfHellItem : CommonItemFeatures
 {
   Default
   {
-    Scale 0.4;
-    Inventory.PickupMessage "Got a Baron of Hell!";
     Tag "Baron of Hell";
+    Inventory.PickupMessage "Got a Baron of Hell!";
     cameraHeight 150;
+    Scale 0.4;
   }
   States
   {
@@ -893,10 +893,10 @@ class CompanionHellKnightItem : CompanionBaronOfHellItem
 {
   Default
   {
-    Scale 0.4;
-    Inventory.PickupMessage "Got a Hell Knight!";
     Tag "Hell Knight";
+    Inventory.PickupMessage "Got a Hell Knight!";
     cameraHeight 75;
+    Scale 0.4;
   }
   States
   {
@@ -928,10 +928,10 @@ class CompanionArachnotronItem : CommonItemFeatures
 {
   Default
   {
-    Scale 0.3;
-    Inventory.PickupMessage "Got an Arachnotron!";
     Tag "Arachnotron";
+    Inventory.PickupMessage "Got an Arachnotron!";
     cameraHeight 60;
+    Scale 0.3;
   }
   States
   {
@@ -963,10 +963,10 @@ class CompanionArchvileItem : CommonItemFeatures
 {
   Default
   {
-    Scale 0.35;
-    Inventory.PickupMessage "Got an Archvile!";
     Tag "Archvile";
+    Inventory.PickupMessage "Got an Archvile!";
     cameraHeight 30;
+    Scale 0.35;
   }
   States
   {
@@ -998,10 +998,10 @@ class CompanionFatsoItem : CommonItemFeatures
 {
   Default
   {
-    Scale 0.4;
-    Inventory.PickupMessage "Got a Mancubus!";
     Tag "Mancubus";
+    Inventory.PickupMessage "Got a Mancubus!";
     cameraHeight 40;
+    Scale 0.4;
   }
   States
   {
@@ -1033,10 +1033,10 @@ class CompanionCyberdemonItem : CommonItemFeatures
 {
   Default
   {
-    Scale 0.28;
-    Inventory.PickupMessage "Got a Cyberdemon!";
     Tag "Cyberdemon";
+    Inventory.PickupMessage "Got a Cyberdemon!";
     cameraHeight 250;
+    Scale 0.28;
   }
   States
   {
@@ -1068,10 +1068,10 @@ class CompanionSpiderMastermindItem : CommonItemFeatures
 {
   Default
   {
-    Scale 0.15;
-    Inventory.PickupMessage "Got a Spider Mastermind!";
     Tag "Spider Mastermind";
+    Inventory.PickupMessage "Got a Spider Mastermind!";
     cameraHeight 200;
+    Scale 0.15;
   }
   States
   {
@@ -1103,8 +1103,8 @@ class CompanionWolfensteinSSItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Wolfenstein SS!";
     Tag "Wolfenstein SS";
+    Inventory.PickupMessage "Got a Wolfenstein SS!";
     cameraHeight 10;
   }
   States
@@ -1137,10 +1137,10 @@ class CompanionRevenantItem : CommonItemFeatures
 {
   Default
   {
-    Scale 0.35;
-    Inventory.PickupMessage "Got a Revenant!";
     Tag "Revenant";
+    Inventory.PickupMessage "Got a Revenant!";
     cameraHeight 60;
+    Scale 0.35;
   }
   States
   {
@@ -1172,8 +1172,8 @@ class CompanionDoomImpItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got an Imp!";
     Tag "Imp";
+    Inventory.PickupMessage "Got an Imp!";
     cameraHeight 10;
   }
   States
@@ -1206,10 +1206,10 @@ Class BelphegorItem : CommonItemFeatures
 {
   Default
   {
-    Scale 0.4;
-    Inventory.PickupMessage "Got a Belphegor!";
     Tag "Belphagor";
+    Inventory.PickupMessage "Got a Belphegor!";
     cameraHeight 100;
+    Scale 0.4;
   }
   States
   {
@@ -1241,11 +1241,11 @@ Class AfritItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got an Afrit!";
     Tag "Afrit";
-    Scale 0.4;
-    Inventory.Icon "FRITV0";
+    Inventory.PickupMessage "Got an Afrit!";
     cameraHeight 100;
+    Inventory.Icon "FRITV0";
+    Scale 0.4;
   }
   States
   {
@@ -1277,10 +1277,10 @@ Class MarauderItem : CommonItemFeatures
 {
   Default
   {
-    Scale 0.48;
-    Inventory.PickupMessage "Got a Marauder!";
     Tag "Marauder";
+    Inventory.PickupMessage "Got a Marauder!";
     cameraHeight 60;
+    Scale 0.48;
   }
   States
   {
@@ -1312,10 +1312,10 @@ Class ArachnophyteItem : CommonItemFeatures
 {
   Default
   {
-    Scale 0.2;
-    Inventory.PickupMessage "Got an Arachnophyte!";
     Tag "Arachnophyte";
+    Inventory.PickupMessage "Got an Arachnophyte!";
     cameraHeight 200;
+    Scale 0.2;
   }
   States
   {
@@ -1347,10 +1347,10 @@ Class ArchonOfHellItem : CommonItemFeatures
 {
   Default
   {
-    Scale 0.4;
-    Inventory.PickupMessage "Got an Archon of Hell!";
     Tag "Archon of Hell";
+    Inventory.PickupMessage "Got an Archon of Hell!";
     cameraHeight 100;
+    Scale 0.4;
   }
   States
   {
@@ -1382,14 +1382,49 @@ Class MurderBallItem : CommonItemFeatures
 {
   Default
   {
-    Inventory.PickupMessage "Got a Murder Ball!";
     Tag "Murder Ball";
+    Inventory.PickupMessage "Got a Murder Ball!";
     cameraHeight 999;
   }
   States
   {
     Spawn:
       BERS A -1;
+      Stop;
+    Use:
+      TNT1 A 0
+      {
+        let p = players[PlayerNumber()].mo;
+        invoker.price = invoker.cameraheight;
+        int balance = p.CountInv("CompanionAmmo");
+        if(Utilities.canAfford(balance, invoker.price))
+        {
+          p.TakeInventory("CompanionAmmo", invoker.price);
+          let g = Globals(EventHandler.Find("Globals"));
+          String className = invoker.GetClassName();
+          className.Left(className.Length() - 4);
+          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
+          return true;
+        }
+        return false;
+      }
+      Stop;
+  }
+}
+
+class ArachnobaronItem : CommonItemFeatures
+{
+  Default
+  {
+    Tag "Arachnobaron";
+    Inventory.PickupMessage "Got an Arachnobaron!";
+    cameraHeight 100;
+    Scale 0.3;
+  }
+  States
+  {
+    Spawn:
+      ARBR A -1;
       Stop;
     Use:
       TNT1 A 0

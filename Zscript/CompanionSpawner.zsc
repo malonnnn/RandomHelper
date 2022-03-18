@@ -76,6 +76,7 @@ class CompanionItemSpawnerTier3 : RandomSpawner
     DropItem "CompanionArachnotronItem", 255, 40;
     DropItem "MarineCompanionFlamethrowerItem", 255, 30;
     DropItem "MarineCompanionMinigunItem", 255, 30;
+    DropItem "ArachnobaronItem", 255, 30;
   }
 }
 
@@ -124,5 +125,6 @@ class CompanionItemSpawnerAll : RandomSpawner
     DropItem "ArchonOfHellItem", 255, 20;
     DropItem "ArachnophyteItem", 255, 20;
     DropItem "BelphegorItem", 255, 20;
+    DropItem "ArachnobaronItem", 255, 30;
   }
 }
