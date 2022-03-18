@@ -8,6 +8,7 @@ class MyDoomGuy : DoomPlayer {
     DamageFactor "Companion", 0.0;
 
     Player.WeaponSlot 1, "MyFist";
+    Player.WeaponSlot 2, "BioPipeBombLauncher";
 
     Player.StartItem "CompanionZombieManItem", 10;
     Player.StartItem "CompanionAmmo", -1;
