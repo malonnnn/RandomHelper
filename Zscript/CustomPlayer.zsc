@@ -2,9 +2,12 @@ class MyDoomGuy : DoomPlayer {
   Default
   {
     Player.startitem "BioPipeBombLauncher";
+    Player.startitem "MyFist";
     +THRUSPECIES
     Species "Companion";
     DamageFactor "Companion", 0.0;
+
+    Player.WeaponSlot 1, "MyFist";
 
     Player.StartItem "CompanionZombieManItem", 10;
     Player.StartItem "CompanionAmmo", -1;

@@ -6,6 +6,7 @@ version "4.8.0"
 #include "Zscript/DeployerGun.zsc"
 
 #include "Zscript/CustomPlayer.zsc"
+#include "Zscript/MyFist.zsc"
 
 #include "Zscript/HUD.zsc"
 #include "Zscript/InventoryBar.zsc"
