@@ -5,7 +5,9 @@ class CompanionItemReplacer : EventHandler
   override void WorldThingDied(WorldEvent e){
     if(e.Thing.bIsMonster && !e.Thing.bFriendly) {
       
-      if(!cvar.GetCVAR("zdw_wadscale")){
+      cVar scaleWithLevels = cVar.GetCVar('zdw_wadscale');
+      bool shouldScale = scaleWithLevels.GetBool();
+      if(!shouldScale){
         switch(Random(1,10))
         {
           case 1:

@@ -3,15 +3,3 @@ OptionValue "WadScaling"
     0, "Off"
     1, "On"
 }
-
-OptionMenu "CoolHUDOptions"
-{
-    Title "My Cool HUD Options"
-    Option "HUD color", "chud_hudcolor", "CHUD_HUDColors"
-}
-
-AddOptionMenu "HUDOptions"
-{
-    StaticText ""
-    Submenu "My Cool HUD Options", "CoolHUDOptions"
-}
