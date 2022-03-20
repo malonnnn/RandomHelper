@@ -1,4 +1,8 @@
-//baby caco
+// Beheaded Kamikaze
+kamikazi/scream		DSKAMAAH
+kamikazi/idle		DSKAMIDL
+
+// Baby Caco
 BabyCaco/Sight CACOBSIT
 BabyCaco/Pain CACOBPAI
 BabyCaco/Death CACOBDTH

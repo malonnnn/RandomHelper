@@ -4,18 +4,18 @@ How to add monsters
 Convert decorate to ZScript
 
 # 2.
-All monsters get<br>
-`Monster` combo<br>
-`+FRIENDLY` flag<br>
-`Species "Companion"` property<br>
-`DamageFactor "Companion", 0` property<br>
+All monsters get in their default area<br>
+`Monster;`<br>
+`+FRIENDLY`<br>
+`Species "Companion";`<br>
+`DamageFactor "Companion", 0;`<br>
 as well as<br>
 `DamageTypes` changed to `"Companion"` in their Melee + Missile states
 
 # 3.
 All projectiles get<br>
-`Species "Companion"`<br>
-`DamageType "Companion"`<br>
+`Species "Companion";`<br>
+`DamageType "Companion";`<br>
 as well as<br>
 `DamageTypes` damange functions changed to `"Companion"` in their Death states
 

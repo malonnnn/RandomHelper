@@ -709,3 +709,19 @@ class BabyCacoAmmo : CommonAmmoFeatures
       Stop;
   }
 }
+
+class BeheadedKamikazeAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Tag "Beheaded Kamikaze";
+    Inventory.PickupMessage "Got a Beheaded Kamikaze!";
+    CommonAmmoFeatures.price 2;
+  }
+  States
+  {
+    Spawn:
+      BKAM A -1;
+      Stop;
+  }
+}

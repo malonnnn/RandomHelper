@@ -782,3 +782,21 @@ class BabyCacoGun : BaseDeployer
       Stop;
   }
 }
+
+class BeheadedKamikazeGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Beheaded Kamikaze";
+    Weapon.AmmoType2 "BeheadedKamikazeAmmo";
+    Inventory.PickupMessage "Got a Beheaded Kamikaze!";
+    cameraHeight 2;
+    Weapon.SlotNumber 1;
+  }
+  States
+  {
+    Spawn:
+      BKAM A -1;
+      Stop;
+  }
+}
