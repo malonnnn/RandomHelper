@@ -725,3 +725,19 @@ class BeheadedKamikazeAmmo : CommonAmmoFeatures
       Stop;
   }
 }
+
+class AbaddonAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Tag "Abaddon";
+    Inventory.PickupMessage "Got an Abaddon!";
+    CommonAmmoFeatures.price 100;
+  }
+  States
+  {
+    Spawn:
+      HED3 A -1;
+      Stop;
+  }
+}

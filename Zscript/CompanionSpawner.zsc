@@ -135,5 +135,6 @@ class CompanionItemSpawnerAll : RandomSpawner
     DropItem "ArachnobaronGun", 255, 30;
     DropItem "BabyCacoGun", 255, 75;
     DropItem "BeheadedKamikazeGun", 255, 90;
+    DropItem "AbaddonGun", 255, 20;
   }
 }

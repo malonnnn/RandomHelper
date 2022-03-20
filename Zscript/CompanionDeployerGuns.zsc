@@ -800,3 +800,21 @@ class BeheadedKamikazeGun : BaseDeployer
       Stop;
   }
 }
+
+class AbaddonGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Abaddon";
+    Weapon.AmmoType2 "AbaddonAmmo";
+    Inventory.PickupMessage "Got an Abaddon!";
+    cameraHeight 100;
+    Weapon.SlotNumber 4;
+  }
+  States
+  {
+    Spawn:
+      HED3 A -1;
+      Stop;
+  }
+}
