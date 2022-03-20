@@ -3,8 +3,8 @@ class Arachnobaron : Actor
 {
   Default
   {
-    MONSTER
-    +Friendly;
+    MONSTER;
+    +Friendly
     DamageFactor "Companion", 0;
     +FLOORCLIP
     +BOSS
