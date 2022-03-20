@@ -10,6 +10,6 @@ class MyDoomGuy : DoomPlayer {
     Player.StartItem "CompanionZombieManAmmo", 10;
     Player.StartItem "CompanionZombieManGun";
     
-    Player.WeaponSlot 2, "CompanionZombieManGun";
+    Player.WeaponSlot 1, "CompanionZombieManGun";
   }
 }

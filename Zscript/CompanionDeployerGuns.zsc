@@ -6,6 +6,7 @@ Class MarineCompanionFistGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionFistAmmo";
     Inventory.PickupMessage "Got a Berserk Marine Gun!";
     cameraHeight 20;
+    Weapon.SlotNumber 1;
   }
   States
   {
@@ -23,6 +24,7 @@ Class MarineCompanionChainsawGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionChainsawAmmo";
     Inventory.PickupMessage "Got a Chainsaw Marine Gun!";
     cameraHeight 20;
+    Weapon.SlotNumber 1;
   }
   States
   {
@@ -40,6 +42,7 @@ Class MarineCompanionPistolGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionPistolAmmo";
     Inventory.PickupMessage "Got a Pistol Marine Gun!";
     cameraHeight 20;
+    Weapon.SlotNumber 1;
   }
   States
   {
@@ -57,6 +60,7 @@ Class MarineCompanionSGGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionSGAmmo";
     Inventory.PickupMessage "Got a Shotgun Marine Gun!";
     cameraHeight 30;
+    Weapon.SlotNumber 2;
   }
   States
   {
@@ -74,6 +78,7 @@ Class MarineCompanionSSGGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionSSGAmmo";
     Inventory.PickupMessage "Got a Super Shotgun Marine Gun!";
     cameraHeight 50;
+    Weapon.SlotNumber 2;
   }
   States
   {
@@ -91,6 +96,7 @@ Class MarineCompanionCGGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionCGAmmo";
     Inventory.PickupMessage "Got a Chaingun Marine Gun!";
     cameraHeight 50;
+    Weapon.SlotNumber 2;
   }
   States
   {
@@ -108,6 +114,7 @@ Class MarineCompanionRocketGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionRocketAmmo";
     Inventory.PickupMessage "Got a Rocket Launcher Marine Gun!";
     cameraHeight 100;
+    Weapon.SlotNumber 4;
   }
   States
   {
@@ -125,6 +132,7 @@ Class MarineCompanionPlasmaGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionPlasmaAmmo";
     Inventory.PickupMessage "Got a Plasma Rifle Marine Gun!";
     cameraHeight 70;
+    Weapon.SlotNumber 3;
   }
   States
   {
@@ -142,6 +150,7 @@ Class MarineCompanionBFG9000Gun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionBFG9000Ammo";
     Inventory.PickupMessage "Got a BFG9000 Marine Gun!";
     cameraHeight 150;
+    Weapon.SlotNumber 4;
   }
   States
   {
@@ -159,6 +168,7 @@ Class MarineCompanionBFG10KGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionBFG10KAmmo";
     Inventory.PickupMessage "Got a BFG10K Marine Gun!";
     cameraHeight 150;
+    Weapon.SlotNumber 4;
   }
   States
   {
@@ -176,6 +186,7 @@ Class MarineCompanionGLGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionGLAmmo";
     Inventory.PickupMessage "Got a Grenade Launcher Marine Gun!";
     cameraHeight 70;
+    Weapon.SlotNumber 3;
   }
   States
   {
@@ -193,6 +204,7 @@ Class MarineCompanionHSMissileGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionHSMissileAmmo";
     Inventory.PickupMessage "Got a Heat Seeking Missile Marine Gun!";
     cameraHeight 125;
+    Weapon.SlotNumber 4;
   }
   States
   {
@@ -210,6 +222,7 @@ Class MarineCompanionRailgunGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionRailgunAmmo";
     Inventory.PickupMessage "Got a Railgun Marine Gun!";
     cameraHeight 60;
+    Weapon.SlotNumber 3;
   }
   States
   {
@@ -227,6 +240,7 @@ Class MarineCompanionSniperGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionSniperAmmo";
     Inventory.PickupMessage "Got a Sniper Marine Gun!";
     cameraHeight 80;
+    Weapon.SlotNumber 4;
   }
   States
   {
@@ -244,6 +258,7 @@ Class MarineCompanionFlameThrowerGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionFlameThrowerAmmo";
     Inventory.PickupMessage "Got a Flame Thrower Marine Gun!";
     cameraHeight 60;
+    Weapon.SlotNumber 3;
   }
   States
   {
@@ -261,6 +276,7 @@ Class MarineCompanionMGGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionMGAmmo";
     Inventory.PickupMessage "Got a Machine Gun Marine Gun!";
     cameraHeight 40;
+    Weapon.SlotNumber 2;
   }
   States
   {
@@ -278,6 +294,7 @@ Class MarineCompanionMinigunGun : BaseDeployer
     Weapon.AmmoType2 "MarineCompanionMinigunAmmo";
     Inventory.PickupMessage "Got a Minigun Marine Gun!";
     cameraHeight 70;
+    Weapon.SlotNumber 3;
   }
   States
   {
@@ -295,6 +312,7 @@ class CompanionZombieManGun : BaseDeployer
     Weapon.AmmoType2 "CompanionZombieManAmmo";
     Inventory.PickupMessage "Got a Zombie Man Gun!";
     cameraHeight 1;
+    Weapon.SlotNumber 1;
   }
   States
   {
@@ -312,6 +330,7 @@ class CompanionShotgunGuyGun : BaseDeployer
     Weapon.AmmoType2 "CompanionShotgunGuyAmmo";
     Inventory.PickupMessage "Got a Shotgun Guy Gun!";
     cameraHeight 5;
+    Weapon.SlotNumber 1;
   }
   States
   {
@@ -329,6 +348,7 @@ class CompanionChaingunGuyGun : BaseDeployer
     Weapon.AmmoType2 "CompanionChaingunGuyAmmo";
     Inventory.PickupMessage "Got a Chaingun Guy Gun!";
     cameraHeight 15;
+    Weapon.SlotNumber 1;
   }
   States
   {
@@ -346,6 +366,7 @@ class CompanionDemonGun : BaseDeployer
     Weapon.AmmoType2 "CompanionDemonAmmo";
     Inventory.PickupMessage "Got a Demon Gun!";
     cameraHeight 3;
+    Weapon.SlotNumber 1;
   }
   States
   {
@@ -375,6 +396,7 @@ class CompanionLostSoulGun : BaseDeployer
     Weapon.AmmoType2 "CompanionLostSoulAmmo";
     Inventory.PickupMessage "Got a Lost Soul Gun!";
     cameraHeight 3;
+    Weapon.SlotNumber 1;
     Scale 0.6;
   }
   States
@@ -393,6 +415,7 @@ class CompanionCacodemonGun : BaseDeployer
     Weapon.AmmoType2 "CompanionCacodemonAmmo";
     Inventory.PickupMessage "Got a Cacodemon Gun!";
     cameraHeight 50;
+    Weapon.SlotNumber 2;
     Scale 0.4;
   }
   States
@@ -411,6 +434,7 @@ class CompanionPainElementalGun : BaseDeployer
     Weapon.AmmoType2 "CompanionPainElementalAmmo";
     Inventory.PickupMessage "Got a Pain Elemental Gun!";
     cameraHeight 150;
+    Weapon.SlotNumber 4;
     Scale 0.38;
   }
   States
@@ -429,6 +453,7 @@ class CompanionBaronOfHellGun : BaseDeployer
     Weapon.AmmoType2 "CompanionBaronOfHellAmmo";
     Inventory.PickupMessage "Got a Baron of Hell Gun!";
     cameraHeight 150;
+    Weapon.SlotNumber 4;
     Scale 0.4;
   }
   States
@@ -446,7 +471,8 @@ class CompanionHellKnightGun : CompanionBaronOfHellGun
     Tag "Hell Knight";
     Weapon.AmmoType2 "CompanionHellKnightAmmo";
     Inventory.PickupMessage "Got a Hell Knight Gun!";
-    cameraHeight 75;
+    cameraHeight 50;
+    Weapon.SlotNumber 2;
     Scale 0.4;
   }
   States
@@ -465,6 +491,7 @@ class CompanionArachnotronGun : BaseDeployer
     Weapon.AmmoType2 "CompanionArachnotronAmmo";
     Inventory.PickupMessage "Got an Arachnotron Gun!";
     cameraHeight 60;
+    Weapon.SlotNumber 2;
     Scale 0.3;
   }
   States
@@ -483,6 +510,7 @@ class CompanionArchvileGun : BaseDeployer
     Weapon.AmmoType2 "CompanionArchvileAmmo";
     Inventory.PickupMessage "Got an Archvile Gun!";
     cameraHeight 30;
+    Weapon.SlotNumber 2;
     Scale 0.35;
   }
   States
@@ -501,6 +529,7 @@ class CompanionFatsoGun : BaseDeployer
     Weapon.AmmoType2 "CompanionFatsoAmmo";
     Inventory.PickupMessage "Got a Mancubus Gun!";
     cameraHeight 40;
+    Weapon.SlotNumber 2;
     Scale 0.4;
   }
   States
@@ -519,6 +548,7 @@ class CompanionCyberdemonGun : BaseDeployer
     Weapon.AmmoType2 "CompanionCyberdemonAmmo";
     Inventory.PickupMessage "Got a Cyberdemon Gun!";
     cameraHeight 250;
+    Weapon.SlotNumber 4;
     Scale 0.28;
   }
   States
@@ -537,6 +567,7 @@ class CompanionSpiderMastermindGun : BaseDeployer
     Weapon.AmmoType2 "CompanionSpiderMastermindAmmo";
     Inventory.PickupMessage "Got a Spider Mastermind Gun!";
     cameraHeight 200;
+    Weapon.SlotNumber 4;
     Scale 0.15;
   }
   States
@@ -555,6 +586,7 @@ class CompanionWolfensteinSSGun : BaseDeployer
     Weapon.AmmoType2 "CompanionWolfensteinSSAmmo";
     Inventory.PickupMessage "Got a Wolfenstein SS Gun!";
     cameraHeight 10;
+    Weapon.SlotNumber 1;
   }
   States
   {
@@ -572,6 +604,7 @@ class CompanionRevenantGun : BaseDeployer
     Weapon.AmmoType2 "CompanionRevenantAmmo";
     Inventory.PickupMessage "Got a Revenant Gun!";
     cameraHeight 60;
+    Weapon.SlotNumber 3;
     Scale 0.35;
   }
   States
@@ -590,6 +623,7 @@ class CompanionDoomImpGun : BaseDeployer
     Weapon.AmmoType2 "CompanionDoomImpAmmo";
     Inventory.PickupMessage "Got an Imp Gun!";
     cameraHeight 10;
+    Weapon.SlotNumber 1;
   }
   States
   {
@@ -607,6 +641,7 @@ Class BelphegorGun : BaseDeployer
     Weapon.AmmoType2 "BelphegorAmmo";
     Inventory.PickupMessage "Got a Belphegor Gun!";
     cameraHeight 100;
+    Weapon.SlotNumber 4;
     Scale 0.4;
   }
   States
@@ -625,6 +660,7 @@ Class AfritGun : BaseDeployer
     Weapon.AmmoType2 "AfritAmmo";
     Inventory.PickupMessage "Got an Afrit Gun!";
     cameraHeight 100;
+    Weapon.SlotNumber 4;
     Inventory.Icon "FRITV0";
     Scale 0.4;
   }
@@ -644,6 +680,7 @@ Class MarauderGun : BaseDeployer
     Weapon.AmmoType2 "MarauderAmmo";
     Inventory.PickupMessage "Got a Marauder Gun!";
     cameraHeight 60;
+    Weapon.SlotNumber 3;
     Scale 0.48;
   }
   States
@@ -662,6 +699,7 @@ Class ArachnophyteGun : BaseDeployer
     Weapon.AmmoType2 "ArachnophyteAmmo";
     Inventory.PickupMessage "Got an Arachnophyte Gun!";
     cameraHeight 200;
+    Weapon.SlotNumber 4;
     Scale 0.2;
   }
   States
@@ -680,6 +718,7 @@ Class ArchonOfHellGun : BaseDeployer
     Weapon.AmmoType2 "ArchonOfHellAmmo";
     Inventory.PickupMessage "Got an Archon of Hell Gun!";
     cameraHeight 100;
+    Weapon.SlotNumber 4;
     Scale 0.4;
   }
   States
@@ -698,6 +737,7 @@ Class MurderBallGun : BaseDeployer
     Weapon.AmmoType2 "MurderBallAmmo";
     Inventory.PickupMessage "Got a Murder Ball Gun!";
     cameraHeight 999;
+    Weapon.SlotNumber 4;
   }
   States
   {
@@ -715,6 +755,7 @@ class ArachnobaronGun : BaseDeployer
     Weapon.AmmoType2 "ArachnobaronAmmo";
     Inventory.PickupMessage "Got an Arachnobaron Gun!";
     cameraHeight 100;
+    Weapon.SlotNumber 4;
     Scale 0.3;
   }
   States
