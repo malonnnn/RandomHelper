@@ -705,7 +705,7 @@ class BabyCacoAmmo : CommonAmmoFeatures
   States
   {
     Spawn:
-      ARBR A -1;
+      CACB A -1;
       Stop;
   }
 }

@@ -1,11 +1,11 @@
-class BabyCaco : CompanionCacodemon 
+class BabyCaco : CompanionCacodemon
 {
   Default
   {
-    MONSTER
+    MONSTER;
     +FLOAT 
     +NOGRAVITY
-    Species "Companion"
+    Species "Companion";
     DamageFactor "Companion", 0;
     Health 150;
     Radius 18;
@@ -56,7 +56,7 @@ class BabyCaco : CompanionCacodemon
 	}
 }
 
-class BabyCacoBall
+class BabyCacoBall : Actor
 {
   Default
   {
@@ -74,6 +74,7 @@ class BabyCacoBall
     SeeSound "caco/attack";
     DeathSound "caco/shotx";
     Decal "HImpScorch";
+  }
     States
     {
       Spawn:
@@ -83,5 +84,4 @@ class BabyCacoBall
         BCAB CDE 6 BRIGHT;
         Stop;
     }
-  }
 }
