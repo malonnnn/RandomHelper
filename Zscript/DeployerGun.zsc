@@ -1,5 +1,7 @@
 class BaseDeployer : Weapon
 {
+	int price;
+	property price : price;
 	Default
 	{
 		+WEAPON.NOALERT
@@ -14,6 +16,7 @@ class BaseDeployer : Weapon
 		Inventory.Amount 1;
 		Weapon.SlotNumber 3;
 		Scale 0.5;
+		BaseDeployer.price 0;
 	}
 	States
 	{
