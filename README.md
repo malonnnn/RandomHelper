@@ -7,16 +7,17 @@ Convert decorate to ZScript
 All monsters get<br>
 `Monster` combo<br>
 `+FRIENDLY` flag<br>
+`Species "Companion"` property<br>
 `DamageFactor "Companion", 0` property<br>
 as well as<br>
-`DamageTypes` changed to `"Companion"` in their Melee states
+`DamageTypes` changed to `"Companion"` in their Melee + Missile states
 
 # 3.
 All projectiles get<br>
 `Species "Companion"`<br>
 `DamageType "Companion"`<br>
 as well as<br>
-`DamageTypes` changed to `"Companion"` in their Death states
+`DamageTypes` damange functions changed to `"Companion"` in their Death states
 
 # 4.
 All puffs to be replaced with `"CompanionBulletPuff"`<br>

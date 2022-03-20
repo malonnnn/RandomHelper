@@ -3,6 +3,7 @@ class CompanionItemSpawnerTier1 : RandomSpawner
   Default
   {
     DropItem "MarineCompanionPistolGun", 255, 90;
+    DropItem "MarineCompanionPistolGun", 255, 90;
     DropItem "MarineCompanionChainsawGun", 255, 100;
     DropItem "CompanionDemonGun", 255, 80;
     DropItem "CompanionDoomImpGun", 255,90;
@@ -12,6 +13,7 @@ class CompanionItemSpawnerTier1 : RandomSpawner
     DropItem "CompanionWolfensteinSSGun", 255, 80;
     DropItem "CompanionZombieManGun", 255, 100;
     DropItem "MarineCompanionFistGun", 255, 75;
+    DropItem "BabyCacoGun", 255, 75;
   }
 }
 
@@ -40,6 +42,7 @@ class CompanionItemSpawnerTier2 : RandomSpawner
     DropItem "CompanionHellKnightGun", 255, 50;
     DropItem "MarineCompanionRailgunGun", 255, 50;
     DropItem "MarineCompanionPlasmaGun", 255, 50;
+    DropItem "BabyCacoGun", 255, 75;
   }
 }
 
@@ -77,6 +80,7 @@ class CompanionItemSpawnerTier3 : RandomSpawner
     DropItem "MarineCompanionFlamethrowerGun", 255, 30;
     DropItem "MarineCompanionMinigunGun", 255, 30;
     DropItem "ArachnobaronGun", 255, 30;
+    DropItem "BabyCacoGun", 255, 75;
   }
 }
 
@@ -126,5 +130,6 @@ class CompanionItemSpawnerAll : RandomSpawner
     DropItem "ArachnophyteGun", 255, 20;
     DropItem "BelphegorGun", 255, 20;
     DropItem "ArachnobaronGun", 255, 30;
+    DropItem "BabyCacoGun", 255, 75;
   }
 }

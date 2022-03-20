@@ -764,3 +764,21 @@ class ArachnobaronGun : BaseDeployer
       Stop;
   }
 }
+
+class BabyCacoGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Baby Caco";
+    Weapon.AmmoType2 "BabyCacoAmmo";
+    Inventory.PickupMessage "Got a Baby Caco!";
+    cameraHeight 20;
+    Weapon.SlotNumber 1;
+  }
+  States
+  {
+    Spawn:
+      CACB A -1;
+      Stop;
+  }
+}

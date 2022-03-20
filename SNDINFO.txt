@@ -1,3 +1,10 @@
+//baby caco
+BabyCaco/Sight CACOBSIT
+BabyCaco/Pain CACOBPAI
+BabyCaco/Death CACOBDTH
+BabyCaco/Active BABYACT
+BabyCaco/Melee	BABYBITE
+
 // Deployer Gun
 Weapons/BioReady			BIOREADY
 Weapons/BioFire				BIOSHOOT
