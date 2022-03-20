@@ -10,12 +10,10 @@ version "4.8.0"
 #include "Zscript/MyFist.zsc"
 
 #include "Zscript/HUD.zsc"
-#include "Zscript/InventoryBar.zsc"
 
 #include "Zscript/CompanionSpawner.zsc"
 
-#include "Zscript/InventoryItems.zsc"
-
+#include "Zscript/CompanionAmmo.zsc"
 #include "Zscript/SetCompanionProperties.zsc"
 #include "Zscript/CompanionItemReplacer.zsc"
 #include "Zscript/CompanionWalkToCorpse.zsc"

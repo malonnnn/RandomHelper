@@ -93,12 +93,7 @@ class BioProj : Actor
 			Loop;
 		Death:
 			TNT1 A 0
-			{
-				//console.printf("ammotype "..invoker.getclassname());
-				//console.printf("gun "..target.player.readyweapon.getclassname());
-				//console.printf("ammotype "..target.player.readyweapon.AmmoType2.getclassname());
-				//console.printf("price "..target.player.readyweapon.AmmoUse2);
-				
+			{				
 				Actor p = players[PlayerNumber()].mo;
 				
 				String gunName = target.player.readyweapon.GetClassName();
@@ -163,9 +158,6 @@ class BioProjAlt : Actor
 			Goto ChangeTID;
 			TNT1 A 0
 			{
-				//let p = players[PlayerNumber()].mo;
-				//int fx = pos.x + cos(p.angle);
-				//int fy = pos.y + sin(p.angle);
 				bool spawnedAtLeastOne = false;
       	let g = Globals(EventHandler.Find("Globals"));
 				for(int i = 0; i < g.companions.Size(); i++)
@@ -210,9 +202,6 @@ class CompanionAmmo : Ammo
 {
   Default
   {
-    //+INVENTORY.HUBPOWER
-    //+SPRITEANGLE
-    //SpriteAngle 180;
     Inventory.Amount 2;
     Inventory.MaxAmount 999;
     Inventory.InterHubAmount 999;

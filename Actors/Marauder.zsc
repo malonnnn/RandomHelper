@@ -80,7 +80,6 @@ class Marauder : Actor // Originally made by Spectre on YouTube. Rebalanced and 
 			{
 				let g = Globals(EventHandler.Find("Globals"));
 				g.createCompanion("MarauderDog", pos);
-				//A_SpawnItemEx("MarauderDog", 64);
 			}
 			Goto See;
 		MissileSSG:		// SSG attack

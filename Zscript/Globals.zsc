@@ -15,10 +15,11 @@ class Globals : EventHandler
     companion.TryWalk();
     companions.push(companion);
 
-    player.TakeInventory(companionClass.."Ammo", 1);
-    player.TakeInventory("CompanionAmmo", price);
-
-    console.printf("summoned "..tag..", "..(numCompanions - 1).." left");
+    if(player){
+      player.TakeInventory(companionClass.."Ammo", 1);
+      player.TakeInventory("CompanionAmmo", price);
+      console.printf("summoned "..tag..", "..(numCompanions - 1).." left");
+    }
     
     return companion;
   }

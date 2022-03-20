@@ -1,3 +1,68 @@
+class MyBaseStatusBar : BaseStatusBar
+{
+  HUDFont mMM2SmallFont;
+	void DrawInventoryBar(InventoryBarState parms, Vector2 position, int numfields, int flags = 0, double bgalpha = 1.)
+	{
+    mMM2SmallFont = HUDFont.Create("SMALLFONT");
+		double width = parms.boxsize.X * numfields;
+		[position, flags] = AdjustPosition(position, flags, width, parms.boxsize.Y);
+		
+		CPlayer.mo.InvFirst = ValidateInvFirst(numfields);
+		if (CPlayer.mo.InvFirst == null) return;	// Player has no listed inventory items.
+		
+		Vector2 boxsize = parms.boxsize;
+		// First draw all the boxes
+		for(int i = 0; i < numfields; i++)
+		{
+			DrawTexture(parms.box, position + (boxsize.X * i, 0), flags | DI_ITEM_LEFT_TOP, bgalpha);
+		}
+		
+		// now the items and the rest
+		
+		Vector2 itempos = position + boxsize / 2;
+		Vector2 textpos = position + boxsize - (1, 1 + parms.amountfont.mFont.GetHeight());
+
+		int i = 0;
+		Inventory item;
+		for(item = CPlayer.mo.InvFirst; item != NULL && i < numfields; item = item.NextInv())
+		{
+			for(int j = 0; j < 2; j++)
+			{
+				if (j ^ !!(flags & DI_DRAWCURSORFIRST))
+				{
+					if (item == CPlayer.mo.InvSel)
+					{
+						double flashAlpha = bgalpha;
+						if (flags & DI_ARTIFLASH) flashAlpha *= itemflashFade;
+						DrawTexture(parms.selector, position + parms.selectofs + (boxsize.X * i, 0), flags | DI_ITEM_LEFT_TOP, flashAlpha);
+					}
+				}
+				else
+				{
+					DrawInventoryIcon(item, itempos + (boxsize.X * i, 0), flags | DI_ITEM_CENTER | DI_DIMDEPLETED );
+				}
+			}
+			
+			if (parms.amountfont != null && (item.Amount > 0 || (flags & DI_ALWAYSSHOWCOUNTERS)))
+			{
+        vector2 origpos = textpos + (boxsize.X * i, 0);
+				DrawString(parms.amountfont, FormatNumber(item.Amount, 0, 5), origpos, flags | DI_TEXT_ALIGN_RIGHT, parms.cr, parms.itemalpha);
+			}
+			i++;
+		}
+		// Is there something to the left?
+		if (CPlayer.mo.FirstInv() != CPlayer.mo.InvFirst)
+		{
+			DrawTexture(parms.left, position + (-parms.arrowoffset.X, parms.arrowoffset.Y), flags | DI_ITEM_RIGHT|DI_ITEM_VCENTER);
+		}
+		// Is there something to the right?
+		if (item != NULL)
+		{
+			DrawTexture(parms.right, position + parms.arrowoffset + (width, 0), flags | DI_ITEM_LEFT|DI_ITEM_VCENTER);
+		}
+	}
+}
+
 class MyStatusBar : MyBaseStatusBar
 {
 	HUDFont mHUDFont;
@@ -30,8 +95,10 @@ class MyStatusBar : MyBaseStatusBar
 
 		if (state == HUD_StatusBar)
 		{
-			BeginStatusBar();
-			DrawMainBar (TicFrac);
+			//BeginStatusBar(); // come back some day to make a better statusbar for nonfullscreen
+			//DrawMainBar (TicFrac);
+			BeginHUD();
+			DrawFullScreenStuff ();
 		}
 		else if (state == HUD_Fullscreen)
 		{
@@ -73,10 +140,6 @@ class MyStatusBar : MyBaseStatusBar
 			DrawInventoryIcon(CPlayer.mo.InvSel, (160, 198), DI_DIMDEPLETED);
 			if (CPlayer.mo.InvSel.Amount > 0)
 			{
-				//DrawString(mMM2SmallFont, "$", (149, 191), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
-				//DrawString(mMM2SmallFont, "$ "..int(CPlayer.mo.InvSel.cameraheight), (176-25, 199-mIndexFont.mFont.GetHeight()-50), DI_TEXT_ALIGN_CENTER, Font.CR_GREEN);
-				//DrawString(mMM2SmallFont, CPlayer.mo.InvSel.GetTag(), (176-25, 199-mIndexFont.mFont.GetHeight()-40), DI_TEXT_ALIGN_CENTER);
-				//DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.cameraheight), (176, 199-mIndexFont.mFont.GetHeight()-23), DI_TEXT_ALIGN_RIGHT, Font.CR_DARKGREEN);
 				DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.Amount), (176, 199-mIndexFont.mFont.GetHeight()), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
 			}
 		}
@@ -164,8 +227,8 @@ class MyStatusBar : MyBaseStatusBar
 		int invY = -20;
 		if (ammotype1 != null)
 		{
-			DrawInventoryIcon(ammotype1, (-314, -4), DI_DIMDEPLETED);
-			DrawString(mHUDFont, FormatNumber(ammotype1.Amount, 3), (-330, -20), DI_TEXT_ALIGN_RIGHT);
+			DrawInventoryIcon(ammotype1, (-14, -4), DI_DIMDEPLETED);
+			DrawString(mHUDFont, FormatNumber(ammotype1.Amount, 3), (-30, -20), DI_TEXT_ALIGN_RIGHT);
 			invY -= 20;
 		}
 		/*if (ammotype2 != null && ammotype2 != ammotype1)
@@ -176,8 +239,16 @@ class MyStatusBar : MyBaseStatusBar
 		}*/
 		if (!isInventoryBarVisible() && !Level.NoInventoryBar && CPlayer.mo.InvSel != null)
 		{
+
+			CommonAmmoFeatures myammo = CommonAmmoFeatures(ammotype2);
+			
 			DrawInventoryIcon(ammotype2, (-314, invY + 17), DI_DIMDEPLETED);
-			DrawString(mHUDFont, FormatNumber(ammotype2.Amount, 3), (-330, invY), DI_TEXT_ALIGN_RIGHT);
+			DrawString(mMM2SmallFont, ammotype2.getTag().." x"..ammotype2.Amount, (-300, invY+18), DI_TEXT_ALIGN_RIGHT);
+
+			DrawString(mMM2SmallFont, "costs", (-225, invY-11), DI_TEXT_ALIGN_RIGHT);
+			DrawString(mHUDFont, FormatNumber(myammo.price, 3), (-230, invY), DI_TEXT_ALIGN_RIGHT, FONT.CR_DARKGREEN);
+			DrawString(mMM2SmallFont, "to spawn 1", (-210, invY+18), DI_TEXT_ALIGN_RIGHT);
+			DrawInventoryIcon(ammotype1, (-225, invY+16));
 		}
 		if (deathmatch)
 		{

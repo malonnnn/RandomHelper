@@ -1,6 +1,7 @@
 Class CommonAmmoFeatures : Ammo
 {
   int price;
+  property price : price;
   Default
   {
     +Inventory.HubPower
@@ -31,7 +32,7 @@ Class MarineCompanionFistAmmo : CommonAmmoFeatures
   {
     Tag "Berserk Marine";
     Inventory.PickupMessage "Got a Berserk Marine!";
-    cameraHeight 20;
+    CommonAmmoFeatures.price 20;
   }
   States
   {
@@ -47,7 +48,7 @@ Class MarineCompanionChainsawAmmo : CommonAmmoFeatures
   {
     Tag "Chainsaw Marine";
     Inventory.PickupMessage "Got a Chainsaw Marine!";
-    cameraHeight 20;
+    CommonAmmoFeatures.price 20;
   }
   States
   {
@@ -63,7 +64,7 @@ Class MarineCompanionPistolAmmo : CommonAmmoFeatures
   {
     Tag "Pistol Marine";
     Inventory.PickupMessage "Got a Pistol Marine!";
-    cameraHeight 20;
+    CommonAmmoFeatures.price 20;
   }
   States
   {
@@ -79,7 +80,7 @@ Class MarineCompanionSGAmmo : CommonAmmoFeatures
   {
     Tag "Shotgun Marine";
     Inventory.PickupMessage "Got a Shotgun Marine!";
-    cameraHeight 30;
+    CommonAmmoFeatures.price 30;
   }
   States
   {
@@ -95,7 +96,7 @@ Class MarineCompanionSSGAmmo : CommonAmmoFeatures
   {
     Tag "Super Shotgun Marine";
     Inventory.PickupMessage "Got a Super Shotgun Marine!";
-    cameraHeight 50;
+    CommonAmmoFeatures.price 50;
   }
   States
   {
@@ -111,7 +112,7 @@ Class MarineCompanionCGAmmo : CommonAmmoFeatures
   {
     Tag "Chaingun Marine";
     Inventory.PickupMessage "Got a Chaingun Marine!";
-    cameraHeight 50;
+    CommonAmmoFeatures.price 50;
   }
   States
   {
@@ -127,7 +128,7 @@ Class MarineCompanionRocketAmmo : CommonAmmoFeatures
   {
     Tag "Rocket Launcher Marine";
     Inventory.PickupMessage "Got a Rocket Launcher Marine!";
-    cameraHeight 100;
+    CommonAmmoFeatures.price 100;
   }
   States
   {
@@ -143,7 +144,7 @@ Class MarineCompanionPlasmaAmmo : CommonAmmoFeatures
   {
     Tag "Plasma Rifle Marine";
     Inventory.PickupMessage "Got a Plasma Rifle Marine!";
-    cameraHeight 70;
+    CommonAmmoFeatures.price 70;
   }
   States
   {
@@ -159,7 +160,7 @@ Class MarineCompanionBFG9000Ammo : CommonAmmoFeatures
   {
     Tag "BFG9000 Marine";
     Inventory.PickupMessage "Got a BFG9000 Marine!";
-    cameraHeight 150;
+    CommonAmmoFeatures.price 150;
   }
   States
   {
@@ -175,7 +176,7 @@ Class MarineCompanionBFG10KAmmo : CommonAmmoFeatures
   {
     Tag "BFG10K Marine";
     Inventory.PickupMessage "Got a BFG10K Marine!";
-    cameraHeight 150;
+    CommonAmmoFeatures.price 150;
   }
   States
   {
@@ -191,7 +192,7 @@ Class MarineCompanionGLAmmo : CommonAmmoFeatures
   {
     Tag "Grenade Launcher Marine";
     Inventory.PickupMessage "Got a Grenade Launcher Marine!";
-    cameraHeight 70;
+    CommonAmmoFeatures.price 70;
   }
   States
   {
@@ -207,7 +208,7 @@ Class MarineCompanionHSMissileAmmo : CommonAmmoFeatures
   {
     Tag "Heat Seeking Missile Marine";
     Inventory.PickupMessage "Got a Heat Seeking Missile Marine!";
-    cameraHeight 125;
+    CommonAmmoFeatures.price 125;
   }
   States
   {
@@ -223,7 +224,7 @@ Class MarineCompanionRailgunAmmo : CommonAmmoFeatures
   {
     Tag "Railgun Marine";
     Inventory.PickupMessage "Got a Railgun Marine!";
-    cameraHeight 60;
+    CommonAmmoFeatures.price 60;
   }
   States
   {
@@ -239,7 +240,7 @@ Class MarineCompanionSniperAmmo : CommonAmmoFeatures
   {
     Tag "Sniper Marine";
     Inventory.PickupMessage "Got a Sniper Marine!";
-    cameraHeight 80;
+    CommonAmmoFeatures.price 80;
   }
   States
   {
@@ -255,7 +256,7 @@ Class MarineCompanionFlameThrowerAmmo : CommonAmmoFeatures
   {
     Tag "Flame Thrower Marine";
     Inventory.PickupMessage "Got a Flame Thrower Marine!";
-    cameraHeight 60;
+    CommonAmmoFeatures.price 60;
   }
   States
   {
@@ -271,7 +272,7 @@ Class MarineCompanionMGAmmo : CommonAmmoFeatures
   {
     Tag "Machine Gun Marine";
     Inventory.PickupMessage "Got a Machine Gun Marine!";
-    cameraHeight 40;
+    CommonAmmoFeatures.price 40;
   }
   States
   {
@@ -287,7 +288,7 @@ Class MarineCompanionMinigunAmmo : CommonAmmoFeatures
   {
     Tag "Minigun Marine";
     Inventory.PickupMessage "Got a Minigun Marine!";
-    cameraHeight 70;
+    CommonAmmoFeatures.price 70;
   }
   States
   {
@@ -303,7 +304,7 @@ class CompanionZombieManAmmo : CommonAmmoFeatures
   {
     Tag "Zombie Man";
     Inventory.PickupMessage "Got a Zombie Man!";
-    cameraHeight 1;
+    CommonAmmoFeatures.price 1;
   }
   States
   {
@@ -319,7 +320,7 @@ class CompanionShotgunGuyAmmo : CommonAmmoFeatures
   {
     Tag "Shotgun Guy";
     Inventory.PickupMessage "Got a Shotgun Guy!";
-    cameraHeight 5;
+    CommonAmmoFeatures.price 5;
   }
   States
   {
@@ -335,7 +336,7 @@ class CompanionChaingunGuyAmmo : CommonAmmoFeatures
   {
     Tag "Chaingun Guy";
     Inventory.PickupMessage "Got a Chaingun Guy!";
-    cameraHeight 15;
+    CommonAmmoFeatures.price 15;
   }
   States
   {
@@ -351,7 +352,7 @@ class CompanionDemonAmmo : CommonAmmoFeatures
   {
     Tag "Demon";
     Inventory.PickupMessage "Got a Demon!";
-    cameraHeight 3;
+    CommonAmmoFeatures.price 3;
   }
   States
   {
@@ -378,7 +379,7 @@ class CompanionLostSoulAmmo : CommonAmmoFeatures
   {
     Tag "Lost Soul";
     Inventory.PickupMessage "Got a Lost Soul!";
-    cameraHeight 3;
+    CommonAmmoFeatures.price 3;
   }
   States
   {
@@ -394,7 +395,7 @@ class CompanionCacodemonAmmo : CommonAmmoFeatures
   {
     Tag "Cacodemon";
     Inventory.PickupMessage "Got a Cacodemon!";
-    cameraHeight 50;
+    CommonAmmoFeatures.price 50;
   }
   States
   {
@@ -410,7 +411,7 @@ class CompanionPainElementalAmmo : CommonAmmoFeatures
   {
     Tag "Pain Elemental";
     Inventory.PickupMessage "Got a Pain Elemental!";
-    cameraHeight 150;
+    CommonAmmoFeatures.price 150;
   }
   States
   {
@@ -426,7 +427,7 @@ class CompanionBaronOfHellAmmo : CommonAmmoFeatures
   {
     Tag "Baron of Hell";
     Inventory.PickupMessage "Got a Baron of Hell!";
-    cameraHeight 150;
+    CommonAmmoFeatures.price 150;
   }
   States
   {
@@ -442,7 +443,7 @@ class CompanionHellKnightAmmo : CompanionBaronOfHellAmmo
   {
     Tag "Hell Knight";
     Inventory.PickupMessage "Got a Hell Knight!";
-    cameraHeight 75;
+    CommonAmmoFeatures.price 75;
   }
   States
   {
@@ -458,7 +459,7 @@ class CompanionArachnotronAmmo : CommonAmmoFeatures
   {
     Tag "Arachnotron";
     Inventory.PickupMessage "Got an Arachnotron!";
-    cameraHeight 60;
+    CommonAmmoFeatures.price 60;
   }
   States
   {
@@ -474,7 +475,7 @@ class CompanionArchvileAmmo : CommonAmmoFeatures
   {
     Tag "Archvile";
     Inventory.PickupMessage "Got an Archvile!";
-    cameraHeight 30;
+    CommonAmmoFeatures.price 30;
   }
   States
   {
@@ -490,7 +491,7 @@ class CompanionFatsoAmmo : CommonAmmoFeatures
   {
     Tag "Mancubus";
     Inventory.PickupMessage "Got a Mancubus!";
-    cameraHeight 40;
+    CommonAmmoFeatures.price 40;
   }
   States
   {
@@ -506,7 +507,7 @@ class CompanionCyberdemonAmmo : CommonAmmoFeatures
   {
     Tag "Cyberdemon";
     Inventory.PickupMessage "Got a Cyberdemon!";
-    cameraHeight 250;
+    CommonAmmoFeatures.price 250;
   }
   States
   {
@@ -522,7 +523,7 @@ class CompanionSpiderMastermindAmmo : CommonAmmoFeatures
   {
     Tag "Spider Mastermind";
     Inventory.PickupMessage "Got a Spider Mastermind!";
-    cameraHeight 200;
+    CommonAmmoFeatures.price 200;
   }
   States
   {
@@ -538,7 +539,7 @@ class CompanionWolfensteinSSAmmo : CommonAmmoFeatures
   {
     Tag "Wolfenstein SS";
     Inventory.PickupMessage "Got a Wolfenstein SS!";
-    cameraHeight 10;
+    CommonAmmoFeatures.price 10;
   }
   States
   {
@@ -554,7 +555,7 @@ class CompanionRevenantAmmo : CommonAmmoFeatures
   {
     Tag "Revenant";
     Inventory.PickupMessage "Got a Revenant!";
-    cameraHeight 60;
+    CommonAmmoFeatures.price 60;
   }
   States
   {
@@ -570,7 +571,7 @@ class CompanionDoomImpAmmo : CommonAmmoFeatures
   {
     Tag "Imp";
     Inventory.PickupMessage "Got an Imp!";
-    cameraHeight 10;
+    CommonAmmoFeatures.price 10;
   }
   States
   {
@@ -586,7 +587,7 @@ Class BelphegorAmmo : CommonAmmoFeatures
   {
     Tag "Belphagor";
     Inventory.PickupMessage "Got a Belphegor!";
-    cameraHeight 100;
+    CommonAmmoFeatures.price 100;
   }
   States
   {
@@ -602,7 +603,7 @@ Class AfritAmmo : CommonAmmoFeatures
   {
     Tag "Afrit";
     Inventory.PickupMessage "Got an Afrit!";
-    cameraHeight 100;
+    CommonAmmoFeatures.price 100;
     Inventory.Icon "FRITV0";
   }
   States
@@ -619,7 +620,7 @@ Class MarauderAmmo : CommonAmmoFeatures
   {
     Tag "Marauder";
     Inventory.PickupMessage "Got a Marauder!";
-    cameraHeight 60;
+    CommonAmmoFeatures.price 60;
   }
   States
   {
@@ -635,7 +636,7 @@ Class ArachnophyteAmmo : CommonAmmoFeatures
   {
     Tag "Arachnophyte";
     Inventory.PickupMessage "Got an Arachnophyte!";
-    cameraHeight 200;
+    CommonAmmoFeatures.price 200;
   }
   States
   {
@@ -651,7 +652,7 @@ Class ArchonOfHellAmmo : CommonAmmoFeatures
   {
     Tag "Archon of Hell";
     Inventory.PickupMessage "Got an Archon of Hell!";
-    cameraHeight 100;
+    CommonAmmoFeatures.price 100;
   }
   States
   {
@@ -667,7 +668,7 @@ Class MurderBallAmmo : CommonAmmoFeatures
   {
     Tag "Murder Ball";
     Inventory.PickupMessage "Got a Murder Ball!";
-    cameraHeight 999;
+    CommonAmmoFeatures.price 999;
   }
   States
   {
@@ -683,7 +684,7 @@ class ArachnobaronAmmo : CommonAmmoFeatures
   {
     Tag "Arachnobaron";
     Inventory.PickupMessage "Got an Arachnobaron!";
-    cameraHeight 100;
+    CommonAmmoFeatures.price 100;
   }
   States
   {
