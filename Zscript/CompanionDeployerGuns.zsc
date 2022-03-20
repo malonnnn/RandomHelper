@@ -469,6 +469,7 @@ class CompanionHellKnightGun : CompanionBaronOfHellGun
   Default
   {
     Tag "Hell Knight";
+    Weapon.AmmoType2 "CompanionHellKnightAmmo";
     Inventory.PickupMessage "Got a Hell Knight Gun!";
     cameraHeight 50;
     Weapon.SlotNumber 2;
