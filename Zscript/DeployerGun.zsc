@@ -99,7 +99,6 @@ class BioProj : Actor
 			{				
 				Actor p = players[PlayerNumber()].mo;
 				
-				String gunName = target.player.readyweapon.GetClassName();
 				String tag = target.player.readyweapon.getTag();
 				String ammotype = target.player.readyweapon.AmmoType2.getclassname();
 				
