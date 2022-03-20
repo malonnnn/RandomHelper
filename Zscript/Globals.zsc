@@ -12,7 +12,7 @@ class Globals : EventHandler
       companion.Angle = player.angle;
       companion.movedir = Utilities.angleToMoveDir(player.angle);
     }
-    companion.TryWalk();
+    companion.SetStateLabel("See");
     companions.push(companion);
 
     if(player){
