@@ -5,18 +5,18 @@ Convert decorate to ZScript
 
 # 2.
 All monsters get<br>
-`MonsterCombo`<br>
-`+friendly`<br>
-`DamageFactor "Companion", 0`<br>
+`Monster` combo<br>
+`+FRIENDLY` flag<br>
+`DamageFactor "Companion", 0` property<br>
 as well as<br>
-`DamageTypes changed to "Companion" in their Melee states`
+`DamageTypes` changed to `"Companion"` in their Melee states
 
 # 3.
 All projectiles get<br>
 `Species "Companion"`<br>
 `DamageType "Companion"`<br>
 as well as<br>
-`DamageTypes changed to "Companion" in their Death states`
+`DamageTypes` changed to `"Companion"` in their Death states
 
 # 4.
 All puffs to be replaced with `"CompanionBulletPuff"`<br>
@@ -37,35 +37,33 @@ You will have to replace any functions found in the `Generic Monster Attacks`<br
 (typically you only have to replace 2 or 3).
 
 # 5.
-Convert all deprecated functions to modern equivilants
+Convert all deprecated functions to modern equivilants<br>
 Such as replace `A_PlaySound()` with `A_StartSound()`.<br>
-When you first start the mod, open the console and scroll up.
+<br>
+Check the console for deprecated warnings when first loading the mod.<br>
 It will tell you if there's any deprecated functions found.
 
 # 6.
-Add `TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);` at appropriate locations
+Add<br>
+`TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);`<br>
+at appropriate locations<br>
 Be careful it doesnt interfere with Goto+&lt;number&gt;
 
 # 7.
 Add classes to `CompanionSpawner.zsc`,<br>
-Tier1 monsters get added to every tier.
-Tier2 monsters get added to every tier except Tier1.
-Tier3 monsters get added to every tier except Tier1, Tier2.
-Tier4 monsters get added to only "All" tier.
+Tier1 monsters get added to every tier.<br>
+Tier2 monsters get added to every tier except Tier1.<br>
+Tier3 monsters get added to every tier except Tier1, Tier2.<br>
+Tier4 monsters get added to only "All" tier.<br>
 
 # 8.
-Add their miniature item by copy-pasting an editing an existing one
-from `InventoryItems.zsc`
-
-Set the `scale` such that they fit in the inventory bar.
+Add their DeployerGun by copy-pasting an editing an existing one<br>
+from `CompanionDeployerGuns.zsc`<br>
+The `SlotNumber` represents their tier. eg Tier2 monsters use SlotNumber 2.<br>
+The `cameraHeight` is the number of green vials it costs to summon 1 monster<br>
 
 # 9.
-OPTIONAL sometimes sprites don't fit in the hotbar correctly like this<br>
-https://i.imgur.com/9FDEc2m.png<br>
-This is because of transparent pixels and you must trim them like this:<br>
-https://i.imgur.com/XVKktdn.png<br>
-Then use the actor property `Inventory.Icon` to set it.<br>
-See the companion item AfritItem as an example from `InventoryItems.zsc`
-
-You will also need to edit the image in SLADE and set its OFFSET to (usually) MONSTER.<br>
-Photoshop sets png offsets to 0,0 - so you will always need to finish it in SLADE.
+Add their Ammo by copy-pasting an editing an existing one<br>
+from `CompanionAmmoTypes.zsc`<br>
+The `SlotNumber` represents their tier. eg Tier2 monsters use SlotNumber 2.<br>
+The `cameraHeight` is the number of green vials it costs to summon 1 monster<br>
