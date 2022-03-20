@@ -14,10 +14,9 @@ class Utilities
       if(numCompanions >= 1){
         return true;
       }else{
-        console.printf("You are out of "..companionTag);  
+        console.printf("You are out of "..companionTag);
       }
     }else{
-      console.printf("Price: "..ammo1Price.." Balance: "..ammo1Count);
       console.printf("Not Enough Ammo");
     }
     return false;
