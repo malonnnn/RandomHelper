@@ -1,4 +1,4 @@
-Sprite FRITV0, 49, 75
+/*Sprite FRITV0, 49, 75
 {
     YScale 2.1
     XScale 2.1
@@ -15,4 +15,4 @@ Sprite SARGZ0, 40, 56
   patch SARGZ0, 0, 0
   {
   }
-} 
+}*/

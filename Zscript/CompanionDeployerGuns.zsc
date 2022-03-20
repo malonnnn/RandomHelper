@@ -1,35 +1,17 @@
-Class MarineCompanionFistGun : BaseDeployer
+class CompanionZombieManGun : BaseDeployer
 {
   Default
   {
-    Tag "Berserk Marine";
-    Weapon.AmmoType2 "MarineCompanionFistAmmo";
-    Inventory.PickupMessage "Got a Berserk Marine Gun!";
-    cameraHeight 20;
+    Tag "Zombie Man";
+    Weapon.AmmoType2 "CompanionZombieManAmmo";
+    Inventory.PickupMessage "Got a Zombie Man Gun!";
+    cameraHeight 1;
     Weapon.SlotNumber 1;
   }
   States
   {
     Spawn:
-      ALY1 A -1;
-      Stop;
-  }
-}
-
-Class MarineCompanionChainsawGun : BaseDeployer
-{
-  Default
-  {
-    Tag "Chainsaw Marine";
-    Weapon.AmmoType2 "MarineCompanionChainsawAmmo";
-    Inventory.PickupMessage "Got a Chainsaw Marine Gun!";
-    cameraHeight 20;
-    Weapon.SlotNumber 1;
-  }
-  States
-  {
-    Spawn:
-      ALY7 A -1;
+      POSS A -1;
       Stop;
   }
 }
@@ -48,6 +30,24 @@ Class MarineCompanionPistolGun : BaseDeployer
   {
     Spawn:
       ALY2 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionFistGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Berserk Marine";
+    Weapon.AmmoType2 "MarineCompanionFistAmmo";
+    Inventory.PickupMessage "Got a Berserk Marine Gun!";
+    cameraHeight 20;
+    Weapon.SlotNumber 1;
+  }
+  States
+  {
+    Spawn:
+      ALY1 A -1;
       Stop;
   }
 }
@@ -304,20 +304,20 @@ Class MarineCompanionMinigunGun : BaseDeployer
   }
 }
 
-class CompanionZombieManGun : BaseDeployer
+Class MarineCompanionChainsawGun : BaseDeployer
 {
   Default
   {
-    Tag "Zombie Man";
-    Weapon.AmmoType2 "CompanionZombieManAmmo";
-    Inventory.PickupMessage "Got a Zombie Man Gun!";
-    cameraHeight 1;
+    Tag "Chainsaw Marine";
+    Weapon.AmmoType2 "MarineCompanionChainsawAmmo";
+    Inventory.PickupMessage "Got a Chainsaw Marine Gun!";
+    cameraHeight 20;
     Weapon.SlotNumber 1;
   }
   States
   {
     Spawn:
-      POSS A -1;
+      ALY7 A -1;
       Stop;
   }
 }
@@ -469,11 +469,9 @@ class CompanionHellKnightGun : CompanionBaronOfHellGun
   Default
   {
     Tag "Hell Knight";
-    Weapon.AmmoType2 "CompanionHellKnightAmmo";
     Inventory.PickupMessage "Got a Hell Knight Gun!";
     cameraHeight 50;
     Weapon.SlotNumber 2;
-    Scale 0.4;
   }
   States
   {

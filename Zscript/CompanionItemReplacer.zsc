@@ -95,7 +95,10 @@ class CompanionItemReplacer : EventHandler
 
   // replace all weapon drops with companion ammo
   override void WorldThingSpawned(WorldEvent e){
-    if(e.Thing is "Shotgun"){
+    if(e.Thing is "Pistol"){
+      Actor.Spawn("CompanionAmmo", e.Thing.pos);
+      e.Thing.Destroy();
+    }else if(e.Thing is "Shotgun"){
       Actor.Spawn("CompanionAmmo", e.Thing.pos);
       e.Thing.Destroy();
     }else if(e.Thing is "SuperShotgun"){
@@ -117,11 +120,15 @@ class CompanionItemReplacer : EventHandler
       Actor.Spawn("CompanionAmmo", e.Thing.pos);
       e.Thing.Destroy();
     }
-
-    // replace all default ammo drops with companion ammo
-    /*if(e.Thing is "Ammo" && !(e.Thing is "CompanionAmmo")){
+    
+    else if(e.Thing.GetClassName() == "BaseDeployer"){
       Actor.Spawn("CompanionAmmo", e.Thing.pos);
       e.Thing.Destroy();
-    }*/
+    }
+
+    else if(e.Thing is "Ammo" && !(e.thing is "CommonAmmoFeatures") && !(e.thing is "CompanionAmmo")){
+      Actor.Spawn("CompanionAmmo", e.Thing.pos);
+      e.Thing.Destroy();
+    }
   }
 }
