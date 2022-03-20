@@ -68,3 +68,6 @@ Add their Ammo by copy-pasting an editing an existing one<br>
 from `CompanionAmmoTypes.zsc`<br>
 The `SlotNumber` represents their tier. eg Tier2 monsters use SlotNumber 2.<br>
 The `cameraHeight` is the number of green vials it costs to summon 1 monster<br>
+
+# 10.
+Add their include statment into `Zscript.zsc`<br>
