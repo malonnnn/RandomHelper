@@ -34,6 +34,12 @@ Class MarineCompanionFistAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a Berserk Marine!";
     CommonAmmoFeatures.price 20;
   }
+  States
+  {
+    Spawn:
+      ALY1 A -1;
+      Stop;
+  }
 }
 
 Class MarineCompanionChainsawAmmo : CommonAmmoFeatures
@@ -43,6 +49,12 @@ Class MarineCompanionChainsawAmmo : CommonAmmoFeatures
     Tag "Chainsaw Marine";
     Inventory.PickupMessage "Got a Chainsaw Marine!";
     CommonAmmoFeatures.price 20;
+  }
+  States
+  {
+    Spawn:
+      ALY7 A -1;
+      Stop;
   }
 }
 
@@ -54,6 +66,12 @@ Class MarineCompanionPistolAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a Pistol Marine!";
     CommonAmmoFeatures.price 20;
   }
+  States
+  {
+    Spawn:
+      ALY2 A -1;
+      Stop;
+  }
 }
 
 Class MarineCompanionSGAmmo : CommonAmmoFeatures
@@ -63,6 +81,12 @@ Class MarineCompanionSGAmmo : CommonAmmoFeatures
     Tag "Shotgun Marine";
     Inventory.PickupMessage "Got a Shotgun Marine!";
     CommonAmmoFeatures.price 30;
+  }
+  States
+  {
+    Spawn:
+      ALY5 A -1;
+      Stop;
   }
 }
 
@@ -74,6 +98,12 @@ Class MarineCompanionSSGAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a Super Shotgun Marine!";
     CommonAmmoFeatures.price 50;
   }
+  States
+  {
+    Spawn:
+      AL11 A -1;
+      Stop;
+  }
 }
 
 Class MarineCompanionCGAmmo : CommonAmmoFeatures
@@ -83,6 +113,12 @@ Class MarineCompanionCGAmmo : CommonAmmoFeatures
     Tag "Chaingun Marine";
     Inventory.PickupMessage "Got a Chaingun Marine!";
     CommonAmmoFeatures.price 50;
+  }
+  States
+  {
+    Spawn:
+      ALY4 A -1;
+      Stop;
   }
 }
 
@@ -94,6 +130,12 @@ Class MarineCompanionRocketAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a Rocket Launcher Marine!";
     CommonAmmoFeatures.price 100;
   }
+  States
+  {
+    Spawn:
+      ALY9 A -1;
+      Stop;
+  }
 }
 
 Class MarineCompanionPlasmaAmmo : CommonAmmoFeatures
@@ -103,6 +145,12 @@ Class MarineCompanionPlasmaAmmo : CommonAmmoFeatures
     Tag "Plasma Rifle Marine";
     Inventory.PickupMessage "Got a Plasma Rifle Marine!";
     CommonAmmoFeatures.price 70;
+  }
+  States
+  {
+    Spawn:
+      ALY8 A -1;
+      Stop;
   }
 }
 
@@ -114,6 +162,12 @@ Class MarineCompanionBFG9000Ammo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a BFG9000 Marine!";
     CommonAmmoFeatures.price 150;
   }
+  States
+  {
+    Spawn:
+      AL10 A -1;
+      Stop;
+  }
 }
 
 Class MarineCompanionBFG10KAmmo : CommonAmmoFeatures
@@ -123,6 +177,12 @@ Class MarineCompanionBFG10KAmmo : CommonAmmoFeatures
     Tag "BFG10K Marine";
     Inventory.PickupMessage "Got a BFG10K Marine!";
     CommonAmmoFeatures.price 150;
+  }
+  States
+  {
+    Spawn:
+      AL15 A -1;
+      Stop;
   }
 }
 
@@ -134,6 +194,12 @@ Class MarineCompanionGLAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a Grenade Launcher Marine!";
     CommonAmmoFeatures.price 70;
   }
+  States
+  {
+    Spawn:
+      AL14 A -1;
+      Stop;
+  }
 }
 
 Class MarineCompanionHSMissileAmmo : CommonAmmoFeatures
@@ -143,6 +209,12 @@ Class MarineCompanionHSMissileAmmo : CommonAmmoFeatures
     Tag "Heat Seeking Missile Marine";
     Inventory.PickupMessage "Got a Heat Seeking Missile Marine!";
     CommonAmmoFeatures.price 125;
+  }
+  States
+  {
+    Spawn:
+      AL13 A -1;
+      Stop;
   }
 }
 
@@ -154,6 +226,12 @@ Class MarineCompanionRailgunAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a Railgun Marine!";
     CommonAmmoFeatures.price 60;
   }
+  States
+  {
+    Spawn:
+      AL12 A -1;
+      Stop;
+  }
 }
 
 Class MarineCompanionSniperAmmo : CommonAmmoFeatures
@@ -163,6 +241,12 @@ Class MarineCompanionSniperAmmo : CommonAmmoFeatures
     Tag "Sniper Marine";
     Inventory.PickupMessage "Got a Sniper Marine!";
     CommonAmmoFeatures.price 80;
+  }
+  States
+  {
+    Spawn:
+      AL17 A -1;
+      Stop;
   }
 }
 
@@ -174,6 +258,12 @@ Class MarineCompanionFlameThrowerAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a Flame Thrower Marine!";
     CommonAmmoFeatures.price 60;
   }
+  States
+  {
+    Spawn:
+      AL16 A -1;
+      Stop;
+  }
 }
 
 Class MarineCompanionMGAmmo : CommonAmmoFeatures
@@ -183,6 +273,12 @@ Class MarineCompanionMGAmmo : CommonAmmoFeatures
     Tag "Machine Gun Marine";
     Inventory.PickupMessage "Got a Machine Gun Marine!";
     CommonAmmoFeatures.price 40;
+  }
+  States
+  {
+    Spawn:
+      ALY3 A -1;
+      Stop;
   }
 }
 
@@ -194,6 +290,12 @@ Class MarineCompanionMinigunAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a Minigun Marine!";
     CommonAmmoFeatures.price 70;
   }
+  States
+  {
+    Spawn:
+      ALY6 A -1;
+      Stop;
+  }
 }
 
 class CompanionZombieManAmmo : CommonAmmoFeatures
@@ -203,6 +305,12 @@ class CompanionZombieManAmmo : CommonAmmoFeatures
     Tag "Zombie Man";
     Inventory.PickupMessage "Got a Zombie Man!";
     CommonAmmoFeatures.price 1;
+  }
+  States
+  {
+    Spawn:
+      POSS A -1;
+      Stop;
   }
 }
 
@@ -214,6 +322,12 @@ class CompanionShotgunGuyAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a Shotgun Guy!";
     CommonAmmoFeatures.price 5;
   }
+  States
+  {
+    Spawn:
+      SPOS A -1;
+      Stop;
+  }
 }
 
 class CompanionChaingunGuyAmmo : CommonAmmoFeatures
@@ -224,6 +338,12 @@ class CompanionChaingunGuyAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a Chaingun Guy!";
     CommonAmmoFeatures.price 15;
   }
+  States
+  {
+    Spawn:
+      CPOS A -1;
+      Stop;
+  }
 }
 
 class CompanionDemonAmmo : CommonAmmoFeatures
@@ -233,6 +353,12 @@ class CompanionDemonAmmo : CommonAmmoFeatures
     Tag "Demon";
     Inventory.PickupMessage "Got a Demon!";
     CommonAmmoFeatures.price 3;
+  }
+  States
+  {
+    Spawn:
+      SARG A -1;
+      Stop;
   }
 }
 
@@ -255,6 +381,12 @@ class CompanionLostSoulAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a Lost Soul!";
     CommonAmmoFeatures.price 3;
   }
+  States
+  {
+    Spawn:
+      SKUL A -1;
+      Stop;
+  }
 }
 
 class CompanionCacodemonAmmo : CommonAmmoFeatures
@@ -264,6 +396,12 @@ class CompanionCacodemonAmmo : CommonAmmoFeatures
     Tag "Cacodemon";
     Inventory.PickupMessage "Got a Cacodemon!";
     CommonAmmoFeatures.price 50;
+  }
+  States
+  {
+    Spawn:
+      HEAD A -1;
+      Stop;
   }
 }
 
@@ -275,6 +413,12 @@ class CompanionPainElementalAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a Pain Elemental!";
     CommonAmmoFeatures.price 150;
   }
+  States
+  {
+    Spawn:
+      PAIN A -1;
+      Stop;
+  }
 }
 
 class CompanionBaronOfHellAmmo : CommonAmmoFeatures
@@ -284,6 +428,12 @@ class CompanionBaronOfHellAmmo : CommonAmmoFeatures
     Tag "Baron of Hell";
     Inventory.PickupMessage "Got a Baron of Hell!";
     CommonAmmoFeatures.price 150;
+  }
+  States
+  {
+    Spawn:
+      BOSS A -1;
+      Stop;
   }
 }
 
@@ -295,6 +445,12 @@ class CompanionHellKnightAmmo : CompanionBaronOfHellAmmo
     Inventory.PickupMessage "Got a Hell Knight!";
     CommonAmmoFeatures.price 75;
   }
+  States
+  {
+    Spawn:
+      BOS2 A -1;
+      Stop;
+  }
 }
 
 class CompanionArachnotronAmmo : CommonAmmoFeatures
@@ -304,6 +460,12 @@ class CompanionArachnotronAmmo : CommonAmmoFeatures
     Tag "Arachnotron";
     Inventory.PickupMessage "Got an Arachnotron!";
     CommonAmmoFeatures.price 60;
+  }
+  States
+  {
+    Spawn:
+      BSPI A -1;
+      Stop;
   }
 }
 
@@ -315,6 +477,12 @@ class CompanionArchvileAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got an Archvile!";
     CommonAmmoFeatures.price 30;
   }
+  States
+  {
+    Spawn:
+      VILE A -1;
+      Stop;
+  }
 }
 
 class CompanionFatsoAmmo : CommonAmmoFeatures
@@ -324,6 +492,12 @@ class CompanionFatsoAmmo : CommonAmmoFeatures
     Tag "Mancubus";
     Inventory.PickupMessage "Got a Mancubus!";
     CommonAmmoFeatures.price 40;
+  }
+  States
+  {
+    Spawn:
+      FATT A -1;
+      Stop;
   }
 }
 
@@ -335,6 +509,12 @@ class CompanionCyberdemonAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a Cyberdemon!";
     CommonAmmoFeatures.price 250;
   }
+  States
+  {
+    Spawn:
+      CYBR A -1;
+      Stop;
+  }
 }
 
 class CompanionSpiderMastermindAmmo : CommonAmmoFeatures
@@ -344,6 +524,12 @@ class CompanionSpiderMastermindAmmo : CommonAmmoFeatures
     Tag "Spider Mastermind";
     Inventory.PickupMessage "Got a Spider Mastermind!";
     CommonAmmoFeatures.price 200;
+  }
+  States
+  {
+    Spawn:
+      SPID A -1;
+      Stop;
   }
 }
 
@@ -355,6 +541,12 @@ class CompanionWolfensteinSSAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a Wolfenstein SS!";
     CommonAmmoFeatures.price 10;
   }
+  States
+  {
+    Spawn:
+      SSWV A -1;
+      Stop;
+  }
 }
 
 class CompanionRevenantAmmo : CommonAmmoFeatures
@@ -364,6 +556,12 @@ class CompanionRevenantAmmo : CommonAmmoFeatures
     Tag "Revenant";
     Inventory.PickupMessage "Got a Revenant!";
     CommonAmmoFeatures.price 60;
+  }
+  States
+  {
+    Spawn:
+      SKEL A -1;
+      Stop;
   }
 }
 
@@ -375,6 +573,12 @@ class CompanionDoomImpAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got an Imp!";
     CommonAmmoFeatures.price 10;
   }
+  States
+  {
+    Spawn:
+      TROO A -1;
+      Stop;
+  }
 }
 
 Class BelphegorAmmo : CommonAmmoFeatures
@@ -384,6 +588,12 @@ Class BelphegorAmmo : CommonAmmoFeatures
     Tag "Belphagor";
     Inventory.PickupMessage "Got a Belphegor!";
     CommonAmmoFeatures.price 100;
+  }
+  States
+  {
+    Spawn:
+      BOS3 A -1;
+      Stop;
   }
 }
 
@@ -396,6 +606,12 @@ Class AfritAmmo : CommonAmmoFeatures
     CommonAmmoFeatures.price 100;
     Inventory.Icon "FRITV0";
   }
+  States
+  {
+    Spawn:
+      FRIT A -1;
+      Stop;
+  }
 }
 
 Class MarauderAmmo : CommonAmmoFeatures
@@ -405,6 +621,12 @@ Class MarauderAmmo : CommonAmmoFeatures
     Tag "Marauder";
     Inventory.PickupMessage "Got a Marauder!";
     CommonAmmoFeatures.price 60;
+  }
+  States
+  {
+    Spawn:
+      MAUD A -1;
+      Stop;
   }
 }
 
@@ -416,6 +638,12 @@ Class ArachnophyteAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got an Arachnophyte!";
     CommonAmmoFeatures.price 200;
   }
+  States
+  {
+    Spawn:
+      APYT A -1;
+      Stop;
+  }
 }
 
 Class ArchonOfHellAmmo : CommonAmmoFeatures
@@ -425,6 +653,12 @@ Class ArchonOfHellAmmo : CommonAmmoFeatures
     Tag "Archon of Hell";
     Inventory.PickupMessage "Got an Archon of Hell!";
     CommonAmmoFeatures.price 100;
+  }
+  States
+  {
+    Spawn:
+      BOS4 A -1;
+      Stop;
   }
 }
 
@@ -436,6 +670,12 @@ Class MurderBallAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got a Murder Ball!";
     CommonAmmoFeatures.price 999;
   }
+  States
+  {
+    Spawn:
+      BERS A -1;
+      Stop;
+  }
 }
 
 class ArachnobaronAmmo : CommonAmmoFeatures
@@ -446,6 +686,12 @@ class ArachnobaronAmmo : CommonAmmoFeatures
     Inventory.PickupMessage "Got an Arachnobaron!";
     CommonAmmoFeatures.price 100;
   }
+  States
+  {
+    Spawn:
+      ARBR A -1;
+      Stop;
+  }
 }
 
 class BabyCacoAmmo : CommonAmmoFeatures
@@ -455,5 +701,11 @@ class BabyCacoAmmo : CommonAmmoFeatures
     Tag "Baby Caco";
     Inventory.PickupMessage "Got a Baby Caco!";
     CommonAmmoFeatures.price 20;
+  }
+  States
+  {
+    Spawn:
+      ARBR A -1;
+      Stop;
   }
 }
