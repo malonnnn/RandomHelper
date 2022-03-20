@@ -9,9 +9,9 @@ class RemoveDeadFriend : EventHandler
         g.companions.Delete(companionNumber);
       }
 
-      if(e.Thing.target && e.Thing.target.bFriendly && e.inflictor){
+      /*if(e.Thing.target && e.Thing.target.bFriendly && e.inflictor){
         console.printf(e.Thing.GetClassName().." was killed by "..e.Thing.target.GetClassName().." using "..e.inflictor.getclassname());
-      }
+      }*/
     }
   }
 }

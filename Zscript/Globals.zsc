@@ -18,7 +18,6 @@ class Globals : EventHandler
     if(player){
       player.TakeInventory(companionClass.."Ammo", 1);
       player.TakeInventory("CompanionAmmo", price);
-      console.printf("summoned "..tag..", "..(numCompanions - 1).." left");
     }
     
     return companion;

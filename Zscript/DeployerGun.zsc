@@ -36,8 +36,19 @@ class BaseDeployer : Weapon
 			TNT1 A 0 A_GunFlash;
 			TNT1 A 0
 			{
-				A_StartSound("Weapons/BioFire");
-				A_FireProjectile("BioProj");
+				Actor p = players[PlayerNumber()].mo;
+				
+				
+				int price = cameraHeight;		
+				int balance = int(p.CountInv("CompanionAmmo"));
+				int numCompanions = p.CountInv(invoker.ammotype2);
+				String tag = invoker.getTag();
+
+				if(Utilities.canAfford(balance, price, numCompanions, tag))
+				{
+					A_StartSound("Weapons/BioFire");
+					A_FireProjectile("BioProj");
+				}
 			}
 			BPBL E 7;
 			BPBL F 8;
@@ -106,13 +117,14 @@ class BioProj : Actor
 				int balance = int(p.CountInv("CompanionAmmo"));
 				int numCompanions = p.CountInv(ammotype);
 
-				if(Utilities.canAfford(balance, price, numCompanions))
+
+				if(Utilities.canAfford(balance, price, numCompanions, tag))
 				{
 					A_StartSound("Weapons/BioProj");
 					
 					// className.StripRight("Item"); // its bugged, maybe fixed one day. "ArachnophyteItem".StripRight("Item") returns "Arachnophy"
 					
-					String className = ammotype.Left(ammotype.Length() - 4);
+				String className = ammotype.Left(ammotype.Length() - 4);
 					let g = Globals(EventHandler.Find("Globals"));
 					g.createCompanion(className, pos, p, price, tag, false, numCompanions);
 				}
