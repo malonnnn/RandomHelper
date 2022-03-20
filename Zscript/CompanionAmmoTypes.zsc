@@ -741,3 +741,35 @@ class AbaddonAmmo : CommonAmmoFeatures
       Stop;
   }
 }
+
+class AgathodemonAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Tag "Agathodemon";
+    Inventory.PickupMessage "Got an Agathodemon!";
+    CommonAmmoFeatures.price 100;
+  }
+  States
+  {
+    Spawn:
+      AGAH A -1;
+      Stop;
+  }
+}
+
+class AnotherAgathodemonAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Tag "Agathodemon Variant";
+    Inventory.PickupMessage "Got an Agathodemon variant!";
+    CommonAmmoFeatures.price 80;
+  }
+  States
+  {
+    Spawn:
+      AGAH A -1;
+      Stop;
+  }
+}

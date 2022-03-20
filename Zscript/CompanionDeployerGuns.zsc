@@ -810,6 +810,7 @@ class AbaddonGun : BaseDeployer
     Inventory.PickupMessage "Got an Abaddon!";
     cameraHeight 100;
     Weapon.SlotNumber 4;
+    Scale 0.4;
   }
   States
   {
@@ -818,3 +819,62 @@ class AbaddonGun : BaseDeployer
       Stop;
   }
 }
+
+class AgathodemonGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Agathodemon";
+    Weapon.AmmoType2 "AgathodemonAmmo";
+    Inventory.PickupMessage "Got an Agathodemon!";
+    cameraHeight 100;
+    Weapon.SlotNumber 4;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      AGAH A -1;
+      Stop;
+  }
+}
+
+class AnotherAgathodemonGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Agathodemon Variant";
+    Weapon.AmmoType2 "AnotherAgathodemonAmmo";
+    Inventory.PickupMessage "Got an Agathodemon variant!";
+    cameraHeight 80;
+    Weapon.SlotNumber 4;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      AGAH A -1;
+      Stop;
+  }
+}
+
+/* copy pastable example
+class AbaddonGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Abaddon";
+    Weapon.AmmoType2 "AbaddonAmmo";
+    Inventory.PickupMessage "Got an Abaddon!";
+    cameraHeight 100;
+    Weapon.SlotNumber 4;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      HED3 A -1;
+      Stop;
+  }
+}
+*/
