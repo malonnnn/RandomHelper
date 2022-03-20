@@ -1,4 +1,4 @@
-Class CommonItemFeatures : CustomInventory
+Class CommonAmmoFeatures : Ammo
 {
   int price;
   Default
@@ -7,10 +7,11 @@ Class CommonItemFeatures : CustomInventory
     +Inventory.PersistentPower
     +Inventory.InvBar
     +SpriteAngle
-    Scale 0.5;
     SpriteAngle 180;
     Inventory.MaxAmount 999;
     DamageFactor "Companion", 0.0;
+    Ammo.BackpackAmount 2;
+		Ammo.BackpackMaxAmount 999;
   }
   States
   {
@@ -24,7 +25,7 @@ Class CommonItemFeatures : CustomInventory
   }
 }
 
-Class MarineCompanionFistItem : CommonItemFeatures
+Class MarineCompanionFistAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -37,28 +38,10 @@ Class MarineCompanionFistItem : CommonItemFeatures
     Spawn:
       ALY1 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionChainsawItem : CommonItemFeatures
+Class MarineCompanionChainsawAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -71,28 +54,10 @@ Class MarineCompanionChainsawItem : CommonItemFeatures
     Spawn:
       ALY7 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionPistolItem : CommonItemFeatures
+Class MarineCompanionPistolAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -105,28 +70,10 @@ Class MarineCompanionPistolItem : CommonItemFeatures
     Spawn:
       ALY2 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionSGItem : CommonItemFeatures
+Class MarineCompanionSGAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -139,28 +86,10 @@ Class MarineCompanionSGItem : CommonItemFeatures
     Spawn:
       ALY5 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionSSGItem : CommonItemFeatures
+Class MarineCompanionSSGAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -173,28 +102,10 @@ Class MarineCompanionSSGItem : CommonItemFeatures
     Spawn:
       AL11 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionCGItem : CommonItemFeatures
+Class MarineCompanionCGAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -207,28 +118,10 @@ Class MarineCompanionCGItem : CommonItemFeatures
     Spawn:
       ALY4 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionRocketItem : CommonItemFeatures
+Class MarineCompanionRocketAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -241,28 +134,10 @@ Class MarineCompanionRocketItem : CommonItemFeatures
     Spawn:
       ALY9 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionPlasmaItem : CommonItemFeatures
+Class MarineCompanionPlasmaAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -275,28 +150,10 @@ Class MarineCompanionPlasmaItem : CommonItemFeatures
     Spawn:
       ALY8 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionBFG9000Item : CommonItemFeatures
+Class MarineCompanionBFG9000Ammo : CommonAmmoFeatures
 {
   Default
   {
@@ -309,28 +166,10 @@ Class MarineCompanionBFG9000Item : CommonItemFeatures
     Spawn:
       AL10 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionBFG10KItem : CommonItemFeatures
+Class MarineCompanionBFG10KAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -343,28 +182,10 @@ Class MarineCompanionBFG10KItem : CommonItemFeatures
     Spawn:
       AL15 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionGLItem : CommonItemFeatures
+Class MarineCompanionGLAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -377,28 +198,10 @@ Class MarineCompanionGLItem : CommonItemFeatures
     Spawn:
       AL14 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionHSMissileItem : CommonItemFeatures
+Class MarineCompanionHSMissileAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -411,28 +214,10 @@ Class MarineCompanionHSMissileItem : CommonItemFeatures
     Spawn:
       AL13 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionRailgunItem : CommonItemFeatures
+Class MarineCompanionRailgunAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -445,28 +230,10 @@ Class MarineCompanionRailgunItem : CommonItemFeatures
     Spawn:
       AL12 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionSniperItem : CommonItemFeatures
+Class MarineCompanionSniperAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -479,28 +246,10 @@ Class MarineCompanionSniperItem : CommonItemFeatures
     Spawn:
       AL17 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionFlameThrowerItem : CommonItemFeatures
+Class MarineCompanionFlameThrowerAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -513,28 +262,10 @@ Class MarineCompanionFlameThrowerItem : CommonItemFeatures
     Spawn:
       AL16 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionMGItem : CommonItemFeatures
+Class MarineCompanionMGAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -547,28 +278,10 @@ Class MarineCompanionMGItem : CommonItemFeatures
     Spawn:
       ALY3 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarineCompanionMinigunItem : CommonItemFeatures
+Class MarineCompanionMinigunAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -581,28 +294,10 @@ Class MarineCompanionMinigunItem : CommonItemFeatures
     Spawn:
       ALY6 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionZombieManItem : CommonItemFeatures
+class CompanionZombieManAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -615,28 +310,10 @@ class CompanionZombieManItem : CommonItemFeatures
     Spawn:
       POSS A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className = className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionShotgunGuyItem : CommonItemFeatures
+class CompanionShotgunGuyAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -649,28 +326,10 @@ class CompanionShotgunGuyItem : CommonItemFeatures
     Spawn:
       SPOS A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionChaingunGuyItem : CommonItemFeatures
+class CompanionChaingunGuyAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -683,28 +342,10 @@ class CompanionChaingunGuyItem : CommonItemFeatures
     Spawn:
       CPOS A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionDemonItem : CommonItemFeatures
+class CompanionDemonAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -717,28 +358,10 @@ class CompanionDemonItem : CommonItemFeatures
     Spawn:
       SARG A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionSpectreItem : CompanionDemonItem
+class CompanionSpectreAmmo : CompanionDemonAmmo
 {
   Default
   {
@@ -749,357 +372,167 @@ class CompanionSpectreItem : CompanionDemonItem
   }
 }
 
-class CompanionLostSoulItem : CommonItemFeatures
+class CompanionLostSoulAmmo : CommonAmmoFeatures
 {
   Default
   {
     Tag "Lost Soul";
     Inventory.PickupMessage "Got a Lost Soul!";
     cameraHeight 3;
-    Scale 0.6;
   }
   States
   {
     Spawn:
       SKUL A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionCacodemonItem : CommonItemFeatures
+class CompanionCacodemonAmmo : CommonAmmoFeatures
 {
   Default
   {
     Tag "Cacodemon";
     Inventory.PickupMessage "Got a Cacodemon!";
     cameraHeight 50;
-    Scale 0.4;
   }
   States
   {
     Spawn:
       HEAD A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionPainElementalItem : CommonItemFeatures
+class CompanionPainElementalAmmo : CommonAmmoFeatures
 {
   Default
   {
     Tag "Pain Elemental";
     Inventory.PickupMessage "Got a Pain Elemental!";
     cameraHeight 150;
-    Scale 0.38;
   }
   States
   {
     Spawn:
       PAIN A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionBaronOfHellItem : CommonItemFeatures
+class CompanionBaronOfHellAmmo : CommonAmmoFeatures
 {
   Default
   {
     Tag "Baron of Hell";
     Inventory.PickupMessage "Got a Baron of Hell!";
     cameraHeight 150;
-    Scale 0.4;
   }
   States
   {
     Spawn:
       BOSS A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionHellKnightItem : CompanionBaronOfHellItem
+class CompanionHellKnightAmmo : CompanionBaronOfHellAmmo
 {
   Default
   {
     Tag "Hell Knight";
     Inventory.PickupMessage "Got a Hell Knight!";
     cameraHeight 75;
-    Scale 0.4;
   }
   States
   {
     Spawn:
       BOS2 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionArachnotronItem : CommonItemFeatures
+class CompanionArachnotronAmmo : CommonAmmoFeatures
 {
   Default
   {
     Tag "Arachnotron";
     Inventory.PickupMessage "Got an Arachnotron!";
     cameraHeight 60;
-    Scale 0.3;
   }
   States
   {
     Spawn:
       BSPI A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionArchvileItem : CommonItemFeatures
+class CompanionArchvileAmmo : CommonAmmoFeatures
 {
   Default
   {
     Tag "Archvile";
     Inventory.PickupMessage "Got an Archvile!";
     cameraHeight 30;
-    Scale 0.35;
   }
   States
   {
     Spawn:
       VILE A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionFatsoItem : CommonItemFeatures
+class CompanionFatsoAmmo : CommonAmmoFeatures
 {
   Default
   {
     Tag "Mancubus";
     Inventory.PickupMessage "Got a Mancubus!";
     cameraHeight 40;
-    Scale 0.4;
   }
   States
   {
     Spawn:
       FATT A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionCyberdemonItem : CommonItemFeatures
+class CompanionCyberdemonAmmo : CommonAmmoFeatures
 {
   Default
   {
     Tag "Cyberdemon";
     Inventory.PickupMessage "Got a Cyberdemon!";
     cameraHeight 250;
-    Scale 0.28;
   }
   States
   {
     Spawn:
       CYBR A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionSpiderMastermindItem : CommonItemFeatures
+class CompanionSpiderMastermindAmmo : CommonAmmoFeatures
 {
   Default
   {
     Tag "Spider Mastermind";
     Inventory.PickupMessage "Got a Spider Mastermind!";
     cameraHeight 200;
-    Scale 0.15;
   }
   States
   {
     Spawn:
       SPID A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionWolfensteinSSItem : CommonItemFeatures
+class CompanionWolfensteinSSAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -1112,63 +545,26 @@ class CompanionWolfensteinSSItem : CommonItemFeatures
     Spawn:
       SSWV A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionRevenantItem : CommonItemFeatures
+class CompanionRevenantAmmo : CommonAmmoFeatures
 {
   Default
   {
     Tag "Revenant";
     Inventory.PickupMessage "Got a Revenant!";
     cameraHeight 60;
-    Scale 0.35;
   }
   States
   {
     Spawn:
       SKEL A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class CompanionDoomImpItem : CommonItemFeatures
+class CompanionDoomImpAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -1181,63 +577,26 @@ class CompanionDoomImpItem : CommonItemFeatures
     Spawn:
       TROO A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class BelphegorItem : CommonItemFeatures
+Class BelphegorAmmo : CommonAmmoFeatures
 {
   Default
   {
     Tag "Belphagor";
     Inventory.PickupMessage "Got a Belphegor!";
     cameraHeight 100;
-    Scale 0.4;
   }
   States
   {
     Spawn:
       BOS3 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class AfritItem : CommonItemFeatures
+Class AfritAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -1245,140 +604,64 @@ Class AfritItem : CommonItemFeatures
     Inventory.PickupMessage "Got an Afrit!";
     cameraHeight 100;
     Inventory.Icon "FRITV0";
-    Scale 0.4;
   }
   States
   {
     Spawn:
       FRIT A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MarauderItem : CommonItemFeatures
+Class MarauderAmmo : CommonAmmoFeatures
 {
   Default
   {
     Tag "Marauder";
     Inventory.PickupMessage "Got a Marauder!";
     cameraHeight 60;
-    Scale 0.48;
   }
   States
   {
     Spawn:
       MAUD A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class ArachnophyteItem : CommonItemFeatures
+Class ArachnophyteAmmo : CommonAmmoFeatures
 {
   Default
   {
     Tag "Arachnophyte";
     Inventory.PickupMessage "Got an Arachnophyte!";
     cameraHeight 200;
-    Scale 0.2;
   }
   States
   {
     Spawn:
       APYT A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class ArchonOfHellItem : CommonItemFeatures
+Class ArchonOfHellAmmo : CommonAmmoFeatures
 {
   Default
   {
     Tag "Archon of Hell";
     Inventory.PickupMessage "Got an Archon of Hell!";
     cameraHeight 100;
-    Scale 0.4;
   }
   States
   {
     Spawn:
       BOS4 A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-Class MurderBallItem : CommonItemFeatures
+Class MurderBallAmmo : CommonAmmoFeatures
 {
   Default
   {
@@ -1391,58 +674,21 @@ Class MurderBallItem : CommonItemFeatures
     Spawn:
       BERS A -1;
       Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
-      Stop;
   }
 }
 
-class ArachnobaronItem : CommonItemFeatures
+class ArachnobaronAmmo : CommonAmmoFeatures
 {
   Default
   {
     Tag "Arachnobaron";
     Inventory.PickupMessage "Got an Arachnobaron!";
     cameraHeight 100;
-    Scale 0.3;
   }
   States
   {
     Spawn:
       ARBR A -1;
-      Stop;
-    Use:
-      TNT1 A 0
-      {
-        let p = players[PlayerNumber()].mo;
-        invoker.price = invoker.cameraheight;
-        int balance = p.CountInv("CompanionAmmo");
-        if(Utilities.canAfford(balance, invoker.price))
-        {
-          p.TakeInventory("CompanionAmmo", invoker.price);
-          let g = Globals(EventHandler.Find("Globals"));
-          String className = invoker.GetClassName();
-          className.Left(className.Length() - 4);
-          g.createCompanion(className, p.pos, p, invoker.price, invoker.GetTag());
-          return true;
-        }
-        return false;
-      }
       Stop;
   }
 }

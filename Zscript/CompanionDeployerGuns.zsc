@@ -1,0 +1,726 @@
+Class MarineCompanionFistGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Berserk Marine";
+    Weapon.AmmoType2 "MarineCompanionFistAmmo";
+    Inventory.PickupMessage "Got a Berserk Marine Gun!";
+    cameraHeight 20;
+  }
+  States
+  {
+    Spawn:
+      ALY1 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionChainsawGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Chainsaw Marine";
+    Weapon.AmmoType2 "MarineCompanionChainsawAmmo";
+    Inventory.PickupMessage "Got a Chainsaw Marine Gun!";
+    cameraHeight 20;
+  }
+  States
+  {
+    Spawn:
+      ALY7 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionPistolGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Pistol Marine";
+    Weapon.AmmoType2 "MarineCompanionPistolAmmo";
+    Inventory.PickupMessage "Got a Pistol Marine Gun!";
+    cameraHeight 20;
+  }
+  States
+  {
+    Spawn:
+      ALY2 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionSGGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Shotgun Marine";
+    Weapon.AmmoType2 "MarineCompanionSGAmmo";
+    Inventory.PickupMessage "Got a Shotgun Marine Gun!";
+    cameraHeight 30;
+  }
+  States
+  {
+    Spawn:
+      ALY5 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionSSGGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Super Shotgun Marine";
+    Weapon.AmmoType2 "MarineCompanionSSGAmmo";
+    Inventory.PickupMessage "Got a Super Shotgun Marine Gun!";
+    cameraHeight 50;
+  }
+  States
+  {
+    Spawn:
+      AL11 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionCGGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Chaingun Marine";
+    Weapon.AmmoType2 "MarineCompanionCGAmmo";
+    Inventory.PickupMessage "Got a Chaingun Marine Gun!";
+    cameraHeight 50;
+  }
+  States
+  {
+    Spawn:
+      ALY4 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionRocketGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Rocket Launcher Marine";
+    Weapon.AmmoType2 "MarineCompanionRocketAmmo";
+    Inventory.PickupMessage "Got a Rocket Launcher Marine Gun!";
+    cameraHeight 100;
+  }
+  States
+  {
+    Spawn:
+      ALY9 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionPlasmaGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Plasma Rifle Marine";
+    Weapon.AmmoType2 "MarineCompanionPlasmaAmmo";
+    Inventory.PickupMessage "Got a Plasma Rifle Marine Gun!";
+    cameraHeight 70;
+  }
+  States
+  {
+    Spawn:
+      ALY8 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionBFG9000Gun : BaseDeployer
+{
+  Default
+  {
+    Tag "BFG9000 Marine";
+    Weapon.AmmoType2 "MarineCompanionBFG9000Ammo";
+    Inventory.PickupMessage "Got a BFG9000 Marine Gun!";
+    cameraHeight 150;
+  }
+  States
+  {
+    Spawn:
+      AL10 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionBFG10KGun : BaseDeployer
+{
+  Default
+  {
+    Tag "BFG10K Marine";
+    Weapon.AmmoType2 "MarineCompanionBFG10KAmmo";
+    Inventory.PickupMessage "Got a BFG10K Marine Gun!";
+    cameraHeight 150;
+  }
+  States
+  {
+    Spawn:
+      AL15 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionGLGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Grenade Launcher Marine";
+    Weapon.AmmoType2 "MarineCompanionGLAmmo";
+    Inventory.PickupMessage "Got a Grenade Launcher Marine Gun!";
+    cameraHeight 70;
+  }
+  States
+  {
+    Spawn:
+      AL14 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionHSMissileGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Heat Seeking Missile Marine";
+    Weapon.AmmoType2 "MarineCompanionHSMissileAmmo";
+    Inventory.PickupMessage "Got a Heat Seeking Missile Marine Gun!";
+    cameraHeight 125;
+  }
+  States
+  {
+    Spawn:
+      AL13 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionRailgunGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Railgun Marine";
+    Weapon.AmmoType2 "MarineCompanionRailgunAmmo";
+    Inventory.PickupMessage "Got a Railgun Marine Gun!";
+    cameraHeight 60;
+  }
+  States
+  {
+    Spawn:
+      AL12 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionSniperGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Sniper Marine";
+    Weapon.AmmoType2 "MarineCompanionSniperAmmo";
+    Inventory.PickupMessage "Got a Sniper Marine Gun!";
+    cameraHeight 80;
+  }
+  States
+  {
+    Spawn:
+      AL17 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionFlameThrowerGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Flame Thrower Marine";
+    Weapon.AmmoType2 "MarineCompanionFlameThrowerAmmo";
+    Inventory.PickupMessage "Got a Flame Thrower Marine Gun!";
+    cameraHeight 60;
+  }
+  States
+  {
+    Spawn:
+      AL16 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionMGGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Machine Gun Marine";
+    Weapon.AmmoType2 "MarineCompanionMGAmmo";
+    Inventory.PickupMessage "Got a Machine Gun Marine Gun!";
+    cameraHeight 40;
+  }
+  States
+  {
+    Spawn:
+      ALY3 A -1;
+      Stop;
+  }
+}
+
+Class MarineCompanionMinigunGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Minigun Marine";
+    Weapon.AmmoType2 "MarineCompanionMinigunAmmo";
+    Inventory.PickupMessage "Got a Minigun Marine Gun!";
+    cameraHeight 70;
+  }
+  States
+  {
+    Spawn:
+      ALY6 A -1;
+      Stop;
+  }
+}
+
+class CompanionZombieManGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Zombie Man";
+    Weapon.AmmoType2 "CompanionZombieManAmmo";
+    Inventory.PickupMessage "Got a Zombie Man Gun!";
+    cameraHeight 1;
+  }
+  States
+  {
+    Spawn:
+      POSS A -1;
+      Stop;
+  }
+}
+
+class CompanionShotgunGuyGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Shotgun Guy";
+    Weapon.AmmoType2 "CompanionShotgunGuyAmmo";
+    Inventory.PickupMessage "Got a Shotgun Guy Gun!";
+    cameraHeight 5;
+  }
+  States
+  {
+    Spawn:
+      SPOS A -1;
+      Stop;
+  }
+}
+
+class CompanionChaingunGuyGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Chaingun Guy";
+    Weapon.AmmoType2 "CompanionChaingunGuyAmmo";
+    Inventory.PickupMessage "Got a Chaingun Guy Gun!";
+    cameraHeight 15;
+  }
+  States
+  {
+    Spawn:
+      CPOS A -1;
+      Stop;
+  }
+}
+
+class CompanionDemonGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Demon";
+    Weapon.AmmoType2 "CompanionDemonAmmo";
+    Inventory.PickupMessage "Got a Demon Gun!";
+    cameraHeight 3;
+  }
+  States
+  {
+    Spawn:
+      SARG A -1;
+      Stop;
+  }
+}
+
+class CompanionSpectreGun : CompanionDemonGun
+{
+  Default
+  {
+    Tag "Spectre";
+    Weapon.AmmoType2 "CompanionSpectreAmmo";
+    Inventory.PickupMessage "Got a Spectre Gun!";
+    RenderStyle "OptFuzzy";
+    Inventory.Icon "SARGZ0";
+  }
+}
+
+class CompanionLostSoulGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Lost Soul";
+    Weapon.AmmoType2 "CompanionLostSoulAmmo";
+    Inventory.PickupMessage "Got a Lost Soul Gun!";
+    cameraHeight 3;
+    Scale 0.6;
+  }
+  States
+  {
+    Spawn:
+      SKUL A -1;
+      Stop;
+  }
+}
+
+class CompanionCacodemonGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Cacodemon";
+    Weapon.AmmoType2 "CompanionCacodemonAmmo";
+    Inventory.PickupMessage "Got a Cacodemon Gun!";
+    cameraHeight 50;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      HEAD A -1;
+      Stop;
+  }
+}
+
+class CompanionPainElementalGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Pain Elemental";
+    Weapon.AmmoType2 "CompanionPainElementalAmmo";
+    Inventory.PickupMessage "Got a Pain Elemental Gun!";
+    cameraHeight 150;
+    Scale 0.38;
+  }
+  States
+  {
+    Spawn:
+      PAIN A -1;
+      Stop;
+  }
+}
+
+class CompanionBaronOfHellGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Baron of Hell";
+    Weapon.AmmoType2 "CompanionBaronOfHellAmmo";
+    Inventory.PickupMessage "Got a Baron of Hell Gun!";
+    cameraHeight 150;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      BOSS A -1;
+      Stop;
+  }
+}
+
+class CompanionHellKnightGun : CompanionBaronOfHellGun
+{
+  Default
+  {
+    Tag "Hell Knight";
+    Weapon.AmmoType2 "CompanionHellKnightAmmo";
+    Inventory.PickupMessage "Got a Hell Knight Gun!";
+    cameraHeight 75;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      BOS2 A -1;
+      Stop;
+  }
+}
+
+class CompanionArachnotronGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Arachnotron";
+    Weapon.AmmoType2 "CompanionArachnotronAmmo";
+    Inventory.PickupMessage "Got an Arachnotron Gun!";
+    cameraHeight 60;
+    Scale 0.3;
+  }
+  States
+  {
+    Spawn:
+      BSPI A -1;
+      Stop;
+  }
+}
+
+class CompanionArchvileGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Archvile";
+    Weapon.AmmoType2 "CompanionArchvileAmmo";
+    Inventory.PickupMessage "Got an Archvile Gun!";
+    cameraHeight 30;
+    Scale 0.35;
+  }
+  States
+  {
+    Spawn:
+      VILE A -1;
+      Stop;
+  }
+}
+
+class CompanionFatsoGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Mancubus";
+    Weapon.AmmoType2 "CompanionFatsoAmmo";
+    Inventory.PickupMessage "Got a Mancubus Gun!";
+    cameraHeight 40;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      FATT A -1;
+      Stop;
+  }
+}
+
+class CompanionCyberdemonGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Cyberdemon";
+    Weapon.AmmoType2 "CompanionCyberdemonAmmo";
+    Inventory.PickupMessage "Got a Cyberdemon Gun!";
+    cameraHeight 250;
+    Scale 0.28;
+  }
+  States
+  {
+    Spawn:
+      CYBR A -1;
+      Stop;
+  }
+}
+
+class CompanionSpiderMastermindGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Spider Mastermind";
+    Weapon.AmmoType2 "CompanionSpiderMastermindAmmo";
+    Inventory.PickupMessage "Got a Spider Mastermind Gun!";
+    cameraHeight 200;
+    Scale 0.15;
+  }
+  States
+  {
+    Spawn:
+      SPID A -1;
+      Stop;
+  }
+}
+
+class CompanionWolfensteinSSGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Wolfenstein SS";
+    Weapon.AmmoType2 "CompanionWolfensteinSSAmmo";
+    Inventory.PickupMessage "Got a Wolfenstein SS Gun!";
+    cameraHeight 10;
+  }
+  States
+  {
+    Spawn:
+      SSWV A -1;
+      Stop;
+  }
+}
+
+class CompanionRevenantGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Revenant";
+    Weapon.AmmoType2 "CompanionRevenantAmmo";
+    Inventory.PickupMessage "Got a Revenant Gun!";
+    cameraHeight 60;
+    Scale 0.35;
+  }
+  States
+  {
+    Spawn:
+      SKEL A -1;
+      Stop;
+  }
+}
+
+class CompanionDoomImpGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Imp";
+    Weapon.AmmoType2 "CompanionDoomImpAmmo";
+    Inventory.PickupMessage "Got an Imp Gun!";
+    cameraHeight 10;
+  }
+  States
+  {
+    Spawn:
+      TROO A -1;
+      Stop;
+  }
+}
+
+Class BelphegorGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Belphagor";
+    Weapon.AmmoType2 "BelphegorAmmo";
+    Inventory.PickupMessage "Got a Belphegor Gun!";
+    cameraHeight 100;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      BOS3 A -1;
+      Stop;
+  }
+}
+
+Class AfritGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Afrit";
+    Weapon.AmmoType2 "AfritAmmo";
+    Inventory.PickupMessage "Got an Afrit Gun!";
+    cameraHeight 100;
+    Inventory.Icon "FRITV0";
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      FRIT A -1;
+      Stop;
+  }
+}
+
+Class MarauderGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Marauder";
+    Weapon.AmmoType2 "MarauderAmmo";
+    Inventory.PickupMessage "Got a Marauder Gun!";
+    cameraHeight 60;
+    Scale 0.48;
+  }
+  States
+  {
+    Spawn:
+      MAUD A -1;
+      Stop;
+  }
+}
+
+Class ArachnophyteGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Arachnophyte";
+    Weapon.AmmoType2 "ArachnophyteAmmo";
+    Inventory.PickupMessage "Got an Arachnophyte Gun!";
+    cameraHeight 200;
+    Scale 0.2;
+  }
+  States
+  {
+    Spawn:
+      APYT A -1;
+      Stop;
+  }
+}
+
+Class ArchonOfHellGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Archon of Hell";
+    Weapon.AmmoType2 "ArchonOfHellAmmo";
+    Inventory.PickupMessage "Got an Archon of Hell Gun!";
+    cameraHeight 100;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      BOS4 A -1;
+      Stop;
+  }
+}
+
+Class MurderBallGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Murder Ball";
+    Weapon.AmmoType2 "MurderBallAmmo";
+    Inventory.PickupMessage "Got a Murder Ball Gun!";
+    cameraHeight 999;
+  }
+  States
+  {
+    Spawn:
+      BERS A -1;
+      Stop;
+  }
+}
+
+class ArachnobaronGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Arachnobaron";
+    Weapon.AmmoType2 "ArachnobaronAmmo";
+    Inventory.PickupMessage "Got an Arachnobaron Gun!";
+    cameraHeight 100;
+    Scale 0.3;
+  }
+  States
+  {
+    Spawn:
+      ARBR A -1;
+      Stop;
+  }
+}

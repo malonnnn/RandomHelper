@@ -2,16 +2,16 @@ class CompanionItemSpawnerTier1 : RandomSpawner
 {
   Default
   {
-    DropItem "MarineCompanionPistolItem", 255, 90;
-    DropItem "MarineCompanionChainsawItem", 255, 100;
-    DropItem "CompanionDemonItem", 255, 80;
-    DropItem "CompanionDoomImpItem", 255,90;
-    DropItem "CompanionLostSoulItem", 255, 80;
-    DropItem "CompanionShotgunGuyItem", 255, 90;
-    DropItem "CompanionSpectreItem", 255, 80;
-    DropItem "CompanionWolfensteinSSItem", 255, 80;
-    DropItem "CompanionZombieManItem", 255, 100;
-    DropItem "MarineCompanionFistItem", 255, 75;
+    DropItem "MarineCompanionPistolGun", 255, 90;
+    DropItem "MarineCompanionChainsawGun", 255, 100;
+    DropItem "CompanionDemonGun", 255, 80;
+    DropItem "CompanionDoomImpGun", 255,90;
+    DropItem "CompanionLostSoulGun", 255, 80;
+    DropItem "CompanionShotgunGuyGun", 255, 90;
+    DropItem "CompanionSpectreGun", 255, 80;
+    DropItem "CompanionWolfensteinSSGun", 255, 80;
+    DropItem "CompanionZombieManGun", 255, 100;
+    DropItem "MarineCompanionFistGun", 255, 75;
   }
 }
 
@@ -19,27 +19,27 @@ class CompanionItemSpawnerTier2 : RandomSpawner
 {
   Default
   {
-    DropItem "MarineCompanionPistolItem", 255, 90;
-    DropItem "MarineCompanionSGItem", 255, 50;
-    DropItem "MarineCompanionChainsawItem", 255, 100;
-    DropItem "CompanionDemonItem", 255, 80;
-    DropItem "CompanionDoomImpItem", 255,90;
-    DropItem "CompanionLostSoulItem", 255, 80;
-    DropItem "CompanionShotgunGuyItem", 255, 90;
-    DropItem "CompanionSpectreItem", 255, 80;
-    DropItem "CompanionWolfensteinSSItem", 255, 80;
-    DropItem "CompanionZombieManItem", 255, 100;
-    DropItem "MarineCompanionSSGItem", 255, 70;
-    DropItem "MarineCompanionMGItem", 255, 70;
-    DropItem "MarineCompanionCGItem", 255, 70;
-    DropItem "MarineCompanionFistItem", 255, 75;
-    DropItem "CompanionArchvileItem", 255, 60;
-    DropItem "CompanionCacodemonItem", 255, 60;
-    DropItem "CompanionChaingunGuyItem", 255, 70;
-    DropItem "MarauderItem", 255, 60;
-    DropItem "CompanionHellKnightItem", 255, 50;
-    DropItem "MarineCompanionRailgunItem", 255, 50;
-    DropItem "MarineCompanionPlasmaItem", 255, 50;
+    DropItem "MarineCompanionPistolGun", 255, 90;
+    DropItem "MarineCompanionSGGun", 255, 50;
+    DropItem "MarineCompanionChainsawGun", 255, 100;
+    DropItem "CompanionDemonGun", 255, 80;
+    DropItem "CompanionDoomImpGun", 255,90;
+    DropItem "CompanionLostSoulGun", 255, 80;
+    DropItem "CompanionShotgunGuyGun", 255, 90;
+    DropItem "CompanionSpectreGun", 255, 80;
+    DropItem "CompanionWolfensteinSSGun", 255, 80;
+    DropItem "CompanionZombieManGun", 255, 100;
+    DropItem "MarineCompanionSSGGun", 255, 70;
+    DropItem "MarineCompanionMGGun", 255, 70;
+    DropItem "MarineCompanionCGGun", 255, 70;
+    DropItem "MarineCompanionFistGun", 255, 75;
+    DropItem "CompanionArchvileGun", 255, 60;
+    DropItem "CompanionCacodemonGun", 255, 60;
+    DropItem "CompanionChaingunGuyGun", 255, 70;
+    DropItem "MarauderGun", 255, 60;
+    DropItem "CompanionHellKnightGun", 255, 50;
+    DropItem "MarineCompanionRailgunGun", 255, 50;
+    DropItem "MarineCompanionPlasmaGun", 255, 50;
   }
 }
 
@@ -47,36 +47,36 @@ class CompanionItemSpawnerTier3 : RandomSpawner
 {
   Default
   {
-    DropItem "MarineCompanionPistolItem", 255, 90;
-    DropItem "MarineCompanionSGItem", 255, 50;
-    DropItem "MarineCompanionChainsawItem", 255, 100;
-    DropItem "CompanionDemonItem", 255, 80;
-    DropItem "CompanionDoomImpItem", 255,90;
-    DropItem "CompanionLostSoulItem", 255, 80;
-    DropItem "CompanionShotgunGuyItem", 255, 90;
-    DropItem "CompanionSpectreItem", 255, 80;
-    DropItem "CompanionWolfensteinSSItem", 255, 80;
-    DropItem "CompanionZombieManItem", 255, 100;
-    DropItem "MarineCompanionSSGItem", 255, 70;
-    DropItem "MarineCompanionMGItem", 255, 70;
-    DropItem "MarineCompanionCGItem", 255, 70;
-    DropItem "MarineCompanionFistItem", 255, 75;
-    DropItem "CompanionArchvileItem", 255, 60;
-    DropItem "CompanionCacodemonItem", 255, 60;
-    DropItem "CompanionChaingunGuyItem", 255, 70;
-    DropItem "MarauderItem", 255, 60;
-    DropItem "CompanionHellKnightItem", 255, 50;
-    DropItem "MarineCompanionRailgunItem", 255, 50;
-    DropItem "MarineCompanionPlasmaItem", 255, 50;
-    DropItem "MarineCompanionGLItem", 255, 30;
-    DropItem "CompanionBaronOfHellItem", 255, 30;
-    DropItem "CompanionRevenantItem", 255, 30;
-    DropItem "CompanionPainElementalItem", 255, 40;
-    DropItem "CompanionFatsoItem", 255, 40;
-    DropItem "CompanionArachnotronItem", 255, 40;
-    DropItem "MarineCompanionFlamethrowerItem", 255, 30;
-    DropItem "MarineCompanionMinigunItem", 255, 30;
-    DropItem "ArachnobaronItem", 255, 30;
+    DropItem "MarineCompanionPistolGun", 255, 90;
+    DropItem "MarineCompanionSGGun", 255, 50;
+    DropItem "MarineCompanionChainsawGun", 255, 100;
+    DropItem "CompanionDemonGun", 255, 80;
+    DropItem "CompanionDoomImpGun", 255,90;
+    DropItem "CompanionLostSoulGun", 255, 80;
+    DropItem "CompanionShotgunGuyGun", 255, 90;
+    DropItem "CompanionSpectreGun", 255, 80;
+    DropItem "CompanionWolfensteinSSGun", 255, 80;
+    DropItem "CompanionZombieManGun", 255, 100;
+    DropItem "MarineCompanionSSGGun", 255, 70;
+    DropItem "MarineCompanionMGGun", 255, 70;
+    DropItem "MarineCompanionCGGun", 255, 70;
+    DropItem "MarineCompanionFistGun", 255, 75;
+    DropItem "CompanionArchvileGun", 255, 60;
+    DropItem "CompanionCacodemonGun", 255, 60;
+    DropItem "CompanionChaingunGuyGun", 255, 70;
+    DropItem "MarauderGun", 255, 60;
+    DropItem "CompanionHellKnightGun", 255, 50;
+    DropItem "MarineCompanionRailgunGun", 255, 50;
+    DropItem "MarineCompanionPlasmaGun", 255, 50;
+    DropItem "MarineCompanionGLGun", 255, 30;
+    DropItem "CompanionBaronOfHellGun", 255, 30;
+    DropItem "CompanionRevenantGun", 255, 30;
+    DropItem "CompanionPainElementalGun", 255, 40;
+    DropItem "CompanionFatsoGun", 255, 40;
+    DropItem "CompanionArachnotronGun", 255, 40;
+    DropItem "MarineCompanionFlamethrowerGun", 255, 30;
+    DropItem "MarineCompanionMinigunGun", 255, 30;
+    DropItem "ArachnobaronGun", 255, 30;
   }
 }
 
@@ -84,47 +84,47 @@ class CompanionItemSpawnerAll : RandomSpawner
 {
   Default
   {
-    DropItem "MarineCompanionFistItem", 255, 75;
-    DropItem "MarineCompanionPistolItem", 255, 80;
-    DropItem "MarineCompanionMGItem", 255, 70;
-    DropItem "MarineCompanionCGItem", 255, 70;
-    DropItem "MarineCompanionSGItem", 255, 50;
-    DropItem "MarineCompanionSSGItem", 255, 70;
-    DropItem "MarineCompanionPlasmaItem", 255, 50;
-    DropItem "MarineCompanionBFG10KItem", 255, 10;
-    DropItem "MarineCompanionBFG9000Item", 255, 10;
-    DropItem "MarineCompanionSniperItem", 255, 20;
-    DropItem "MarineCompanionHSMissileItem", 255, 20;
-    DropItem "MarineCompanionGLItem", 255, 30;
-    DropItem "MarineCompanionFlamethrowerItem", 255, 30;
-    DropItem "MarineCompanionRocketItem", 255, 20;
-    DropItem "MarineCompanionRailgunItem", 255, 50;
-    DropItem "MarineCompanionChainsawItem", 255, 100;
-    DropItem "MarineCompanionMinigunItem", 255, 30;
-    DropItem "CompanionArachnotronItem", 255, 40;
-    DropItem "CompanionArchvileItem", 255, 60;
-    DropItem "CompanionBaronOfHellItem", 255, 30;
-    DropItem "CompanionCacodemonItem", 255, 60;
-    DropItem "CompanionChaingunGuyItem", 255, 70;
-    DropItem "CompanionCyberdemonItem", 255, 10;
-    DropItem "CompanionDemonItem", 255, 80;
-    DropItem "CompanionDoomImpItem", 255,90;
-    DropItem "CompanionFatsoItem", 255, 40;
-    DropItem "CompanionHellKnightItem", 255, 50;
-    DropItem "CompanionLostSoulItem", 255, 80;
-    DropItem "CompanionPainElementalItem", 255, 40;
-    DropItem "CompanionRevenantItem", 255, 30;
-    DropItem "CompanionShotgunGuyItem", 255, 90;
-    DropItem "CompanionSpectreItem", 255, 80;
-    DropItem "CompanionSpiderMastermindItem", 255, 20;
-    DropItem "CompanionWolfensteinSSItem", 255, 80;
-    DropItem "CompanionZombieManItem", 255, 100;
-    DropItem "MurderBallItem", 255, 1;
-    DropItem "AfritItem", 255, 20;
-    DropItem "MarauderItem", 255, 60;
-    DropItem "ArchonOfHellItem", 255, 20;
-    DropItem "ArachnophyteItem", 255, 20;
-    DropItem "BelphegorItem", 255, 20;
-    DropItem "ArachnobaronItem", 255, 30;
+    DropItem "MarineCompanionFistGun", 255, 75;
+    DropItem "MarineCompanionPistolGun", 255, 80;
+    DropItem "MarineCompanionMGGun", 255, 70;
+    DropItem "MarineCompanionCGGun", 255, 70;
+    DropItem "MarineCompanionSGGun", 255, 50;
+    DropItem "MarineCompanionSSGGun", 255, 70;
+    DropItem "MarineCompanionPlasmaGun", 255, 50;
+    DropItem "MarineCompanionBFG10KGun", 255, 10;
+    DropItem "MarineCompanionBFG9000Gun", 255, 10;
+    DropItem "MarineCompanionSniperGun", 255, 20;
+    DropItem "MarineCompanionHSMissileGun", 255, 20;
+    DropItem "MarineCompanionGLGun", 255, 30;
+    DropItem "MarineCompanionFlamethrowerGun", 255, 30;
+    DropItem "MarineCompanionRocketGun", 255, 20;
+    DropItem "MarineCompanionRailgunGun", 255, 50;
+    DropItem "MarineCompanionChainsawGun", 255, 100;
+    DropItem "MarineCompanionMinigunGun", 255, 30;
+    DropItem "CompanionArachnotronGun", 255, 40;
+    DropItem "CompanionArchvileGun", 255, 60;
+    DropItem "CompanionBaronOfHellGun", 255, 30;
+    DropItem "CompanionCacodemonGun", 255, 60;
+    DropItem "CompanionChaingunGuyGun", 255, 70;
+    DropItem "CompanionCyberdemonGun", 255, 10;
+    DropItem "CompanionDemonGun", 255, 80;
+    DropItem "CompanionDoomImpGun", 255,90;
+    DropItem "CompanionFatsoGun", 255, 40;
+    DropItem "CompanionHellKnightGun", 255, 50;
+    DropItem "CompanionLostSoulGun", 255, 80;
+    DropItem "CompanionPainElementalGun", 255, 40;
+    DropItem "CompanionRevenantGun", 255, 30;
+    DropItem "CompanionShotgunGuyGun", 255, 90;
+    DropItem "CompanionSpectreGun", 255, 80;
+    DropItem "CompanionSpiderMastermindGun", 255, 20;
+    DropItem "CompanionWolfensteinSSGun", 255, 80;
+    DropItem "CompanionZombieManGun", 255, 100;
+    DropItem "MurderBallGun", 255, 1;
+    DropItem "AfritGun", 255, 20;
+    DropItem "MarauderGun", 255, 60;
+    DropItem "ArchonOfHellGun", 255, 20;
+    DropItem "ArachnophyteGun", 255, 20;
+    DropItem "BelphegorGun", 255, 20;
+    DropItem "ArachnobaronGun", 255, 30;
   }
 }

@@ -2,7 +2,7 @@ class Globals : EventHandler
 {
   Array<Actor> companions;
 
-  Actor createCompanion(String companionClass, Vector3 pos, Actor player = null, int price = 0, String tag = "", bool allowReplace = false){
+  Actor createCompanion(String companionClass, Vector3 pos, Actor player = null, int price = 0, String tag = "", bool allowReplace = false, int numCompanions = 0){
     
     // companion flags are set in SetCompanionProperties.zsc
     Actor companion = Actor.Spawn(companionClass, pos, allowReplace);
@@ -14,6 +14,11 @@ class Globals : EventHandler
     }
     companion.TryWalk();
     companions.push(companion);
+
+    player.TakeInventory(companionClass.."Ammo", 1);
+    player.TakeInventory("CompanionAmmo", price);
+
+    console.printf("summoned "..tag..", "..(numCompanions - 1).." left");
     
     return companion;
   }

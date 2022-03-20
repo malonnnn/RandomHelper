@@ -1,13 +1,19 @@
-class BioPipebombLauncher : Weapon
+class BaseDeployer : Weapon
 {
 	Default
 	{
 		+WEAPON.NOALERT
+		+SPRITEANGLE
+    SpriteAngle 180;
 		Weapon.Kickback 100;
+		Weapon.AmmoGive1 2;
+		Weapon.AmmoGive2 1;
 		Weapon.AmmoUse1 0;
-		Weapon.AmmoGive 12;
-		Weapon.AmmoType "CompanionAmmo";
 		Weapon.UpSound "Weapons/BioReady";
+		Weapon.AmmoType1 "CompanionAmmo";
+		Inventory.Amount 1;
+		Weapon.SlotNumber 3;
+		Scale 0.5;
 	}
 	States
 	{
@@ -18,25 +24,17 @@ class BioPipebombLauncher : Weapon
 			BPBL ABCD 5 A_WeaponReady;
 			Loop;
 		Deselect:
-			BPBL A 1 A_Lower;
+			BPBL A 0 A_Lower;
 			Loop;
 		Select:
-			BPBL A 1 A_Raise;
+			BPBL A 0 A_Raise;
 			Loop;
 		Fire:
 			TNT1 A 0 A_GunFlash;
 			TNT1 A 0
 			{
-				let p = players[PlayerNumber()].mo;
-				if(p.InvSel){
-					int price = int(p.InvSel.cameraheight);
-					int balance = int(p.CountInv("CompanionAmmo"));
-					if(Utilities.canAfford(balance, price))
-					{
-						A_StartSound("Weapons/BioFire");
-						A_FireProjectile("BioProj");
-					}
-				}
+				A_StartSound("Weapons/BioFire");
+				A_FireProjectile("BioProj");
 			}
 			BPBL E 7;
 			BPBL F 8;
@@ -57,6 +55,11 @@ class BioPipebombLauncher : Weapon
 			BPBL G 7;
 			BPBL H 8;
 			Goto Ready;
+	}
+
+	override bool ShouldStay ()
+	{
+		return false;
 	}
 }
 
@@ -85,36 +88,36 @@ class BioProj : Actor
 		Spawn:
 			BPBP ABC 3 Bright A_SpawnItemEx("BioPuff");
 			Loop;
-		ChangeTID:
-			TNT1 A 0 A_SetShootable;
-			TNT1 A 0 A_Stop;
-			TNT1 A 0 Thing_ChangeTID(0,2648);
-			GoTo Death;
 		Stick:
 			BPBP AAABBBCCC 1 Bright A_Fire(35);
 			Loop;
 		Death:
-			TNT1 A 0 A_JumpIf(tid == 2648,1);
-			Goto ChangeTID;
 			TNT1 A 0
 			{
-
-				let p = players[PlayerNumber()].mo;
-				int price = int(p.InvSel.cameraheight);
+				//console.printf("ammotype "..invoker.getclassname());
+				//console.printf("gun "..target.player.readyweapon.getclassname());
+				//console.printf("ammotype "..target.player.readyweapon.AmmoType2.getclassname());
+				//console.printf("price "..target.player.readyweapon.AmmoUse2);
+				
+				Actor p = players[PlayerNumber()].mo;
+				
+				String gunName = target.player.readyweapon.GetClassName();
+				String tag = target.player.readyweapon.getTag();
+				String ammotype = target.player.readyweapon.AmmoType2.getclassname();
+				
+				int price = target.player.readyweapon.cameraHeight;		
 				int balance = int(p.CountInv("CompanionAmmo"));
+				int numCompanions = p.CountInv(ammotype);
 
-				if(Utilities.canAfford(balance, price))
+				if(Utilities.canAfford(balance, price, numCompanions))
 				{
 					A_StartSound("Weapons/BioProj");
-					let g = Globals(EventHandler.Find("Globals"));
-					String className = p.InvSel.GetClassName();
+					
 					// className.StripRight("Item"); // its bugged, maybe fixed one day. "ArachnophyteItem".StripRight("Item") returns "Arachnophy"
-					className = className.Left(className.Length() - 4);
-					g.createCompanion(className, pos, p, price, p.InvSel.GetTag());
-
-					// remove item from inventory since shot with gun and not pressed "activate item" button
-					p.TakeInventory(p.InvSel.GetClassName(), 1);
-					p.TakeInventory("CompanionAmmo", price);
+					
+					String className = ammotype.Left(ammotype.Length() - 4);
+					let g = Globals(EventHandler.Find("Globals"));
+					g.createCompanion(className, pos, p, price, tag, false, numCompanions);
 				}
 			}
 			BPBP DEF 6 Bright;

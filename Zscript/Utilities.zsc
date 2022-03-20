@@ -8,12 +8,17 @@ class Utilities
     return ((moveDir+22.5) / 45) % 8;
   }
 
-  static bool canAfford(int balance, int price){
-    if (balance >= price){
-      return true;
+  static bool canAfford(int ammo1Count, int ammo1Price, int numCompanions = 0){
+    
+    if (ammo1Count >= ammo1Price){
+      if(numCompanions >= 1){
+        return true;
+      }else{
+        console.printf("You are out of that companion.");  
+      }
     }else{
-      console.printf("Price:"..price.." Balance:"..balance);
-      console.printf("Not Enough Money");
+      console.printf("Price: "..ammo1Price.." Balance: "..ammo1Count);
+      console.printf("Not Enough Ammo");
     }
     return false;
   }

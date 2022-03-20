@@ -119,9 +119,9 @@ class CompanionItemReplacer : EventHandler
     }
 
     // replace all default ammo drops with companion ammo
-    if(e.Thing is "Ammo" && !(e.Thing is "CompanionAmmo")){
+    /*if(e.Thing is "Ammo" && !(e.Thing is "CompanionAmmo")){
       Actor.Spawn("CompanionAmmo", e.Thing.pos);
       e.Thing.Destroy();
-    }
+    }*/
   }
 }

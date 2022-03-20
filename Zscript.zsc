@@ -4,6 +4,7 @@ version "4.8.0"
 #include "Zscript/Globals.zsc"
 
 #include "Zscript/DeployerGun.zsc"
+#include "Zscript/CompanionDeployerGuns.zsc"
 
 #include "Zscript/CustomPlayer.zsc"
 #include "Zscript/MyFist.zsc"
