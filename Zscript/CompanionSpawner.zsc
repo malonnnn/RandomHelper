@@ -45,6 +45,8 @@ class CompanionItemSpawnerTier2 : RandomSpawner
     DropItem "MarineCompanionPlasmaGun", 255, 50;
     DropItem "BabyCacoGun", 255, 75;
     DropItem "BeheadedKamikazeGun", 255, 90;
+    DropItem "AgauresGun", 255, 60;
+    DropItem "GhostlyAgauresGun", 255, 60;
   }
 }
 
@@ -84,6 +86,8 @@ class CompanionItemSpawnerTier3 : RandomSpawner
     DropItem "ArachnobaronGun", 255, 30;
     DropItem "BabyCacoGun", 255, 75;
     DropItem "BeheadedKamikazeGun", 255, 90;
+    DropItem "AgauresGun", 255, 60;
+    DropItem "GhostlyAgauresGun", 255, 60;
   }
 }
 
@@ -138,5 +142,7 @@ class CompanionItemSpawnerAll : RandomSpawner
     DropItem "AbaddonGun", 255, 20;
     DropItem "AgathodemonGun", 255, 20;
     DropItem "AnotherAgathodemonGun", 255, 30;
+    DropItem "AgauresGun", 255, 60;
+    DropItem "GhostlyAgauresGun", 255, 60;
   }
 }

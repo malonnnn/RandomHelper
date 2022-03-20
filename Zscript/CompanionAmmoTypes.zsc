@@ -773,3 +773,28 @@ class AnotherAgathodemonAmmo : CommonAmmoFeatures
       Stop;
   }
 }
+
+class AgauresAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Tag "Agaures";
+    Inventory.PickupMessage "Got an Agaures!";
+    CommonAmmoFeatures.price 30;
+  }
+  States
+  {
+    Spawn:
+      AGUR A -1;
+      Stop;
+  }
+}
+
+class GhostlyAgauresAmmo : AgauresAmmo
+{
+  Default
+  {
+    Tag "Ghostly Agaures";
+    Inventory.PickupMessage "Got a Ghostly Agaures!";
+  }
+}

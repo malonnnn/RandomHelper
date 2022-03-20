@@ -124,7 +124,7 @@ class BioProj : Actor
 					
 					// className.StripRight("Item"); // its bugged, maybe fixed one day. "ArachnophyteItem".StripRight("Item") returns "Arachnophy"
 					
-				String className = ammotype.Left(ammotype.Length() - 4);
+					String className = ammotype.Left(ammotype.Length() - 4);
 					let g = Globals(EventHandler.Find("Globals"));
 					g.createCompanion(className, pos, p, price, tag, false, numCompanions);
 				}

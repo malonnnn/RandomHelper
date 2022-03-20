@@ -839,22 +839,41 @@ class AgathodemonGun : BaseDeployer
   }
 }
 
-class AnotherAgathodemonGun : BaseDeployer
+class AnotherAgathodemonGun : AgathodemonGun
 {
   Default
   {
     Tag "Agathodemon Variant";
     Weapon.AmmoType2 "AnotherAgathodemonAmmo";
     Inventory.PickupMessage "Got an Agathodemon variant!";
-    cameraHeight 80;
-    Weapon.SlotNumber 4;
-    Scale 0.4;
+  }
+}
+
+class AgauresGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Agaures";
+    Weapon.AmmoType2 "AgauresAmmo";
+    Inventory.PickupMessage "Got an Agaures!";
+    cameraHeight 30;
+    Weapon.SlotNumber 2;
   }
   States
   {
     Spawn:
-      AGAH A -1;
+      AGUR A -1;
       Stop;
+  }
+}
+
+class GhostlyAgauresGun : AgauresGun
+{
+  Default
+  {
+    Tag "Ghostly Agaures";
+    Weapon.AmmoType2 "GhostlyAgauresAmmo";
+    Inventory.PickupMessage "Got a Ghostly Agaures!";
   }
 }
 
