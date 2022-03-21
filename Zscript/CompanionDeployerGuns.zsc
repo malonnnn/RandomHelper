@@ -874,6 +874,7 @@ class GhostlyAgauresGun : AgauresGun
     Tag "Ghostly Agaures";
     Weapon.AmmoType2 "GhostlyAgauresAmmo";
     Inventory.PickupMessage "Got a Ghostly Agaures!";
+    Inventory.Icon "AGURZ0";
   }
 }
 

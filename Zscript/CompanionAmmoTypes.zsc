@@ -796,6 +796,7 @@ class GhostlyAgauresAmmo : AgauresAmmo
   {
     Tag "Ghostly Agaures";
     Inventory.PickupMessage "Got a Ghostly Agaures!";
+    Inventory.Icon "AGURZ0";
   }
 }
 
