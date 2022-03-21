@@ -6,7 +6,6 @@ class MyDoomGuy : DoomPlayer {
     Species "Companion";
     DamageFactor "Companion", 0.0;
 
-    Player.StartItem "CompanionAmmo", 10;
     Player.StartItem "CompanionZombieManAmmo", 10;
     Player.StartItem "CompanionZombieManGun";
     Player.StartItem "MyFist";
