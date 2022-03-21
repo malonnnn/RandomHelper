@@ -14,7 +14,7 @@ class BaseDeployer : Weapon
 		Weapon.UpSound "Weapons/BioReady";
 		Weapon.AmmoType1 "CompanionAmmo";
 		Inventory.Amount 1;
-		Weapon.SlotNumber 3;
+		Weapon.SlotNumber 1;
 		Scale 0.5;
 		BaseDeployer.price 0;
 	}
