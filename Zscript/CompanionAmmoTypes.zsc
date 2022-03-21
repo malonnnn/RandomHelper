@@ -798,3 +798,19 @@ class GhostlyAgauresAmmo : AgauresAmmo
     Inventory.PickupMessage "Got a Ghostly Agaures!";
   }
 }
+
+class AnnihilatorAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Tag "Annihilator";
+    Inventory.PickupMessage "Got an Annihilator!";
+    CommonAmmoFeatures.price 450;
+  }
+  States
+  {
+    Spawn:
+      ANNI A -1;
+      Stop;
+  }
+}

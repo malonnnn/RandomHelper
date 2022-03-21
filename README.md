@@ -5,7 +5,7 @@ Convert decorate to ZScript
 
 # 2.
 All monsters get in their default area<br>
-`Monster;`<br>
+`MONSTER;`<br>
 `+FRIENDLY`<br>
 `Species "Companion";`<br>
 `DamageFactor "Companion", 0;`<br>

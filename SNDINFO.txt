@@ -1,3 +1,10 @@
+// Annihilator
+monster/annsit dsannsit
+monster/anndth dsanndth
+monster/anhoof dsanhoof
+weapons/hrlexp dshrlexp
+weapons/hrlfir dshrlfir
+
 // Aguares
 $RANDOM agaures/sight { agaures/sight1 agaures/sight2 }
 agaures/sight1 		AGURSIT1

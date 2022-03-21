@@ -877,6 +877,25 @@ class GhostlyAgauresGun : AgauresGun
   }
 }
 
+class AnnihilatorGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Annihilator";
+    Weapon.AmmoType2 "AnnihilatorAmmo";
+    Inventory.PickupMessage "Got an Annihilator!";
+    cameraHeight 450;
+    Weapon.SlotNumber 4;
+    Scale 0.28;
+  }
+  States
+  {
+    Spawn:
+      ANNI A -1;
+      Stop;
+  }
+}
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
