@@ -240,15 +240,17 @@ class MyStatusBar : MyBaseStatusBar
 		if (!isInventoryBarVisible() && !Level.NoInventoryBar && CPlayer.mo.InvSel != null)
 		{
 
-			CommonAmmoFeatures myammo = CommonAmmoFeatures(ammotype2);
-			
-			DrawInventoryIcon(ammotype2, (-314, invY + 17), DI_DIMDEPLETED);
-			DrawString(mMM2SmallFont, ammotype2.getTag().." x"..ammotype2.Amount, (-300, invY+18), DI_TEXT_ALIGN_RIGHT);
+			if(ammotype2){
+				CommonAmmoFeatures myammo = CommonAmmoFeatures(ammotype2);
+				
+				DrawInventoryIcon(ammotype2, (-314, invY + 17), DI_DIMDEPLETED);
+				DrawString(mMM2SmallFont, ammotype2.getTag().." x"..ammotype2.Amount, (-300, invY+18), DI_TEXT_ALIGN_RIGHT);
 
-			DrawString(mMM2SmallFont, "costs", (-225, invY-11), DI_TEXT_ALIGN_RIGHT);
-			DrawString(mHUDFont, FormatNumber(myammo.price, 3), (-230, invY), DI_TEXT_ALIGN_RIGHT, FONT.CR_DARKGREEN);
-			DrawString(mMM2SmallFont, "to spawn 1", (-210, invY+18), DI_TEXT_ALIGN_RIGHT);
-			DrawInventoryIcon(ammotype1, (-225, invY+16));
+				DrawString(mMM2SmallFont, "costs", (-225, invY-11), DI_TEXT_ALIGN_RIGHT);
+				DrawString(mHUDFont, FormatNumber(myammo.price, 3), (-230, invY), DI_TEXT_ALIGN_RIGHT, FONT.CR_DARKGREEN);
+				DrawString(mMM2SmallFont, "to spawn 1", (-210, invY+18), DI_TEXT_ALIGN_RIGHT);
+				DrawInventoryIcon(ammotype1, (-225, invY+16));
+			}
 		}
 		if (deathmatch)
 		{

@@ -9,7 +9,9 @@ class MyDoomGuy : DoomPlayer {
     Player.StartItem "CompanionAmmo", 10;
     Player.StartItem "CompanionZombieManAmmo", 10;
     Player.StartItem "CompanionZombieManGun";
+    Player.StartItem "MyFist";
     
+    Player.WeaponSlot 0, "MyFist";
     Player.WeaponSlot 1, "CompanionZombieManGun";
   }
 }
