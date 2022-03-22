@@ -4,6 +4,7 @@ Class CommonAmmoFeatures : Ammo
   {
     +Inventory.HubPower
     +Inventory.PersistentPower
+    +Inventory.InvBar
     +SpriteAngle
     SpriteAngle 180;
     Inventory.MaxAmount 999;
