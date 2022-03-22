@@ -25,11 +25,6 @@ Class CommonAmmoFeatures : Ammo
 
 Class MarineCompanionFistAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Berserk Marine";
-    Inventory.PickupMessage "Got a Berserk Marine!";
-  }
   States
   {
     Spawn:
@@ -40,11 +35,6 @@ Class MarineCompanionFistAmmo : CommonAmmoFeatures
 
 Class MarineCompanionChainsawAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Chainsaw Marine";
-    Inventory.PickupMessage "Got a Chainsaw Marine!";
-  }
   States
   {
     Spawn:
@@ -55,11 +45,6 @@ Class MarineCompanionChainsawAmmo : CommonAmmoFeatures
 
 Class MarineCompanionPistolAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Pistol Marine";
-    Inventory.PickupMessage "Got a Pistol Marine!";
-  }
   States
   {
     Spawn:
@@ -70,11 +55,6 @@ Class MarineCompanionPistolAmmo : CommonAmmoFeatures
 
 Class MarineCompanionSGAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Shotgun Marine";
-    Inventory.PickupMessage "Got a Shotgun Marine!";
-  }
   States
   {
     Spawn:
@@ -85,11 +65,6 @@ Class MarineCompanionSGAmmo : CommonAmmoFeatures
 
 Class MarineCompanionSSGAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Super Shotgun Marine";
-    Inventory.PickupMessage "Got a Super Shotgun Marine!";
-  }
   States
   {
     Spawn:
@@ -100,11 +75,6 @@ Class MarineCompanionSSGAmmo : CommonAmmoFeatures
 
 Class MarineCompanionCGAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Chaingun Marine";
-    Inventory.PickupMessage "Got a Chaingun Marine!";
-  }
   States
   {
     Spawn:
@@ -115,11 +85,6 @@ Class MarineCompanionCGAmmo : CommonAmmoFeatures
 
 Class MarineCompanionRocketAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Rocket Launcher Marine";
-    Inventory.PickupMessage "Got a Rocket Launcher Marine!";
-  }
   States
   {
     Spawn:
@@ -130,11 +95,6 @@ Class MarineCompanionRocketAmmo : CommonAmmoFeatures
 
 Class MarineCompanionPlasmaAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Plasma Rifle Marine";
-    Inventory.PickupMessage "Got a Plasma Rifle Marine!";
-  }
   States
   {
     Spawn:
@@ -145,11 +105,6 @@ Class MarineCompanionPlasmaAmmo : CommonAmmoFeatures
 
 Class MarineCompanionBFG9000Ammo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "BFG9000 Marine";
-    Inventory.PickupMessage "Got a BFG9000 Marine!";
-  }
   States
   {
     Spawn:
@@ -160,11 +115,6 @@ Class MarineCompanionBFG9000Ammo : CommonAmmoFeatures
 
 Class MarineCompanionBFG10KAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "BFG10K Marine";
-    Inventory.PickupMessage "Got a BFG10K Marine!";
-  }
   States
   {
     Spawn:
@@ -175,11 +125,6 @@ Class MarineCompanionBFG10KAmmo : CommonAmmoFeatures
 
 Class MarineCompanionGLAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Grenade Launcher Marine";
-    Inventory.PickupMessage "Got a Grenade Launcher Marine!";
-  }
   States
   {
     Spawn:
@@ -190,11 +135,6 @@ Class MarineCompanionGLAmmo : CommonAmmoFeatures
 
 Class MarineCompanionHSMissileAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Heat Seeking Missile Marine";
-    Inventory.PickupMessage "Got a Heat Seeking Missile Marine!";
-  }
   States
   {
     Spawn:
@@ -205,11 +145,6 @@ Class MarineCompanionHSMissileAmmo : CommonAmmoFeatures
 
 Class MarineCompanionRailgunAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Railgun Marine";
-    Inventory.PickupMessage "Got a Railgun Marine!";
-  }
   States
   {
     Spawn:
@@ -220,11 +155,6 @@ Class MarineCompanionRailgunAmmo : CommonAmmoFeatures
 
 Class MarineCompanionSniperAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Sniper Marine";
-    Inventory.PickupMessage "Got a Sniper Marine!";
-  }
   States
   {
     Spawn:
@@ -235,11 +165,6 @@ Class MarineCompanionSniperAmmo : CommonAmmoFeatures
 
 Class MarineCompanionFlameThrowerAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Flame Thrower Marine";
-    Inventory.PickupMessage "Got a Flame Thrower Marine!";
-  }
   States
   {
     Spawn:
@@ -250,11 +175,6 @@ Class MarineCompanionFlameThrowerAmmo : CommonAmmoFeatures
 
 Class MarineCompanionMGAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Machine Gun Marine";
-    Inventory.PickupMessage "Got a Machine Gun Marine!";
-  }
   States
   {
     Spawn:
@@ -265,11 +185,6 @@ Class MarineCompanionMGAmmo : CommonAmmoFeatures
 
 Class MarineCompanionMinigunAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Minigun Marine";
-    Inventory.PickupMessage "Got a Minigun Marine!";
-  }
   States
   {
     Spawn:
@@ -280,11 +195,6 @@ Class MarineCompanionMinigunAmmo : CommonAmmoFeatures
 
 class CompanionZombieManAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Zombie Man";
-    Inventory.PickupMessage "Got a Zombie Man!";
-  }
   States
   {
     Spawn:
@@ -295,11 +205,6 @@ class CompanionZombieManAmmo : CommonAmmoFeatures
 
 class CompanionShotgunGuyAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Shotgun Guy";
-    Inventory.PickupMessage "Got a Shotgun Guy!";
-  }
   States
   {
     Spawn:
@@ -310,11 +215,6 @@ class CompanionShotgunGuyAmmo : CommonAmmoFeatures
 
 class CompanionChaingunGuyAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Chaingun Guy";
-    Inventory.PickupMessage "Got a Chaingun Guy!";
-  }
   States
   {
     Spawn:
@@ -325,11 +225,6 @@ class CompanionChaingunGuyAmmo : CommonAmmoFeatures
 
 class CompanionDemonAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Demon";
-    Inventory.PickupMessage "Got a Demon!";
-  }
   States
   {
     Spawn:
@@ -342,8 +237,6 @@ class CompanionSpectreAmmo : CompanionDemonAmmo
 {
   Default
   {
-    Tag "Spectre";
-    Inventory.PickupMessage "Got a Spectre!";
     RenderStyle "OptFuzzy";
     Inventory.Icon "SARGZ0";
   }
@@ -351,11 +244,6 @@ class CompanionSpectreAmmo : CompanionDemonAmmo
 
 class CompanionLostSoulAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Lost Soul";
-    Inventory.PickupMessage "Got a Lost Soul!";
-  }
   States
   {
     Spawn:
@@ -366,11 +254,6 @@ class CompanionLostSoulAmmo : CommonAmmoFeatures
 
 class CompanionCacodemonAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Cacodemon";
-    Inventory.PickupMessage "Got a Cacodemon!";
-  }
   States
   {
     Spawn:
@@ -381,11 +264,6 @@ class CompanionCacodemonAmmo : CommonAmmoFeatures
 
 class CompanionPainElementalAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Pain Elemental";
-    Inventory.PickupMessage "Got a Pain Elemental!";
-  }
   States
   {
     Spawn:
@@ -396,11 +274,6 @@ class CompanionPainElementalAmmo : CommonAmmoFeatures
 
 class CompanionBaronOfHellAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Baron of Hell";
-    Inventory.PickupMessage "Got a Baron of Hell!";
-  }
   States
   {
     Spawn:
@@ -411,11 +284,6 @@ class CompanionBaronOfHellAmmo : CommonAmmoFeatures
 
 class CompanionHellKnightAmmo : CompanionBaronOfHellAmmo
 {
-  Default
-  {
-    Tag "Hell Knight";
-    Inventory.PickupMessage "Got a Hell Knight!";
-  }
   States
   {
     Spawn:
@@ -426,11 +294,6 @@ class CompanionHellKnightAmmo : CompanionBaronOfHellAmmo
 
 class CompanionArachnotronAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Arachnotron";
-    Inventory.PickupMessage "Got an Arachnotron!";
-  }
   States
   {
     Spawn:
@@ -441,11 +304,6 @@ class CompanionArachnotronAmmo : CommonAmmoFeatures
 
 class CompanionArchvileAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Archvile";
-    Inventory.PickupMessage "Got an Archvile!";
-  }
   States
   {
     Spawn:
@@ -456,11 +314,6 @@ class CompanionArchvileAmmo : CommonAmmoFeatures
 
 class CompanionFatsoAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Mancubus";
-    Inventory.PickupMessage "Got a Mancubus!";
-  }
   States
   {
     Spawn:
@@ -471,11 +324,6 @@ class CompanionFatsoAmmo : CommonAmmoFeatures
 
 class CompanionCyberdemonAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Cyberdemon";
-    Inventory.PickupMessage "Got a Cyberdemon!";
-  }
   States
   {
     Spawn:
@@ -486,11 +334,6 @@ class CompanionCyberdemonAmmo : CommonAmmoFeatures
 
 class CompanionSpiderMastermindAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Spider Mastermind";
-    Inventory.PickupMessage "Got a Spider Mastermind!";
-  }
   States
   {
     Spawn:
@@ -501,11 +344,6 @@ class CompanionSpiderMastermindAmmo : CommonAmmoFeatures
 
 class CompanionWolfensteinSSAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Wolfenstein SS";
-    Inventory.PickupMessage "Got a Wolfenstein SS!";
-  }
   States
   {
     Spawn:
@@ -516,11 +354,6 @@ class CompanionWolfensteinSSAmmo : CommonAmmoFeatures
 
 class CompanionRevenantAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Revenant";
-    Inventory.PickupMessage "Got a Revenant!";
-  }
   States
   {
     Spawn:
@@ -531,11 +364,6 @@ class CompanionRevenantAmmo : CommonAmmoFeatures
 
 class CompanionDoomImpAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Imp";
-    Inventory.PickupMessage "Got an Imp!";
-  }
   States
   {
     Spawn:
@@ -546,11 +374,6 @@ class CompanionDoomImpAmmo : CommonAmmoFeatures
 
 Class BelphegorAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Belphagor";
-    Inventory.PickupMessage "Got a Belphegor!";
-  }
   States
   {
     Spawn:
@@ -563,8 +386,6 @@ Class AfritAmmo : CommonAmmoFeatures
 {
   Default
   {
-    Tag "Afrit";
-    Inventory.PickupMessage "Got an Afrit!";
     Inventory.Icon "FRITV0";
   }
   States
@@ -577,11 +398,6 @@ Class AfritAmmo : CommonAmmoFeatures
 
 Class MarauderAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Marauder";
-    Inventory.PickupMessage "Got a Marauder!";
-  }
   States
   {
     Spawn:
@@ -592,11 +408,6 @@ Class MarauderAmmo : CommonAmmoFeatures
 
 Class ArachnophyteAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Arachnophyte";
-    Inventory.PickupMessage "Got an Arachnophyte!";
-  }
   States
   {
     Spawn:
@@ -607,11 +418,6 @@ Class ArachnophyteAmmo : CommonAmmoFeatures
 
 Class ArchonOfHellAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Archon of Hell";
-    Inventory.PickupMessage "Got an Archon of Hell!";
-  }
   States
   {
     Spawn:
@@ -622,11 +428,6 @@ Class ArchonOfHellAmmo : CommonAmmoFeatures
 
 Class MurderBallAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Murder Ball";
-    Inventory.PickupMessage "Got a Murder Ball!";
-  }
   States
   {
     Spawn:
@@ -637,11 +438,6 @@ Class MurderBallAmmo : CommonAmmoFeatures
 
 class ArachnobaronAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Arachnobaron";
-    Inventory.PickupMessage "Got an Arachnobaron!";
-  }
   States
   {
     Spawn:
@@ -652,11 +448,6 @@ class ArachnobaronAmmo : CommonAmmoFeatures
 
 class BabyCacoAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Baby Caco";
-    Inventory.PickupMessage "Got a Baby Caco!";
-  }
   States
   {
     Spawn:
@@ -667,11 +458,6 @@ class BabyCacoAmmo : CommonAmmoFeatures
 
 class BeheadedKamikazeAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Beheaded Kamikaze";
-    Inventory.PickupMessage "Got a Beheaded Kamikaze!";
-  }
   States
   {
     Spawn:
@@ -682,11 +468,6 @@ class BeheadedKamikazeAmmo : CommonAmmoFeatures
 
 class AbaddonAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Abaddon";
-    Inventory.PickupMessage "Got an Abaddon!";
-  }
   States
   {
     Spawn:
@@ -697,11 +478,6 @@ class AbaddonAmmo : CommonAmmoFeatures
 
 class AgathodemonAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Agathodemon";
-    Inventory.PickupMessage "Got an Agathodemon!";
-  }
   States
   {
     Spawn:
@@ -712,11 +488,6 @@ class AgathodemonAmmo : CommonAmmoFeatures
 
 class AnotherAgathodemonAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Agathodemon Variant";
-    Inventory.PickupMessage "Got an Agathodemon variant!";
-  }
   States
   {
     Spawn:
@@ -727,11 +498,6 @@ class AnotherAgathodemonAmmo : CommonAmmoFeatures
 
 class AgauresAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Agaures";
-    Inventory.PickupMessage "Got an Agaures!";
-  }
   States
   {
     Spawn:
@@ -744,19 +510,12 @@ class GhostlyAgauresAmmo : AgauresAmmo
 {
   Default
   {
-    Tag "Ghostly Agaures";
-    Inventory.PickupMessage "Got a Ghostly Agaures!";
     Inventory.Icon "AGURZ0";
   }
 }
 
 class AnnihilatorAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Annihilator";
-    Inventory.PickupMessage "Got an Annihilator!";
-  }
   States
   {
     Spawn:
@@ -767,11 +526,6 @@ class AnnihilatorAmmo : CommonAmmoFeatures
 
 class AracnorbAmmo : CommonAmmoFeatures
 {
-  Default
-  {
-    Tag "Aracnorb";
-    Inventory.PickupMessage "Got an Aracnorb!";
-  }
   States
   {
     Spawn:

@@ -244,7 +244,7 @@ class MyStatusBar : MyBaseStatusBar
 				BaseDeployer gun = BaseDeployer(CPlayer.ReadyWeapon);
 				
 				DrawInventoryIcon(ammotype2, (-314, invY + 17), DI_DIMDEPLETED);
-				DrawString(mMM2SmallFont, ammotype2.getTag().." x"..ammotype2.Amount, (-300, invY+18), DI_TEXT_ALIGN_RIGHT);
+				DrawString(mMM2SmallFont, gun.getTag().." x"..ammotype2.Amount, (-300, invY+18), DI_TEXT_ALIGN_RIGHT);
 
 				DrawString(mMM2SmallFont, "costs", (-225, invY-11), DI_TEXT_ALIGN_RIGHT);
 				DrawString(mHUDFont, FormatNumber(gun.price, 3), (-230, invY), DI_TEXT_ALIGN_RIGHT, FONT.CR_DARKGREEN);

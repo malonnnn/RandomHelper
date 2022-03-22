@@ -5,7 +5,6 @@ class Globals : EventHandler
   Actor createCompanion(String companionClass, Vector3 pos, Actor player = null, int price = 0, String tag = "", bool allowReplace = false, int numCompanions = 0){
     
     // companion flags are set in SetCompanionProperties.zsc
-    console.printf("trying to summon "..companionClass);
     Actor companion = Actor.Spawn(companionClass, pos, allowReplace);
 
     if(player)
