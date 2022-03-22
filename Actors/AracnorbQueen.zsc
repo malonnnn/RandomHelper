@@ -21,7 +21,6 @@ class AracnorbQueen : Actor
     PainSound "queen/pain";
     DeathSound "queen/death";
     MeleeSound "queen/melee";
-    MeleeDamage 6;
     MissileHeight 36;
     Obituary "%o suffered psychic trauma from an aracnorb queen's brainwaves.";
     HitObituary "%o had %p skull chewed by an aracnorb queen.";
@@ -38,7 +37,7 @@ class AracnorbQueen : Actor
     Melee:
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       ARNQ ABC 5;
-      ARNQ D 6 A_CustomMeleeAttack(random(3, 10) * 8,"","","Companion");
+      ARNQ D 6 A_CustomMeleeAttack(random(3, 10) * 6,"","","Companion");
       Goto See;
     Missile:
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);

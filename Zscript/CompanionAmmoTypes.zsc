@@ -456,3 +456,11 @@ class AutoShotgunGuyAmmo : CommonAmmoFeatures
     Inventory.Icon "ASGZA1";
   }
 }
+
+class AzazelAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "AZEAA1";
+  }
+}

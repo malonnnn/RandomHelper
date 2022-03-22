@@ -16,7 +16,6 @@ class BaseDeployer : Weapon
 		Inventory.Amount 1;
 		Weapon.SlotNumber 1;
 		Scale 0.5;
-		BaseDeployer.price 0;
 	}
 	States
 	{
@@ -37,14 +36,10 @@ class BaseDeployer : Weapon
 			TNT1 A 0
 			{
 				Actor p = players[PlayerNumber()].mo;
-				
-				
-				int price = cameraHeight;		
 				int balance = int(p.CountInv("CompanionAmmo"));
 				int numCompanions = p.CountInv(invoker.ammotype2);
 				String tag = invoker.getTag();
-
-				if(Utilities.canAfford(balance, price, numCompanions, tag))
+				if(Utilities.canAfford(balance, invoker.price, numCompanions, tag))
 				{
 					A_StartSound("Weapons/BioFire");
 					A_FireProjectile("BioProj");
@@ -110,10 +105,11 @@ class BioProj : Actor
 			{				
 				Actor p = players[PlayerNumber()].mo;
 				
-				String tag = target.player.readyweapon.getTag();
-				String ammotype = target.player.readyweapon.AmmoType2.getclassname();
+				BaseDeployer gun = BaseDeployer(target.player.readyweapon);
+				String tag = gun.getTag();
+				String ammotype = gun.AmmoType2.getclassname();
 				
-				int price = target.player.readyweapon.cameraHeight;		
+				int price = gun.price;		
 				int balance = int(p.CountInv("CompanionAmmo"));
 				int numCompanions = p.CountInv(ammotype);
 

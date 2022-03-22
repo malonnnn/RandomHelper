@@ -14,7 +14,6 @@ class Agaures : Actor
     Mass 500;
     Speed 8;
     PainChance 100;
-    MeleeDamage 4;
     +DONTHARMSPECIES
     SeeSound "agaures/sight";
     PainSound "agaures/pain";
@@ -36,7 +35,7 @@ class Agaures : Actor
       AGUR W 8 A_FaceTarget;
       AGUR X 1 A_StartSound("agaures/swing");
       AGUR X 7 A_FaceTarget;
-      AGUR Y 6 A_CustomMeleeAttack(2*Random(1,8), "imp/melee", "", "Companion");
+      AGUR Y 6 A_CustomMeleeAttack(4*Random(1,8), "imp/melee", "", "Companion");
       goto See;
     Missile:
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);

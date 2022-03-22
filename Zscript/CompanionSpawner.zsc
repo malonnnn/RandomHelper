@@ -156,5 +156,6 @@ class CompanionItemSpawnerAll : RandomSpawner
     DropItem "AracnorbQueenGun", 255, 20;
     DropItem "AugmentedArachnotronGun", 255, 60;
     DropItem "AutoShotgunGuyGun", 255, 80;
+    DropItem "AzazelGun", 255, 20;
   }
 }

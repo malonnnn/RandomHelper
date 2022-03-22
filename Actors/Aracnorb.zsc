@@ -20,7 +20,6 @@ class Aracnorb : Actor
     PainSound "baby/pain";
     DeathSound "aracnorb/death";
     MeleeSound "aracnorb/melee";
-    MeleeDamage 6;
     Obituary "%o suffered psychic trauma from an aracnorb's brainwaves.";
     HitObituary "%o had %p skull chewed by an aracnorb.";
     Scale 0.85;
@@ -35,7 +34,7 @@ class Aracnorb : Actor
       Loop;
     Melee:
       ACNB AB 5;
-      ACNB C 6 A_CustomMeleeAttack(2*Random(1,8), "", "", "Companion");
+      ACNB C 6 A_CustomMeleeAttack(6*Random(1,8), "", "", "Companion");
       Goto See;
     Missile:
       ACNB B 12 Bright A_FaceTarget;
