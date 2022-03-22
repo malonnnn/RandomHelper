@@ -1,3 +1,13 @@
+// Eyes
+SpiderSee	DSSPISIT //Used for seeing and for running around sound
+SpiderDie	DSSPIDTH
+$RANDOM batfam/idle { batfam/idle1 batfam/idle2 }
+batfam/idle1 batidle1
+batfam/idle2 batidle2
+batfam/pain batpain
+batfam/death batdie
+batfam/crash batcrash
+
 // Bad
 bad/attack			dsfirsht
 bad/shotx			dsfirxpl

@@ -1007,6 +1007,54 @@ class BadGun : BaseDeployer
   }
 }
 
+class EyeExGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Explosive Eye";
+    Weapon.AmmoType2 "EyeExAmmo";
+    Inventory.PickupMessage "Got an Explosive Eye!";
+    BaseDeployer.price 25;
+    Weapon.SlotPriority 25;
+  }
+  States
+  {
+    Spawn:
+      ESYM A -1;
+      Stop;
+  }
+}
+
+class EyePoisonGun : EyeExGun
+{
+  Default
+  {
+    Tag "Poisonous Eye";
+    Weapon.AmmoType2 "EyePoisonAmmo";
+    Inventory.PickupMessage "Got a Poisonous Eye!";
+  }
+}
+
+class EyeSpiderGun : EyeExGun
+{
+  Default
+  {
+    Tag "Spider Eye";
+    Weapon.AmmoType2 "EyeSpiderAmmo";
+    Inventory.PickupMessage "Got a Spider Eye!";
+  }
+}
+
+class EyeBatGun : EyeExGun
+{
+  Default
+  {
+    Tag "Bat Eye";
+    Weapon.AmmoType2 "EyeBatAmmo";
+    Inventory.PickupMessage "Got a Bat Eye!";
+  }
+}
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

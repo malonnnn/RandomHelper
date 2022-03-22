@@ -472,3 +472,35 @@ class BadAmmo : CommonAmmoFeatures
     Inventory.Icon "BAD1A1";
   }
 }
+
+class EyeExAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "ESYZW0";
+  }
+}
+
+class EyePoisonAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "ESYMA0";
+  }
+}
+
+class EyeSpiderAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "ESYZY0";
+  }
+}
+
+class EyeBatAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "ESYZZ0";
+  }
+}

@@ -1,0 +1,497 @@
+Class EyeEx : CompanionLostSoul //Just the normal explosive one
+{
+  Default
+  {
+    MONSTER;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Obituary "%o was destroyed by an Exploding Eye.";
+    Damage 0;
+    Translation "112:127=176:191";
+    -DONTFALL
+    +LOOKALLAROUND
+  }
+	States
+  {
+  	Spawn:
+	  	ESYM AB 10 bright A_Look;
+   		Loop;
+  	See:
+      ESYM ABCD 6 bright A_Chase;
+      Loop;
+  	Missile:
+      ESYM C 10 bright A_FaceTarget;
+      ESYM D 2 bright A_SkullAttack;
+      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      Goto Missile+2;
+	  Melee:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+  		TNT1 A 0 A_Die;
+    Pain:
+      ESYM F 3 bright;
+      ESYM F 3 bright A_Pain;
+      Goto See;
+  	Death:
+      ESYM O 4 bright;
+      ESYM P 4 bright A_Scream;
+      TNT1 A 0 A_NoBlocking;
+      ESYM Q 4 bright A_Explode(100,128);
+      ESYM R 4 bright;
+      ESYM STUV 4 A_Gravity;
+      ESYM W -1;
+      Stop;
+  }
+}
+
+Class EyePoison : CompanionLostSoul //Poison Emitting One
+{
+  Default
+  {
+    MONSTER;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Obituary "%o was gassed by a Poison Eye.";
+    Damage 0;
+    -DONTFALL
+    +LOOKALLAROUND
+  }
+	States
+  {
+  	Spawn:
+	  	ESYM AB 10 bright A_Look;
+   		Loop;
+  	See:
+      ESYM ABCD 6 bright A_Chase;
+      Loop;
+  	Missile:
+	  	ESYM C 10 bright A_FaceTarget;
+      ESYM D 2 bright A_SkullAttack;
+      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      Goto Missile+2;
+	  Melee:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+	  	TNT1 A 0 A_Die;
+  	Pain:
+      ESYM F 3 bright;
+      ESYM F 3 bright A_Pain;
+      Goto See;
+  	Death:
+      ESYM O 4 bright;
+      ESYM P 4 bright A_Scream;
+      TNT1 A 0 A_NoBlocking;
+      TNT1 A 0 A_SpawnProjectile("PoisonShotCloud1", 0, 0, 90);
+      ESYM Q 2 bright A_SpawnProjectile("PoisonShotCloud1", 0, 0, -90);
+      TNT1 A 0 A_SpawnProjectile("PoisonShotCloud1", 0, 0, 180);
+      ESYM Q 2 bright A_SpawnProjectile("PoisonShotCloud1", 0, 0, 0);
+      ESYM R 4 bright;
+      ESYM STUV 4 A_Gravity;
+      ESYM W -1;
+      Stop;
+  	}
+}
+
+class PoisonShotCloud1 : Actor //Weapon: Poison Gun, By: Daniel, using the gas clouds from it.
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 24;
+    Height 16;
+    Speed 16;
+    Mass 2000;
+    Damage 3;
+    Obituary "%o was gassed by a Poison Eye.";
+    PROJECTILE;
+    -NOGRAVITY
+    +RIPPER
+    +BLOODLESSIMPACT
+    +NODAMAGETHRUST
+    +NOTARGET
+    PoisonDamage 30;
+    RenderStyle "Translucent";
+    Alpha 0.67;
+  }
+  States
+  {
+    Spawn:
+      PSNE A 1 Bright;
+      Loop;
+    Death:
+      PSNE A 3 Bright;
+      PSNE B 4 Bright;
+      PSNE C 1 Bright;
+      TNT1 A 0 A_Jump(16,2);
+      PSNE C 1 Bright A_SpawnProjectile("PoisonShotCloud2",5,0,0);
+      TNT1 A 0 A_Jump(16,2);
+      PSNE C 1 Bright A_SpawnProjectile("PoisonShotCloud2",5,0,90);
+      TNT1 A 0 A_Jump(16,2);
+      PSNE C 1 Bright A_SpawnProjectile("PoisonShotCloud2",5,0,180);
+      TNT1 A 0 A_Jump(16,2);
+      PSNE C 1 Bright A_SpawnProjectile("PoisonShotCloud2",5,0,270);
+      PSNE DEFGCBA 6 Bright;
+      Stop;
+  }
+}
+
+Class PoisonShotCloud2 : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 16;
+    Height 8;
+    Speed 8;
+    Mass 3000;
+    Damage 2;
+    Obituary "%o was gassed by a Poison Eye.";
+    PROJECTILE;
+    -NOGRAVITY
+    +RIPPER
+    +BLOODLESSIMPACT
+    +NODAMAGETHRUST
+    +NOTARGET
+    PoisonDamage 20;
+    RenderStyle "Translucent";
+    Alpha 0.33;
+  }
+  States
+  {
+    Spawn:
+      PSNE A 1 Bright;
+      Loop;
+    Death:
+      PSNE A 3 Bright;
+      PSNE B 4 Bright;
+      PSNE C 1 Bright;
+      TNT1 A 0 A_Jump(32,2);
+      PSNE C 1 Bright A_SpawnProjectile("PoisonShotCloud3",5,0,0);
+      TNT1 A 0 A_Jump(32,2);
+      PSNE C 1 Bright A_SpawnProjectile("PoisonShotCloud3",5,0,90);
+      TNT1 A 0 A_Jump(32,2);
+      PSNE C 1 Bright A_SpawnProjectile("PoisonShotCloud3",5,0,180);
+      TNT1 A 0 A_Jump(32,2);
+      PSNE C 1 Bright A_SpawnProjectile("PoisonShotCloud3",5,0,270);
+      PSNE DEFGCBA 6 Bright;
+      Stop;
+  }
+}
+
+Class PoisonShotCloud3 : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 10;
+    Height 8;
+    Speed 8;
+    Mass 4000;
+    Damage (1);
+    Obituary "%o was gassed by a Poison Eye.";
+    PROJECTILE;
+    -NOGRAVITY
+    +RIPPER
+    +BLOODLESSIMPACT
+    +NODAMAGETHRUST
+    +NOTARGET
+    PoisonDamage 10;
+    RenderStyle "Translucent";
+    Alpha 0.15;
+  }
+  States
+  {
+    Spawn:
+      PSNE A 1 Bright;
+      Loop;
+    Death:
+      PSNE A 3 Bright;
+      PSNE B 4 Bright;
+      PSNE C 5 Bright;
+      PSNE DEFGCBA 6 Bright;
+      Stop;
+  }
+}
+
+Class EyeSpider : CompanionLostSoul //Spider Spitter One
+{
+  Default
+  {
+    MONSTER;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Obituary "%o was webbed by a Spider Eye.";
+    Damage 0;
+    Translation "112:127=64:79";
+    -DONTFALL
+    +LOOKALLAROUND
+  }
+	States
+  {
+  	Spawn:
+	  	ESYM AB 10 bright A_Look;
+   		Loop;
+  	See:
+      ESYM ABCD 6 bright A_Chase;
+      Loop;
+  	Missile:
+      ESYM C 10 bright A_FaceTarget;
+      ESYM D 2 bright A_SkullAttack;
+      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      Goto Missile+2;
+	  Melee:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+  		TNT1 A 0 A_Die;
+  	Pain:
+      ESYM F 3 bright;
+      ESYM F 3 bright A_Pain;
+      Goto See;
+  	Death:
+      ESYM O 4 bright;
+      ESYM P 4 bright A_Scream;
+      ESYM Q 4 bright A_NoBlocking;
+      TNT1 A 0 A_SpawnProjectile("SpiderSpawner", 10, 14, 90);
+      ESYM R 2 bright A_SpawnProjectile("SpiderSpawner", 10, 0, -90);
+      TNT1 A 0 A_SpawnProjectile("SpiderSpawner", 10, -14, 180);
+      ESYM R 2 bright A_SpawnProjectile("SpiderSpawner", 10, 0, 0);
+      ESYM STUV 4 A_Gravity;
+      ESYM W -1;
+      Stop;
+  }
+}
+
+Class SpiderSpawner : Actor //Projectile that makes spider
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 16;
+    Height 16;
+    Speed 6;
+    Scale 0.2;
+    PROJECTILE;
+    +FLOAT
+    +BLOODLESSIMPACT
+    +PAINLESS
+    +RIPPER
+  }
+	States
+	{
+    Spawn:
+      TNT1 A 10;
+    Death:
+      TNT1 A 1
+      {
+        let g = Globals(EventHandler.Find("Globals"));
+        g.createCompanion("Spider", pos);
+        //A_SpawnItem("Spider", 0, 0, 1);
+      }
+      Stop;
+	}
+}
+
+Class Spider : Actor //Spiders from Spider Eye, sprites ripped from Blood by Psyren
+{	
+  Default
+  {
+  	MONSTER;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Health 20;
+    Radius 64;
+    Height 64;
+  	Mass 20;
+  	Speed 12;
+  	PainChance 128;
+  	SeeSound "SpiderSee";
+  	PainSound "baby/pain";
+  	DeathSound "SpiderDie";
+  	ActiveSound "SpiderSee";
+    MeleeRange 16;
+    Radius 8;
+    Height 8;
+    Scale 0.25;
+  	+FLOORCLIP
+    +NEVERRESPAWN
+    Obituary"%o was webbed by a Spider.";
+  }
+	States
+ 	{
+    Spawn:
+      ZPID AB 10 A_Look;
+      Loop;
+    See:
+      ZPID A 20;
+      ZPID AABBCCDDEEFF 3 A_Chase;
+      Goto See+1;
+    Melee:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ZPID A 4 A_FaceTarget;
+      ZPID G 4 A_CustomMeleeAttack(Random(1,8)*2);
+      ZPID H 4;
+      Goto See+1;
+    Pain:
+      ZPID I 3;
+      ZPID I 3 A_Pain;
+      Goto See+1;
+    Death:
+      ZPID J 2 A_Scream;
+      ZPID K 2 A_NoBlocking;
+      ZPID LMN 2;
+      ZPID O -1;
+      Stop;
+    Raise:
+      ZPID ONMLKJ 5;
+      Goto See+1;
+  }
+}
+
+Class EyeBat : CompanionLostSoul //Bat Spawner One
+{
+  Default
+  {
+    MONSTER;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Obituary "%o was scratched by a Bat Eye.";
+    Damage 0;
+    Translation "112:127=96:111";
+    -DONTFALL
+    +LOOKALLAROUND
+  }
+	States
+  {
+  	Spawn:
+	  	ESYM AB 10 bright A_Look;
+   		Loop;
+  	See:
+      ESYM ABCD 6 bright A_Chase;
+      Loop;
+  	Missile:
+      ESYM C 10 bright A_FaceTarget;
+      ESYM D 2 bright A_SkullAttack;
+      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      Goto Missile+2;
+  	Melee:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+	  	TNT1 A 0 A_Die;
+  	Pain:
+      ESYM F 3 bright;
+      ESYM F 3 bright A_Pain;
+      Goto See;
+  	Death:
+      ESYM O 4 bright;
+      ESYM P 4 bright A_Scream;
+      ESYM Q 4 bright A_NoBlocking;
+      TNT1 A 0 A_SpawnProjectile("EyeBatSpawner",28,0,0);
+      TNT1 A 0 A_SpawnProjectile("EyeBatSpawner",28,0,45);
+      TNT1 A 0 A_SpawnProjectile("EyeBatSpawner",28,0,90);
+      TNT1 A 0 A_SpawnProjectile("EyeBatSpawner",28,0,135);
+      TNT1 A 0 A_SpawnProjectile("EyeBatSpawner",28,0,180);
+      TNT1 A 0 A_SpawnProjectile("EyeBatSpawner",28,0,225);
+      TNT1 A 0 A_SpawnProjectile("EyeBatSpawner",28,0,270);
+      ESYM R 4 bright A_SpawnProjectile("EyeBatSpawner",28,0,315);
+      ESYM STUV 4 A_Gravity;
+      ESYM W -1;
+      Stop;
+  }
+}
+
+Class EyeBatSpawner : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 16;
+    Height 16;
+    Speed 6;
+    Scale 0.2;
+    PROJECTILE;
+    +FLOAT
+    +BLOODLESSIMPACT
+    +PAINLESS
+    +RIPPER
+  }
+	States
+	{
+    Spawn:
+      TNT1 A 10;
+    Death:
+      TNT1 A 1
+      {
+        let g = Globals(EventHandler.Find("Globals"));
+        g.createCompanion("SummonedBatFamiliar", pos);
+        //A_SpawnItem("SummonedBatFamiliar", 0, 0, 1);
+      }
+      Stop;
+	}
+}
+
+class SummonedBatFamiliar : Actor
+{
+  Default
+  {
+    MONSTER;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Health 10;
+    Radius 12;
+    Height 24;
+    Speed 14;
+    PainChance 200;
+    +NOGRAVITY
+    +FLOAT
+    +NEVERRESPAWN
+    SeeSound "batfam/idle";
+    PainSound "batfam/pain";
+    DeathSound "batfam/death";
+    ActiveSound "batfam/idle";
+    HitObituary "%o was scratched by a bat familiar";
+  }
+  States
+  {
+    Spawn:
+      BFAM ABCB 3 A_Look;
+      Loop;
+    See:
+      BFAM ABCB 3 A_Chase;
+      Loop;
+    Melee:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      BFAM A 3 A_FaceTarget;
+      BFAM B 3 A_CustomMeleeAttack(Random(1,8)*1,"batfam/idle", "", "Companion");
+      BFAM CB 3 A_FaceTarget;
+      Goto See;
+    Pain:
+      BFAM A 2;
+      BFAM A 2 A_Pain;
+      Goto See;
+    Death:
+      TNT1 A 0 A_Die;
+      TNT1 A 0 A_NoBlocking;
+      BFAM D 5 A_Scream;
+      BFAM E 5;
+      BFAM FDEF 5;
+      Goto Death+5;
+    Crash:
+	    TNT1 A 0 A_SetFloorClip;
+      BFAM G 6 A_StartSound("batfam/crash");
+      BFAM H 7;
+      BFAM I 8;
+      BFAM J -1;
+      Stop;
+  }
+}

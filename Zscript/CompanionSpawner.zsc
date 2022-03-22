@@ -16,6 +16,10 @@ class CompanionItemSpawnerTier1 : RandomSpawner
     DropItem "BabyCacoGun", 255, 75;
     DropItem "BeheadedKamikazeGun", 255, 90;
     DropItem "BadGun", 255, 100;
+    DropItem "EyeExGun", 255, 80;
+    DropItem "EyePoisonGun", 255, 80;
+    DropItem "EyeSpiderGun", 255, 80;
+    DropItem "EyeBatGun", 255, 80;
   }
 }
 
@@ -52,6 +56,10 @@ class CompanionItemSpawnerTier2 : RandomSpawner
     DropItem "AugmentedArachnotronGun", 255, 60;
     DropItem "AutoShotgunGuyGun", 255, 80;
     DropItem "BadGun", 255, 100;
+    DropItem "EyeExGun", 255, 80;
+    DropItem "EyePoisonGun", 255, 80;
+    DropItem "EyeSpiderGun", 255, 80;
+    DropItem "EyeBatGun", 255, 80;
   }
 }
 
@@ -98,6 +106,10 @@ class CompanionItemSpawnerTier3 : RandomSpawner
     DropItem "AugmentedArachnotronGun", 255, 60;
     DropItem "AutoShotgunGuyGun", 255, 80;
     DropItem "BadGun", 255, 100;
+    DropItem "EyeExGun", 255, 80;
+    DropItem "EyePoisonGun", 255, 80;
+    DropItem "EyeSpiderGun", 255, 80;
+    DropItem "EyeBatGun", 255, 80;
   }
 }
 
@@ -161,5 +173,9 @@ class CompanionItemSpawnerAll : RandomSpawner
     DropItem "AutoShotgunGuyGun", 255, 80;
     DropItem "AzazelGun", 255, 20;
     DropItem "BadGun", 255, 100;
+    DropItem "EyeExGun", 255, 80;
+    DropItem "EyePoisonGun", 255, 80;
+    DropItem "EyeSpiderGun", 255, 80;
+    DropItem "EyeBatGun", 255, 80;
   }
 }
