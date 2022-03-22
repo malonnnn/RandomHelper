@@ -240,14 +240,14 @@ class MyStatusBar : MyBaseStatusBar
 		if (!isInventoryBarVisible() && !Level.NoInventoryBar && CPlayer.mo.InvSel != null)
 		{
 
-			if(ammotype2){
-				CommonAmmoFeatures myammo = CommonAmmoFeatures(ammotype2);
+			if(CPlayer.ReadyWeapon is "BaseDeployer"){
+				BaseDeployer gun = BaseDeployer(CPlayer.ReadyWeapon);
 				
 				DrawInventoryIcon(ammotype2, (-314, invY + 17), DI_DIMDEPLETED);
 				DrawString(mMM2SmallFont, ammotype2.getTag().." x"..ammotype2.Amount, (-300, invY+18), DI_TEXT_ALIGN_RIGHT);
 
 				DrawString(mMM2SmallFont, "costs", (-225, invY-11), DI_TEXT_ALIGN_RIGHT);
-				DrawString(mHUDFont, FormatNumber(myammo.price, 3), (-230, invY), DI_TEXT_ALIGN_RIGHT, FONT.CR_DARKGREEN);
+				DrawString(mHUDFont, FormatNumber(gun.price, 3), (-230, invY), DI_TEXT_ALIGN_RIGHT, FONT.CR_DARKGREEN);
 				DrawString(mMM2SmallFont, "to spawn 1", (-210, invY+18), DI_TEXT_ALIGN_RIGHT);
 				DrawInventoryIcon(ammotype1, (-225, invY+16));
 			}
