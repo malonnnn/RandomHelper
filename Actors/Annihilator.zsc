@@ -91,7 +91,7 @@ Class Rocket2 : Actor
     +ROCKETTRAIL
     +THRUGHOST
   }
-  states
+  States
   {
     Spawn:
       MISL A 1 bright;

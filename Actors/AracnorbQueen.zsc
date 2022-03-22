@@ -266,7 +266,7 @@ Class ZWAVE : Actor
     PROJECTILE;
     RenderStyle "Add";
   }
-  states
+  States
   {
     Spawn:
       TNT1 A 4;
