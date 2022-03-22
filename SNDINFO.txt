@@ -1,3 +1,14 @@
+// Queen Aracnorb
+queen/sight quesit
+queen/pain quepain
+queen/death quedie
+queen/active queact
+queen/fire qbfgfire
+electricplasma/shoot		PZAPSEE	
+electricplasma/hit		PZAPHIT
+queen/hit		qbfghit
+queen/melee		quebit
+
 // Aracnorb
 aracnorb/sight		dsaracst
 aracnorb/death		dsaracdt

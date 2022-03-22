@@ -48,6 +48,7 @@ class CompanionItemSpawnerTier2 : RandomSpawner
     DropItem "AgauresGun", 255, 60;
     DropItem "GhostlyAgauresGun", 255, 60;
     DropItem "AracnorbGun", 255, 60;
+    DropItem "AugmentedArachnotronGun", 255, 60;
   }
 }
 
@@ -81,7 +82,7 @@ class CompanionItemSpawnerTier3 : RandomSpawner
     DropItem "CompanionRevenantGun", 255, 30;
     DropItem "CompanionPainElementalGun", 255, 40;
     DropItem "CompanionFatsoGun", 255, 40;
-    DropItem "CompanionArachnotronGun", 255, 40;
+    DropItem "CompanionArachnotronGun", 255, 60;
     DropItem "MarineCompanionFlamethrowerGun", 255, 30;
     DropItem "MarineCompanionMinigunGun", 255, 30;
     DropItem "ArachnobaronGun", 255, 30;
@@ -91,6 +92,7 @@ class CompanionItemSpawnerTier3 : RandomSpawner
     DropItem "GhostlyAgauresGun", 255, 60;
     DropItem "AracnorbGun", 255, 60;
     DropItem "AracnorbQueenGun", 255, 20;
+    DropItem "AugmentedArachnotronGun", 255, 60;
   }
 }
 
@@ -115,7 +117,7 @@ class CompanionItemSpawnerAll : RandomSpawner
     DropItem "MarineCompanionRailgunGun", 255, 50;
     DropItem "MarineCompanionChainsawGun", 255, 100;
     DropItem "MarineCompanionMinigunGun", 255, 30;
-    DropItem "CompanionArachnotronGun", 255, 40;
+    DropItem "CompanionArachnotronGun", 255, 60;
     DropItem "CompanionArchvileGun", 255, 60;
     DropItem "CompanionBaronOfHellGun", 255, 30;
     DropItem "CompanionCacodemonGun", 255, 60;
@@ -150,5 +152,6 @@ class CompanionItemSpawnerAll : RandomSpawner
     DropItem "AnnihilatorGun", 255, 5;
     DropItem "AracnorbGun", 255, 60;
     DropItem "AracnorbQueenGun", 255, 20;
+    DropItem "AugmentedArachnotronGun", 255, 60;
   }
 }

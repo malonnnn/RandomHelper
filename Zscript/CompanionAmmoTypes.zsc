@@ -440,3 +440,11 @@ class AracnorbQueenAmmo : CommonAmmoFeatures
     Inventory.Icon "ARNQA1";
   }
 }
+
+class AugmentedArachnotronAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "BSP2A1D1";
+  }
+}
