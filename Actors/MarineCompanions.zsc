@@ -210,9 +210,9 @@ class MarineCompanionCG : MarineCompanion
       ALY4 ABCD 6 A_Chase;
       loop;
     Missile:
-      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       ALY4 X 10 A_FaceTarget;
       ALY4 E 1 A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       ALY4 FE 3 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "CompanionBulletPuff");
       ALY4 F 1 A_CPosRefire;
       goto Missile+2;
@@ -301,9 +301,9 @@ class MarineCompanionMinigun : MarineCompanion
       ALY6 ABCD 6 A_Chase;
       loop;
     Missile:
-      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       ALY6 E 10 A_FaceTarget;
       ALY6 F 5 A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       ALY6 G 2 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "CompanionBulletPuff");
       ALY6 F 2 BRIGHT A_CustomBulletAttack(5, 4, 1, 5, "CompanionBulletPuff");
       ALY6 F 0 A_SpidRefire;
@@ -403,9 +403,9 @@ class MarineCompanionPlasma : MarineCompanion
       ALY8 ABCD 6 A_Chase;
       Loop;
     Missile:
-      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       ALY8 E 10 A_FaceTarget;
       TNT1 A 0 A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       ALY8 F 1 BRIGHT A_SpawnProjectile("CompanionPlasmaBall");
       ALY8 E 1 A_MonsterRefire(0, "See");
       goto Missile+2;
@@ -601,8 +601,8 @@ class MarineCompanionRailgun : MarineCompanion
       AL12 ABCD 6 A_Chase;
       loop;
     Missile:
-      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       AL12 E 10 A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       AL12 F 8 Bright A_CustomRailgun (random(50,100),0,"4B0082","4682B4",0,1,0, "CompanionBulletPuff");
       AL12 E 8 A_SpidRefire;
       goto Missile+1;
@@ -756,10 +756,10 @@ class MarineCompanionBFG10K : MarineCompanion
       AL15 ABCD 6 A_Chase;
       loop;
     Missile:
-      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       AL15 E 10 A_FaceTarget;
       AL15 E 30 A_StartSound ("BFG10kMarine/ShotStart");
       AL15 E 0 A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       AL15 F 5 Bright A_CustomBulletAttack(2,2,1,30,"CompanionBFG10kShot");
       AL15 E 5 A_SpidRefire;
       goto Missile+4;
@@ -860,8 +860,8 @@ class MarineCompanionSniper : MarineCompanion
       AL17 ABCD 6 A_Chase;
       Loop;
     Missile:
-      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       AL17 E 10 A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       AL17 F 0 A_StartSound("Marine/SniperFire");
       AL17 F 10 A_CustomBulletAttack(0, 0, 1, random(79,161), "CompanionBulletPuff");
       AL17 E 10 A_StartSound("Marine/SniperReload");

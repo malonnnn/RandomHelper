@@ -953,6 +953,23 @@ class AugmentedArachnotronGun : BaseDeployer
   }
 }
 
+class AutoShotgunGuyGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Auto Shotgun Guy";
+    Weapon.AmmoType2 "AutoShotgunGuyAmmo";
+    Inventory.PickupMessage "Got an Auto Shotgun Guy!";
+    BaseDeployer.price 20;
+    Weapon.SlotPriority 20;
+  }
+  States
+  {
+    Spawn:
+      ASGZ A -1;
+      Stop;
+  }
+}
 
 /* copy pastable example
 class AbaddonGun : BaseDeployer

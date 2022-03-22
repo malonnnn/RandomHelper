@@ -1,3 +1,9 @@
+// AutoShotgun Guy
+asgguy/asgfir dsasgfir
+asgguy/asgout dsasgout
+asgguy/asgin dsasgin
+asgguy/asgld1 dsasgld1
+
 // Queen Aracnorb
 queen/sight quesit
 queen/pain quepain

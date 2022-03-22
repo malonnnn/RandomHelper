@@ -448,3 +448,11 @@ class AugmentedArachnotronAmmo : CommonAmmoFeatures
     Inventory.Icon "BSP2A1D1";
   }
 }
+
+class AutoShotgunGuyAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "ASGZA1";
+  }
+}

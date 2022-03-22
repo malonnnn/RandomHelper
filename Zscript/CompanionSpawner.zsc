@@ -49,6 +49,7 @@ class CompanionItemSpawnerTier2 : RandomSpawner
     DropItem "GhostlyAgauresGun", 255, 60;
     DropItem "AracnorbGun", 255, 60;
     DropItem "AugmentedArachnotronGun", 255, 60;
+    DropItem "AutoShotgunGuyGun", 255, 80;
   }
 }
 
@@ -93,6 +94,7 @@ class CompanionItemSpawnerTier3 : RandomSpawner
     DropItem "AracnorbGun", 255, 60;
     DropItem "AracnorbQueenGun", 255, 20;
     DropItem "AugmentedArachnotronGun", 255, 60;
+    DropItem "AutoShotgunGuyGun", 255, 80;
   }
 }
 
@@ -153,5 +155,6 @@ class CompanionItemSpawnerAll : RandomSpawner
     DropItem "AracnorbGun", 255, 60;
     DropItem "AracnorbQueenGun", 255, 20;
     DropItem "AugmentedArachnotronGun", 255, 60;
+    DropItem "AutoShotgunGuyGun", 255, 80;
   }
 }
