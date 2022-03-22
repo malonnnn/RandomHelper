@@ -412,6 +412,7 @@ class GhostlyAgauresAmmo : AgauresAmmo
 {
   Default
   {
+    RenderStyle "OptFuzzy";
     Inventory.Icon "AGURZ0";
   }
 }
