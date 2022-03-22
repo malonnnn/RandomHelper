@@ -897,6 +897,25 @@ class AnnihilatorGun : BaseDeployer
   }
 }
 
+class  AracnorbGun : BaseDeployer
+{
+  Default
+  {
+    Tag " Aracnorb";
+    Weapon.AmmoType2 "AracnorbAmmo";
+    Inventory.PickupMessage "Got an  Aracnorb!";
+    cameraHeight 30;
+    Weapon.SlotPriority 30;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      ACNB A -1;
+      Stop;
+  }
+}
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

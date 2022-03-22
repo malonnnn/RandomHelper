@@ -90,8 +90,8 @@ Class ArchonOfHell : BaronOfHell
     BOS4 MN 8 Bright A_FaceTarget();
     BOS4 O 3 Bright
     {
-      A_CustomMeleeAttack(10*Random(1,8), "baron/melee");
-      A_CustomMeleeAttack(10*Random(1,8), "baron/melee");
+      A_CustomMeleeAttack(10*Random(1,8), "baron/melee", "", "Companion");
+      A_CustomMeleeAttack(10*Random(1,8), "baron/melee", "", "Companion");
     }
     BOS4 P 3 Bright;
     Goto See;

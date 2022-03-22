@@ -113,7 +113,7 @@ class Marauder : Actor // Originally made by Spectre on YouTube. Rebalanced and 
 			MAUD W 0 Bright A_Recoil(-10);
 			MAUD W 4 Bright A_FaceTarget;
 			MAUD W 0 Bright A_Recoil(-10);
-			MAUD V 6 A_CustomMeleeAttack(random(1,8)*15,"Marauder/Melee");
+			MAUD V 6 A_CustomMeleeAttack(random(1,8)*15,"Marauder/Melee", "", "Companion");
 			Goto See;
 		Pain:	// Technically because of how the ShieldDown system works this is the raised shield state
 			MAUD X 0

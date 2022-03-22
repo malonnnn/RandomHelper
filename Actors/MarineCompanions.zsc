@@ -360,7 +360,7 @@ States
   Melee:
     TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
     ALY7 E 1 A_FaceTarget;
-    ALY7 F 3 A_CustomMeleeAttack(1,"weapons/sawhit","weapons/sawfull","CompanionBulletPuff");
+    ALY7 F 3 A_CustomMeleeAttack(1,"weapons/sawhit","weapons/sawfull","Companion");
     Goto See;
   Pain:
     ALY7 G 5 A_Pain;

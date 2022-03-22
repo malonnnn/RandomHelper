@@ -47,6 +47,7 @@ class CompanionItemSpawnerTier2 : RandomSpawner
     DropItem "BeheadedKamikazeGun", 255, 90;
     DropItem "AgauresGun", 255, 60;
     DropItem "GhostlyAgauresGun", 255, 60;
+    DropItem "AracnorbGun", 255, 60;
   }
 }
 
@@ -88,6 +89,7 @@ class CompanionItemSpawnerTier3 : RandomSpawner
     DropItem "BeheadedKamikazeGun", 255, 90;
     DropItem "AgauresGun", 255, 60;
     DropItem "GhostlyAgauresGun", 255, 60;
+    DropItem "AracnorbGun", 255, 60;
   }
 }
 
@@ -145,5 +147,6 @@ class CompanionItemSpawnerAll : RandomSpawner
     DropItem "AgauresGun", 255, 60;
     DropItem "GhostlyAgauresGun", 255, 60;
     DropItem "AnnihilatorGun", 255, 5;
+    DropItem "AracnorbGun", 255, 60;
   }
 }

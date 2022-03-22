@@ -815,3 +815,19 @@ class AnnihilatorAmmo : CommonAmmoFeatures
       Stop;
   }
 }
+
+class AracnorbAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Tag "Aracnorb";
+    Inventory.PickupMessage "Got an Aracnorb!";
+    CommonAmmoFeatures.price 30;
+  }
+  States
+  {
+    Spawn:
+      ACNB A -1;
+      Stop;
+  }
+}
