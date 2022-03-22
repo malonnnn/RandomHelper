@@ -897,13 +897,13 @@ class AnnihilatorGun : BaseDeployer
   }
 }
 
-class  AracnorbGun : BaseDeployer
+class AracnorbGun : BaseDeployer
 {
   Default
   {
-    Tag " Aracnorb";
+    Tag "Aracnorb";
     Weapon.AmmoType2 "AracnorbAmmo";
-    Inventory.PickupMessage "Got an  Aracnorb!";
+    Inventory.PickupMessage "Got an Aracnorb!";
     cameraHeight 30;
     Weapon.SlotPriority 30;
     Scale 0.4;
