@@ -25,211 +25,169 @@ Class CommonAmmoFeatures : Ammo
 
 Class MarineCompanionFistAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      ALY1 A -1;
-      Stop;
+    Inventory.Icon "ALY1A1";
   }
 }
 
 Class MarineCompanionChainsawAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      ALY7 A -1;
-      Stop;
+    Inventory.Icon "ALY7A1";
   }
 }
 
 Class MarineCompanionPistolAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      ALY2 A -1;
-      Stop;
+    Inventory.Icon "ALY2A1";
   }
 }
 
 Class MarineCompanionSGAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      ALY5 A -1;
-      Stop;
+    Inventory.Icon "ALY5A1";
   }
 }
 
 Class MarineCompanionSSGAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      AL11 A -1;
-      Stop;
+    Inventory.Icon "AL11A1";
   }
 }
 
 Class MarineCompanionCGAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      ALY4 A -1;
-      Stop;
+    Inventory.Icon "ALY4A1";
   }
 }
 
 Class MarineCompanionRocketAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      ALY9 A -1;
-      Stop;
+    Inventory.Icon "ALY9A1";
   }
 }
 
 Class MarineCompanionPlasmaAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      ALY8 A -1;
-      Stop;
+    Inventory.Icon "ALY8A1";
   }
 }
 
 Class MarineCompanionBFG9000Ammo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      AL10 A -1;
-      Stop;
+    Inventory.Icon "AL10A1";
   }
 }
 
 Class MarineCompanionBFG10KAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      AL15 A -1;
-      Stop;
+    Inventory.Icon "AL15A1";
   }
 }
 
 Class MarineCompanionGLAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      AL14 A -1;
-      Stop;
+    Inventory.Icon "AL14A1";
   }
 }
 
 Class MarineCompanionHSMissileAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      AL13 A -1;
-      Stop;
+    Inventory.Icon "AL13A1";
   }
 }
 
 Class MarineCompanionRailgunAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      AL12 A -1;
-      Stop;
+    Inventory.Icon "AL12A1";
   }
 }
 
 Class MarineCompanionSniperAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      AL17 A -1;
-      Stop;
+    Inventory.Icon "AL17A1";
   }
 }
 
 Class MarineCompanionFlameThrowerAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      AL16 A -1;
-      Stop;
+    Inventory.Icon "AL16A1";
   }
 }
 
 Class MarineCompanionMGAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      ALY3 A -1;
-      Stop;
+    Inventory.Icon "ALY3A1";
   }
 }
 
 Class MarineCompanionMinigunAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      ALY6 A -1;
-      Stop;
+    Inventory.Icon "ALY6A1";
   }
 }
 
 class CompanionZombieManAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      POSS A -1;
-      Stop;
+    Inventory.Icon "POSSA1";
   }
 }
 
 class CompanionShotgunGuyAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      SPOS A -1;
-      Stop;
+    Inventory.Icon "SPOSA1";
   }
 }
 
 class CompanionChaingunGuyAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      CPOS A -1;
-      Stop;
+    Inventory.Icon "CPOSA1";
   }
 }
 
 class CompanionDemonAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      SARG A -1;
-      Stop;
+    Inventory.Icon "SARGA1";
   }
 }
 
@@ -244,141 +202,113 @@ class CompanionSpectreAmmo : CompanionDemonAmmo
 
 class CompanionLostSoulAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      SKUL A -1;
-      Stop;
+    Inventory.Icon "SKULA1";
   }
 }
 
 class CompanionCacodemonAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      HEAD A -1;
-      Stop;
+    Inventory.Icon "HEADA1";
   }
 }
 
 class CompanionPainElementalAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      PAIN A -1;
-      Stop;
+    Inventory.Icon "PAINA1";
   }
 }
 
 class CompanionBaronOfHellAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      BOSS A -1;
-      Stop;
+    Inventory.Icon "BOSSA1";
   }
 }
 
 class CompanionHellKnightAmmo : CompanionBaronOfHellAmmo
 {
-  States
+  Default
   {
-    Spawn:
-      BOS2 A -1;
-      Stop;
+    Inventory.Icon "BOS2A1C1";
   }
 }
 
 class CompanionArachnotronAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      BSPI A -1;
-      Stop;
+    Inventory.Icon "BSPIA1D1";
   }
 }
 
 class CompanionArchvileAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      VILE A -1;
-      Stop;
+    Inventory.Icon "VILEA1D1";
   }
 }
 
 class CompanionFatsoAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      FATT A -1;
-      Stop;
+    Inventory.Icon "FATTA1";
   }
 }
 
 class CompanionCyberdemonAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      CYBR A -1;
-      Stop;
+    Inventory.Icon "CYBRA1";
   }
 }
 
 class CompanionSpiderMastermindAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      SPID A -1;
-      Stop;
+    Inventory.Icon "SPIDA1D1";
   }
 }
 
 class CompanionWolfensteinSSAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      SSWV A -1;
-      Stop;
+    Inventory.Icon "SSWVA1";
   }
 }
 
 class CompanionRevenantAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      SKEL A -1;
-      Stop;
+    Inventory.Icon "SKELA1D1";
   }
 }
 
 class CompanionDoomImpAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      TROO A -1;
-      Stop;
+    Inventory.Icon "TROOA1";
   }
 }
 
 Class BelphegorAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      BOS3 A -1;
-      Stop;
+    Inventory.Icon "BOS3A1";
   }
 }
 
@@ -388,121 +318,93 @@ Class AfritAmmo : CommonAmmoFeatures
   {
     Inventory.Icon "FRITV0";
   }
-  States
-  {
-    Spawn:
-      FRIT A -1;
-      Stop;
-  }
 }
 
 Class MarauderAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      MAUD A -1;
-      Stop;
+    Inventory.Icon "MAUDA1";
   }
 }
 
 Class ArachnophyteAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      APYT A -1;
-      Stop;
+    Inventory.Icon "APYTA1";
   }
 }
 
 Class ArchonOfHellAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      BOS4 A -1;
-      Stop;
+    Inventory.Icon "BOS4A1C1";
   }
 }
 
 Class MurderBallAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      BERS A -1;
-      Stop;
+    Inventory.Icon "BERSA0";
   }
 }
 
 class ArachnobaronAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      ARBR A -1;
-      Stop;
+    Inventory.Icon "ARBRA1D1";
   }
 }
 
 class BabyCacoAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      CACB A -1;
-      Stop;
+    Inventory.Icon "CACBA1";
   }
 }
 
 class BeheadedKamikazeAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      BKAM A -1;
-      Stop;
+    Inventory.Icon "BKAMA1";
   }
 }
 
 class AbaddonAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      HED3 A -1;
-      Stop;
+    Inventory.Icon "HED3A1";
   }
 }
 
 class AgathodemonAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      AGAH A -1;
-      Stop;
+    Inventory.Icon "AGAHA1";
   }
 }
 
 class AnotherAgathodemonAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      AGAH A -1;
-      Stop;
+    Inventory.Icon "AGAHA1";
   }
 }
 
 class AgauresAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      AGUR A -1;
-      Stop;
+    Inventory.Icon "AGURA1C1";
   }
 }
 
@@ -516,20 +418,16 @@ class GhostlyAgauresAmmo : AgauresAmmo
 
 class AnnihilatorAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      ANNI A -1;
-      Stop;
+    Inventory.Icon "ANNIA1C1";
   }
 }
 
 class AracnorbAmmo : CommonAmmoFeatures
 {
-  States
+  Default
   {
-    Spawn:
-      ACNB A -1;
-      Stop;
+    Inventory.Icon "ACNBA1";
   }
 }
