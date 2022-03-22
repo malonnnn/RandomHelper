@@ -159,7 +159,7 @@ class AgauresBall : Actor
   States
   {
     Spawn:
-      BLVB AAABBB 1 Bright A_SpawnItemEx("AgauresBallTrail", 0, 0, 0, 0, 0, 0, 0, 128, 0);
+      BLVB AAABBB 1 Bright A_SpawnItemEx("AgauresBallTrail");
       loop;
     Death:
       BLVB CDEF 4 Bright;

@@ -73,7 +73,7 @@ class KamikaziDamage : Actor
     Radius 2;
     Height 2;
     Speed 0;
-    Projectile;
+    PROJECTILE;
     Species "Companion";
     DamageType "Companion";
   }

@@ -13,7 +13,7 @@ class HeatSeekingMissile : Actor
     Height 8;
     Speed 25;
     Damage 50;
-    Projectile;
+    PROJECTILE;
     Species "Companion";
     DamageType "Companion";
     SeeSound "Ally/Seeker";
@@ -38,7 +38,7 @@ class MissileTrail : Actor
   Default
   {
     +NoClip
-    Projectile;
+    PROJECTILE;
     RenderStyle "Add";
     Alpha 0.4;
   }
@@ -64,7 +64,7 @@ class CompanionGrenade : Actor
     BounceType "Hexen";
     SeeSound "Ally/GrenadeBounce";
     DeathSound "Ally/GrenadeBang";
-    Projectile;
+    PROJECTILE;
     Species "Companion";
     DamageType "Companion";
   }
@@ -127,7 +127,7 @@ class CompanionFire : Actor
     Height 4;
     Speed 19;
     Damage 5;
-    Projectile;
+    PROJECTILE;
     DontHurtShooter;
     RenderStyle "ADD";
     Alpha 0.67;
@@ -166,7 +166,7 @@ class CompanionDropFire : Actor
     +NODAMAGETHRUST
     Radius 8;
     Height 40;
-    Projectile;
+    PROJECTILE;
     DontHurtShooter;
     RenderStyle "ADD";
     Alpha 0.90;

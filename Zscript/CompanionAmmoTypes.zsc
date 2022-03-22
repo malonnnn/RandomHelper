@@ -432,3 +432,11 @@ class AracnorbAmmo : CommonAmmoFeatures
     Inventory.Icon "ACNBA1";
   }
 }
+
+class AracnorbQueenAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "ARNQA1";
+  }
+}

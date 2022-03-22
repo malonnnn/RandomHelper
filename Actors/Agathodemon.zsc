@@ -152,7 +152,7 @@ Class AgathoDemonFireBall : CompanionDoomImpBall //trail projectile
   States
   {
     Spawn:
-      TNT1 A 2 Bright A_SpawnItemEx("AgathoDemonFX", 0, 0, 0, 0, 0, 0, 0, 128);
+      TNT1 A 2 Bright A_SpawnItemEx("AgathoDemonFX");
       Loop;
     Death:
       AGFX GHIJKL 3 Bright;

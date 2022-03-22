@@ -67,7 +67,7 @@ class BabyCacoBall : Actor
     Speed 11;
     FastSpeed 10;
     Damage 3;
-    Projectile;
+    PROJECTILE;
     +RANDOMIZE;
     RenderStyle "Add";
     Alpha 1;

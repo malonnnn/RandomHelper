@@ -906,12 +906,30 @@ class AracnorbGun : BaseDeployer
     Inventory.PickupMessage "Got an Aracnorb!";
     BaseDeployer.price 30;
     Weapon.SlotPriority 30;
-    Scale 0.4;
   }
   States
   {
     Spawn:
       ACNB A -1;
+      Stop;
+  }
+}
+
+class AracnorbQueenGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Aracnorb Queen";
+    Weapon.AmmoType2 "AracnorbQueenAmmo";
+    Inventory.PickupMessage "Got an Aracnorb Queen!";
+    BaseDeployer.price 80;
+    Weapon.SlotPriority 80;
+    Scale 0.3;
+  }
+  States
+  {
+    Spawn:
+      ARNQ A -1;
       Stop;
   }
 }

@@ -123,7 +123,7 @@ Class ArchonComet : Actor
     Scale 1.0;
     SeeSound "weapons/firbfi";
     DeathSound "weapons/hellex";
-    Projectile;
+    PROJECTILE;
     Species "Companion";
     DamageType "Companion";
     +ThruGhost
@@ -152,7 +152,7 @@ Class ArchonSoul : Actor
     Speed 3;
     RenderStyle "Add";
     Alpha 0.80;
-    Projectile;
+    PROJECTILE;
     Species "Companion";
     DamageType "Companion";
     +ClientSideOnly
@@ -176,7 +176,7 @@ Class ArchonCometTrail : Actor
     Speed 0;
     RenderStyle "Add";
     Alpha 0.67;
-    Projectile;
+    PROJECTILE;
     Species "Companion";
     DamageType "Companion";
     +ClientSideOnly

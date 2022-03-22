@@ -78,7 +78,7 @@ class AbaddonBall : Actor
   {
     Species "Companion";
     DamageType "Companion";
-    Projectile;
+    PROJECTILE;
     Radius 6;
     Height 8;
     Speed 20;

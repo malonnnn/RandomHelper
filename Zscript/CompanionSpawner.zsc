@@ -90,6 +90,7 @@ class CompanionItemSpawnerTier3 : RandomSpawner
     DropItem "AgauresGun", 255, 60;
     DropItem "GhostlyAgauresGun", 255, 60;
     DropItem "AracnorbGun", 255, 60;
+    DropItem "AracnorbQueenGun", 255, 20;
   }
 }
 
@@ -148,5 +149,6 @@ class CompanionItemSpawnerAll : RandomSpawner
     DropItem "GhostlyAgauresGun", 255, 60;
     DropItem "AnnihilatorGun", 255, 5;
     DropItem "AracnorbGun", 255, 60;
+    DropItem "AracnorbQueenGun", 255, 20;
   }
 }
