@@ -1,3 +1,9 @@
+// Bad
+bad/attack			dsfirsht
+bad/shotx			dsfirxpl
+bad/active			dsdmact
+bad/death			dsskedth
+
 // Azazel
 diablo2/goatman/attack		011att
 diablo2/goatman/death		011deth

@@ -15,6 +15,7 @@ class CompanionItemSpawnerTier1 : RandomSpawner
     DropItem "MarineCompanionFistGun", 255, 75;
     DropItem "BabyCacoGun", 255, 75;
     DropItem "BeheadedKamikazeGun", 255, 90;
+    DropItem "BadGun", 255, 100;
   }
 }
 
@@ -50,6 +51,7 @@ class CompanionItemSpawnerTier2 : RandomSpawner
     DropItem "AracnorbGun", 255, 60;
     DropItem "AugmentedArachnotronGun", 255, 60;
     DropItem "AutoShotgunGuyGun", 255, 80;
+    DropItem "BadGun", 255, 100;
   }
 }
 
@@ -95,6 +97,7 @@ class CompanionItemSpawnerTier3 : RandomSpawner
     DropItem "AracnorbQueenGun", 255, 20;
     DropItem "AugmentedArachnotronGun", 255, 60;
     DropItem "AutoShotgunGuyGun", 255, 80;
+    DropItem "BadGun", 255, 100;
   }
 }
 
@@ -157,5 +160,6 @@ class CompanionItemSpawnerAll : RandomSpawner
     DropItem "AugmentedArachnotronGun", 255, 60;
     DropItem "AutoShotgunGuyGun", 255, 80;
     DropItem "AzazelGun", 255, 20;
+    DropItem "BadGun", 255, 100;
   }
 }

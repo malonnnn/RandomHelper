@@ -464,3 +464,11 @@ class AzazelAmmo : CommonAmmoFeatures
     Inventory.Icon "AZEAA1";
   }
 }
+
+class BadAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "BAD1A1";
+  }
+}

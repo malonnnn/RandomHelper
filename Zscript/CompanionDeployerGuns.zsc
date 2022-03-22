@@ -989,6 +989,24 @@ class AzazelGun : BaseDeployer
   }
 }
 
+class BadGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Bad";
+    Weapon.AmmoType2 "BadAmmo";
+    Inventory.PickupMessage "Got a Bad!";
+    BaseDeployer.price 10;
+    Weapon.SlotPriority 10;
+  }
+  States
+  {
+    Spawn:
+      BAD1 A -1;
+      Stop;
+  }
+}
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
