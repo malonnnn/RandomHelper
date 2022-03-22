@@ -93,10 +93,10 @@ class AbaddonBall : Actor
   States
 	{
     Spawn:
-      BAL3 AB 4 BRIGHT;
+      BAL4 AB 4 BRIGHT;
       Loop;
     Death:
-      BAL3 CDE 6 BRIGHT;
+      BAL4 CDE 6 BRIGHT;
       Stop;
     }
 }
@@ -113,13 +113,13 @@ class AbaddonBallSmall : CompanionCacodemonBall
     FastSpeed 24;
     Decal "HImpScorch";
   }
-  States
-    {
-    Spawn:
-      BAL3 FGH 4 Bright;
-      Loop;
-    Death:
-      BAL3 IJKLM 4 Bright;
-      Stop;
+    States
+      {
+      Spawn:
+        BAL4 FGH 4 Bright;
+        Loop;
+      Death:
+        BAL4 IJKLM 4 Bright;
+        Stop;
     }
 }
