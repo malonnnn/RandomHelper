@@ -2,7 +2,7 @@ class Globals : EventHandler
 {
   Array<Actor> companions;
 
-  Actor createCompanion(String companionClass, Vector3 pos, Actor player = null, int price = 0, String tag = "", bool allowReplace = false, int numCompanions = 0){
+  Actor createCompanion(String companionClass, Vector3 pos, Actor player = null, String tag = "", bool allowReplace = false){
     
     // companion flags are set in SetCompanionProperties.zsc
     Actor companion = Actor.Spawn(companionClass, pos, allowReplace);
@@ -14,19 +14,7 @@ class Globals : EventHandler
     }
     companion.SetStateLabel("See");
     companions.push(companion);
-
-    if(player){
-      player.TakeInventory(companionClass.."Ammo", 1);
-      player.TakeInventory("CompanionAmmo", price);
-      if(numCompanions <= 1)
-      {
-        let p2 = PlayerPawn(player);
-        let nextWeapon = p2.PickNextWeapon();
-        player.A_SelectWeapon(nextWeapon.getclassname());
-        //player.TakeInventory(companionClass.."Gun", 1);
-      }
-    }
-    
+        
     return companion;
   }
 

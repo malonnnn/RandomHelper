@@ -579,7 +579,7 @@ class CompanionPainElemental : PainElemental{
 
 		//Actor other = Spawn(spawntype, spawnpos, ALLOW_REPLACE);
     let g = Globals(EventHandler.Find("Globals"));
-    Actor other = g.createCompanion("CompanionLostSoul", pos, null, 0, "", true);
+    Actor other = g.createCompanion("CompanionLostSoul", pos, null, "", true);
 
 		if (other != null)
 		{

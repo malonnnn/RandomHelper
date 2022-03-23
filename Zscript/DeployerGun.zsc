@@ -6,11 +6,13 @@ class BaseDeployer : Weapon
 	{
 		+WEAPON.NOALERT
 		+SPRITEANGLE
+		+WEAPON.PRIMARY_USES_BOTH
     SpriteAngle 180;
 		Weapon.Kickback 100;
 		Weapon.AmmoGive1 2;
 		Weapon.AmmoGive2 1;
 		Weapon.AmmoUse1 0;
+		Weapon.AmmoUse2 1;
 		Weapon.UpSound "Weapons/BioReady";
 		Weapon.AmmoType1 "CompanionAmmo";
 		Inventory.Amount 1;
@@ -35,14 +37,22 @@ class BaseDeployer : Weapon
 			TNT1 A 0 A_GunFlash;
 			TNT1 A 0
 			{
-				Actor p = players[PlayerNumber()].mo;
-				int balance = int(p.CountInv("CompanionAmmo"));
+				
+				let p = self;
+				int balance = p.CountInv(invoker.ammotype1);
 				int numCompanions = p.CountInv(invoker.ammotype2);
 				String tag = invoker.getTag();
+				
 				if(Utilities.canAfford(balance, invoker.price, numCompanions, tag))
 				{
 					A_StartSound("Weapons/BioFire");
-					A_FireProjectile("BioProj");
+
+					String gunClassName = invoker.GetClassName();
+					let proj = BioProj(A_FireProjectile("BioProj"));
+
+					proj.companionClass = gunClassName.Left(gunClassName.Length() - 3);
+					proj.niceName = tag;
+					proj.numCompanions = numCompanions;
 				}
 			}
 			BPBL E 7;
@@ -64,10 +74,22 @@ class BaseDeployer : Weapon
 	{
 		return false;
 	}
+
+	override void PostBeginPlay()
+	{
+		let gun = BaseDeployer(self);
+		ammouse1 = gun.price;
+	}
 }
 
 class BioProj : Actor
 {
+	String companionClass;
+	property companionClass : companionClass;
+	String niceName;
+	property niceName : niceName;
+	int numCompanions;
+	property numCompanions : numCompanions;
 	Default
 	{
 		+Shootable
@@ -96,28 +118,10 @@ class BioProj : Actor
 			Loop;
 		Death:
 			TNT1 A 0
-			{				
-				BaseDeployer gun = BaseDeployer(target.player.readyweapon);
-				if(gun){
-					String tag = gun.getTag();
-					String ammotype = gun.AmmoType2.getclassname();
-					
-					int price = gun.price;		
-					int balance = int(target.CountInv("CompanionAmmo"));
-					int numCompanions = target.CountInv(ammotype);
-
-
-					if(Utilities.canAfford(balance, price, numCompanions, tag))
-					{
-						A_StartSound("Weapons/BioProj");
-						
-						// className.StripRight("Item"); // its bugged, maybe fixed one day. "ArachnophyteItem".StripRight("Item") returns "Arachnophy"
-						
-						String className = ammotype.Left(ammotype.Length() - 4);
-						let g = Globals(EventHandler.Find("Globals"));
-						g.createCompanion(className, pos, target, price, tag, false, numCompanions);
-					}
-				}
+			{
+				A_StartSound("Weapons/BioProj");
+				let g = Globals(EventHandler.Find("Globals"));
+				g.createCompanion(companionClass, pos, target, niceName, false);
 			}
 			BPBP DEF 6 Bright;
 			Stop;
