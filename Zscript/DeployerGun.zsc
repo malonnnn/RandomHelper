@@ -103,15 +103,13 @@ class BioProj : Actor
 		Death:
 			TNT1 A 0
 			{				
-				Actor p = players[PlayerNumber()].mo;
-				
 				BaseDeployer gun = BaseDeployer(target.player.readyweapon);
 				String tag = gun.getTag();
 				String ammotype = gun.AmmoType2.getclassname();
 				
 				int price = gun.price;		
-				int balance = int(p.CountInv("CompanionAmmo"));
-				int numCompanions = p.CountInv(ammotype);
+				int balance = int(target.CountInv("CompanionAmmo"));
+				int numCompanions = target.CountInv(ammotype);
 
 
 				if(Utilities.canAfford(balance, price, numCompanions, tag))
@@ -122,7 +120,7 @@ class BioProj : Actor
 					
 					String className = ammotype.Left(ammotype.Length() - 4);
 					let g = Globals(EventHandler.Find("Globals"));
-					g.createCompanion(className, pos, p, price, tag, false, numCompanions);
+					g.createCompanion(className, pos, target, price, tag, false, numCompanions);
 				}
 			}
 			BPBP DEF 6 Bright;
