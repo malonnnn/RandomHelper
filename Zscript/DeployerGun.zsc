@@ -26,10 +26,10 @@ class BaseDeployer : Weapon
 			BPBL ABCD 5 A_WeaponReady;
 			Loop;
 		Deselect:
-			BPBL A 0 A_Lower;
+			BPBL A 1 A_Lower;
 			Loop;
 		Select:
-			BPBL A 0 A_Raise;
+			BPBL A 1 A_Raise;
 			Loop;
 		Fire:
 			TNT1 A 0 A_GunFlash;
@@ -50,12 +50,6 @@ class BaseDeployer : Weapon
 			BPBL G 7;
 			BPBL H 8;
 			Goto Ready;
-		Flash:
-			BPBL I 2 A_Light(2);
-			BPBL J 2;
-			BPBL K 2;
-			BPBL L 2;
-			Goto LightDone;
 		AltFire:
 			TNT1 A 0 A_GunFlash;
 			TNT1 A 0 A_StartSound("Weapons/BioFire");
@@ -104,23 +98,25 @@ class BioProj : Actor
 			TNT1 A 0
 			{				
 				BaseDeployer gun = BaseDeployer(target.player.readyweapon);
-				String tag = gun.getTag();
-				String ammotype = gun.AmmoType2.getclassname();
-				
-				int price = gun.price;		
-				int balance = int(target.CountInv("CompanionAmmo"));
-				int numCompanions = target.CountInv(ammotype);
+				if(gun){
+					String tag = gun.getTag();
+					String ammotype = gun.AmmoType2.getclassname();
+					
+					int price = gun.price;		
+					int balance = int(target.CountInv("CompanionAmmo"));
+					int numCompanions = target.CountInv(ammotype);
 
 
-				if(Utilities.canAfford(balance, price, numCompanions, tag))
-				{
-					A_StartSound("Weapons/BioProj");
-					
-					// className.StripRight("Item"); // its bugged, maybe fixed one day. "ArachnophyteItem".StripRight("Item") returns "Arachnophy"
-					
-					String className = ammotype.Left(ammotype.Length() - 4);
-					let g = Globals(EventHandler.Find("Globals"));
-					g.createCompanion(className, pos, target, price, tag, false, numCompanions);
+					if(Utilities.canAfford(balance, price, numCompanions, tag))
+					{
+						A_StartSound("Weapons/BioProj");
+						
+						// className.StripRight("Item"); // its bugged, maybe fixed one day. "ArachnophyteItem".StripRight("Item") returns "Arachnophy"
+						
+						String className = ammotype.Left(ammotype.Length() - 4);
+						let g = Globals(EventHandler.Find("Globals"));
+						g.createCompanion(className, pos, target, price, tag, false, numCompanions);
+					}
 				}
 			}
 			BPBP DEF 6 Bright;

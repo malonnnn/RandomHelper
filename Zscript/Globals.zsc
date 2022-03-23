@@ -23,7 +23,7 @@ class Globals : EventHandler
         let p2 = PlayerPawn(player);
         let nextWeapon = p2.PickNextWeapon();
         player.A_SelectWeapon(nextWeapon.getclassname());
-        player.TakeInventory(companionClass.."Gun", 1);
+        //player.TakeInventory(companionClass.."Gun", 1);
       }
     }
     
