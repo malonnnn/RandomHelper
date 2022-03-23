@@ -10,6 +10,7 @@ class BaseDeployer : Weapon
 		+SPRITEANGLE
 		+WEAPON.PRIMARY_USES_BOTH
 		+WEAPON.ALT_AMMO_OPTIONAL
+		+WEAPON.NO_AUTO_SWITCH
     SpriteAngle 180;
 		Weapon.Kickback 100;
 		Weapon.AmmoGive1 2;

@@ -1015,8 +1015,8 @@ class EyePoisonGun : BaseDeployer
     Tag "Poisonous Eye";
     Weapon.AmmoType2 "EyePoisonAmmo";
     Inventory.PickupMessage "Got a Poisonous Eye!";
-    BaseDeployer.price 25;
-    Weapon.SlotPriority 25;
+    BaseDeployer.price 4;
+    Weapon.SlotPriority 4;
   }
   States
   {
@@ -1049,6 +1049,8 @@ class EyeSpiderGun : EyePoisonGun
     Tag "Spider Eye";
     Weapon.AmmoType2 "EyeSpiderAmmo";
     Inventory.PickupMessage "Got a Spider Eye!";
+    BaseDeployer.price 30;
+    Weapon.SlotPriority 30;
   }
   States
   {
@@ -1065,6 +1067,8 @@ class EyeBatGun : EyePoisonGun
     Tag "Bat Eye";
     Weapon.AmmoType2 "EyeBatAmmo";
     Inventory.PickupMessage "Got a Bat Eye!";
+    BaseDeployer.price 30;
+    Weapon.SlotPriority 30;
   }
   States
   {

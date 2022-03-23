@@ -18,8 +18,6 @@ class CompanionItemSpawnerTier1 : RandomSpawner
     DropItem "BadGun", 255, 100;
     DropItem "EyeExGun", 255, 80;
     DropItem "EyePoisonGun", 255, 80;
-    DropItem "EyeSpiderGun", 255, 80;
-    DropItem "EyeBatGun", 255, 80;
   }
 }
 
@@ -58,8 +56,8 @@ class CompanionItemSpawnerTier2 : RandomSpawner
     DropItem "BadGun", 255, 100;
     DropItem "EyeExGun", 255, 80;
     DropItem "EyePoisonGun", 255, 80;
-    DropItem "EyeSpiderGun", 255, 80;
-    DropItem "EyeBatGun", 255, 80;
+    DropItem "EyeSpiderGun", 255, 60;
+    DropItem "EyeBatGun", 255, 60;
   }
 }
 
@@ -108,8 +106,8 @@ class CompanionItemSpawnerTier3 : RandomSpawner
     DropItem "BadGun", 255, 100;
     DropItem "EyeExGun", 255, 80;
     DropItem "EyePoisonGun", 255, 80;
-    DropItem "EyeSpiderGun", 255, 80;
-    DropItem "EyeBatGun", 255, 80;
+    DropItem "EyeSpiderGun", 255, 60;
+    DropItem "EyeBatGun", 255, 60;
   }
 }
 
@@ -175,7 +173,7 @@ class CompanionItemSpawnerAll : RandomSpawner
     DropItem "BadGun", 255, 100;
     DropItem "EyeExGun", 255, 80;
     DropItem "EyePoisonGun", 255, 80;
-    DropItem "EyeSpiderGun", 255, 80;
-    DropItem "EyeBatGun", 255, 80;
+    DropItem "EyeSpiderGun", 255, 60;
+    DropItem "EyeBatGun", 255, 60;
   }
 }
