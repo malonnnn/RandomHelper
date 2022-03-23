@@ -2,6 +2,8 @@ class BaseDeployer : Weapon
 {
 	int price;
 	property price : price;
+	int removeWeapon;
+	property removeWeapon : removeWeapon;
 	Default
 	{
 		+WEAPON.NOALERT
@@ -18,6 +20,8 @@ class BaseDeployer : Weapon
 		Inventory.Amount 1;
 		Weapon.SlotNumber 1;
 		Scale 0.5;
+
+		BaseDeployer.removeWeapon 0;
 	}
 	States
 	{
@@ -57,12 +61,11 @@ class BaseDeployer : Weapon
 					proj.numCompanions = numCompanions;
 
 					// remove gun if we out of companions
-					// if(numCompanions <= 1){
-					// 	let p2 = PlayerPawn(p);
-					// 	let nextGun = p2.PickNextWeapon();
-					// 	p.A_SelectWeapon(nextGun.GetClassName());
-					// 	//invoker.Destroy();
-					// }
+					if(numCompanions <= 1){
+					 	let p2 = PlayerPawn(p);
+						p.player.pendingweapon = p2.PickNextWeapon();
+					 	invoker.removeWeapon = 1;
+					 }
 				}
 			}
 			BPBL E 7;
@@ -87,6 +90,17 @@ class BaseDeployer : Weapon
 	override bool ShouldStay ()
 	{
 		return false;
+	}
+
+	override void Tick()
+	{
+		if(self.removeWeapon != 0){
+			if(self.removeWeapon > 70){
+				self.Destroy();
+			}else{
+				self.removeWeapon++;
+			}
+		}
 	}
 }
 
