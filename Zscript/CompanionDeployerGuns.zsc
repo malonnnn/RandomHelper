@@ -666,7 +666,7 @@ Class AfritGun : BaseDeployer
   States
   {
     Spawn:
-      FRIT A -1;
+      FRIT V -1;
       Stop;
   }
 }
@@ -875,6 +875,7 @@ class GhostlyAgauresGun : AgauresGun
     Weapon.AmmoType2 "GhostlyAgauresAmmo";
     Inventory.PickupMessage "Got a Ghostly Agaures!";
     Inventory.Icon "AGURZ0";
+    RenderStyle "OptFuzzy";
   }
 }
 
@@ -1007,13 +1008,13 @@ class BadGun : BaseDeployer
   }
 }
 
-class EyeExGun : BaseDeployer
+class EyePoisonGun : BaseDeployer
 {
   Default
   {
-    Tag "Explosive Eye";
-    Weapon.AmmoType2 "EyeExAmmo";
-    Inventory.PickupMessage "Got an Explosive Eye!";
+    Tag "Poisonous Eye";
+    Weapon.AmmoType2 "EyePoisonAmmo";
+    Inventory.PickupMessage "Got a Poisonous Eye!";
     BaseDeployer.price 25;
     Weapon.SlotPriority 25;
   }
@@ -1025,17 +1026,23 @@ class EyeExGun : BaseDeployer
   }
 }
 
-class EyePoisonGun : EyeExGun
+class EyeExGun : EyePoisonGun
 {
   Default
   {
-    Tag "Poisonous Eye";
-    Weapon.AmmoType2 "EyePoisonAmmo";
-    Inventory.PickupMessage "Got a Poisonous Eye!";
+    Tag "Explosive Eye";
+    Weapon.AmmoType2 "EyeExAmmo";
+    Inventory.PickupMessage "Got an Explosive Eye!";
+  }
+  States
+  {
+    Spawn:
+      ESYZ W -1;
+      Stop;
   }
 }
 
-class EyeSpiderGun : EyeExGun
+class EyeSpiderGun : EyePoisonGun
 {
   Default
   {
@@ -1043,15 +1050,27 @@ class EyeSpiderGun : EyeExGun
     Weapon.AmmoType2 "EyeSpiderAmmo";
     Inventory.PickupMessage "Got a Spider Eye!";
   }
+  States
+  {
+    Spawn:
+      ESYZ Y -1;
+      Stop;
+  }
 }
 
-class EyeBatGun : EyeExGun
+class EyeBatGun : EyePoisonGun
 {
   Default
   {
     Tag "Bat Eye";
     Weapon.AmmoType2 "EyeBatAmmo";
     Inventory.PickupMessage "Got a Bat Eye!";
+  }
+  States
+  {
+    Spawn:
+      ESYZ Z -1;
+      Stop;
   }
 }
 
