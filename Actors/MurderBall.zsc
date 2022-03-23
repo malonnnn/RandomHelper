@@ -3,7 +3,8 @@ class MurderBall : Actor
   Default
   {
     MONSTER;
-    +Friendly;
+    +FRIENDLY
+    Species "Companion";
     DamageFactor "Companion", 0;
     Radius 20;
     Height 20;
@@ -30,7 +31,7 @@ class MurderBall : Actor
     Missile:
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       TNT1 A 0 A_ChangeVelocity(random(2,10), random(-10,10), random(1,2),CVF_RELATIVE);
-      TNT1 A 0 A_StartSound("weapons/plasmaf");
+      //TNT1 A 0 A_StartSound("weapons/plasmaf");
       BERS A 1 Bright A_Chase(NULL,NULL,CHF_FASTCHASE);
       BERS A 1 Bright 
       {

@@ -7,12 +7,12 @@ class BaseDeployer : Weapon
 		+WEAPON.NOALERT
 		+SPRITEANGLE
 		+WEAPON.PRIMARY_USES_BOTH
+		+WEAPON.ALT_AMMO_OPTIONAL
     SpriteAngle 180;
 		Weapon.Kickback 100;
 		Weapon.AmmoGive1 2;
 		Weapon.AmmoGive2 1;
-		Weapon.AmmoUse1 0;
-		Weapon.AmmoUse2 1;
+		Weapon.AmmoUse2 0;
 		Weapon.UpSound "Weapons/BioReady";
 		Weapon.AmmoType1 "CompanionAmmo";
 		Inventory.Amount 1;
@@ -39,12 +39,14 @@ class BaseDeployer : Weapon
 			{
 				
 				let p = self;
-				int balance = p.CountInv(invoker.ammotype1);
 				int numCompanions = p.CountInv(invoker.ammotype2);
-				String tag = invoker.getTag();
-				
-				if(Utilities.canAfford(balance, invoker.price, numCompanions, tag))
+				int balance = p.CountInv(invoker.ammotype1);
+				if(balance >= invoker.price && numCompanions >= 1)
 				{
+					String tag = invoker.getTag();
+					invoker.ammouse1 = invoker.price;
+					invoker.ammouse2 = 1;
+
 					A_StartSound("Weapons/BioFire");
 
 					String gunClassName = invoker.GetClassName();
@@ -53,6 +55,14 @@ class BaseDeployer : Weapon
 					proj.companionClass = gunClassName.Left(gunClassName.Length() - 3);
 					proj.niceName = tag;
 					proj.numCompanions = numCompanions;
+
+					// remove gun if we out of companions
+					// if(numCompanions <= 1){
+					// 	let p2 = PlayerPawn(p);
+					// 	let nextGun = p2.PickNextWeapon();
+					// 	p.A_SelectWeapon(nextGun.GetClassName());
+					// 	//invoker.Destroy();
+					// }
 				}
 			}
 			BPBL E 7;
@@ -61,7 +71,11 @@ class BaseDeployer : Weapon
 			BPBL H 8;
 			Goto Ready;
 		AltFire:
-			TNT1 A 0 A_GunFlash;
+			TNT1 A 0
+			{
+				A_GunFlash();
+				invoker.ammouse2 = 0;
+			}
 			TNT1 A 0 A_StartSound("Weapons/BioFire");
 			BPBL E 7 A_FireProjectile("BioProjAlt");
 			BPBL F 8;
@@ -73,12 +87,6 @@ class BaseDeployer : Weapon
 	override bool ShouldStay ()
 	{
 		return false;
-	}
-
-	override void PostBeginPlay()
-	{
-		let gun = BaseDeployer(self);
-		ammouse1 = gun.price;
 	}
 }
 
