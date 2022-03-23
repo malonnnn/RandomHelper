@@ -18,6 +18,10 @@ class Globals : EventHandler
     if(player){
       player.TakeInventory(companionClass.."Ammo", 1);
       player.TakeInventory("CompanionAmmo", price);
+      if(numCompanions <= 1)
+      {
+        player.TakeInventory(companionClass.."Gun", 1);
+      }
     }
     
     return companion;
