@@ -1,3 +1,10 @@
+// 
+
+// Beam Zombie
+BeamGuy/Attack		DSBEAMAT
+BeamGuy/Hit		DSBEAMHT
+$limit BeamGuy/Hit 0
+
 // Eyes
 SpiderSee	DSSPISIT //Used for seeing and for running around sound
 SpiderDie	DSSPIDTH

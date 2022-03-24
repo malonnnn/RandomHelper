@@ -512,3 +512,11 @@ class BeamRevenantAmmo : CommonAmmoFeatures
     Inventory.Icon "RASKA1";
   }
 }
+
+class BeamZombieAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "ZBAMA1";
+  }
+}

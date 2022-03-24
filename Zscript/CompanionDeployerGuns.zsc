@@ -1096,6 +1096,24 @@ class BeamRevenantGun : BaseDeployer
   }
 }
 
+class BeamZombieGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Beam Zombie";
+    Weapon.AmmoType2 "BeamZombieAmmo";
+    Inventory.PickupMessage "Got a Beam Zombie!";
+    BaseDeployer.price 15;
+    Weapon.SlotPriority 15;
+  }
+  States
+  {
+    Spawn:
+      ZBAM A -1;
+      Stop;
+  }
+}
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
