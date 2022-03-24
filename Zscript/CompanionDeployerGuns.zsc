@@ -1193,12 +1193,8 @@ class LurkerGun : BloodFiendGun
     Tag "Lurker";
     Weapon.AmmoType2 "LurkerAmmo";
     Inventory.PickupMessage "Got a Lurker!";
-  }
-  States
-  {
-    Spawn:
-      SAR2 Z -1;
-      Stop;
+    RenderStyle "OptFuzzy";
+    Inventory.Icon "SAR2Z0";
   }
 }
 

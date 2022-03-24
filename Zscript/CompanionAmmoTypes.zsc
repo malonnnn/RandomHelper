@@ -553,10 +553,11 @@ class BloodFiendAmmo : CommonAmmoFeatures
   }
 }
 
-class LurkerAmmo : CommonAmmoFeatures
+class LurkerAmmo : BloodFiendAmmo
 {
   Default
   {
+    RenderStyle "OptFuzzy";
     Inventory.Icon "SAR2Z0";
   }
 }
