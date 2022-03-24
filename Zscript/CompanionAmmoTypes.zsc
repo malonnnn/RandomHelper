@@ -528,3 +528,11 @@ class BFGCommandoAmmo : CommonAmmoFeatures
     Inventory.Icon "BFGZA1";
   }
 }
+
+class BlindPinkyAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "BPBIA1";
+  }
+}

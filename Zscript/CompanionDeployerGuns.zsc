@@ -365,8 +365,8 @@ class CompanionDemonGun : BaseDeployer
     Tag "Demon";
     Weapon.AmmoType2 "CompanionDemonAmmo";
     Inventory.PickupMessage "Got a Demon!";
-    BaseDeployer.price 3;
-    Weapon.SlotPriority 3;
+    BaseDeployer.price 6;
+    Weapon.SlotPriority 6;
   }
   States
   {
@@ -1123,6 +1123,24 @@ class BFGCommandoGun : BaseDeployer
     Inventory.PickupMessage "Got a BFG Commando!";
     BaseDeployer.price 70;
     Weapon.SlotPriority 70;
+  }
+  States
+  {
+    Spawn:
+      BFGZ A -1;
+      Stop;
+  }
+}
+
+class BlindPinkyGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Blind Pinky";
+    Weapon.AmmoType2 "BlindPinkyAmmo";
+    Inventory.PickupMessage "Got a Blind Pinky!";
+    BaseDeployer.price 3;
+    Weapon.SlotPriority 3;
   }
   States
   {
