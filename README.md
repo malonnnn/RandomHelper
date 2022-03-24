@@ -51,11 +51,7 @@ at appropriate locations<br>
 Be careful it doesnt interfere with Goto+&lt;number&gt;
 
 # 7.
-Add classes to `CompanionSpawner.zsc`,<br>
-Tier1 monsters get added to every tier.<br>
-Tier2 monsters get added to every tier except Tier1.<br>
-Tier3 monsters get added to every tier except Tier1, Tier2.<br>
-Tier4 monsters get added to only "All" tier.<br>
+Add classes to `CompanionSpawner.zsc` in their appropriate tier.<br>
 
 # 8.
 Add their DeployerGun by copy-pasting an editing an existing one<br>

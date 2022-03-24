@@ -4,91 +4,21 @@ class CompanionItemReplacer : EventHandler
   // 50% chance to spawn companion item when enemy dies
   override void WorldThingDied(WorldEvent e){
     if(e.Thing.bIsMonster && !e.Thing.bFriendly) {
-      
-      cVar scaleWithLevels = cVar.GetCVar('zdw_wadscale');
-      bool shouldScale = scaleWithLevels.GetBool();
-      if(!shouldScale){
-        switch(Random(1,10))
-        {
-          case 1:
-          case 2:
-          case 3:
-          Actor.Spawn("CompanionItemSpawnerAll", e.Thing.pos);
-          case 4:
-          case 5:
-          case 6:
-          case 7:
-          case 8:
-          case 9:
-          case 10:
-          Actor.Spawn("CompanionAmmo", e.Thing.pos);
-        }
-      }else{
-        if(level.levelnum <= 2){
-          switch(Random(1,10))
-          {
-            case 1:
-            case 2:
-            case 3:
-            Actor.Spawn("CompanionItemSpawnerTier1", e.Thing.pos);
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
-            Actor.Spawn("CompanionAmmo", e.Thing.pos);
-          }
-        }else if(level.levelnum <= 4){
-          switch(Random(1,10))
-          {
-            case 1:
-            case 2:
-            case 3:
-            Actor.Spawn("CompanionItemSpawnerTier2", e.Thing.pos);
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
-            Actor.Spawn("CompanionAmmo", e.Thing.pos);
-          }
-        }else if(level.levelnum >= 6){
-          switch(Random(1,10))
-          {
-            case 1:
-            case 2:
-            case 3:
-            Actor.Spawn("CompanionItemSpawnerTier3", e.Thing.pos);
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
-            Actor.Spawn("CompanionAmmo", e.Thing.pos);
-          }
-        }else if(level.levelnum >= 8){
-          switch(Random(1,10))
-          {
-            case 1:
-            case 2:
-            case 3:
-            Actor.Spawn("CompanionItemSpawnerAll", e.Thing.pos);
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
-            Actor.Spawn("CompanionAmmo", e.Thing.pos);
-          }
-        }
+      switch(Random(1,10))
+      {
+        case 1:
+        case 2:
+        case 3:
+          String companionClass = CompanionSpawner.pickRandomCompanion();
+          Actor.Spawn(companionClass, e.Thing.pos);
+        case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+        Actor.Spawn("CompanionAmmo", e.Thing.pos);
       }
     }
   }

@@ -1,179 +1,123 @@
-class CompanionItemSpawnerTier1 : RandomSpawner
-{
-  Default
-  {
-    DropItem "MarineCompanionPistolGun", 255, 90;
-    DropItem "MarineCompanionPistolGun", 255, 90;
-    DropItem "MarineCompanionChainsawGun", 255, 100;
-    DropItem "CompanionDemonGun", 255, 80;
-    DropItem "CompanionDoomImpGun", 255,90;
-    DropItem "CompanionLostSoulGun", 255, 80;
-    DropItem "CompanionShotgunGuyGun", 255, 90;
-    DropItem "CompanionSpectreGun", 255, 80;
-    DropItem "CompanionWolfensteinSSGun", 255, 80;
-    DropItem "CompanionZombieManGun", 255, 100;
-    DropItem "MarineCompanionFistGun", 255, 75;
-    DropItem "BabyCacoGun", 255, 75;
-    DropItem "BeheadedKamikazeGun", 255, 90;
-    DropItem "BadGun", 255, 100;
-    DropItem "EyeExGun", 255, 80;
-    DropItem "EyePoisonGun", 255, 80;
-  }
-}
+//let oof = Tiers;
+class CompanionSpawner
+{  
+  static String pickRandomCompanion(){
 
-class CompanionItemSpawnerTier2 : RandomSpawner
-{
-  Default
-  {
-    DropItem "MarineCompanionPistolGun", 255, 90;
-    DropItem "MarineCompanionSGGun", 255, 50;
-    DropItem "MarineCompanionChainsawGun", 255, 100;
-    DropItem "CompanionDemonGun", 255, 80;
-    DropItem "CompanionDoomImpGun", 255,90;
-    DropItem "CompanionLostSoulGun", 255, 80;
-    DropItem "CompanionShotgunGuyGun", 255, 90;
-    DropItem "CompanionSpectreGun", 255, 80;
-    DropItem "CompanionWolfensteinSSGun", 255, 80;
-    DropItem "CompanionZombieManGun", 255, 100;
-    DropItem "MarineCompanionSSGGun", 255, 70;
-    DropItem "MarineCompanionMGGun", 255, 70;
-    DropItem "MarineCompanionCGGun", 255, 70;
-    DropItem "MarineCompanionFistGun", 255, 75;
-    DropItem "CompanionArchvileGun", 255, 60;
-    DropItem "CompanionCacodemonGun", 255, 60;
-    DropItem "CompanionChaingunGuyGun", 255, 70;
-    DropItem "MarauderGun", 255, 60;
-    DropItem "CompanionHellKnightGun", 255, 50;
-    DropItem "MarineCompanionRailgunGun", 255, 50;
-    DropItem "MarineCompanionPlasmaGun", 255, 50;
-    DropItem "BabyCacoGun", 255, 75;
-    DropItem "BeheadedKamikazeGun", 255, 90;
-    DropItem "AgauresGun", 255, 60;
-    DropItem "GhostlyAgauresGun", 255, 60;
-    DropItem "AracnorbGun", 255, 60;
-    DropItem "AugmentedArachnotronGun", 255, 60;
-    DropItem "AutoShotgunGuyGun", 255, 80;
-    DropItem "BadGun", 255, 100;
-    DropItem "EyeExGun", 255, 80;
-    DropItem "EyePoisonGun", 255, 80;
-    DropItem "EyeSpiderGun", 255, 60;
-    DropItem "EyeBatGun", 255, 60;
-  }
-}
+    String tier1[15] = {
+      "MarineCompanionPistolGun",
+      "MarineCompanionChainsawGun",
+      "CompanionDemonGun",
+      "CompanionDoomImpGun",
+      "CompanionLostSoulGun",
+      "CompanionShotgunGuyGun",
+      "CompanionSpectreGun",
+      "CompanionWolfensteinSSGun",
+      "CompanionZombieManGun",
+      "MarineCompanionFistGun",
+      "BabyCacoGun",
+      "BeheadedKamikazeGun",
+      "BadGun",
+      "EyeExGun",
+      "EyePoisonGun"
+    };
+    String tier2[10] = {
+      "CompanionHellKnightGun",
+      "MarineCompanionRailgunGun",
+      "MarineCompanionPlasmaGun",
+      "AgauresGun",
+      "GhostlyAgauresGun",
+      "AracnorbGun",
+      "AugmentedArachnotronGun",
+      "AutoShotgunGuyGun",
+      "EyeSpiderGun",
+      "EyeBatGun"
+    };
+    String tier3[18] = {
+      "MarineCompanionSGGun",
+      "MarineCompanionSSGGun",
+      "MarineCompanionMGGun",
+      "MarineCompanionCGGun",
+      "CompanionArchvileGun",
+      "CompanionCacodemonGun",
+      "CompanionChaingunGuyGun",
+      "MarauderGun",
+      "MarineCompanionGLGun",
+      "CompanionBaronOfHellGun",
+      "CompanionRevenantGun",
+      "CompanionPainElementalGun",
+      "CompanionFatsoGun",
+      "CompanionArachnotronGun",
+      "MarineCompanionFlamethrowerGun",
+      "MarineCompanionMinigunGun",
+      "ArachnobaronGun",
+      "AracnorbQueenGun"
+    };
+    String tier4[17] = {
+      "MarineCompanionBFG10KGun",
+      "MarineCompanionBFG9000Gun",
+      "MarineCompanionSniperGun",
+      "MarineCompanionHSMissileGun",
+      "MarineCompanionRocketGun",
+      "CompanionCyberdemonGun",
+      "CompanionSpiderMastermindGun",
+      "MurderBallGun",
+      "AfritGun",
+      "ArchonOfHellGun",
+      "ArachnophyteGun",
+      "BelphegorGun",
+      "AbaddonGun",
+      "AgathodemonGun",
+      "AnotherAgathodemonGun",
+      "AnnihilatorGun",
+      "AzazelGun"
+    };
+ 
+    int tierToChoose = level.levelnum;
+    cVar scaleWithLevels = cVar.GetCVar('zdw_wadscale');
+    if (!scaleWithLevels.GetBool()){
+      tierToChoose = 10;
+    }
 
-class CompanionItemSpawnerTier3 : RandomSpawner
-{
-  Default
-  {
-    DropItem "MarineCompanionPistolGun", 255, 90;
-    DropItem "MarineCompanionSGGun", 255, 50;
-    DropItem "MarineCompanionChainsawGun", 255, 100;
-    DropItem "CompanionDemonGun", 255, 80;
-    DropItem "CompanionDoomImpGun", 255,90;
-    DropItem "CompanionLostSoulGun", 255, 80;
-    DropItem "CompanionShotgunGuyGun", 255, 90;
-    DropItem "CompanionSpectreGun", 255, 80;
-    DropItem "CompanionWolfensteinSSGun", 255, 80;
-    DropItem "CompanionZombieManGun", 255, 100;
-    DropItem "MarineCompanionSSGGun", 255, 70;
-    DropItem "MarineCompanionMGGun", 255, 70;
-    DropItem "MarineCompanionCGGun", 255, 70;
-    DropItem "MarineCompanionFistGun", 255, 75;
-    DropItem "CompanionArchvileGun", 255, 60;
-    DropItem "CompanionCacodemonGun", 255, 60;
-    DropItem "CompanionChaingunGuyGun", 255, 70;
-    DropItem "MarauderGun", 255, 60;
-    DropItem "CompanionHellKnightGun", 255, 50;
-    DropItem "MarineCompanionRailgunGun", 255, 50;
-    DropItem "MarineCompanionPlasmaGun", 255, 50;
-    DropItem "MarineCompanionGLGun", 255, 30;
-    DropItem "CompanionBaronOfHellGun", 255, 30;
-    DropItem "CompanionRevenantGun", 255, 30;
-    DropItem "CompanionPainElementalGun", 255, 40;
-    DropItem "CompanionFatsoGun", 255, 40;
-    DropItem "CompanionArachnotronGun", 255, 60;
-    DropItem "MarineCompanionFlamethrowerGun", 255, 30;
-    DropItem "MarineCompanionMinigunGun", 255, 30;
-    DropItem "ArachnobaronGun", 255, 30;
-    DropItem "BabyCacoGun", 255, 75;
-    DropItem "BeheadedKamikazeGun", 255, 90;
-    DropItem "AgauresGun", 255, 60;
-    DropItem "GhostlyAgauresGun", 255, 60;
-    DropItem "AracnorbGun", 255, 60;
-    DropItem "AracnorbQueenGun", 255, 20;
-    DropItem "AugmentedArachnotronGun", 255, 60;
-    DropItem "AutoShotgunGuyGun", 255, 80;
-    DropItem "BadGun", 255, 100;
-    DropItem "EyeExGun", 255, 80;
-    DropItem "EyePoisonGun", 255, 80;
-    DropItem "EyeSpiderGun", 255, 60;
-    DropItem "EyeBatGun", 255, 60;
-  }
-}
+    int possibleTierChoices;
+    switch(tierToChoose)
+    {
+      case 1:
+      case 2:
+      case 3:
+        possibleTierChoices = 1;
+        break;
+      case 4:
+      case 5:
+      case 6:
+        possibleTierChoices = 2;
+        break;
+      case 7:
+      case 8:
+      case 9:
+        possibleTierChoices = 3;
+        break;
+      default:
+        possibleTierChoices = 4;
+        break;
+    }
 
-class CompanionItemSpawnerAll : RandomSpawner
-{
-  Default
-  {
-    DropItem "MarineCompanionFistGun", 255, 75;
-    DropItem "MarineCompanionPistolGun", 255, 80;
-    DropItem "MarineCompanionMGGun", 255, 70;
-    DropItem "MarineCompanionCGGun", 255, 70;
-    DropItem "MarineCompanionSGGun", 255, 50;
-    DropItem "MarineCompanionSSGGun", 255, 70;
-    DropItem "MarineCompanionPlasmaGun", 255, 50;
-    DropItem "MarineCompanionBFG10KGun", 255, 10;
-    DropItem "MarineCompanionBFG9000Gun", 255, 10;
-    DropItem "MarineCompanionSniperGun", 255, 20;
-    DropItem "MarineCompanionHSMissileGun", 255, 20;
-    DropItem "MarineCompanionGLGun", 255, 30;
-    DropItem "MarineCompanionFlamethrowerGun", 255, 30;
-    DropItem "MarineCompanionRocketGun", 255, 20;
-    DropItem "MarineCompanionRailgunGun", 255, 50;
-    DropItem "MarineCompanionChainsawGun", 255, 100;
-    DropItem "MarineCompanionMinigunGun", 255, 30;
-    DropItem "CompanionArachnotronGun", 255, 60;
-    DropItem "CompanionArchvileGun", 255, 60;
-    DropItem "CompanionBaronOfHellGun", 255, 30;
-    DropItem "CompanionCacodemonGun", 255, 60;
-    DropItem "CompanionChaingunGuyGun", 255, 70;
-    DropItem "CompanionCyberdemonGun", 255, 10;
-    DropItem "CompanionDemonGun", 255, 80;
-    DropItem "CompanionDoomImpGun", 255,90;
-    DropItem "CompanionFatsoGun", 255, 40;
-    DropItem "CompanionHellKnightGun", 255, 50;
-    DropItem "CompanionLostSoulGun", 255, 80;
-    DropItem "CompanionPainElementalGun", 255, 40;
-    DropItem "CompanionRevenantGun", 255, 30;
-    DropItem "CompanionShotgunGuyGun", 255, 90;
-    DropItem "CompanionSpectreGun", 255, 80;
-    DropItem "CompanionSpiderMastermindGun", 255, 20;
-    DropItem "CompanionWolfensteinSSGun", 255, 80;
-    DropItem "CompanionZombieManGun", 255, 100;
-    DropItem "MurderBallGun", 255, 1;
-    DropItem "AfritGun", 255, 20;
-    DropItem "MarauderGun", 255, 60;
-    DropItem "ArchonOfHellGun", 255, 20;
-    DropItem "ArachnophyteGun", 255, 20;
-    DropItem "BelphegorGun", 255, 20;
-    DropItem "ArachnobaronGun", 255, 30;
-    DropItem "BabyCacoGun", 255, 75;
-    DropItem "BeheadedKamikazeGun", 255, 90;
-    DropItem "AbaddonGun", 255, 20;
-    DropItem "AgathodemonGun", 255, 20;
-    DropItem "AnotherAgathodemonGun", 255, 30;
-    DropItem "AgauresGun", 255, 60;
-    DropItem "GhostlyAgauresGun", 255, 60;
-    DropItem "AnnihilatorGun", 255, 5;
-    DropItem "AracnorbGun", 255, 60;
-    DropItem "AracnorbQueenGun", 255, 20;
-    DropItem "AugmentedArachnotronGun", 255, 60;
-    DropItem "AutoShotgunGuyGun", 255, 80;
-    DropItem "AzazelGun", 255, 20;
-    DropItem "BadGun", 255, 100;
-    DropItem "EyeExGun", 255, 80;
-    DropItem "EyePoisonGun", 255, 80;
-    DropItem "EyeSpiderGun", 255, 60;
-    DropItem "EyeBatGun", 255, 60;
+    int tierLevel = Random(1, possibleTierChoices);
+    int companionIndex;
+    String companion; 
+    if(tierLevel == 1){
+      companionIndex = Random(0, tier1.size() - 1);
+      companion = tier1[companionIndex];
+    }else if(tierLevel == 2){
+      companionIndex = Random(0, tier2.size() - 1);
+      companion = tier2[companionIndex];
+    }else if(tierLevel == 3){
+      companionIndex = Random(0, tier3.size() - 1);
+      companion = tier3[companionIndex];
+    }else{
+      companionIndex = Random(0, tier4.size() - 1);
+      companion = tier4[companionIndex];
+    }
+
+    return companion;
   }
 }
