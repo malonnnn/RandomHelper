@@ -533,7 +533,7 @@ class BlindPinkyAmmo : CommonAmmoFeatures
 {
   Default
   {
-    Inventory.Icon "BPBIA1";
+    Inventory.Icon "BPWAA1";
   }
 }
 
@@ -542,5 +542,21 @@ class BloodDemonAmmo : CommonAmmoFeatures
   Default
   {
     Inventory.Icon "SRG2A1C1";
+  }
+}
+
+class BloodFiendAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "SAR2A1";
+  }
+}
+
+class LurkerAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "SAR2Z0";
   }
 }

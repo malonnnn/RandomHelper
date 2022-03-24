@@ -1168,6 +1168,40 @@ class BloodDemonGun : BaseDeployer
   }
 }
 
+class BloodFiendGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Blood Fiend";
+    Weapon.AmmoType2 "BloodFiendAmmo";
+    Inventory.PickupMessage "Got a Blood Fiend!";
+    BaseDeployer.price 18;
+    Weapon.SlotPriority 18;
+  }
+  States
+  {
+    Spawn:
+      SAR2 A -1;
+      Stop;
+  }
+}
+
+class LurkerGun : BloodFiendGun
+{
+  Default
+  {
+    Tag "Lurker";
+    Weapon.AmmoType2 "LurkerAmmo";
+    Inventory.PickupMessage "Got a Lurker!";
+  }
+  States
+  {
+    Spawn:
+      SAR2 Z -1;
+      Stop;
+  }
+}
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
