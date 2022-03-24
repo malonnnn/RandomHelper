@@ -1198,6 +1198,24 @@ class LurkerGun : BloodFiendGun
   }
 }
 
+class BloodGhostGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Blood Ghost";
+    Weapon.AmmoType2 "BloodGhostAmmo";
+    Inventory.PickupMessage "Got a Blood Ghost!";
+    BaseDeployer.price 30;
+    Weapon.SlotPriority 30;
+  }
+  States
+  {
+    Spawn:
+      GHST A -1;
+      Stop;
+  }
+}
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

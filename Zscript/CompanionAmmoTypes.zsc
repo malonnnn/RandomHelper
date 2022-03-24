@@ -561,3 +561,11 @@ class LurkerAmmo : BloodFiendAmmo
     Inventory.Icon "SAR2Z0";
   }
 }
+
+class BloodGhostAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "GHSTA1";
+  }
+}

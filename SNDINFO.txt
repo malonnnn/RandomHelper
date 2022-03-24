@@ -1,3 +1,14 @@
+// Blood Ghost
+WATTACK		WATTACK
+WDEATH		WDEATH
+WHIT		WHIT
+WIDLE1		WIDLE1
+WIDLE2		WIDLE2
+WPAIN		WPAIN
+WSIGHT		WSIGHT
+WHIT2		WHIT2
+$RANDOM WIDLE { WIDLE1 WIDLE2 }
+
 // Blood Fiend
 monster/sg2sit dssg2sit
 monster/sg2atk dssg2atk
