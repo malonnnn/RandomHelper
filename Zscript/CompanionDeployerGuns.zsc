@@ -1145,7 +1145,25 @@ class BlindPinkyGun : BaseDeployer
   States
   {
     Spawn:
-      BFGZ A -1;
+      BPWA A -1;
+      Stop;
+  }
+}
+
+class BloodDemonGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Blood Demon";
+    Weapon.AmmoType2 "BloodDemonAmmo";
+    Inventory.PickupMessage "Got a Blood Demon!";
+    BaseDeployer.price 15;
+    Weapon.SlotPriority 15;
+  }
+  States
+  {
+    Spawn:
+      SRG2 A -1;
       Stop;
   }
 }

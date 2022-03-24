@@ -1,3 +1,11 @@
+// Blood Demon
+blooddemon/sight DSBLDSIT
+blooddemon/pain DSBLDPAI
+blooddemon/death DSBLDDTH
+blooddemon/active DSBLDACT
+blooddemon/melee DSBLDATK
+blooddemon/walk DSBLDWAL
+
 // Blind Pinky
 BPinky/Death BPDEATH
 BPinky/Pain BPPAIN

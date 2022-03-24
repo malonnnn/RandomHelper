@@ -536,3 +536,11 @@ class BlindPinkyAmmo : CommonAmmoFeatures
     Inventory.Icon "BPBIA1";
   }
 }
+
+class BloodDemonAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "SRG2A1C1";
+  }
+}
