@@ -1,4 +1,3 @@
-//let oof = Tiers;
 class CompanionSpawner
 {  
   static String pickRandomCompanion(){
