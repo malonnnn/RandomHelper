@@ -504,3 +504,11 @@ class EyeBatAmmo : CommonAmmoFeatures
     Inventory.Icon "ESYZZ0";
   }
 }
+
+class BeamRevenantAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "RASKA1";
+  }
+}

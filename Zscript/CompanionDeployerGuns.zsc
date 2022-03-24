@@ -1078,6 +1078,24 @@ class EyeBatGun : EyePoisonGun
   }
 }
 
+class BeamRevenantGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Beam Revenant";
+    Weapon.AmmoType2 "BeamRevenantAmmo";
+    Inventory.PickupMessage "Got a Beam Revenant!";
+    BaseDeployer.price 60;
+    Weapon.SlotPriority 60;
+  }
+  States
+  {
+    Spawn:
+      RASK A -1;
+      Stop;
+  }
+}
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
