@@ -12,5 +12,11 @@ class MyDoomGuy : DoomPlayer {
     
     Player.WeaponSlot 0, "MyFist";
     Player.WeaponSlot 1, "CompanionZombieManGun";
+    
+  }
+  
+  override void PostBeginPlay(){
+    super.PostBeginPlay();
+    player.cheats |= CF_INSTANTWEAPSWITCH;
   }
 }
