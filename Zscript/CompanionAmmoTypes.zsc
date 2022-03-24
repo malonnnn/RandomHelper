@@ -520,3 +520,11 @@ class BeamZombieAmmo : CommonAmmoFeatures
     Inventory.Icon "ZBAMA1";
   }
 }
+
+class BFGCommandoAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "BFGZA1";
+  }
+}

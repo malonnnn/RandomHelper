@@ -1114,6 +1114,24 @@ class BeamZombieGun : BaseDeployer
   }
 }
 
+class BFGCommandoGun : BaseDeployer
+{
+  Default
+  {
+    Tag "BFG Commando";
+    Weapon.AmmoType2 "BFGCommandoAmmo";
+    Inventory.PickupMessage "Got a BFG Commando!";
+    BaseDeployer.price 70;
+    Weapon.SlotPriority 70;
+  }
+  States
+  {
+    Spawn:
+      BFGZ A -1;
+      Stop;
+  }
+}
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
