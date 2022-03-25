@@ -11,7 +11,7 @@ class CompanionItemReplacer : EventHandler
         case 3:
           String companionClass = CompanionSpawner.pickRandomCompanion();
           console.printf('trying to spawn '..companionClass);
-          Actor.Spawn(companionClass, e.Thing.pos);
+          Actor.Spawn(companionClass, (e.Thing.pos.x+Random(-1, 1), e.Thing.pos.y+Random(-1, 1), e.Thing.pos.z));
         case 4:
         case 5:
         case 6:
@@ -19,7 +19,7 @@ class CompanionItemReplacer : EventHandler
         case 8:
         case 9:
         case 10:
-        Actor.Spawn("CompanionAmmo", e.Thing.pos);
+        Actor.Spawn("CompanionAmmo", (e.Thing.pos.x+Random(-1, 1), e.Thing.pos.y+Random(-1, 1), e.Thing.pos.z));
       }
     }
   }
