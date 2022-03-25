@@ -1,3 +1,12 @@
+// Blood Skull
+BSkull/See		BSKULSEE
+BSkull/Pain		BSKULPIN
+BSkull/Death	BSKULEXP
+Blood/Spit		BLDSPIT
+$limit Blood/Spit 0
+Blood/Impact	BLDIMPAC
+$limit Blood/Impact 0
+
 // Blood Ghost
 WATTACK		WATTACK
 WDEATH		WDEATH

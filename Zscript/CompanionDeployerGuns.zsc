@@ -1216,6 +1216,24 @@ class BloodGhostGun : BaseDeployer
   }
 }
 
+class BloodSkullGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Blood Skull";
+    Weapon.AmmoType2 "BloodSkullAmmo";
+    Inventory.PickupMessage "Got a Blood Skull!";
+    BaseDeployer.price 20;
+    Weapon.SlotPriority 20;
+  }
+  States
+  {
+    Spawn:
+      GHST A -1;
+      Stop;
+  }
+}
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

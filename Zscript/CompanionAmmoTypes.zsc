@@ -569,3 +569,11 @@ class BloodGhostAmmo : CommonAmmoFeatures
     Inventory.Icon "GHSTA1";
   }
 }
+
+class BloodSkullAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "SWBSB1";
+  }
+}
