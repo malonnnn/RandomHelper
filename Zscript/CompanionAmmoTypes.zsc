@@ -597,3 +597,13 @@ class BruiserDemonAmmo : CommonAmmoFeatures
     Inventory.Icon "BRUSA1";
   }
 }
+
+class CacoLichAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CALIA1";
+  }
+}
+
+class BerserkCacoLichAmmo : CacoLichAmmo{}

@@ -26,7 +26,7 @@ class CompanionSpawner
       "BloodSkullGun",
       "BlotGun"
     };
-    String tier2[14] = {
+    String tier2[16] = {
       "MarineCompanionSGGun",
       "CompanionHellKnightGun",
       "MarineCompanionRailgunGun",
@@ -40,7 +40,9 @@ class CompanionSpawner
       "EyeBatGun",
       "BeamZombieGun",
       "MarineCompanionGLGun",
-      "CompanionArchvileGun"
+      "CompanionArchvileGun",
+      "BerserkCacoLichGun",
+      "GasCacoLichGun"
     };
     String tier3[17] = {
       "MarineCompanionSSGGun",

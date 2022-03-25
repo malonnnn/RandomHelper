@@ -1269,6 +1269,34 @@ class BruiserDemonGun : BaseDeployer
   }
 }
 
+class CacoLichGun : BaseDeployer
+{
+  Default
+  {
+    Tag "CacoLich";
+    Weapon.AmmoType2 "CacoLichAmmo";
+    Inventory.PickupMessage "Got a CacoLich!";
+    BaseDeployer.price 50;
+    Weapon.SlotPriority 50;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      CALI A -1;
+      Stop;
+  }
+}
+
+class BerserkCacoLichGun : CacoLichGun
+{
+  Default
+  {
+    Tag "Berserk CacoLich";
+    Weapon.AmmoType2 "BerserkCacoLichAmmo";
+    Inventory.PickupMessage "Got a Berserk CacoLich!";
+  }
+}
 
 /* copy pastable example
 class AbaddonGun : BaseDeployer

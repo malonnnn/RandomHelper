@@ -1,3 +1,15 @@
+// CacoLich
+CacoLich/Sight INSSIT
+CacoLich/Active DSTRTACT
+CacoLich/Pain NESSPN
+CacoLich/Death DSDMDETH
+CacoFlame/Attack LICHFLAM
+CacoFlame/Attack LICHFLAM
+CacoLich/Sight INSSIT
+CacoLich/Active DSTRTACT
+CacoLich/Pain NESSPN
+CacoLich/Death DSDMDETH
+
 // Bruiser Demon
 superbaron/scream dssbsit
 superbaron/pain dssbpain
