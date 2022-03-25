@@ -4,6 +4,9 @@ Class CommonAmmoFeatures : Ammo
   property isTrans : isTrans;
   Default
   {
+    -NoGravity
+		-Float
+		-DontFall
     +Inventory.HubPower
     +Inventory.PersistentPower
     +Inventory.InvBar

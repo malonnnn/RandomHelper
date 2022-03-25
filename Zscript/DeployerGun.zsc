@@ -235,6 +235,9 @@ class CompanionAmmo : Ammo
 {
   Default
   {
+		-NoGravity
+		-Float
+		-DontFall
     Inventory.Amount 1;
     Inventory.MaxAmount 999;
     Inventory.InterHubAmount 999;
