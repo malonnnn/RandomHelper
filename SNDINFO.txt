@@ -1,3 +1,9 @@
+// Bruiser Demon
+superbaron/scream dssbsit
+superbaron/pain dssbpain
+superbaron/death dssbdth
+superbaron/act dssbact
+
 // Blot
 Blot/Death		DSBLOTDI
 Blot/Attack		DSBLOTAT

@@ -26,7 +26,8 @@ class CompanionSpawner
       "BloodSkullGun",
       "BlotGun"
     };
-    String tier2[12] = {
+    String tier2[14] = {
+      "MarineCompanionSGGun",
       "CompanionHellKnightGun",
       "MarineCompanionRailgunGun",
       "MarineCompanionPlasmaGun",
@@ -38,17 +39,16 @@ class CompanionSpawner
       "EyeSpiderGun",
       "EyeBatGun",
       "BeamZombieGun"
+      "MarineCompanionGLGun",
       "CompanionArchvileGun"
     };
-    String tier3[19] = {
-      "MarineCompanionSGGun",
+    String tier3[17] = {
       "MarineCompanionSSGGun",
       "MarineCompanionMGGun",
       "MarineCompanionCGGun",
       "CompanionCacodemonGun",
       "CompanionChaingunGuyGun",
       "MarauderGun",
-      "MarineCompanionGLGun",
       "CompanionBaronOfHellGun",
       "CompanionRevenantGun",
       "BeamRevenantGun",
@@ -61,7 +61,7 @@ class CompanionSpawner
       "AracnorbQueenGun",
       "BFGCommandoGun"
     };
-    String tier4[17] = {
+    String tier4[18] = {
       "MarineCompanionBFG10KGun",
       "MarineCompanionBFG9000Gun",
       "MarineCompanionSniperGun",
@@ -71,6 +71,7 @@ class CompanionSpawner
       "CompanionSpiderMastermindGun",
       "MurderBallGun",
       "AfritGun",
+      "BruiserDemonGun",
       "ArchonOfHellGun",
       "ArachnophyteGun",
       "BelphegorGun",

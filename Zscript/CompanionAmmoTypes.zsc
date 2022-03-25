@@ -585,3 +585,11 @@ class BlotAmmo : CommonAmmoFeatures
     Inventory.Icon "BLOPA0";
   }
 }
+
+class BruiserDemonAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "BRUSA1";
+  }
+}
