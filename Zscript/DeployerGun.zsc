@@ -21,6 +21,7 @@ class BaseDeployer : Weapon
 		Inventory.Amount 1;
 		Weapon.SlotNumber 1;
 		Scale 0.5;
+		Alpha 0.5;
 
 		BaseDeployer.removeWeapon 0;
 	}

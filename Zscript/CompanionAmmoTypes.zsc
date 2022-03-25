@@ -1,5 +1,7 @@
 Class CommonAmmoFeatures : Ammo
 {
+  bool isTrans;
+  property isTrans : isTrans;
   Default
   {
     +Inventory.HubPower
@@ -10,6 +12,7 @@ Class CommonAmmoFeatures : Ammo
     Inventory.MaxAmount 999;
     Ammo.BackpackAmount 2;
 		Ammo.BackpackMaxAmount 999;
+    CommonAmmoFeatures.isTrans false;
   }
   States
   {
@@ -195,8 +198,7 @@ class CompanionSpectreAmmo : CompanionDemonAmmo
 {
   Default
   {
-    RenderStyle "OptFuzzy";
-    Inventory.Icon "SARGZ0";
+    CommonAmmoFeatures.isTrans true;
   }
 }
 
@@ -412,8 +414,7 @@ class GhostlyAgauresAmmo : AgauresAmmo
 {
   Default
   {
-    RenderStyle "OptFuzzy";
-    Inventory.Icon "AGURZ0";
+    CommonAmmoFeatures.isTrans true;
   }
 }
 
@@ -557,8 +558,7 @@ class LurkerAmmo : BloodFiendAmmo
 {
   Default
   {
-    RenderStyle "OptFuzzy";
-    Inventory.Icon "SAR2Z0";
+    CommonAmmoFeatures.isTrans true;
   }
 }
 

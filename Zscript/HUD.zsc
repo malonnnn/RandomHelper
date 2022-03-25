@@ -242,8 +242,13 @@ class MyStatusBar : MyBaseStatusBar
 
 			if(CPlayer.ReadyWeapon is "BaseDeployer"){
 				BaseDeployer gun = BaseDeployer(CPlayer.ReadyWeapon);
-				
-				DrawInventoryIcon(ammotype2, (-314, invY + 17), DI_DIMDEPLETED);
+				CommonAmmoFeatures myAmmo2 = CommonAmmoFeatures(ammotype2);
+
+				if(myAmmo2.isTrans){
+					DrawInventoryIcon(ammotype2, (-314, invY + 17), DI_DIMDEPLETED, 0.35);
+				}else{
+					DrawInventoryIcon(ammotype2, (-314, invY + 17), DI_DIMDEPLETED);
+				}
 				DrawString(mMM2SmallFont, gun.getTag().." x"..ammotype2.Amount, (-300, invY+18), DI_TEXT_ALIGN_RIGHT);
 
 				DrawString(mMM2SmallFont, "costs", (-225, invY-11), DI_TEXT_ALIGN_RIGHT);

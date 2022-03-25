@@ -383,8 +383,7 @@ class CompanionSpectreGun : CompanionDemonGun
     Tag "Spectre";
     Weapon.AmmoType2 "CompanionSpectreAmmo";
     Inventory.PickupMessage "Got a Spectre!";
-    RenderStyle "OptFuzzy";
-    Inventory.Icon "SARGZ0";
+    RenderStyle "Translucent";
   }
 }
 
@@ -874,8 +873,7 @@ class GhostlyAgauresGun : AgauresGun
     Tag "Ghostly Agaures";
     Weapon.AmmoType2 "GhostlyAgauresAmmo";
     Inventory.PickupMessage "Got a Ghostly Agaures!";
-    Inventory.Icon "AGURZ0";
-    RenderStyle "OptFuzzy";
+    RenderStyle "Translucent";
   }
 }
 
@@ -1193,8 +1191,7 @@ class LurkerGun : BloodFiendGun
     Tag "Lurker";
     Weapon.AmmoType2 "LurkerAmmo";
     Inventory.PickupMessage "Got a Lurker!";
-    RenderStyle "OptFuzzy";
-    Inventory.Icon "SAR2Z0";
+    RenderStyle "Translucent";
   }
 }
 
