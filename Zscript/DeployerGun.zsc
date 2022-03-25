@@ -13,12 +13,11 @@ class BaseDeployer : Weapon
 		+WEAPON.NO_AUTO_SWITCH
     SpriteAngle 180;
 		Weapon.Kickback 100;
-		Weapon.AmmoGive1 2;
+		Weapon.AmmoGive1 1;
 		Weapon.AmmoGive2 1;
 		Weapon.AmmoUse2 0;
 		Weapon.UpSound "Weapons/BioReady";
 		Weapon.AmmoType1 "CompanionAmmo";
-		Inventory.Amount 1;
 		Weapon.SlotNumber 1;
 		Scale 0.5;
 		Alpha 0.5;
@@ -236,10 +235,10 @@ class CompanionAmmo : Ammo
 {
   Default
   {
-    Inventory.Amount 2;
+    Inventory.Amount 1;
     Inventory.MaxAmount 999;
     Inventory.InterHubAmount 999;
-
+		Inventory.PickupMessage "";
 		Ammo.BackpackAmount 2;
 		Ammo.BackpackMaxAmount 999;
   }

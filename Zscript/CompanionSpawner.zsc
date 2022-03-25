@@ -38,7 +38,7 @@ class CompanionSpawner
       "AutoShotgunGuyGun",
       "EyeSpiderGun",
       "EyeBatGun",
-      "BeamZombieGun"
+      "BeamZombieGun",
       "MarineCompanionGLGun",
       "CompanionArchvileGun"
     };

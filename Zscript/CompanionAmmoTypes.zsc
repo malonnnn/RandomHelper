@@ -9,7 +9,9 @@ Class CommonAmmoFeatures : Ammo
     +Inventory.InvBar
     +SpriteAngle
     SpriteAngle 180;
+    Inventory.Amount 1;
     Inventory.MaxAmount 999;
+    Inventory.InterHubAmount 999;
     Ammo.BackpackAmount 2;
 		Ammo.BackpackMaxAmount 999;
     CommonAmmoFeatures.isTrans false;
@@ -20,7 +22,6 @@ Class CommonAmmoFeatures : Ammo
       TNT1 A 0
       {
         GiveInventory(GetClassName(), 1);
-        GiveInventory("CompanionAmmo", 1);
       }
       Stop;
   }
