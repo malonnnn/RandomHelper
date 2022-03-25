@@ -41,12 +41,12 @@ Class Blot : Actor
       Loop;
     Missile:
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
-      EYES A 0
-      {
+      EYES A 0;
+      /*{
         if(!CheckSight (target)){
           SetStateLabel("IdleSpawn");
         }
-      }
+      }*/
     LeapSight:
       EYES B 1 A_FaceTarget;
       EYES BBB 0 A_SpawnItemEx ("BlotSmoke", -4, random (-10, 10), random (-10, 10), 0, random (-1, 1), random (-1, 1));
