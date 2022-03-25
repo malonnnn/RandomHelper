@@ -1085,6 +1085,7 @@ class BeamRevenantGun : BaseDeployer
     Inventory.PickupMessage "Got a Beam Revenant!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
+    Scale 0.35;
   }
   States
   {
@@ -1258,6 +1259,7 @@ class BruiserDemonGun : BaseDeployer
     Inventory.PickupMessage "Got a Bruiser Demon!";
     BaseDeployer.price 200;
     Weapon.SlotPriority 200;
+    Scale 0.3;
   }
   States
   {
