@@ -1,3 +1,7 @@
+// Blot
+Blot/Death		DSBLOTDI
+Blot/Attack		DSBLOTAT
+
 // Blood Skull
 BSkull/See		BSKULSEE
 BSkull/Pain		BSKULPIN

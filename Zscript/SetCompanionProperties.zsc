@@ -4,12 +4,12 @@ class SetCompanionProperties : EventHandler
     if(e.Thing && e.Thing.bIsMonster)
     {
       // all creatures get these
-      e.Thing.bIsMonster = true;
-      e.Thing.bShootable = true;
-      e.Thing.bSolid = true;
-      e.Thing.bCanPushWalls = true;
-      e.Thing.bCanUseWalls = true;
-      e.Thing.bCanPass = true;
+      //e.Thing.bIsMonster = true;
+      //e.Thing.bShootable = true;
+      //e.Thing.bSolid = true;
+      //e.Thing.bCanPushWalls = true;
+      //e.Thing.bCanUseWalls = true;
+      //e.Thing.bCanPass = true;
 
       // companions only
       if(e.Thing.bFriendly) {

@@ -1226,10 +1226,29 @@ class BloodSkullGun : BaseDeployer
   States
   {
     Spawn:
-      GHST A -1;
+      SWBS A -1;
       Stop;
   }
 }
+
+class BlotGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Blot";
+    Weapon.AmmoType2 "BlotAmmo";
+    Inventory.PickupMessage "Got a Blot!";
+    BaseDeployer.price 1;
+    Weapon.SlotPriority 1;
+  }
+  States
+  {
+    Spawn:
+      EYES A -1;
+      Stop;
+  }
+}
+
 
 /* copy pastable example
 class AbaddonGun : BaseDeployer

@@ -577,3 +577,11 @@ class BloodSkullAmmo : CommonAmmoFeatures
     Inventory.Icon "SWBSB1";
   }
 }
+
+class BlotAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "BLOPA0";
+  }
+}
