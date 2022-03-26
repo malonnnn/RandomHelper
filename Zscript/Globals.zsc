@@ -14,8 +14,6 @@ class Globals : EventHandler
     }
     companion.SetStateLabel("See");
     companions.push(companion);
-
-    console.printf("health: "..companion.health);
         
     return companion;
   }
