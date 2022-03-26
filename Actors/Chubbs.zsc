@@ -1,0 +1,105 @@
+Class Chubbs : Actor
+{
+  Default
+  {
+    MONSTER;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Health 70;
+    PainChance 200;
+    Speed 10;
+    Radius 15;
+    Height 40;
+    Mass 100;
+    +FLOORCLIP
+    +AVOIDMELEE
+    SeeSound "Chubbs/See";
+    PainSound "Chubbs/Pai";
+    DeathSound "Chubbs/Die";
+    ActiveSound "Chubbs/Act";
+    Obituary "%o ate some Chubb fireballs.";
+  }
+  States
+  {
+    Spawn:
+      CHBB AB 10 A_Look;
+      Loop;
+    See:
+      CHBB S 3 A_Chase;
+      CHBB T 3 A_Chase;
+      CHBB T 3 A_Chase;
+      CHBB U 3 A_Chase;
+      CHBB V 3 A_Chase;
+      CHBB W 3 A_Chase;
+      CHBB X 3 A_Chase;
+      Loop;
+    Missile:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      TNT1 A 0 A_Jump(40,"Taunting");
+      CHBB F 3 A_FaceTarget;
+      CHBB G 3 A_StartSound("Chubbs/Alert",1);
+      CHBB HIJK 3 Bright;
+      CHBB L 3;
+      CHBB MN 3 A_FaceTarget;
+      CHBB O 4 Bright A_SpawnProjectile("ChubbsFireball",12,7);
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      CHBB PQ 3;
+      CHBB R 4 Bright A_SpawnProjectile("ChubbsFireball",12,-7);
+      TNT1 A 0 A_MonsterRefire(50, "See");
+      goto Missile+7;
+    Taunting:
+      CHBB CCC 5 A_FaceTarget;
+      CHBB C 1 A_StartSound("Chubbs/See");
+      CHBB DEDEECCC 5;
+      goto See;
+    Pain:
+      CHBB E 2;
+      CHBB E 2 A_Pain;
+      Goto See;
+    Death:
+      TNT1 A 0 A_Scream;
+      CHBD A 5 A_NoBlocking;
+      CHBD BCEFG 5;
+      CHBD G -1;
+      stop;
+    XDeath:
+      CHBD H 5 A_NoBlocking;
+      CHBD IJKLMN 5;
+      CHBD N -1;
+      stop;
+    Raise:
+      CHBD GFEDCBA 4;
+      Goto See;
+  }
+}
+
+Class ChubbsFireball : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    PROJECTILE;
+    Scale 0.45;
+    Radius 8;
+    Height 4;
+    Speed 25;
+    FastSpeed 30;
+    Damage 4;
+    +RANDOMIZE
+    RenderStyle "Add";
+    Alpha 1;
+    SeeSound "imp/attack";
+    DeathSound "imp/shotx";
+  }
+  States
+  {
+    Spawn:
+      BAL7 AB 4 Bright;
+      Loop;
+    Death:
+      BAL7 CDE 6 Bright;
+      Stop;
+  }
+}

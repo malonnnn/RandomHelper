@@ -2,7 +2,7 @@ class CompanionSpawner
 {  
   static String pickRandomCompanion(){
 
-    String tier1[23] = {
+    String tier1[24] = {
       "MarineCompanionPistolGun",
       "MarineCompanionChainsawGun",
       "CompanionDemonGun",
@@ -25,7 +25,8 @@ class CompanionSpawner
       "BloodGhostGun",
       "BloodSkullGun",
       "CatharsiGun",
-      "BlotGun"
+      "BlotGun",
+      "ChubbsGun"
     };
     String tier2[16] = {
       "MarineCompanionSGGun",

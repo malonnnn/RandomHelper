@@ -4,7 +4,7 @@ class CompanionZombieManGun : BaseDeployer
   {
     Tag "Zombie Man";
     Weapon.AmmoType2 "CompanionZombieManAmmo";
-    Inventory.PickupMessage "Got a Zombie Man!";
+    Inventory.PickupMessage "Got Zombie Man!";
     BaseDeployer.price 1;
     Weapon.SlotPriority 1;
   }
@@ -22,7 +22,7 @@ Class MarineCompanionPistolGun : BaseDeployer
   {
     Tag "Pistol Marine";
     Weapon.AmmoType2 "MarineCompanionPistolAmmo";
-    Inventory.PickupMessage "Got a Pistol Marine!";
+    Inventory.PickupMessage "Got Pistol Marine!";
     BaseDeployer.price 20;
     Weapon.SlotPriority 20;
   }
@@ -40,7 +40,7 @@ Class MarineCompanionFistGun : BaseDeployer
   {
     Tag "Berserk Marine";
     Weapon.AmmoType2 "MarineCompanionFistAmmo";
-    Inventory.PickupMessage "Got a Berserk Marine!";
+    Inventory.PickupMessage "Got Berserk Marine!";
     BaseDeployer.price 20;
     Weapon.SlotPriority 20;
   }
@@ -58,7 +58,7 @@ Class MarineCompanionSGGun : BaseDeployer
   {
     Tag "Shotgun Marine";
     Weapon.AmmoType2 "MarineCompanionSGAmmo";
-    Inventory.PickupMessage "Got a Shotgun Marine!";
+    Inventory.PickupMessage "Got Shotgun Marine!";
     BaseDeployer.price 60;
     Weapon.SlotPriority 60;
   }
@@ -76,7 +76,7 @@ Class MarineCompanionSSGGun : BaseDeployer
   {
     Tag "Super Shotgun Marine";
     Weapon.AmmoType2 "MarineCompanionSSGAmmo";
-    Inventory.PickupMessage "Got a Super Shotgun Marine!";
+    Inventory.PickupMessage "Got Super Shotgun Marine!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
   }
@@ -94,7 +94,7 @@ Class MarineCompanionCGGun : BaseDeployer
   {
     Tag "Chaingun Marine";
     Weapon.AmmoType2 "MarineCompanionCGAmmo";
-    Inventory.PickupMessage "Got a Chaingun Marine!";
+    Inventory.PickupMessage "Got Chaingun Marine!";
     BaseDeployer.price 125;
     Weapon.SlotPriority 125;
   }
@@ -112,7 +112,7 @@ Class MarineCompanionRocketGun : BaseDeployer
   {
     Tag "Rocket Launcher Marine";
     Weapon.AmmoType2 "MarineCompanionRocketAmmo";
-    Inventory.PickupMessage "Got a Rocket Launcher Marine!";
+    Inventory.PickupMessage "Got Rocket Launcher Marine!";
     BaseDeployer.price 200;
     Weapon.SlotPriority 200;
   }
@@ -130,7 +130,7 @@ Class MarineCompanionPlasmaGun : BaseDeployer
   {
     Tag "Plasma Rifle Marine";
     Weapon.AmmoType2 "MarineCompanionPlasmaAmmo";
-    Inventory.PickupMessage "Got a Plasma Rifle Marine!";
+    Inventory.PickupMessage "Got Plasma Rifle Marine!";
     BaseDeployer.price 150;
     Weapon.SlotPriority 150;
   }
@@ -148,7 +148,7 @@ Class MarineCompanionBFG9000Gun : BaseDeployer
   {
     Tag "BFG9000 Marine";
     Weapon.AmmoType2 "MarineCompanionBFG9000Ammo";
-    Inventory.PickupMessage "Got a BFG9000 Marine!";
+    Inventory.PickupMessage "Got BFG9000 Marine!";
     BaseDeployer.price 400;
     Weapon.SlotPriority 400;
   }
@@ -166,7 +166,7 @@ Class MarineCompanionBFG10KGun : BaseDeployer
   {
     Tag "BFG10K Marine";
     Weapon.AmmoType2 "MarineCompanionBFG10KAmmo";
-    Inventory.PickupMessage "Got a BFG10K Marine!";
+    Inventory.PickupMessage "Got BFG10K Marine!";
     BaseDeployer.price 400;
     Weapon.SlotPriority 400;
   }
@@ -184,7 +184,7 @@ Class MarineCompanionGLGun : BaseDeployer
   {
     Tag "Grenade Launcher Marine";
     Weapon.AmmoType2 "MarineCompanionGLAmmo";
-    Inventory.PickupMessage "Got a Grenade Launcher Marine!";
+    Inventory.PickupMessage "Got Grenade Launcher Marine!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
   }
@@ -202,7 +202,7 @@ Class MarineCompanionHSMissileGun : BaseDeployer
   {
     Tag "Heat Seeking Missile Marine";
     Weapon.AmmoType2 "MarineCompanionHSMissileAmmo";
-    Inventory.PickupMessage "Got a Heat Seeking Missile Marine!";
+    Inventory.PickupMessage "Got Heat Seeking Missile Marine!";
     BaseDeployer.price 250;
     Weapon.SlotPriority 250;
   }
@@ -220,7 +220,7 @@ Class MarineCompanionRailgunGun : BaseDeployer
   {
     Tag "Railgun Marine";
     Weapon.AmmoType2 "MarineCompanionRailgunAmmo";
-    Inventory.PickupMessage "Got a Railgun Marine!";
+    Inventory.PickupMessage "Got Railgun Marine!";
     BaseDeployer.price 150;
     Weapon.SlotPriority 150;
   }
@@ -238,7 +238,7 @@ Class MarineCompanionSniperGun : BaseDeployer
   {
     Tag "Sniper Marine";
     Weapon.AmmoType2 "MarineCompanionSniperAmmo";
-    Inventory.PickupMessage "Got a Sniper Marine!";
+    Inventory.PickupMessage "Got Sniper Marine!";
     BaseDeployer.price 150;
     Weapon.SlotPriority 150;
   }
@@ -256,7 +256,7 @@ Class MarineCompanionFlameThrowerGun : BaseDeployer
   {
     Tag "Flame Thrower Marine";
     Weapon.AmmoType2 "MarineCompanionFlameThrowerAmmo";
-    Inventory.PickupMessage "Got a Flame Thrower Marine!";
+    Inventory.PickupMessage "Got Flame Thrower Marine!";
     BaseDeployer.price 150;
     Weapon.SlotPriority 150;
   }
@@ -274,7 +274,7 @@ Class MarineCompanionMGGun : BaseDeployer
   {
     Tag "Machine Gun Marine";
     Weapon.AmmoType2 "MarineCompanionMGAmmo";
-    Inventory.PickupMessage "Got a Machine Gun Marine!";
+    Inventory.PickupMessage "Got Machine Gun Marine!";
     BaseDeployer.price 75;
     Weapon.SlotPriority 75;
   }
@@ -292,7 +292,7 @@ Class MarineCompanionMinigunGun : BaseDeployer
   {
     Tag "Minigun Marine";
     Weapon.AmmoType2 "MarineCompanionMinigunAmmo";
-    Inventory.PickupMessage "Got a Minigun Marine!";
+    Inventory.PickupMessage "Got Minigun Marine!";
     BaseDeployer.price 200;
     Weapon.SlotPriority 200;
   }
@@ -310,7 +310,7 @@ Class MarineCompanionChainsawGun : BaseDeployer
   {
     Tag "Chainsaw Marine";
     Weapon.AmmoType2 "MarineCompanionChainsawAmmo";
-    Inventory.PickupMessage "Got a Chainsaw Marine!";
+    Inventory.PickupMessage "Got Chainsaw Marine!";
     BaseDeployer.price 20;
     Weapon.SlotPriority 20;
   }
@@ -328,7 +328,7 @@ class CompanionShotgunGuyGun : BaseDeployer
   {
     Tag "Shotgun Guy";
     Weapon.AmmoType2 "CompanionShotgunGuyAmmo";
-    Inventory.PickupMessage "Got a Shotgun Guy!";
+    Inventory.PickupMessage "Got Shotgun Guy!";
     BaseDeployer.price 5;
     Weapon.SlotPriority 5;
   }
@@ -346,7 +346,7 @@ class CompanionChaingunGuyGun : BaseDeployer
   {
     Tag "Chaingun Guy";
     Weapon.AmmoType2 "CompanionChaingunGuyAmmo";
-    Inventory.PickupMessage "Got a Chaingun Guy!";
+    Inventory.PickupMessage "Got Chaingun Guy!";
     BaseDeployer.price 15;
     Weapon.SlotPriority 15;
   }
@@ -364,7 +364,7 @@ class CompanionDemonGun : BaseDeployer
   {
     Tag "Demon";
     Weapon.AmmoType2 "CompanionDemonAmmo";
-    Inventory.PickupMessage "Got a Demon!";
+    Inventory.PickupMessage "Got Demon!";
     BaseDeployer.price 6;
     Weapon.SlotPriority 6;
   }
@@ -382,7 +382,7 @@ class CompanionSpectreGun : CompanionDemonGun
   {
     Tag "Spectre";
     Weapon.AmmoType2 "CompanionSpectreAmmo";
-    Inventory.PickupMessage "Got a Spectre!";
+    Inventory.PickupMessage "Got Spectre!";
     RenderStyle "Translucent";
   }
 }
@@ -393,7 +393,7 @@ class CompanionLostSoulGun : BaseDeployer
   {
     Tag "Lost Soul";
     Weapon.AmmoType2 "CompanionLostSoulAmmo";
-    Inventory.PickupMessage "Got a Lost Soul!";
+    Inventory.PickupMessage "Got Lost Soul!";
     BaseDeployer.price 3;
     Weapon.SlotPriority 3;
     Scale 0.6;
@@ -412,7 +412,7 @@ class CompanionCacodemonGun : BaseDeployer
   {
     Tag "Cacodemon";
     Weapon.AmmoType2 "CompanionCacodemonAmmo";
-    Inventory.PickupMessage "Got a Cacodemon!";
+    Inventory.PickupMessage "Got Cacodemon!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
     Scale 0.4;
@@ -431,7 +431,7 @@ class CompanionPainElementalGun : BaseDeployer
   {
     Tag "Pain Elemental";
     Weapon.AmmoType2 "CompanionPainElementalAmmo";
-    Inventory.PickupMessage "Got a Pain Elemental!";
+    Inventory.PickupMessage "Got Pain Elemental!";
     BaseDeployer.price 300;
     Weapon.SlotPriority 300;
     Scale 0.38;
@@ -450,7 +450,7 @@ class CompanionBaronOfHellGun : BaseDeployer
   {
     Tag "Baron of Hell";
     Weapon.AmmoType2 "CompanionBaronOfHellAmmo";
-    Inventory.PickupMessage "Got a Baron of Hell!";
+    Inventory.PickupMessage "Got Baron of Hell!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
     Scale 0.4;
@@ -469,7 +469,7 @@ class CompanionHellKnightGun : CompanionBaronOfHellGun
   {
     Tag "Hell Knight";
     Weapon.AmmoType2 "CompanionHellKnightAmmo";
-    Inventory.PickupMessage "Got a Hell Knight!";
+    Inventory.PickupMessage "Got Hell Knight!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
   }
@@ -487,7 +487,7 @@ class CompanionArachnotronGun : BaseDeployer
   {
     Tag "Arachnotron";
     Weapon.AmmoType2 "CompanionArachnotronAmmo";
-    Inventory.PickupMessage "Got an Arachnotron!";
+    Inventory.PickupMessage "Got Arachnotron!";
     BaseDeployer.price 75;
     Weapon.SlotPriority 75;
     Scale 0.3;
@@ -506,7 +506,7 @@ class CompanionArchvileGun : BaseDeployer
   {
     Tag "Archvile";
     Weapon.AmmoType2 "CompanionArchvileAmmo";
-    Inventory.PickupMessage "Got an Archvile!";
+    Inventory.PickupMessage "Got Archvile!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
     Scale 0.35;
@@ -525,7 +525,7 @@ class CompanionFatsoGun : BaseDeployer
   {
     Tag "Mancubus";
     Weapon.AmmoType2 "CompanionFatsoAmmo";
-    Inventory.PickupMessage "Got a Mancubus!";
+    Inventory.PickupMessage "Got Mancubus!";
     BaseDeployer.price 75;
     Weapon.SlotPriority 75;
     Scale 0.4;
@@ -544,7 +544,7 @@ class CompanionCyberdemonGun : BaseDeployer
   {
     Tag "Cyberdemon";
     Weapon.AmmoType2 "CompanionCyberdemonAmmo";
-    Inventory.PickupMessage "Got a Cyberdemon!";
+    Inventory.PickupMessage "Got Cyberdemon!";
     BaseDeployer.price 500;
     Weapon.SlotPriority 500;
     Scale 0.28;
@@ -563,7 +563,7 @@ class CompanionSpiderMastermindGun : BaseDeployer
   {
     Tag "Spider Mastermind";
     Weapon.AmmoType2 "CompanionSpiderMastermindAmmo";
-    Inventory.PickupMessage "Got a Spider Mastermind!";
+    Inventory.PickupMessage "Got Spider Mastermind!";
     BaseDeployer.price 450;
     Weapon.SlotPriority 450;
     Scale 0.15;
@@ -582,7 +582,7 @@ class CompanionWolfensteinSSGun : BaseDeployer
   {
     Tag "Wolfenstein SS";
     Weapon.AmmoType2 "CompanionWolfensteinSSAmmo";
-    Inventory.PickupMessage "Got a Wolfenstein SS!";
+    Inventory.PickupMessage "Got Wolfenstein SS!";
     BaseDeployer.price 10;
     Weapon.SlotPriority 10;
   }
@@ -600,7 +600,7 @@ class CompanionRevenantGun : BaseDeployer
   {
     Tag "Revenant";
     Weapon.AmmoType2 "CompanionRevenantAmmo";
-    Inventory.PickupMessage "Got a Revenant!";
+    Inventory.PickupMessage "Got Revenant!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
     Scale 0.35;
@@ -619,7 +619,7 @@ class CompanionDoomImpGun : BaseDeployer
   {
     Tag "Imp";
     Weapon.AmmoType2 "CompanionDoomImpAmmo";
-    Inventory.PickupMessage "Got an Imp!";
+    Inventory.PickupMessage "Got Imp!";
     BaseDeployer.price 7;
     Weapon.SlotPriority 7;
   }
@@ -637,7 +637,7 @@ Class BelphegorGun : BaseDeployer
   {
     Tag "Belphagor";
     Weapon.AmmoType2 "BelphegorAmmo";
-    Inventory.PickupMessage "Got a Belphegor!";
+    Inventory.PickupMessage "Got Belphegor!";
     BaseDeployer.price 250;
     Weapon.SlotPriority 250;
     Scale 0.4;
@@ -656,7 +656,7 @@ Class AfritGun : BaseDeployer
   {
     Tag "Afrit";
     Weapon.AmmoType2 "AfritAmmo";
-    Inventory.PickupMessage "Got an Afrit!";
+    Inventory.PickupMessage "Got Afrit!";
     BaseDeployer.price 150;
     Weapon.SlotPriority 150;
     Inventory.Icon "FRITV0";
@@ -676,7 +676,7 @@ Class MarauderGun : BaseDeployer
   {
     Tag "Marauder";
     Weapon.AmmoType2 "MarauderAmmo";
-    Inventory.PickupMessage "Got a Marauder!";
+    Inventory.PickupMessage "Got Marauder!";
     BaseDeployer.price 75;
     Weapon.SlotPriority 75;
     Scale 0.48;
@@ -695,7 +695,7 @@ Class ArachnophyteGun : BaseDeployer
   {
     Tag "Arachnophyte";
     Weapon.AmmoType2 "ArachnophyteAmmo";
-    Inventory.PickupMessage "Got an Arachnophyte!";
+    Inventory.PickupMessage "Got Arachnophyte!";
     BaseDeployer.price 450;
     Weapon.SlotPriority 450;
     Scale 0.2;
@@ -714,7 +714,7 @@ Class ArchonOfHellGun : BaseDeployer
   {
     Tag "Archon of Hell";
     Weapon.AmmoType2 "ArchonOfHellAmmo";
-    Inventory.PickupMessage "Got an Archon of Hell!";
+    Inventory.PickupMessage "Got Archon of Hell!";
     BaseDeployer.price 300;
     Weapon.SlotPriority 300;
     Scale 0.4;
@@ -733,7 +733,7 @@ Class MurderBallGun : BaseDeployer
   {
     Tag "Murder Ball";
     Weapon.AmmoType2 "MurderBallAmmo";
-    Inventory.PickupMessage "Got a Murder Ball!";
+    Inventory.PickupMessage "Got Murder Ball!";
     BaseDeployer.price 999;
     Weapon.SlotPriority 999;
   }
@@ -751,7 +751,7 @@ class ArachnobaronGun : BaseDeployer
   {
     Tag "Arachnobaron";
     Weapon.AmmoType2 "ArachnobaronAmmo";
-    Inventory.PickupMessage "Got an Arachnobaron!";
+    Inventory.PickupMessage "Got Arachnobaron!";
     BaseDeployer.price 200;
     Weapon.SlotPriority 200;
     Scale 0.3;
@@ -770,7 +770,7 @@ class BabyCacoGun : BaseDeployer
   {
     Tag "Baby Caco";
     Weapon.AmmoType2 "BabyCacoAmmo";
-    Inventory.PickupMessage "Got a Baby Caco!";
+    Inventory.PickupMessage "Got Baby Caco!";
     BaseDeployer.price 20;
     Weapon.SlotPriority 20;
   }
@@ -788,7 +788,7 @@ class BeheadedKamikazeGun : BaseDeployer
   {
     Tag "Beheaded Kamikaze";
     Weapon.AmmoType2 "BeheadedKamikazeAmmo";
-    Inventory.PickupMessage "Got a Beheaded Kamikaze!";
+    Inventory.PickupMessage "Got Beheaded Kamikaze!";
     BaseDeployer.price 2;
     Weapon.SlotPriority 2;
   }
@@ -806,7 +806,7 @@ class AbaddonGun : BaseDeployer
   {
     Tag "Abaddon";
     Weapon.AmmoType2 "AbaddonAmmo";
-    Inventory.PickupMessage "Got an Abaddon!";
+    Inventory.PickupMessage "Got Abaddon!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
     Scale 0.4;
@@ -825,7 +825,7 @@ class AgathodemonGun : BaseDeployer
   {
     Tag "Agathodemon";
     Weapon.AmmoType2 "AgathodemonAmmo";
-    Inventory.PickupMessage "Got an Agathodemon!";
+    Inventory.PickupMessage "Got Agathodemon!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
     Scale 0.4;
@@ -844,7 +844,7 @@ class AnotherAgathodemonGun : AgathodemonGun
   {
     Tag "Agathodemon Variant";
     Weapon.AmmoType2 "AnotherAgathodemonAmmo";
-    Inventory.PickupMessage "Got an Agathodemon variant!";
+    Inventory.PickupMessage "Got Agathodemon variant!";
   }
 }
 
@@ -854,7 +854,7 @@ class AgauresGun : BaseDeployer
   {
     Tag "Agaures";
     Weapon.AmmoType2 "AgauresAmmo";
-    Inventory.PickupMessage "Got an Agaures!";
+    Inventory.PickupMessage "Got Agaures!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
   }
@@ -872,7 +872,7 @@ class GhostlyAgauresGun : AgauresGun
   {
     Tag "Ghostly Agaures";
     Weapon.AmmoType2 "GhostlyAgauresAmmo";
-    Inventory.PickupMessage "Got a Ghostly Agaures!";
+    Inventory.PickupMessage "Got Ghostly Agaures!";
     RenderStyle "Translucent";
   }
 }
@@ -883,7 +883,7 @@ class AnnihilatorGun : BaseDeployer
   {
     Tag "Annihilator";
     Weapon.AmmoType2 "AnnihilatorAmmo";
-    Inventory.PickupMessage "Got an Annihilator!";
+    Inventory.PickupMessage "Got Annihilator!";
     BaseDeployer.price 750;
     Weapon.SlotPriority 750;
     Scale 0.28;
@@ -902,7 +902,7 @@ class AracnorbGun : BaseDeployer
   {
     Tag "Aracnorb";
     Weapon.AmmoType2 "AracnorbAmmo";
-    Inventory.PickupMessage "Got an Aracnorb!";
+    Inventory.PickupMessage "Got Aracnorb!";
     BaseDeployer.price 30;
     Weapon.SlotPriority 30;
   }
@@ -920,7 +920,7 @@ class AracnorbQueenGun : BaseDeployer
   {
     Tag "Aracnorb Queen";
     Weapon.AmmoType2 "AracnorbQueenAmmo";
-    Inventory.PickupMessage "Got an Aracnorb Queen!";
+    Inventory.PickupMessage "Got Aracnorb Queen!";
     BaseDeployer.price 150;
     Weapon.SlotPriority 150;
     Scale 0.3;
@@ -939,7 +939,7 @@ class AugmentedArachnotronGun : BaseDeployer
   {
     Tag "Augmented Arachnotron";
     Weapon.AmmoType2 "AugmentedArachnotronAmmo";
-    Inventory.PickupMessage "Got an Augmented Arachnotron!";
+    Inventory.PickupMessage "Got Augmented Arachnotron!";
     BaseDeployer.price 150;
     Weapon.SlotPriority 150;
     Scale 0.3;
@@ -958,7 +958,7 @@ class AutoShotgunGuyGun : BaseDeployer
   {
     Tag "Auto Shotgun Guy";
     Weapon.AmmoType2 "AutoShotgunGuyAmmo";
-    Inventory.PickupMessage "Got an Auto Shotgun Guy!";
+    Inventory.PickupMessage "Got Auto Shotgun Guy!";
     BaseDeployer.price 20;
     Weapon.SlotPriority 20;
   }
@@ -976,7 +976,7 @@ class AzazelGun : BaseDeployer
   {
     Tag "Azazel";
     Weapon.AmmoType2 "AzazelAmmo";
-    Inventory.PickupMessage "Got an Azazel!";
+    Inventory.PickupMessage "Got Azazel!";
     BaseDeployer.price 350;
     Weapon.SlotPriority 350;
   }
@@ -994,7 +994,7 @@ class BadGun : BaseDeployer
   {
     Tag "Bad";
     Weapon.AmmoType2 "BadAmmo";
-    Inventory.PickupMessage "Got a Bad!";
+    Inventory.PickupMessage "Got Bad!";
     BaseDeployer.price 10;
     Weapon.SlotPriority 10;
   }
@@ -1012,7 +1012,7 @@ class EyePoisonGun : BaseDeployer
   {
     Tag "Poisonous Eye";
     Weapon.AmmoType2 "EyePoisonAmmo";
-    Inventory.PickupMessage "Got a Poisonous Eye!";
+    Inventory.PickupMessage "Got Poisonous Eye!";
     BaseDeployer.price 4;
     Weapon.SlotPriority 4;
   }
@@ -1030,7 +1030,7 @@ class EyeExGun : EyePoisonGun
   {
     Tag "Explosive Eye";
     Weapon.AmmoType2 "EyeExAmmo";
-    Inventory.PickupMessage "Got an Explosive Eye!";
+    Inventory.PickupMessage "Got Explosive Eye!";
   }
   States
   {
@@ -1046,7 +1046,7 @@ class EyeSpiderGun : EyePoisonGun
   {
     Tag "Spider Eye";
     Weapon.AmmoType2 "EyeSpiderAmmo";
-    Inventory.PickupMessage "Got a Spider Eye!";
+    Inventory.PickupMessage "Got Spider Eye!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
   }
@@ -1064,7 +1064,7 @@ class EyeBatGun : EyePoisonGun
   {
     Tag "Bat Eye";
     Weapon.AmmoType2 "EyeBatAmmo";
-    Inventory.PickupMessage "Got a Bat Eye!";
+    Inventory.PickupMessage "Got Bat Eye!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
   }
@@ -1082,7 +1082,7 @@ class BeamRevenantGun : BaseDeployer
   {
     Tag "Beam Revenant";
     Weapon.AmmoType2 "BeamRevenantAmmo";
-    Inventory.PickupMessage "Got a Beam Revenant!";
+    Inventory.PickupMessage "Got Beam Revenant!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
     Scale 0.35;
@@ -1101,7 +1101,7 @@ class BeamZombieGun : BaseDeployer
   {
     Tag "Beam Zombie";
     Weapon.AmmoType2 "BeamZombieAmmo";
-    Inventory.PickupMessage "Got a Beam Zombie!";
+    Inventory.PickupMessage "Got Beam Zombie!";
     BaseDeployer.price 15;
     Weapon.SlotPriority 15;
   }
@@ -1119,7 +1119,7 @@ class BFGCommandoGun : BaseDeployer
   {
     Tag "BFG Commando";
     Weapon.AmmoType2 "BFGCommandoAmmo";
-    Inventory.PickupMessage "Got a BFG Commando!";
+    Inventory.PickupMessage "Got BFG Commando!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
   }
@@ -1137,7 +1137,7 @@ class BlindPinkyGun : BaseDeployer
   {
     Tag "Blind Pinky";
     Weapon.AmmoType2 "BlindPinkyAmmo";
-    Inventory.PickupMessage "Got a Blind Pinky!";
+    Inventory.PickupMessage "Got Blind Pinky!";
     BaseDeployer.price 3;
     Weapon.SlotPriority 3;
   }
@@ -1155,7 +1155,7 @@ class BloodDemonGun : BaseDeployer
   {
     Tag "Blood Demon";
     Weapon.AmmoType2 "BloodDemonAmmo";
-    Inventory.PickupMessage "Got a Blood Demon!";
+    Inventory.PickupMessage "Got Blood Demon!";
     BaseDeployer.price 10;
     Weapon.SlotPriority 10;
   }
@@ -1173,7 +1173,7 @@ class BloodFiendGun : BaseDeployer
   {
     Tag "Blood Fiend";
     Weapon.AmmoType2 "BloodFiendAmmo";
-    Inventory.PickupMessage "Got a Blood Fiend!";
+    Inventory.PickupMessage "Got Blood Fiend!";
     BaseDeployer.price 20;
     Weapon.SlotPriority 20;
   }
@@ -1191,7 +1191,7 @@ class LurkerGun : BloodFiendGun
   {
     Tag "Lurker";
     Weapon.AmmoType2 "LurkerAmmo";
-    Inventory.PickupMessage "Got a Lurker!";
+    Inventory.PickupMessage "Got Lurker!";
     RenderStyle "Translucent";
   }
 }
@@ -1202,7 +1202,7 @@ class BloodGhostGun : BaseDeployer
   {
     Tag "Blood Ghost";
     Weapon.AmmoType2 "BloodGhostAmmo";
-    Inventory.PickupMessage "Got a Blood Ghost!";
+    Inventory.PickupMessage "Got Blood Ghost!";
     BaseDeployer.price 30;
     Weapon.SlotPriority 30;
   }
@@ -1220,7 +1220,7 @@ class BloodSkullGun : BaseDeployer
   {
     Tag "Blood Skull";
     Weapon.AmmoType2 "BloodSkullAmmo";
-    Inventory.PickupMessage "Got a Blood Skull!";
+    Inventory.PickupMessage "Got Blood Skull!";
     BaseDeployer.price 20;
     Weapon.SlotPriority 20;
   }
@@ -1238,7 +1238,7 @@ class BlotGun : BaseDeployer
   {
     Tag "Blot";
     Weapon.AmmoType2 "BlotAmmo";
-    Inventory.PickupMessage "Got a Blot!";
+    Inventory.PickupMessage "Got Blot!";
     BaseDeployer.price 1;
     Weapon.SlotPriority 1;
   }
@@ -1256,7 +1256,7 @@ class BruiserDemonGun : BaseDeployer
   {
     Tag "Bruiser Demon";
     Weapon.AmmoType2 "BruiserDemonAmmo";
-    Inventory.PickupMessage "Got a Bruiser Demon!";
+    Inventory.PickupMessage "Got Bruiser Demon!";
     BaseDeployer.price 200;
     Weapon.SlotPriority 200;
     Scale 0.3;
@@ -1275,7 +1275,7 @@ class CacoLichGun : BaseDeployer
   {
     Tag "CacoLich";
     Weapon.AmmoType2 "CacoLichAmmo";
-    Inventory.PickupMessage "Got a CacoLich!";
+    Inventory.PickupMessage "Got CacoLich!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
     Scale 0.4;
@@ -1294,7 +1294,7 @@ class BerserkCacoLichGun : CacoLichGun
   {
     Tag "Berserk CacoLich";
     Weapon.AmmoType2 "BerserkCacoLichAmmo";
-    Inventory.PickupMessage "Got a Berserk CacoLich!";
+    Inventory.PickupMessage "Got Berserk CacoLich!";
   }
 }
 
@@ -1304,7 +1304,7 @@ class CacolanternGun : BaseDeployer
   {
     Tag "Cacolantern";
     Weapon.AmmoType2 "CacolanternAmmo";
-    Inventory.PickupMessage "Got a Cacolantern!";
+    Inventory.PickupMessage "Got Cacolantern!";
     BaseDeployer.price 65;
     Weapon.SlotPriority 65;
     Scale 0.4;
@@ -1323,7 +1323,7 @@ class CatharsiGun : BaseDeployer
   {
     Tag "Catharsi";
     Weapon.AmmoType2 "CatharsiAmmo";
-    Inventory.PickupMessage "Got a Catharsi!";
+    Inventory.PickupMessage "Got Catharsi!";
     BaseDeployer.price 15;
     Weapon.SlotPriority 15;
   }
@@ -1341,7 +1341,7 @@ class ChaingunDemonGun : BaseDeployer
   {
     Tag "Chaingun Demon";
     Weapon.AmmoType2 "ChaingunDemonAmmo";
-    Inventory.PickupMessage "Got a Chaingun Demon!";
+    Inventory.PickupMessage "Got Chaingun Demon!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
   }
@@ -1359,7 +1359,7 @@ class ChaingunMajorGun : BaseDeployer
   {
     Tag "Chaingun Major";
     Weapon.AmmoType2 "ChaingunMajorAmmo";
-    Inventory.PickupMessage "Got a Chaingun Major!";
+    Inventory.PickupMessage "Got Chaingun Major!";
     BaseDeployer.price 40;
     Weapon.SlotPriority 40;
   }
@@ -1377,7 +1377,7 @@ class ChaingunSpiderGun : BaseDeployer
   {
     Tag "Chaingun Spider";
     Weapon.AmmoType2 "ChaingunSpiderAmmo";
-    Inventory.PickupMessage "Got a Chaingun Spider!";
+    Inventory.PickupMessage "Got Chaingun Spider!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
     Scale 0.3;
@@ -1390,6 +1390,24 @@ class ChaingunSpiderGun : BaseDeployer
   }
 }
 
+class ChubbsGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Chubbs";
+    Weapon.AmmoType2 "ChubbsAmmo";
+    Inventory.PickupMessage "Got Chubbs!";
+    BaseDeployer.price 15;
+    Weapon.SlotPriority 15;
+  }
+  States
+  {
+    Spawn:
+      CHBB A -1;
+      Stop;
+  }
+}
+
 
 /* copy pastable example
 class AbaddonGun : BaseDeployer
@@ -1398,7 +1416,7 @@ class AbaddonGun : BaseDeployer
   {
     Tag "Abaddon";
     Weapon.AmmoType2 "AbaddonAmmo";
-    Inventory.PickupMessage "Got an Abaddon!";
+    Inventory.PickupMessage "Got Abaddon!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
     Scale 0.4;

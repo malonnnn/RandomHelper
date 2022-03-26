@@ -1,8 +1,18 @@
+// Chubbs
+Chubbs/See CB_TAUNT
+Chubbs/Die CB_DEATH
+Chubbs/Alert CB_Alert
+$Random Chubbs/Pai { CB_PAIN1 CB_PAIN2 }
+CB_PAIN1 CB_PAIN1
+CB_PAIN2 CB_PAIN2
+$Random Chubbs/Act { CB_IDLE1 CB_IDLE2 }
+CB_IDLE1 CB_IDLE1
+CB_IDLE2 CB_IDLE2
+
 // Chaingun Spider
 CGunSpider/Sight	DSCSPISE
 CGunSpider/Death	DSCSPIDI
 CGunSpider/Attack	DSCSPIFI
-
 
 // Catharsi Sounds
 catharsi/sit DSSLSIT

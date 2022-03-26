@@ -647,3 +647,11 @@ class ChaingunSpiderAmmo : CommonAmmoFeatures
     Inventory.Icon "CSPIA1D1";
   }
 }
+
+class ChubbsAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CHBBA1";
+  }
+}
