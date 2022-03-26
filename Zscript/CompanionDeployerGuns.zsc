@@ -5,8 +5,8 @@ class CompanionZombieManGun : BaseDeployer
     Tag "Zombie Man";
     Weapon.AmmoType2 "CompanionZombieManAmmo";
     Inventory.PickupMessage "Got Zombie Man!";
-    BaseDeployer.price 1;
-    Weapon.SlotPriority 1;
+    BaseDeployer.price 2;
+    Weapon.SlotPriority 2;
   }
   States
   {
@@ -1404,6 +1404,24 @@ class ChubbsGun : BaseDeployer
   {
     Spawn:
       CHBB A -1;
+      Stop;
+  }
+}
+
+class ChainsawZombieGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Chainsaw Zombie";
+    Weapon.AmmoType2 "ChainsawZombieAmmo";
+    Inventory.PickupMessage "Got Chainsaw Zombie!";
+    BaseDeployer.price 1;
+    Weapon.SlotPriority 1;
+  }
+  States
+  {
+    Spawn:
+      CHAN A -1;
       Stop;
   }
 }

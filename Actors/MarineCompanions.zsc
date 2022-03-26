@@ -362,8 +362,8 @@ class MarineCompanionChainsaw : MarineCompanion
 {
   Default
   {
-    MeleeThreshold 64;
-    MeleeRange 64;
+    MeleeThreshold 32;
+    MeleeRange 32;
     Obituary "%o was stupid enough to stand in front of a chainsaw attack!";
     SeeSound "ALCSaw/Sight";
     MeleeSound "weapons/sawhit";
@@ -386,7 +386,7 @@ States
     ALY7 D 0 A_StartSound("weapons/sawidle");
     ALY7 DD 4 A_Chase;
     ALY7 A 0 A_StartSound("weapons/sawidle");
-    Goto See;
+    Loop;
   Melee:
     TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
     ALY7 E 1 A_FaceTarget;

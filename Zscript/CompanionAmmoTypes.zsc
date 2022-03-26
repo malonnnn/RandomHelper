@@ -655,3 +655,11 @@ class ChubbsAmmo : CommonAmmoFeatures
     Inventory.Icon "CHBBA1";
   }
 }
+
+class ChainsawZombieAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CHANA1";
+  }
+}
