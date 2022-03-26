@@ -1335,6 +1335,24 @@ class CatharsiGun : BaseDeployer
   }
 }
 
+class ChaingunDemonGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Chaingun Demon";
+    Weapon.AmmoType2 "ChaingunDemonAmmo";
+    Inventory.PickupMessage "Got a Chaingun Demon!";
+    BaseDeployer.price 40;
+    Weapon.SlotPriority 40;
+  }
+  States
+  {
+    Spawn:
+      CRG2 A -1;
+      Stop;
+  }
+}
+
 
 /* copy pastable example
 class AbaddonGun : BaseDeployer

@@ -75,6 +75,35 @@ class MarineCompanionFist : MarineCompanion
       ALY1 W -1 A_NoBlocking;
       Stop;
   }
+
+  override bool Slam(Actor victim)
+  {
+    bSkullFly = false;
+    vel = (0, 0, 0);
+    if (health > 0)
+    {
+      if (!bDormant)
+      {
+        int dam = GetMissileDamage (7, 1);
+        int newdam = victim.DamageMobj (self, self, dam, "Companion");
+        victim.TraceBleed (newdam > 0 ? newdam : dam, self);
+        if (health > 0)
+        {
+          if (SeeState != NULL && !bRetargetAfterSlam){
+            SetState (SeeState);
+          }else{
+            SetIdle();
+          }
+        }
+      }
+      else
+      {
+        SetIdle();
+        tics = -1;
+      }
+    }
+    return false;
+  }
 }
 
 class MarineCompanionPistol : MarineCompanion

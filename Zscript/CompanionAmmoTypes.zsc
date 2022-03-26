@@ -623,3 +623,11 @@ class CatharsiAmmo : CommonAmmoFeatures
     Inventory.Icon "SDDMA1";
   }
 }
+
+class ChaingunDemonAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CRG2A1C1";
+  }
+}

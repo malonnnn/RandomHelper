@@ -55,7 +55,7 @@ monster/sg2atk dssg2atk
 weapons/bloodf dsbloodf
 weapons/bloodx dsbloodx
 
-// Blood Demon
+// Blood Demon & Chaingun Demon
 blooddemon/sight DSBLDSIT
 blooddemon/pain DSBLDPAI
 blooddemon/death DSBLDDTH

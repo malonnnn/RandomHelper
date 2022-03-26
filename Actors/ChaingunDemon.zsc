@@ -1,0 +1,204 @@
+Class ChaingunDemon : Actor
+{
+  Default
+  {
+    MONSTER;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Health 200;
+    Speed 10;
+    Height 56;
+    Radius 30;
+    Mass 400;
+    PainChance 160;
+	  MinMissileChance 64;
+    REACTIONTIME 8;
+    +FLOORCLIP
+	  +NEVERRESPAWN
+	  -COUNTKILL
+    SeeSound "blooddemon/sight";
+    PainSound "blooddemon/pain";
+    DeathSound "blooddemon/death";
+    ActiveSound "blooddemon/active";
+	  AttackSound "chainguy/attack";
+	  Dropitem "Chaingun";
+    Obituary "%o was mowed down by a Mech-Demon.";
+  }
+  States
+  {
+    Spawn:
+      CRG2 AB 10 A_Look;
+      Loop;
+    See:
+      CRG2 A 0 A_StartSound("blooddemon/walk");
+      CRG2 AABB 2 A_Chase;
+      CRG2 C 0 A_StartSound("blooddemon/walk");
+      CRG2 CCDD 2 A_Chase;
+      Loop;
+    Missile:
+      CRG2 E 9 A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      CRG2 EFEFEFEFEF 3 A_CompanionCPosAttack();
+      CRG2 E 1 A_CPosRefire;
+      Goto Missile+1;
+    Pain:
+      CRG2 H 2;
+      CRG2 H 2 A_Pain;
+      Goto See;
+    Death:
+      TNT1 A 0 A_Pain;
+      TNT1 A 0 A_NoBlocking;
+      TNT1 A 0
+      {
+        //A_SpawnItemEx("ChaingunDemonNoGun", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION);
+        let g = Globals(EventHandler.Find("Globals"));
+        g.createCompanion("ChaingunDemonNoGun", pos);
+      }
+      Stop;
+    Raise:
+      Stop;
+  }
+
+  void A_CompanionCPosAttack()
+	{
+		if (target)
+		{
+			if (bStealth) visdir = 1;
+			A_StartSound(AttackSound, CHAN_WEAPON);
+			A_FaceTarget();
+			double slope = AimLineAttack(angle, MISSILERANGE);
+			double ang = angle + Random2[CPosAttack]() * (22.5/256);
+			int damage = Random[CPosAttack](1, 5) * 3;
+			LineAttack(ang, MISSILERANGE, slope, damage, "Companion", "CompanionBulletpuff");
+		}
+	}
+}
+
+Class ChaingunDemonNoGun : Actor
+{
+  int user_distance;
+	Default
+  {
+    MONSTER;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Health 100;
+    Speed 10;
+    Height 56;
+    Radius 30;
+    Mass 400;
+    Damage 5;
+	  PainChance 120;
+	  MeleeThreshold 64;
+	  REACTIONTIME 8;
+    +FLOORCLIP
+	  +MISSILEMORE
+	  +MISSILEEVENMORE
+    SeeSound "blooddemon/sight";
+    PainSound "blooddemon/pain";
+    DeathSound "blooddemon/death";
+    ActiveSound "blooddemon/active";
+    HitObituary "%o Was chewed up and spat out by a Mech-Demon.";
+  }
+  States
+  {
+    Spawn:
+      SRG2 AB 10 A_Look;
+      Loop;
+    See:
+      SRG2 A 0 A_StartSound("blooddemon/walk");
+      SRG2 AABB 2 A_Chase;
+      SRG2 C 0 A_StartSound("blooddemon/walk");
+      SRG2 CCDD 2 A_Chase;
+      Loop;
+    Missile:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      TNT1 A 0
+      {
+        user_distance = 0;
+      }
+      TNT1 A 0 A_JumpIfCloser(224, "Bite");
+      TNT1 A 0 A_JumpIfCloser(1024, "Charge");
+      Goto See;
+    Charge:
+      SRG2 H 1 A_FaceTarget;
+      SRG2 H 1 A_SkullAttack;
+      SRG2 A 2 A_StartSound("blooddemon/walk");
+      SRG2 B 2 A_JumpIfCloser(224, "Bite");
+      SRG2 C 2 A_StartSound("blooddemon/walk");
+      SRG2 D 2 A_JumpIfCloser(224, "Bite");
+      TNT1 A 0
+      {
+        user_distance++;
+        if(user_distance >= 4)
+        {
+          SetStateLabel("StopCharge");
+        }
+      }
+      Goto Charge+2;
+    Bite:
+      SRG2 E 6 A_FaceTarget;
+      SRG2 F 0 A_SkullAttack;
+      SRG2 F 0 A_StartSound("blooddemon/melee");
+      SRG2 FG 6;
+      Goto StopCharge;
+    StopCharge:
+      TNT1 A 0 A_Gravity;
+      TNT1 A 0 A_Stop;
+      Goto See;
+    Melee:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      SRG2 E 0 A_StartSound("blooddemon/melee");
+      SRG2 EF 8 A_FaceTarget;
+      SRG2 G 8 A_CustomMeleeAttack(random(2,9)*5,"","", "Companion");
+      Goto See;
+    Pain:
+      SRG2 H 2;
+      SRG2 H 2 A_Pain;
+      Goto See;
+    Death:
+      SRG2 I 8;
+      SRG2 I 0 A_FaceTarget;
+      SRG2 J 0 A_SpawnItemEx("BloodDemonArm", 10, 0, 32, 0, 8);
+      SRG2 J 8 A_Scream;
+      SRG2 K 4;
+      SRG2 L 4 A_NoBlocking;
+      SRG2 M 4;
+      SRG2 N -1;
+      Stop;
+    Raise:
+      SRG2 NMLKJI 5;
+      Goto See;
+  }
+
+  override bool Slam(Actor victim)
+  {
+    bSkullFly = false;
+    vel = (0, 0, 0);
+    if (health > 0)
+    {
+      if (!bDormant)
+      {
+        int dam = GetMissileDamage (7, 1);
+        int newdam = victim.DamageMobj (self, self, dam, "Companion");
+        victim.TraceBleed (newdam > 0 ? newdam : dam, self);
+        if (health > 0)
+        {
+          if (SeeState != NULL && !bRetargetAfterSlam){
+            SetState (SeeState);
+          }else{
+            SetIdle();
+          }
+        }
+      }
+      else
+      {
+        SetIdle();
+        tics = -1;
+      }
+    }
+    return false;
+  }
+}
