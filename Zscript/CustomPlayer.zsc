@@ -7,10 +7,10 @@ class MyDoomGuy : DoomPlayer {
     DamageFactor "Companion", 0.0;
 
     Player.StartItem "MyFist";
-    Player.StartItem "ChainsawZombieAmmo", 5;
-    Player.StartItem "ChainsawZombieGun", 1;
-    Player.StartItem "CompanionZombieManAmmo", 5;
+    Player.StartItem "CompanionZombieManAmmo", 7;
     Player.StartItem "CompanionZombieManGun", 1;
+    Player.StartItem "ChainsawZombieAmmo", 3;
+    Player.StartItem "ChainsawZombieGun", 1;
     
     Player.WeaponSlot 1, "MyFist";
     /*Player.WeaponSlot 1, "ChainsawZombieGun";

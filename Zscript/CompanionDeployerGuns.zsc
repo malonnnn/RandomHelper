@@ -5,8 +5,8 @@ class CompanionZombieManGun : BaseDeployer
     Tag "Zombie Man";
     Weapon.AmmoType2 "CompanionZombieManAmmo";
     Inventory.PickupMessage "Got Zombie Man!";
-    BaseDeployer.price 2;
-    Weapon.SlotPriority 2;
+    BaseDeployer.price 1;
+    Weapon.SlotPriority 1;
   }
   States
   {
@@ -1415,8 +1415,8 @@ class ChainsawZombieGun : BaseDeployer
     Tag "Chainsaw Zombie";
     Weapon.AmmoType2 "ChainsawZombieAmmo";
     Inventory.PickupMessage "Got Chainsaw Zombie!";
-    BaseDeployer.price 1;
-    Weapon.SlotPriority 1;
+    BaseDeployer.price 2;
+    Weapon.SlotPriority 2;
   }
   States
   {
