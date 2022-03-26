@@ -38,8 +38,8 @@ class Aracnorb : Actor
       Goto See;
     Missile:
       ACNB B 12 Bright A_FaceTarget;
-      ACNB C 2 Bright A_SpawnProjectile("AracnorbBall", 36);
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ACNB C 2 Bright A_SpawnProjectile("AracnorbBall", 36);
       ACNB B 2 Bright;
       ACNB D 0 A_Jump(32,"See");
       ACNB D 0 A_SpidRefire;

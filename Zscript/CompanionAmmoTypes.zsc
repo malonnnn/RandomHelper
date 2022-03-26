@@ -607,3 +607,19 @@ class CacoLichAmmo : CommonAmmoFeatures
 }
 
 class BerserkCacoLichAmmo : CacoLichAmmo{}
+
+class CacolanternAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "HED2A1";
+  }
+}
+
+class CatharsiAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "SDDMA1";
+  }
+}

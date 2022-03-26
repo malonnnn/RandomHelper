@@ -2,7 +2,7 @@ class CompanionSpawner
 {  
   static String pickRandomCompanion(){
 
-    String tier1[22] = {
+    String tier1[23] = {
       "MarineCompanionPistolGun",
       "MarineCompanionChainsawGun",
       "CompanionDemonGun",
@@ -24,9 +24,10 @@ class CompanionSpawner
       "LurkerGun",
       "BloodGhostGun",
       "BloodSkullGun",
+      "CatharsiGun",
       "BlotGun"
     };
-    String tier2[16] = {
+    String tier2[14] = {
       "MarineCompanionSGGun",
       "CompanionHellKnightGun",
       "MarineCompanionRailgunGun",
@@ -40,11 +41,11 @@ class CompanionSpawner
       "EyeBatGun",
       "BeamZombieGun",
       "MarineCompanionGLGun",
-      "CompanionArchvileGun",
-      "BerserkCacoLichGun",
-      "GasCacoLichGun"
+      "CompanionArchvileGun"
     };
-    String tier3[17] = {
+    String tier3[20] = {
+      "BerserkCacoLichGun",
+      "GasCacoLichGun",
       "MarineCompanionSSGGun",
       "MarineCompanionMGGun",
       "MarineCompanionCGGun",
@@ -61,6 +62,7 @@ class CompanionSpawner
       "MarineCompanionMinigunGun",
       "ArachnobaronGun",
       "AracnorbQueenGun",
+      "BerserkCacolanternGun",
       "BFGCommandoGun"
     };
     String tier4[18] = {

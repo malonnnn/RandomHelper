@@ -1298,6 +1298,44 @@ class BerserkCacoLichGun : CacoLichGun
   }
 }
 
+class CacolanternGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Cacolantern";
+    Weapon.AmmoType2 "CacolanternAmmo";
+    Inventory.PickupMessage "Got a Cacolantern!";
+    BaseDeployer.price 65;
+    Weapon.SlotPriority 65;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      HED2 A -1;
+      Stop;
+  }
+}
+
+class CatharsiGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Catharsi";
+    Weapon.AmmoType2 "CatharsiAmmo";
+    Inventory.PickupMessage "Got a Catharsi!";
+    BaseDeployer.price 15;
+    Weapon.SlotPriority 15;
+  }
+  States
+  {
+    Spawn:
+      SDDM A -1;
+      Stop;
+  }
+}
+
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

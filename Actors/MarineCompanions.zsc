@@ -164,9 +164,9 @@ class MarineCompanionMG : MarineCompanion
       ALY3 E 7;
       goto See;
     MGRapidFireShot:
-      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       ALY3 E 7 A_FaceTarget;
       ALY3 E 0 A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       ALY3 F 3 BRIGHT A_CustomBulletAttack(3,4,1,4,"CompanionBulletPuff");
       ALY3 E 1 A_CPosRefire;
       goto MGRapidFireShot+2;
@@ -360,7 +360,7 @@ States
   Melee:
     TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
     ALY7 E 1 A_FaceTarget;
-    ALY7 F 3 A_CustomMeleeAttack(1,"weapons/sawhit","weapons/sawfull","Companion");
+    ALY7 F 3 A_CustomMeleeAttack(Random(1,8),"weapons/sawhit","weapons/sawfull","Companion", true);
     Goto See;
   Pain:
     ALY7 G 5 A_Pain;
@@ -762,7 +762,7 @@ class MarineCompanionBFG10K : MarineCompanion
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       AL15 F 5 Bright A_CustomBulletAttack(2,2,1,30,"CompanionBFG10kShot");
       AL15 E 5 A_SpidRefire;
-      goto Missile+4;
+      goto Missile+3;
     CancelAttack:
       AL15 A 0 Fast A_FaceTarget;
       AL15 DCBA 4 Fast A_Recoil(6);
@@ -811,10 +811,10 @@ class MarineCompanionFlamethrower : MarineCompanion
       AL16 ABCD 6 A_Chase;
       loop;
     Melee:
-      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       AL16 E 5 A_FaceTarget;
       AL16 E 5 A_StartSound("Marine/FlameReady");
       AL16 E 0 A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       AL16 F 1 Bright A_SpawnProjectile("CompanionFire");
       AL16 F 1 Bright A_SpawnProjectile("CompanionFire");
       AL16 F 1 Bright A_SpawnProjectile("CompanionFire");

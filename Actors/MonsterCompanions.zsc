@@ -468,8 +468,8 @@ class CompanionLostSoul : LostSoul{
       }
       Loop;
     Missile:
-      SKUL C 10 BRIGHT A_FaceTarget;
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      SKUL C 10 BRIGHT A_FaceTarget;
       SKUL D 4 BRIGHT A_SkullAttack;
       SKUL CD 4 BRIGHT;
       Goto Missile+3;

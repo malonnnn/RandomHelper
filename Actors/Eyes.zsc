@@ -23,8 +23,8 @@ Class EyeEx : CompanionLostSoul //Just the normal explosive one
   	Missile:
       ESYM C 10 bright A_FaceTarget;
       ESYM D 2 bright A_SkullAttack;
-      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
       Goto Missile+2;
 	  Melee:
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
@@ -69,8 +69,8 @@ Class EyePoison : CompanionLostSoul //Poison Emitting One
   	Missile:
 	  	ESYM C 10 bright A_FaceTarget;
       ESYM D 2 bright A_SkullAttack;
-      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
       Goto Missile+2;
 	  Melee:
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
@@ -243,8 +243,8 @@ Class EyeSpider : CompanionLostSoul //Spider Spitter One
   	Missile:
       ESYM C 10 bright A_FaceTarget;
       ESYM D 2 bright A_SkullAttack;
-      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
       Goto Missile+2;
 	  Melee:
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
@@ -334,8 +334,8 @@ Class Spider : Actor //Spiders from Spider Eye, sprites ripped from Blood by Psy
       ZPID AABBCCDDEEFF 3 A_Chase;
       Goto See+1;
     Melee:
-      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       ZPID A 4 A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       ZPID G 4 A_CustomMeleeAttack(Random(1,8)*2);
       ZPID H 4;
       Goto See+1;
@@ -380,8 +380,8 @@ Class EyeBat : CompanionLostSoul //Bat Spawner One
   	Missile:
       ESYM C 10 bright A_FaceTarget;
       ESYM D 2 bright A_SkullAttack;
-      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
       Goto Missile+2;
   	Melee:
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
