@@ -1342,13 +1342,31 @@ class ChaingunDemonGun : BaseDeployer
     Tag "Chaingun Demon";
     Weapon.AmmoType2 "ChaingunDemonAmmo";
     Inventory.PickupMessage "Got a Chaingun Demon!";
+    BaseDeployer.price 50;
+    Weapon.SlotPriority 50;
+  }
+  States
+  {
+    Spawn:
+      CRG2 A -1;
+      Stop;
+  }
+}
+
+class ChaingunMajorGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Chaingun Major";
+    Weapon.AmmoType2 "ChaingunMajorAmmo";
+    Inventory.PickupMessage "Got a Chaingun Major!";
     BaseDeployer.price 40;
     Weapon.SlotPriority 40;
   }
   States
   {
     Spawn:
-      CRG2 A -1;
+      CPS2 A -1;
       Stop;
   }
 }

@@ -631,3 +631,11 @@ class ChaingunDemonAmmo : CommonAmmoFeatures
     Inventory.Icon "CRG2A1C1";
   }
 }
+
+class ChaingunMajorAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CPS2A1";
+  }
+}

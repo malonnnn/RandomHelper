@@ -20,7 +20,6 @@ version "4.8.0"
 #include "Zscript/RemoveDeadFriend.zsc"
 
 #include "Zscript/GenericWeapons.zsc"
-#include "Actors/MarineWeapons.zsc"
 
 #include "Actors/MarineCompanions.zsc"
 #include "Actors/MonsterCompanions.zsc"
@@ -58,3 +57,4 @@ version "4.8.0"
 #include "Actors/Cacolantern.zsc"
 #include "Actors/Catharsi.zsc"
 #include "Actors/ChaingunDemon.zsc"
+#include "Actors/ChaingunMajor.zsc"
