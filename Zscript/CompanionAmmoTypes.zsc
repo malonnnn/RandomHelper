@@ -639,3 +639,11 @@ class ChaingunMajorAmmo : CommonAmmoFeatures
     Inventory.Icon "CPS2A1";
   }
 }
+
+class ChaingunSpiderAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CSPIA1D1";
+  }
+}

@@ -1,4 +1,10 @@
-//Catharsi Sounds
+// Chaingun Spider
+CGunSpider/Sight	DSCSPISE
+CGunSpider/Death	DSCSPIDI
+CGunSpider/Attack	DSCSPIFI
+
+
+// Catharsi Sounds
 catharsi/sit DSSLSIT
 catharsi/death DSSLDETH
 catharsi/pain DSSLPAIN
@@ -7,7 +13,7 @@ catharsi/shotdth DSSLSHDT
 catharsi/thermdth DSSLTHMP
 catharsi/thermtick DSSLTHTI
 
-// CacoLich
+// CacoLich & Berserk CacoLich
 CacoLich/Sight INSSIT
 CacoLich/Active DSTRTACT
 CacoLich/Pain NESSPN
