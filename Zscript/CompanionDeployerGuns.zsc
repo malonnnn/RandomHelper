@@ -1486,9 +1486,8 @@ class CrashGun : BaseDeployer
     Tag "Crash";
     Weapon.AmmoType2 "CrashAmmo";
     Inventory.PickupMessage "Got Crash!";
-    BaseDeployer.price 100;
-    Weapon.SlotPriority 100;
-    Scale 0.4;
+    BaseDeployer.price 50;
+    Weapon.SlotPriority 50;
   }
   States
   {
@@ -1498,6 +1497,24 @@ class CrashGun : BaseDeployer
   }
 }
 
+class CyberbaronGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Cyberbaron";
+    Weapon.AmmoType2 "CyberbaronAmmo";
+    Inventory.PickupMessage "Got Cyberbaron!";
+    BaseDeployer.price 200;
+    Weapon.SlotPriority 200;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      CBOS A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

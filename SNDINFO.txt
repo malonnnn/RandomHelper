@@ -1,3 +1,9 @@
+// Cyberbaron
+cbaron/sight	cbarnsit
+cbaron/pain	cbarnpai
+cbaron/death	cbarndth
+cbaron/active	cbarnact
+cbaron/metal	cmetal
 
 // Crash
 $random crash/death 	{ crash/death1 crash/death2 }

@@ -695,3 +695,11 @@ class CrashAmmo : CommonAmmoFeatures
     Inventory.Icon "CRSHA1";
   }
 }
+
+class CyberbaronAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CBOSA1";
+  }
+}
