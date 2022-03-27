@@ -9,18 +9,8 @@ class CompanionItemReplacer : EventHandler
         case 1:
         case 2:
         case 3:
-          cVar scaleWithLevels = cVar.GetCVar('zdw_wadscale');
           Globals g = Globals(EventHandler.Find("Globals"));
-          String companionClass;
-          if(scaleWithLevels.GetBool()){
-            int maxTier = int(level.levelnum / 3) + 1;
-            companionClass = g.getRandomCompanion(maxTier);
-            console.printf("scaling on, current tier:"..maxTier);
-          }else{
-            console.printf("scaling off");
-            companionClass = g.getRandomCompanion();
-          }
-          console.printf('trying to spawn '..companionClass.."Gun");
+          String companionClass = g.getRandomCompanion();
           Actor.Spawn(companionClass.."Gun", (e.Thing.pos.x+Random(-1, 1), e.Thing.pos.y+Random(-1, 1), e.Thing.pos.z));
         case 4:
         case 5:

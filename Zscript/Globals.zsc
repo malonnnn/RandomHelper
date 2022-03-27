@@ -129,18 +129,28 @@ class Globals : EventHandler
       wep.Destroy();
       // also push to companions so other functions can access it
       allCompanions.push(ac[i]);
-      Super.playerEntered(e);
     }
+    cVar scaleWithLevels = cVar.GetCVar('zdw_wadscale');
+    if(scaleWithLevels.GetBool())
+    {
+      int maxTier = int(level.levelnum / 3) + 1;
+      console.printf("Initializing Companions, Wadscaling on, Current Tier: "..maxTier);
+    }else{
+      console.printf("Initializing Every Companions, Wadscaling off, Current Tier: N/A");
+    }
+    Super.playerEntered(e);
   }
 
-  String getRandomCompanion(int maxTier = 0){
+  String getRandomCompanion(){
 
-    if(maxTier == 0)
+    cVar scaleWithLevels = cVar.GetCVar('zdw_wadscale');
+    if(!scaleWithLevels.GetBool())
     {
       int choice = Random(0, allCompanions.size() - 1);
       return allCompanions[choice];
     }else{
 
+      int maxTier = int(level.levelnum / 3) + 1;
       int tierLevel = Random(1, maxTier);
       int companionIndex;
 
