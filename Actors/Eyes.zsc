@@ -24,7 +24,13 @@ Class EyeEx : CompanionLostSoul //Just the normal explosive one
       ESYM C 10 bright A_FaceTarget;
       ESYM D 2 bright A_SkullAttack;
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
-      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
+      ESYM CCCCDDDD 1 bright
+      {
+        //A_JumpIfCloser(64, "Melee");
+        if(target && Distance3D(target) <= 64 && !(target is "PatrolPoint")){
+          SetStateLabel("Melee");
+        }
+      }
       Goto Missile+2;
 	  Melee:
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
@@ -70,7 +76,13 @@ Class EyePoison : CompanionLostSoul //Poison Emitting One
 	  	ESYM C 10 bright A_FaceTarget;
       ESYM D 2 bright A_SkullAttack;
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
-      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
+      ESYM CCCCDDDD 1 bright
+      {
+        //A_JumpIfCloser(64, "Melee");
+        if(target && Distance3D(target) <= 64 && !(target is "PatrolPoint")){
+          SetStateLabel("Melee");
+        }
+      }
       Goto Missile+2;
 	  Melee:
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
@@ -244,7 +256,13 @@ Class EyeSpider : CompanionLostSoul //Spider Spitter One
       ESYM C 10 bright A_FaceTarget;
       ESYM D 2 bright A_SkullAttack;
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
-      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
+      ESYM CCCCDDDD 1 Bright
+      {
+        //A_JumpIfCloser(64, "Melee");
+        if(target && Distance3D(target) <= 64 && !(target is "PatrolPoint")){
+          SetStateLabel("Melee");
+        }
+      }
       Goto Missile+2;
 	  Melee:
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
@@ -381,7 +399,13 @@ Class EyeBat : CompanionLostSoul //Bat Spawner One
       ESYM C 10 bright A_FaceTarget;
       ESYM D 2 bright A_SkullAttack;
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
-      ESYM CCCCDDDD 1 bright A_JumpIfCloser(64, "Melee");
+      ESYM CCCCDDDD 1 bright 
+      {
+        //A_JumpIfCloser(64, "Melee");
+        if(target && Distance3D(target) <= 64 && !(target is "PatrolPoint")){
+          SetStateLabel("Melee");
+        }
+      }
       Goto Missile+2;
   	Melee:
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);

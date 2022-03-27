@@ -42,7 +42,13 @@ class AracnorbQueen : Actor
     Missile:
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       TNT1 A 0 A_Jump(96, "BFG");
-      TNT1 A 0 A_JumpIfCloser(512, "CloseRange");
+      TNT1 A 0
+      {
+        //A_JumpIfCloser(512, "CloseRange");
+        if(target && Distance3D(target) <= 512 && !(target is "PatrolPoint")){
+          SetStateLabel("CloseRange");
+        }
+      }
       Goto LongRange;
     CloseRange:
       TNT1 A 0 A_Jump(176, "RapidFire");

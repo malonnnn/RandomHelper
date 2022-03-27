@@ -40,7 +40,13 @@ class Agaures : Actor
     Missile:
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       AGUR A 0 A_Jump(100, "Missile2");
-      AGUR A 0 A_JumpIfCloser(256, "Missile3");
+      AGUR A 0
+      {
+        //A_JumpIfCloser(256, "Missile3");
+        if(target && Distance3D(target) <= 256 && !(target is "PatrolPoint")){
+          SetStateLabel("Missile3");
+        }
+      }
       AGUR EF 8 A_FaceTarget;
       AGUR G 6 A_SpawnProjectile("AgauresBall", 37, 0, 0, 0, 0);
       goto See;

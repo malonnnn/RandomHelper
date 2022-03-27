@@ -67,8 +67,20 @@ class Marauder : Actor // Originally made by Spectre on YouTube. Rebalanced and 
 		Missile:
 			TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
 			MAUD U 0 A_JumpIfInventory("DogCharge", 3, "MissileDog");
-			MAUD U 0 A_JumpIfCloser(200,"MissileSSG");
-			MAUD U 0 A_JumpIfCloser(300,"MissileCharge");
+			MAUD U 0
+			{
+				//A_JumpIfCloser(200,"MissileSSG");
+        if(target && Distance3D(target) <= 200 && !(target is "PatrolPoint")){
+          SetStateLabel("MissileSSG");
+        }
+			}
+			MAUD U 0
+			{
+				//A_JumpIfCloser(300,"MissileCharge");
+        if(target && Distance3D(target) <= 300 && !(target is "PatrolPoint")){
+          SetStateLabel("MissileCharge");
+        }
+			}
 			// Axe attack
 			MAUD U 7 A_FaceTarget;
 			MAUD V 7 A_SpawnProjectile("MarauderAxe");
