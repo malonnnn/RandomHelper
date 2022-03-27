@@ -1426,6 +1426,40 @@ class ChainsawZombieGun : BaseDeployer
   }
 }
 
+class FloorTentacleGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Floor Tentacle";
+    Weapon.AmmoType2 "FloorTentacleAmmo";
+    Inventory.PickupMessage "Got Floor Tentacle!";
+    BaseDeployer.price 50;
+    Weapon.SlotPriority 50;
+  }
+  States
+  {
+    Spawn:
+      TEN1 A -1;
+      Stop;
+  }
+}
+
+class CeilingTentacleGun : FloorTentacleGun
+{
+  Default
+  {
+    Tag "Ceiling Tentacle";
+    Weapon.AmmoType2 "CeilingTentacleAmmo";
+    Inventory.PickupMessage "Got Ceiling Tentacle!";
+  }
+  States
+  {
+    Spawn:
+      TEN2 A -1;
+      Stop;
+  }
+}
+
 
 /* copy pastable example
 class AbaddonGun : BaseDeployer

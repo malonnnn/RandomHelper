@@ -663,3 +663,19 @@ class ChainsawZombieAmmo : CommonAmmoFeatures
     Inventory.Icon "CHANA1";
   }
 }
+
+class FloorTentacleAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "TEN1A0";
+  }
+}
+
+class CeilingTentacleAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "TEN2A0";
+  }
+}
