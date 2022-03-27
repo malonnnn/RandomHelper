@@ -4,26 +4,29 @@ How to add monsters
 Convert decorate to ZScript
 
 # 2.
-All monsters get in their default area<br>
-`MONSTER;`<br>
-`+FRIENDLY`<br>
-`Species "Companion";`<br>
-`DamageFactor "Companion", 0;`<br>
+Give this to all companions & their companions (if they have any)
+```
++FRIENDLY
+Species "Companion";
+DamageFactor "Companion", 0;
+```
 as well as<br>
 `DamageTypes` changed to `"Companion"` in their Melee + Missile states
 
 # 3.
-All projectiles get<br>
-`Species "Companion";`<br>
-`DamageType "Companion";`<br>
+All projectiles get
+```
+`Species "Companion";
+`DamageType "Companion";
+```
 as well as<br>
 `DamageTypes` damange functions changed to `"Companion"` in their Death states
 
 # 4.
 All puffs to be replaced with `"CompanionBulletPuff"`<br>
 <br>
-_This might mean altering the function to explicity add it in!_<br>
-Example:<br><br>
+_**This might mean altering the function to explicity add it in!**_<br><br>
+Example:<br>
 ```
 A_Explode (5);
 ```
@@ -76,7 +79,8 @@ Add<br>
 TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
 ```
 at appropriate locations<br>
-Be careful it doesnt interfere with Goto+&lt;number&gt;
+Be careful it doesnt interfere with Goto offsets<br>
+AKA `Goto+<number>`
 
 # 8.
 Add classes to `CompanionSpawner.zsc` in their appropriate tier.<br>
