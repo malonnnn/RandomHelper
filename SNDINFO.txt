@@ -1,3 +1,11 @@
+
+// Crash
+$random crash/death 	{ crash/death1 crash/death2 }
+crash/death1 		DSIDETH
+crash/death2		DSIDIEHI
+crash/pain		DSIPAIN
+crash/sight		DSITAUNT
+
 // Crackodemon
 cracko/see s_cracko
 cracko/pain p_cracko

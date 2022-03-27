@@ -1479,6 +1479,25 @@ class CrackodemonGun : BaseDeployer
   }
 }
 
+class CrashGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Crash";
+    Weapon.AmmoType2 "CrashAmmo";
+    Inventory.PickupMessage "Got Crash!";
+    BaseDeployer.price 100;
+    Weapon.SlotPriority 100;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      CRSH A -1;
+      Stop;
+  }
+}
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

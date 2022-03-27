@@ -687,3 +687,11 @@ class CrackodemonAmmo : CommonAmmoFeatures
     Inventory.Icon "HED9A1";
   }
 }
+
+class CrashAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CRSHA1";
+  }
+}
