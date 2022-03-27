@@ -668,7 +668,7 @@ class FloorTentacleAmmo : CommonAmmoFeatures
 {
   Default
   {
-    Inventory.Icon "TEN1A0";
+    Inventory.Icon "TEN1B0";
   }
 }
 
@@ -676,6 +676,14 @@ class CeilingTentacleAmmo : CommonAmmoFeatures
 {
   Default
   {
-    Inventory.Icon "TEN2A0";
+    Inventory.Icon "TEN2B0";
+  }
+}
+
+class CrackodemonAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "HED9A1";
   }
 }

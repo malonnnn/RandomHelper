@@ -49,7 +49,7 @@ class CompanionSpawner
       "FloorTentacleGun",
       "CeilingTentacleGun"
     };
-    String tier3[20] = {
+    String tier3[21] = {
       "BerserkCacoLichGun",
       "GasCacoLichGun",
       "MarineCompanionSSGGun",
@@ -69,7 +69,8 @@ class CompanionSpawner
       "ArachnobaronGun",
       "AracnorbQueenGun",
       "BerserkCacolanternGun",
-      "BFGCommandoGun"
+      "BFGCommandoGun",
+      "CrackodemonGun"
     };
     String tier4[18] = {
       "MarineCompanionBFG10KGun",

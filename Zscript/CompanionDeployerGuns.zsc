@@ -1460,6 +1460,24 @@ class CeilingTentacleGun : FloorTentacleGun
   }
 }
 
+class CrackodemonGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Crackodemon";
+    Weapon.AmmoType2 "CrackodemonAmmo";
+    Inventory.PickupMessage "Got Crackodemon!";
+    BaseDeployer.price 100;
+    Weapon.SlotPriority 100;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      HED9 A -1;
+      Stop;
+  }
+}
 
 /* copy pastable example
 class AbaddonGun : BaseDeployer
