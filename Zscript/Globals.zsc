@@ -2,6 +2,170 @@ class Globals : EventHandler
 {
   Array<Actor> companions;
 
+  Array<String> tier1;
+  Array<String> tier2;
+  Array<String> tier3;
+  Array<String> tier4;
+  Array<String> tier5;
+  Array<String> tier6;
+
+  Array<String> allCompanions;
+
+  override void playerEntered(PlayerEvent e)
+  {
+    if(tier1.Size() > 0){
+      return;
+    }
+    String ac[86] = {
+      "CompanionZombieMan",
+      "MarineCompanionPistol",
+      "MarineCompanionFist",
+      "MarineCompanionSG",
+      "MarineCompanionSSG",
+      "MarineCompanionCG",
+      "MarineCompanionRocket",
+      "MarineCompanionPlasma",
+      "MarineCompanionBFG9000",
+      "MarineCompanionBFG10K",
+      "MarineCompanionGL",
+      "MarineCompanionHSMissile",
+      "MarineCompanionRailgun",
+      "MarineCompanionSniper",
+      "MarineCompanionFlameThrower",
+      "MarineCompanionMG",
+      "MarineCompanionMinigun",
+      "MarineCompanionChainsaw",
+      "CompanionShotgunGuy",
+      "CompanionChaingunGuy",
+      "CompanionDemon",
+      "CompanionSpectre",
+      "CompanionLostSoul",
+      "CompanionCacodemon",
+      "CompanionPainElemental",
+      "CompanionBaronOfHell",
+      "CompanionHellKnight",
+      "CompanionArachnotron",
+      "CompanionArchvile",
+      "CompanionFatso",
+      "CompanionCyberdemon",
+      "CompanionSpiderMastermind",
+      "CompanionWolfensteinSS",
+      "CompanionRevenant",
+      "CompanionDoomImp",
+      "Belphegor",
+      "Afrit",
+      "Marauder",
+      "Arachnophyte",
+      "ArchonOfHell",
+      "MurderBall",
+      "Arachnobaron",
+      "BabyCaco",
+      "BeheadedKamikaze",
+      "Abaddon",
+      "Agathodemon",
+      "AnotherAgathodemon",
+      "Agaures",
+      "GhostlyAgaures",
+      "Annihilator",
+      "Aracnorb",
+      "AracnorbQueen",
+      "AugmentedArachnotron",
+      "AutoShotgunGuy",
+      "Azazel",
+      "Bad",
+      "EyePoison",
+      "EyeEx",
+      "EyeSpider",
+      "EyeBat",
+      "BeamRevenant",
+      "BeamZombie",
+      "BFGCommando",
+      "BlindPinky",
+      "BloodDemon",
+      "BloodFiend",
+      "Lurker",
+      "BloodGhost",
+      "BloodSkull",
+      "Blot",
+      "BruiserDemon",
+      "CacoLich",
+      "BerserkCacoLich",
+      "Cacolantern",
+      "Catharsi",
+      "ChaingunDemon",
+      "ChaingunMajor",
+      "ChaingunSpider",
+      "Chubbs",
+      "ChainsawZombie",
+      "FloorTentacle",
+      "CeilingTentacle",
+      "Crackodemon",
+      "Crash",
+      "Cyberbaron",
+      "Cyberimp"
+    };
+
+    for(int i = 0; i < ac.Size(); i++){
+
+      // Create gun related to companion
+      Actor wep = Actor.Spawn(ac[i].."Gun");
+      BaseDeployer weap = BaseDeployer(wep);
+
+      // Sort companion into tier based on price
+      if(weap.price < 25){
+        tier1.push(ac[i]);
+      }else if(weap.price < 50){
+        tier2.push(ac[i]);
+      }else if(weap.price < 100){
+        tier3.push(ac[i]);
+      }else if(weap.price < 200){
+        tier4.push(ac[i]);
+      }else if(weap.price < 500){
+        tier5.push(ac[i]);
+      }else{
+        tier6.push(ac[i]);
+      }
+      weap.Destroy();
+      wep.Destroy();
+      // also push to companions so other functions can access it
+      allCompanions.push(ac[i]);
+      Super.playerEntered(e);
+    }
+  }
+
+  String getRandomCompanion(int maxTier = 0){
+
+    if(maxTier == 0)
+    {
+      int choice = Random(0, allCompanions.size() - 1);
+      return allCompanions[choice];
+    }else{
+
+      int tierLevel = Random(1, maxTier);
+      int companionIndex;
+
+      if(tierLevel == 1){
+        companionIndex = Random(0, tier1.size() - 1);
+        return tier1[companionIndex];
+      }else if(tierLevel == 2){
+        companionIndex = Random(0, tier2.size() - 1);
+        return tier2[companionIndex];
+      }else if(tierLevel == 3){
+        companionIndex = Random(0, tier3.size() - 1);
+        return tier3[companionIndex];
+      }else if(tierLevel == 4){
+        companionIndex = Random(0, tier4.size() - 1);
+        return tier4[companionIndex];
+      }else if(tierLevel == 5){
+        companionIndex = Random(0, tier5.size() - 1);
+        return tier5[companionIndex];
+      }else{
+        companionIndex = Random(0, tier6.size() - 1);
+        return tier6[companionIndex];
+      }
+    }
+  }
+
   Actor createCompanion(String companionClass, Vector3 pos, Actor player = null, String tag = "", bool allowReplace = false){
     
     // companion flags are set in SetCompanionProperties.zsc

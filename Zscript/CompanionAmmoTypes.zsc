@@ -703,3 +703,11 @@ class CyberbaronAmmo : CommonAmmoFeatures
     Inventory.Icon "CBOSA1";
   }
 }
+
+class CyberimpAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CIMPA1";
+  }
+}

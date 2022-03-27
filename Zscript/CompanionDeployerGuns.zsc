@@ -1515,6 +1515,24 @@ class CyberbaronGun : BaseDeployer
       Stop;
   }
 }
+
+class CyberimpGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Cyberimp";
+    Weapon.AmmoType2 "CyberimpAmmo";
+    Inventory.PickupMessage "Got Cyberimp!";
+    BaseDeployer.price 25;
+    Weapon.SlotPriority 25;
+  }
+  States
+  {
+    Spawn:
+      CIMP A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
