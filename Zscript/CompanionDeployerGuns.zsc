@@ -1756,6 +1756,24 @@ class DeepOneGun : BaseDeployer
   }
 }
 
+class DemolisherGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Demolisher";
+    Weapon.AmmoType2 "DemolisherAmmo";
+    Inventory.PickupMessage "Got Demolisher!";
+    BaseDeployer.price 750;
+    Weapon.SlotPriority 750;
+    Scale 0.15;
+  }
+  States
+  {
+    Spawn:
+      DEMO A -1;
+      Stop;
+  }
+}
 
 /* copy pastable example
 class AbaddonGun : BaseDeployer

@@ -1,3 +1,8 @@
+// Demolisher
+monster/demsit dsdemsit
+spider/attack dscannon
+monster/demdth dsdemdth
+
 // Deep One
 $random deepone/pain { deepone/hurt1 deepone/hurt2 deepone/hurt3 deepone/hurt4 }
 deepone/hurt1 	DEEPPN1

@@ -807,3 +807,11 @@ class DeepOneAmmo : CommonAmmoFeatures
     Inventory.Icon "CUTHA1";
   }
 }
+
+class DemolisherAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "DEMOA1D1";
+  }
+}
