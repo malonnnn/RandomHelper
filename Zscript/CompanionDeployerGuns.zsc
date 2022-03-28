@@ -1645,6 +1645,24 @@ class DarkImpNamiGun : BaseDeployer
   }
 }
 
+class DarkImpNetherGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Dark Imp Nether";
+    Weapon.AmmoType2 "DarkImpNetherAmmo";
+    Inventory.PickupMessage "Got Dark Imp Nether!";
+    BaseDeployer.price 15;
+    Weapon.SlotPriority 15;
+  }
+  States
+  {
+    Spawn:
+      DRKF A -1;
+      Stop;
+  }
+}
+
 
 /* copy pastable example
 class AbaddonGun : BaseDeployer

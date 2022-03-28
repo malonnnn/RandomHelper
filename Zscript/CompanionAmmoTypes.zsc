@@ -759,3 +759,11 @@ class DarkImpNamiAmmo : CommonAmmoFeatures
     Inventory.Icon "DRKIA1";
   }
 }
+
+class DarkImpNetherAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "DRKFA1";
+  }
+}
