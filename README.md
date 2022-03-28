@@ -14,10 +14,10 @@ as well as<br>
 `DamageTypes` changed to `"Companion"` in their Melee + Missile states
 
 # 3.
-All projectiles get
+All projectiles or +Missile actors/w damage set, get the following
 ```
-`Species "Companion";
-`DamageType "Companion";
+Species "Companion";
+DamageType "Companion";
 ```
 as well as<br>
 `DamageTypes` damange functions changed to `"Companion"` in their Death states
@@ -83,7 +83,7 @@ Be careful it doesnt interfere with Goto offsets<br>
 AKA `Goto+<number>`
 
 # 8.
-Add classes to `CompanionSpawner.zsc` in their appropriate tier.<br>
+Add new companion to `Globals.zsc`.<br>
 
 # 9.
 Add their DeployerGun by copy-pasting an editing an existing one<br>
