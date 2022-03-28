@@ -1590,6 +1590,25 @@ class CybruiserGun : BaseDeployer
   }
 }
 
+class DarkCardinalGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Dark Cardinal";
+    Weapon.AmmoType2 "DarkCardinalAmmo";
+    Inventory.PickupMessage "Got Dark Cardinal!";
+    BaseDeployer.price 750;
+    Weapon.SlotPriority 750;
+    Scale 0.28;
+  }
+  States
+  {
+    Spawn:
+      CARD A -1;
+      Stop;
+  }
+}
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

@@ -1,0 +1,434 @@
+Class DarkCardinal : Actor
+{
+  Default
+  {
+    MONSTER;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Health 4500;
+    Speed 6;
+    Radius 24;
+    Height 112;
+    PainChance 50;
+    Mass 700;
+    Meleedamage 10;
+    SeeSound "cyber/sight";
+    PainSound "brain/pain";
+    DeathSound "cyber/death";
+    Missiletype "Cardinal_Rocket";
+    MissileHeight 72;
+    +NORADIUSDMG
+    +NOGRAVITY
+    +FLOATBOB
+    +FLOAT
+    bloodcolor "green";
+    Obituary "%o was blessed by the dark cardinal.";
+  }
+  States
+  {
+    Spawn:
+      CARD AB 4 Bright A_Look;
+      Loop;
+    See:
+      CARD AABBAABBAABB 2 Bright A_Chase;
+      loop;
+    Missile:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      CARD A 0 A_jump(10,6);
+      CARD A 0 A_jump(100,7);
+      CARD C 4 Bright A_FaceTarget;
+      CARD D 5 Bright A_SpawnProjectile("Cardinal_Rocket", 72, -30, 0);
+      CARD C 4 Bright A_FaceTarget;
+      CARD D 5 Bright A_SpawnProjectile("Cardinal_Rocket", 72, -30, 0);
+      Goto See;
+      CARD C 4 Bright A_FaceTarget;
+      CARD D 5 Bright A_SpawnProjectile("pain_gernade", 72, -30, 0);
+      Goto See;
+      CARD C 4 Bright A_FaceTarget;
+      CARD D 5 Bright A_SpawnProjectile("CardinalPlasma", 72, -30, 0);
+      CARD C 4 Bright A_FaceTarget;
+      CARD D 5 Bright A_SpawnProjectile("CardinalPlasma", 72, -30, 0);
+      CARD C 4 Bright A_FaceTarget;
+      CARD D 5 Bright A_SpawnProjectile("CardinalPlasma", 72, -30, 0);
+      CARD C 4 Bright A_FaceTarget;
+      CARD D 5 Bright A_SpawnProjectile("CardinalPlasma", 72, -30, 0);
+      CARD C 4 Bright A_FaceTarget;
+      CARD D 5 Bright A_SpawnProjectile("CardinalPlasma", 72, -30, 0);
+      CARD C 4 Bright A_FaceTarget;
+      CARD D 5 Bright A_SpawnProjectile("CardinalPlasma", 72, -30, 0);
+      Goto See;
+    Pain:
+      CARD A 4 Bright;
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,0,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,20,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,40,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,60,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,80,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,100,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,120,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,140,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,160,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,180,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,200,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,220,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,240,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,260,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,280,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,300,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,320,2,0);
+      CARD A 0 Bright A_SpawnProjectile("DeathBall",72,0,340,2,0);
+      Goto See;
+    Death:
+      CARD E 8 Bright;
+      CARD F 8 Bright A_Scream;
+      CARD G 8 Bright A_NoBlocking;
+      CARD H 8 Bright;
+      CARD I 8 Bright A_Explode;
+      CARD J 8 Bright;
+      CARD K 8 Bright;
+      CARD L 8 Bright;
+      Stop;
+   }
+}
+
+Class Cardinal_Rocket : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 11;
+    Height 8;
+    Speed 20;
+    Damage 24;
+    Projectile;
+    +RANDOMIZE;
+    +DEHEXPLOSION;
+    +ROCKETTRAIL;
+    SeeSound "weapons/rocklf";
+    DeathSound "weapons/rocklx";
+  }
+	States
+	{
+    Spawn:
+      CROC AB 4 Bright;
+      Loop;
+    Death:
+      CROC C 8 Bright A_Explode(24,-1, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      CROC D 6 Bright;
+      CROC E 4 Bright;
+      Stop;
+	}
+}
+
+Class pain_gernade : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 11;
+    Height 8;
+    Speed 20;
+    Damage 5;
+    Projectile;
+    +DoomBounce
+    -NoGravity
+    scale .25;
+    translation "168 : 191 = 112 : 127";
+    SeeSound "weapons/rocklf";
+    DeathSound "caco/death";
+  }
+	States
+	{
+    Spawn:
+      HEAD A 2 Bright
+      {
+        A_SpawnProjectile("faintGhost1", 0, 0, 0);
+      }
+      Loop;
+    Death:
+      HEAD GHIJ 8;
+      HEAD k 8 A_SpawnItem("Fire", 0, 0);
+      HEAD L -1;
+      Stop;
+	}
+}
+
+Class Fire : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    +NOBLOCKMAP
+    +NOTELEPORT
+    +NOGRAVITY
+    RenderStyle "Add";
+    Alpha 0.9;
+  }
+	States
+	{
+    Spawn:
+      FIRE ABCD 6 Bright;
+      FIRE E 6 Bright
+      {
+        //A_SpawnItem("paingasm", 0, 0);
+        Globals g = Globals(EventHandler.Find("Globals"));
+        g.createCompanion("paingasm", pos);
+      }
+      FIRE FGH 6 Bright;
+      Stop;
+	}
+}
+
+Class paingasm : Actor
+{
+  Default
+  {
+    Monster;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Health 500;
+    Radius 31;
+    Height 56;
+    Mass 400;
+    Speed 25;
+    PainChance 128;
+    bloodcolor "blue";
+    +FLOAT
+    +NOGRAVITY
+    AttackSound "imp/melee";
+    SeeSound "caco/sight";
+    PainSound "caco/pain";
+    DeathSound "caco/death";
+    ActiveSound "caco/active";
+    Obituary "you were removed from life by a paingasm";
+    HitObituary "your face got tore off by a paingasm";
+    translation "168:191=112:127";
+    RenderStyle "Translucent";
+    Alpha 0.5;
+  }
+	States
+	{
+    Spawn:
+      HEAD A 10 A_Look;
+      Loop;
+    See:
+      HEAD A 3 A_Chase;
+      HEAD A 0 A_SpawnProjectile("faintGhost2", 0, 0, 0);
+      Loop;
+    Missile:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      HEAD B 5 A_FaceTarget;
+      HEAD C 5 A_FaceTarget;
+      HEAD D 5 BRIGHT A_SpawnProjectile("painball", 24, 0, 0);
+      Goto See;
+    Melee:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      HEAD B 4 A_FaceTarget;
+      HEAD C 4 A_FaceTarget;
+      HEAD D 4 A_FaceTarget;
+      HEAD C 4 A_CompanionSargAttack();
+      HEAD B 4 A_FaceTarget;
+      HEAD a 4 A_FaceTarget;
+      Goto See;
+    Pain:
+      HEAD E 3;
+      HEAD E 3 A_Pain;
+      HEAD F 6;
+      Goto See;
+    Death:
+      HEAD G 8;
+      HEAD H 8 A_Scream;
+      HEAD I 8;
+      HEAD J 8;
+      HEAD K 8 A_NoBlocking;
+      HEAD L -1 A_SetFloorClip;
+      Stop;
+	}
+
+  void A_CompanionSargAttack()
+  {
+    let targ = target;
+    if (targ && CheckMeleeRange())
+    {
+      int damage = random[pr_sargattack](1, 10) * 4;
+      int newdam = targ.DamageMobj (self, self, damage, "Companion");
+      targ.TraceBleed (newdam > 0 ? newdam : damage, self);
+    }
+  }
+}
+
+Class faintGhost1 : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    PROJECTILE;
+    Radius 1;
+    Height 1;
+    Speed 0;
+    Damage 0;
+    Mass 100;
+    translation "168 : 191 = 112 : 127";
+    RenderStyle "Translucent";
+    Alpha 0.9;
+    scale .25;
+  }
+	States
+	{
+    Spawn:
+      TNT1 A 0 A_FaceTarget;
+      TNT1 A 0 Thing_ChangeTid(0,390);
+      HEAD A 2 A_fadeout(0.05);
+      loop;
+	}
+}
+
+Class faintGhost2 : faintGhost1
+{
+  Default
+  {
+	  scale 1;
+  }
+	States
+	{
+    Spawn:
+      TNT1 A 0 A_FaceTarget;
+      TNT1 A 0 Thing_ChangeTid(0,390);
+      HEAD A 2 A_fadeout(0.05);
+      loop;
+	}
+}
+
+Class faintGhost3 : faintGhost1
+{
+  Default
+  {
+	  scale 1;
+  }
+	States
+	{
+    Spawn:
+      TNT1 A 0 A_FaceTarget;
+      TNT1 A 0 Thing_ChangeTid(0,390);
+      CARD AB 2 A_fadeout(0.05);
+      loop;
+	}
+}
+
+Class painball : BaronBall
+{
+  Default
+  {
+    translation "112 : 127 = 192 : 207";
+  }
+	States
+	{
+    Spawn:
+      BAL7 AB 4 BRIGHT;
+      Loop;
+    Death:
+      BAL7 CDE 6 BRIGHT;
+      Stop;
+	}
+}
+
+Class DeathBall : CompanionBaronBall
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Damage 1;
+    +SEEKERMISSILE
+    scale .8;
+  }
+  States
+  {
+    Spawn:
+      BAL7 A 4 BRIGHT A_Tracer;
+      BAL7 A 0 BRIGHT A_SpawnItem("BallTail", 0, 0);
+      BAL7 B 4 BRIGHT A_Tracer;
+      BAL7 A 0 BRIGHT A_SpawnItem("BallTail", 0, 0);
+      Loop;
+    Death:
+      BAL7 CDE 6 BRIGHT;
+      Stop;
+  }
+}
+
+Class BallTail : faintGhost1
+{
+  Default
+  {
+	  scale .6;
+  }
+	States
+	{
+    Spawn:
+      TNT1 A 0 A_FaceTarget;
+      TNT1 A 0 Thing_ChangeTid(0,390);
+      BAL7 AB 2 A_fadeout(0.05);
+      loop;
+	}
+}
+
+Class CardinalPlasma : Actor
+{
+  Default
+	{
+    Species "Companion";
+    DamageType "Companion";
+    Projectile;
+    Radius 11;
+    Height 8;
+    Speed 20;
+    Damage 16;
+    +FLOATBOB
+    SeeSound "imp/attack";
+    DeathSound "";
+    scale 1.0;
+  }
+	States
+	{
+    Spawn:
+      CRTA J 1 Bright A_SpawnItem("plasmaTail", 0, 0);
+      Loop;
+    Death:
+      TNT1 A 0 A_FaceTarget;
+      TNT1 A 0 Thing_ChangeTid(0,390);
+      CRTA J 2 A_fadeout(0.05);
+      Stop;
+	}
+}
+
+Class plasmaTail : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    PROJECTILE;
+    Radius 1;
+    Height 1;
+    Speed 0;
+    Damage 0;
+    Mass 100;
+    +FLOATBOB;
+    scale .25;
+    scale 1.0;
+  }
+	States
+	{
+	  Spawn:
+      TNT1 A 0 A_FaceTarget;
+      TNT1 A 0 Thing_ChangeTid(0,390);
+      CRTA IHGFEDCBABCDEFGHIJ 2 BRIGHT A_fadeout(0.05);
+      loop;
+	}
+}

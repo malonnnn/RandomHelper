@@ -735,3 +735,11 @@ class CybruiserAmmo : CommonAmmoFeatures
     Inventory.Icon "CBRUA1";
   }
 }
+
+class DarkCardinalAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CARDA1";
+  }
+}

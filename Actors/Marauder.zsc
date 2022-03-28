@@ -239,7 +239,7 @@ class MarauderDog : Actor
 		Melee:
 			TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
 			MDOG EF 4 Bright A_FaceTarget;
-			MDOG G 4 Bright A_SargAttack;
+			MDOG G 4 Bright A_CompanionSargAttack();
 			Goto See;
 		Death:
 			MDOG I 0 A_Scream;
@@ -249,6 +249,17 @@ class MarauderDog : Actor
 			MDOG L -1;
 			Stop;
 	}
+
+	void A_CompanionSargAttack()
+  {
+    let targ = target;
+    if (targ && CheckMeleeRange())
+    {
+      int damage = random[pr_sargattack](1, 10) * 4;
+      int newdam = targ.DamageMobj (self, self, damage, "Companion");
+      targ.TraceBleed (newdam > 0 ? newdam : damage, self);
+    }
+  }
 }
 
 class DontMeleeAgain : Inventory
