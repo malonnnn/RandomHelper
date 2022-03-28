@@ -1708,6 +1708,7 @@ class DefilerGun : BaseDeployer
     Inventory.PickupMessage "Got Defiler!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
+    Scale 0.4;
   }
   States
   {
@@ -1717,6 +1718,24 @@ class DefilerGun : BaseDeployer
   }
 }
 
+class DeathIncarnateGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Death Incarnate";
+    Weapon.AmmoType2 "DeathIncarnateAmmo";
+    Inventory.PickupMessage "Got Death Incarnate!";
+    BaseDeployer.price 1;
+    Weapon.SlotPriority 1;
+    Scale 0.35;
+  }
+  States
+  {
+    Spawn:
+      INCA A -1;
+      Stop;
+  }
+}
 
 
 /* copy pastable example

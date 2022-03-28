@@ -791,3 +791,11 @@ class DefilerAmmo : CommonAmmoFeatures
     Inventory.Icon "DEFIA1";
   }
 }
+
+class DeathIncarnateAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "INCAA1D1";
+  }
+}
