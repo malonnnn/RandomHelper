@@ -1725,8 +1725,8 @@ class DeathIncarnateGun : BaseDeployer
     Tag "Death Incarnate";
     Weapon.AmmoType2 "DeathIncarnateAmmo";
     Inventory.PickupMessage "Got Death Incarnate!";
-    BaseDeployer.price 1;
-    Weapon.SlotPriority 1;
+    BaseDeployer.price 30;
+    Weapon.SlotPriority 30;
     Scale 0.35;
   }
   States
