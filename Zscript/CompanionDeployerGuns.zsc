@@ -1737,6 +1737,25 @@ class DeathIncarnateGun : BaseDeployer
   }
 }
 
+class DeepOneGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Deep One";
+    Weapon.AmmoType2 "DeepOneAmmo";
+    Inventory.PickupMessage "Got Deep One!";
+    BaseDeployer.price 300;
+    Weapon.SlotPriority 300;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      CUTH A -1;
+      Stop;
+  }
+}
+
 
 /* copy pastable example
 class AbaddonGun : BaseDeployer

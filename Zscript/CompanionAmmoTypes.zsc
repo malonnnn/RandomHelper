@@ -799,3 +799,11 @@ class DeathIncarnateAmmo : CommonAmmoFeatures
     Inventory.Icon "INCAA1D1";
   }
 }
+
+class DeepOneAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CUTHA1";
+  }
+}
