@@ -1,3 +1,8 @@
+// Defiler
+Defiler/Attack	DEFIATK
+Defiler/Sight	DEFISIT
+Defiler/Death	DEFIDETH
+
 // Dark Devil
 $RANDOM monster/ddvsit { monster/ddvsi1 monster/ddvsi2 }
 monster/ddvsi1 dsddvsi1

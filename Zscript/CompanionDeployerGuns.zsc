@@ -1699,6 +1699,24 @@ class DarkImpVoidGun : BaseDeployer
   }
 }
 
+class DefilerGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Defiler";
+    Weapon.AmmoType2 "DefilerAmmo";
+    Inventory.PickupMessage "Got Defiler!";
+    BaseDeployer.price 100;
+    Weapon.SlotPriority 100;
+  }
+  States
+  {
+    Spawn:
+      DEFI A -1;
+      Stop;
+  }
+}
+
 
 
 /* copy pastable example

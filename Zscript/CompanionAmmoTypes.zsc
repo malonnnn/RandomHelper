@@ -783,3 +783,11 @@ class DarkImpVoidAmmo : CommonAmmoFeatures
     Inventory.Icon "DRKVA1";
   }
 }
+
+class DefilerAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "DEFIA1";
+  }
+}
