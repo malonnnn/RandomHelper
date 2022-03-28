@@ -1627,6 +1627,24 @@ class DarkDevilGun : BaseDeployer
   }
 }
 
+class DarkImpNamiGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Dark Imp Nami";
+    Weapon.AmmoType2 "DarkImpNamiAmmo";
+    Inventory.PickupMessage "Got Dark Imp Nami!";
+    BaseDeployer.price 15;
+    Weapon.SlotPriority 15;
+  }
+  States
+  {
+    Spawn:
+      DRKI A -1;
+      Stop;
+  }
+}
+
 
 /* copy pastable example
 class AbaddonGun : BaseDeployer
