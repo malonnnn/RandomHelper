@@ -1,3 +1,13 @@
+// Devastator Zombie
+weapons/devfir                dsdevfir
+weapons/devbal                dsdevbal
+weapons/devexp                dsdevexp
+weapons/devex2                dsdevex2
+weapons/devlit                dsdevlit
+weapons/devzap                dsdevzap
+weapons/devchr                dsdevchr
+weapons/devfch                dsdevfch
+
 // Demolisher
 monster/demsit dsdemsit
 spider/attack dscannon

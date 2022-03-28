@@ -1775,6 +1775,23 @@ class DemolisherGun : BaseDeployer
   }
 }
 
+class DevastatorZombieGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Devastator Zombie";
+    Weapon.AmmoType2 "DevastatorZombieAmmo";
+    Inventory.PickupMessage "Got Devastator Zombie!";
+    BaseDeployer.price 75;
+    Weapon.SlotPriority 75;
+  }
+  States
+  {
+    Spawn:
+      DEVZ A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

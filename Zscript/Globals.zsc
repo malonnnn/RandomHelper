@@ -16,7 +16,8 @@ class Globals : EventHandler
     if(tier1.Size() > 0){
       return;
     }
-    String ac[99] = {  // increment this number then add your companion to top of list
+    String ac[100] = {  // increment this number then add your companion to top of list
+      "DevastatorZombie",
       "Demolisher",
       "DeepOne",
       "DeathIncarnate",
