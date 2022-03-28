@@ -1811,6 +1811,23 @@ class DevilGun : BaseDeployer
   }
 }
 
+class DiabloistGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Diabloist";
+    Weapon.AmmoType2 "DiabloistAmmo";
+    Inventory.PickupMessage "Got Diabloist!";
+    BaseDeployer.price 150;
+    Weapon.SlotPriority 150;
+  }
+  States
+  {
+    Spawn:
+      DIAB A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
