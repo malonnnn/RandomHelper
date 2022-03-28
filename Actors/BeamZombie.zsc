@@ -19,7 +19,6 @@ Class BeamZombie : Actor
     deathsound "grunt/death";
     activesound "grunt/active";
     dropitem "Cell", 192;
-    MaxTargetRange 1024;
     +FLOORCLIP
   }
   States

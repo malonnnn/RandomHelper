@@ -1553,6 +1553,24 @@ class CyberMastermindGun : BaseDeployer
   }
 }
 
+class CyberFiendGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Cyber Fiend";
+    Weapon.AmmoType2 "CyberFiendAmmo";
+    Inventory.PickupMessage "Got Cyber Fiend!";
+    BaseDeployer.price 25;
+    Weapon.SlotPriority 25;
+  }
+  States
+  {
+    Spawn:
+      CYMM A -1;
+      Stop;
+  }
+}
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

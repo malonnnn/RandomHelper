@@ -16,7 +16,8 @@ class Globals : EventHandler
     if(tier1.Size() > 0){
       return;
     }
-    String ac[87] = {
+    String ac[88] = {
+      "CyberFiend",
       "CyberMastermind",
       "CompanionZombieMan",
       "MarineCompanionPistol",

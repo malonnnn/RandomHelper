@@ -1,3 +1,13 @@
+// CyberFiend
+CyberFiend/Sight	CYFNDSIT
+CyberFiend/Attack	CYFNDATK
+CyberFiend/Death	CYFNDDTH
+CyberFiend/Active	CYFNACTV
+CyberFiend/Step1	CYFNSTP1
+CyberFiend/Step2	CYFNSTP2
+$Random CyberFiend/Walk { CyberFiend/Step1 CyberFiend/Step2 }
+CyberFiend/Pain	CYFNPAIN
+
 // Cyberimp
 $RANDOM CIMPSIT { CIMPSIT1 CIMPSIT2 }
 CIMPSIT1	CIMPCIT1

@@ -719,3 +719,11 @@ class CyberMastermindAmmo : CommonAmmoFeatures
     Inventory.Icon "CYMMA1";
   }
 }
+
+class CyberFiendAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CYFNA1C1";
+  }
+}
