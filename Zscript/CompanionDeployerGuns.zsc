@@ -1792,6 +1792,25 @@ class DevastatorZombieGun : BaseDeployer
       Stop;
   }
 }
+
+class DevilGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Devil";
+    Weapon.AmmoType2 "DevilAmmo";
+    Inventory.PickupMessage "Got Devil!";
+    BaseDeployer.price 10;
+    Weapon.SlotPriority 10;
+  }
+  States
+  {
+    Spawn:
+      TRO2 A -1;
+      Stop;
+  }
+}
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

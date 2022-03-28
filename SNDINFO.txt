@@ -1,3 +1,13 @@
+// Devil
+$RANDOM monster/dvlsit { monster/dvlsi1 monster/dvlsi2 }
+monster/dvlsi1 dsdvlsi1
+monster/dvlsi2 dsdvlsi2
+monster/dvlpai dsdvlpai
+$RANDOM monster/dvldth { monster/dvldt1 monster/dvldt2 }
+monster/dvldt1 dsdvldt1
+monster/dvldt2 dsdvldt2
+monster/dvlact dsdvlact
+
 // Devastator Zombie
 weapons/devfir                dsdevfir
 weapons/devbal                dsdevbal

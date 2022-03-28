@@ -823,3 +823,11 @@ class DevastatorZombieAmmo : CommonAmmoFeatures
     Inventory.Icon "DEVZA1";
   }
 }
+
+class DevilAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "TRO2A1C1";
+  }
+}
