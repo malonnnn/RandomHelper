@@ -1663,6 +1663,25 @@ class DarkImpNetherGun : BaseDeployer
   }
 }
 
+class DarkImpSTGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Dark Imp ST";
+    Weapon.AmmoType2 "DarkImpSTAmmo";
+    Inventory.PickupMessage "Got Dark Imp ST!";
+    BaseDeployer.price 15;
+    Weapon.SlotPriority 15;
+  }
+  States
+  {
+    Spawn:
+      DKB1 A -1;
+      Stop;
+  }
+}
+
+
 
 /* copy pastable example
 class AbaddonGun : BaseDeployer
