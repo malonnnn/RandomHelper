@@ -1616,8 +1616,8 @@ class DarkDevilGun : BaseDeployer
     Tag "Dark Devil";
     Weapon.AmmoType2 "DarkDevilAmmo";
     Inventory.PickupMessage "Got Dark Devil!";
-    BaseDeployer.price 20;
-    Weapon.SlotPriority 20;
+    BaseDeployer.price 15;
+    Weapon.SlotPriority 15;
   }
   States
   {
@@ -1634,8 +1634,8 @@ class DarkImpNamiGun : BaseDeployer
     Tag "Dark Imp Nami";
     Weapon.AmmoType2 "DarkImpNamiAmmo";
     Inventory.PickupMessage "Got Dark Imp Nami!";
-    BaseDeployer.price 15;
-    Weapon.SlotPriority 15;
+    BaseDeployer.price 10;
+    Weapon.SlotPriority 10;
   }
   States
   {
@@ -1652,8 +1652,8 @@ class DarkImpNetherGun : BaseDeployer
     Tag "Dark Imp Nether";
     Weapon.AmmoType2 "DarkImpNetherAmmo";
     Inventory.PickupMessage "Got Dark Imp Nether!";
-    BaseDeployer.price 15;
-    Weapon.SlotPriority 15;
+    BaseDeployer.price 10;
+    Weapon.SlotPriority 10;
   }
   States
   {
@@ -1670,13 +1670,31 @@ class DarkImpSTGun : BaseDeployer
     Tag "Dark Imp ST";
     Weapon.AmmoType2 "DarkImpSTAmmo";
     Inventory.PickupMessage "Got Dark Imp ST!";
-    BaseDeployer.price 15;
-    Weapon.SlotPriority 15;
+    BaseDeployer.price 10;
+    Weapon.SlotPriority 10;
   }
   States
   {
     Spawn:
       DKB1 A -1;
+      Stop;
+  }
+}
+
+class DarkImpVoidGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Dark Imp Void";
+    Weapon.AmmoType2 "DarkImpVoidAmmo";
+    Inventory.PickupMessage "Got Dark Imp Void!";
+    BaseDeployer.price 10;
+    Weapon.SlotPriority 10;
+  }
+  States
+  {
+    Spawn:
+      DRKV A -1;
       Stop;
   }
 }

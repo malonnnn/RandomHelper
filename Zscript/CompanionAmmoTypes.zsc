@@ -775,3 +775,11 @@ class DarkImpSTAmmo : CommonAmmoFeatures
     Inventory.Icon "DRKSA1";
   }
 }
+
+class DarkImpVoidAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "DRKVA1";
+  }
+}
