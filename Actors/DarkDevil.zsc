@@ -1,0 +1,110 @@
+Class DarkDevil : CompanionDoomImp
+{
+  Default
+  {
+    MONSTER;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    obituary "%o was scorched by a Dark Devil.";
+    hitobituary "%o was shredded by a Dark Devil.";
+    health 160;
+    radius 20;
+    height 56;
+    mass 120;
+    speed 12;
+    painchance 110;
+    seesound "monster/ddvsit";
+    painsound "monster/ddvpai";
+    deathsound "monster/ddvdth";
+    activesound "monster/ddvact";
+    +FLOORCLIP
+    +DONTHARMCLASS
+    +MISSILEMORE
+  }
+
+  states
+  {
+    Spawn:
+      DDVL AB 10 A_Look();
+      loop;
+    See:
+      DDVL AABBCCDD 3 A_Chase();
+      loop;
+    Missile:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      DDVL EF 5 A_FaceTarget();
+      DDVL GGG 3 A_CustomComboAttack("DarkDevilBall",32,3,"imp/melee", "Companion");
+      DDVL G 0 A_Jump(200, "EndMissile");
+      DDVL GGGGGG 3 A_CustomComboAttack("DarkDevilBall",32,3,"imp/melee", "Companion");
+    EndMissile:
+      DDVL G 3;
+      goto See;
+    Melee:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      DDVL EF 5 A_FaceTarget();
+      DDVL G 6 A_CustomComboAttack("DarkDevilBall",32,8,"imp/melee", "Companion");
+      goto See;
+    Pain:
+      DDVL H 2;
+      DDVL H 2 A_Pain();
+      goto See;
+    Death:
+      DDVL I 0 A_jump(130,"death2");
+      DDVL I 8;
+      DDVL J 8 A_Scream();
+      DDVL K 6;
+      DDVL L 6 A_NoBlocking();
+      DDVL M -1;
+      stop;
+    Death2:
+      DDVL N 5;
+      DDVL O 5 A_Scream();
+      DDVL P 5 A_NoBlocking();
+      DDVL Q 5;
+      DDVL R -1;
+      stop;
+    XDeath:
+      DDVL S 5;
+      DDVL T 5 A_XScream();
+      DDVL U 5;
+      DDVL V 5 A_NoBlocking();
+      DDVL WXY 5;
+      DDVL Z -1;
+      stop;
+    Raise:
+      DDVL ML 8;
+      DDVL KJI 6;
+      goto See;
+  }
+}
+
+Class DarkDevilBall : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    PROJECTILE;
+    Radius 8;
+    Height 6;
+    Speed 16;
+    Damage 2;
+    Scale 0.75;
+    RENDERSTYLE "ADD";
+    ALPHA 0.67;
+    SeeSound "imp/attack";
+    DeathSound "imp/shotx";
+    Decal "DoomImpScorch";
+  }
+
+  States
+  {
+    Spawn:
+      DKB1 AB 3 Bright A_Weave(random(-5,5), 0, random(-5,5), 0);
+      Loop;
+    Death:
+      DKB1 CDE 4 Bright;
+      Stop;
+  }
+}

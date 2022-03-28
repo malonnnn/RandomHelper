@@ -743,3 +743,11 @@ class DarkCardinalAmmo : CommonAmmoFeatures
     Inventory.Icon "CARDA1";
   }
 }
+
+class DarkDevilAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "DDVLA1C1";
+  }
+}

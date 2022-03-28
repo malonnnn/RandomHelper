@@ -1609,6 +1609,25 @@ class DarkCardinalGun : BaseDeployer
   }
 }
 
+class DarkDevilGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Dark Devil";
+    Weapon.AmmoType2 "DarkDevilAmmo";
+    Inventory.PickupMessage "Got Dark Devil!";
+    BaseDeployer.price 20;
+    Weapon.SlotPriority 20;
+  }
+  States
+  {
+    Spawn:
+      DDVL A -1;
+      Stop;
+  }
+}
+
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

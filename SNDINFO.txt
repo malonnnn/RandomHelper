@@ -1,3 +1,13 @@
+// Dark Devil
+$RANDOM monster/ddvsit { monster/ddvsi1 monster/ddvsi2 }
+monster/ddvsi1 dsddvsi1
+monster/ddvsi2 dsddvsi2
+monster/ddvpai dsddvpai
+$RANDOM monster/ddvdth { monster/ddvdt1 monster/ddvdt2 }
+monster/ddvdt1 dsddvdt1
+monster/ddvdt2 dsddvdt2
+monster/ddvact dsddvact
+
 // Cybruiser
 monster/brusit dsbrusit
 monster/brudth dsbrudth
