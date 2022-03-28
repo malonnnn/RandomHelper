@@ -952,7 +952,7 @@ class HeatSeekingMissile : Actor
       HRKT A 0 A_SpawnItemEx ("MissileTrail", 3, 0, 0, 1);
       loop;
     Death:
-      FX08 A 6 bright A_Explode(96,128,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion")
+      FX08 A 6 bright A_Explode(96,128,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       FX08 BCDEFGH 4 bright;
       Stop;
   }

@@ -1571,6 +1571,25 @@ class CyberFiendGun : BaseDeployer
   }
 }
 
+class CybruiserGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Cybruiser";
+    Weapon.AmmoType2 "CybruiserAmmo";
+    Inventory.PickupMessage "Got Cybruiser!";
+    BaseDeployer.price 300;
+    Weapon.SlotPriority 300;
+    Scale 0.4;
+  }
+  States
+  {
+    Spawn:
+      CBRU A -1;
+      Stop;
+  }
+}
+
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

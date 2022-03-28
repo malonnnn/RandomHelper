@@ -131,7 +131,7 @@ Class Comet : Actor
       Loop;
     Death:
       COMT D 3 Bright A_SpawnItemEx("CometDeathGlow");
-      COMT E 3 Bright A_Explode(80, 80, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion")
+      COMT E 3 Bright A_Explode(80, 80, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       TNT1 A 0 A_SpawnItemEx("CometDeath");
       Stop;
   }

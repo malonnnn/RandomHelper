@@ -1,0 +1,124 @@
+Class Cybruiser : CompanionBaronOfHell
+{
+  Default
+  {
+    MONSTER;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Health 2000;
+    Radius 24;
+    Height 64;
+    Mass 1000;
+    Speed 8;
+    PainChance 20;
+    Obituary "%o was blown away by a Cybruiser.";
+    HitObituary "%o was smashed by a Cybruiser.";
+    SeeSound "monster/brusit";
+    PainSound "baron/pain";
+    DeathSound "monster/brudth";
+    Monster;
+    +FloorClip
+    +MissileMore
+    +Boss
+    +DontHarmClass
+  }
+
+  States
+  {
+    Spawn:
+      CBRU AB 10 A_Look();
+      Loop;
+    See:
+      CBRU A 1 A_StartSound("monster/bruwlk");
+      CBRU A 2 A_Chase();
+      CBRU A 3 A_Chase();
+      CBRU BB 3 A_Chase();
+      CBRU C 1 A_StartSound("monster/bruwlk");
+      CBRU C 2 A_Chase();
+      CBRU C 3 A_Chase();
+      CBRU DD 3 A_Chase();
+      Loop;
+    Missile:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      CBRU E 8 A_FaceTarget();
+      CBRU F 12 Bright A_SpawnProjectile("BruiserMissile",38,15);
+      CBRU E 12 A_FaceTarget();
+      CBRU F 12 Bright A_SpawnProjectile("BruiserMissile",38,15);
+      CBRU E 12 A_FaceTarget();
+      CBRU F 12 Bright A_SpawnProjectile("BruiserMissile",38,15);
+      Goto See;
+    Melee:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      CBRU GH 8 A_FaceTarget();
+      CBRU I 8 A_CustomMeleeAttack(10*random(1,8), "baron/melee", "Companion");
+      Goto See;
+    Pain:
+      CBRU J 2;
+      CBRU J 2 A_Pain();
+      Goto See;
+    Death:
+      CBRU K 6 Bright A_Scream();
+      CBRU LMN 6 Bright;
+      CBRU O 6 Bright A_NoBlocking();
+      CBRU QR 6 Bright;
+      CBRU S 6;
+      CBRU T -1 A_BossDeath();
+      Stop;
+  }
+}
+
+Class BruiserMissile : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Projectile;
+    Radius 8;
+    Height 12;
+    Speed 20;
+    Damage 10;
+    DamageType "Fire";
+    Scale 1.0;
+    RenderStyle "Normal";
+    SeeSound "monster/brufir";
+    DeathSound "weapons/hellex";
+    Decal "Scorch";
+    +ThruGhost
+  }
+
+  States
+  {
+    Spawn:
+      FBRS A 1 Bright;
+      FBRS A 1 Bright A_SpawnItemEx("BruiserTrail",0,0,0,0,0,0,0,128);
+      Loop;
+    Death:
+      BAL3 C 0 Bright A_SetTranslucent(0.67,1);
+      BAL3 C 6 Bright;
+      BAL3 D 6 Bright A_Explode(64,64,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      BAL3 E 6 Bright;
+      Stop;
+  }
+}
+
+Class BruiserTrail : Actor
+{
+  Default
+  {
+    Radius 3;
+    Height 3;
+    RenderStyle "Translucent";
+    Alpha 0.67;
+    Projectile;
+  }
+
+  States
+  {
+    Spawn:
+      TNT1 A 3 Bright;
+      PUFF ABCD 4 BRIGHT;
+      Stop;
+  }
+}

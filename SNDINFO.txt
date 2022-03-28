@@ -1,3 +1,10 @@
+// Cybruiser
+monster/brusit dsbrusit
+monster/brudth dsbrudth
+monster/bruwlk dsbruwlk
+monster/brufir dsbrufir
+weapons/hellex dshellex
+
 // CyberFiend
 CyberFiend/Sight	CYFNDSIT
 CyberFiend/Attack	CYFNDATK
