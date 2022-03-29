@@ -1820,11 +1820,31 @@ class DiabloistGun : BaseDeployer
     Inventory.PickupMessage "Got Diabloist!";
     BaseDeployer.price 150;
     Weapon.SlotPriority 150;
+    Scale 0.35;
   }
   States
   {
     Spawn:
       DIAB A -1;
+      Stop;
+  }
+}
+
+class DivineShadowGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Divine Shadow";
+    Weapon.AmmoType2 "DivineShadowAmmo";
+    Inventory.PickupMessage "Got Divine Shadow!";
+    BaseDeployer.price 300;
+    Weapon.SlotPriority 300;
+    Scale 0.35;
+  }
+  States
+  {
+    Spawn:
+      VIL1 A -1;
       Stop;
   }
 }

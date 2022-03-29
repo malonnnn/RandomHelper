@@ -839,3 +839,11 @@ class DiabloistAmmo : CommonAmmoFeatures
     Inventory.Icon "DIABA1D1";
   }
 }
+
+class DivineShadowAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "VIL1A1D1";
+  }
+}
