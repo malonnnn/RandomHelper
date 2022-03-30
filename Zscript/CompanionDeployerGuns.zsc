@@ -1877,12 +1877,29 @@ class DoubleChaingunnerGun : BaseDeployer
     Inventory.PickupMessage "Got Double Chaingunner!";
     BaseDeployer.price 25;
     Weapon.SlotPriority 25;
-    Scale 0.35;
   }
   States
   {
     Spawn:
       DPOS A -1;
+      Stop;
+  }
+}
+
+class DuneWarriorGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Dune Warrior";
+    Weapon.AmmoType2 "DuneWarriorAmmo";
+    Inventory.PickupMessage "Got Dune Warrior!";
+    BaseDeployer.price 25;
+    Weapon.SlotPriority 25;
+  }
+  States
+  {
+    Spawn:
+      ZHRT A -1;
       Stop;
   }
 }

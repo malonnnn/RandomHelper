@@ -1,3 +1,13 @@
+// Dune Warrior
+dune/sight DSDNWSIT
+dune/pain DSDNWPAI
+dune/death DSDNWDTH
+dune/active DSDNWACT
+dune/bounce BOUNCE2
+catharsi/shotdth DSSLSHDT
+catharsi/thermtick DSSLTHTI
+catharsi/shotsit DSSLSHOT
+
 // Doom RPG Ghoul
 RevGhoul/Sight	 	D4REVSEE
 RevGhoul/Pain 		D4REVPAI

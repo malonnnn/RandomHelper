@@ -1,0 +1,194 @@
+Class DuneWarrior : Actor
+{
+  Default
+  {
+    Monster;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Obituary "%o was killed by a dune warrior.";
+    Health 120;
+    Radius 20;
+    Height 56;
+    Mass 100;
+    Speed 12;
+    PainChance 160;
+    SeeSound "dune/sight";
+    AttackSound "chainguy/attack";
+    PainSound "dune/pain";
+    DeathSound "dune/death";
+    Decal "BulletChip";
+    DropItem "Clip", 128;
+    DropItem "Shell", 128;
+    DropItem "RocketAmmo", 128;
+    +FloorClip
+  }
+  States
+  {
+    Spawn:
+      ZHRT AB 10 A_Look;
+      Loop;
+    See:
+      ZHRT AABBCCDD 4 A_Chase;
+      Loop;
+    Missile:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ZHRT E 0 A_Jump(80, "Rifle");
+      ZHRT E 0 A_Jump(80, "FireRockets");
+      ZHRT E 0 A_Jump(80, "Vanish");
+    FireGrenade:
+      ZHRT E 10 A_FaceTarget;
+      ZHRT F 10 A_SpawnProjectile("DuneWarriorGrenade", 32, 0, random(-16, 16));
+      ZHRT E 10;
+      Goto See;
+    Rifle:
+      ZHRT E 10 A_FaceTarget;
+      ZHRT FE 4 Bright A_CompanionCPosAttack;
+      ZHRT F 1;
+      ZHRT FE 4 Bright A_CompanionCPosAttack;
+      ZHRT F 1;
+      ZHRT FE 4 Bright A_CompanionCPosAttack;
+      ZHRT F 1;
+      ZHRT FE 4 Bright A_CompanionCPosAttack;
+      ZHRT F 1;
+      ZHRT FE 4 Bright A_CompanionCPosAttack;
+      ZHRT F 1;
+      Goto See;
+    FireRockets:
+      ZHRT E 6 A_FaceTarget;
+      ZHRT F 12 A_SpawnProjectile("CompanionRocket", 32, 0, random(-16, 16));
+      ZHRT E 12 A_FaceTarget;
+      ZHRT F 12 A_SpawnProjectile("CompanionRocket", 32, 0, random(-16, 16));
+      Goto See;
+    Vanish:
+      ZHRT A 0 A_SetInvulnerable;
+      ZHRT A 0 A_UnSetShootable;
+      ZHRT A 0 A_UnSetSolid;
+      ZHRT A 0 A_StartSound("dune/active");
+      ZHRT A 1 A_SetTranslucent(0.8);
+      ZHRT A 1 A_SetTranslucent(0.6);
+      ZHRT A 1 A_SetTranslucent(0.4);
+      ZHRT A 1 A_SetTranslucent(0.3);
+      ZHRT A 1 A_SetTranslucent(0);
+      ZHRT AABBCCDDAABBCCDDAABBCCDDAABBCCDD 4 A_Chase(null, null);
+      ZHRT A 0 A_StartSound("dune/active");
+      ZHRT C 1 A_SetTranslucent(0.2);
+      ZHRT C 1 A_SetTranslucent(0.4);
+      ZHRT D 1 A_SetTranslucent(0.6);
+      ZHRT D 1 A_SetTranslucent(0.8);
+      ZHRT D 1 A_SetTranslucent(1.0);
+      ZHRT A 0 A_UnsetInvulnerable;
+      ZHRT A 0 A_SetShootable;
+      ZHRT A 0 A_SetSolid;
+      Goto FireRockets;
+    Pain:
+      ZHRT G 3;
+      ZHRT G 3 A_Pain;
+      ZHRT G 0 A_Jump(128, "Vanish");
+      Goto Missile;
+    Death:
+      ZHRT H 5;
+      ZHRT I 5 A_Scream;
+      ZHRT J 5 A_NoBlocking;
+      ZHRT K 5;
+      ZHRT L -1;
+      Stop;
+    XDeath:
+      ZHRT O 5;
+      ZHRT P 5 A_XScream;
+      ZHRT Q 5 A_NoBlocking;
+      ZHRT RTUV 5;
+      ZHRT W -1;
+      Stop;
+    Raise:
+      ZHRT KJIH 5;
+      Goto See;
+  }
+  
+  void A_CompanionCPosAttack()
+	{
+		if (target)
+		{
+			if (bStealth) visdir = 1;
+			A_StartSound(AttackSound, CHAN_WEAPON);
+			A_FaceTarget();
+			double slope = AimLineAttack(angle, MISSILERANGE);
+			double ang = angle + Random2[CPosAttack]() * (22.5/256);
+			int damage = Random[CPosAttack](1, 5) * 3;
+			LineAttack(ang, MISSILERANGE, slope, damage, "Companion", "CompanionBulletpuff");
+		}
+	}
+}
+
+Class DuneWarriorGrenade : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 6;
+    Height 8;
+    Speed 20;
+    SeeSound "dune/bounce";
+    DeathSound "catharsi/shotdth";
+    Projectile;
+    BounceType "Doom";
+    +Randomize
+    -NoGravity
+  }
+  States
+  {
+    Spawn:
+      THR2 A 4 A_StartSound("catharsi/thermtick");
+      THR2 B 16;
+      THR2 A 4 A_StartSound("catharsi/thermtick");
+      THR2 B 16;
+      THR2 A 4 A_StartSound("catharsi/thermtick");
+      THR2 B 16;
+      THR2 A 4 A_StartSound("catharsi/thermtick");
+      THR2 B 16;
+      THR2 A 4 A_StartSound("catharsi/thermtick");
+      THR2 B 16;
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 0);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 20);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 40);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 60);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 80);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 100);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 120);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 140);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 160);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 180);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 200);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 220);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 240);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 260);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 280);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 300);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 320);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 340);
+      SDFB BCDE 6 Bright A_Die;
+      Loop;
+    Death:
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 0);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 20);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 40);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 60);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 80);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 100);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 120);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 140);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 160);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 180);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 200);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 220);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 240);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 260);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 280);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 300);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 320);
+      SDFB B 0 A_SpawnProjectile("CatharsiBall", 4, 2, 340);
+      SDFB BCDE 6 Bright;
+      Stop;
+  }
+}

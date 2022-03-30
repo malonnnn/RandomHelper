@@ -863,3 +863,11 @@ class DoubleChaingunnerAmmo : CommonAmmoFeatures
     Inventory.Icon "DPOSA1C1";
   }
 }
+
+class DuneWarriorAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "ZHRTA1";
+  }
+}
