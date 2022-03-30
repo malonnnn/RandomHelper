@@ -895,3 +895,11 @@ class ExterminatorAmmo : CommonAmmoFeatures
     Inventory.Icon "EXTRA1";
   }
 }
+
+class FallenAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "FALNA1";
+  }
+}

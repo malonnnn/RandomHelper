@@ -1957,6 +1957,24 @@ class ExterminatorGun : BaseDeployer
       Stop;
   }
 }
+
+class FallenGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Fallen";
+    Weapon.AmmoType2 "FallenAmmo";
+    Inventory.PickupMessage "Got Fallen!";
+    BaseDeployer.price 25;
+    Weapon.SlotPriority 25;
+  }
+  States
+  {
+    Spawn:
+      FALN A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

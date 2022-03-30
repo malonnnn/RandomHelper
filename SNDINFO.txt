@@ -1,3 +1,12 @@
+// Fallen
+monster/falsit dsfalsit
+monster/falpai dsfalpai
+monster/faldth dsfaldth
+monster/falact dsfalact
+monster/falwng dsfalwng
+weapons/firmfi dsfirmfi
+weapons/firex5 dsfirex5
+
 // Exterminator
 Exterminator/Bladehit EXHIT
 Exterminator/Death EXDIE
