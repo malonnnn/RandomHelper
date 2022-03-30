@@ -79,7 +79,6 @@ Class BruiserMissile : Actor
     Height 12;
     Speed 20;
     Damage 10;
-    DamageType "Fire";
     Scale 1.0;
     RenderStyle "Normal";
     SeeSound "monster/brufir";
