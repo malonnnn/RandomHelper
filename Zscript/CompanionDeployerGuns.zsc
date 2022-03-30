@@ -1939,6 +1939,24 @@ class EtherealSoulGun : BaseDeployer
       Stop;
   }
 }
+
+class ExterminatorGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Exterminator";
+    Weapon.AmmoType2 "ExterminatorAmmo";
+    Inventory.PickupMessage "Got Exterminator!";
+    BaseDeployer.price 25;
+    Weapon.SlotPriority 25;
+  }
+  States
+  {
+    Spawn:
+      EXTR A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

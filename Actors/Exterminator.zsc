@@ -1,0 +1,115 @@
+class Exterminator : Actor
+{
+  Default
+  {
+    Monster;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Health 150;
+    Radius 16;
+    Height 56;
+    Speed 10;
+    PainChance 120;
+    +FLOORCLIP
+    SeeSound "Exterminator/Sight";
+    DeathSound "Exterminator/Death";
+    ActiveSound "Exterminator/Idle";
+    PainSound "Exterminator/Pain";
+    HitObituary "%o was impaled by an Exterminator.";
+    Obituary "%o was shot repeatedly by an Exterminator.";
+    MeleeThreshold 80;
+    MeleeRange 80;
+  }
+	States
+	{
+		Spawn:
+      EXTR AB 10 A_Look;
+      loop;
+		See:
+      EXTR A 2 A_Chase;
+      EXTR A 0 A_JumpIfInTargetLOS("Dodge", 10, JLOSF_DEADNOJUMP|JLOSF_CLOSENOFOV, 0, 64);
+      EXTR A 2 A_Chase;
+      EXTR A 0 A_JumpIfInTargetLOS("Dodge", 10, JLOSF_DEADNOJUMP|JLOSF_CLOSENOFOV, 0, 64);
+      EXTR B 2 A_Chase;
+      EXTR A 0 A_JumpIfInTargetLOS("Dodge", 10, JLOSF_DEADNOJUMP|JLOSF_CLOSENOFOV, 0, 64);
+      EXTR B 2 A_Chase;
+      EXTR A 0 A_JumpIfInTargetLOS("Dodge", 10, JLOSF_DEADNOJUMP|JLOSF_CLOSENOFOV, 0, 64);
+      EXTR C 2 A_Chase;
+      EXTR A 0 A_JumpIfInTargetLOS("Dodge", 10, JLOSF_DEADNOJUMP|JLOSF_CLOSENOFOV, 0, 64);
+      EXTR C 2 A_Chase;
+      EXTR A 0 A_JumpIfInTargetLOS("Dodge", 10, JLOSF_DEADNOJUMP|JLOSF_CLOSENOFOV, 0, 64);
+      EXTR D 2 A_Chase;
+      EXTR A 0 A_JumpIfInTargetLOS("Dodge", 10, JLOSF_DEADNOJUMP|JLOSF_CLOSENOFOV, 0, 64);
+      EXTR D 2 A_Chase;
+      EXTR A 0 A_JumpIfInTargetLOS("Dodge", 10, JLOSF_DEADNOJUMP|JLOSF_CLOSENOFOV, 0, 64);
+      loop;
+		SeeNoDodge:
+      EXTR AABBCCDDAABBCCDDAABBCCDD 2 A_Chase;
+      Goto See;
+		Dodge:
+      EXTR A 1 A_FaceTarget;
+      EXTR E 0 ThrustThingZ(0, 12, 0, 0);
+      EXTR A 0 A_Jump(256, "DodgeRight", "DodgeLeft");
+		DodgeLeft:
+      EXTR E 0 ThrustThing(angle*256/360+192, 12, 0, 0);
+      Goto SeeNoDodge;
+		DodgeRight:
+      EXTR E 0 ThrustThing(angle*256/360+64, 12, 0, 0);
+      Goto SeeNoDodge;
+		Melee:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      EXTR C 4 A_FaceTarget;
+      EXTR H 8 A_CustomMeleeAttack(15, "Exterminator/Bladehit", "Exterminator/Swing", "Companion");
+      EXTR A 8;
+      Goto See;
+		FullAuto:
+      EXTR A 0 A_StartSound("Exterminator/Fire", CHAN_WEAPON);
+      EXTR F 2 Bright A_CustomBulletAttack(12, 12, 1, 5, "CompanionBulletPuff");
+      EXTR E 2 A_FaceTarget;
+      EXTR E 0 A_SentinelRefire;
+      Goto Missile+1;
+		Missile:
+      EXTR E 12 A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      EXTR A 0
+      {
+        //A_JumpIfCloser(256, "FullAuto");
+        if(target && Distance3D(target) <= 256 && !(target is "PatrolPoint")){
+          SetStateLabel("FullAuto");
+        }
+      }
+      EXTR A 0 A_StartSound("Exterminator/Fire", CHAN_WEAPON);
+      EXTR F 2 Bright A_CustomBulletAttack(8, 8, 1, 5, "CompanionBulletPuff");
+      EXTR E 2 A_FaceTarget;
+      EXTR A 0 A_StartSound("Exterminator/Fire", CHAN_WEAPON);
+      EXTR F 2 Bright A_CustomBulletAttack(8, 8, 1, 5, "CompanionBulletPuff");
+      EXTR E 2 A_FaceTarget;
+      EXTR A 0 A_StartSound("Exterminator/Fire", CHAN_WEAPON);
+      EXTR F 2 Bright A_CustomBulletAttack(8, 8, 1, 5, "CompanionBulletPuff");
+      EXTR E 2 A_FaceTarget;
+      EXTR E 0 A_SentinelRefire;
+      Goto Missile;
+		Pain:
+      EXTR G 4 A_Pain;
+      Goto Missile;
+		Death:
+      EXTR I 5 A_Scream;
+      EXTR A 0 A_Jump(128, "Death2");
+      EXTR J 5 A_Fall;
+      EXTR KL 4;
+      EXTR M -1;
+      Stop;
+		Death2:
+      EXTR N 5 A_Fall;
+      EXTR OP 4;
+      EXTR Q -1;
+      Stop;
+		XDeath:
+      EXTR R 4 A_XScream;
+      EXTR S 4 A_Fall;
+      POSS OPQRST 4;
+      POSS U -1;
+      Stop;
+	}
+}

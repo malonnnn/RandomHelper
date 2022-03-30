@@ -887,3 +887,11 @@ class EtherealSoulAmmo : CommonAmmoFeatures
     Inventory.Icon "ETHSA1";
   }
 }
+
+class ExterminatorAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "EXTRA1";
+  }
+}
