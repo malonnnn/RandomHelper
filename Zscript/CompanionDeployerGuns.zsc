@@ -1921,6 +1921,24 @@ class EnhancedCacodemonGun : BaseDeployer
       Stop;
   }
 }
+
+class EtherealSoulGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Ethereal Soul";
+    Weapon.AmmoType2 "EtherealSoulAmmo";
+    Inventory.PickupMessage "Got Ethereal Soul!";
+    BaseDeployer.price 25;
+    Weapon.SlotPriority 25;
+  }
+  States
+  {
+    Spawn:
+      ETHS A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

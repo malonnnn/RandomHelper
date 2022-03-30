@@ -1,3 +1,8 @@
+// Ethereal Soul
+nightmare/pain DSNMRPAI
+nightmare/death DSNMRDTH
+nightmare/active DSNMRACT
+
 // Dune Warrior
 dune/sight DSDNWSIT
 dune/pain DSDNWPAI
