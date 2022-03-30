@@ -871,3 +871,11 @@ class DuneWarriorAmmo : CommonAmmoFeatures
     Inventory.Icon "ZHRTA1";
   }
 }
+
+class EnhancedCacodemonAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "ENCDA1";
+  }
+}

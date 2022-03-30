@@ -1903,6 +1903,24 @@ class DuneWarriorGun : BaseDeployer
       Stop;
   }
 }
+
+class EnhancedCacodemonGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Enhanced Cacodemon";
+    Weapon.AmmoType2 "EnhancedCacodemonAmmo";
+    Inventory.PickupMessage "Got Enhanced Cacodemon!";
+    BaseDeployer.price 50;
+    Weapon.SlotPriority 50;
+  }
+  States
+  {
+    Spawn:
+      ENCD A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
