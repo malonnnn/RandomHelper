@@ -1,3 +1,10 @@
+// Female Scientist
+fem/sight FEMZSIT
+fem/pain FEMZPAIN
+fem/death FEMZDHT
+fem/active FEMZACT
+KnifeHit DSKNIFE
+
 // Fallen
 monster/falsit dsfalsit
 monster/falpai dsfalpai

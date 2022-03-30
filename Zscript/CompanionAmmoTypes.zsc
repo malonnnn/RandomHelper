@@ -903,3 +903,11 @@ class FallenAmmo : CommonAmmoFeatures
     Inventory.Icon "FALNA1";
   }
 }
+
+class FemaleScientistAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "FSZKA1";
+  }
+}

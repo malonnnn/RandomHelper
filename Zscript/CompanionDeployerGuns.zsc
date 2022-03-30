@@ -1975,6 +1975,24 @@ class FallenGun : BaseDeployer
       Stop;
   }
 }
+
+class FemaleScientistGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Female Scientist";
+    Weapon.AmmoType2 "FemaleScientistAmmo";
+    Inventory.PickupMessage "Got Female Scientist!";
+    BaseDeployer.price 0;
+    Weapon.SlotPriority 0;
+  }
+  States
+  {
+    Spawn:
+      FSZK A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
