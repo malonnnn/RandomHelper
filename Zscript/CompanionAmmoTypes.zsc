@@ -847,3 +847,11 @@ class DivineShadowAmmo : CommonAmmoFeatures
     Inventory.Icon "VIL1A1D1";
   }
 }
+
+class DoomRPGGhoulAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "GHULA1D1";
+  }
+}

@@ -1,3 +1,14 @@
+// Doom RPG Ghoul
+RevGhoul/Sight	 	D4REVSEE
+RevGhoul/Pain 		D4REVPAI
+RevGhoul/active 	D4REVACT
+RevGhoul/melee 		GHOULPUN
+RevGhoul/Death 		D4REVDIE
+RevGhoul/Swing 		GHOULSWN
+RevGhoul/attack		GBALLFLY
+RevGhoul/tracex		GBALLEXP
+RevGhoul/cloud		GHOULCLD
+
 // Diabloist
 monster/diasit dsdiasit
 monster/diapai dsdiapai
