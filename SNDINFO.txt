@@ -1,4 +1,4 @@
-// Female Scientist
+// Female Scientist, Marines
 fem/sight FEMZSIT
 fem/pain FEMZPAIN
 fem/death FEMZDHT

@@ -1993,6 +1993,24 @@ class FemaleScientistGun : BaseDeployer
       Stop;
   }
 }
+
+class FemalePlasmaGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Female Plasma";
+    Weapon.AmmoType2 "FemalePlasmaAmmo";
+    Inventory.PickupMessage "Got Female Plasma!";
+    BaseDeployer.price 5;
+    Weapon.SlotPriority 5;
+  }
+  States
+  {
+    Spawn:
+      PZOW A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
