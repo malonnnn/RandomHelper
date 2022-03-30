@@ -855,3 +855,11 @@ class DoomRPGGhoulAmmo : CommonAmmoFeatures
     Inventory.Icon "GHULA1D1";
   }
 }
+
+class DoubleChaingunnerAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "DPOSA1C1";
+  }
+}

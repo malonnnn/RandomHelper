@@ -1867,6 +1867,25 @@ class DoomRPGGhoulGun : BaseDeployer
       Stop;
   }
 }
+
+class DoubleChaingunnerGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Double Chaingunner";
+    Weapon.AmmoType2 "DoubleChaingunnerAmmo";
+    Inventory.PickupMessage "Got Double Chaingunner!";
+    BaseDeployer.price 25;
+    Weapon.SlotPriority 25;
+    Scale 0.35;
+  }
+  States
+  {
+    Spawn:
+      DPOS A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

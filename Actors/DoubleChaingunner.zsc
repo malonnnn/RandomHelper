@@ -1,0 +1,80 @@
+Class DoubleChaingunner : Actor
+{
+  Default
+  {
+    Monster;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Obituary "%o was ripped to bloody ribbons by a double-chaingunner.";
+    Health 100;
+    Radius 20;
+    Height 56;
+    Mass 100;
+    Speed 8;
+    PainChance 150;
+    SeeSound "chainguy/sight";
+    AttackSound "chainguy/attack";
+    PainSound "chainguy/pain";
+    DeathSound "chainguy/death";
+    ActiveSound "chainguy/active";
+    DropItem "Chaingun", 256;
+    +FloorClip
+  }
+
+  States
+  {
+    Spawn:
+      DPOS AB 10 A_Look();
+      Loop;
+    See:
+      DPOS AABBCCDD 3 A_Chase();
+      Loop;
+    Missile:
+      DPOS E 10 A_FaceTarget();
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      DPOS FE 4 Bright
+      {
+        A_CompanionCPosAttack();
+        A_CompanionCPosAttack();
+      }
+      DPOS F 1 A_CPosRefire();
+      Goto Missile+1;
+    Pain:
+      DPOS G 3;
+      DPOS G 3 A_Pain();
+      Goto See;
+    Death:
+      DPOS H 5;
+      DPOS I 5 A_Scream();
+      DPOS J 5 A_NoBlocking();
+      DPOS KLM 5;
+      DPOS N -1;
+      Stop;
+    XDeath:
+      DPOS O 5;
+      DPOS P 5 A_XScream();
+      DPOS Q 5 A_NoBlocking();
+      DPOS RS 5;
+      DPOS T -1;
+      Stop;
+    Raise:
+      DPOS NMLKJIH 5;
+      Goto See;
+  }
+
+  void A_CompanionCPosAttack()
+	{
+		if (target)
+		{
+			if (bStealth) visdir = 1;
+			A_StartSound(AttackSound, CHAN_WEAPON);
+			A_FaceTarget();
+			double slope = AimLineAttack(angle, MISSILERANGE);
+			double ang = angle + Random2[CPosAttack]() * (22.5/256);
+			int damage = Random[CPosAttack](1, 5) * 3;
+			LineAttack(ang, MISSILERANGE, slope, damage, "Companion", "CompanionBulletpuff");
+		}
+	}
+}
+
