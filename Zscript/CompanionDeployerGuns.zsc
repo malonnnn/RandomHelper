@@ -1998,9 +1998,27 @@ class FemalePlasmaGun : BaseDeployer
 {
   Default
   {
-    Tag "Female Plasma";
+    Tag "Female Plasma Gunner";
     Weapon.AmmoType2 "FemalePlasmaAmmo";
-    Inventory.PickupMessage "Got Female Plasma!";
+    Inventory.PickupMessage "Got Female Plasma Gunner!";
+    BaseDeployer.price 5;
+    Weapon.SlotPriority 5;
+  }
+  States
+  {
+    Spawn:
+      PZOW A -1;
+      Stop;
+  }
+}
+
+class FemaleRailGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Female Railgunner";
+    Weapon.AmmoType2 "FemaleRailAmmo";
+    Inventory.PickupMessage "Got Female Railgunner!";
     BaseDeployer.price 5;
     Weapon.SlotPriority 5;
   }

@@ -919,3 +919,11 @@ class FemalePlasmaAmmo : CommonAmmoFeatures
     Inventory.Icon "PZOWC1";
   }
 }
+
+class FemaleRailAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "RZOWA1";
+  }
+}
