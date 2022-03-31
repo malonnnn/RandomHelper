@@ -935,3 +935,11 @@ class FemaleSergeantAmmo : CommonAmmoFeatures
     Inventory.Icon "CZOWA1";
   }
 }
+
+class FemaleZombieAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "ZOMWA1";
+  }
+}

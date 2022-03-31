@@ -2047,6 +2047,24 @@ class FemaleSergeantGun : BaseDeployer
       Stop;
   }
 }
+
+class FemaleZombieGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Female Zombie";
+    Weapon.AmmoType2 "FemaleZombieAmmo";
+    Inventory.PickupMessage "Got Female Zombie!";
+    BaseDeployer.price 1;
+    Weapon.SlotPriority 1;
+  }
+  States
+  {
+    Spawn:
+      ZOMW A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
