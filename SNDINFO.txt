@@ -1,3 +1,6 @@
+// Hell's Fury
+harvester/scream shfbscrm
+
 // Hell Paladin
 Paladin/Sight	HPALSIT
 Paladin/Active	HPALACT

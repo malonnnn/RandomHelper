@@ -2199,8 +2199,8 @@ class HellPaladinGun : BaseDeployer
     Tag "Hell Paladin";
     Weapon.AmmoType2 "HellPaladinAmmo";
     Inventory.PickupMessage "Got Hell Paladin!";
-    BaseDeployer.price 100;
-    Weapon.SlotPriority 100;
+    BaseDeployer.price 125;
+    Weapon.SlotPriority 125;
   }
   States
   {
@@ -2224,6 +2224,24 @@ class HellWarriorGun : BaseDeployer
   {
     Spawn:
       HWAR A -1;
+      Stop;
+  }
+}
+
+class HellsFuryGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Hell's Fury";
+    Weapon.AmmoType2 "HellsFuryAmmo";
+    Inventory.PickupMessage "Got Hell's Fury!";
+    BaseDeployer.price 125;
+    Weapon.SlotPriority 125;
+  }
+  States
+  {
+    Spawn:
+      HFRY A -1;
       Stop;
   }
 }
