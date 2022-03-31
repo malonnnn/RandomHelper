@@ -927,3 +927,11 @@ class FemaleRailAmmo : CommonAmmoFeatures
     Inventory.Icon "RZOWA1";
   }
 }
+
+class FemaleSergeantAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CZOWA1";
+  }
+}

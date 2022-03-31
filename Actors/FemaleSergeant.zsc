@@ -1,0 +1,76 @@
+Class FemaleSergeant : Actor
+{
+  Default
+  {
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    MONSTER;
+    health 60;
+    mass 90;
+    speed 10;
+    Radius 19;
+    Height 52;
+    painchance 200;
+    Obituary "%o was killed by A Female Zombie Sergeant!";
+    seesound "fem/sight";
+    attacksound "grunt/attack";
+    painsound "fem/pain";
+    deathsound "fem/death";
+    activesound "fem/active";
+    dropitem "Clip", 256;
+    +FLOORCLIP
+  }
+  States
+  {
+    Spawn:
+      CZOW AB 10 A_Look;
+      Loop;
+    See:
+      CZOW AABBCCDD 4 A_Chase;
+      Loop;
+    Missile:
+      CZOW E 5 A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      CZOW F 5 Bright A_CompanionPosAttack;
+      CZOW E 5 A_CPosRefire;
+      Goto Missile+1;
+    Pain:
+      CZOW G 3;
+      CZOW G 3 A_Pain;
+      Goto See;
+    Death:
+      CZOW H 5;
+      CZOW I 5 A_Scream;
+      CZOW J 5 A_Fall;
+      CZOW K 5;
+      CZOW L 5;
+      CZOW M 5;
+      CZOW N -1;
+      Stop;
+    XDeath:
+      CZOW O 5;
+      CZOW P 5 A_XScream;
+      CZOW Q 5 A_Fall;
+      CZOW RSTUV 5;
+      CZOW W -1;
+      Stop;
+    Raise:
+      CZOW MLKJIH 5;
+      Goto See;
+  }
+
+  void A_CompanionPosAttack()
+	{
+		if (target)
+		{
+			A_FaceTarget();
+			double ang = angle;
+			double slope = AimLineAttack(ang, MISSILERANGE);
+			A_StartSound("grunt/attack", CHAN_WEAPON);
+			ang  += Random2[PosAttack]() * (22.5/256);
+			int damage = Random[PosAttack](1, 5) * 3;
+			LineAttack(ang, MISSILERANGE, slope, damage, "Companion", "CompanionBulletPuff");
+		}
+	}
+}

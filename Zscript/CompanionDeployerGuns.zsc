@@ -2025,7 +2025,25 @@ class FemaleRailGun : BaseDeployer
   States
   {
     Spawn:
-      PZOW A -1;
+      RZOW A -1;
+      Stop;
+  }
+}
+
+class FemaleSergeantGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Female Sergeant";
+    Weapon.AmmoType2 "FemaleSergeantAmmo";
+    Inventory.PickupMessage "Got Female Sergeant!";
+    BaseDeployer.price 5;
+    Weapon.SlotPriority 5;
+  }
+  States
+  {
+    Spawn:
+      CZOW A -1;
       Stop;
   }
 }
