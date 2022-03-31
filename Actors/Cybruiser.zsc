@@ -96,7 +96,7 @@ Class BruiserMissile : Actor
     Death:
       BAL3 C 0 Bright A_SetTranslucent(0.67,1);
       BAL3 C 6 Bright;
-      BAL3 D 6 Bright A_Explode(64,64,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      BAL3 D 6 Bright A_Explode(64,64,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       BAL3 E 6 Bright;
       Stop;
   }

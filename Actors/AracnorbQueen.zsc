@@ -253,7 +253,7 @@ class QueenBFG : Actor
       Loop;
     Death:
       CBTS K 0 Radius_Quake(15,15,0,40,0);
-      CBTS K 2 BRIGHT A_Explode(140,140, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      CBTS K 2 BRIGHT A_Explode(140,140, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       CBTS LMNOPQRSTUVW 2 BRIGHT;
       Stop;
 	}

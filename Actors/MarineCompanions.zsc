@@ -952,7 +952,7 @@ class HeatSeekingMissile : Actor
       HRKT A 0 A_SpawnItemEx ("MissileTrail", 3, 0, 0, 1);
       loop;
     Death:
-      FX08 A 6 bright A_Explode(96,128,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FX08 A 6 bright A_Explode(96,128,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       FX08 BCDEFGH 4 bright;
       Stop;
   }
@@ -1065,17 +1065,17 @@ class CompanionFire : Actor
   {
     Spawn:
       TNT1 A 2 Bright;
-      FRFX ABCD 2 Bright A_Explode(3,8,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FRFX ABCD 2 Bright A_Explode(3,8,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       FRFX D 0 Bright A_Lowgravity;
-      FRFX EFG 2 Bright A_Explode(3,16,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
-      FRFX HIJ 2 Bright A_Explode(3,32,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
-      FRFX KLM 2 Bright A_Explode(3,64,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FRFX EFG 2 Bright A_Explode(3,16,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FRFX HIJ 2 Bright A_Explode(3,32,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FRFX KLM 2 Bright A_Explode(3,64,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       FRFX NO 2 Bright;
       Stop;
     Death:
-      FRFX HIJ 2 Bright A_Explode(3,32,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FRFX HIJ 2 Bright A_Explode(3,32,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       FRFX J 0 A_SpawnProjectile("CompanionDropFire");
-      FRFX KLM 2 Bright A_Explode(3,64,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FRFX KLM 2 Bright A_Explode(3,64,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       FRFX NO 2 Bright;
       Stop;
   }
@@ -1102,20 +1102,20 @@ class CompanionDropFire : Actor
   {
     Spawn:
       FLME A 1 Bright A_StartSound("Marine/onfire");
-      FLME A 1 Bright A_Explode(1,16,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
-      FLME BCDEFGHIJKLMN 2 Bright A_Explode(1,16,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FLME A 1 Bright A_Explode(1,16,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FLME BCDEFGHIJKLMN 2 Bright A_Explode(1,16,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       FLME A 1 Bright A_StartSound("Marine/onfire");
-      FLME A 1 Bright A_Explode(1,32,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
-      FLME BCDEFGHIJKLMN 2 Bright A_Explode(1,16,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FLME A 1 Bright A_Explode(1,32,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FLME BCDEFGHIJKLMN 2 Bright A_Explode(1,16,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       FLME A 1 Bright A_StartSound("Marine/onfire");
-      FLME A 1 Bright A_Explode(1,32,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
-      FLME BCDEFGHIJKLMN 2 Bright A_Explode(1,16,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FLME A 1 Bright A_Explode(1,32,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FLME BCDEFGHIJKLMN 2 Bright A_Explode(1,16,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       FLME A 1 Bright A_StartSound("Marine/onfire");
-      FLME A 1 Bright A_Explode(1,32,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
-      FLME BCDEFGHIJKLMN 2 Bright A_Explode(1,16,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FLME A 1 Bright A_Explode(1,32,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FLME BCDEFGHIJKLMN 2 Bright A_Explode(1,16,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       FLME A 1 Bright A_StartSound("Marine/onfire");
-      FLME A 1 Bright A_Explode(1,32,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
-      FLME BCDEFGHIJKLMN 2 Bright A_Explode(1,16,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FLME A 1 Bright A_Explode(1,32,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FLME BCDEFGHIJKLMN 2 Bright A_Explode(1,16,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       FLME A 0 A_Jump(192,1);
       loop;
       TNT1 A 0;

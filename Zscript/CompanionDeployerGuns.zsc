@@ -2065,6 +2065,24 @@ class FemaleZombieGun : BaseDeployer
       Stop;
   }
 }
+
+class FlamerZombieGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Flamer Zombie";
+    Weapon.AmmoType2 "FlamerZombieAmmo";
+    Inventory.PickupMessage "Got Flamer Zombie!";
+    BaseDeployer.price 35;
+    Weapon.SlotPriority 35;
+  }
+  States
+  {
+    Spawn:
+      FLMZ A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

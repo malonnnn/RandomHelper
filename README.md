@@ -32,7 +32,7 @@ A_Explode (5);
 ```
 becomes
 ```
-A_Explode (5, -1, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion")
+A_Explode (5, -1, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion")
 ```
 <br>
 What? Where did you get those values after 5 and before `"CompanionBulletPuff"` and what do they mean?<br>

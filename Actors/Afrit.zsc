@@ -131,7 +131,7 @@ Class Comet : Actor
       Loop;
     Death:
       COMT D 3 Bright A_SpawnItemEx("CometDeathGlow");
-      COMT E 3 Bright A_Explode(80, 80, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      COMT E 3 Bright A_Explode(80, 80, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       TNT1 A 0 A_SpawnItemEx("CometDeath");
       Stop;
   }
@@ -320,8 +320,8 @@ Class HellFire2 : Actor
     Spawn:
       TNT1 A 8;
       FRTF A 3 Bright;
-      FRTF BC 3 Bright A_Explode(3, 64);
-      TNT1 A 0 A_Explode(3, 64);
+      FRTF BC 3 Bright A_Explode(3, 64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      TNT1 A 0 A_Explode(3, 64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       TNT1 A 0 A_Jump(191, "End");
       TNT1 A 0 A_SpawnProjectile("HellFire2", 0, 24, 0);
       TNT1 A 0 A_SpawnProjectile("HellFire2", 0, 0, 0);

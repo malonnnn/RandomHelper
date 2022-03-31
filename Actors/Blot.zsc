@@ -94,7 +94,7 @@ Class BlotDamage : Actor
   States
   {
     Spawn:
-      TNT1 A 1 NoDelay A_Explode (1, 40, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      TNT1 A 1 NoDelay A_Explode (1, 40, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       Stop;
   }
 }

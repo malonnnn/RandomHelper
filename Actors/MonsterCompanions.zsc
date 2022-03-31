@@ -79,7 +79,7 @@ class CompanionArchvile : Archvile{
 			if (fire)
 			{
 				fire.SetOrigin(targ.Vec3Angle(-24., angle, 0), true);
-				fire.A_Explode(blastdmg, blastradius, XF_NOSPLASH, false, 0, 0, 0, "CompanionBulletPuff", damagetype);
+				fire.A_Explode(blastdmg, blastradius, XF_NOSPLASH|XF_EXPLICITDAMAGETYPE, false, 0, 0, 0, "CompanionBulletPuff", damagetype);
 			}
 			if (!targ.bDontThrust)
 			{

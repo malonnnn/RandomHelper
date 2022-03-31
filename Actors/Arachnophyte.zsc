@@ -52,7 +52,7 @@ Class Arachnophyte : Actor
     APYT A 4 A_Scream();
     APYT B 4;
     APYT EF 8;
-    APYT G 6 A_Explode(128, 255, XF_NOTMISSILE);
+    APYT G 6 A_Explode(128, 255, XF_NOTMISSILE|XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
     APYT H 6 A_Fall();
     APYT IJ 6;
     Stop;

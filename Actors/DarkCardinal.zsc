@@ -84,7 +84,7 @@ Class DarkCardinal : Actor
       CARD F 8 Bright A_Scream;
       CARD G 8 Bright A_NoBlocking;
       CARD H 8 Bright;
-      CARD I 8 Bright A_Explode;
+      CARD I 8 Bright A_Explode(24, -1, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       CARD J 8 Bright;
       CARD K 8 Bright;
       CARD L 8 Bright;
@@ -115,7 +115,7 @@ Class Cardinal_Rocket : Actor
       CROC AB 4 Bright;
       Loop;
     Death:
-      CROC C 8 Bright A_Explode(24,-1, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      CROC C 8 Bright A_Explode(Random(20, 160),-1, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       CROC D 6 Bright;
       CROC E 4 Bright;
       Stop;

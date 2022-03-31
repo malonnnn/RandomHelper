@@ -224,7 +224,7 @@ Class BruiserFire : Actor
   {
     Spawn:
       XXBF AB 3 Bright;
-      XXBF C 3 Bright A_Explode(48,128,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      XXBF C 3 Bright A_Explode(48,128,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       XXBF DEFGHIJKLMNOPQRST 3 Bright;
       Stop;
   }

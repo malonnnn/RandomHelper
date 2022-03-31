@@ -43,7 +43,7 @@ Class EyeEx : CompanionLostSoul //Just the normal explosive one
       ESYM O 4 bright;
       ESYM P 4 bright A_Scream;
       TNT1 A 0 A_NoBlocking;
-      ESYM Q 4 bright A_Explode(100,128);
+      ESYM Q 4 bright A_Explode(100,128, XF_EXPLICITDAMAGETYPE,false,40, 0, 10, "CompanionBulletPuff", "Companion");
       ESYM R 4 bright;
       ESYM STUV 4 A_Gravity;
       ESYM W -1;

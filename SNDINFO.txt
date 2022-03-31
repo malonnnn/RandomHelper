@@ -1,3 +1,8 @@
+// Flamer Zombie
+weapons/scorch                dsscorch
+weapons/onfire                dsonfire
+weapons/flamer                dsflamer
+
 // Female Scientist, Marines
 fem/sight FEMZSIT
 fem/pain FEMZPAIN

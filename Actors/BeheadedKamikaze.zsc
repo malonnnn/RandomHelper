@@ -56,7 +56,7 @@ class KamikaziDamage : Actor
   {
     Spawn:
       TNT1 A 1;
-      TNT1 A 1 A_Explode (50, 96, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      TNT1 A 1 A_Explode (50, 96, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       stop;
   }
 }

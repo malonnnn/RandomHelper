@@ -943,3 +943,11 @@ class FemaleZombieAmmo : CommonAmmoFeatures
     Inventory.Icon "ZOMWA1";
   }
 }
+
+class FlamerZombieAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "FLMZA1";
+  }
+}

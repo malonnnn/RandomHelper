@@ -98,7 +98,7 @@ Class Rocket2 : Actor
       loop;
     Death:
       MISL B 0 bright A_SetTranslucent (0.67,1);
-      MISL B 8 bright A_Explode(64, 96, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      MISL B 8 bright A_Explode(64, 96, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       MISL C 6 bright;
       MISL D 4 bright;
       stop;
@@ -134,7 +134,7 @@ Class HomRocket1 : Actor
       Loop;
     Death:
       BAL3 C 0 Bright A_SetTranslucent (0.67,1);
-      BAL3 C 8 Bright A_Explode(64, 96, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      BAL3 C 8 Bright A_Explode(64, 96, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       BAL3 DE 5 Bright;
       stop;
    }

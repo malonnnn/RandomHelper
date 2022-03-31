@@ -181,7 +181,7 @@ Class GhoulCloud : Actor //: PoisonCloud (Heretic's Poison Clouds)
     Spawn:
       GHCL D 1 Bright;
       GHCL D 1 Bright A_Scream;
-      GHCL DEEEFFFGGGHHHIIEEEFFFGGGHHHII 2 Bright A_Explode(1,40,false, false,40, 0, 10, "CompanionBulletPuff", "Companion");
+      GHCL DEEEFFFGGGHHHIIEEEFFFGGGHHHII 2 Bright A_Explode(1,40,XF_EXPLICITDAMAGETYPE, false,40, 0, 10, "CompanionBulletPuff", "Companion");
     Death:
       GHCL HG 7 Bright;
       GHCL FD 6 Bright;
@@ -196,9 +196,9 @@ Class GhoulDeathCloud : GhoulCloud
     Spawn:
       GHCL D 1 Bright;
       GHCL D 1 Bright A_Scream;
-      GHCL DEEEFFFGGGHHHIIEEEFFFGGGHHHII 2 Bright A_Explode(1,40,false,false,40, 0, 10, "CompanionBulletPuff", "Companion");
-      GHCL IIHHHGGGFFFEEEIIHHHGGGFFFEEE 2 Bright A_Explode(1,40,false,false,40, 0, 10, "CompanionBulletPuff", "Companion");
-      GHCL FFFGGGHHHIIEEEFFFGGGHHHII 2 Bright A_Explode(1,40,false,false,40, 0, 10, "CompanionBulletPuff", "Companion");
+      GHCL DEEEFFFGGGHHHIIEEEFFFGGGHHHII 2 Bright A_Explode(1,40,XF_EXPLICITDAMAGETYPE,false,40, 0, 10, "CompanionBulletPuff", "Companion");
+      GHCL IIHHHGGGFFFEEEIIHHHGGGFFFEEE 2 Bright A_Explode(1,40,XF_EXPLICITDAMAGETYPE,false,40, 0, 10, "CompanionBulletPuff", "Companion");
+      GHCL FFFGGGHHHIIEEEFFFGGGHHHII 2 Bright A_Explode(1,40,XF_EXPLICITDAMAGETYPE,false,40, 0, 10, "CompanionBulletPuff", "Companion");
     Death:
       GHCL HG 7 Bright;
       GHCL FD 6 Bright;

@@ -163,7 +163,7 @@ Class Blusoul : CrackodemonBall
       Loop;
     Death:
       SKUD H 4 BRIGHT A_Mushroom("CrackodemonBall", 8);
-      SKUD I 4 BRIGHT A_Explode(20, -1, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      SKUD I 4 BRIGHT A_Explode(20, -1, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       SKUD JK 4 BRIGHT;
       stop;
   }

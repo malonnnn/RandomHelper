@@ -137,7 +137,7 @@ Class ArchonComet : Actor
   Death:
     ARCB J 0 Bright A_SetTranslucent(0.67,1);
     ARCB J 3 Bright;
-    ARCB K 3 Bright A_Explode(128,128,0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+    ARCB K 3 Bright A_Explode(128,128,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
     ARCB LMN 3 Bright;
     Stop;
   }

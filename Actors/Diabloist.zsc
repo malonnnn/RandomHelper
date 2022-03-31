@@ -138,13 +138,13 @@ Class DFire : Actor
 
   void DiabolistFire(int damage)
   {
-    A_Explode(damage, 32, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+    A_Explode(damage, 32, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
     A_Fire();
   }
 
   void DiabolistCrackle(int damage)
   {
-    A_Explode(damage, 32, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+    A_Explode(damage, 32, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
     A_FireCrackle();
   }
 }
@@ -221,7 +221,7 @@ Class DTracer : Actor
       Loop;
     Death:
       FTRA K 4 Bright;
-      FTRA L 4 Bright A_Explode(64, 64, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FTRA L 4 Bright A_Explode(64, 64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       FTRA MNO 3 Bright;
       Stop;
   }
@@ -268,7 +268,7 @@ Class DTracerPuff : Actor
   States
   {
     Spawn:
-      FTRA ABCDEFGHIJ 3 Bright A_Explode(4, 8, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      FTRA ABCDEFGHIJ 3 Bright A_Explode(4, 8, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       stop;
   }
 }
@@ -322,7 +322,7 @@ Class DMissileCircle : CircleFlame
       Stop;
     Death:
       CFCF QR 3 Bright;
-      CFCF S 3 Bright A_Explode(20, 128, 0, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      CFCF S 3 Bright A_Explode(20, 128, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
       CFCF TUVWXYZ 3 Bright;
       Stop;
   }
