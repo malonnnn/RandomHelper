@@ -2209,6 +2209,24 @@ class HellPaladinGun : BaseDeployer
       Stop;
   }
 }
+
+class HellWarriorGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Hell Warrior";
+    Weapon.AmmoType2 "HellWarriorAmmo";
+    Inventory.PickupMessage "Got Hell Warrior!";
+    BaseDeployer.price 50;
+    Weapon.SlotPriority 50;
+  }
+  States
+  {
+    Spawn:
+      HWAR A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
