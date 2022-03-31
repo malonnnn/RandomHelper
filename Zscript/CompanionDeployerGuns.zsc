@@ -2181,8 +2181,8 @@ class HectebusGun : BaseDeployer
     Tag "Hectebus";
     Weapon.AmmoType2 "HectebusAmmo";
     Inventory.PickupMessage "Got Hectebus!";
-    BaseDeployer.price 100;
-    Weapon.SlotPriority 100;
+    BaseDeployer.price 150;
+    Weapon.SlotPriority 150;
   }
   States
   {
