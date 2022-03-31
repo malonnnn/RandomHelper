@@ -2083,6 +2083,24 @@ class FlamerZombieGun : BaseDeployer
       Stop;
   }
 }
+
+class FleshSpawnGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Fleshspawn";
+    Weapon.AmmoType2 "FleshSpawnAmmo";
+    Inventory.PickupMessage "Got Fleshspawn!";
+    BaseDeployer.price 5;
+    Weapon.SlotPriority 5;
+  }
+  States
+  {
+    Spawn:
+      FLSP A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

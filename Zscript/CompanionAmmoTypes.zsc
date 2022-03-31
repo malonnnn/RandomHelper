@@ -951,3 +951,11 @@ class FlamerZombieAmmo : CommonAmmoFeatures
     Inventory.Icon "FLMZA1";
   }
 }
+
+class FleshSpawnAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "FLSPA1";
+  }
+}
