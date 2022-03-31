@@ -2173,6 +2173,24 @@ class HaedexebusGun : BaseDeployer
       Stop;
   }
 }
+
+class HectebusGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Hectebus";
+    Weapon.AmmoType2 "HectebusAmmo";
+    Inventory.PickupMessage "Got Hectebus!";
+    BaseDeployer.price 100;
+    Weapon.SlotPriority 100;
+  }
+  States
+  {
+    Spawn:
+      HECT A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
