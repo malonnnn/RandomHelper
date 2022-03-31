@@ -999,3 +999,11 @@ class HectebusAmmo : CommonAmmoFeatures
     Inventory.Icon "HECTA1";
   }
 }
+
+class HellPaladinAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "HPALA1";
+  }
+}

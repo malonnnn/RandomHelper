@@ -2191,6 +2191,24 @@ class HectebusGun : BaseDeployer
       Stop;
   }
 }
+
+class HellPaladinGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Hell Paladin";
+    Weapon.AmmoType2 "HellPaladinAmmo";
+    Inventory.PickupMessage "Got Hell Paladin!";
+    BaseDeployer.price 100;
+    Weapon.SlotPriority 100;
+  }
+  States
+  {
+    Spawn:
+      HPAL A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

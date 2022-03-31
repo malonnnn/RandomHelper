@@ -1,3 +1,17 @@
+// Hell Paladin
+Paladin/Sight	HPALSIT
+Paladin/Active	HPALACT
+Paladin/Pain	HPALPAIN
+Paladin/Death	HPALDTH
+Paladin/Swing	HPALSWG
+Paladin/Melee	HPALHIT
+Paladin/Shoot	HPALATK
+Paladin/Hit		HPALHIT2
+Paladin/Grenade	HPALGREN
+Paladin/Bounce	HPALBNC
+Paladin/Explode	HPALEXPL
+Paladin/Step	HPALSTEP
+
 // Hectebus
 Hectebus/Sight		DSHECSIT
 Hectebus/Pain		DSHCPAIN
