@@ -1,3 +1,12 @@
+// Flesh Wizard
+$random wizard/tele 		{ wizard/dwiztel1  wizard/dwiztel2 }
+wizard/tele1                    dwiztel1
+wizard/tele2                    dwiztel2
+wizard/pain                     dwizpain
+wizard/sight                    dwizact
+wizard/active                   dwizact
+wizard/death                    dwizdth
+
 // FleshSpawn
 flesh/sight		flspnsit
 flesh/melee		flspnatk
@@ -360,7 +369,7 @@ queen/pain quepain
 queen/death quedie
 queen/active queact
 queen/fire qbfgfire
-electricplasma/shoot		PZAPSEE	
+electricplasma/shoot		PZAPSEE
 electricplasma/hit		PZAPHIT
 queen/hit		qbfghit
 queen/melee		quebit

@@ -2101,6 +2101,42 @@ class FleshSpawnGun : BaseDeployer
       Stop;
   }
 }
+
+class FleshWizardGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Flesh Wizard";
+    Weapon.AmmoType2 "FleshWizardAmmo";
+    Inventory.PickupMessage "Got Flesh Wizard!";
+    BaseDeployer.price 1;
+    Weapon.SlotPriority 1;
+  }
+  States
+  {
+    Spawn:
+      LMWZ A -1;
+      Stop;
+  }
+}
+
+class XWizardGun : BaseDeployer
+{
+  Default
+  {
+    Tag "X Wizard";
+    Weapon.AmmoType2 "XWizardAmmo";
+    Inventory.PickupMessage "Got X Wizard!";
+    BaseDeployer.price 2;
+    Weapon.SlotPriority 2;
+  }
+  States
+  {
+    Spawn:
+      LMWZ A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

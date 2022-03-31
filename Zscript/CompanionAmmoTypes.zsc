@@ -959,3 +959,19 @@ class FleshSpawnAmmo : CommonAmmoFeatures
     Inventory.Icon "FLSPA1";
   }
 }
+
+class FleshWizardAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "LMWZA1";
+  }
+}
+
+class XWizardAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "LMWZA1";
+  }
+}
