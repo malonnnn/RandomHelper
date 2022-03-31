@@ -2155,6 +2155,24 @@ class HadesElementalGun : BaseDeployer
       Stop;
   }
 }
+
+class HaedexebusGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Haedexebus";
+    Weapon.AmmoType2 "HaedexebusAmmo";
+    Inventory.PickupMessage "Got Haedexebus!";
+    BaseDeployer.price 100;
+    Weapon.SlotPriority 100;
+  }
+  States
+  {
+    Spawn:
+      UNMB A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

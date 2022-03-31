@@ -1,3 +1,14 @@
+// Haedexebus
+UNMNROAM UNMNROAM
+UNMNPAIN UNMNPAIN
+UNMNDYIN UNMNDYIN
+UNMNRAIL UNMNRAIL
+UNMBWOSH UNMBWOSH
+UNMBFIR2 UNMBFIR2
+UNMBMACX UNMBMACX
+UNMBMACI UNMBMACI
+UNMBOOOM UNMBOOOM
+
 // Hades Elemental
 weapons/devzap                dsdevzap
 monster/hadsit                dshadsit

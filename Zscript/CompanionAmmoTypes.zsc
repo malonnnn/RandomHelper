@@ -983,3 +983,11 @@ class HadesElementalAmmo : CommonAmmoFeatures
     Inventory.Icon "HELEA1";
   }
 }
+
+class HaedexebusAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "UNMBA1";
+  }
+}
