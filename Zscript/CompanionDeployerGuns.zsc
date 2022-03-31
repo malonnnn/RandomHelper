@@ -2137,6 +2137,24 @@ class XWizardGun : BaseDeployer
       Stop;
   }
 }
+
+class HadesElementalGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Hades Elemental";
+    Weapon.AmmoType2 "HadesElementalAmmo";
+    Inventory.PickupMessage "Got Hades Elemental!";
+    BaseDeployer.price 350;
+    Weapon.SlotPriority 350;
+  }
+  States
+  {
+    Spawn:
+      HELE A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

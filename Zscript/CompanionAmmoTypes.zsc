@@ -975,3 +975,11 @@ class XWizardAmmo : CommonAmmoFeatures
     Inventory.Icon "LMWZA1";
   }
 }
+
+class HadesElementalAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "HELEA1";
+  }
+}
