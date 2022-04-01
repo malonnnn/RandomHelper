@@ -1,0 +1,132 @@
+Class HellstormArchon : CompanionBaronOfHell
+{
+  Default
+  {
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Health 2000;
+    Radius 24;
+    Height 64;
+    Mass 1000;
+    Speed 8;
+    PainChance 20;
+    MONSTER;
+    MeleeDamage 10;
+    Obituary "%o was no match for an archon of hell.";
+    HitObituary "%o was ripped apart by an archon of hell.";
+    BloodColor "20 60 20";
+    +NOTARGET
+    +FLOORCLIP
+    +MISSILEMORE
+    +NORADIUSDMG
+    +BOSS
+    SeeSound "monster/arcsit";
+    PainSound "baron/pain";
+    DeathSound "monster/arcdth";
+    MeleeSound "baron/melee";
+  }
+  States
+  {
+    Spawn:
+      ZOS3 AB 10 A_Look;
+      Loop;
+    See:
+      ZOS3 AABBCCDD 3 A_Chase;
+      Loop;
+    Missile:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ZOS3 B 0 A_Jump(128,13);
+      ZOS3 EF 8 A_FaceTarget;
+      ZOS3 G 0 A_SpawnProjectile ("CompanionBaronBall",28,0,0,0);
+      ZOS3 G 0 A_SpawnProjectile ("CompanionBaronBall",28,0,-4,0);
+      ZOS3 G 6 A_SpawnProjectile ("CompanionBaronBall",28,0,4,0);
+      ZOS3 E 0 A_Jump(64,7);
+      ZOS3 ST 8 A_FaceTarget;
+      ZOS3 U 0 A_SpawnProjectile ("CompanionBaronBall",28,0,0,0);
+      ZOS3 U 0 A_SpawnProjectile ("CompanionBaronBall",28,0,-4,0);
+      ZOS3 U 6 A_SpawnProjectile ("CompanionBaronBall",28,0,4,0);
+      ZOS3 S 0 A_Jump(64,1);
+      Goto See;
+      ZOS3 HI 8 A_FaceTarget;
+      ZOS3 S 0 A_Jump(128,2);
+      ZOS3 J 8 A_SpawnProjectile ("HellstormArchonComet",28,0,0,0);
+      Goto See;
+      ZOS3 J 0 A_SpawnProjectile ("CompanionBaronBall",28,0,-6,0);
+      ZOS3 J 0 A_SpawnProjectile ("CompanionBaronBall",28,0,-4,0);
+      ZOS3 J 0 A_SpawnProjectile ("CompanionBaronBall",28,0,-2,0);
+      ZOS3 J 0 A_SpawnProjectile ("CompanionBaronBall",28,0,2,0);
+      ZOS3 J 0 A_SpawnProjectile ("CompanionBaronBall",28,0,4,0);
+      ZOS3 J 6 A_SpawnProjectile ("CompanionBaronBall",28,0,6,0);
+      Goto See;
+    Melee:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      ZOS3 EF 8 A_FaceTarget;
+      ZOS3 G 6 A_CustomMeleeAttack(Random(1,8) * 10, "", "", "Companion");
+      ZOS3 G 0 A_Jump (128,1);
+      Goto See;
+      ZOS3 ST 8 A_FaceTarget;
+      ZOS3 U 6 A_CustomMeleeAttack(Random(1,8) * 10, "", "", "Companion");
+      ZOS3 G 0 A_Jump (64,1);
+      Goto See;
+      ZOS3 HI 8 A_FaceTarget;
+      ZOS3 J 0 A_CustomMeleeAttack(Random(1,8) * 10, "", "", "Companion");
+      ZOS3 J 6 A_CustomMeleeAttack(Random(1,8) * 10, "", "", "Companion");
+      Goto See;
+    Pain:
+      ZOS3 K 2;
+      ZOS3 K 2 A_Pain;
+      Goto See;
+    Death:
+      ZOS3 L 8;
+      ZOS3 M 8 A_Scream;
+      ZOS3 N 8;
+      ZOS3 O 8 A_NoBlocking;
+      ZOS3 PQ 8;
+      ZOS3 R -1 A_Fall;
+      Stop;
+    XDeath:
+      XARC A 5;
+      XARC B 5 A_XScream;
+      XARC C 5 A_NoBlocking;
+      XARC DEFGH 5;
+      XARC I -1;
+      stop;
+    Raise:
+      ZOS3 RQPONML 8;
+      Goto See;
+   }
+}
+
+Class HellstormArchonComet : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 8;
+    Height 12;
+    Speed 25;
+    Damage 20;
+    Scale 1.0;
+    PROJECTILE;
+    RENDERSTYLE "Normal";
+    +THRUGHOST
+    SeeSound "weapons/firbfi";
+    DeathSound "weapons/hellex";
+    DONTHURTSHOOTER;
+    +FIREDAMAGE
+  }
+  States
+  {
+    Spawn:
+      ZRCB AAAABBBBCCCC 1 Bright A_SpawnItem("ArchonCometTrail",0,0);
+      loop;
+    Death:
+      ZRCB J 0 Bright A_SetTranslucent (0.67,1);
+      ZRCB J 3 Bright;
+      ZRCB K 3 Bright A_Explode(128,128,XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      ZRCB LMN 3 Bright;
+      stop;
+  }
+}

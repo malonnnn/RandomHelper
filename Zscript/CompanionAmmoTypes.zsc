@@ -1023,3 +1023,11 @@ class HellsFuryAmmo : CommonAmmoFeatures
     Inventory.Icon "HFRYA1";
   }
 }
+
+class HellstormArchonAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "ZOS3A1C1";
+  }
+}

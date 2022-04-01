@@ -2245,6 +2245,24 @@ class HellsFuryGun : BaseDeployer
       Stop;
   }
 }
+
+class HellstormArchonGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Hellstorm Archon";
+    Weapon.AmmoType2 "HellstormArchonAmmo";
+    Inventory.PickupMessage "Got Hellstorm Archon!";
+    BaseDeployer.price 300;
+    Weapon.SlotPriority 300;
+  }
+  States
+  {
+    Spawn:
+      BOS3 A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

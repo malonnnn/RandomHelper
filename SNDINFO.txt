@@ -1,3 +1,9 @@
+// Hellstorm Archon
+monster/arcsit dsarcsit
+monster/arcdth dsarcdth
+weapons/firbfi dsfirbfi
+weapons/hellex dshellex
+
 // Hell's Fury
 harvester/scream shfbscrm
 
