@@ -1,3 +1,8 @@
+// Lord Of Heresy
+LordOfHeresy/sight DSLOHSIT
+LordOfHeresy/act DSLOHACT
+LordOfHeresy/death DSLOHDTH
+
 // Hellstorm Archon
 monster/arcsit dsarcsit
 monster/arcdth dsarcdth

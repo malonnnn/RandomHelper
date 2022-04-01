@@ -2263,6 +2263,24 @@ class HellstormArchonGun : BaseDeployer
       Stop;
   }
 }
+
+class LordOfHeresyGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Lord Of Heresy";
+    Weapon.AmmoType2 "LordOfHeresyAmmo";
+    Inventory.PickupMessage "Got Lord Of Heresy!";
+    BaseDeployer.price 200;
+    Weapon.SlotPriority 200;
+  }
+  States
+  {
+    Spawn:
+      LOHS A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

@@ -1031,3 +1031,11 @@ class HellstormArchonAmmo : CommonAmmoFeatures
     Inventory.Icon "ZOS3A1C1";
   }
 }
+
+class LordOfHeresyAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "LOHSA1";
+  }
+}
