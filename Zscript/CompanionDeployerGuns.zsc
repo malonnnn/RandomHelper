@@ -1961,7 +1961,7 @@ class FallenGun : BaseDeployer
     Inventory.PickupMessage "Got Fallen!";
     BaseDeployer.price 25;
     Weapon.SlotPriority 25;
-    Scale 0.3;
+    Scale 0.2;
   }
   States
   {
