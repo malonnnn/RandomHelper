@@ -1,259 +1,259 @@
 class BaseDeployer : Weapon
 {
-	int price;
-	property price : price;
-	int removeWeapon;
-	property removeWeapon : removeWeapon;
-	Default
-	{
-		+WEAPON.NOALERT
-		+SPRITEANGLE
-		+WEAPON.PRIMARY_USES_BOTH
-		+WEAPON.ALT_AMMO_OPTIONAL
-		+WEAPON.NO_AUTO_SWITCH
+  int price;
+  property price : price;
+  int removeWeapon;
+  property removeWeapon : removeWeapon;
+  Default
+  {
+    +WEAPON.NOALERT
+    +SPRITEANGLE
+    +WEAPON.PRIMARY_USES_BOTH
+    +WEAPON.ALT_AMMO_OPTIONAL
+    +WEAPON.NO_AUTO_SWITCH
     SpriteAngle 180;
-		Weapon.Kickback 100;
-		Weapon.AmmoGive1 1;
-		Weapon.AmmoGive2 1;
-		Weapon.AmmoUse2 0;
-		Weapon.UpSound "Weapons/BioReady";
-		Weapon.AmmoType1 "CompanionAmmo";
-		Weapon.SlotNumber 3;
-		Scale 0.3;
-		Alpha 0.5;
+    Weapon.Kickback 100;
+    Weapon.AmmoGive1 1;
+    Weapon.AmmoGive2 1;
+    Weapon.AmmoUse2 0;
+    Weapon.UpSound "Weapons/BioReady";
+    Weapon.AmmoType1 "CompanionAmmo";
+    Weapon.SlotNumber 3;
+    Scale 0.3;
 
-		BaseDeployer.removeWeapon 0;
-	}
-	States
-	{
-		Spawn:
-			BPBL M 1;
-			Loop;
-		Ready:
-			BPBL ABCD 5 A_WeaponReady;
-			Loop;
-		Deselect:
-			BPBL A 1 A_Lower;
-			Loop;
-		Select:
-			BPBL A 1 A_Raise;
-			Loop;
-		Fire:
-			TNT1 A 0 A_GunFlash;
-			TNT1 A 0
-			{
-				
-				let p = self;
-				int numCompanions = p.CountInv(invoker.ammotype2);
-				int balance = p.CountInv(invoker.ammotype1);
-				if(balance >= invoker.price && numCompanions >= 1)
-				{
-					String tag = invoker.getTag();
-					invoker.ammouse1 = invoker.price;
-					invoker.ammouse2 = 1;
+    BaseDeployer.removeWeapon 0;
+  }
+  States
+  {
+    Spawn:
+      BPBL M 1;
+      Loop;
+    Ready:
+      BPBL ABCD 5 A_WeaponReady;
+      Loop;
+    Deselect:
+      BPBL A 1 A_Lower;
+      Loop;
+    Select:
+      BPBL A 1 A_Raise;
+      Loop;
+    Fire:
+      TNT1 A 0 A_GunFlash;
+      TNT1 A 0
+      {
+        
+        let p = self;
+        int numCompanions = p.CountInv(invoker.ammotype2);
+        int balance = p.CountInv(invoker.ammotype1);
+        if(balance >= invoker.price && numCompanions >= 1)
+        {
+          String tag = invoker.getTag();
+          invoker.ammouse1 = invoker.price;
+          invoker.ammouse2 = 1;
 
-					A_StartSound("Weapons/BioFire");
+          A_StartSound("Weapons/BioFire");
 
-					String gunClassName = invoker.GetClassName();
-					let proj = BioProj(A_FireProjectile("BioProj"));
+          String gunClassName = invoker.GetClassName();
+          let proj = BioProj(A_FireProjectile("BioProj"));
 
-					proj.companionClass = gunClassName.Left(gunClassName.Length() - 3);
-					proj.niceName = tag;
-					proj.numCompanions = numCompanions;
+          proj.companionClass = gunClassName.Left(gunClassName.Length() - 3);
+          proj.niceName = tag;
+          proj.numCompanions = numCompanions;
 
-					// if price is free, reimburse 1 gun ammo
-					if(invoker.price <= 0)
-					{
-						A_GiveInventory(gunClassName, 1);
+          // if price is free, reimburse 1 gun ammo
+          if(invoker.price <= 0)
+          {
+            A_GiveInventory(gunClassName, 1);
 
-					// remove gun if we out of companions and isnt free
-					}else if(numCompanions <= 1){
-					 	let p2 = PlayerPawn(p);
-						player.cheats &= ~CF_INSTANTWEAPSWITCH;
-						p.player.pendingweapon = p2.PickNextWeapon();
-					 	invoker.removeWeapon = 1;
-					 }
-				}
-			}
-			BPBL E 7;
-			BPBL F 8;
-			BPBL G 7;
-			BPBL H 8;
-			Goto Ready;
-		AltFire:
-			TNT1 A 0
-			{
-				A_GunFlash();
-				invoker.ammouse2 = 0;
-			}
-			TNT1 A 0 A_StartSound("Weapons/BioFire");
-			BPBL E 7 A_FireProjectile("BioProjAlt");
-			BPBL F 8;
-			BPBL G 7;
-			BPBL H 8;
-			Goto Ready;
-	}
+          // remove gun if we out of companions and isnt free
+          }else if(numCompanions <= 1){
+             let p2 = PlayerPawn(p);
+            player.cheats &= ~CF_INSTANTWEAPSWITCH;
+            p.player.pendingweapon = p2.PickNextWeapon();
+             invoker.removeWeapon = 1;
+           }
+        }
+      }
+      BPBL E 7;
+      BPBL F 8;
+      BPBL G 7;
+      BPBL H 8;
+      Goto Ready;
+    AltFire:
+      TNT1 A 0
+      {
+        A_GunFlash();
+        invoker.ammouse2 = 0;
+      }
+      TNT1 A 0 A_StartSound("Weapons/BioFire");
+      BPBL E 7 A_FireProjectile("BioProjAlt");
+      BPBL F 8;
+      BPBL G 7;
+      BPBL H 8;
+      Goto Ready;
+  }
 
-	override bool ShouldStay ()
-	{
-		return false;
-	}
+  override bool ShouldStay ()
+  {
+    return false;
+  }
 
-	override void Tick()
-	{
-		if(self.removeWeapon != 0){
-			if(self.removeWeapon > 70){
-				owner.player.cheats |= CF_INSTANTWEAPSWITCH;
-				self.Destroy();
-			}else{
-				self.removeWeapon++;
-			}
-		}
-	}
+  override void Tick()
+  {
+    Super.Tick();
+    if(self.removeWeapon != 0){
+      if(self.removeWeapon > 70){
+        owner.player.cheats |= CF_INSTANTWEAPSWITCH;
+        self.Destroy();
+      }else{
+        self.removeWeapon++;
+      }
+    }
+  }
 }
 
 class BioProj : Actor
 {
-	String companionClass;
-	property companionClass : companionClass;
-	String niceName;
-	property niceName : niceName;
-	int numCompanions;
-	property numCompanions : numCompanions;
-	Default
-	{
-		+Shootable
-		+DontSplash
-		+SeekerMissile
-		+ForceRadiusDmg
-		+DontFall
-		+ThruSpecies
-		Radius 5;
-		Height 5;
-		RenderStyle "Translucent";
-		Alpha .7;
-		Decal "BioDecal";
-		Speed 30;
-		DamageType "Companion";
-		Species "Companion";
-		Projectile;
-	}
-	States
-	{
-		Spawn:
-			BPBP ABC 3 Bright A_SpawnItemEx("BioPuff");
-			Loop;
-		Stick:
-			BPBP AAABBBCCC 1 Bright A_Fire(35);
-			Loop;
-		Death:
-			TNT1 A 0
-			{
-				A_StartSound("Weapons/BioProj");
-				let g = Globals(EventHandler.Find("Globals"));
-				g.createCompanion(companionClass, pos, target, niceName, false);
-			}
-			BPBP DEF 6 Bright;
-			Stop;
-	}
+  String companionClass;
+  property companionClass : companionClass;
+  String niceName;
+  property niceName : niceName;
+  int numCompanions;
+  property numCompanions : numCompanions;
+  Default
+  {
+    +Shootable
+    +DontSplash
+    +SeekerMissile
+    +ForceRadiusDmg
+    +DontFall
+    +ThruSpecies
+    Radius 5;
+    Height 5;
+    RenderStyle "Translucent";
+    Alpha .7;
+    Decal "BioDecal";
+    Speed 30;
+    DamageType "Companion";
+    Species "Companion";
+    Projectile;
+  }
+  States
+  {
+    Spawn:
+      BPBP ABC 3 Bright A_SpawnItemEx("BioPuff");
+      Loop;
+    Stick:
+      BPBP AAABBBCCC 1 Bright A_Fire(35);
+      Loop;
+    Death:
+      TNT1 A 0
+      {
+        A_StartSound("Weapons/BioProj");
+        let g = Globals(EventHandler.Find("Globals"));
+        g.createCompanion(companionClass, pos, target, niceName, false);
+      }
+      BPBP DEF 6 Bright;
+      Stop;
+  }
 }
 
 class BioProjAlt : Actor
 {
-	Default
-	{
-		+Shootable
-		+DontSplash
-		+SeekerMissile
-		+ForceRadiusDmg
-		+DontFall
-		+ThruSpecies
-		Radius 5;
-		Height 5;
-		RenderStyle "Translucent";
-		Alpha .7;
-		Decal "BioDecal";
-		Speed 30;
-		Species "Companion";
-		DamageType "Companion";
-		Projectile;
-	}
-	States
-	{
-		Spawn:
-			BPBP NOP 3 Bright A_SpawnItemEx("BioPuff");
-			Loop;
-		ChangeTID:
-			TNT1 A 0 A_SetShootable;
-			TNT1 A 0 A_Stop;
-			TNT1 A 0 Thing_ChangeTID(0,2648);
-			GoTo Death;
-		Stick:
-			BPBP AAABBBCCC 1 Bright A_Fire(35);
-			Loop;
-		Death:
-			TNT1 A 0 A_JumpIf(tid == 2648,1);
-			Goto ChangeTID;
-			TNT1 A 0
-			{
-				bool spawnedAtLeastOne = false;
-      	let g = Globals(EventHandler.Find("Globals"));
-				for(int i = 0; i < g.companions.Size(); i++)
-				{
-					spawnedAtLeastOne = true;
-					g.companions[i].SetOrigin(pos, true);
-				}
-			}
-			BPBP DEF 6 Bright;
-			Stop;
-	}
+  Default
+  {
+    +Shootable
+    +DontSplash
+    +SeekerMissile
+    +ForceRadiusDmg
+    +DontFall
+    +ThruSpecies
+    Radius 5;
+    Height 5;
+    RenderStyle "Translucent";
+    Alpha .7;
+    Decal "BioDecal";
+    Speed 30;
+    Species "Companion";
+    DamageType "Companion";
+    Projectile;
+  }
+  States
+  {
+    Spawn:
+      BPBP NOP 3 Bright A_SpawnItemEx("BioPuff");
+      Loop;
+    ChangeTID:
+      TNT1 A 0 A_SetShootable;
+      TNT1 A 0 A_Stop;
+      TNT1 A 0 Thing_ChangeTID(0,2648);
+      GoTo Death;
+    Stick:
+      BPBP AAABBBCCC 1 Bright A_Fire(35);
+      Loop;
+    Death:
+      TNT1 A 0 A_JumpIf(tid == 2648,1);
+      Goto ChangeTID;
+      TNT1 A 0
+      {
+        bool spawnedAtLeastOne = false;
+        let g = Globals(EventHandler.Find("Globals"));
+        for(int i = 0; i < g.companions.Size(); i++)
+        {
+          spawnedAtLeastOne = true;
+          g.companions[i].SetOrigin(pos, true);
+        }
+      }
+      BPBP DEF 6 Bright;
+      Stop;
+  }
 }
 
 class BioPuff : Actor
 {
-	Default
-	{
-		+NoBlockMap
-		+NoGravity
-		+Randomize
-		+PuffOnActors
-		+ThruSpecies
-		Species "Companion";
-		DamageType "Companion";
-		RenderStyle "Translucent";
-		Radius 0;
-		Height 0;
-		Scale .5;
-		Alpha .25;
-		VSpeed 1;
-		Mass 5;
-	}
-	States
-	{
-		Spawn:
-			BPBP GHIJKLMIHG 2 Bright;
-			Stop;
-	}
+  Default
+  {
+    +NoBlockMap
+    +NoGravity
+    +Randomize
+    +PuffOnActors
+    +ThruSpecies
+    Species "Companion";
+    DamageType "Companion";
+    RenderStyle "Translucent";
+    Radius 0;
+    Height 0;
+    Scale .5;
+    Alpha .25;
+    VSpeed 1;
+    Mass 5;
+  }
+  States
+  {
+    Spawn:
+      BPBP GHIJKLMIHG 2 Bright;
+      Stop;
+  }
 }
 
 class CompanionAmmo : Ammo
 {
   Default
   {
-		-NoGravity
-		-Float
-		-DontFall
+    -NoGravity
+    -Float
+    -DontFall
     Inventory.Amount 1;
     Inventory.MaxAmount 999;
     Inventory.InterHubAmount 999;
-		Inventory.PickupMessage "";
-		Ammo.BackpackAmount 2;
-		Ammo.BackpackMaxAmount 999;
+    Inventory.PickupMessage "";
+    Ammo.BackpackAmount 2;
+    Ammo.BackpackMaxAmount 999;
   }
   States
-	{
+  {
     Spawn:
       BIOC A -1;
       Stop;
-	}
+  }
 }
