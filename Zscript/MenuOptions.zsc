@@ -3,3 +3,9 @@ OptionValue "WadScaling"
     0, "Off"
     1, "On"
 }
+
+OptionValue "DebugSpawning"
+{
+    0, "Off"
+    1, "On"
+}

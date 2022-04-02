@@ -1676,7 +1676,7 @@ class DarkImpSTGun : BaseDeployer
   States
   {
     Spawn:
-      DKB1 A -1;
+      DRKS A -1;
       Stop;
   }
 }
@@ -1913,6 +1913,7 @@ class EnhancedCacodemonGun : BaseDeployer
     Inventory.PickupMessage "Got Enhanced Cacodemon!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
+    Scale 0.4;
   }
   States
   {
@@ -2093,6 +2094,7 @@ class FleshSpawnGun : BaseDeployer
     Inventory.PickupMessage "Got Fleshspawn!";
     BaseDeployer.price 5;
     Weapon.SlotPriority 5;
+    Scale 0.25;
   }
   States
   {
@@ -2165,6 +2167,7 @@ class HaedexebusGun : BaseDeployer
     Inventory.PickupMessage "Got Haedexebus!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
+    Scale 0.25;
   }
   States
   {
@@ -2291,6 +2294,7 @@ class OverlordGun : BaseDeployer
     Inventory.PickupMessage "Got Overlord!";
     BaseDeployer.price 500;
     Weapon.SlotPriority 500;
+    Scale 0.2;
   }
   States
   {

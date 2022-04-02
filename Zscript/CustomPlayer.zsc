@@ -25,4 +25,15 @@ class MyDoomGuy : DoomPlayer {
     super.PostBeginPlay();
     player.cheats |= CF_INSTANTWEAPSWITCH;
   }
+
+  override void Tick(){
+    super.Tick();
+    cVar scaleWithLevels = cVar.GetCVar('zdw_debugspawning');
+    if(scaleWithLevels.GetBool())
+    {
+      Globals g = Globals(EventHandler.Find("Globals"));
+      String companionClass = g.getRandomCompanion();
+      Actor.Spawn(companionClass.."Gun", (pos.x+Random(-1, 1), pos.y+Random(-1, 1), pos.z));
+    }
+  }
 }

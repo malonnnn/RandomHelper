@@ -19,7 +19,7 @@ class BaseDeployer : Weapon
 		Weapon.UpSound "Weapons/BioReady";
 		Weapon.AmmoType1 "CompanionAmmo";
 		Weapon.SlotNumber 3;
-		Scale 0.5;
+		Scale 0.3;
 		Alpha 0.5;
 
 		BaseDeployer.removeWeapon 0;
