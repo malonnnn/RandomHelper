@@ -33,7 +33,7 @@ class MyDoomGuy : DoomPlayer {
     {
       Globals g = Globals(EventHandler.Find("Globals"));
       String companionClass = g.getRandomCompanion();
-      Actor.Spawn(companionClass.."Gun", (pos.x+Random(-1, 1), pos.y+Random(-1, 1), pos.z));
+      A_SpawnItemEx(companionClass.."Gun");
     }
   }
 }
