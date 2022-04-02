@@ -2295,6 +2295,24 @@ class PhantomGun : BaseDeployer
       Stop;
   }
 }
+
+class ProfaneOneGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Profane One";
+    Weapon.AmmoType2 "ProfaneOneAmmo";
+    Inventory.PickupMessage "Got Profane One!";
+    BaseDeployer.price 200;
+    Weapon.SlotPriority 200;
+  }
+  States
+  {
+    Spawn:
+      BOSX A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

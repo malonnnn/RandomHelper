@@ -1050,6 +1050,14 @@ class PhantomAmmo : CommonAmmoFeatures
   Default
   {
     Inventory.Icon "PHANA1C1";
-    CommonAmmoFeatures.isTrans true;   
+    CommonAmmoFeatures.isTrans true;
+  }
+}
+
+class ProfaneOneAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "BOSXA1";
   }
 }

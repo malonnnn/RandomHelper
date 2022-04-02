@@ -1,3 +1,16 @@
+// Profane One
+profane/sight dsprosee
+profane/death dsprodth
+profane/die dsprogib
+profane/blood dsbldpuk
+profane/melee dsproclw
+profane/poison dspsnsht
+profane/poisondie dspsnhit
+vomit1 vomit1
+vomit2 vomit2
+vomit3 vomit3
+$RANDOM profane/vomit { vomit1 vomit2 vomit3 }
+
 // Phantom
 phantom/spirit1 DSSPIRT1
 phantom/death BUILD
