@@ -414,7 +414,6 @@ class CompanionCacodemonGun : BaseDeployer
     Inventory.PickupMessage "Got Cacodemon!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
-    Scale 0.3;
   }
   States
   {
@@ -451,7 +450,6 @@ class CompanionBaronOfHellGun : BaseDeployer
     Inventory.PickupMessage "Got Baron of Hell!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
-    Scale 0.3;
   }
   States
   {
@@ -488,7 +486,6 @@ class CompanionArachnotronGun : BaseDeployer
     Inventory.PickupMessage "Got Arachnotron!";
     BaseDeployer.price 75;
     Weapon.SlotPriority 75;
-    Scale 0.3;
   }
   States
   {
@@ -525,7 +522,6 @@ class CompanionFatsoGun : BaseDeployer
     Inventory.PickupMessage "Got Mancubus!";
     BaseDeployer.price 75;
     Weapon.SlotPriority 75;
-    Scale 0.3;
   }
   States
   {
@@ -636,7 +632,6 @@ Class BelphegorGun : BaseDeployer
     Inventory.PickupMessage "Got Belphegor!";
     BaseDeployer.price 250;
     Weapon.SlotPriority 250;
-    Scale 0.3;
   }
   States
   {
@@ -656,7 +651,6 @@ Class AfritGun : BaseDeployer
     BaseDeployer.price 150;
     Weapon.SlotPriority 150;
     Inventory.Icon "FRITV0";
-    Scale 0.3;
   }
   States
   {
@@ -712,7 +706,6 @@ Class ArchonOfHellGun : BaseDeployer
     Inventory.PickupMessage "Got Archon of Hell!";
     BaseDeployer.price 300;
     Weapon.SlotPriority 300;
-    Scale 0.3;
   }
   States
   {
@@ -749,7 +742,6 @@ class ArachnobaronGun : BaseDeployer
     Inventory.PickupMessage "Got Arachnobaron!";
     BaseDeployer.price 200;
     Weapon.SlotPriority 200;
-    Scale 0.3;
   }
   States
   {
@@ -804,7 +796,6 @@ class AbaddonGun : BaseDeployer
     Inventory.PickupMessage "Got Abaddon!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
-    Scale 0.3;
   }
   States
   {
@@ -823,7 +814,6 @@ class AgathodemonGun : BaseDeployer
     Inventory.PickupMessage "Got Agathodemon!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
-    Scale 0.3;
   }
   States
   {
@@ -937,7 +927,6 @@ class AugmentedArachnotronGun : BaseDeployer
     Inventory.PickupMessage "Got Augmented Arachnotron!";
     BaseDeployer.price 150;
     Weapon.SlotPriority 150;
-    Scale 0.3;
   }
   States
   {
@@ -1254,7 +1243,6 @@ class BruiserDemonGun : BaseDeployer
     Inventory.PickupMessage "Got Bruiser Demon!";
     BaseDeployer.price 200;
     Weapon.SlotPriority 200;
-    Scale 0.3;
   }
   States
   {
@@ -1273,7 +1261,6 @@ class CacoLichGun : BaseDeployer
     Inventory.PickupMessage "Got CacoLich!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
-    Scale 0.3;
   }
   States
   {
@@ -1302,7 +1289,6 @@ class CacolanternGun : BaseDeployer
     Inventory.PickupMessage "Got Cacolantern!";
     BaseDeployer.price 65;
     Weapon.SlotPriority 65;
-    Scale 0.3;
   }
   States
   {
@@ -1375,7 +1361,6 @@ class ChaingunSpiderGun : BaseDeployer
     Inventory.PickupMessage "Got Chaingun Spider!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
-    Scale 0.3;
   }
   States
   {
@@ -1465,7 +1450,6 @@ class CrackodemonGun : BaseDeployer
     Inventory.PickupMessage "Got Crackodemon!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
-    Scale 0.3;
   }
   States
   {
@@ -1502,7 +1486,6 @@ class CyberbaronGun : BaseDeployer
     Inventory.PickupMessage "Got Cyberbaron!";
     BaseDeployer.price 200;
     Weapon.SlotPriority 200;
-    Scale 0.3;
   }
   States
   {
@@ -1576,7 +1559,6 @@ class CybruiserGun : BaseDeployer
     Inventory.PickupMessage "Got Cybruiser!";
     BaseDeployer.price 300;
     Weapon.SlotPriority 300;
-    Scale 0.3;
   }
   States
   {
@@ -1705,7 +1687,6 @@ class DefilerGun : BaseDeployer
     Inventory.PickupMessage "Got Defiler!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
-    Scale 0.3;
   }
   States
   {
@@ -1742,7 +1723,6 @@ class DeepOneGun : BaseDeployer
     Inventory.PickupMessage "Got Deep One!";
     BaseDeployer.price 300;
     Weapon.SlotPriority 300;
-    Scale 0.3;
   }
   States
   {
@@ -1906,7 +1886,6 @@ class EnhancedCacodemonGun : BaseDeployer
     Inventory.PickupMessage "Got Enhanced Cacodemon!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
-    Scale 0.3;
   }
   States
   {
@@ -2294,6 +2273,24 @@ class OverlordGun : BaseDeployer
   {
     Spawn:
       OVER A -1;
+      Stop;
+  }
+}
+
+class PhantomGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Phantom";
+    Weapon.AmmoType2 "PhantomAmmo";
+    Inventory.PickupMessage "Got Phantom!";
+    BaseDeployer.price 200;
+    Weapon.SlotPriority 200;
+  }
+  States
+  {
+    Spawn:
+      PHAN A -1;
       Stop;
   }
 }

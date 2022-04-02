@@ -1,3 +1,9 @@
+// Phantom
+phantom/spirit1 DSSPIRT1
+phantom/death BUILD
+phantom/bomb FIREBALL
+phantom/explode DSCMTEXP
+
 // Overlord
 weapons/devexp                dsdevexp
 weapons/devzap                dsdevzap

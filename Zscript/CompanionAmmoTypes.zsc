@@ -1044,3 +1044,11 @@ class OverlordAmmo : CommonAmmoFeatures
     Inventory.Icon "OVERA1";
   }
 }
+
+class PhantomAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "PHANA1C1";
+  }
+}
