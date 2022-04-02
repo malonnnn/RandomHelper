@@ -1,3 +1,9 @@
+// Warlord Of Hell
+warlord/sight dswlssit
+warlord/pain dswlpain
+warlord/death dswlsdth
+warlord/active dswlact
+
 // Superdemon
 superdemon/death		DSSUPDTH
 superdemon/snarl		DSSUPSNA

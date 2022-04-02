@@ -1,0 +1,103 @@
+Class WarlordOfHell : Actor
+{
+  Default
+  {
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Health 1500;
+    Radius 20;
+    Height 56;
+    Speed 13;
+    PainChance 50;
+    Scale 1.2;
+    Mass 1000;
+    BloodColor "39 59 9F";
+    Monster;
+    +FloorClip
+    Obituary "%o was extuingished by the warlord of hell.";
+    SeeSound "warlord/sight";
+    PainSound "warlord/pain";
+    DeathSound "warlord/death";
+    ActiveSound "warlord/active";
+  }
+  States
+  {
+    Spawn:
+      VOS6 AB 10 A_Look;
+      Loop;
+    See:
+      VOS6 AABBCCDD 4 A_Chase;
+      Loop;
+    Missile:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      VOS6 E 0 A_JumpIfHealthLower(500,13);
+      VOS6 E 0 A_JumpIfHealthLower(1000,4);
+      VOS6 E 6 A_FaceTarget;
+      VOS6 F 6 A_FaceTarget;
+      VOS6 G 6 A_SpawnProjectile("WarlordOfHellBall", 32, 0, 0);
+      Goto See;
+      VOS6 E 6 A_FaceTarget;
+      VOS6 F 6 A_FaceTarget;
+      VOS6 G 0 A_SpawnProjectile("WarlordOfHellBall", 32, 0, 8);
+      VOS6 G 6 A_SpawnProjectile("WarlordOfHellBall", 32, 0, 0);
+      VOS6 P 6 A_FaceTarget;
+      VOS6 Q 6 A_FaceTarget;
+      VOS6 R 0 A_SpawnProjectile("WarlordOfHellBall", 32, 0, 0);
+      VOS6 R 6 A_SpawnProjectile("WarlordOfHellBall", 32, 0, -8);
+      Goto See;
+      VOS6 E 6 A_FaceTarget;
+      VOS6 F 6 A_FaceTarget;
+      VOS6 G 0 A_SpawnProjectile("WarlordOfHellBall", 32, 0, -20);
+      VOS6 G 6 A_SpawnProjectile("WarlordOfHellBall", 32, 0, 0);
+      VOS6 P 6 A_FaceTarget;
+      VOS6 Q 6 A_FaceTarget;
+      VOS6 R 0 A_SpawnProjectile("WarlordOfHellBall", 32, 0, 20);
+      VOS6 R 6 A_SpawnProjectile("WarlordOfHellBall", 32, 0, 0);
+      VOS6 E 6 A_FaceTarget;
+      VOS6 F 6 A_FaceTarget;
+      VOS6 G 0 A_SpawnProjectile("WarlordOfHellBall", 32, 0, -12);
+      VOS6 G 6 A_SpawnProjectile("WarlordOfHellBall", 32, 0, 12);
+      Goto See;
+    Pain:
+      VOS6 H 5;
+      VOS6 H 5 A_Pain;
+      Goto See;
+    Death:
+      VOS6 I 12;
+      VOS6 J 12 A_Scream;
+      VOS6 K 12 A_Fall;
+      VOS6 LMN 12;
+      VOS6 O -1;
+      Stop;
+    Raise:
+      VOS6 ONMLKJI 5;
+      Goto See;
+  }
+}
+
+Class WarlordOfHellBall : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 6;
+    Height 8;
+    Speed 15;
+    Damage 8;
+    Projectile;
+    SeeSound "imp/attack";
+    DeathSound "imp/shotx";
+    Decal "BaronScorch";
+  }
+  States
+  {
+    Spawn:
+      BALM AB 4 Bright;
+      Loop;
+    Death:
+      BALM CDE 6 Bright;
+      Stop;
+  }
+}

@@ -1077,3 +1077,11 @@ class SuperDemonAmmo : CommonAmmoFeatures
     Inventory.Icon "SUPRA1";
   }
 }
+
+class WarlordOfHellAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "VOS6A1C1";
+  }
+}

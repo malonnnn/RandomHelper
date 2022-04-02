@@ -2350,6 +2350,24 @@ class SuperDemonGun : BaseDeployer
       Stop;
   }
 }
+
+class WarlordOfHellGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Warlord Of Hell";
+    Weapon.AmmoType2 "WarlordOfHellAmmo";
+    Inventory.PickupMessage "Got Warlord Of Hell!";
+    BaseDeployer.price 150;
+    Weapon.SlotPriority 150;
+  }
+  States
+  {
+    Spawn:
+      VOS6 A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
