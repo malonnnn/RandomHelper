@@ -2313,6 +2313,24 @@ class ProfaneOneGun : BaseDeployer
       Stop;
   }
 }
+
+class SquireGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Squire";
+    Weapon.AmmoType2 "SquireAmmo";
+    Inventory.PickupMessage "Got Squire!";
+    BaseDeployer.price 30;
+    Weapon.SlotPriority 30;
+  }
+  States
+  {
+    Spawn:
+      BOS6 A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

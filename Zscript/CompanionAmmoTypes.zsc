@@ -1061,3 +1061,11 @@ class ProfaneOneAmmo : CommonAmmoFeatures
     Inventory.Icon "BOSXA1";
   }
 }
+
+class SquireAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "BOS6A1";
+  }
+}
