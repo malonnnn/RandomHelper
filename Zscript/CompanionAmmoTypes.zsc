@@ -1050,5 +1050,6 @@ class PhantomAmmo : CommonAmmoFeatures
   Default
   {
     Inventory.Icon "PHANA1C1";
+    CommonAmmoFeatures.isTrans true;   
   }
 }
