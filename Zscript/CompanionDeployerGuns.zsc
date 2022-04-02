@@ -11,7 +11,7 @@ class CompanionZombieManGun : BaseDeployer
   States
   {
     Spawn:
-      POSS A 1;
+      POSS A -1;
       Stop;
   }
 }
@@ -29,7 +29,7 @@ Class MarineCompanionPistolGun : BaseDeployer
   States
   {
     Spawn:
-      ALY2 A 1;
+      ALY2 A -1;
       Stop;
   }
 }
@@ -47,7 +47,7 @@ Class MarineCompanionFistGun : BaseDeployer
   States
   {
     Spawn:
-      ALY1 A 1;
+      ALY1 A -1;
       Stop;
   }
 }
@@ -65,7 +65,7 @@ Class MarineCompanionSGGun : BaseDeployer
   States
   {
     Spawn:
-      ALY5 A 1;
+      ALY5 A -1;
       Stop;
   }
 }
@@ -83,7 +83,7 @@ Class MarineCompanionSSGGun : BaseDeployer
   States
   {
     Spawn:
-      AL11 A 1;
+      AL11 A -1;
       Stop;
   }
 }
@@ -101,7 +101,7 @@ Class MarineCompanionCGGun : BaseDeployer
   States
   {
     Spawn:
-      ALY4 A 1;
+      ALY4 A -1;
       Stop;
   }
 }
@@ -119,7 +119,7 @@ Class MarineCompanionRocketGun : BaseDeployer
   States
   {
     Spawn:
-      ALY9 A 1;
+      ALY9 A -1;
       Stop;
   }
 }
@@ -137,7 +137,7 @@ Class MarineCompanionPlasmaGun : BaseDeployer
   States
   {
     Spawn:
-      ALY8 A 1;
+      ALY8 A -1;
       Stop;
   }
 }
@@ -155,7 +155,7 @@ Class MarineCompanionBFG9000Gun : BaseDeployer
   States
   {
     Spawn:
-      AL10 A 1;
+      AL10 A -1;
       Stop;
   }
 }
@@ -173,7 +173,7 @@ Class MarineCompanionBFG10KGun : BaseDeployer
   States
   {
     Spawn:
-      AL15 A 1;
+      AL15 A -1;
       Stop;
   }
 }
@@ -191,7 +191,7 @@ Class MarineCompanionGLGun : BaseDeployer
   States
   {
     Spawn:
-      AL14 A 1;
+      AL14 A -1;
       Stop;
   }
 }
@@ -209,7 +209,7 @@ Class MarineCompanionHSMissileGun : BaseDeployer
   States
   {
     Spawn:
-      AL13 A 1;
+      AL13 A -1;
       Stop;
   }
 }
@@ -227,7 +227,7 @@ Class MarineCompanionRailgunGun : BaseDeployer
   States
   {
     Spawn:
-      AL12 A 1;
+      AL12 A -1;
       Stop;
   }
 }
@@ -245,7 +245,7 @@ Class MarineCompanionSniperGun : BaseDeployer
   States
   {
     Spawn:
-      AL17 A 1;
+      AL17 A -1;
       Stop;
   }
 }
@@ -263,7 +263,7 @@ Class MarineCompanionFlameThrowerGun : BaseDeployer
   States
   {
     Spawn:
-      AL16 A 1;
+      AL16 A -1;
       Stop;
   }
 }
@@ -281,7 +281,7 @@ Class MarineCompanionMGGun : BaseDeployer
   States
   {
     Spawn:
-      ALY3 A 1;
+      ALY3 A -1;
       Stop;
   }
 }
@@ -299,7 +299,7 @@ Class MarineCompanionMinigunGun : BaseDeployer
   States
   {
     Spawn:
-      ALY6 A 1;
+      ALY6 A -1;
       Stop;
   }
 }
@@ -317,7 +317,7 @@ Class MarineCompanionChainsawGun : BaseDeployer
   States
   {
     Spawn:
-      ALY7 A 1;
+      ALY7 A -1;
       Stop;
   }
 }
@@ -335,7 +335,7 @@ class CompanionShotgunGuyGun : BaseDeployer
   States
   {
     Spawn:
-      SPOS A 1;
+      SPOS A -1;
       Stop;
   }
 }
@@ -353,7 +353,7 @@ class CompanionChaingunGuyGun : BaseDeployer
   States
   {
     Spawn:
-      CPOS A 1;
+      CPOS A -1;
       Stop;
   }
 }
@@ -371,7 +371,7 @@ class CompanionDemonGun : BaseDeployer
   States
   {
     Spawn:
-      SARG A 1;
+      SARG A -1;
       Stop;
   }
 }
@@ -401,7 +401,7 @@ class CompanionLostSoulGun : BaseDeployer
   States
   {
     Spawn:
-      SKUL A 1;
+      SKUL A -1;
       Stop;
   }
 }
@@ -420,7 +420,7 @@ class CompanionCacodemonGun : BaseDeployer
   States
   {
     Spawn:
-      HEAD A 1;
+      HEAD A -1;
       Stop;
   }
 }
@@ -439,7 +439,7 @@ class CompanionPainElementalGun : BaseDeployer
   States
   {
     Spawn:
-      PAIN A 1;
+      PAIN A -1;
       Stop;
   }
 }
@@ -458,7 +458,7 @@ class CompanionBaronOfHellGun : BaseDeployer
   States
   {
     Spawn:
-      BOSS A 1;
+      BOSS A -1;
       Stop;
   }
 }
@@ -476,7 +476,7 @@ class CompanionHellKnightGun : CompanionBaronOfHellGun
   States
   {
     Spawn:
-      BOS2 A 1;
+      BOS2 A -1;
       Stop;
   }
 }
@@ -495,7 +495,7 @@ class CompanionArachnotronGun : BaseDeployer
   States
   {
     Spawn:
-      BSPI A 1;
+      BSPI A -1;
       Stop;
   }
 }
@@ -514,7 +514,7 @@ class CompanionArchvileGun : BaseDeployer
   States
   {
     Spawn:
-      VILE A 1;
+      VILE A -1;
       Stop;
   }
 }
@@ -533,7 +533,7 @@ class CompanionFatsoGun : BaseDeployer
   States
   {
     Spawn:
-      FATT A 1;
+      FATT A -1;
       Stop;
   }
 }
@@ -552,7 +552,7 @@ class CompanionCyberdemonGun : BaseDeployer
   States
   {
     Spawn:
-      CYBR A 1;
+      CYBR A -1;
       Stop;
   }
 }
@@ -571,7 +571,7 @@ class CompanionSpiderMastermindGun : BaseDeployer
   States
   {
     Spawn:
-      SPID A 1;
+      SPID A -1;
       Stop;
   }
 }
@@ -589,7 +589,7 @@ class CompanionWolfensteinSSGun : BaseDeployer
   States
   {
     Spawn:
-      SSWV A 1;
+      SSWV A -1;
       Stop;
   }
 }
@@ -608,7 +608,7 @@ class CompanionRevenantGun : BaseDeployer
   States
   {
     Spawn:
-      SKEL A 1;
+      SKEL A -1;
       Stop;
   }
 }
@@ -626,7 +626,7 @@ class CompanionDoomImpGun : BaseDeployer
   States
   {
     Spawn:
-      TROO A 1;
+      TROO A -1;
       Stop;
   }
 }
@@ -645,7 +645,7 @@ Class BelphegorGun : BaseDeployer
   States
   {
     Spawn:
-      BOS3 A 1;
+      BOS3 A -1;
       Stop;
   }
 }
@@ -665,7 +665,7 @@ Class AfritGun : BaseDeployer
   States
   {
     Spawn:
-      FRIT V 1;
+      FRIT V -1;
       Stop;
   }
 }
@@ -684,7 +684,7 @@ Class MarauderGun : BaseDeployer
   States
   {
     Spawn:
-      MAUD A 1;
+      MAUD A -1;
       Stop;
   }
 }
@@ -703,7 +703,7 @@ Class ArachnophyteGun : BaseDeployer
   States
   {
     Spawn:
-      APYT A 1;
+      APYT A -1;
       Stop;
   }
 }
@@ -722,7 +722,7 @@ Class ArchonOfHellGun : BaseDeployer
   States
   {
     Spawn:
-      BOS4 A 1;
+      BOS4 A -1;
       Stop;
   }
 }
@@ -740,7 +740,7 @@ Class MurderBallGun : BaseDeployer
   States
   {
     Spawn:
-      BERS A 1;
+      BERS A -1;
       Stop;
   }
 }
@@ -759,7 +759,7 @@ class ArachnobaronGun : BaseDeployer
   States
   {
     Spawn:
-      ARBR A 1;
+      ARBR A -1;
       Stop;
   }
 }
@@ -777,7 +777,7 @@ class BabyCacoGun : BaseDeployer
   States
   {
     Spawn:
-      CACB A 1;
+      CACB A -1;
       Stop;
   }
 }
@@ -795,7 +795,7 @@ class BeheadedKamikazeGun : BaseDeployer
   States
   {
     Spawn:
-      BKAM A 1;
+      BKAM A -1;
       Stop;
   }
 }
@@ -814,7 +814,7 @@ class AbaddonGun : BaseDeployer
   States
   {
     Spawn:
-      HED3 A 1;
+      HED3 A -1;
       Stop;
   }
 }
@@ -833,7 +833,7 @@ class AgathodemonGun : BaseDeployer
   States
   {
     Spawn:
-      AGAH A 1;
+      AGAH A -1;
       Stop;
   }
 }
@@ -861,7 +861,7 @@ class AgauresGun : BaseDeployer
   States
   {
     Spawn:
-      AGUR A 1;
+      AGUR A -1;
       Stop;
   }
 }
@@ -891,7 +891,7 @@ class AnnihilatorGun : BaseDeployer
   States
   {
     Spawn:
-      ANNI A 1;
+      ANNI A -1;
       Stop;
   }
 }
@@ -909,7 +909,7 @@ class AracnorbGun : BaseDeployer
   States
   {
     Spawn:
-      ACNB A 1;
+      ACNB A -1;
       Stop;
   }
 }
@@ -928,7 +928,7 @@ class AracnorbQueenGun : BaseDeployer
   States
   {
     Spawn:
-      ARNQ A 1;
+      ARNQ A -1;
       Stop;
   }
 }
@@ -947,7 +947,7 @@ class AugmentedArachnotronGun : BaseDeployer
   States
   {
     Spawn:
-      BSP2 A 1;
+      BSP2 A -1;
       Stop;
   }
 }
@@ -965,7 +965,7 @@ class AutoShotgunGuyGun : BaseDeployer
   States
   {
     Spawn:
-      ASGZ A 1;
+      ASGZ A -1;
       Stop;
   }
 }
@@ -983,7 +983,7 @@ class AzazelGun : BaseDeployer
   States
   {
     Spawn:
-      AZEW A 1;
+      AZEW A -1;
       Stop;
   }
 }
@@ -1001,7 +1001,7 @@ class BadGun : BaseDeployer
   States
   {
     Spawn:
-      BAD1 A 1;
+      BAD1 A -1;
       Stop;
   }
 }
@@ -1019,7 +1019,7 @@ class EyePoisonGun : BaseDeployer
   States
   {
     Spawn:
-      ESYM A 1;
+      ESYM A -1;
       Stop;
   }
 }
@@ -1035,7 +1035,7 @@ class EyeExGun : EyePoisonGun
   States
   {
     Spawn:
-      ESYZ W 1;
+      ESYZ W -1;
       Stop;
   }
 }
@@ -1053,7 +1053,7 @@ class EyeSpiderGun : EyePoisonGun
   States
   {
     Spawn:
-      ESYZ Y 1;
+      ESYZ Y -1;
       Stop;
   }
 }
@@ -1071,7 +1071,7 @@ class EyeBatGun : EyePoisonGun
   States
   {
     Spawn:
-      ESYZ Z 1;
+      ESYZ Z -1;
       Stop;
   }
 }
@@ -1090,7 +1090,7 @@ class BeamRevenantGun : BaseDeployer
   States
   {
     Spawn:
-      RASK A 1;
+      RASK A -1;
       Stop;
   }
 }
@@ -1108,7 +1108,7 @@ class BeamZombieGun : BaseDeployer
   States
   {
     Spawn:
-      ZBAM A 1;
+      ZBAM A -1;
       Stop;
   }
 }
@@ -1126,7 +1126,7 @@ class BFGCommandoGun : BaseDeployer
   States
   {
     Spawn:
-      BFGZ A 1;
+      BFGZ A -1;
       Stop;
   }
 }
@@ -1144,7 +1144,7 @@ class BlindPinkyGun : BaseDeployer
   States
   {
     Spawn:
-      BPWA A 1;
+      BPWA A -1;
       Stop;
   }
 }
@@ -1162,7 +1162,7 @@ class BloodDemonGun : BaseDeployer
   States
   {
     Spawn:
-      SRG2 A 1;
+      SRG2 A -1;
       Stop;
   }
 }
@@ -1180,7 +1180,7 @@ class BloodFiendGun : BaseDeployer
   States
   {
     Spawn:
-      SAR2 A 1;
+      SAR2 A -1;
       Stop;
   }
 }
@@ -1209,7 +1209,7 @@ class BloodGhostGun : BaseDeployer
   States
   {
     Spawn:
-      GHST A 1;
+      GHST A -1;
       Stop;
   }
 }
@@ -1227,7 +1227,7 @@ class BloodSkullGun : BaseDeployer
   States
   {
     Spawn:
-      SWBS A 1;
+      SWBS A -1;
       Stop;
   }
 }
@@ -1245,7 +1245,7 @@ class BlotGun : BaseDeployer
   States
   {
     Spawn:
-      EYES A 1;
+      EYES A -1;
       Stop;
   }
 }
@@ -1264,7 +1264,7 @@ class BruiserDemonGun : BaseDeployer
   States
   {
     Spawn:
-      BRUS A 1;
+      BRUS A -1;
       Stop;
   }
 }
@@ -1283,7 +1283,7 @@ class CacoLichGun : BaseDeployer
   States
   {
     Spawn:
-      CALI A 1;
+      CALI A -1;
       Stop;
   }
 }
@@ -1312,7 +1312,7 @@ class CacolanternGun : BaseDeployer
   States
   {
     Spawn:
-      HED2 A 1;
+      HED2 A -1;
       Stop;
   }
 }
@@ -1330,7 +1330,7 @@ class CatharsiGun : BaseDeployer
   States
   {
     Spawn:
-      SDDM A 1;
+      SDDM A -1;
       Stop;
   }
 }
@@ -1348,7 +1348,7 @@ class ChaingunDemonGun : BaseDeployer
   States
   {
     Spawn:
-      CRG2 A 1;
+      CRG2 A -1;
       Stop;
   }
 }
@@ -1366,7 +1366,7 @@ class ChaingunMajorGun : BaseDeployer
   States
   {
     Spawn:
-      CPS2 A 1;
+      CPS2 A -1;
       Stop;
   }
 }
@@ -1385,7 +1385,7 @@ class ChaingunSpiderGun : BaseDeployer
   States
   {
     Spawn:
-      CSPI A 1;
+      CSPI A -1;
       Stop;
   }
 }
@@ -1403,7 +1403,7 @@ class ChubbsGun : BaseDeployer
   States
   {
     Spawn:
-      CHBB A 1;
+      CHBB A -1;
       Stop;
   }
 }
@@ -1421,7 +1421,7 @@ class ChainsawZombieGun : BaseDeployer
   States
   {
     Spawn:
-      CHAN A 1;
+      CHAN A -1;
       Stop;
   }
 }
@@ -1439,7 +1439,7 @@ class FloorTentacleGun : BaseDeployer
   States
   {
     Spawn:
-      TEN1 A 1;
+      TEN1 A -1;
       Stop;
   }
 }
@@ -1456,7 +1456,7 @@ class CeilingTentacleGun : FloorTentacleGun
   States
   {
     Spawn:
-      TEN3 A 1;
+      TEN3 A -1;
       Stop;
   }
 }
@@ -1475,7 +1475,7 @@ class CrackodemonGun : BaseDeployer
   States
   {
     Spawn:
-      HED9 A 1;
+      HED9 A -1;
       Stop;
   }
 }
@@ -1493,7 +1493,7 @@ class CrashGun : BaseDeployer
   States
   {
     Spawn:
-      CRSH A 1;
+      CRSH A -1;
       Stop;
   }
 }
@@ -1512,7 +1512,7 @@ class CyberbaronGun : BaseDeployer
   States
   {
     Spawn:
-      CBOS A 1;
+      CBOS A -1;
       Stop;
   }
 }
@@ -1530,7 +1530,7 @@ class CyberimpGun : BaseDeployer
   States
   {
     Spawn:
-      CIMP A 1;
+      CIMP A -1;
       Stop;
   }
 }
@@ -1549,7 +1549,7 @@ class CyberMastermindGun : BaseDeployer
   States
   {
     Spawn:
-      CYMM A 1;
+      CYMM A -1;
       Stop;
   }
 }
@@ -1567,7 +1567,7 @@ class CyberFiendGun : BaseDeployer
   States
   {
     Spawn:
-      CYMM A 1;
+      CYMM A -1;
       Stop;
   }
 }
@@ -1586,7 +1586,7 @@ class CybruiserGun : BaseDeployer
   States
   {
     Spawn:
-      CBRU A 1;
+      CBRU A -1;
       Stop;
   }
 }
@@ -1605,7 +1605,7 @@ class DarkCardinalGun : BaseDeployer
   States
   {
     Spawn:
-      CARD A 1;
+      CARD A -1;
       Stop;
   }
 }
@@ -1623,7 +1623,7 @@ class DarkDevilGun : BaseDeployer
   States
   {
     Spawn:
-      DDVL A 1;
+      DDVL A -1;
       Stop;
   }
 }
@@ -1641,7 +1641,7 @@ class DarkImpNamiGun : BaseDeployer
   States
   {
     Spawn:
-      DRKI A 1;
+      DRKI A -1;
       Stop;
   }
 }
@@ -1659,7 +1659,7 @@ class DarkImpNetherGun : BaseDeployer
   States
   {
     Spawn:
-      DRKF A 1;
+      DRKF A -1;
       Stop;
   }
 }
@@ -1677,7 +1677,7 @@ class DarkImpSTGun : BaseDeployer
   States
   {
     Spawn:
-      DRKS A 1;
+      DRKS A -1;
       Stop;
   }
 }
@@ -1695,7 +1695,7 @@ class DarkImpVoidGun : BaseDeployer
   States
   {
     Spawn:
-      DRKV A 1;
+      DRKV A -1;
       Stop;
   }
 }
@@ -1714,7 +1714,7 @@ class DefilerGun : BaseDeployer
   States
   {
     Spawn:
-      DEFI A 1;
+      DEFI A -1;
       Stop;
   }
 }
@@ -1733,7 +1733,7 @@ class DeathIncarnateGun : BaseDeployer
   States
   {
     Spawn:
-      INCA A 1;
+      INCA A -1;
       Stop;
   }
 }
@@ -1752,7 +1752,7 @@ class DeepOneGun : BaseDeployer
   States
   {
     Spawn:
-      CUTH A 1;
+      CUTH A -1;
       Stop;
   }
 }
@@ -1771,7 +1771,7 @@ class DemolisherGun : BaseDeployer
   States
   {
     Spawn:
-      DEMO A 1;
+      DEMO A -1;
       Stop;
   }
 }
@@ -1789,7 +1789,7 @@ class DevastatorZombieGun : BaseDeployer
   States
   {
     Spawn:
-      DEVZ A 1;
+      DEVZ A -1;
       Stop;
   }
 }
@@ -1807,7 +1807,7 @@ class DevilGun : BaseDeployer
   States
   {
     Spawn:
-      TRO2 A 1;
+      TRO2 A -1;
       Stop;
   }
 }
@@ -1826,7 +1826,7 @@ class DiabloistGun : BaseDeployer
   States
   {
     Spawn:
-      DIAB A 1;
+      DIAB A -1;
       Stop;
   }
 }
@@ -1845,7 +1845,7 @@ class DivineShadowGun : BaseDeployer
   States
   {
     Spawn:
-      VIL1 A 1;
+      VIL1 A -1;
       Stop;
   }
 }
@@ -1864,7 +1864,7 @@ class DoomRPGGhoulGun : BaseDeployer
   States
   {
     Spawn:
-      GHUL A 1;
+      GHUL A -1;
       Stop;
   }
 }
@@ -1882,7 +1882,7 @@ class DoubleChaingunnerGun : BaseDeployer
   States
   {
     Spawn:
-      DPOS A 1;
+      DPOS A -1;
       Stop;
   }
 }
@@ -1900,7 +1900,7 @@ class DuneWarriorGun : BaseDeployer
   States
   {
     Spawn:
-      ZHRT A 1;
+      ZHRT A -1;
       Stop;
   }
 }
@@ -1919,7 +1919,7 @@ class EnhancedCacodemonGun : BaseDeployer
   States
   {
     Spawn:
-      ENCD A 1;
+      ENCD A -1;
       Stop;
   }
 }
@@ -1937,7 +1937,7 @@ class EtherealSoulGun : BaseDeployer
   States
   {
     Spawn:
-      ETHS A 1;
+      ETHS A -1;
       Stop;
   }
 }
@@ -1955,7 +1955,7 @@ class ExterminatorGun : BaseDeployer
   States
   {
     Spawn:
-      EXTR A 1;
+      EXTR A -1;
       Stop;
   }
 }
@@ -1973,7 +1973,7 @@ class FallenGun : BaseDeployer
   States
   {
     Spawn:
-      FALN A 1;
+      FALN A -1;
       Stop;
   }
 }
@@ -1991,7 +1991,7 @@ class FemaleScientistGun : BaseDeployer
   States
   {
     Spawn:
-      FSZK A 1;
+      FSZK A -1;
       Stop;
   }
 }
@@ -2009,7 +2009,7 @@ class FemalePlasmaGun : BaseDeployer
   States
   {
     Spawn:
-      PZOW A 1;
+      PZOW A -1;
       Stop;
   }
 }
@@ -2027,7 +2027,7 @@ class FemaleRailGun : BaseDeployer
   States
   {
     Spawn:
-      RZOW A 1;
+      RZOW A -1;
       Stop;
   }
 }
@@ -2045,7 +2045,7 @@ class FemaleSergeantGun : BaseDeployer
   States
   {
     Spawn:
-      CZOW A 1;
+      CZOW A -1;
       Stop;
   }
 }
@@ -2063,7 +2063,7 @@ class FemaleZombieGun : BaseDeployer
   States
   {
     Spawn:
-      ZOMW A 1;
+      ZOMW A -1;
       Stop;
   }
 }
@@ -2081,7 +2081,7 @@ class FlamerZombieGun : BaseDeployer
   States
   {
     Spawn:
-      FLMZ A 1;
+      FLMZ A -1;
       Stop;
   }
 }
@@ -2100,7 +2100,7 @@ class FleshSpawnGun : BaseDeployer
   States
   {
     Spawn:
-      FLSP A 1;
+      FLSP A -1;
       Stop;
   }
 }
@@ -2118,7 +2118,7 @@ class FleshWizardGun : BaseDeployer
   States
   {
     Spawn:
-      LMWZ A 1;
+      LMWZ A -1;
       Stop;
   }
 }
@@ -2136,7 +2136,7 @@ class XWizardGun : BaseDeployer
   States
   {
     Spawn:
-      LMWZ A 1;
+      LMWZ A -1;
       Stop;
   }
 }
@@ -2154,7 +2154,7 @@ class HadesElementalGun : BaseDeployer
   States
   {
     Spawn:
-      HELE A 1;
+      HELE A -1;
       Stop;
   }
 }
@@ -2173,7 +2173,7 @@ class HaedexebusGun : BaseDeployer
   States
   {
     Spawn:
-      UNMB A 1;
+      UNMB A -1;
       Stop;
   }
 }
@@ -2191,7 +2191,7 @@ class HectebusGun : BaseDeployer
   States
   {
     Spawn:
-      HECT A 1;
+      HECT A -1;
       Stop;
   }
 }
@@ -2209,7 +2209,7 @@ class HellPaladinGun : BaseDeployer
   States
   {
     Spawn:
-      HPAL A 1;
+      HPAL A -1;
       Stop;
   }
 }
@@ -2227,7 +2227,7 @@ class HellWarriorGun : BaseDeployer
   States
   {
     Spawn:
-      HWAR A 1;
+      HWAR A -1;
       Stop;
   }
 }
@@ -2245,7 +2245,7 @@ class HellsFuryGun : BaseDeployer
   States
   {
     Spawn:
-      HFRY A 1;
+      HFRY A -1;
       Stop;
   }
 }
@@ -2263,7 +2263,7 @@ class HellstormArchonGun : BaseDeployer
   States
   {
     Spawn:
-      BOS3 A 1;
+      BOS3 A -1;
       Stop;
   }
 }
@@ -2281,7 +2281,7 @@ class LordOfHeresyGun : BaseDeployer
   States
   {
     Spawn:
-      LOHS A 1;
+      LOHS A -1;
       Stop;
   }
 }
@@ -2300,7 +2300,7 @@ class OverlordGun : BaseDeployer
   States
   {
     Spawn:
-      OVER A 1;
+      OVER A -1;
       Stop;
   }
 }
@@ -2319,7 +2319,7 @@ class AbaddonGun : BaseDeployer
   States
   {
     Spawn:
-      HED3 A 1;
+      HED3 A -1;
       Stop;
   }
 }
