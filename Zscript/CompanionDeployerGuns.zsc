@@ -2449,8 +2449,8 @@ class RocketImpGun : BaseDeployer
     Tag "Rocket Imp";
     Weapon.AmmoType2 "RocketImpAmmo";
     Inventory.PickupMessage "Got Rocket Imp!";
-    BaseDeployer.price 20;
-    Weapon.SlotPriority 20;
+    BaseDeployer.price 10;
+    Weapon.SlotPriority 10;
   }
   States
   {
