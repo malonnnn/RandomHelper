@@ -1,0 +1,4 @@
+SPRITE TEN3A0, 13, 29
+{
+  Patch TEN2A0, 0, 0
+}
