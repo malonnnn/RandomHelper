@@ -2368,6 +2368,60 @@ class WarlordOfHellGun : BaseDeployer
       Stop;
   }
 }
+
+class VolacubusGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Volacubus";
+    Weapon.AmmoType2 "VolacubusAmmo";
+    Inventory.PickupMessage "Got Volacubus!";
+    BaseDeployer.price 100;
+    Weapon.SlotPriority 100;
+  }
+  States
+  {
+    Spawn:
+      FFAT A -1;
+      Stop;
+  }
+}
+
+class PlasmaVolacubusGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Plasma Volacubus";
+    Weapon.AmmoType2 "PlasmaVolacubusAmmo";
+    Inventory.PickupMessage "Got Plasma Volacubus!";
+    BaseDeployer.price 100;
+    Weapon.SlotPriority 100;
+  }
+  States
+  {
+    Spawn:
+      FFAB A -1;
+      Stop;
+  }
+}
+
+class SlimeVolacubusGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Slime Volacubus";
+    Weapon.AmmoType2 "SlimeVolacubusAmmo";
+    Inventory.PickupMessage "Got Slime Volacubus!";
+    BaseDeployer.price 100;
+    Weapon.SlotPriority 100;
+  }
+  States
+  {
+    Spawn:
+      FFAG A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

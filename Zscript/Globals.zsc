@@ -16,7 +16,10 @@ class Globals : EventHandler
     if(tier1.Size() > 0){
       return;
     }
-    String ac[133] = {  // increment this number then add your companion to top of list
+    String ac[136] = {  // increment this number then add your companion to top of list
+      "SlimeVolacubus",
+      "PlasmaVolacubus",
+      "Volacubus",
       "WarlordOfHell",
       "SuperDemon",
       "Squire",

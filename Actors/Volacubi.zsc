@@ -1,0 +1,336 @@
+Class Volacubus : CompanionFatso
+{
+  Default
+  {
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Radius 44;
+    Height 76;
+    Mass 600;
+    Speed 16;
+    +NOGRAVITY
+    +FLOAT
+    +FLOATBOB
+    +MISSILEMORE
+    -FLOORCLIP
+    Obituary "%o was roasted by a Volacubus.";
+  }
+	States
+	{
+    Spawn:
+      TNT1 A 0 A_StartSound("flyingfatso/jetloop");
+      FFAT ABCD 8 A_Look;
+      Loop;
+    See:
+      TNT1 A 0 A_StartSound("flyingfatso/jetloop");
+      FFAT AABBCCDD 4 A_Chase;
+      Loop;
+    Missile:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      TNT1 A 0 A_StartSound("flyingfatso/jetloop");
+      FFAT F 6 A_FatRaise;
+      FFAT FG 6 A_FaceTarget ;
+      FFAT H 0 BRIGHT A_SpawnProjectile("FatShot", 34, 32, random(-7,4));
+      FFAT H 6 BRIGHT A_SpawnProjectile("FatShot", 34, -32, random(-4,7));
+      FFAT FG 6 A_FaceTarget;
+      FFAT H 0 BRIGHT A_SpawnProjectile("FatShot", 34, 32, random(-7,4));
+      FFAT H 6 BRIGHT A_SpawnProjectile("FatShot", 34, -32, random(-4,7));
+      FFAT FG 6 A_FaceTarget;
+      FFAT H 0 BRIGHT A_SpawnProjectile("FatShot", 34, 32, random(-7,4));
+      FFAT H 6 BRIGHT A_SpawnProjectile("FatShot", 34, -32, random(-4,7));
+      FFAT FG 6 A_FaceTarget;
+      Goto See;
+    Pain:
+      FFAT J 3;
+      FFAT J 3 A_Pain;
+      Goto See;
+    Death:
+      TNT1 A 0
+      {
+        //A_ChangeFlag(FLOATBOB, 0);
+        bFloatBob = false;
+      }
+      FFAT K 6 A_SetFloorClip;
+      FFAT L 6 A_Scream;
+      FFAT M 6 A_NoBlocking;
+      TNT1 A 0 A_StartSound("flyingfatso/jetoff");
+      FFAT NOPQRS 6;
+      FFAT T -1 A_BossDeath ;
+      Stop;
+    Raise:
+      TNT1 A 0 A_StartSound("flyingfatso/jeton");
+      FFAT R 5 A_UnSetFloorClip;
+      FFAT QPONMLK 5;
+      TNT1 A 0
+      {
+        //A_ChangeFlag(FLOATBOB, 1);
+        bFloatBob = true;
+      }
+      Goto See;
+	}
+}
+
+Class PlasmaVolacubus : Volacubus
+{
+	Default
+  {
+    Species "FFblue";
+    DropItem "Cell";
+    Obituary "%o was electro-welded by a Volacubus.";
+  }
+	States
+	{
+    Spawn:
+      TNT1 A 0 A_StartSound("flyingfatso/jetloop");
+      FFAB ABCD 8 A_Look;
+      Loop;
+    See:
+      TNT1 A 0 A_StartSound("flyingfatso/jetloop");
+      FFAB AABBCCDD 4 A_Chase;
+      Loop;
+    Missile:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      TNT1 A 0 A_StartSound("flyingfatso/jetloop");
+      FFAB F 6 A_FatRaise;
+      FFAB FG 6 A_FaceTarget ;
+      FFAB H 0 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, 32, random(-4,2), CMF_OFFSETPITCH, random(-1,1));
+      FFAB H 2 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, -32, random(-2,4), CMF_OFFSETPITCH, random(-1,1));
+      FFAB H 0 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, 32, random(-4,2), CMF_OFFSETPITCH, random(-1,1));
+      FFAB H 2 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, -32, random(-2,4), CMF_OFFSETPITCH, random(-1,1));
+      FFAB H 0 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, 32, random(-4,2), CMF_OFFSETPITCH, random(-1,1));
+      FFAB H 2 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, -32, random(-2,4), CMF_OFFSETPITCH, random(-1,1));
+      FFAB FG 6 A_FaceTarget;
+      FFAB I 0 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, 32, random(-4,2), CMF_OFFSETPITCH, random(-1,1));
+      FFAB I 2 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, -32, random(-2,4), CMF_OFFSETPITCH, random(-1,1));
+      FFAB I 0 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, 32, random(-4,2), CMF_OFFSETPITCH, random(-1,1));
+      FFAB I 2 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, -32, random(-2,4), CMF_OFFSETPITCH, random(-1,1));
+      FFAB I 0 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, 32, random(-4,2), CMF_OFFSETPITCH, random(-1,1));
+      FFAB I 2 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, -32, random(-2,4), CMF_OFFSETPITCH, random(-1,1));
+      FFAB FG 6 A_FaceTarget;
+      FFAB H 0 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, 32, random(-4,2), CMF_OFFSETPITCH, random(-1,1));
+      FFAB H 2 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, -32, random(-2,4), CMF_OFFSETPITCH, random(-1,1));
+      FFAB H 0 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, 32, random(-4,2), CMF_OFFSETPITCH, random(-1,1));
+      FFAB H 2 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, -32, random(-2,4), CMF_OFFSETPITCH, random(-1,1));
+      FFAB H 0 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, 32, random(-4,2), CMF_OFFSETPITCH, random(-1,1));
+      FFAB H 2 BRIGHT A_SpawnProjectile("CompanionPlasmaBall", 34, -32, random(-2,4), CMF_OFFSETPITCH, random(-1,1));
+      FFAB FG 6 A_FaceTarget;
+      Goto See;
+    Pain:
+      FFAB J 3;
+      FFAB J 3 A_Pain;
+      Goto See;
+    Death:
+      TNT1 A 0
+      {
+        //A_ChangeFlag(FLOATBOB, 0);
+        bFloatBob = false;
+      }
+      FFAB K 6 A_SetFloorClip;
+      FFAB L 6 A_Scream;
+      FFAB M 6 A_NoBlocking;
+      TNT1 A 0 A_StartSound("flyingfatso/jetoff");
+      FFAB NOPQRS 6;
+      FFAB T -1 A_BossDeath;
+      Stop;
+    Raise:
+      TNT1 A 0 A_StartSound("flyingfatso/jeton");
+      FFAB R 5 A_UnSetFloorClip;
+      FFAB QPONMLK 5;
+      TNT1 A 0
+      {
+        //A_ChangeFlag(FLOATBOB, 1);
+        bFloatBob = true;
+      }
+      Goto See;
+	}
+}
+
+
+Class SlimeVolacubus : Volacubus
+{
+	Default
+  {
+    Species "FFgreen";
+    MaxTargetRange 1000;
+    Obituary "%o was irradiated by a Volacubus.";
+  }
+	States
+	{
+    Spawn:
+      TNT1 A 0 A_StartSound("flyingfatso/jetloop");
+      FFAG ABCD 8 A_Look;
+      Loop;
+    See:
+      TNT1 A 0 A_StartSound("flyingfatso/jetloop");
+      FFAG AABBCCDD 4 A_Chase;
+      Loop;
+    Missile:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      TNT1 A 0 A_StartSound("flyingfatso/jetloop");
+      FFAG F 6 A_FatRaise;
+      FFAG FG 6 A_FaceTarget;
+      FFAG H 0 BRIGHT A_SpawnProjectile("FFslimeball1", 34, 32, random(-3,3), CMF_OFFSETPITCH, random(4,8));
+      FFAG H 3 BRIGHT A_SpawnProjectile("FFslimeball2", 34, -32, random(-3,3), CMF_OFFSETPITCH, random(4,7));
+      FFAG H 0 BRIGHT A_SpawnProjectile("FFslimeball3", 34, 32, random(-3,3), CMF_OFFSETPITCH, random(3,7));
+      FFAG H 3 BRIGHT A_SpawnProjectile("FFslimeball4", 34, -32, random(-3,3), CMF_OFFSETPITCH, random(3,6));
+      FFAG I 0 A_FaceTarget;
+      FFAG I 0 BRIGHT A_SpawnProjectile("FFslimeball5", 34, 32, random(-3,3), CMF_OFFSETPITCH, random(2,6));
+      FFAG I 3 BRIGHT A_SpawnProjectile("FFslimeball6", 34, -32, random(-3,3), CMF_OFFSETPITCH, random(2,5));
+      FFAG I 0 BRIGHT A_SpawnProjectile("FFslimeball7", 34, 32, random(-3,3), CMF_OFFSETPITCH, random(1,5));
+      FFAG I 3 BRIGHT A_SpawnProjectile("FFslimeball8", 34, -32, random(-3,3), CMF_OFFSETPITCH, random(1,4));
+      FFAG H 0 A_FaceTarget;
+      FFAG H 0 BRIGHT A_SpawnProjectile("FFslimeball9", 34, 32, random(-3,3), CMF_OFFSETPITCH, random(0,4));
+      FFAG H 3 BRIGHT A_SpawnProjectile("FFslimeball8", 34, -32, random(-3,3), CMF_OFFSETPITCH, random(1,4));
+      FFAG H 0 BRIGHT A_SpawnProjectile("FFslimeball7", 34, 32, random(-3,3), CMF_OFFSETPITCH, random(1,5));
+      FFAG H 3 BRIGHT A_SpawnProjectile("FFslimeball6", 34, -32, random(-3,3), CMF_OFFSETPITCH, random(2,5));
+      FFAG I 0 A_FaceTarget;
+      FFAG I 0 BRIGHT A_SpawnProjectile("FFslimeball5", 34, 32, random(-3,3), CMF_OFFSETPITCH, random(2,6));
+      FFAG I 3 BRIGHT A_SpawnProjectile("FFslimeball4", 34, -32, random(-3,3), CMF_OFFSETPITCH, random(3,6));
+      FFAG I 0 BRIGHT A_SpawnProjectile("FFslimeball3", 34, 32, random(-3,3), CMF_OFFSETPITCH, random(3,7));
+      FFAG I 3 BRIGHT A_SpawnProjectile("FFslimeball2", 34, -32, random(-3,3), CMF_OFFSETPITCH, random(4,7));
+      FFAG H 0 A_FaceTarget;
+      FFAG H 0 BRIGHT A_SpawnProjectile("FFslimeball1", 34, 32, random(-3,3), CMF_OFFSETPITCH, random(4,8));
+      FFAG H 3 BRIGHT A_SpawnProjectile("FFslimeball2", 34, -32, random(-3,3), CMF_OFFSETPITCH, random(4,7));
+      FFAG H 0 BRIGHT A_SpawnProjectile("FFslimeball3", 34, 32, random(-3,3), CMF_OFFSETPITCH, random(3,7));
+      FFAG H 3 BRIGHT A_SpawnProjectile("FFslimeball4", 34, -32, random(-3,3), CMF_OFFSETPITCH, random(3,6));
+      FFAG I 0 A_FaceTarget;
+      FFAG I 0 BRIGHT A_SpawnProjectile("FFslimeball5", 34, 32, random(-3,3), CMF_OFFSETPITCH, random(2,6));
+      FFAG I 3 BRIGHT A_SpawnProjectile("FFslimeball6", 34, -32, random(-3,3), CMF_OFFSETPITCH, random(2,5));
+      FFAG I 0 BRIGHT A_SpawnProjectile("FFslimeball7", 34, 32, random(-3,3), CMF_OFFSETPITCH, random(1,5));
+      FFAG I 3 BRIGHT A_SpawnProjectile("FFslimeball8", 34, -32, random(-3,3), CMF_OFFSETPITCH, random(1,4));
+      FFAG FG 6 A_FaceTarget;
+      Goto See;
+    Pain:
+      FFAG J 3;
+      FFAG J 3 A_Pain;
+      Goto See;
+    Death:
+      TNT1 A 0
+      {
+        //A_ChangeFlag(FLOATBOB, 0);
+        bFloatBob = false;
+      }
+      FFAG K 6 A_SetFloorClip;
+      FFAG L 6 A_Scream;
+      FFAG M 6 A_NoBlocking;
+      TNT1 A 0 A_StartSound("flyingfatso/jetoff");
+      FFAG NOPQRS 6;
+      FFAG T -1 A_BossDeath;
+      Stop;
+    Raise:
+      TNT1 A 0 A_StartSound("flyingfatso/jeton");
+      FFAG R 5 A_UnSetFloorClip;
+      FFAG QPONMLK 5;
+      TNT1 A 0
+      {
+        //A_ChangeFlag(FLOATBOB, 1);
+        bFloatBob = true;
+      }
+      Goto See;
+	}
+}
+
+Class FFslimeball1 : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 4;
+    Height 4;
+    Speed 34;
+    Gravity 0.38;
+    Damage 3;
+    PoisonDamage 20;
+    Projectile;
+    +RANDOMIZE
+    -NOGRAVITY
+    SeeSound "FFslimeball/shoot";
+    DeathSound "FFslimeball/splat";
+    Decal "FFslimeScorch";
+  }
+	States
+	{
+    Spawn:
+      FFSL ABC 2 bright;
+      loop;
+    Death:
+      FFSL D 0 bright A_NoGravity;
+      FFSL DEF 4 bright;
+      stop;
+	}
+}
+
+Class FFslimeball2 : FFslimeball1
+{
+  Default
+  {
+    Speed 36;
+    DeathSound "none";
+  }
+}
+
+Class FFslimeball3 : FFslimeball2
+{
+  Default
+  {
+	  Speed 38;
+  } 
+}
+
+Class FFslimeball4 : FFslimeball2
+{
+  Default
+  {
+	  Speed 40;
+  }
+}
+
+Class FFslimeball5 : FFslimeball2
+{
+  Default
+  {
+	  Speed 42;
+  }
+}
+
+Class FFslimeball6 : FFslimeball2
+{
+  Default
+  {
+	  Speed 44;
+  }
+}
+
+Class FFslimeball7 : FFslimeball2
+{
+  Default
+  {
+	  Speed 46;
+  }
+}
+
+Class FFslimeball8 : FFslimeball2
+{
+  Default
+  {
+	  Speed 48;
+  }
+}
+
+Class FFslimeball9 : FFslimeball2
+{
+  Default
+  {
+	  Speed 50;
+  }
+}
+
+Class FFslimeball0 : FFslimeball2
+{
+  Default
+  {
+	  Speed 52;
+  }
+}

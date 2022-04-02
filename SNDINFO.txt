@@ -1,3 +1,10 @@
+// Volacubi
+flyingfatso/jetloop DSFFJETS
+flyingfatso/jeton DSFFJET1
+flyingfatso/jetoff DSFFJET0
+FFslimeball/shoot	DSFFSHOT
+FFslimeball/splat	DSFFSPLA
+
 // Warlord Of Hell
 warlord/sight dswlssit
 warlord/pain dswlpain

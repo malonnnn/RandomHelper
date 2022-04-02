@@ -1085,3 +1085,27 @@ class WarlordOfHellAmmo : CommonAmmoFeatures
     Inventory.Icon "VOS6A1C1";
   }
 }
+
+class VolacubusAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "FFATA1";
+  }
+}
+
+class PlasmaVolacubusAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "FFABA1";
+  }
+}
+
+class SlimeVolacubusAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "FFAGA1";
+  }
+}
