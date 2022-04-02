@@ -396,7 +396,6 @@ class CompanionLostSoulGun : BaseDeployer
     Inventory.PickupMessage "Got Lost Soul!";
     BaseDeployer.price 3;
     Weapon.SlotPriority 3;
-    Scale 0.6;
   }
   States
   {
@@ -415,7 +414,7 @@ class CompanionCacodemonGun : BaseDeployer
     Inventory.PickupMessage "Got Cacodemon!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -434,7 +433,6 @@ class CompanionPainElementalGun : BaseDeployer
     Inventory.PickupMessage "Got Pain Elemental!";
     BaseDeployer.price 300;
     Weapon.SlotPriority 300;
-    Scale 0.38;
   }
   States
   {
@@ -453,7 +451,7 @@ class CompanionBaronOfHellGun : BaseDeployer
     Inventory.PickupMessage "Got Baron of Hell!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -509,7 +507,6 @@ class CompanionArchvileGun : BaseDeployer
     Inventory.PickupMessage "Got Archvile!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
-    Scale 0.35;
   }
   States
   {
@@ -528,7 +525,7 @@ class CompanionFatsoGun : BaseDeployer
     Inventory.PickupMessage "Got Mancubus!";
     BaseDeployer.price 75;
     Weapon.SlotPriority 75;
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -547,7 +544,7 @@ class CompanionCyberdemonGun : BaseDeployer
     Inventory.PickupMessage "Got Cyberdemon!";
     BaseDeployer.price 500;
     Weapon.SlotPriority 500;
-    Scale 0.28;
+    Scale 0.2;
   }
   States
   {
@@ -603,7 +600,6 @@ class CompanionRevenantGun : BaseDeployer
     Inventory.PickupMessage "Got Revenant!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
-    Scale 0.35;
   }
   States
   {
@@ -640,7 +636,7 @@ Class BelphegorGun : BaseDeployer
     Inventory.PickupMessage "Got Belphegor!";
     BaseDeployer.price 250;
     Weapon.SlotPriority 250;
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -660,7 +656,7 @@ Class AfritGun : BaseDeployer
     BaseDeployer.price 150;
     Weapon.SlotPriority 150;
     Inventory.Icon "FRITV0";
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -679,7 +675,6 @@ Class MarauderGun : BaseDeployer
     Inventory.PickupMessage "Got Marauder!";
     BaseDeployer.price 75;
     Weapon.SlotPriority 75;
-    Scale 0.48;
   }
   States
   {
@@ -717,7 +712,7 @@ Class ArchonOfHellGun : BaseDeployer
     Inventory.PickupMessage "Got Archon of Hell!";
     BaseDeployer.price 300;
     Weapon.SlotPriority 300;
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -809,7 +804,7 @@ class AbaddonGun : BaseDeployer
     Inventory.PickupMessage "Got Abaddon!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -828,7 +823,7 @@ class AgathodemonGun : BaseDeployer
     Inventory.PickupMessage "Got Agathodemon!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -886,7 +881,7 @@ class AnnihilatorGun : BaseDeployer
     Inventory.PickupMessage "Got Annihilator!";
     BaseDeployer.price 750;
     Weapon.SlotPriority 750;
-    Scale 0.28;
+    Scale 0.2;
   }
   States
   {
@@ -923,7 +918,7 @@ class AracnorbQueenGun : BaseDeployer
     Inventory.PickupMessage "Got Aracnorb Queen!";
     BaseDeployer.price 150;
     Weapon.SlotPriority 150;
-    Scale 0.3;
+    Scale 0.2;
   }
   States
   {
@@ -1085,7 +1080,6 @@ class BeamRevenantGun : BaseDeployer
     Inventory.PickupMessage "Got Beam Revenant!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
-    Scale 0.35;
   }
   States
   {
@@ -1241,11 +1235,12 @@ class BlotGun : BaseDeployer
     Inventory.PickupMessage "Got Blot!";
     BaseDeployer.price 1;
     Weapon.SlotPriority 1;
+    Inventory.Icon "BLOPA0";
   }
   States
   {
     Spawn:
-      EYES A -1;
+      BLOP A -1;
       Stop;
   }
 }
@@ -1278,7 +1273,7 @@ class CacoLichGun : BaseDeployer
     Inventory.PickupMessage "Got CacoLich!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -1307,7 +1302,7 @@ class CacolanternGun : BaseDeployer
     Inventory.PickupMessage "Got Cacolantern!";
     BaseDeployer.price 65;
     Weapon.SlotPriority 65;
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -1470,7 +1465,7 @@ class CrackodemonGun : BaseDeployer
     Inventory.PickupMessage "Got Crackodemon!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -1507,7 +1502,7 @@ class CyberbaronGun : BaseDeployer
     Inventory.PickupMessage "Got Cyberbaron!";
     BaseDeployer.price 200;
     Weapon.SlotPriority 200;
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -1567,7 +1562,7 @@ class CyberFiendGun : BaseDeployer
   States
   {
     Spawn:
-      CYMM A -1;
+      CYFN A -1;
       Stop;
   }
 }
@@ -1581,7 +1576,7 @@ class CybruiserGun : BaseDeployer
     Inventory.PickupMessage "Got Cybruiser!";
     BaseDeployer.price 300;
     Weapon.SlotPriority 300;
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -1601,11 +1596,12 @@ class DarkCardinalGun : BaseDeployer
     BaseDeployer.price 750;
     Weapon.SlotPriority 750;
     Scale 0.28;
+    Inventory.Icon "ZARDA0";
   }
   States
   {
     Spawn:
-      CARD A -1;
+      ZARD A -1;
       Stop;
   }
 }
@@ -1709,7 +1705,7 @@ class DefilerGun : BaseDeployer
     Inventory.PickupMessage "Got Defiler!";
     BaseDeployer.price 100;
     Weapon.SlotPriority 100;
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -1728,7 +1724,6 @@ class DeathIncarnateGun : BaseDeployer
     Inventory.PickupMessage "Got Death Incarnate!";
     BaseDeployer.price 30;
     Weapon.SlotPriority 30;
-    Scale 0.35;
   }
   States
   {
@@ -1747,7 +1742,7 @@ class DeepOneGun : BaseDeployer
     Inventory.PickupMessage "Got Deep One!";
     BaseDeployer.price 300;
     Weapon.SlotPriority 300;
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -1821,7 +1816,6 @@ class DiabloistGun : BaseDeployer
     Inventory.PickupMessage "Got Diabloist!";
     BaseDeployer.price 150;
     Weapon.SlotPriority 150;
-    Scale 0.35;
   }
   States
   {
@@ -1840,7 +1834,6 @@ class DivineShadowGun : BaseDeployer
     Inventory.PickupMessage "Got Divine Shadow!";
     BaseDeployer.price 300;
     Weapon.SlotPriority 300;
-    Scale 0.35;
   }
   States
   {
@@ -1859,7 +1852,6 @@ class DoomRPGGhoulGun : BaseDeployer
     Inventory.PickupMessage "Got Ghoul!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
-    Scale 0.35;
   }
   States
   {
@@ -1914,7 +1906,7 @@ class EnhancedCacodemonGun : BaseDeployer
     Inventory.PickupMessage "Got Enhanced Cacodemon!";
     BaseDeployer.price 50;
     Weapon.SlotPriority 50;
-    Scale 0.4;
+    Scale 0.3;
   }
   States
   {
@@ -1969,6 +1961,7 @@ class FallenGun : BaseDeployer
     Inventory.PickupMessage "Got Fallen!";
     BaseDeployer.price 25;
     Weapon.SlotPriority 25;
+    Scale 0.3;
   }
   States
   {
