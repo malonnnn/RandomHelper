@@ -1,0 +1,728 @@
+Class OverLord : Actor
+{
+  Default
+  {
+    MONSTER;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Health 4000;
+    Radius 43;
+    Height 90;
+    Mass 1000;
+    Speed 13;
+    PainChance 20;
+    //DropItem "UnmakerHeart", 256;
+    DamageFactor "Lightning", 0.0;
+    Obituary "%o was smote by the Overlord.";
+    HitObituary "The Overlord ate %o for lunch.";
+    MeleeRange 68;
+    SeeSound "monster/ovlsit";
+    PainSound "monster/ovlpai";
+    DeathSound "monster/ovldth";
+    ActiveSound "monster/ovlact";
+    +FLOORCLIP
+    +NORADIUSDMG
+    +BOSS
+    +NOTARGET
+    +MISSILEEVENMORE
+    +FLOAT
+    +NOGRAVITY
+    +DONTFALL
+  }
+
+  states
+  {
+    Spawn:
+      OVER A 10 A_Look();
+      loop;
+    See:
+      OVER A 0 A_UnSetInvulnerable();
+      OVER AABBAACC 3 A_Chase();
+      OVER A 0 A_Jump(32,"Teleport");
+      goto See+1;
+    Missile:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      OVER D 0 A_Jump(256,"Missile1","Missile2","Missile3");
+    Missile1:
+      OVER DE 8 A_FaceTarget();
+      OVER FFFFF 4 bright A_CompanionPainAttack("HS");
+      goto See;
+    Missile2:
+      OVER GH 8 Bright A_FaceTarget();
+      OVER H 0 Bright A_JumpIfHealthLower(1500, "Missile2LowHealth");
+      OVER H 1 Bright A_StartSound("weapons/shock");
+      OVER H 7 Bright A_SpawnProjectile("StormShot1",43,0,0,0,0);
+      goto See;
+    Missile2LowHealth:
+      OVER H 1 Bright A_StartSound("weapons/shock");
+      OVER H 7 Bright A_SpawnProjectile("StormShot2",43,0,0,0,0);
+      goto See;
+    Missile3:
+      OVER JJJJJJJJ 1 A_FaceTarget();
+    Missile3Loop:
+      OVER K 4 Bright
+      {
+        A_SpawnProjectile("HadesBall",92,-40, random(-3,3),0,random(-3,3));
+        A_SpawnProjectile("HadesBall", 8,-40, random(-3,3),0,random(-3,3));
+        A_SpawnProjectile("HadesBall",92, 40, random(-3,3),0,random(-3,3));
+        A_SpawnProjectile("HadesBall", 8, 40, random(-3,3),0,random(-3,3));
+        A_SpawnProjectile("OverBall", 54,-50, random(-3,3),0,random(-3,3));
+        A_SpawnProjectile("OverBall", 54, 50, random(-3,3),0,random(-3,3));
+      }
+      OVER J 4 A_SpidRefire();
+      OVER J 0 A_Jump(32,"See");
+      loop;
+    Melee:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      OVER ADF 5 A_FaceTarget();
+      OVER E 5 A_CustomMeleeAttack(20*random(1,8), "caco/melee", "", "Companion");
+      goto See;
+    Pain:
+      OVER L 6;
+      OVER L 6 A_Pain();
+      OVER L 0 A_Jump(40,"Teleport");
+      goto See;
+    Teleport:
+      OVER F 0 A_SetInvulnerable();
+      OVER F 1 A_StartSound("monster/heltel");
+      OVER F 1 A_SetTranslucent(0.90);
+      OVER F 1 A_SetTranslucent(0.80);
+      OVER F 1 A_SetTranslucent(0.70);
+      OVER F 1 A_SetTranslucent(0.60);
+      OVER F 1 A_SetTranslucent(0.50);
+      OVER F 1 A_SetTranslucent(0.40);
+      OVER F 1 A_SetTranslucent(0.30);
+      OVER F 1 A_SetTranslucent(0.20);
+      OVER F 1 A_SetTranslucent(0.10);
+      OVER F 0 A_Jump(128,25);
+      TNT1 AAAAAAAAAAAAAAAAAAAAAAAA 0 A_Chase(null, null, CHF_NIGHTMAREFAST);
+      TNT1 A 0 A_Jump(128,25);
+      TNT1 AAAAAAAAAAAAAAAAAAAAAAAA 0 A_Chase(null, null, CHF_NIGHTMAREFAST);
+      OVER F 1 A_StartSound("monster/heltel");
+      OVER F 1 A_SetTranslucent(0.10);
+      OVER F 1 A_SetTranslucent(0.20);
+      OVER F 1 A_SetTranslucent(0.30);
+      OVER F 1 A_SetTranslucent(0.40);
+      OVER F 1 A_SetTranslucent(0.50);
+      OVER F 1 A_SetTranslucent(0.60);
+      OVER F 1 A_SetTranslucent(0.70);
+      OVER F 1 A_SetTranslucent(0.80);
+      OVER F 1 A_SetTranslucent(0.90);
+      OVER F 1 A_SetTranslucent(1.0);
+      OVER F 0 A_UnSetInvulnerable();
+      goto See;
+    Death:
+      OVER M 0 bright A_FaceTarget();
+      OVER M 8 bright A_Scream();
+      OVER NO 8 bright;
+      OVER P 8 bright //Spawn gibs!
+      {
+        for(int i=0; i<5; i++)
+        {
+          A_SpawnProjectile("OverFlesh1",random(0,90),random(0,40),random(-180,180),CMF_AIMDIRECTION,random(-15,15));
+          A_SpawnProjectile("OverFlesh2",random(0,90),random(0,40),random(-180,180),CMF_AIMDIRECTION,random(-15,15));
+        }
+        for(int i=0; i<10; i++)
+        {
+          A_SpawnProjectile("OverFlesh3",random(0,90),random(0,40),random(-180,180),CMF_AIMDIRECTION,random(-15,15));
+          A_SpawnProjectile("OverFlesh4",random(0,90),random(0,40),random(-180,180),CMF_AIMDIRECTION,random(-15,15));
+          A_SpawnProjectile("OverFlesh5",random(0,90),random(0,40),random(-180,180),CMF_AIMDIRECTION,random(-15,15));
+          A_SpawnProjectile("OverFlesh6",random(0,90),random(0,40),random(-180,180),CMF_AIMDIRECTION,random(-15,15));
+        }
+        A_SpawnProjectile("OverBigArm1",   40,-40,-90, CMF_AIMDIRECTION,random( -1, 1));
+        A_SpawnProjectile("OverBigArm2",   40, 40, 90, CMF_AIMDIRECTION,random( -1, 1));
+        A_SpawnProjectile("OverSmallArm1",100,-30,-90, CMF_AIMDIRECTION,random(-15,15));
+        A_SpawnProjectile("OverSmallArm1",100, 30, 90, CMF_AIMDIRECTION,random(-15,15));
+        A_SpawnProjectile("OverSmallArm2",100,-30,-90, CMF_AIMDIRECTION,random(-15,15));
+        A_SpawnProjectile("OverSmallArm2",100, 30, 90, CMF_AIMDIRECTION,random(-15,15));
+        A_SpawnProjectile("OverHorn1",    110,-16,-90, CMF_AIMDIRECTION,random(-15,15));
+        A_SpawnProjectile("OverHorn2",    110, 16, 90, CMF_AIMDIRECTION,random(-15,15));
+      }
+      OVER QRSTUV 8 bright;
+      stop;
+  }
+
+	void A_CompanionPainAttack(class<Actor> spawntype = "HS", double addangle = 0, int flags = 0, int limit = -1)
+	{
+		if (target)
+		{
+			A_FaceTarget();
+			A_CompanionPainShootSkull(spawntype, angle + addangle, flags, limit);
+		}
+	}
+
+  void A_CompanionPainShootSkull(Class<Actor> spawntype, double angle, int flags = 0, int limit = -1)
+	{
+		if (DamageType == "Massacre") return;
+
+		if (spawntype == null) spawntype = "HS";
+
+		if (pos.z + height + 8 > ceilingz)
+		{
+			if (bFloat)
+			{
+				Vel.Z -= 2;
+				bInFloat = true;
+				bVFriction = true;
+			}
+			return;
+		}
+
+		if (limit < 0 && (Level.compatflags & COMPATF_LIMITPAIN))
+			limit = 21;
+
+		if (limit > 0)
+		{
+			int count = limit;
+			ThinkerIterator it = ThinkerIterator.Create(spawntype);
+			Thinker othink;
+
+			while ( (othink = it.Next ()) )
+			{
+				if (--count == 0)
+					return;
+			}
+		}
+
+		double otherradius = GetDefaultByType(spawntype).radius;
+		double prestep = 4 + (radius + otherradius) * 1.5;
+
+		Vector2 move = AngleToVector(angle, prestep);
+		Vector3 spawnpos = pos + (0,0,8);
+		Vector3 destpos = spawnpos + move;
+
+		//Actor other = Spawn(spawntype, spawnpos, ALLOW_REPLACE);
+    let g = Globals(EventHandler.Find("Globals"));
+    Actor other = g.createCompanion("HS", pos, null, "", true);
+
+		if (other != null)
+		{
+			double maxmove = other.radius - 1;
+
+			if (maxmove <= 0) maxmove = 16;
+
+			double xspeed = abs(move.X);
+			double yspeed = abs(move.Y);
+
+			int steps = 1;
+
+			if (xspeed > yspeed)
+			{
+				if (xspeed > maxmove)
+				{
+					steps = int(1 + xspeed / maxmove);
+				}
+			}
+			else
+			{
+				if (yspeed > maxmove)
+				{
+					steps = int(1 + yspeed / maxmove);
+				}
+			}
+
+			Vector2 stepmove = move / steps;
+			bool savedsolid = bSolid;
+			bool savednoteleport = other.bNoTeleport;
+
+			bSolid = false;
+			other.bNoTeleport = true;
+			for (int i = 0; i < steps; i++)
+			{
+				Vector2 ptry = other.pos.xy + stepmove;
+				double oldangle = other.angle;
+				if (!other.TryMove(ptry, 0))
+				{
+					other.ClearCounters();
+					other.DamageMobj(self, self, TELEFRAG_DAMAGE, "Companion");
+					bSolid = savedsolid;
+					other.bNoTeleport = savednoteleport;
+					return;
+				}
+
+				if (other.pos.xy != ptry)
+				{
+					double anglediff = deltaangle(oldangle, other.angle);
+
+					if (anglediff != 0)
+					{
+						stepmove = RotateVector(stepmove, anglediff);
+					}
+				}
+
+			}
+			bSolid = savedsolid;
+			other.bNoTeleport = savednoteleport;
+
+			other.CopyFriendliness (self, !(flags & PAF_NOTARGET));
+
+			if (!(flags & PAF_NOSKULLATTACK))
+			{
+				other.A_SkullAttack();
+			}
+		}
+	}
+
+  override bool Slam(Actor victim)
+  {
+    bSkullFly = false;
+    vel = (0, 0, 0);
+    if (health > 0)
+    {
+      if (!bDormant)
+      {
+        int dam = GetMissileDamage (7, 1);
+        int newdam = victim.DamageMobj (self, self, dam, "Companion");
+        victim.TraceBleed (newdam > 0 ? newdam : dam, self);
+        if (health > 0)
+        {
+          if (SeeState != NULL && !bRetargetAfterSlam){
+            SetState (SeeState);
+          }else{
+            SetIdle();
+          }
+        }
+      }
+      else
+      {
+        SetIdle();
+        tics = -1;
+      }
+    }
+    return false;
+  }  
+}
+
+Class OverFlesh1 : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Speed 8;
+    Mass 100;
+    Radius 1;
+    Height 1;
+    PROJECTILE;
+    +THRUGHOST
+    +LOWGRAVITY
+    -NOGRAVITY
+    +ClientSideOnly
+  }
+
+  States
+  {
+    Spawn:
+      OVF1 ACEGIKM 5;
+      loop;
+    Death:
+      OVF1 O 3;
+      OVF1 Q -1;
+      stop;
+  }
+}
+
+Class OverFlesh2 : OverFlesh1
+{
+  States
+  {
+    Spawn:
+      OVF1 BDFHJLN 5;
+      loop;
+    Death:
+      OVF1 P 3;
+      OVF1 R -1;
+      stop;
+  }
+}
+
+Class OverFlesh3 : OverFlesh1
+{
+  States
+  {
+    Spawn:
+      OVF2 ACEG 5;
+      loop;
+    Death:
+      OVF2 I -1;
+      loop;
+  }
+}
+
+Class OverFlesh4 : OverFlesh1
+{
+  States
+  {
+    Spawn:
+      OVF2 BDFH 5;
+      loop;
+    Death:
+      OVF2 J -1;
+      loop;
+  }
+}
+
+Class OverFlesh5 : OverFlesh1
+{
+  States
+  {
+    Spawn:
+      OVF3 ACEGI 5;
+      loop;
+    Death:
+      OVF3 K -1;
+      loop;
+  }
+}
+
+Class OverFlesh6 : OverFlesh1
+{
+  States
+  {
+    Spawn:
+      OVF3 BDFHJ 5;
+      loop;
+    Death:
+      OVF3 L -1;
+      loop;
+  }
+}
+
+Class OverBigArm1 : OverFlesh1
+{
+  States
+  {
+    Spawn:
+      OVF4 ACEGI 5;
+      loop;
+    Death:
+      OVF4 K 3;
+      OVF4 M -1;
+      stop;
+  }
+}
+
+Class OverBigArm2 : OverFlesh1
+{
+  States
+  {
+    Spawn:
+      OVF4 BDFHJ 5;
+      loop;
+    Death:
+      OVF4 L 3;
+      OVF4 N -1;
+      stop;
+  }
+}
+
+Class OverSmallArm1 : OverFlesh1
+{
+  States
+  {
+    Spawn:
+      OVF5 ACEG 5;
+      loop;
+    Death:
+      OVF5 I -1;
+      stop;
+  }
+}
+
+Class OverSmallArm2 : OverFlesh1
+{
+  States
+  {
+    Spawn:
+      OVF5 BDFH 5;
+      loop;
+    Death:
+      OVF5 J -1;
+      stop;
+  }
+}
+
+Class OverHorn1 : OverFlesh1
+{
+  States
+  {
+    Spawn:
+      OVF6 ACEGI 5;
+      loop;
+    Death:
+      OVF6 K -1;
+      stop;
+  }
+}
+
+Class OverHorn2 : OverFlesh1
+{
+  States
+  {
+    Spawn:
+      OVF6 BDFHJ 5;
+      loop;
+    Death:
+      OVF6 L -1;
+      stop;
+  }
+}
+
+// [MagicWazard] Exploding projectile similar to the HadesBall
+Class OverBall : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 10;
+    Height 20;
+    Speed 15;
+    Damage 8;
+    RenderStyle "Add";
+    Alpha 0.75;
+    Translation "192:207=168:191";
+    DeathSound "weapons/devzap";
+    Decal "CacoScorch";
+    PROJECTILE;
+    +THRUGHOST
+    +FORCEXYBILLBOARD
+  }
+
+  States
+  {
+    Spawn:
+      AFX1 ABC 1 Bright;
+      loop;
+    Death:
+      AFX1 DE 4 Bright A_Explode(32, 32, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      AFX1 FGHI 4 bright;
+      stop;
+  }
+}
+
+// [MagicWazard] Giant ball that spawns smaller projectiles ("StormLite1") from sides
+Class StormShot1 : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 12;
+    Height 6;
+    Speed 30;
+    Damage 50;
+    RenderStyle "Add";
+    Alpha 0.80;
+    DeathSound "weapons/devexp";
+    PROJECTILE;
+    +THRUGHOST
+    +NODAMAGETHRUST
+    +FORCEXYBILLBOARD
+  }
+
+  States
+  {
+    Spawn:
+      LFX1 STUVW 1 Bright;
+      LFX1 W 0 Bright A_SpawnProjectile("StormLite1",0,0, 90, CMF_AIMDIRECTION | CMF_TRACKOWNER);
+      LFX1 W 0 Bright A_SpawnProjectile("StormLite1",0,0,270, CMF_AIMDIRECTION | CMF_TRACKOWNER);
+      loop;
+    Death:
+      LFX1 STUVWSTUVWSTUVWSTUVWSTUVWSTUVWSTUVWSTUVWSTUVWSTUVWSTUVWSTUVW 1 Bright A_Explode(16,32, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      stop;
+  }
+}
+
+// [MagicWazard] More powerful version of StormShot
+Class StormShot2 : StormShot1
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Damage 100;
+  }
+
+  States
+  {
+    Spawn:
+      TNT1 A 2;
+      LFX2 KLMNO 1 Bright;
+      LFX2 O 0 Bright A_SpawnProjectile("StormLite2",0,0, 90, CMF_AIMDIRECTION | CMF_TRACKOWNER);
+      LFX2 O 0 Bright A_SpawnProjectile("StormLite2",0,0,270, CMF_AIMDIRECTION | CMF_TRACKOWNER);
+      Goto Spawn+1;
+    Death:
+      LFX2 KLMNO 1 Bright A_Explode(32,64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      LFX2 KKKKKK 0 Bright A_SpawnItemEx("StormBolt",0,0,0,4,0,0,random(0,359),0,0);
+      LFX2 LMNO 1 Bright A_Explode(32,64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      stop;
+  }
+}
+
+// [MagicWazard] Note: this actor is unused, though it acts as a parent for the
+// "StormBolt" vertical lightning column its sprites do not appear to be used
+// anywhere else in the actor...
+Class StormStrike1 : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 16;
+    Height 1;
+    Speed 90;
+    Damage 2;
+    RenderStyle "Add";
+    Alpha 0.75;
+    DeathSound "weapons/devzap";
+    PROJECTILE;
+    +THRUGHOST
+    +RIPPER
+    +NODAMAGETHRUST
+    +STRIFEDAMAGE
+  }
+
+  States
+  {
+    Spawn:
+      LFX1 IJKLM 1 Bright A_Explode(64,64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      loop;
+    Death:
+      LFX1 NOPQR 2 Bright;
+      stop;
+  }
+}
+
+// [MagicWazard] Vertical lightning column spawned by StormShot2
+Class StormBolt : StormStrike1
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Speed 4;
+    Radius 8;
+    Height 16;
+    Damage 1;
+    SeeSound "weapons/none";
+    DeathSound "weapons/gntidl";
+    YScale 4.0;
+    XScale 2.0;
+    ReactionTime 35;
+    +FLOORHUGGER
+    +HEXENBOUNCE
+    -NOGRAVITY
+  }
+
+  States
+  {
+    Spawn:
+      LFX2 F 1 Bright A_Explode(16,64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      LFX2 F 0 Bright A_SpawnProjectile("StormBolt2",16,0,0, CMF_AIMDIRECTION | CMF_TRACKOWNER,-90);
+      LFX2 F 0 ThrustThing(random(0,255),1,0,0);
+      LFX2 G 1 Bright A_Explode(16,64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      LFX2 G 0 Bright A_SpawnProjectile("StormBolt2",16,0,0, CMF_AIMDIRECTION | CMF_TRACKOWNER,-90);
+      LFX2 H 1 Bright A_Explode(16,64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      LFX2 H 0 Bright A_SpawnProjectile("StormBolt2",16,0,0, CMF_AIMDIRECTION | CMF_TRACKOWNER,-90);
+      LFX2 I 1 Bright A_Explode(16,64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      LFX2 I 0 Bright A_SpawnProjectile("StormBolt2",16,0,0, CMF_AIMDIRECTION | CMF_TRACKOWNER,-90);
+      LFX2 J 1 Bright A_Explode(16,64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      LFX2 J 0 Bright A_SpawnProjectile("StormBolt2",16,0,0, CMF_AIMDIRECTION | CMF_TRACKOWNER,-90);
+      LFX2 J 0 Bright A_CountDown();
+      loop;
+    Death:
+      LFX2 FGHIJ 2 Bright A_Explode(16,64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      stop;
+  }
+}
+
+// [MagicWazard] Invisible sub-projectiles spawned by the lightning column in
+// a vertical upwards path
+Class StormBolt2 : StormStrike1
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Speed 184;
+    Damage 1;
+    Height 15;
+    Radius 8;
+    SeeSound "Monster/hadtel";
+    DeathSound "Monster/hadsit";
+    +RIPPER
+    +NOGRAVITY
+  }
+
+  States
+  {
+  Spawn:
+    TNT1 A 1 Bright A_Explode(16,64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+    loop;
+  Death:
+    TNT1 A 1 Bright;
+    stop;
+  }
+}
+
+// [MagicWazard] Projectiles spawned from the sides of the large StormShot projectile
+Class StormLite1 : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 6;
+    Height 12;
+    Speed 32;
+    Damage 5;
+    RenderStyle "Add";
+    Alpha 0.80;
+    DeathSound "weapons/devzap";
+    PROJECTILE;
+    +THRUGHOST
+    +RIPPER
+    +FORCEXYBILLBOARD
+  }
+
+  States
+  {
+    Spawn:
+      DLIT ABC 1 Bright;
+      Loop;
+    Death:
+      DLIT DEFGHIJKLMNO 1 Bright;
+      Stop;
+  }
+}
+
+// [MagicWazard] More powerful version of StormLite1
+Class StormLite2 : StormLite1
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Speed 64;
+    Damage 10;
+  }
+
+  States
+  {
+    Spawn:
+      LFX1 XYZ 1 Bright;
+      Loop;
+    Death:
+      LFX1 STUVW 3 Bright;
+      Stop;
+  }
+}
+//End of Overlord
+
+// [MagicWazard] Notes: some sprites don't appear to be used by any actors. These
+// include:
+//   LFX1 A - H
+//   LFX1 I - R (although they are assigned to an unused actor)
+// It looks like you can delete these if you wish and it won't hurt anything.

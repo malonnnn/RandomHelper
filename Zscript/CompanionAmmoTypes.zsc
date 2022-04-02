@@ -1039,3 +1039,11 @@ class LordOfHeresyAmmo : CommonAmmoFeatures
     Inventory.Icon "LOHSA1";
   }
 }
+
+class OverlordAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "OVERA1";
+  }
+}

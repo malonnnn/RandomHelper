@@ -2281,6 +2281,24 @@ class LordOfHeresyGun : BaseDeployer
       Stop;
   }
 }
+
+class OverlordGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Overlord";
+    Weapon.AmmoType2 "OverlordAmmo";
+    Inventory.PickupMessage "Got Overlord!";
+    BaseDeployer.price 500;
+    Weapon.SlotPriority 500;
+  }
+  States
+  {
+    Spawn:
+      OVER A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
