@@ -2422,6 +2422,25 @@ class SlimeVolacubusGun : BaseDeployer
       Stop;
   }
 }
+
+class ThamuzGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Thamuz";
+    Weapon.AmmoType2 "ThamuzAmmo";
+    Inventory.PickupMessage "Got Thamuz!";
+    BaseDeployer.price 650;
+    Weapon.SlotPriority 650;
+    Scale 0.2;
+  }
+  States
+  {
+    Spawn:
+      DCYB A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

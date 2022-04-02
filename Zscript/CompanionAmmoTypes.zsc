@@ -1109,3 +1109,11 @@ class SlimeVolacubusAmmo : CommonAmmoFeatures
     Inventory.Icon "FFAGA1";
   }
 }
+
+class ThamuzAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "DCYBA1";
+  }
+}
