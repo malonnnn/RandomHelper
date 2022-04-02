@@ -2441,6 +2441,24 @@ class ThamuzGun : BaseDeployer
       Stop;
   }
 }
+
+class RocketImpGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Rocket Imp";
+    Weapon.AmmoType2 "RocketImpAmmo";
+    Inventory.PickupMessage "Got Rocket Imp!";
+    BaseDeployer.price 20;
+    Weapon.SlotPriority 20;
+  }
+  States
+  {
+    Spawn:
+      RIMP A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

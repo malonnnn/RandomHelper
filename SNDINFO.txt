@@ -1,3 +1,8 @@
+// Rocket Imp
+Rocketimp/xdie RKIMPD
+Rocketimp/Explode RIEXPL
+Rocketimp/Fire RIFIRE
+
 // Thamuz
 Apocalypse/cast			apocast
 Thamuz/Attack			nakrula2

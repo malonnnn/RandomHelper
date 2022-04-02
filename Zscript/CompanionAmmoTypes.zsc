@@ -1117,3 +1117,11 @@ class ThamuzAmmo : CommonAmmoFeatures
     Inventory.Icon "DCYBA1";
   }
 }
+
+class RocketImpAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "RIMPA1";
+  }
+}
