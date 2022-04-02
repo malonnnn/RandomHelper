@@ -2331,6 +2331,25 @@ class SquireGun : BaseDeployer
       Stop;
   }
 }
+
+class SuperDemonGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Superdemon";
+    Weapon.AmmoType2 "SuperDemonAmmo";
+    Inventory.PickupMessage "Got Superdemon!";
+    BaseDeployer.price 300;
+    Weapon.SlotPriority 300;
+    Scale 0.2;
+  }
+  States
+  {
+    Spawn:
+      SUPR A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

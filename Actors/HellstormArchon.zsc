@@ -115,7 +115,6 @@ Class HellstormArchonComet : Actor
     SeeSound "weapons/firbfi";
     DeathSound "weapons/hellex";
     DONTHURTSHOOTER;
-    +FIREDAMAGE
   }
   States
   {

@@ -1069,3 +1069,11 @@ class SquireAmmo : CommonAmmoFeatures
     Inventory.Icon "BOS6A1";
   }
 }
+
+class SuperDemonAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "SUPRA1";
+  }
+}

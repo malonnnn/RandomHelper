@@ -1,3 +1,8 @@
+// Superdemon
+superdemon/death		DSSUPDTH
+superdemon/snarl		DSSUPSNA
+superdemon/crash		DSSUPLND
+
 // Squire
 squire/sight DSSQRSIT
 squire/death DSSQRDTH
