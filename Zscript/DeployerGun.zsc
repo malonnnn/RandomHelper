@@ -171,10 +171,9 @@ class BioProj : Actor
         let p = PlayerPawn(target);
         let p2 = target;
         let gun = BaseDeployer(p.player.readyweapon);
-        p2.TakeInventory(companionClass.."Gun", 1);
+        p2.TakeInventory(companionClass.."Ammo", 1);
         if(numCompanions <= 1)
         {
-          
           p.player.cheats &= ~CF_INSTANTWEAPSWITCH;
           p.player.pendingweapon = p.PickNextWeapon();
           gun.removeWeapon = 1;
