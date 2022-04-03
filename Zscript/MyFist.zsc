@@ -23,5 +23,12 @@ class MyFist : Fist replaces Fist
 			PUNG C 4;
 			PUNG B 5 A_ReFire;
 			Goto Ready;
+		Fire:
+			PUNG B 4;
+			PUNG C 4 A_CustomPunch(20 * random(1, 10), TRUE);
+			PUNG D 5;
+			PUNG C 4;
+			PUNG B 5 A_ReFire;
+			Goto Ready;
 	}
 }
