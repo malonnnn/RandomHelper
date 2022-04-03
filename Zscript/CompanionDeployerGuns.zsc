@@ -2459,6 +2459,24 @@ class RocketImpGun : BaseDeployer
       Stop;
   }
 }
+
+class GrinGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Grin";
+    Weapon.AmmoType2 "GrinAmmo";
+    Inventory.PickupMessage "Got Grin!";
+    BaseDeployer.price 10;
+    Weapon.SlotPriority 10;
+  }
+  States
+  {
+    Spawn:
+      HOIM A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

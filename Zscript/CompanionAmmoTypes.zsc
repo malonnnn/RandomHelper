@@ -1125,3 +1125,11 @@ class RocketImpAmmo : CommonAmmoFeatures
     Inventory.Icon "RIMPA1";
   }
 }
+
+class GrinAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "HOIMA1";
+  }
+}
