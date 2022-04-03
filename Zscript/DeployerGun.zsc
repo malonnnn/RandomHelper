@@ -4,6 +4,9 @@ class BaseDeployer : Weapon
   property price : price;
   int removeWeapon;
   property removeWeapon : removeWeapon;
+
+  BioProj proj;
+  BioProjAlt altproj;
   Default
   {
     +WEAPON.NOALERT
@@ -38,10 +41,9 @@ class BaseDeployer : Weapon
       BPBL A 1 A_Raise;
       Loop;
     Fire:
-      TNT1 A 0 A_GunFlash;
       TNT1 A 0
       {
-        
+        A_GunFlash();
         let p = self;
         int numCompanions = p.CountInv(invoker.ammotype2);
         int balance = p.CountInv(invoker.ammotype1);
@@ -54,11 +56,11 @@ class BaseDeployer : Weapon
           A_StartSound("Weapons/BioFire");
 
           String gunClassName = invoker.GetClassName();
-          let proj = BioProj(A_FireProjectile("BioProj"));
+          invoker.proj = BioProj(A_FireProjectile("BioProj"));
 
-          proj.companionClass = gunClassName.Left(gunClassName.Length() - 3);
-          proj.niceName = tag;
-          proj.numCompanions = numCompanions;
+          invoker.proj.companionClass = gunClassName.Left(gunClassName.Length() - 3);
+          invoker.proj.niceName = tag;
+          invoker.proj.numCompanions = numCompanions;
 
           // if price is free, reimburse 1 gun ammo
           if(invoker.price <= 0)
@@ -74,23 +76,38 @@ class BaseDeployer : Weapon
            }
         }
       }
+    Hold:
       BPBL E 7;
       BPBL F 8;
       BPBL G 7;
-      BPBL H 8;
-      Goto Ready;
+      BPBL H 8 A_Refire("Hold");
+      TNT1 A 0
+      {
+        if(invoker.proj){
+          invoker.proj.A_Die();
+        }
+      }
+      GoTo Ready;
     AltFire:
       TNT1 A 0
       {
         A_GunFlash();
         invoker.ammouse2 = 0;
+        A_StartSound("Weapons/BioFire");
+        invoker.altproj = BioProjAlt(A_FireProjectile("BioProjAlt"));
       }
-      TNT1 A 0 A_StartSound("Weapons/BioFire");
-      BPBL E 7 A_FireProjectile("BioProjAlt");
+    AltHold:
+      BPBL E 7;
       BPBL F 8;
       BPBL G 7;
-      BPBL H 8;
-      Goto Ready;
+      BPBL H 8 A_Refire("AltHold");
+      TNT1 A 0
+      {
+        if(invoker.altproj){
+          invoker.altproj.A_Die();
+        }
+      }
+      GoTo Ready;
   }
 
   override bool ShouldStay ()
@@ -122,6 +139,11 @@ class BioProj : Actor
   property numCompanions : numCompanions;
   Default
   {
+    -NOGRAVITY
+    +LOWGRAVITY
+    +ROCKETTRAIL
+    BounceType "Hexen";
+
     +Shootable
     +DontSplash
     +SeekerMissile
@@ -133,7 +155,7 @@ class BioProj : Actor
     RenderStyle "Translucent";
     Alpha .7;
     Decal "BioDecal";
-    Speed 30;
+    Speed 5;
     DamageType "Companion";
     Species "Companion";
     Projectile;
@@ -142,13 +164,15 @@ class BioProj : Actor
   {
     Spawn:
       BPBP ABC 3 Bright A_SpawnItemEx("BioPuff");
-      Loop;
-    Stick:
-      BPBP AAABBBCCC 1 Bright A_Fire(35);
+    Flying:
+      BPBP ABC 3 Bright;
       Loop;
     Death:
       TNT1 A 0
       {
+        vel.x = 0;
+        vel.y = 0;
+        vel.z = 0;
         A_StartSound("Weapons/BioProj");
         let g = Globals(EventHandler.Find("Globals"));
         g.createCompanion(companionClass, pos, target, niceName, false);
@@ -162,6 +186,11 @@ class BioProjAlt : Actor
 {
   Default
   {
+    -NOGRAVITY
+    +LOWGRAVITY
+    +ROCKETTRAIL
+    BounceType "Hexen";
+
     +Shootable
     +DontSplash
     +SeekerMissile
@@ -173,7 +202,7 @@ class BioProjAlt : Actor
     RenderStyle "Translucent";
     Alpha .7;
     Decal "BioDecal";
-    Speed 30;
+    Speed 5;
     Species "Companion";
     DamageType "Companion";
     Projectile;
@@ -182,20 +211,15 @@ class BioProjAlt : Actor
   {
     Spawn:
       BPBP NOP 3 Bright A_SpawnItemEx("BioPuff");
-      Loop;
-    ChangeTID:
-      TNT1 A 0 A_SetShootable;
-      TNT1 A 0 A_Stop;
-      TNT1 A 0 Thing_ChangeTID(0,2648);
-      GoTo Death;
-    Stick:
-      BPBP AAABBBCCC 1 Bright A_Fire(35);
+    Flying:
+      BPBP NOP 3;
       Loop;
     Death:
-      TNT1 A 0 A_JumpIf(tid == 2648,1);
-      Goto ChangeTID;
       TNT1 A 0
       {
+        vel.x = 0;
+        vel.y = 0;
+        vel.z = 0;
         bool spawnedAtLeastOne = false;
         let g = Globals(EventHandler.Find("Globals"));
         for(int i = 0; i < g.companions.Size(); i++)
