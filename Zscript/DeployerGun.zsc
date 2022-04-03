@@ -18,6 +18,7 @@ class BaseDeployer : Weapon
     Weapon.Kickback 100;
     Weapon.AmmoGive1 2;
     Weapon.AmmoGive2 1;
+    Weapon.AmmoUse1 0;
     Weapon.AmmoUse2 0;
     Weapon.UpSound "Weapons/BioReady";
     Weapon.AmmoType1 "CompanionAmmo";
@@ -50,7 +51,6 @@ class BaseDeployer : Weapon
         if(balance >= invoker.price && numCompanions >= 1)
         {
           String tag = invoker.getTag();
-          invoker.ammouse1 = invoker.price;
 
           A_StartSound("Weapons/BioFire");
 
@@ -60,6 +60,7 @@ class BaseDeployer : Weapon
           invoker.proj.companionClass = gunClassName.Left(gunClassName.Length() - 3);
           invoker.proj.niceName = tag;
           invoker.proj.numCompanions = numCompanions;
+          invoker.proj.price = invoker.price;
 
           // if price is free, reimburse 1 gun ammo
           if(invoker.price <= 0)
@@ -128,6 +129,8 @@ class BioProj : Actor
   property niceName : niceName;
   int numCompanions;
   property numCompanions : numCompanions;
+  int price;
+  property price : price;
   Default
   {
     -NOGRAVITY
@@ -172,6 +175,7 @@ class BioProj : Actor
         let p2 = target;
         let gun = BaseDeployer(p.player.readyweapon);
         p2.TakeInventory(companionClass.."Ammo", 1);
+        p2.TakeInventory("CompanionAmmo", price);
         if(numCompanions <= 1)
         {
           p.player.cheats &= ~CF_INSTANTWEAPSWITCH;
