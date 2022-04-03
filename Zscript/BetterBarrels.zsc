@@ -1,0 +1,12 @@
+class MyExplosiveBarrel : ExplosiveBarrel replaces ExplosiveBarrel
+{
+
+  override bool CanCollideWith(Actor other, bool passive){
+    Super.CanCollideWith(other, passive);
+    if(other is "BioProjAlt"){
+      A_Die();
+      other.A_Die();
+    }
+    return true;
+  }
+}
