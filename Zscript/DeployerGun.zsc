@@ -51,7 +51,6 @@ class BaseDeployer : Weapon
         {
           String tag = invoker.getTag();
           invoker.ammouse1 = invoker.price;
-          invoker.ammouse2 = 1;
 
           A_StartSound("Weapons/BioFire");
 
@@ -66,14 +65,7 @@ class BaseDeployer : Weapon
           if(invoker.price <= 0)
           {
             A_GiveInventory(gunClassName, 1);
-
-          // remove gun if we out of companions and isnt free
-          }else if(numCompanions <= 1){
-             let p2 = PlayerPawn(p);
-            player.cheats &= ~CF_INSTANTWEAPSWITCH;
-            p.player.pendingweapon = p2.PickNextWeapon();
-             invoker.removeWeapon = 1;
-           }
+          }
         }
       }
     Hold:
@@ -92,7 +84,6 @@ class BaseDeployer : Weapon
       TNT1 A 0
       {
         A_GunFlash();
-        invoker.ammouse2 = 0;
         A_StartSound("Weapons/BioFire");
         invoker.altproj = BioProjAlt(A_FireProjectile("BioProjAlt"));
       }
@@ -176,6 +167,18 @@ class BioProj : Actor
         A_StartSound("Weapons/BioProj");
         let g = Globals(EventHandler.Find("Globals"));
         g.createCompanion(companionClass, pos, target, niceName, false);
+        
+        let p = PlayerPawn(target);
+        let p2 = target;
+        let gun = BaseDeployer(p.player.readyweapon);
+        p2.TakeInventory(companionClass.."Gun", 1);
+        if(numCompanions <= 1)
+        {
+          
+          p.player.cheats &= ~CF_INSTANTWEAPSWITCH;
+          p.player.pendingweapon = p.PickNextWeapon();
+          gun.removeWeapon = 1;
+        }
       }
       BPBP DEF 6 Bright;
       Stop;
