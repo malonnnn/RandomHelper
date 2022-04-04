@@ -10,21 +10,25 @@ class BaseDeployer : Weapon
   Default
   {
     +WEAPON.NOALERT
-    +SPRITEANGLE
+    
     +WEAPON.PRIMARY_USES_BOTH
     +WEAPON.ALT_AMMO_OPTIONAL
     +WEAPON.NO_AUTO_SWITCH
+    
+    +SPRITEANGLE
     SpriteAngle 180;
-    Weapon.Kickback 100;
+        
+    Weapon.AmmoType1 "CompanionAmmo";
+    Weapon.AmmoType2 "CompanionAmmo"; // wrong value, we actually set this in postbeginplay()
     Weapon.AmmoGive1 1;
     Weapon.AmmoGive2 1;
     Weapon.AmmoUse1 0;
     Weapon.AmmoUse2 0;
-    Weapon.UpSound "Weapons/BioReady";
-    Weapon.AmmoType1 "CompanionAmmo";
+
+    Weapon.Kickback 100;
     Weapon.SlotNumber 3;
     Scale 0.3;
-
+    Weapon.UpSound "Weapons/BioReady";
     BaseDeployer.removeWeapon 0;
   }
   States
@@ -65,7 +69,7 @@ class BaseDeployer : Weapon
           // if price is free, reimburse 1 gun ammo
           if(invoker.price <= 0)
           {
-            A_GiveInventory(gunClassName, 1);
+            A_GiveInventory(invoker.ammotype2.GetClassName(), 1);
           }
         }
       }
@@ -102,7 +106,7 @@ class BaseDeployer : Weapon
       GoTo Ready;
   }
 
-  override bool ShouldStay ()
+  override bool ShouldStay()
   {
     return false;
   }
@@ -118,6 +122,14 @@ class BaseDeployer : Weapon
         self.removeWeapon++;
       }
     }
+  }
+
+  override void PostBeginPlay()
+  {
+    Super.PostBeginPlay();
+    String className = getclassname();
+    className = className.Left(className.Length() - 3);
+    AmmoType2 = className.."Ammo";
   }
 }
 

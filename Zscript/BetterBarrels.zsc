@@ -5,13 +5,13 @@ class MyExplosiveBarrel : ExplosiveBarrel replaces ExplosiveBarrel
     Super.CanCollideWith(other, passive);
     if(other is "BioProjAlt"){
       A_Die();
-      other.A_Die();
+      other.Destroy();
     }
     return true;
   }
 }
 
-class MyBackPack : BackPack replaces BackPack
+/*class MyBackPack : BackPack replaces BackPack
 {
 
   override void AttachToOwner(Actor owner){
@@ -27,4 +27,4 @@ class MyBackPack : BackPack replaces BackPack
       }
     }
   }
-}
+}*/

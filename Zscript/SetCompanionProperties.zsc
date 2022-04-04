@@ -1,6 +1,7 @@
 class SetCompanionProperties : EventHandler
 {
   override void WorldThingSpawned(WorldEvent e){
+    Super.WorldThingSpawned(e);
     if(e.Thing && e.Thing.bIsMonster)
     {
       // all creatures get these
@@ -28,7 +29,7 @@ class SetCompanionProperties : EventHandler
         e.Thing.A_SetSpecies("Companion");
       // only enemies
       }else{
-        e.Thing.bActivateMCross = true;
+        //e.Thing.bActivateMCross = true;
       }
     }
   }

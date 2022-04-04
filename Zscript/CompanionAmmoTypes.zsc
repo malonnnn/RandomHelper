@@ -4,18 +4,30 @@ Class CommonAmmoFeatures : Ammo
   property isTrans : isTrans;
   Default
   {
-    +Inventory.HubPower
-    +Inventory.PersistentPower
     +Inventory.InvBar
     +SpriteAngle
     SpriteAngle 180;
     Inventory.Amount 1;
     Inventory.MaxAmount 999;
     Inventory.InterHubAmount 999;
-    Inventory.PickupMessage "";
+    Inventory.PickupMessage "picked up a piece of ammo";
     Ammo.BackpackAmount 1;
 		Ammo.BackpackMaxAmount 999;
     CommonAmmoFeatures.isTrans false;
+  }
+  States
+  {
+    Spawn:
+      ROCK A -1;
+      Stop;
+  }
+}
+
+class CompanionZombieManAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "POSSA1";
   }
 }
 
@@ -152,14 +164,6 @@ Class MarineCompanionMinigunAmmo : CommonAmmoFeatures
   Default
   {
     Inventory.Icon "ALY6A1";
-  }
-}
-
-class CompanionZombieManAmmo : CommonAmmoFeatures
-{
-  Default
-  {
-    Inventory.Icon "POSSA1";
   }
 }
 
