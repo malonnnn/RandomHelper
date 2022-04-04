@@ -9,6 +9,7 @@ class BaseDeployer : Weapon
   BioProjAlt altproj;
   Default
   {
+    +WEAPON.CHEATNOTWEAPON
     +WEAPON.NOALERT
     
     +WEAPON.PRIMARY_USES_BOTH
