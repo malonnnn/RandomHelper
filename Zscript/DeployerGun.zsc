@@ -16,7 +16,7 @@ class BaseDeployer : Weapon
     +WEAPON.NO_AUTO_SWITCH
     SpriteAngle 180;
     Weapon.Kickback 100;
-    Weapon.AmmoGive1 3;
+    Weapon.AmmoGive1 1;
     Weapon.AmmoGive2 1;
     Weapon.AmmoUse1 0;
     Weapon.AmmoUse2 0;

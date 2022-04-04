@@ -10,3 +10,21 @@ class MyExplosiveBarrel : ExplosiveBarrel replaces ExplosiveBarrel
     return true;
   }
 }
+
+class MyBackPack : BackPack replaces BackPack
+{
+
+  override void AttachToOwner(Actor owner){
+    Super.AttachToOwner(owner);
+    console.printf(owner.getclassname());
+
+    let g = Globals(EventHandler.Find("Globals"));
+
+    for(int i = 0; i < g.allCompanions.size(); i++){
+      int amt = owner.countinv(g.allCompanions[i].."Ammo");
+      if(amt > 0){
+        owner.GiveInventory(g.allCompanions[i].."Gun", 1);
+      }
+    }
+  }
+}
