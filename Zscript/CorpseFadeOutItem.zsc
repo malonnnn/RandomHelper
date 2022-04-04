@@ -1,0 +1,25 @@
+class corpsefadeout : Inventory
+{
+  Default
+  {
+    inventory.amount 1;
+    inventory.maxamount 1;
+    +inventory.autoactivate
+  }
+	States
+	{
+    PickUp:
+      TNT1 A 1;
+      stop;
+    Use:
+      TNT1 A 0;
+      Stop;
+	}
+
+  override void DoEffect(){
+    Super.DoEffect();
+    if(owner){
+      owner.A_FadeOut(0.001);
+    }
+  }
+}

@@ -1,9 +1,11 @@
 class CompanionItemReplacer : EventHandler
 {
-
   // 50% chance to spawn companion item when enemy dies
   override void WorldThingDied(WorldEvent e){
+    Super.WorldThingDied(e);
+
     if(e.Thing.bIsMonster && !e.Thing.bFriendly) {
+      e.thing.GiveInventory("corpsefadeout", 1);
       switch(Random(1,10))
       {
         case 1:
@@ -61,5 +63,9 @@ class CompanionItemReplacer : EventHandler
       Actor.Spawn("CompanionAmmo", e.Thing.pos);
       e.Thing.Destroy();
     }
+
+    //else if(e.Thing.bIsMonster){
+      //e.thing.GiveInventory("corpsefadeout", 1);
+    //}
   }
 }
