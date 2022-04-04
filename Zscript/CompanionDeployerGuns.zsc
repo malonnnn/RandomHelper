@@ -2495,6 +2495,24 @@ class FlyingImpGun : BaseDeployer
       Stop;
   }
 }
+
+class ForgottenOneGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Forgotten One";
+    Weapon.AmmoType2 "ForgottenOneAmmo";
+    Inventory.PickupMessage "Got Forgotten One!";
+    BaseDeployer.price 10;
+    Weapon.SlotPriority 10;
+  }
+  States
+  {
+    Spawn:
+      FRGO A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
