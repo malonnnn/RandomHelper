@@ -1171,3 +1171,11 @@ class FreezerZombieAmmo : CommonAmmoFeatures
     Inventory.Icon "FRPOA1";
   }
 }
+
+class FusionArachnoAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "FSPIA1D1";
+  }
+}

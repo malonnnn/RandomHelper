@@ -2549,6 +2549,24 @@ class FreezerZombieGun : BaseDeployer
       Stop;
   }
 }
+
+class FusionArachnoGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Fusion Arachno";
+    Weapon.AmmoType2 "FusionArachnoAmmo";
+    Inventory.PickupMessage "Got Fusion Arachno!";
+    BaseDeployer.price 75;
+    Weapon.SlotPriority 75;
+  }
+  States
+  {
+    Spawn:
+      FSPI A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

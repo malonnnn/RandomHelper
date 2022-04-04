@@ -1,3 +1,7 @@
+// Fusion Arachno
+fusionspid/die FUSPDIE
+fusionspid/see FUSPSEE
+
 // Freezer Zombie
 weapons/iceshot		DSICESHT
 weapons/icehit		DSICEHIT
