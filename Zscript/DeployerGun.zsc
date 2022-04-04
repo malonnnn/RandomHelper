@@ -125,12 +125,19 @@ class BaseDeployer : Weapon
     }
   }
 
-  override void PostBeginPlay()
+  override void BeginPlay()
   {
-    Super.PostBeginPlay();
+    Super.BeginPlay();
     String className = getclassname();
     className = className.Left(className.Length() - 3);
     AmmoType2 = className.."Ammo";
+  }
+
+  override bool HandlePickup(Inventory item){
+    if(item is "BaseDeployer"){
+      owner.A_Print("\cg"..item.GetTag(), 5, "BIGFONT");
+    }
+    return false;
   }
 }
 
