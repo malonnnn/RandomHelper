@@ -2531,6 +2531,24 @@ class FormerRangerGun : BaseDeployer
       Stop;
   }
 }
+
+class FreezerZombieGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Freezer Zombie";
+    Weapon.AmmoType2 "FreezerZombieAmmo";
+    Inventory.PickupMessage "Got Freezer Zombie!";
+    BaseDeployer.price 10;
+    Weapon.SlotPriority 10;
+  }
+  States
+  {
+    Spawn:
+      FRPO A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

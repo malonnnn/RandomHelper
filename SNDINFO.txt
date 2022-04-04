@@ -1,3 +1,7 @@
+// Freezer Zombie
+weapons/iceshot		DSICESHT
+weapons/icehit		DSICEHIT
+
 // Former Ranger
 grunt/attack2 POSSATK2
 
