@@ -12,18 +12,10 @@ Class CommonAmmoFeatures : Ammo
     Inventory.Amount 1;
     Inventory.MaxAmount 999;
     Inventory.InterHubAmount 999;
-    Ammo.BackpackAmount 2;
+    Inventory.PickupMessage "";
+    Ammo.BackpackAmount 1;
 		Ammo.BackpackMaxAmount 999;
     CommonAmmoFeatures.isTrans false;
-  }
-  States
-  {
-    Pickup:
-      TNT1 A 0
-      {
-        GiveInventory(GetClassName(), 1);
-      }
-      Stop;
   }
 }
 
