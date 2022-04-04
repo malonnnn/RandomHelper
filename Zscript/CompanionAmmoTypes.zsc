@@ -1139,3 +1139,11 @@ class GrinAmmo : CommonAmmoFeatures
     Inventory.Icon "HOIMA1";
   }
 }
+
+class FlyimgImpAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "AEIMA1";
+  }
+}

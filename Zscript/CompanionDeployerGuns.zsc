@@ -2477,6 +2477,24 @@ class GrinGun : BaseDeployer
       Stop;
   }
 }
+
+class FlyingImpGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Flying Imp";
+    Weapon.AmmoType2 "FlyingImpAmmo";
+    Inventory.PickupMessage "Got Flying Imp!";
+    BaseDeployer.price 10;
+    Weapon.SlotPriority 10;
+  }
+  States
+  {
+    Spawn:
+      AEIM A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

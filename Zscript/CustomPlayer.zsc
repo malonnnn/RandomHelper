@@ -11,13 +11,7 @@ class MyDoomGuy : DoomPlayer {
     Player.StartItem "CompanionZombieManGun", 1;
     Player.StartItem "ChainsawZombieAmmo", 3;
     Player.StartItem "ChainsawZombieGun", 1;
-    //Player.StartItem "FemaleScientistAmmo", 1;
-    //Player.StartItem "FemaleScientistGun", 1;
-    
-    //Player.WeaponSlot 2, "FemaleScientistGun";
     Player.WeaponSlot 1, "MyFist";
-    /*Player.WeaponSlot 1, "ChainsawZombieGun";
-    Player.WeaponSlot 1, "CompanionZombieManGun";*/
     
   }
   
