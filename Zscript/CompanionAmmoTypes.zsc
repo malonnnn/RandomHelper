@@ -1155,3 +1155,11 @@ class ForgottenOneAmmo : CommonAmmoFeatures
     Inventory.Icon "FRGOA1";
   }
 }
+
+class FormerRangerAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "BPOSA1";
+  }
+}

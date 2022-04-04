@@ -19,7 +19,7 @@ Class Demolisher : Actor
     +MissileEvenMore
     +NoRadiusDmg
     SeeSound "monster/demsit";
-    AttackSound "spider/attack";
+    AttackSound "spoder/myattack";
     PainSound "spider/pain";
     DeathSound "monster/demdth";
     ActiveSound "spider/active";
@@ -85,7 +85,7 @@ Class Demolisher : Actor
 	{
 		if (target)
 		{
-			A_StartSound("shotguy/attack", CHAN_WEAPON);
+			A_StartSound("spoder/myattack", CHAN_WEAPON);
 			A_CompanionSPosAttackInternal();
 		}
 	}

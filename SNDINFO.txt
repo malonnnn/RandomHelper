@@ -1,3 +1,6 @@
+// Former Ranger
+grunt/attack2 POSSATK2
+
 // Forgotten One
 $Random Forgotten/Attack { FRGOATK1 FRGOATK2 FRGOATK3 }
 FRGOATK1	FRGOATK1
@@ -291,7 +294,7 @@ weapons/devfch                dsdevfch
 
 // Demolisher
 monster/demsit dsdemsit
-spider/attack dscannon
+spoder/myattack dscannon
 monster/demdth dsdemdth
 
 // Deep One

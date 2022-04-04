@@ -2513,6 +2513,24 @@ class ForgottenOneGun : BaseDeployer
       Stop;
   }
 }
+
+class FormerRangerGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Former Ranger";
+    Weapon.AmmoType2 "FormerRangerAmmo";
+    Inventory.PickupMessage "Got Former Ranger!";
+    BaseDeployer.price 10;
+    Weapon.SlotPriority 10;
+  }
+  States
+  {
+    Spawn:
+      BPOS A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
