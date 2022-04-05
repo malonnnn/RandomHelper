@@ -1196,3 +1196,11 @@ class GrellAmmo : CommonAmmoFeatures
     Inventory.Icon "GRELA2A8";
   }
 }
+
+class HellionAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "HELNB1E1";
+  }
+}

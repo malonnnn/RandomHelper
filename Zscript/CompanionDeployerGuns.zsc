@@ -2604,6 +2604,24 @@ class GrellGun : BaseDeployer
       Stop;
   }
 }
+
+class HellionGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Hellion";
+    Weapon.AmmoType2 "HellionAmmo";
+    Inventory.PickupMessage "Got Hellion!";
+    BaseDeployer.price 30;
+    Weapon.SlotPriority 30;
+  }
+  States
+  {
+    Spawn:
+      HELN A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
