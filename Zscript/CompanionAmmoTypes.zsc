@@ -21,6 +21,7 @@ Class CommonAmmoFeatures : Ammo
       ROCK A -1;
       Stop;
   }
+  /*
   override class<Ammo> GetParentAmmo()
   {
     class<Object> type = GetClass();
@@ -30,7 +31,7 @@ Class CommonAmmoFeatures : Ammo
     }
           
     return (class<Ammo>)(type);
-  }
+  }*/
 }
 
 class CompanionZombieManAmmo : CommonAmmoFeatures
