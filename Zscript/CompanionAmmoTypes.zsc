@@ -1204,3 +1204,11 @@ class HellionAmmo : CommonAmmoFeatures
     Inventory.Icon "HELNB1E1";
   }
 }
+
+class HierophantAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "HIERK1";
+  }
+}

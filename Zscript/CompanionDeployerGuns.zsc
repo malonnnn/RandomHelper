@@ -2622,6 +2622,24 @@ class HellionGun : BaseDeployer
       Stop;
   }
 }
+
+class HierophantGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Hierophant";
+    Weapon.AmmoType2 "HierophantAmmo";
+    Inventory.PickupMessage "Got Hierophant!";
+    BaseDeployer.price 100;
+    Weapon.SlotPriority 100;
+  }
+  States
+  {
+    Spawn:
+      HIER A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
