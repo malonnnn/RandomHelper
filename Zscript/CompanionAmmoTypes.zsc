@@ -1212,3 +1212,12 @@ class HierophantAmmo : CommonAmmoFeatures
     Inventory.Icon "HIERK1";
   }
 }
+
+class IllusAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "ILLSA1";
+    CommonAmmoFeatures.isTrans true;
+  }
+}

@@ -2636,7 +2636,26 @@ class HierophantGun : BaseDeployer
   States
   {
     Spawn:
-      HIER A -1;
+      HIER K -1;
+      Stop;
+  }
+}
+
+class IllusGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Illus";
+    Weapon.AmmoType2 "IllusAmmo";
+    Inventory.PickupMessage "Got Illus!";
+    BaseDeployer.price 50;
+    Weapon.SlotPriority 50;
+    RenderStyle "OptFuzzy";
+  }
+  States
+  {
+    Spawn:
+      ILLS A -1;
       Stop;
   }
 }

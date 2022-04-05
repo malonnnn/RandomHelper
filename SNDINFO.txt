@@ -1,3 +1,9 @@
+// Illus
+Illus/Active	ILLSACTI
+Illus/Death		ILLSDEAT
+Illus/Melee		ILLSMELE
+Illus/Sight		ILLSSIGH
+
 // Hierophant
 weapons/firmfi	dsfirmfi
 weapons/firex5	dsfirex5
