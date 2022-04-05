@@ -1188,3 +1188,11 @@ class GhostRevenantAmmo : CommonAmmoFeatures
     CommonAmmoFeatures.isTrans true;
   }
 }
+
+class GrellAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "GRELA2A8";
+  }
+}

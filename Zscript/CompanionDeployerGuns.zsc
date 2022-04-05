@@ -2575,14 +2575,32 @@ class GhostRevenantGun : BaseDeployer
     Tag "Ghost Revenant";
     Weapon.AmmoType2 "GhostRevenantAmmo";
     Inventory.PickupMessage "Got Ghost Revenant!";
-    BaseDeployer.price 100;
-    Weapon.SlotPriority 100;
+    BaseDeployer.price 50;
+    Weapon.SlotPriority 50;
     RenderStyle "OptFuzzy";
   }
   States
   {
     Spawn:
       BLND A -1;
+      Stop;
+  }
+}
+
+class GrellGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Grell";
+    Weapon.AmmoType2 "GrellAmmo";
+    Inventory.PickupMessage "Got Grell!";
+    BaseDeployer.price 50;
+    Weapon.SlotPriority 50;
+  }
+  States
+  {
+    Spawn:
+      GREL A -1;
       Stop;
   }
 }

@@ -1,3 +1,12 @@
+// Grell
+grell/sight     dsgresit
+grell/active    dsgreact
+grell/attack    dsgreatk
+grell/pain      dsgrepai
+grell/death     dsgredth
+grell/thud      dsgrethd
+grell/projhit   dsvulhit
+
 // Ghost Revenant
 Ghost/Sight                GHOSTSIT
 Ghost/Death                GHOSTDTH
