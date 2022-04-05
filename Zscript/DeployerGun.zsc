@@ -250,7 +250,6 @@ class BioProjAlt : Actor
           if(g.companions[i]){
             spawnedAtLeastOne = true;
             g.companions[i].SetOrigin(pos, true);
-            console.printf("owned by "..g.companions[i].friendplayer);
           }else{
             g.companions.Delete(i);
           }
