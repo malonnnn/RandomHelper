@@ -252,7 +252,7 @@ class Globals : EventHandler
     {
       companion.Angle = player.angle;
       companion.movedir = Utilities.angleToMoveDir(player.angle);
-      console.printf("owner is "..consoleplayer);
+      console.printf("assigning owner "..consoleplayer);
       companion.friendplayer = consoleplayer;
     }
     companion.SetStateLabel("See");

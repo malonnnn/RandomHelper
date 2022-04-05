@@ -249,7 +249,7 @@ class BioProjAlt : Actor
         {
           spawnedAtLeastOne = true;
           g.companions[i].SetOrigin(pos, true);
-          console.printf("friendplayer is "..g.companions[i].friendplayer);
+          console.printf("owned by "..g.companions[i].friendplayer);
         }
       }
       BPBP DEF 6 Bright;
