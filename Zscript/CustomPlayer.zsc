@@ -18,7 +18,6 @@ class MyDoomGuy : DoomPlayer {
   override void PostBeginPlay(){
     super.PostBeginPlay();
     player.cheats |= CF_INSTANTWEAPSWITCH;
-    console.printf("playerNumber is "..consoleplayer);
   }
 
   /*override void Tick(){
