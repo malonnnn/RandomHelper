@@ -2567,6 +2567,25 @@ class FusionArachnoGun : BaseDeployer
       Stop;
   }
 }
+
+class GhostRevenantGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Ghost Revenant";
+    Weapon.AmmoType2 "GhostRevenantAmmo";
+    Inventory.PickupMessage "Got Ghost Revenant!";
+    BaseDeployer.price 100;
+    Weapon.SlotPriority 100;
+    RenderStyle "OptFuzzy";
+  }
+  States
+  {
+    Spawn:
+      BLND A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

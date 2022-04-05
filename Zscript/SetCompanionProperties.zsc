@@ -25,6 +25,7 @@ class SetCompanionProperties : EventHandler
         e.Thing.bDoHarmSpecies = false;
         e.Thing.bDontHarmClass = true;
         e.Thing.bThruSpecies = true;
+        e.Thing.bNoTimeFreeze = true;
         //e.Thing.MaxTargetRange = 2048;
         e.Thing.A_SetSpecies("Companion");
       // only enemies

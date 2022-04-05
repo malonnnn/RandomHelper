@@ -1179,3 +1179,12 @@ class FusionArachnoAmmo : CommonAmmoFeatures
     Inventory.Icon "FSPIA1D1";
   }
 }
+
+class GhostRevenantAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "GSKLA1D1";
+    CommonAmmoFeatures.isTrans true;
+  }
+}

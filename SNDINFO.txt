@@ -1,3 +1,11 @@
+// Ghost Revenant
+Ghost/Sight                GHOSTSIT
+Ghost/Death                GHOSTDTH
+Ghost/Active               GHOSTACT
+Ghost/Flash                GHOSTATK
+Ghost/Punch                GHOSTHIT
+Ghost/Swing                GHOSTSWG
+
 // Fusion Arachno
 fusionspid/die FUSPDIE
 fusionspid/see FUSPSEE
