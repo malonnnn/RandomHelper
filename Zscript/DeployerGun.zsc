@@ -114,6 +114,7 @@ class BaseDeployer : Weapon
     if(self.removeWeapon != 0){
       if(self.removeWeapon > 70){
         owner.player.cheats |= CF_INSTANTWEAPSWITCH;
+        console.printf("removing "..getclassname());
         self.Destroy();
       }else{
         self.removeWeapon++;
@@ -193,6 +194,7 @@ class BioProj : Actor
         p2.TakeInventory("CompanionAmmo", price);
         if(numCompanions <= 1)
         {
+          console.printf("marking "..gun.getclassname().." for removal");
           p.player.cheats &= ~CF_INSTANTWEAPSWITCH;
           p.player.pendingweapon = p.PickNextWeapon();
           gun.removeWeapon = 1;
