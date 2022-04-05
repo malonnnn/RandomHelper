@@ -1,3 +1,11 @@
+// Inferno
+monster/infsit dsinfsit
+monster/infpai dsinfpai
+monster/infdth dsinfdth
+caco/melee dsdembit
+weapons/firmfi dsfirmfi
+weapons/firex3 dsfirex3
+
 // Imp Trite
 impspid/see issee
 impspid/pain ispain

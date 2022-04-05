@@ -2731,6 +2731,24 @@ class ImpVoidGun : BaseDeployer
       Stop;
   }
 }
+
+class InfernoGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Inferno";
+    Weapon.AmmoType2 "InfernoAmmo";
+    Inventory.PickupMessage "Got Inferno!";
+    BaseDeployer.price 50;
+    Weapon.SlotPriority 50;
+  }
+  States
+  {
+    Spawn:
+      INFR A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
