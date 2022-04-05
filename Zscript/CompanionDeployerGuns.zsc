@@ -2659,6 +2659,24 @@ class IllusGun : BaseDeployer
       Stop;
   }
 }
+
+class ImpTriteGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Imp Trite";
+    Weapon.AmmoType2 "ImpTriteAmmo";
+    Inventory.PickupMessage "Got Imp Trite!";
+    BaseDeployer.price 1;
+    Weapon.SlotPriority 1;
+  }
+  States
+  {
+    Spawn:
+      IMHD A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

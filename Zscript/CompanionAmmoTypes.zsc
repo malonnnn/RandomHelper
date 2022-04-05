@@ -1221,3 +1221,11 @@ class IllusAmmo : CommonAmmoFeatures
     CommonAmmoFeatures.isTrans true;
   }
 }
+
+class ImpTriteAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "IMHDA1";
+  }
+}

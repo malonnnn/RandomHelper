@@ -1,0 +1,47 @@
+Class ImpTrite : Actor
+{
+  Default
+  {
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Health 15;
+    Radius 20;
+    Height 24;
+    Speed 12;
+    PainChance 200;
+    Mass 30;
+    MONSTER;
+    +NOGRAVITY
+    SeeSound "impspid/see";
+    PainSound "impspid/pain";
+    DeathSound "impspid/death";
+    ActiveSound "impspid/see";
+    MeleeSound "impspid/atack";
+    Obituary "%o was biten by imp head";
+  }
+  States
+  {
+    Spawn:
+      IMHD D 5 A_Look;
+      Loop;
+    See:
+      IMHD A 0 A_SetFloorClip;
+      IMHD A 3 A_Gravity;
+      IMHD ABBCC 3 A_Chase;
+      Loop;
+    Melee:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      IMHD D 8 A_FaceTarget;
+      IMHD E 6 A_CustomMeleeAttack(Random(1,8)*3, "impspid/atack", "", "Companion");
+      Goto See;
+    Pain:
+      IMHD D 2 A_Pain;
+      Goto See;
+    Death:
+      IMHD F 8 A_ScreamAndUnblock;
+      IMHD G 8;
+      IMHD H 6;
+      Stop;
+  }
+}
