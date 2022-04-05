@@ -135,11 +135,10 @@ class BaseDeployer : Weapon
     AmmoType2 = className.."Ammo";
   }
 
-  override bool HandlePickup(Inventory item){
-    if(item is "BaseDeployer"){
-      owner.A_Print("\cg"..item.GetTag(), 8, "BIGFONT");
-    }
-    return false;
+  // All items with a "Tag" will be printed big upon pickup in the middle of the screen
+  override bool CanPickup(Actor toucher){
+    toucher.A_Print("\cg"..GetTag(), 8, "BIGFONT");
+    return true;
   }
 }
 
