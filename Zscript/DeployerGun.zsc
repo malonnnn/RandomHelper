@@ -135,7 +135,7 @@ class BaseDeployer : Weapon
 
   override bool HandlePickup(Inventory item){
     if(item is "BaseDeployer"){
-      owner.A_Print("\cg"..item.GetTag(), 5, "BIGFONT");
+      owner.A_Print("\cr"..item.GetTag(), 5, "BIGFONT");
     }
     return false;
   }
