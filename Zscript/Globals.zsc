@@ -17,6 +17,9 @@ class Globals : EventHandler
       return;
     }
     String ac[] = {  // add your companion to top of list
+      "ImpVoid",
+      "ImpST",
+      "ImpAbomination",
       "ImpTrite",
       "Illus",
       "Hierophant",

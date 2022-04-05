@@ -1229,3 +1229,27 @@ class ImpTriteAmmo : CommonAmmoFeatures
     Inventory.Icon "IMHDA1";
   }
 }
+
+class ImpAbominationAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "TRO5A1";
+  }
+}
+
+class ImpSTAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "TRO3A1";
+  }
+}
+
+class ImpVoidAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "TRO4A1";
+  }
+}

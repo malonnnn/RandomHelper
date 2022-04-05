@@ -1,0 +1,91 @@
+Class ImpST : CompanionDoomImp
+{
+  Default
+  {
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    Health 55;
+    Radius 20;
+    Height 56;
+    Speed 11;
+    PainChance 200;
+    MONSTER ;
+    +FLOORCLIP
+    SeeSound "imp/sight";
+    PainSound "imp/pain";
+    DeathSound "imp/death";
+    ActiveSound "imp/active";
+    Obituary "%o was burned by an imp.";
+    HitObituary "%o was slashed by an imp.";
+  }
+  States
+  {
+    Spawn:
+      TRO3 AB 10 A_Look;
+      Loop;
+    See:
+      TRO3 AABBCCDD 3 A_Chase;
+  	  Loop;
+    Melee:
+    Missile:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      TRO3 EF 8 A_FaceTarget;
+      TRO3 G 6 A_CustomComboAttack("SmallImpBall",32,2,"imp/melee", "Companion");
+	    Goto See;
+    Pain:
+      TRO3 H 2;
+      TRO3 H 2 A_Pain;
+  	  Goto See;
+    Death:
+      TRO3 I 8;
+      TRO3 J 8 A_Scream;
+      TRO3 K 6;
+      TRO3 L 6 A_Fall;
+      TRO3 M -1;
+      Stop;
+    XDeath:
+      TROO N 5;
+      TROO O 5 A_XScream;
+      TROO P 5;
+      TROO Q 5 A_Fall;
+      TROO RST 5;
+      TROO U -1;
+      Stop;
+    Raise:
+      TRO3 ML 8;
+      TRO3 KJI 6;
+  	  Goto See;
+  }
+}
+
+Class SmallImpBall : Actor
+{
+  Default
+  {
+    Species "Companion";
+    DamageType "Companion";
+    Radius 8;
+    Height 6;
+    Speed 18;
+	  FastSpeed 20;
+    Damage 2;
+    Scale .75;
+    PROJECTILE;
+	  +RANDOMIZE
+    RenderStyle "Add";
+    Alpha 0.67;
+    SeeSound "imp/attack";
+    DeathSound "imp/shotx";
+    Decal "DoomImpScorch";
+  }
+  States
+  {
+    Spawn:
+      BAL1 AB 4 bright;
+      Loop;
+	  Death:
+      BAL1 CDE 6 bright;
+      Stop;
+  }   
+}

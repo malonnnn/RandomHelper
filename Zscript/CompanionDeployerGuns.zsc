@@ -2677,6 +2677,60 @@ class ImpTriteGun : BaseDeployer
       Stop;
   }
 }
+
+class ImpAbominationGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Imp Abomination";
+    Weapon.AmmoType2 "ImpAbominationAmmo";
+    Inventory.PickupMessage "Got Imp Abomination!";
+    BaseDeployer.price 15;
+    Weapon.SlotPriority 15;
+  }
+  States
+  {
+    Spawn:
+      TRO5 A -1;
+      Stop;
+  }
+}
+
+class ImpSTGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Imp ST";
+    Weapon.AmmoType2 "ImpSTAmmo";
+    Inventory.PickupMessage "Got Imp ST!";
+    BaseDeployer.price 10;
+    Weapon.SlotPriority 10;
+  }
+  States
+  {
+    Spawn:
+      TRO3 A -1;
+      Stop;
+  }
+}
+
+class ImpVoidGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Imp Void";
+    Weapon.AmmoType2 "ImpVoidAmmo";
+    Inventory.PickupMessage "Got Imp Void!";
+    BaseDeployer.price 10;
+    Weapon.SlotPriority 10;
+  }
+  States
+  {
+    Spawn:
+      TRO4 A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {
