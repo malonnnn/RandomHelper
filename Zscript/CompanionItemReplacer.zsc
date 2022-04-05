@@ -11,12 +11,12 @@ class CompanionItemReplacer : EventHandler
         case 1:
         case 2:
         case 3:
-        case 4:
-        case 5:
-        case 6:
           Globals g = Globals(EventHandler.Find("Globals"));
           String companionClass = g.getRandomCompanion();
           Actor.Spawn(companionClass.."Gun", (e.Thing.pos.x+Random(-1, 1), e.Thing.pos.y+Random(-1, 1), e.Thing.pos.z));
+        case 4:
+        case 5:
+        case 6:
         case 7:
         case 8:
         case 9:
