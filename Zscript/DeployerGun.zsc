@@ -247,9 +247,13 @@ class BioProjAlt : Actor
         let g = Globals(EventHandler.Find("Globals"));
         for(int i = 0; i < g.companions.Size(); i++)
         {
-          spawnedAtLeastOne = true;
-          g.companions[i].SetOrigin(pos, true);
-          console.printf("owned by "..g.companions[i].friendplayer);
+          if(g.companions[i]){
+            spawnedAtLeastOne = true;
+            g.companions[i].SetOrigin(pos, true);
+            console.printf("owned by "..g.companions[i].friendplayer);
+          }else{
+            g.companions.Delete(i);
+          }
         }
       }
       BPBP DEF 6 Bright;
