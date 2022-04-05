@@ -68,12 +68,6 @@ class BaseDeployer : Weapon
           invoker.proj.niceName = tag;
           invoker.proj.numCompanions = numCompanions;
           invoker.proj.price = invoker.price;
-
-          // if price is free, reimburse 1 gun ammo
-          if(invoker.price <= 0)
-          {
-            A_GiveInventory(invoker.ammotype2.GetClassName(), 1);
-          }
         }
       }
     Hold:
