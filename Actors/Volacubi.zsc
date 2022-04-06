@@ -31,14 +31,14 @@ Class Volacubus : CompanionFatso
       TNT1 A 0 A_StartSound("flyingfatso/jetloop");
       FFAT F 6 A_FatRaise;
       FFAT FG 6 A_FaceTarget ;
-      FFAT H 0 BRIGHT A_SpawnProjectile("FatShot", 34, 32, random(-7,4));
-      FFAT H 6 BRIGHT A_SpawnProjectile("FatShot", 34, -32, random(-4,7));
+      FFAT H 0 BRIGHT A_SpawnProjectile("CompanionFatShot", 34, 32, random(-7,4));
+      FFAT H 6 BRIGHT A_SpawnProjectile("CompanionFatShot", 34, -32, random(-4,7));
       FFAT FG 6 A_FaceTarget;
-      FFAT H 0 BRIGHT A_SpawnProjectile("FatShot", 34, 32, random(-7,4));
-      FFAT H 6 BRIGHT A_SpawnProjectile("FatShot", 34, -32, random(-4,7));
+      FFAT H 0 BRIGHT A_SpawnProjectile("CompanionFatShot", 34, 32, random(-7,4));
+      FFAT H 6 BRIGHT A_SpawnProjectile("CompanionFatShot", 34, -32, random(-4,7));
       FFAT FG 6 A_FaceTarget;
-      FFAT H 0 BRIGHT A_SpawnProjectile("FatShot", 34, 32, random(-7,4));
-      FFAT H 6 BRIGHT A_SpawnProjectile("FatShot", 34, -32, random(-4,7));
+      FFAT H 0 BRIGHT A_SpawnProjectile("CompanionFatShot", 34, 32, random(-7,4));
+      FFAT H 6 BRIGHT A_SpawnProjectile("CompanionFatShot", 34, -32, random(-4,7));
       FFAT FG 6 A_FaceTarget;
       Goto See;
     Pain:
