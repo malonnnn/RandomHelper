@@ -20,6 +20,99 @@ class MyDoomGuy : DoomPlayer {
     player.cheats |= CF_INSTANTWEAPSWITCH;
   }
 
+  override Weapon PickNextWeapon(){
+    let player = self.player;
+		bool found;
+		int startslot, startindex;
+		int slotschecked = 0;
+
+		[found, startslot, startindex] = FindMostRecentWeapon();
+		let ReadyWeapon = player.ReadyWeapon;
+		if (ReadyWeapon == null || found)
+		{
+			int slot;
+			int index;
+
+			if (ReadyWeapon == null)
+			{
+				startslot = NUM_WEAPON_SLOTS - 1;
+				startindex = player.weapons.SlotSize(startslot) - 1;
+			}
+
+			slot = startslot;
+			index = startindex;
+			do
+			{
+				if (++index >= player.weapons.SlotSize(slot))
+				{
+					index = 0;
+					slotschecked++;
+					if (++slot >= NUM_WEAPON_SLOTS)
+					{
+						slot = 0;
+					}
+				}
+				let type = player.weapons.GetWeapon(slot, index);
+				let weap = Weapon(FindInventory(type));
+				if (weap != null){
+          if(weap is "BaseDeployer" && player.mo.CountInv(weap.AmmoType2) == 0){
+            weap.OnDestroy();
+            continue;
+          }else if(weap.CheckAmmo(Weapon.EitherFire, false)){
+            return weap;
+          }
+        }
+			} while ((slot != startslot || index != startindex) && slotschecked <= NUM_WEAPON_SLOTS);
+		}
+		return ReadyWeapon;
+  }
+
+  override Weapon PickPrevWeapon(){
+    let player = self.player;
+		int startslot, startindex;
+		bool found;
+		int slotschecked = 0;
+
+		[found, startslot, startindex] = FindMostRecentWeapon();
+		if (player.ReadyWeapon == null || found)
+		{
+			int slot;
+			int index;
+
+			if (player.ReadyWeapon == null)
+			{
+				startslot = 0;
+				startindex = 0;
+			}
+
+			slot = startslot;
+			index = startindex;
+			do
+			{
+				if (--index < 0)
+				{
+					slotschecked++;
+					if (--slot < 0)
+					{
+						slot = NUM_WEAPON_SLOTS - 1;
+					}
+					index = player.weapons.SlotSize(slot) - 1;
+				}
+				let type = player.weapons.GetWeapon(slot, index);
+				let weap = Weapon(FindInventory(type));
+				if (weap != null){
+          if(weap is "BaseDeployer" && player.mo.CountInv(weap.AmmoType2) == 0){
+            weap.OnDestroy();
+            continue;
+          }else if(weap.CheckAmmo(Weapon.EitherFire, false)){
+            return weap;
+          }
+        }
+			} while ((slot != startslot || index != startindex) && slotschecked <= NUM_WEAPON_SLOTS);
+		}
+		return player.ReadyWeapon;
+  }
+
   /*override void Tick(){
     super.Tick();
     cVar scaleWithLevels = cVar.GetCVar('zdw_debugspawning');
