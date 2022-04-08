@@ -152,7 +152,6 @@ Class HieroBall1 :CompanionBaronBall
     DamageType "Companion";
     Speed 20;
     Damage 10;
-    DamageType "Normal";
     Decal "RevenantScorch";
 
     +ThruGhost
@@ -176,12 +175,13 @@ Class HieroBall2 : BishopFX
 {
   Default
   {
-      Speed 16;
-      Damage 6;
-      DamageType "Normal";
-      Seesound "weapons/firmfi";
-      DeathSound "weapons/firex5";
-      Decal "PlasmaScorchLower";
+    Species "Companion";
+    DamageType "Companion";
+    Speed 16;
+    Damage 6;
+    Seesound "weapons/firmfi";
+    DeathSound "weapons/firex5";
+    Decal "PlasmaScorchLower";
 
       +ThruGhost
       +ForceXYBillBoard
@@ -213,6 +213,8 @@ Class CurseBall : CompanionBaronBall
 
   Default
   {
+    Species "Companion";
+    DamageType "Companion";
     Speed 20;
     DamageFunction 20;
     Alpha 0.9;
