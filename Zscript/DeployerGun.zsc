@@ -43,15 +43,19 @@ class BaseDeployer : Weapon
       BPBL ABCD 5 A_WeaponReady;
       Loop;
     Deselect:
-      BPBL A 1 A_Lower;
-      Loop;
-    Select:
-      BPBL A 35
+      BPBL A 1 
       {
         let p = self;
-        A_Raise();
-        p.player.cheats |= CF_INSTANTWEAPSWITCH;
+        A_Lower();
       } 
+      Loop;
+    Select:
+      BPBL A 1
+      {
+        let p = self;
+         A_Raise();
+        p.player.cheats |= CF_INSTANTWEAPSWITCH;
+      }
       Loop;
     Fire:
       TNT1 A 0
