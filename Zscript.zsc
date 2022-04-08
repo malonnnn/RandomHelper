@@ -10,6 +10,7 @@ version "4.8.0"
 #include "Zscript/MyFist.zsc"
 
 #include "Zscript/BetterBarrels.zsc"
+#include "Zscript/InstantKillFriendsWithFist.zsc"
 
 #include "Zscript/CorpseFadeOutItem.zsc"
 

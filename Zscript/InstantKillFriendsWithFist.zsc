@@ -1,0 +1,8 @@
+class InstantKillFriendsWithFist : EventHandler
+{
+  override void WorldThingDamaged(WorldEvent e){
+    if(e.DamageSource is "MyDoomGuy" && e.Thing.bFriendly){
+      e.Thing.SetStateLabel("Death");
+    }
+  }
+}
