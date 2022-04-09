@@ -20,8 +20,6 @@ class MyDoomGuy : DoomPlayer {
   override void PostBeginPlay(){
     super.PostBeginPlay();
     player.cheats |= CF_INSTANTWEAPSWITCH;
-		//player.mo.A_Print("\cg"..Ver.Get(), 8, );
-		console.printf(player.GetUserName().." "..Ver.Get());
   }
 
   override Weapon PickNextWeapon(){
@@ -224,5 +222,14 @@ class MyPistol : Pistol replaces Pistol
 		}
 
 		LineAttack(ang, PLAYERMISSILERANGE, pitch, damage, 'Companion', 'CompanionBulletPuff');
+	}
+}
+
+class VersionPrinter : EventHandler
+{
+  override void PlayerEntered(PlayerEvent e){
+		PlayerInfo player = players[e.PlayerNumber];
+		console.printf(player.GetUserName().." "..Ver.Get());
+		console.midprint("BIGFONT", "\cg"..Ver.Get(), false);
 	}
 }
