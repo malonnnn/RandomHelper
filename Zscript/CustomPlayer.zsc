@@ -7,11 +7,13 @@ class MyDoomGuy : DoomPlayer {
     DamageFactor "Companion", 0.0;
 
     Player.StartItem "MyFist";
+		Player.StartItem "MyPistol";
     Player.StartItem "CompanionZombieManAmmo", 7;
     Player.StartItem "CompanionZombieManGun", 1;
     Player.StartItem "ChainsawZombieAmmo", 3;
     Player.StartItem "ChainsawZombieGun", 1;
     Player.WeaponSlot 1, "MyFist";
+		Player.WeaponSlot 2, "MyPistol";
     
   }
   
@@ -125,4 +127,102 @@ class MyDoomGuy : DoomPlayer {
       Actor.Spawn(companionClass.."Gun", pos);
     }
   }*/
+}
+
+
+class MyFist : Fist replaces Fist
+{
+	BioProjAlt altproj;
+	Default
+	{
+    +WEAPON.NOALERT
+	}
+	States
+	{
+		AltFire:
+			PUNG B 4;
+			PUNG C 4
+			{
+				invoker.ammouse2 = 0;
+        invoker.altproj = BioProjAlt(A_FireProjectile("BioProjAlt"));
+			}
+		AltHold:
+			PUNG D 5;
+			PUNG D 5 A_Refire("AltHold");
+			PUNG C 4;
+			PUNG B 5;
+      TNT1 A 0
+      {
+        if(invoker.altproj){
+          invoker.altproj.A_Die();
+        }
+      }
+      GoTo Ready;
+		Fire:
+			PUNG B 4;
+			PUNG C 4 A_CustomPunch(20 * random(1, 10), TRUE);
+			PUNG D 5;
+			PUNG C 4;
+			PUNG B 5 A_ReFire;
+			Goto Ready;
+	}
+}
+
+class MyPistol : Pistol replaces Pistol
+{
+	Default
+	{
+		Weapon.AmmoUse 0;
+		+WEAPON.NOALERT;
+	}
+	States
+	{
+	Fire:
+		PISG A 4;
+		PISG B 6 A_CompanionFirePistol;
+		PISG C 4;
+		PISG B 5 A_ReFire;
+		Goto Ready;
+	}
+
+	action void A_CompanionFirePistol()
+	{
+		bool accurate;
+
+		if (player != null)
+		{
+			Weapon weap = player.ReadyWeapon;
+			if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
+			{
+				if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
+					return;
+
+				player.SetPsprite(PSP_FLASH, weap.FindState('Flash'), true);
+			}
+			player.mo.PlayAttacking2 ();
+
+			accurate = !player.refire;
+		}
+		else
+		{
+			accurate = true;
+		}
+
+		A_StartSound ("weapons/pistol", CHAN_WEAPON);
+		GunShot (accurate, "CompanionBulletPuff", BulletSlope ());
+	}
+
+	protected action void GunShot(bool accurate, Class<Actor> pufftype, double pitch)
+	{
+		//int damage = 5 * random[GunShot](1, 3);
+		int damage = 0;
+		double ang = angle;
+
+		if (!accurate)
+		{
+			ang += Random2[GunShot]() * (5.625 / 256);
+		}
+
+		LineAttack(ang, PLAYERMISSILERANGE, pitch, damage, 'Companion', 'CompanionBulletPuff');
+	}
 }

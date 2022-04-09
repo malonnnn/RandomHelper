@@ -29,10 +29,7 @@ class CompanionItemReplacer : EventHandler
   // replace all weapon drops with companion ammo
   override void WorldThingSpawned(WorldEvent e){
     Super.WorldThingSpawned(e);
-    if(e.Thing is "Pistol"){
-      Actor.Spawn("CompanionAmmo", e.Thing.pos);
-      e.Thing.Destroy();
-    }else if(e.Thing is "Shotgun"){
+    if(e.Thing is "Shotgun"){
       Actor.Spawn("CompanionAmmo", e.Thing.pos);
       e.Thing.Destroy();
     }else if(e.Thing is "SuperShotgun"){
