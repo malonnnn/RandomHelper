@@ -18,7 +18,8 @@ class MyDoomGuy : DoomPlayer {
   override void PostBeginPlay(){
     super.PostBeginPlay();
     player.cheats |= CF_INSTANTWEAPSWITCH;
-		player.mo.A_Print("\cg"..Ver.Get(), 8, "BIGFONT");
+		//player.mo.A_Print("\cg"..Ver.Get(), 8, );
+		console.printf(player.GetUserName().." "..Ver.Get());
   }
 
   override Weapon PickNextWeapon(){
