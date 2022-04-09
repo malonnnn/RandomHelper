@@ -2749,6 +2749,24 @@ class InfernoGun : BaseDeployer
       Stop;
   }
 }
+
+class CarbineZombieGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Carbine Zombie";
+    Weapon.AmmoType2 "CarbineZombieAmmo";
+    Inventory.PickupMessage "Got Carbine Zombie!";
+    BaseDeployer.price 30;
+    Weapon.SlotPriority 30;
+  }
+  States
+  {
+    Spawn:
+      HCPO A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

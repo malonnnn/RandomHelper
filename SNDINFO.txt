@@ -1,3 +1,24 @@
+// Carbine Zombie
+HCSHOT  HCSHOT
+HCSTAB  HCSTAB
+MGPDTH1 MGPDTH1
+MGPDTH2 MGPDTH2
+$random MGzombiedeath
+{
+MGPDTH1		
+MGPDTH2									
+}
+MGPPAIN MGPPAIN
+MGPSACT MGPSACT
+MGPSEE1 MGPSEE1
+MGPSEE2 MGPSEE2
+$random MGzombiesee
+{
+MGPSEE1
+MGPSEE2
+}
+$limit HCSHOT 0
+
 // Inferno
 monster/infsit dsinfsit
 monster/infpai dsinfpai

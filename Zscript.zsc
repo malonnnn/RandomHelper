@@ -134,6 +134,7 @@ version "4.8.0"
 #include "Actors/ImpST.zsc"
 #include "Actors/ImpVoid.zsc"
 #include "Actors/Inferno.zsc"
+#include "Actors/CarbineZombie.zsc"
 
 Class Ver {
   static String get(){

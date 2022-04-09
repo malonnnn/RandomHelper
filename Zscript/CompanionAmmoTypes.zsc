@@ -1262,3 +1262,11 @@ class InfernoAmmo : CommonAmmoFeatures
     Inventory.Icon "INFRA1";
   }
 }
+
+class CarbineZombieAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "HCPOA1";
+  }
+}
