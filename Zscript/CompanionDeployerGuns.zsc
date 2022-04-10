@@ -2767,6 +2767,24 @@ class CarbineZombieGun : BaseDeployer
       Stop;
   }
 }
+
+class JetpackZombieGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Jetpack Zombie";
+    Weapon.AmmoType2 "JetpackZombieAmmo";
+    Inventory.PickupMessage "Got Jetpack Zombie!";
+    BaseDeployer.price 75;
+    Weapon.SlotPriority 75;
+  }
+  States
+  {
+    Spawn:
+      JPZM A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

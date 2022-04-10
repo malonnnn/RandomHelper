@@ -1270,3 +1270,11 @@ class CarbineZombieAmmo : CommonAmmoFeatures
     Inventory.Icon "HCPOA1";
   }
 }
+
+class JetpackZombieAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "JPZMA1";
+  }
+}
