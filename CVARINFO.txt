@@ -1,2 +1,3 @@
 server bool zdw_wadscale;
 server bool zdw_debugspawning;
+server bool zdw_refundonexit;

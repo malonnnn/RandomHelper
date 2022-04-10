@@ -9,5 +9,7 @@ Title "ZDoom Wars Options"
 Option "MegaWad Scaling", "zdw_wadscale", "OnOff"
 StaticText "ON = tougher companions only drop as you progress levels"
 StaticText "Unlocks happen on map 2, 4, 6 and 8"
+Option "Refund Surviving Companions On Exit", "zdw_refundonexit", "OnOff"
+StaticText "Returns any surviving companions to your inventory upon exiting"
 Option "Debug Spawning", "zdw_debugspawning", "OnOff"
 }

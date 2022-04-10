@@ -9,3 +9,9 @@ OptionValue "DebugSpawning"
     0, "Off"
     1, "On"
 }
+
+OptionValue "RefundOnExit"
+{
+    0, "Off"
+    1, "On"
+}

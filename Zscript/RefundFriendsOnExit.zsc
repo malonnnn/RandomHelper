@@ -2,18 +2,22 @@ Class RefundFriendsOnExit : EventHandler
 {
   Override void WorldLinePreActivated(WorldEvent e)
   {
-    if(e.ActivatedLine.special==243||e.ActivatedLine.special==244) //If the line's special was 243 (Exit_Normal) or 244 (Exit_Secret), do stuff
+    cVar refundFriendOnExit = cVar.GetCVar('zdw_refundonexit');
+    if(refundFriendOnExit.GetBool())
     {
-      let g = Globals(EventHandler.Find("Globals"));
-      int companionNumber = g.companions.Find(e.Thing);
-      for(int i = 0; i < g.companions.Size(); i++){
-        String companionClass = g.companions[i].GetClassName();
-        String gunClass = companionClass.."Gun";
-        
-        BaseDeployer gun = BaseDeployer(Actor.Spawn(gunClass, (0,0,0)));
+      if(e.ActivatedLine.special==243||e.ActivatedLine.special==244) //If the line's special was 243 (Exit_Normal) or 244 (Exit_Secret), do stuff
+      {
+        let g = Globals(EventHandler.Find("Globals"));
+        int companionNumber = g.companions.Find(e.Thing);
+        for(int i = 0; i < g.companions.Size(); i++){
+          String companionClass = g.companions[i].GetClassName();
+          String gunClass = companionClass.."Gun";
+          
+          e.Thing.GiveInventory(gunClass, 1);
 
-        e.Thing.GiveInventory(gunClass, 1);
-        e.Thing.GiveInventory("CompanionAmmo", gun.price);
+          BaseDeployer gun = BaseDeployer(Actor.Spawn(gunClass, (0,0,0)));
+          e.Thing.GiveInventory("CompanionAmmo", gun.price);
+        }
       }
     }
   }
