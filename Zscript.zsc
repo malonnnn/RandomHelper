@@ -10,6 +10,7 @@ version "4.8.0"
 
 #include "Zscript/BetterBarrels.zsc"
 #include "Zscript/InstantKillFriendsWithFist.zsc"
+#include "Zscript/RefundFriendsOnExit.zsc"
 
 #include "Zscript/CorpseFadeOutItem.zsc"
 
