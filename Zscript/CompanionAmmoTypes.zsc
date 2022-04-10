@@ -1286,3 +1286,11 @@ class KarasawaZombieAmmo : CommonAmmoFeatures
     Inventory.Icon "KSWZA1";
   }
 }
+
+class CheshireCacodemonAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "SLPSA1";
+  }
+}

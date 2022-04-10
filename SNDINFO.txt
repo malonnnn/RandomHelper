@@ -1,3 +1,16 @@
+// Cheshire Cacodemon
+chesSEE1	chesSEE1
+chesSEE2	chesSEE2
+chesSEE3	chesSEE3
+$random ches/see { chesSEE1 chesSEE2 chesSEE3}
+chesact1	chesact1
+chesact2	chesact2
+chesact3	chesact3
+$random ches/act { chesact1 chesact2 chesact3}
+ChesFire	chesfire
+ChesHit		cheshit
+ChesFlame	CHESFLME
+
 // KarasawaZombie
 Weapons/KarasawaHit	KSAWHIT
 Weapons/KarasawaFly	KSAWFLY

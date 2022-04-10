@@ -2803,6 +2803,24 @@ class KarasawaZombieGun : BaseDeployer
       Stop;
   }
 }
+
+class CheshireCacodemonGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Cheshire Cacodemon";
+    Weapon.AmmoType2 "CheshireCacodemonAmmo";
+    Inventory.PickupMessage "Got Cheshire Cacodemon!";
+    BaseDeployer.price 500;
+    Weapon.SlotPriority 500;
+  }
+  States
+  {
+    Spawn:
+      SLPS A -1;
+      Stop;
+  }
+}
 /* copy pastable example
 class AbaddonGun : BaseDeployer
 {

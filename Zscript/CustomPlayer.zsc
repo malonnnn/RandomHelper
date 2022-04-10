@@ -2,6 +2,7 @@ class MyDoomGuy : DoomPlayer {
   Default
   {
     +THRUSPECIES
+		+NOTIMEFREEZE
     
     Species "Companion";
     DamageFactor "Companion", 0.0;
