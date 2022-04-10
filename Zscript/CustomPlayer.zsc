@@ -168,6 +168,7 @@ class MyFist : Fist replaces Fist
 
 class MyPistol : Pistol replaces Pistol
 {
+	BioProjAlt altproj;
 	Default
 	{
 		Weapon.AmmoUse 0;
@@ -175,6 +176,25 @@ class MyPistol : Pistol replaces Pistol
 	}
 	States
 	{
+	AltFire:
+		PISG A 4;
+		PISG B 6
+		{
+			invoker.ammouse2 = 0;
+			invoker.altproj = BioProjAlt(A_FireProjectile("BioProjAlt"));
+		}
+	AltHold:
+		PISG C 4;
+		PISG C 4 A_Refire("AltHold");
+		PISG C 4;
+		PISG B 5;
+		TNT1 A 0
+		{
+			if(invoker.altproj){
+				invoker.altproj.A_Die();
+			}
+		}
+		GoTo Ready;
 	Fire:
 		PISG A 4;
 		PISG B 6 A_CompanionFirePistol;
