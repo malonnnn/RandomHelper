@@ -2,7 +2,7 @@ class InstantKillFriendsWithFist : EventHandler
 {
   override void WorldThingDamaged(WorldEvent e){
     if(e.DamageSource is "MyDoomGuy" && e.Thing.bFriendly){
-      e.Thing.Health = 0;
+      e.Thing.A_Die();
     }
   }
 }
