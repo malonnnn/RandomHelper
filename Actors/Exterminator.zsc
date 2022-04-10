@@ -72,13 +72,7 @@ class Exterminator : Actor
 		Missile:
       EXTR E 12 A_FaceTarget;
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
-      EXTR A 0
-      {
-        //A_JumpIfCloser(256, "FullAuto");
-        if(target && Distance3D(target) <= 256 && !(target is "PatrolPoint")){
-          SetStateLabel("FullAuto");
-        }
-      }
+      EXTR A 0 A_JumpIfCloser(256, "FullAuto");
       EXTR A 0 A_StartSound("Exterminator/Fire", CHAN_WEAPON);
       EXTR F 2 Bright A_CustomBulletAttack(8, 8, 1, 5, "CompanionBulletPuff");
       EXTR E 2 A_FaceTarget;

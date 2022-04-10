@@ -51,13 +51,7 @@ Class Grin : Actor
       TNT1 A 0 A_TakeInventory("GrinInv",21);
       Loop;
     Laugh:
-      TNT1 A 0
-      {
-        //A_JumpIfCloser(300,"Missile");
-        if(target && Distance3D(target) <= 300 && !(target is "PatrolPoint")){
-          SetStateLabel("Missile");
-        }
-      }
+      TNT1 A 0 A_JumpIfCloser(300,"Missile");
       HOI2 ABC 6;
       TNT1 A 0 A_StartSound("HITAUNT");
       HOI2 DEFGHIJKLMNO 6;
@@ -83,24 +77,12 @@ Class Grin : Actor
       TNT1 A 0 A_JumpIfTargetInLOS(1,360);
       Goto WhereHasItGone;
       TNT1 A 0 A_JumpIfInventory("GrinInv",3,3);
-      TNT1 A 0
-      {
-        //A_JumpIfCloser(600,"PutMineAndRun");
-        if(target && Distance3D(target) <= 600 && !(target is "PatrolPoint")){
-          SetStateLabel("PutMineAndRun");
-        }
-      }
+      TNT1 A 0 A_JumpIfCloser(600,"PutMineAndRun");
       HOIM ABCD 1 A_Chase(null,null,CHF_NOPLAYACTIVE);
       HOIM ABCD 1 A_Chase(null,null,CHF_NOPLAYACTIVE);
       TNT1 A 0 A_GiveInventory("RunTiredInv",1);
       TNT1 A 0 A_Jump(160,"1");
-      TNT1 A 0
-      {
-        //A_JumpIfCloser(300,"Missile");
-        if(target && Distance3D(target) <= 300 && !(target is "PatrolPoint")){
-          SetStateLabel("Missile");
-        }
-      }
+      TNT1 A 0 A_JumpIfCloser(300,"Missile");
       TNT1 A 0 A_JumpIfInventory("RunTiredInv",11,1);
       Goto Scared+8;
     WhereHasItGone:

@@ -41,13 +41,7 @@ Class DeepOne : Actor
       CUTH HI 2;
       goto See;
     Missile:
-      CUTH J 0
-      {
-        //A_JumpIfCloser (32,"Melee");
-        if(target && Distance3D(target) <= 32 && !(target is "PatrolPoint")){
-          SetStateLabel("Melee");
-        }
-      }
+      CUTH J 0 A_JumpIfCloser (32,"Melee");
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       CUTH J 0 A_Jump (20, "Hide");
       CUTH J 8 A_FaceTarget;

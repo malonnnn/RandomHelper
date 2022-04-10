@@ -54,26 +54,6 @@ Check the console for deprecated warnings when first loading the mod.<br>
 It will tell you if there's any deprecated functions found.
 
 # 6.
-Replace any `JumpIfCloser()` statements with an anonymous function with<br>
-matching parameters<br>
-<br>
-
-```
-MAUD U 0 A_JumpIfCloser(200,"MissileSSG");
-```
-becomes<br>
-
-```
-MAUD U 0
-{
-  if(target && Distance3D(target) <= 200 && !(target is "PatrolPoint")){
-    SetStateLabel("MissileSSG");
-  }
-}
-```
-This is because `JumpIfCloser()` interferes with a set goal.<br>
-
-# 7.
 Add<br>
 ```
 TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
@@ -82,19 +62,19 @@ at appropriate locations<br>
 Be careful it doesnt interfere with Goto offsets<br>
 AKA `Goto+<number>`
 
-# 8.
+# 7
 Add new companion to `Globals.zsc`.<br>
 
-# 9.
+# 8.
 Add their DeployerGun by copy-pasting an editing an existing one<br>
 from `CompanionDeployerGuns.zsc`<br>
 `BaseDeployer.price` is price to spawn 1.<br>
 `SlotPriority` should be the same as price, this keeps all the monsters ordered
 by price from smallest to biggest when scrolling through with mousewheel.<br>
 
-# 10.
+# 9.
 Add their Ammo by copy-pasting an editing an existing one<br>
 from `CompanionAmmoTypes.zsc`<br>
 
-# 11.
+# 10.
 Add their include statment into `Zscript.zsc`<br>
