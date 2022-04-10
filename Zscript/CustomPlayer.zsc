@@ -115,7 +115,7 @@ class MyDoomGuy : DoomPlayer {
 		return player.ReadyWeapon;
   }
 
-  /*override void Tick(){
+	override void Tick(){
     super.Tick();
     cVar scaleWithLevels = cVar.GetCVar('zdw_debugspawning');
     if(scaleWithLevels.GetBool())
@@ -124,7 +124,7 @@ class MyDoomGuy : DoomPlayer {
       String companionClass = g.getRandomCompanion();
       Actor.Spawn(companionClass.."Gun", pos);
     }
-  }*/
+  }
 }
 
 

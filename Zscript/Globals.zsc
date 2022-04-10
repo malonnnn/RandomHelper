@@ -213,12 +213,8 @@ class Globals : EventHandler
   String getRandomCompanion(){
 
     cVar scaleWithLevels = cVar.GetCVar('zdw_wadscale');
-    if(!scaleWithLevels.GetBool())
+    if(scaleWithLevels.GetBool())
     {
-      int choice = Random(0, allCompanions.size() - 1);
-      return allCompanions[choice];
-    }else{
-
       int maxTier = int(level.levelnum / 3) + 1;
       int tierLevel = Random(1, maxTier);
       int companionIndex;
@@ -242,6 +238,9 @@ class Globals : EventHandler
         companionIndex = Random(0, tier6.size() - 1);
         return tier6[companionIndex];
       }
+    }else{
+      int choice = Random(0, allCompanions.size() - 1);
+      return allCompanions[choice];
     }
   }
 

@@ -138,6 +138,6 @@ version "4.8.0"
 
 Class Ver {
   static String get(){
-    return "v1.2";
+    return "v1.3";
   }
 }
