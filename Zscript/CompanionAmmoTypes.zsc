@@ -1278,3 +1278,11 @@ class JetpackZombieAmmo : CommonAmmoFeatures
     Inventory.Icon "JPZMA1";
   }
 }
+
+class KarasawaZombieAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "KSWZA1";
+  }
+}

@@ -136,6 +136,7 @@ version "4.8.0"
 #include "Actors/Inferno.zsc"
 #include "Actors/CarbineZombie.zsc"
 #include "Actors/JetpackZombie.zsc"
+#include "Actors/KarasawaZombie.zsc"
 
 Class Ver {
   static String get(){

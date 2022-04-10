@@ -1,3 +1,13 @@
+// KarasawaZombie
+Weapons/KarasawaHit	KSAWHIT
+Weapons/KarasawaFly	KSAWFLY
+Weapons/KarasawaFire	KSAWFIRE
+Weapons/KarasawaIdle	KSAWIDLE
+Weapons/KarasawaCharge	KSAWCHRG
+$Limit Weapons/KarasawaFly 	0
+$Limit Weapons/KarasawaHit	0
+$Limit Weapons/KarasawaFire    	0
+
 // Jetpack Zombie
 $Random JetpackZombie/Sight	{ JPZMSIG1 JPZMSIG2 JPZMSIG3 }
 JPZMSIG1			JPZMSIG1

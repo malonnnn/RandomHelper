@@ -2775,13 +2775,31 @@ class JetpackZombieGun : BaseDeployer
     Tag "Jetpack Zombie";
     Weapon.AmmoType2 "JetpackZombieAmmo";
     Inventory.PickupMessage "Got Jetpack Zombie!";
-    BaseDeployer.price 75;
-    Weapon.SlotPriority 75;
+    BaseDeployer.price 30;
+    Weapon.SlotPriority 30;
   }
   States
   {
     Spawn:
       JPZM A -1;
+      Stop;
+  }
+}
+
+class KarasawaZombieGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Karasawa Zombie";
+    Weapon.AmmoType2 "KarasawaZombieAmmo";
+    Inventory.PickupMessage "Got Karasawa Zombie!";
+    BaseDeployer.price 30;
+    Weapon.SlotPriority 30;
+  }
+  States
+  {
+    Spawn:
+      KSWZ A -1;
       Stop;
   }
 }
