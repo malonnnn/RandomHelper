@@ -910,3 +910,15 @@ Aracknight/active DSARAACT
 aracknight/walk DSARAWLK
 Aracknight/magic DSMAGIC7
 Aracknight/magic2 DSMAGIC7
+
+// BlackPanther
+BlackPanther/Sight BPNTSEE
+BlackPanther/Active BPNTMOVE
+BlackPanther/Attack BPNTATAK
+BlackPanther/Pain BPNTHIT
+BlackPanther/Death BPNTDETH
+BlackPanther/Morph BPNTMRPH
+Rodem/Sight RDEMSEE
+Rodem/Active RDEMMOVE
+Rodem/Pain RDEMHIT
+Rodem/Death RDEMDETH

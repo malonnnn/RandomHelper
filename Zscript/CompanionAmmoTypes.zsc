@@ -298,6 +298,14 @@ class BerserkerCommandoAmmo : CommonAmmoFeatures
   }
 }
 
+class BlackPantherAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "BPNTA1";
+  }
+}
+
 class CompanionCyberdemonAmmo : CommonAmmoFeatures
 {
   Default

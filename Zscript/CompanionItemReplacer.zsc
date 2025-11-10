@@ -43,7 +43,7 @@ class CompanionItemReplacer : EventHandler
       e.Thing.Destroy();
     }else if(e.Thing is "Chainsaw"){
       Actor.Spawn("CompanionAmmo", e.Thing.pos);
-      Actor.Spawn("BerserkerCommandoGun", e.Thing.pos);
+      Actor.Spawn("BlackPantherGun", e.Thing.pos);
       e.Thing.Destroy();
     }else if(e.Thing is "BFG9000"){
       Actor.Spawn("CompanionAmmo", e.Thing.pos);

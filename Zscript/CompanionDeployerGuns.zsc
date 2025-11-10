@@ -695,6 +695,24 @@ class BerserkerCommandoGun : BaseDeployer
   }
 }
 
+class BlackPantherGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Black Panther";
+    Weapon.AmmoType2 "BlackPantherAmmo";
+    Inventory.PickupMessage "Got Black Panther!";
+    BaseDeployer.price 50;
+    Weapon.SlotPriority 50;
+  }
+  States
+  {
+    Spawn:
+      BPNT A -1;
+      Stop;
+  }
+}
+
 Class AfritGun : BaseDeployer
 {
   Default
