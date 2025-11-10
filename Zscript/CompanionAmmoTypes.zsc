@@ -676,6 +676,14 @@ class CacomancerAmmo : CommonAmmoFeatures
   }
 }
 
+class CarrionnetteAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "LANKA1";
+  }
+}
+
 class CatharsiAmmo : CommonAmmoFeatures
 {
   Default

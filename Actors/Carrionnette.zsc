@@ -1,0 +1,95 @@
+class Carrionnette : Actor
+{
+  Default
+  {
+    Health 200;
+    Radius 16;
+    Height 64;
+    MeleeRange 72;
+    PainChance 100;
+    Speed 24;
+    FastSpeed 32;
+    Monster;
+    SeeSound "Lanky/See";
+    MeleeSound "Skeleton/Melee";
+    ActiveSound "Lanky/Active";
+    PainSound "Lanky/Pain";
+    DeathSound "Misc/Gibbed";
+    Obituary "%o was struck by the gory sight of a Carrionnette";
+    HitObituary "%o was clocked upside the head by a Carrionnette";
+    +MissileMore;
+    +FRIENDLY;
+    Species "Companion";
+    DamageFactor "Companion", 0;
+  }
+  States
+  {
+    Spawn:
+      LANK AB 10 A_LookEx();
+      Loop;
+    See:
+      LANK ABCD 4 A_Chase();
+      Loop;
+    Melee:
+      LANK E 8 A_FaceTarget();
+      LANK F 6 A_FaceTarget();
+      LANK G 4 A_CustomMeleeAttack(40, "Skeleton/Melee");
+      Goto See;
+    Missile:
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      TNT1 A 0 A_JumpIfCloser(640, "MayLeap");
+      LANK EF 4 A_FaceTarget();
+      LANK G 2 A_CustomMissile("CarrionnetteShot", 48);
+      LANK FE 2;
+      Goto See;
+    MayLeap:
+      TNT1 A 0 A_Jump(150, "Leap");
+      Goto Missile+1;
+    Leap:
+      TNT1 A 0 A_StartSound("Lanky/Jump", CHAN_VOICE);
+      LANK H 3 A_FaceTarget();
+      TNT1 A 0 A_ChangeVelocity(16, 0, 14, CVF_RELATIVE);
+    LeapLoop:
+      LANK I 1 A_JumpIfCloser(MeleeRange, "Melee");
+      TNT1 A 0 A_CheckFloor("See");
+      Loop;
+    Pain:
+      LANK J 4;
+      LANK J 4 A_Pain();
+      Goto See;
+    Death:
+      LANK K 6 A_Scream();
+      LANK L 6 A_NoBlocking();
+      LANK MNOPQ 3;
+      LANK Q -1;
+      Stop;
+    Raise:
+      LANK QPONMLKJ 3;
+      Goto See;
+  }
+}
+
+class CarrionnetteShot : Actor
+{
+  Default
+  {
+    Speed 25;
+    FastSpeed 35;
+    DamageFunction Random(2,5)*10-5;
+    Projectile;
+    SeeSound "Lanky/Shot";
+    DeathSound "Baron/ShotX";
+    Decal "RevenantScorch";
+    Species "Companion";
+    DamageType "Companion";
+  }
+  States
+  {
+    Spawn:
+      LANK RS 4;
+      Loop;
+    Death:
+      LANK TUV 6;
+      Stop;
+  }
+}

@@ -923,6 +923,13 @@ Rodem/Active RDEMMOVE
 Rodem/Pain RDEMHIT
 Rodem/Death RDEMDETH
 
+// Carrionnette
+Lanky/See "Sounds/LankySight.ogg"
+Lanky/Jump "Sounds/LankyAngry.ogg"
+Lanky/Shot "Sounds/LankyProjectile.ogg"
+Lanky/Active "Sounds/LankyActive"
+Lanky/Pain "Sounds/LankyPain"
+
 // Cacomancer
 Cacomancer/active	VCCMACT
 Cacomancer/attack	VCCMATK

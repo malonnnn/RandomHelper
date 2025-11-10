@@ -170,6 +170,7 @@ class Globals : EventHandler
       "BerserkCacoLich",
       "Cacolantern",
       "Cacomancer",
+      "Carrionnette",
       "Catharsi",
       "ChaingunDemon",
       "ChaingunMajor",
