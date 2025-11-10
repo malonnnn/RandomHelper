@@ -648,8 +648,8 @@ Class ArachnocortexGun : BaseDeployer
     Tag "Arachnocortex";
     Weapon.AmmoType2 "ArachnocortexAmmo";
     Inventory.PickupMessage "Got Arachnocortex!";
-    BaseDeployer.price 1;
-    Weapon.SlotPriority 1;
+    BaseDeployer.price 500;
+    Weapon.SlotPriority 500;
   }
   States
   {
