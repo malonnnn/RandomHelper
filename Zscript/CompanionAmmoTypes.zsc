@@ -258,6 +258,14 @@ class CompanionArachnotronAmmo : CommonAmmoFeatures
   }
 }
 
+class AracknightAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "ARACA1D1";
+  }
+}
+
 class CompanionArchvileAmmo : CommonAmmoFeatures
 {
   Default

@@ -872,3 +872,31 @@ SNPRWHT2	ALSRWHT2
 SNPRWHT3	ALSRWHT3
 SNPRWHT4	ALSRWHT4
 $Volume Marine/SniperWallHit 0.4
+
+// Arachnocortex
+arachnocortex/sight CRTXSEE
+arachnocortex/attack CRTXATK
+arachnocortex/fly CRTXFLY
+arachnocortex/shotx dsfirxpl
+arachnocortex/walk dsmetal
+
+$pitchset arachnocortex/sight 0.9
+$pitchset arachnocortex/attack 0.7 0.9
+$pitchset arachnocortex/fly 0.9 1.1
+$pitchset arachnocortex/walk 1.2
+
+$volume arachnocortex/attack 0.6
+$volume arachnocortex/fly 0.15
+$attenuation arachnocortex/fly 1.5
+
+$limit arachnocortex/attack 4
+$limit arachnocortex/fly 4
+
+// Aracknight
+aracknight/sight DSARASIT
+aracknight/pain DSARAPAI
+aracknight/death DSARADTH
+Aracknight/active DSARAACT
+aracknight/walk DSARAWLK
+Aracknight/magic DSMAGIC7
+Aracknight/magic2 DSMAGIC7

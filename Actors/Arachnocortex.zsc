@@ -4,16 +4,18 @@ class Arachnocortex : Actor
 	actor beacon;
 	Default
 	{
-		MONSTER;
-		+FRIENDLY
-    	Species "Companion";
-    	DamageFactor "Companion", 0;
+		//$Category Monsters
+		//$Title "Arachnocortex"
 		Health 1500;
 		Radius 80;
 		Height 84;
 		Mass 800;
 		Speed 15;
 		PainChance 30;
+		MONSTER;
+		+FRIENDLY
+		Species "Companion";
+		DamageFactor "Companion", 0;
 		+MISSILEMORE;
 		+FLOORCLIP;
 		SeeSound "arachnocortex/sight";

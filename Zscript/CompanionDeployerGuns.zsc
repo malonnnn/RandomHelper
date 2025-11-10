@@ -2859,3 +2859,21 @@ class AbaddonGun : BaseDeployer
   }
 }
 */
+
+class AracknightGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Aracknight";
+    Weapon.AmmoType2 "AracknightAmmo";
+    Inventory.PickupMessage "Got Aracknight!";
+    BaseDeployer.price 1;
+    Weapon.SlotPriority 1;
+  }
+  States
+  {
+    Spawn:
+      ARAC A -1;
+      Stop;
+  }
+}
