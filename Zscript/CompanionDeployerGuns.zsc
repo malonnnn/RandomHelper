@@ -677,6 +677,24 @@ class BehemothGun : BaseDeployer
   }
 }
 
+class BerserkerCommandoGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Berserker Commando";
+    Weapon.AmmoType2 "BerserkerCommandoAmmo";
+    Inventory.PickupMessage "Got Berserker Commando!";
+    BaseDeployer.price 30;
+    Weapon.SlotPriority 30;
+  }
+  States
+  {
+    Spawn:
+      VBRS A -1;
+      Stop;
+  }
+}
+
 Class AfritGun : BaseDeployer
 {
   Default

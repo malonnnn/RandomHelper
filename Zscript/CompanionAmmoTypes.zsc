@@ -286,7 +286,15 @@ class BehemothAmmo : CommonAmmoFeatures
 {
   Default
   {
-    Inventory.Icon "LARDA1";
+    Inventory.Icon "LARDB1E1";
+  }
+}
+
+class BerserkerCommandoAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "VBRSA1";
   }
 }
 
