@@ -641,6 +641,24 @@ Class BelphegorGun : BaseDeployer
   }
 }
 
+Class ArachnocortexGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Arachnocortex";
+    Weapon.AmmoType2 "ArachnocortexAmmo";
+    Inventory.PickupMessage "Got Arachnocortex!";
+    BaseDeployer.price 1;
+    Weapon.SlotPriority 1;
+  }
+  States
+  {
+    Spawn:
+      CRTX A -1;
+      Stop;
+  }
+}
+
 Class AfritGun : BaseDeployer
 {
   Default

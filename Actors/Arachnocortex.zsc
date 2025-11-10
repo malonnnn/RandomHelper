@@ -1,0 +1,210 @@
+class Arachnocortex : Actor
+{
+	int dir;
+	actor beacon;
+	Default
+	{
+		MONSTER;
+		+FRIENDLY
+    	Species "Companion";
+    	DamageFactor "Companion", 0;
+		Health 1500;
+		Radius 80;
+		Height 84;
+		Mass 800;
+		Speed 15;
+		PainChance 30;
+		+MISSILEMORE;
+		+FLOORCLIP;
+		SeeSound "arachnocortex/sight";
+		ActiveSound "baby/active";
+		PainSound "baby/pain";
+		DeathSound "baby/death";
+		Obituary "%o's mind was blown by an Arachnocortex.";
+	}
+	States
+	{
+	Spawn:
+		CRTX AD 10 A_Look;
+		Loop;
+	See:
+		CRTX A 32;
+	Chase:
+		TNT1 A 0 A_StartSound("arachnocortex/walk");
+		CRTX AABB 3 A_Chase;
+		TNT1 A 0 A_StartSound("arachnocortex/walk");
+		CRTX CCDD 3 A_Chase;
+		TNT1 A 0 A_StartSound("arachnocortex/walk");
+		CRTX EEFF 3 A_Chase;
+		TNT1 A 0 A_Jump(95,"Teleportation");
+		Loop;
+	Teleportation:
+		TNT1 A 0
+		{
+			if (target && !beacon)
+			{
+				vector2 tpos = target.pos.xy + (random(667,-667),random(667,-667));
+				double tfloorz = GetZat(tpos.x,tpos.y,0,GZF_ABSOLUTEPOS);
+				beacon = spawn("ArachnocortexTeleportBeacon",(tpos,tfloorz));
+				if (beacon)
+				{
+					if (beacon.TestMobjLocation() && Level.IsPointInLevel(beacon.pos) && checkMove(beacon.pos.xy,PCM_DROPOFF)) 
+					{
+						A_Teleport("Teleported","ArachnocortexTeleportBeacon","ArachnocortexTeleportFog");
+						beacon.Destroy();
+						return ResolveState("Teleported");
+					}
+					else if (Checksight(target))
+					{
+						beacon.Destroy();
+						return ResolveState("Missile");
+					}
+					beacon.Destroy();
+				}
+			}
+			return ResolveState("Chase");
+		}
+	Teleported:
+		CRTX A 15 A_FaceTarget;
+		TNT1 A 0 A_CheckLOF("Missile",CLOFF_SKIPOBSTACLES);
+		Goto Chase;
+	Missile:
+		TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+		CRTX G 15
+		{
+			A_FaceTarget();
+			dir = randompick(-1,1);
+		}
+		CRTX H 3 ArachnocortexAttack(15*dir);
+		CRTX G 3 A_FaceTarget;
+		CRTX H 3 ArachnocortexAttack(15*-dir);
+		CRTX G 3 A_FaceTarget;
+		CRTX H 3 ArachnocortexAttack(0);
+		CRTX G 3 A_FaceTarget;
+		CRTX H 3 ArachnocortexAttack(30*dir);
+		CRTX G 3 A_FaceTarget;
+		CRTX H 3 ArachnocortexAttack(30*-dir);
+		CRTX G 3 A_FaceTarget;
+		CRTX H 3 ArachnocortexAttack(0);
+		CRTX G 3 A_FaceTarget;
+		CRTX H 3 ArachnocortexAttack(45*dir);
+		CRTX G 3 A_FaceTarget;
+		CRTX H 3 ArachnocortexAttack(45*-dir);
+		CRTX G 3 A_FaceTarget;
+		CRTX H 3 ArachnocortexAttack(0);
+		CRTX G 3 A_FaceTarget;
+		Goto Chase;
+	Pain:
+		CRTX I 2;
+		CRTX I 5 A_Pain;
+		Goto Teleportation;
+	Death:
+		CRTX J 10 A_Scream;
+		CRTX K 10;
+		CRTX L 10 A_NoBlocking;
+		CRTX M random(4,8) A_StartSound("misc/brainexplode");
+		CRTX N random(4,8) A_StartSound("misc/brainexplode");
+		CRTX O random(4,8) A_StartSound("misc/brainexplode");
+		CRTX PQR 6;
+		CRTX S -1;
+		Stop;
+	}
+	
+	void ArachnocortexAttack(int ang)
+	{
+		if (target && target.health > 0)
+		A_FaceTarget();
+		A_SpawnProjectile("ArachnocortexPlasma",36,0,ang);
+		A_StartSound("baby/attack",volume:0.6);
+	}
+}
+
+class ArachnocortexPlasma : Actor
+{
+	Default
+	{
+		Species "Companion";
+		DamageType "Companion";
+		Radius 15;
+		Height 8;
+		Speed 13;
+		DamageFunction (random(15,45));
+		Projectile;
+		+RANDOMIZE;
+		+SEEKERMISSILE;
+		WeaveIndexZ 47;
+		RenderStyle "Add";
+		Alpha 0.5;
+		Scale 0.5;
+		SeeSound "arachnocortex/attack";
+		Decal "DoomImpScorch";
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 5 Nodelay A_StartSound("arachnocortex/fly",13104,CHANF_LOOPING);
+	Fly:
+		ACBL AAAABBBB 1 bright
+		{
+			A_SeekerMissile(0,1);
+			A_Weave(3,3,1.0,1.0);
+			let [t,trail] = A_SpawnItemEx("ArachnocortexPlasmaTrail",-10.0);
+			if (trail)
+			{
+				trail.sprite = sprite;
+				trail.frame = frame;
+			}
+		}
+		Loop;
+	Death:
+		TNT1 A 0 bright A_StartSound("arachnocortex/shotx",13104);
+		ACBL CDE 5 bright
+		{
+			scale += (0.1,0.1);
+		}
+		Stop;
+	}
+}
+class ArachnocortexPlasmaTrail : Actor
+{
+	Default
+	{
+		+NOINTERACTION;
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		Scale 0.5;
+	}
+	States
+	{
+	Spawn:
+		#### # 1 bright
+		{
+			scale += (0.05,0.05);
+			A_FadeOut(0.05);
+		}
+		Loop;
+	}
+}
+
+Class ArachnocortexTeleportBeacon : SpecialSpot
+{
+	Default
+	{
+		Radius 80;
+		Height 84;
+		+NOINTERACTION;
+		+NOBLOCKMAP;
+		+NOGRAVITY;
+		+NOTELEPORT;
+	}
+}
+class ArachnocortexTeleportFog : TeleportFog
+{
+	Default
+	{
+		+NOINTERACTION;
+		scale 1.5;
+		alpha 0.9;
+		Translation "ArachnocortexTeleportFogTranslation"; 
+	}
+}

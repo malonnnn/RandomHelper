@@ -322,6 +322,14 @@ Class BelphegorAmmo : CommonAmmoFeatures
   }
 }
 
+Class ArachnocortexAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CRTXA1D1";
+  }
+}
+
 Class AfritAmmo : CommonAmmoFeatures
 {
   Default
