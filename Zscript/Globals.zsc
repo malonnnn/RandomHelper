@@ -165,6 +165,7 @@ class Globals : EventHandler
       "BloodSkull",
       "Blot",
       "BruiserDemon",
+      "BruiserAfrit",
       "CacoLich",
       "BerserkCacoLich",
       "Cacolantern",

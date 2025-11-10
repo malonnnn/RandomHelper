@@ -16,8 +16,6 @@ class BlackPanther : Actor
     GibHealth 8;
     Monster;
     +FLOORCLIP;
-    +FASTER;
-    +FASTMELEE;
     +FRIENDLY;
     Species "Companion";
     DamageFactor "Companion", 0;

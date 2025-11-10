@@ -642,6 +642,14 @@ class BruiserDemonAmmo : CommonAmmoFeatures
   }
 }
 
+class BruiserAfritAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "BFRTA1";
+  }
+}
+
 class CacoLichAmmo : CommonAmmoFeatures
 {
   Default

@@ -922,3 +922,12 @@ Rodem/Sight RDEMSEE
 Rodem/Active RDEMMOVE
 Rodem/Pain RDEMHIT
 Rodem/Death RDEMDETH
+
+// BruiserAfrit
+BruiserAfrit/Sight DSSBSIT
+BruiserAfrit/Pain DSSBPAI
+BruiserAfrit/Death DSSBDED
+BruiserAfrit/Active DSSBACT
+BruiserAfrit/CometFire DSSBCOF
+BruiserAfrit/CometHit DSSBCOH
+BruiserAfrit/Hellfire DSSBHEL

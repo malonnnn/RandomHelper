@@ -1324,6 +1324,24 @@ class BruiserDemonGun : BaseDeployer
   }
 }
 
+class BruiserAfritGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Bruiser Afrit";
+    Weapon.AmmoType2 "BruiserAfritAmmo";
+    Inventory.PickupMessage "Got Bruiser Afrit!";
+    BaseDeployer.price 250;
+    Weapon.SlotPriority 250;
+  }
+  States
+  {
+    Spawn:
+      BFRT A -1;
+      Stop;
+  }
+}
+
 class CacoLichGun : BaseDeployer
 {
   Default

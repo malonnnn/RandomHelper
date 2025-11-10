@@ -207,6 +207,5 @@ class ArachnocortexTeleportFog : TeleportFog
 		+NOINTERACTION;
 		scale 1.5;
 		alpha 0.9;
-		Translation "ArachnocortexTeleportFogTranslation"; 
 	}
 }
