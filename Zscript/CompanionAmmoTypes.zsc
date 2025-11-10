@@ -1358,3 +1358,11 @@ class CheshireCacodemonAmmo : CommonAmmoFeatures
     Inventory.Icon "SLPSA1";
   }
 }
+
+class CeltAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "ROCKA0";
+  }
+}

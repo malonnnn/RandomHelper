@@ -1406,6 +1406,24 @@ class CarrionnetteGun : BaseDeployer
   }
 }
 
+class CeltGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Celt";
+    Weapon.AmmoType2 "CeltAmmo";
+    Inventory.PickupMessage "Got Celt!";
+    BaseDeployer.price 1;
+    Weapon.SlotPriority 1;
+  }
+  States
+  {
+    Spawn:
+      CELT A -1;
+      Stop;
+  }
+}
+
 class CacomancerGun : BaseDeployer
 {
   Default

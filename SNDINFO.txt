@@ -947,3 +947,12 @@ BruiserAfrit/Active DSSBACT
 BruiserAfrit/CometFire DSSBCOF
 BruiserAfrit/CometHit DSSBCOH
 BruiserAfrit/Hellfire DSSBHEL
+
+// Celt
+Celt/see CELTSEE
+Celt/pain CELTPAIN
+Celt/death CELTDEAT
+Celt/idle CELTIDLE
+Celt/IceShot KXICEPJ1
+Celt/IceHit KXICEPJ2
+Celt/CometDeath KXICEPJ3

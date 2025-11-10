@@ -2,19 +2,19 @@ class MyDoomGuy : DoomPlayer {
   Default
   {
     +THRUSPECIES
-		+NOTIMEFREEZE
+	+NOTIMEFREEZE
     
     Species "Companion";
     DamageFactor "Companion", 0.0;
 
     Player.StartItem "MyFist";
-		Player.StartItem "MyPistol";
+	Player.StartItem "MyPistol";
     Player.StartItem "CompanionZombieManAmmo", 7;
     Player.StartItem "CompanionZombieManGun", 1;
     Player.StartItem "ChainsawZombieAmmo", 3;
     Player.StartItem "ChainsawZombieGun", 1;
     Player.WeaponSlot 1, "MyFist";
-		Player.WeaponSlot 2, "MyPistol";
+	Player.WeaponSlot 2, "MyPistol";
     
   }
   
