@@ -282,6 +282,14 @@ class CompanionFatsoAmmo : CommonAmmoFeatures
   }
 }
 
+class BehemothAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "LARDA1";
+  }
+}
+
 class CompanionCyberdemonAmmo : CommonAmmoFeatures
 {
   Default

@@ -1,0 +1,173 @@
+class Behemoth : CompanionFatso
+{
+  Default
+  {
+    Health 2400;
+    Radius 70;
+    Height 100;
+    Mass 3000;
+    MeleeRange 600;
+    Speed 15;
+    PainChance 5;
+    MinMissileChance 160;
+    Tag "Behemoth";
+    SeeSound "behemoth/sight";
+    PainSound "behemoth/pain";
+    DeathSound "behemoth/death";
+    ActiveSound "behemoth/active";
+    Obituary "%o was squashed by the Behemoth.";
+    +ALLOWPAIN;
+    +BOSS;
+    +BOSSDEATH;
+    +FLOORCLIP;
+    +MISSILEMORE;
+    +NORADIUSDMG;
+    +DONTMORPH;
+    +NOTARGET;
+  }
+  States
+  {
+    Spawn:
+      LARD A 0;
+      LARD A 1 A_SetInventory("LardoArmor",1);
+      LARD AB 15 A_Look;
+      Goto Spawn+2;
+    See:
+      LARD AABBCCDDEEFF 4 A_Chase;
+      Loop;
+    Missile:
+      LARD G 1 A_StartSound("Behemoth/Attack",4);
+      LARD G 5 A_FaceTarget;
+      TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+      LARD G 0 A_JumpIfCloser(368,"Missile2");
+      LARD H 0 Bright A_StartSound("Basilisk/launch",4);
+      LARD H 0 Bright {A_SpawnProjectile("BasiliskMissile",40,56,8); A_SpawnProjectile("BasiliskMissile",40,56,0); A_SpawnProjectile("BasiliskMissile",40,56,-8);}
+      LARD H 4 A_FaceTarget;
+      LARD H 10 Bright {A_SpawnProjectile("BasiliskMissile",40,-56,8); A_SpawnProjectile("BasiliskMissile",40,-56,0); A_SpawnProjectile("BasiliskMissile",40,-56,-8);}
+      LARD IG 5 A_FaceTarget;
+      LARD H 0 Bright A_StartSound("Basilisk/launch",4);
+      LARD H 0 Bright {A_SpawnProjectile("BasiliskMissile",40,56,17); A_SpawnProjectile("BasiliskMissile",40,56,0); A_SpawnProjectile("BasiliskMissile",40,56,-17);}
+      LARD H 4 A_FaceTarget;
+      LARD H 10 Bright {A_SpawnProjectile("BasiliskMissile",40,-56,17); A_SpawnProjectile("BasiliskMissile",40,-56,0); A_SpawnProjectile("BasiliskMissile",40,-56,-17);}
+      LARD IG 5 A_FaceTarget;
+      LARD H 0 Bright A_StartSound("Basilisk/launch",4);
+      LARD H 0 Bright {A_SpawnProjectile("BasiliskMissile",40,56,25); A_SpawnProjectile("BasiliskMissile",40,56,0); A_SpawnProjectile("BasiliskMissile",40,56,-25);}
+      LARD H 4 A_FaceTarget;
+      LARD H 10 Bright {A_SpawnProjectile("BasiliskMissile",40,-56,25); A_SpawnProjectile("BasiliskMissile",40,-56,0); A_SpawnProjectile("BasiliskMissile",40,-56,-25);}
+      LARD IG 5 A_FaceTarget;
+      Goto See;
+    Missile2:
+      LARD H 0 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,0); A_SpawnProjectile("BasiliskFire",40,-56,0);}
+      LARD H 0 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,frandom(-17,-1)); A_SpawnProjectile("BasiliskFire",40,-56,frandom(-17,-1));}
+      LARD H 2 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,frandom(1,17)); A_SpawnProjectile("BasiliskFire",40,-56,frandom(1,17));}
+      LARD U 0 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,0); A_SpawnProjectile("BasiliskFire",40,-56,0);}
+      LARD U 0 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,frandom(-17,-1)); A_SpawnProjectile("BasiliskFire",40,-56,frandom(-17,-1));}
+      LARD U 2 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,frandom(1,17)); A_SpawnProjectile("BasiliskFire",40,-56,frandom(1,17));}
+      LARD H 0 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,0); A_SpawnProjectile("BasiliskFire",40,-56,0);}
+      LARD H 0 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,frandom(-17,-1)); A_SpawnProjectile("BasiliskFire",40,-56,frandom(-17,-1));}
+      LARD H 2 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,frandom(1,17)); A_SpawnProjectile("BasiliskFire",40,-56,frandom(1,17));}
+      LARD U 0 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,0); A_SpawnProjectile("BasiliskFire",40,-56,0);}
+      LARD U 0 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,frandom(-17,-1)); A_SpawnProjectile("BasiliskFire",40,-56,frandom(-17,-1));}
+      LARD U 2 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,frandom(1,17)); A_SpawnProjectile("BasiliskFire",40,-56,frandom(1,17));}
+      LARD H 0 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,0); A_SpawnProjectile("BasiliskFire",40,-56,0);}
+      LARD H 0 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,frandom(-17,-1)); A_SpawnProjectile("BasiliskFire",40,-56,frandom(-17,-1));}
+      LARD H 2 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,frandom(1,17)); A_SpawnProjectile("BasiliskFire",40,-56,frandom(1,17));}
+      LARD U 0 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,0); A_SpawnProjectile("BasiliskFire",40,-56,0);}
+      LARD U 0 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,frandom(-17,-1)); A_SpawnProjectile("BasiliskFire",40,-56,frandom(-17,-1));}
+      LARD U 2 Bright {A_FaceTarget(); A_SpawnProjectile("BasiliskFire",40,56,frandom(1,17)); A_SpawnProjectile("BasiliskFire",40,-56,frandom(1,17));}
+      LARD U 0 Bright A_SpidRefire;
+      Goto Missile+2;
+    Pain:
+      LARD J 3;
+      LARD J 3 A_Pain;
+      Goto See;
+    Death:
+      LARD K 10 Bright;
+      LARD L 10 Bright A_Scream;
+      LARD M 10 Bright A_NoBlocking;
+      LARD NOPQRS 10 Bright;
+      LARD T 10;
+      LARD T -1 A_BossDeath;
+      Stop;
+  }
+}
+
+class LardoArmor : BasicArmorPickup
+{
+  Default
+  {
+    Armor.SavePercent 100;
+    Armor.SaveAmount 2400;
+  }
+  States
+  {
+    Spawn:
+      ARM1 E 1;
+      Loop;
+  }
+}
+
+class BasiliskFire : CacodemonBall
+{
+  Default
+  {
+    Speed 20;
+    Radius 3;
+    Height 5;
+    Alpha 0.85;
+    Damage 2;
+    DamageType "Companion";
+    Species "Companion";
+    Obituary "%o was roasted by %k's Basilisk.";
+    SeeSound "Basilisk/flame";
+    +FORCEXYBILLBOARD;
+  }
+  States
+  {
+    Spawn:
+      TNT1 A 5 Bright;
+      BMIS BC 3 Bright A_Explode(6,32, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+    Death:
+      BMIS CDEF 3 Bright A_Explode(6,32, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");
+      Stop;
+  }
+}
+
+class BasiliskMissile : Rocket
+{
+  Default
+  {
+    Speed 20;
+    Radius 6;
+    Height 12;
+    Damage 8;
+    DamageType "Companion";
+    Species "Companion";
+    Obituary "%o was blasted away by %k's rockets.";
+    SeeSound "none";
+    DeathSound "Basilisk/explode";
+    +THRUGHOST;
+    +FORCEXYBILLBOARD;
+    -ROCKETTRAIL;
+    -DEHEXPLOSION;
+  }
+  States
+  {
+    Spawn:
+      BMIS A 0 Bright;
+      BMIS A 1 Bright A_SpawnItemEx("CompanionBulletPuff",0,0,0,0,0,0,0,8);
+      Loop;
+    Death:
+      BMIS B 3 Bright {A_SetTranslucent(0.85,1); A_Explode(40,64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");}
+      BMIS CDEF 3 Bright;
+      Stop;
+    XDeath:
+      BMIS B 3 Bright {A_SetTranslucent(0.85,1); A_Explode(40,64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");}
+      BMIS CDEF 3 Bright;
+      Stop;
+    Crash:
+      BMIS B 3 Bright {A_SetTranslucent(0.85,1); A_Explode(40,64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion");}
+      BMIS CDEF 3 Bright;
+      Stop;
+  }
+}

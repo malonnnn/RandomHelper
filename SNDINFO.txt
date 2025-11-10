@@ -892,6 +892,16 @@ $attenuation arachnocortex/fly 1.5
 $limit arachnocortex/attack 4
 $limit arachnocortex/fly 4
 
+// Behemoth
+Behemoth/sight			dsbehsit
+Behemoth/active			dsbehact
+Behemoth/pain			dsbehpai
+Behemoth/death			dsbehdth
+Behemoth/attack			dsbehatk
+Basilisk/explode        dshadexp
+Basilisk/launch			dsbasili
+Basilisk/flame			dsflamer
+
 // Aracknight
 aracknight/sight DSARASIT
 aracknight/pain DSARAPAI

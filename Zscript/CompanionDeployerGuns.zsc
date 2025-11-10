@@ -659,6 +659,24 @@ Class ArachnocortexGun : BaseDeployer
   }
 }
 
+class BehemothGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Behemoth";
+    Weapon.AmmoType2 "BehemothAmmo";
+    Inventory.PickupMessage "Got Behemoth!";
+    BaseDeployer.price 300;
+    Weapon.SlotPriority 300;
+  }
+  States
+  {
+    Spawn:
+      LARD A -1;
+      Stop;
+  }
+}
+
 Class AfritGun : BaseDeployer
 {
   Default
