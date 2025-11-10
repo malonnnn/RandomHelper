@@ -3,9 +3,10 @@ class MarineCompanion : Actor {
   Default
   {
     MONSTER;
-    +Friendly
-    -CountKill
+    +FRIENDLY
+    Species "Companion";
     DamageFactor "Companion", 0;
+    -CountKill
     Radius 20;
     Height 56;
     Speed 15;

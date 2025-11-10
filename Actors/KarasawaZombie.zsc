@@ -2,6 +2,7 @@ Class KarasawaZombie : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -17,7 +18,6 @@ Class KarasawaZombie : Actor
     ActiveSound "grunt/active";
     Obituary "%o got ripped apart by a 'Sawa zombie.";
     DropItem "Cell"; // DropItem KSawaCell
-    MONSTER;
     +FLOORCLIP
   }
 

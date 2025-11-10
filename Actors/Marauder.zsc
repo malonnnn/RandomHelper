@@ -4,7 +4,7 @@ class Marauder : Actor // Originally made by Spectre on YouTube. Rebalanced and 
 	{
 		//$Category Monsters
 		MONSTER;
-    +Friendly;
+    	+FRIENDLY
 		DamageFactor "Companion", 0;
 		Health 800;
 		Radius 20;
@@ -197,7 +197,7 @@ class MarauderDog : Actor
 	Default
 	{
 		MONSTER;
-    +Friendly;
+    +FRIENDLY
 		Health 10;
 		Speed 20;
 		PainChance 0;

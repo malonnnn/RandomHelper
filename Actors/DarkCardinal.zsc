@@ -187,7 +187,7 @@ Class paingasm : Actor
 {
   Default
   {
-    Monster;
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;

@@ -3,7 +3,7 @@ Class HadesElemental : Actor
 {
   Default
   {
-    Monster;
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;

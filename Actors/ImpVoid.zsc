@@ -2,6 +2,7 @@ Class ImpVoid : CompanionDoomImp
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -10,7 +11,6 @@ Class ImpVoid : CompanionDoomImp
     Height 56;
     Speed 7;
     PainChance 200;
-    MONSTER;
     +FLOORCLIP
     SeeSound "imp/sight";
     PainSound "imp/pain";

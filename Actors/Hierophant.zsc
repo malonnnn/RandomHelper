@@ -4,6 +4,7 @@ Class Hierophant : Actor
 
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -20,7 +21,7 @@ Class Hierophant : Actor
     DeathSound "monster/Hiedth";
     ActiveSound "monster/Hieact";
 
-    Monster;
+    MONSTER;
     +NoTarget
     +FloorClip
     +MissileMore

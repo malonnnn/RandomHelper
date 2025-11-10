@@ -2,6 +2,7 @@ Class ImpAbomination : CompanionDoomImp
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;

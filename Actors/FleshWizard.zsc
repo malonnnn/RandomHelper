@@ -2,10 +2,10 @@ Class XWizard : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
-    MONSTER;
     obituary "%o was burned by XWizard.";
     health 180;
     radius 20;

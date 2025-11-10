@@ -2,6 +2,7 @@ Class HellstormArchon : CompanionBaronOfHell
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -11,7 +12,6 @@ Class HellstormArchon : CompanionBaronOfHell
     Mass 1000;
     Speed 8;
     PainChance 20;
-    MONSTER;
     MeleeDamage 10;
     Obituary "%o was no match for an archon of hell.";
     HitObituary "%o was ripped apart by an archon of hell.";

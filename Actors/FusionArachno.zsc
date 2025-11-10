@@ -2,6 +2,7 @@ Class FusionArachno : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -16,7 +17,6 @@ Class FusionArachno : Actor
     PainSound "baby/pain";
     DeathSound "baby/death";
     ActiveSound "baby/active";
-    Monster;
     +FloorClip
     +MissileMore
     +MissileEvenMore

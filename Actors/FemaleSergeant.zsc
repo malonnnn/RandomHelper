@@ -2,10 +2,10 @@ Class FemaleSergeant : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
-    MONSTER;
     health 60;
     mass 90;
     speed 10;

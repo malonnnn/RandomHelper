@@ -2,6 +2,7 @@ Class FreezerZombie : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;

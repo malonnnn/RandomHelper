@@ -5,6 +5,7 @@ Class Superdemon : Actor
 {
 	Default
   {
+	MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -19,7 +20,6 @@ Class Superdemon : Actor
     PainSound "cyber/pain";
     DeathSound "superdemon/death";
     ActiveSound "cyber/active";
-    MONSTER;
     +BOSS
     +FLOORCLIP
     +NORADIUSDMG

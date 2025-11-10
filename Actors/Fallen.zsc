@@ -2,10 +2,10 @@ Class Fallen : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
-    Monster;
     Health 200;
     Radius 24;
     Height 48;

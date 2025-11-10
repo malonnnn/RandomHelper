@@ -2,6 +2,7 @@ Class Illus : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -11,7 +12,7 @@ Class Illus : Actor
     Mass 250;
     Speed 10;
     BloodColor "00 00 01";
-    Monster;
+    MONSTER;
     RenderStyle "Translucent";
     Alpha 0.8;
     MaxTargetRange 512;

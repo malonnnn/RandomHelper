@@ -2,6 +2,7 @@ Class Phantom : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -71,7 +72,7 @@ Class MiniPhantom : Actor
 {
   Default
   {
-    Monster;
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -192,7 +193,7 @@ Class Ghost2 : Actor
 {
   Default
   {
-    Monster;
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;

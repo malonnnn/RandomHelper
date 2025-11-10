@@ -8,6 +8,7 @@ Class Inferno : Actor
 
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -24,7 +25,6 @@ Class Inferno : Actor
     PAINSOUND "monster/infpai";
     DEATHSOUND "monster/infdth";
     ACTIVESOUND "caco/active";
-    MONSTER;
     +NoGravity
     +Float
     +DontFall

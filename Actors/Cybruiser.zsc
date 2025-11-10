@@ -17,7 +17,7 @@ Class Cybruiser : CompanionBaronOfHell
     SeeSound "monster/brusit";
     PainSound "baron/pain";
     DeathSound "monster/brudth";
-    Monster;
+    MONSTER;
     +FloorClip
     +MissileMore
     +Boss

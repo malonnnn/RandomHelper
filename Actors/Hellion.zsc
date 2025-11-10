@@ -2,6 +2,7 @@ Class Hellion : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -16,7 +17,7 @@ Class Hellion : Actor
     PainSound "monster/hlnpai";
     DeathSound "monster/hlndth";
     ActiveSound "monster/hlnact";
-    Monster;
+    MONSTER;
     +FloorClip
   }
 

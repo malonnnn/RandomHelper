@@ -2,6 +2,7 @@ Class ForgottenOne : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -17,7 +18,7 @@ Class ForgottenOne : Actor
     DeathSound "Forgotten/Death";
     ActiveSound "Forgotten/Active";
     Damage 3;
-    Monster;
+    MONSTER;
     +FloorClip
     +Float
     +NoGravity

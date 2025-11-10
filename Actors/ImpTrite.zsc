@@ -2,6 +2,7 @@ Class ImpTrite : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -11,7 +12,6 @@ Class ImpTrite : Actor
     Speed 12;
     PainChance 200;
     Mass 30;
-    MONSTER;
     +NOGRAVITY
     SeeSound "impspid/see";
     PainSound "impspid/pain";

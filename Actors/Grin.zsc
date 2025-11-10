@@ -2,6 +2,7 @@ Class Grin : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -11,7 +12,7 @@ Class Grin : Actor
     Mass 100;
     Speed 12;
     PainChance 255;
-    Monster;
+    MONSTER;
     Species "Grin";
     SeeSound "imptaunt";
     PainSound "hihurt";

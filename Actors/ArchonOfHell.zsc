@@ -3,7 +3,8 @@ Class ArchonOfHell : BaronOfHell
   Default
   {
     MONSTER;
-    +Friendly;
+    +FRIENDLY
+    Species "Companion";
     DamageFactor "Companion", 0;
     Health 2000;
     Radius 24;

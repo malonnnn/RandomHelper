@@ -2,6 +2,7 @@ Class WarlordOfHell : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -13,7 +14,6 @@ Class WarlordOfHell : Actor
     Scale 1.2;
     Mass 1000;
     BloodColor "39 59 9F";
-    Monster;
     +FloorClip
     Obituary "%o was extuingished by the warlord of hell.";
     SeeSound "warlord/sight";

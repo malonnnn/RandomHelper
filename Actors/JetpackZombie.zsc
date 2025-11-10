@@ -2,6 +2,7 @@ Class JetpackZombie : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -16,7 +17,7 @@ Class JetpackZombie : Actor
     PainSound "JetpackZombie/Pain";
     ActiveSound "JetpackZombie/Active";
     DeathSound "grunt/death3";
-    Monster;
+    MONSTER;
     MeleeRange 32;
     +FloorClip
     +Float

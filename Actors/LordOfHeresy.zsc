@@ -2,6 +2,7 @@ Class LordOfHeresy : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -17,7 +18,6 @@ Class LordOfHeresy : Actor
     PainSound "demon/pain";
     DeathSound "LordOfHeresy/death";
     ActiveSound "LordOfHeresy/act";
-    MONSTER;
     +FLOORCLIP
   }
 

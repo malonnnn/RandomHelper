@@ -2,7 +2,7 @@ class DoomRPGGhoul : CompanionRevenant //11460
 {
   Default
   {
-    Monster;
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;

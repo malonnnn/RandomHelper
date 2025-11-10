@@ -2,6 +2,7 @@ Class Grell : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -17,7 +18,7 @@ Class Grell : Actor
     painsound "grell/pain";
     deathsound "grell/death";
     activesound "grell/active";
-    Monster;
+    MONSTER;
     +DROPOFF
     +NOGRAVITY
     +DONTHARMCLASS

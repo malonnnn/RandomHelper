@@ -2,6 +2,7 @@ Class CarbineZombie : Actor
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
@@ -11,7 +12,6 @@ Class CarbineZombie : Actor
     Mass 100;
     Speed 8;
     PainChance 100;
-    Monster;
     +MISSILEMORE
     +FLOORCLIP
     SeeSound "MGzombiesee";

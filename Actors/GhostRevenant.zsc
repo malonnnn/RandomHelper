@@ -2,6 +2,7 @@ Class GhostRevenant : CompanionRevenant
 {
   Default
   {
+    MONSTER;
     +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;

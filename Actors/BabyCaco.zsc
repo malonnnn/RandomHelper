@@ -3,10 +3,11 @@ class BabyCaco : CompanionCacodemon
   Default
   {
     MONSTER;
-    +FLOAT 
-    +NOGRAVITY
+    +FRIENDLY
     Species "Companion";
     DamageFactor "Companion", 0;
+    +FLOAT 
+    +NOGRAVITY
     Health 150;
     Radius 18;
     Height 36;
