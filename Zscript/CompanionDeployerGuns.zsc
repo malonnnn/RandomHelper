@@ -2867,8 +2867,8 @@ class AracknightGun : BaseDeployer
     Tag "Aracknight";
     Weapon.AmmoType2 "AracknightAmmo";
     Inventory.PickupMessage "Got Aracknight!";
-    BaseDeployer.price 1;
-    Weapon.SlotPriority 1;
+    BaseDeployer.price 75;
+    Weapon.SlotPriority 75;
   }
   States
   {
