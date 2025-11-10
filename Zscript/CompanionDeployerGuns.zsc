@@ -1388,6 +1388,24 @@ class CacolanternGun : BaseDeployer
   }
 }
 
+class CacomancerGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Cacomancer";
+    Weapon.AmmoType2 "CacomancerAmmo";
+    Inventory.PickupMessage "Got Cacomancer!";
+    BaseDeployer.price 300;
+    Weapon.SlotPriority 300;
+  }
+  States
+  {
+    Spawn:
+      VCCM A -1;
+      Stop;
+  }
+}
+
 class CatharsiGun : BaseDeployer
 {
   Default

@@ -1,0 +1,490 @@
+class Cacomancer : Actor
+{
+	int arad;
+	override void PostBeginPlay()
+	{
+		arad = 667;	// Aura radius
+		Super.PostBeginPlay();
+	}
+	
+	Default
+	{
+		//$Category Monsters
+		//$Title "Cacomancer"
+		Health 280;
+		Radius 20;
+		Height 60;
+		Mass 150;
+		Speed 8;
+		PainChance 200;
+		Monster;
+		Scale 0.667;
+		+MISSILEMORE;
+		+DONTHARMCLASS;
+		+NOGRAVITY;
+		+FLOAT;
+		+AVOIDMELEE;
+		//+NOINFIGHTING;
+		+NOTARGET;
+		+FRIENDLY;
+		Species "Companion";
+		DamageFactor "Companion", 0;
+		PainSound "Cacomancer/pain";
+		DeathSound "Cacomancer/death";
+		ActiveSound "Cacomancer/active";
+		Obituary "%o was killed by a Cacomancer.";
+	}
+	States
+	{
+	Spawn:
+		VCCM A 2 A_Look;
+		Loop;
+	See:
+		TNT1 A 0 A_Startsound("Cacomancer/see",13100);
+	Roam:
+		TNT1 A 0
+		{
+			vel *= 0.5;
+			if (target && target.bISMONSTER)
+			{
+				target = NULL;
+				A_LookEx(LOF_NOJUMP); //Aquire new target
+			}
+			if (!random(0,15)) SetStateLabel("Dodge");
+		}
+		VCCM A 2
+		{
+			if (target && Distance3D(target) < 200)
+			{
+				A_FaceTarget();
+				A_Recoil(random(5,10));
+				if (!random(0,1)) SetStateLabel("Dodge");
+				else SetStateLabel("MissileBall");
+			}
+			else A_Chase();
+		}
+		Loop;
+	Missile:
+		TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+		VCCM A 10
+		{
+			BlockThingsIterator it = BlockThingsIterator.Create(self, arad);
+			while (it.Next())
+			{
+				let obj = it.thing;
+				if (obj.bISMONSTER
+					&& obj.CanRaise()
+					&& CheckSight(obj)
+					&& Distance3D(obj) < arad)
+				{
+					target = obj;
+					A_Startsound("Cacomancer/heal");
+					SetStateLabel("MissileHeal");
+				}
+				if (obj.bISMONSTER
+					&& !obj.bKILLED
+					&& !obj.CountInv("CacomancerBuff")
+					&& obj.GetSpecies() != "Cacomancer"
+					&& obj.bFRIENDLY == self.bFRIENDLY
+					&& !InStateSequence(obj.curstate, obj.ResolveState("Spawn"))
+					&& CheckSight(obj)
+					&& Distance3D(obj) < arad)
+				{
+					target = obj;
+					A_Startsound("Cacomancer/buff");
+					SetStateLabel("MissileBuff");
+				}
+			}
+		}
+	MissileBall:
+		VCCM BC random(3,5) 
+		{
+			A_FaceTarget();
+			A_Recoil(random(0,2));
+		}
+		VCCM D 10 Bright A_SpawnProjectile("CacomancerBall",32);
+		VCCM CB random(3,5);
+		Goto Roam;
+	MissileHeal:
+		VCCM OOO 5 Bright
+		{
+			A_FaceTarget();
+			A_Recoil(random(-1,0));
+		}
+		VCCM PPPPPPPPPP 1 Bright
+		{
+			if (target)
+			{
+				A_FaceTarget();
+				A_SpawnProjectile("CacomancerHealMissile",51);
+			}
+		}
+		VCCM OOOO 5 Bright;
+		Goto Roam;
+	MissileBuff:
+		VCCM MMM 5 Bright
+		{
+			A_FaceTarget();
+			A_Recoil(random(-1,0));
+		}
+		VCCM NNNNNNNNNN 1 Bright
+		{
+			if (target)
+			{
+				A_FaceTarget();
+				A_SpawnProjectile("CacomancerBuffMissile",51);
+			}
+		}
+		VCCM MMMM 5 Bright;
+		Goto Roam;
+	Dodge:
+		TNT1 A 0
+		{
+			A_FaceTarget();
+			if (target)
+			{
+				double ang = angleto(target);
+				ThrustThing(ang*256/360+randompick(64,192),random(2,4),0,0);
+				ThrustThingZ(0, random(0,10), 0, 1);
+				ThrustThingZ(0, random(0,5), 1, 1);
+			}	
+		}
+		VCCM AAAAAAAAAA 2
+		{
+			A_FaceTarget();
+			vel *= 0.9;
+			A_Chase();
+		}
+		Goto Roam;
+	Pain:
+		VCCM E 5;
+		VCCM F 10 A_Pain;
+		Goto Roam;
+	Death:
+		VCCM F 5;
+		VCCM G 5 A_Scream;
+		VCCM H 5;
+		VCCM I 5;
+		VCCM J 5 A_NoBlocking;
+		VCCM K 5;
+		VCCM L 9;
+		VCCM Q 3;
+		VCCM R 3;
+		VCCM Q 3;
+		VCCM L 9;
+		VCCM Q 3;
+		VCCM R 3;
+		VCCM S -1;
+		Stop;
+	Raise:
+		Stop;
+	}
+}
+
+class CacomancerHealMissile : Actor
+{
+	Default
+	{
+		Radius 6;
+		Height 8;
+		Speed 15;
+		Damage 0;
+		Scale 0.5;
+		Projectile;
+		+SEEKERMISSILE;
+		+ROLLSPRITE;
+		Renderstyle "Add";
+		Alpha 1.0;
+		Species "Companion";
+		DamageType "Companion";
+		Translation "0:255=%[0.4,0.1,0.1]:[1.0,0.3,0.3]";
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 0 Nodelay 
+		{	
+			A_SetRoll(random(0, 359));
+		}
+		VCMP BCDDEEFFGGGHHH 2 Bright
+		{
+			scale.y -= 0.01667;
+			roll += 20;
+			A_SeekerMissile(5, 45);
+			A_CheckForResurrection();
+		}
+		VCMP GGFFEEDCBA 2 Bright
+		{
+			A_Fadeout(0.1);
+			roll += 20;
+			A_CheckForResurrection();
+		}
+		Loop;
+	Death:
+		#### # 1 Bright
+		{
+			scale.x -= 0.01;
+			scale.y -= 0.01;
+			A_Fadeout(0.1);
+			A_CheckForResurrection();
+		}
+		Loop;
+	Heal:
+		#### # 2 Bright A_Fadeout(0.1);
+		Loop;
+	}
+	
+	override int SpecialMissileHit(Actor victim)
+	{
+		if (target && victim.bISMONSTER && victim.health > 0 && victim.GetSpecies() != "Cacomancer")
+		{
+			victim.bFRIENDLY = target.bFRIENDLY; //makes sure the revived monster is on the Cacomancer's side
+		}
+		return -1;
+	}
+}
+
+class CacomancerBuffMissile : Actor
+{
+	Default
+	{
+		Radius 6;
+		Height 8;
+		Speed 15;
+		Damage 0;
+		Scale 0.5;
+		Projectile;
+		+SEEKERMISSILE;
+		+ROLLSPRITE;
+		Renderstyle "Add";
+		Alpha 1.0;
+		Species "Companion";
+		DamageType "Companion";
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 0 Nodelay A_SetRoll(random(0, 359));
+		VCMP BCDDEEFFFGGGHHH 2 Bright
+		{
+			scale.y -= 0.01667;
+			roll += 20;
+			A_SeekerMissile(5, 45);
+		}
+		VCMP GGFFEEDCBA 2 Bright
+		{
+			roll += 20;
+			A_Fadeout(0.1);
+		}
+		Loop;
+	Death:
+		#### # 1 Bright
+		{
+			scale.x -= 0.01;
+			scale.y -= 0.01;
+			A_Fadeout(0.1);
+		}
+		Loop;
+	}
+	
+	override int SpecialMissileHit(Actor victim)
+	{
+		if (victim.bISMONSTER && victim.health > 0 && victim.GetSpecies() != "Cacomancer")
+		{
+			victim.GiveInventory("CacomancerBuff",1);
+		}
+		return -1;
+	}
+}
+
+class CacomancerBall : CacodemonBall
+{
+	Default
+	{
+ 		Radius 5;
+		Height 7;
+		Speed 10;
+		Damage 4;
+		Scale 0.8;
+		+ROLLSPRITE;
+		Species "Companion";
+		DamageType "Companion";
+		SeeSound "Cacomancer/attack";
+	}
+	States
+	{
+	Spawn:
+ 		VCMB AB 4 Bright
+		{
+			A_SetRoll(random(0, 359));
+		}
+		Loop;
+	Death:
+		VCMB CDE 6 Bright;
+		Stop;
+	}
+}
+
+Extend Class Cacomancer
+{
+	override void Tick()
+	{	
+		if (!self.bKILLED)
+		{
+			if(GetAge() % 35 == 0)
+			{
+				BlockThingsIterator it = BlockThingsIterator.Create(self, arad *1.2);
+				while (it.Next())
+				{
+					let obj = it.thing;
+					if (obj.bISMONSTER
+						&& obj.health > 0
+						&& obj.GetSpecies() != "Cacomancer"
+						&& obj.bFRIENDLY == self.bFRIENDLY
+						&& !InStateSequence(obj.curstate, obj.ResolveState("Spawn"))
+						&& CheckSight(obj)
+						&& Distance3D(obj) < arad *1.2)
+					{
+						obj.GiveInventory("CacomancerAura",1);
+					}
+				}
+			}
+			A_SpawnParticle("0000FF",lifetime:35,size:random(3,6),xoff:random(-arad,arad),yoff:random(-arad,arad),zoff:random(-128,128),
+				velx:frandom(-2.4,2.4),vely:frandom(-2.4,2.4),velz:frandom(-2.4,2.4),startalphaf:0.5,fadestepf:-1,sizestep:0.25);
+			A_SpawnParticle("1000FF",lifetime:35,size:random(3,6),xoff:random(-arad,arad),yoff:random(-arad,arad),zoff:random(-128,128),
+				velx:frandom(-2.4,2.4),vely:frandom(-2.4,2.4),velz:frandom(-2.4,2.4),startalphaf:0.5,fadestepf:-1,sizestep:0.25);
+			A_SpawnParticle("2000FF",lifetime:35,size:random(3,6),xoff:random(-arad,arad),yoff:random(-arad,arad),zoff:random(-128,128),
+				velx:frandom(-2.4,2.4),vely:frandom(-2.4,2.4),velz:frandom(-2.4,2.4),startalphaf:0.5,fadestepf:-1,sizestep:0.25);
+			A_SpawnParticle("3000FF",lifetime:35,size:random(3,6),xoff:random(-arad,arad),yoff:random(-arad,arad),zoff:random(-128,128),
+				velx:frandom(-2.4,2.4),vely:frandom(-2.4,2.4),velz:frandom(-2.4,2.4),startalphaf:0.5,fadestepf:-1,sizestep:0.25);
+		}
+		super.Tick();
+	}
+}
+//============================= Aura ===========================================
+class CacomancerAura : PowerProtection
+{
+	Default
+	{
+		DamageFactor "Normal", 0.667;
+		Inventory.MaxAmount 1;
+		Powerup.Duration -2;
+	}
+	
+	override void InitEffect()
+	{
+		super.InitEffect();
+		if (owner)
+		{
+			owner.bNOPAIN = true;
+			owner.A_AttachLight("CCDAL",DynamicLight.PulseLight,"3030FF",owner.radius*1.25,owner.radius*1.5,
+				flags:DYNAMICLIGHT.LF_NOSHADOWMAP,
+				ofs:(0,0,owner.height/2),param:3.5);
+		}
+	}
+	
+	override void Tick()
+	{	
+		if (owner)
+		{
+			if (GetAge() % 7 == 0)
+			{
+				owner.A_DamageSelf(-2); //heal 10 hp/s
+				if (!owner.CountInv("CacomancerBuff"))
+				{
+					CacomancerAuraParticle("0000C0", owner.pos, owner.radius, owner.height);
+					CacomancerAuraParticle("4020C0", owner.pos, owner.radius, owner.height);
+					CacomancerAuraParticle("0000FF", owner.pos, owner.radius, owner.height);
+					CacomancerAuraParticle("4020FF", owner.pos, owner.radius, owner.height);
+				}
+			}
+		}
+		super.Tick();
+	}
+	
+	void CacomancerAuraParticle(color col, vector3 ps, double rd, double ht)
+	{
+		A_SpawnParticle(col,
+		flags: SPF_FULLBRIGHT,
+		lifetime:random(5,9),
+		size:random(3,6),
+		xoff:ps.x+random(-rd,rd),
+		yoff:ps.y+random(-rd,rd),
+		zoff:ps.z+random(10,ht),
+		velx:random(-1,1),
+		vely:random(-1,1),
+		velz:random(2,3),
+		startalphaf:0.7,fadestepf:-1);
+	}
+	
+	override void EndEffect()
+	{
+		if (owner) //reset to defaults
+		{	
+			owner.speed = owner.default.speed;
+			owner.bMISSILEMORE = owner.default.bMISSILEMORE;
+			owner.bMISSILEEVENMORE = owner.default.bMISSILEEVENMORE;
+			owner.bNOPAIN = owner.default.bNOPAIN;
+			owner.A_RemoveLight("CCDAL");
+			owner.A_RemoveLight("CCDBL");
+			owner.TakeInventory("CacomancerBuff",1);
+		}
+		super.EndEffect();
+	}
+}
+
+//============================ Buff ============================================
+class CacomancerBuff : PowerDamage 
+{
+	Default
+	{
+		DamageFactor "Normal", 1.333;
+		Inventory.MaxAmount 1;
+		Powerup.Duration -30;
+	}
+	
+	override void InitEffect()
+	{
+		super.InitEffect();
+		if (owner)
+		{
+			owner.PlaySpawnSound(owner);
+			owner.speed = owner.default.speed * 1.333; //speed up movement
+			owner.bMISSILEEVENMORE = true;
+			owner.A_AttachLight("CCDBL",DynamicLight.PulseLight,"CC00CC",owner.radius*1.5,owner.radius*1.8,
+				flags:DYNAMICLIGHT.LF_NOSHADOWMAP,
+				ofs:(0,0,owner.height/2),param:1);
+		}
+	}
+	
+	override void Tick()
+	{	
+		if (owner)
+		{
+			if (owner.tics > 2) owner.tics -= 1; //speed up animations
+			if (GetAge() % 7 == 0) 
+			{
+				CacomancerBuffParticle("FF00FF", owner.pos, owner.radius, owner.height);
+				CacomancerBuffParticle("C000FF", owner.pos, owner.radius, owner.height);
+				CacomancerBuffParticle("8000FF", owner.pos, owner.radius, owner.height);
+				CacomancerBuffParticle("4000FF", owner.pos, owner.radius, owner.height);
+			}
+		}
+		super.Tick();
+	}
+	
+	void CacomancerBuffParticle(color col, vector3 ps, double rd, double ht)
+	{
+		A_SpawnParticle(col,
+		flags: SPF_FULLBRIGHT,
+		lifetime:random(7,14),
+		size:random(3,6),
+		xoff:ps.x+random(-rd,rd),
+		yoff:ps.y+random(-rd,rd),
+		zoff:ps.z+random(10,ht),
+		velx:random(-3,2),
+		vely:random(-3,2),
+		velz:random(-3,3),
+		startalphaf:0.7,fadestepf:-1);
+	}
+}

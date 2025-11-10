@@ -923,6 +923,15 @@ Rodem/Active RDEMMOVE
 Rodem/Pain RDEMHIT
 Rodem/Death RDEMDETH
 
+// Cacomancer
+Cacomancer/active	VCCMACT
+Cacomancer/attack	VCCMATK
+Cacomancer/buff		VCCMBUFF
+Cacomancer/death	VCCMDETH
+Cacomancer/heal		VCCMHEAL
+Cacomancer/pain		VCCMPAIN
+Cacomancer/see		VCCMSEE
+
 // BruiserAfrit
 BruiserAfrit/Sight DSSBSIT
 BruiserAfrit/Pain DSSBPAI
