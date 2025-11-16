@@ -194,21 +194,21 @@ class CeltIceBigShotTrail : Actor
   {
   Spawn:
 		IBAL A 1 Bright A_FadeOut(0.04);
-		IBAL A 0 A_SetScale(ScaleX-0.03);
+		IBAL A 0 A_SetScale(Scale.X-0.03);
 		IBAL A 1 Bright A_FadeOut(0.04);
-		IBAL A 0 A_SetScale(ScaleX-0.03);
+		IBAL A 0 A_SetScale(Scale.X-0.03);
 		IBAL A 1 Bright A_FadeOut(0.04);
-		IBAL A 0 A_SetScale(ScaleX-0.03);
+		IBAL A 0 A_SetScale(Scale.X-0.03);
 		IBAL A 1 Bright A_FadeOut(0.04);
-		IBAL A 0 A_SetScale(ScaleX-0.03);
+		IBAL A 0 A_SetScale(Scale.X-0.03);
 		IBAL B 1 Bright A_FadeOut(0.04);
-		IBAL B 0 A_SetScale(ScaleX-0.03);
+		IBAL B 0 A_SetScale(Scale.X-0.03);
 		IBAL B 1 Bright A_FadeOut(0.04);
-		IBAL B 0 A_SetScale(ScaleX-0.03);
+		IBAL B 0 A_SetScale(Scale.X-0.03);
 		IBAL B 1 Bright A_FadeOut(0.04);
-		IBAL B 0 A_SetScale(ScaleX-0.03);
+		IBAL B 0 A_SetScale(Scale.X-0.03);
 		IBAL B 1 Bright A_FadeOut(0.04);
-		IBAL B 0 A_SetScale(ScaleX-0.03);
+		IBAL B 0 A_SetScale(Scale.X-0.03);
 		Loop;
   }
 }

@@ -21,7 +21,13 @@ class CompanionItemReplacer : EventHandler
         case 8:
         case 9:
         case 10:
-        Actor.Spawn("CompanionAmmo", (e.Thing.pos.x+Random(-1, 1), e.Thing.pos.y+Random(-1, 1), e.Thing.pos.z));
+          let ammo = Actor.Spawn("CompanionAmmo", (e.Thing.pos.x+Random(-1, 1), e.Thing.pos.y+Random(-1, 1), e.Thing.pos.z));
+          if (ammo) {
+            let def = GetDefaultByType(e.Thing.GetClass());
+            int maxHealth = def.health;
+            int amt = max(1, maxHealth * 300 / 4000);
+            Inventory(ammo).Amount = amt;
+          }
       }
     }
   }
