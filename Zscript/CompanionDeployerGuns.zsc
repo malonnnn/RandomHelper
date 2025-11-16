@@ -1413,8 +1413,8 @@ class CeltGun : BaseDeployer
     Tag "Celt";
     Weapon.AmmoType2 "CeltAmmo";
     Inventory.PickupMessage "Got Celt!";
-    BaseDeployer.price 1;
-    Weapon.SlotPriority 1;
+    BaseDeployer.price 750;
+    Weapon.SlotPriority 750;
   }
   States
   {

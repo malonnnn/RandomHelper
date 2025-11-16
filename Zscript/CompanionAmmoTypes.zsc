@@ -1363,6 +1363,6 @@ class CeltAmmo : CommonAmmoFeatures
 {
   Default
   {
-    Inventory.Icon "ROCKA0";
+    Inventory.Icon "CELTA1C1";
   }
 }
