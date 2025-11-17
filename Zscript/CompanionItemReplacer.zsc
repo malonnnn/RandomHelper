@@ -38,8 +38,7 @@ class CompanionItemReplacer : EventHandler
     Globals g = Globals(EventHandler.Find("Globals"));
     String companionClass = g.getRandomCompanion();
     
-    if(e.Thing is "Weapon" && !(e.thing is companionClass.."Gun")){
-      
+    if(e.Thing is "Weapon" && !(e.Thing is "BaseDeployer")){
       let weapon = Actor.Spawn(companionClass.."Gun", (e.Thing.pos.x+Random(-1, 1), e.Thing.pos.y+Random(-1, 1), e.Thing.pos.z));
 
       if(e.Thing is "Shotgun"){
