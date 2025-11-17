@@ -1,17 +1,18 @@
 AddOptionMenu "OptionsMenu"
 {
-    Submenu "ZDoom Wars Options", "ZDoomWarsOptions"
+    Submenu "Random Helper Options", "RandomHelperOptions"
 }
 
-OptionMenu "ZDoomWarsOptions"
+OptionMenu "RandomHelperOptions"
 {
-Title "ZDoom Wars Options"
+Title "Random Helper Options"
 Option "MegaWad Scaling", "zdw_wadscale", "OnOff"
 StaticText "Tougher companions only drop as you progress levels"
 StaticText ""
 Option "Refund Surviving Companions On Exit", "zdw_refundonexit", "OnOff"
 StaticText ""
 Option "NoTarget", "zdw_notarget", "OnOff"
+StaticText "Makes enemies not target the player"
 StaticText ""
 //Option "Debug Spawning", "zdw_debugspawning", "OnOff"
 }
