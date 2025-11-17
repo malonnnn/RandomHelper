@@ -3,7 +3,7 @@ Class RefundFriendsOnExit : EventHandler
   Override void WorldLinePreActivated(WorldEvent e)
   {
     cVar refundFriendOnExit = cVar.GetCVar('zdw_refundonexit');
-    if(refundFriendOnExit.GetBool())
+    if(refundFriendOnExit && refundFriendOnExit.GetBool())
     {
       if(e.ActivatedLine.special==243||e.ActivatedLine.special==244) //If the line's special was 243 (Exit_Normal) or 244 (Exit_Secret), do stuff
       {
