@@ -757,6 +757,7 @@ arachnophyte/pain2 dsaphpn2
 arachnophyte/pain3 dsaphpn3
 arachnophyte/death dsaphdth
 arachnophyte/engine dsapheng
+$volume arachnophyte/engine 0.75
 
 $random marauder/speech { marauder/speech1 marauder/speech2 marauder/speech3 marauder/speech4 marauder/speech5 marauder/speech6 }
 marauder/speech1 				martnt1
