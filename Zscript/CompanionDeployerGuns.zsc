@@ -757,8 +757,8 @@ Class ArachnophyteGun : BaseDeployer
     Tag "Arachnophyte";
     Weapon.AmmoType2 "ArachnophyteAmmo";
     Inventory.PickupMessage "Got Arachnophyte!";
-    BaseDeployer.price 450;
-    Weapon.SlotPriority 450;
+    BaseDeployer.price 250;
+    Weapon.SlotPriority 250;
     Scale 0.2;
   }
   States
