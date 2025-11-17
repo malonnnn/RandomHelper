@@ -1,5 +1,0 @@
-clust/death CLUSTDTH
-clust/sight CLUSTSIT
-clust/fire SPBFIRE
-clust/split1 SPBALL1
-clust/split4 SPBALL4
