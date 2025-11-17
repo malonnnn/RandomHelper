@@ -1,0 +1,117 @@
+class Corpulent : Fatso
+{
+    Default
+    {
+        Tag "Corpulent";
+        Health 500;
+        obituary "%o was eaten by a corpulent.";
+        seesound "corpulent/see";
+        painsound "corpulent/pain";
+        deathsound "corpulent/death";
+        Monster;
+        +DONTHARMSPECIES;
+        +FRIENDLY;
+        Species "Companion";
+        DamageFactor "Companion", 0;
+    }
+    States
+    {
+        Spawn:
+            CRPL AB 15 A_Look;
+            Loop;
+        See:
+            CRPL AABBCCDDEEFF 4 A_Chase;
+            Loop;
+        Missile:
+            CRPL G 0 A_StartSound("corpulent/attack");
+            TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+            CRPL G 20 A_FaceTarget();
+            CRPL H 10 Bright { A_SpawnProjectile("ShardBomb",48,32,frandom(-1,1)); A_SpawnProjectile("ShardBomb",48,-32,frandom(-1,1)); }
+            CRPL IG 5 A_FaceTarget();
+            CRPL H 10 Bright { A_SpawnProjectile("ShardBomb",48,32,frandom(-1,1)); A_SpawnProjectile("ShardBomb",48,-32,frandom(-1,1)); }
+            CRPL IG 5 A_FaceTarget();
+            CRPL H 10 Bright { A_SpawnProjectile("ShardBomb",48,32,frandom(-1,1)); A_SpawnProjectile("ShardBomb",48,-32,frandom(-1,1)); }
+            CRPL IG 5 A_FaceTarget();
+            Goto See;
+        Pain:
+            CRPL J 3;
+            CRPL J 3 A_Pain;
+            Goto See;
+        Death:
+            CRPL K 6;
+            CRPL L 6 A_Scream;
+            CRPL M 6 A_NoBlocking;
+            CRPL NOPQRS 6;
+            CRPL T -1; //ACS_NamedExecute("Map07Fatso")
+            Stop;
+        Raise:
+            CRPL RQPONMLK 5;
+            Goto See;
+    }
+}
+
+class ShardBomb : Actor
+{
+    Default
+    {
+        Radius 8;
+        Height 8;
+        Speed 25;
+        Damage 3;
+        RenderStyle "Normal";
+        DamageType "Companion";
+        Projectile;
+        +THRUGHOST;
+        +FORCEXYBILLBOARD;
+        SeeSound "weapons/macefi";
+        DeathSound "weapons/maceex";
+        Species "Companion";
+    }
+    States
+    {
+        Spawn:
+            RIP1 ABC 3 Bright A_SpawnItemEx("CompanionBulletPuff",0,0,0,0,0,0,0,8);
+            Loop;
+        Death:
+            RIP1 D 0 Bright A_SetTranslucent(0.75,1);
+            RIP1 D 1 Bright A_Explode(64, 64, XF_EXPLICITDAMAGETYPE, false, 0, 0, 0, "CompanionBulletPuff", "Companion");
+            RIP1 D 0 Bright A_SpawnItemEx("BombShard",0,0,0,40,0,0,0,0,0);
+            RIP1 D 0 Bright A_SpawnItemEx("BombShard",0,0,0,40,0,0,60,0,0);
+            RIP1 D 0 Bright A_SpawnItemEx("BombShard",0,0,0,40,0,0,120,0,0);
+            RIP1 D 0 Bright A_SpawnItemEx("BombShard",0,0,0,40,0,0,180,0,0);
+            RIP1 D 0 Bright A_SpawnItemEx("BombShard",0,0,0,40,0,0,240,0,0);
+            RIP1 D 0 Bright A_SpawnItemEx("BombShard",0,0,0,40,0,0,300,0,0);
+            RIP1 DEFGH 3 Bright A_BossDeath;
+            Stop;
+    }
+}
+
+class BombShard : Actor
+{
+    Default
+    {
+        Radius 5;
+        Height 5;
+        Damage 1;
+        Projectile;
+        RenderStyle "Normal";
+        DamageType "Companion";
+        +RIPPER;
+        +THRUGHOST;
+        +FORCEXYBILLBOARD;
+        DeathSound "weapons/firex2";
+        Species "Companion";
+    }
+    States
+    {
+        Spawn:
+            RIP2 A 3 Bright;
+            RIP2 B 3 Bright;
+            Loop;
+        Death:
+            RIP2 C 0 Bright A_SetTranslucent(0.67,1);
+            RIP2 CDEFG 3 Bright;
+            Stop;
+    }
+}
+

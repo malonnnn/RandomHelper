@@ -42,6 +42,14 @@ class CompanionZombieManAmmo : CommonAmmoFeatures
   }
 }
 
+class CorpulentAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CRPLA1D1";
+  }
+}
+
 class ChillerSoulAmmo : CommonAmmoFeatures
 {
   Default

@@ -968,3 +968,12 @@ clust/split4 CLUSTSIGHT
 midas/death MIDASDTH
 midas/pain MIDASPAIN
 midas/sight MIDASSIGHT
+
+// Corpulent
+corpulent/see                  dsma2sit
+corpulent/attack               dsma2atk
+corpulent/pain                 dsma2pai
+corpulent/death                dsma2dth      
+weapons/maceex                 dsmaceex
+weapons/macefi                 dsmacefi
+weapons/firex2				   dsfirex2

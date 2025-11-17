@@ -16,6 +16,24 @@ class CompanionZombieManGun : BaseDeployer
   }
 }
 
+class CorpulentGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Corpulent";
+    Weapon.AmmoType2 "CorpulentAmmo";
+    Inventory.PickupMessage "Got Corpulent!";
+    BaseDeployer.price 75;
+    Weapon.SlotPriority 75;
+  }
+  States
+  {
+    Spawn:
+      CRPL A -1;
+      Stop;
+  }
+}
+
 class ChillerSoulGun : BaseDeployer
 {
   Default
