@@ -285,7 +285,6 @@ class CompanionAmmo : Ammo
 {
   Default
   {
-    +INVENTORY.ALWAYSPICKUP
     Inventory.Amount 3;
     Inventory.MaxAmount 999;
     Inventory.InterHubAmount 999;
