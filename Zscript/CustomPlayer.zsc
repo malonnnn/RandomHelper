@@ -118,8 +118,13 @@ class MyDoomGuy : DoomPlayer {
 
 	override void Tick(){
     super.Tick();
+    cVar nt = cVar.GetCVar('zdw_notarget');
+    if(nt){
+      if(nt.GetBool()) player.cheats |= CF_NOTARGET;
+      else player.cheats &= ~CF_NOTARGET;
+    }
     cVar scaleWithLevels = cVar.GetCVar('zdw_debugspawning');
-    if(scaleWithLevels.GetBool())
+    if(scaleWithLevels && scaleWithLevels.GetBool())
     {
       Globals g = Globals(EventHandler.Find("Globals"));
       String companionClass = g.getRandomCompanion();

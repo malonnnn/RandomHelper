@@ -11,5 +11,7 @@ StaticText "Tougher companions only drop as you progress levels"
 StaticText ""
 Option "Refund Surviving Companions On Exit", "zdw_refundonexit", "OnOff"
 StaticText ""
+Option "NoTarget", "zdw_notarget", "OnOff"
+StaticText ""
 //Option "Debug Spawning", "zdw_debugspawning", "OnOff"
 }
