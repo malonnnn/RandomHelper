@@ -35,36 +35,39 @@ class CompanionItemReplacer : EventHandler
   // replace all weapon drops with companion ammo
   override void WorldThingSpawned(WorldEvent e){
     Super.WorldThingSpawned(e);
-    let ammo = null;
-    if(e.Thing is "Shotgun"){
-      ammo = Actor.Spawn("CompanionAmmo", e.Thing.pos);
-      Inventory(ammo).Amount = 8;
-      e.Thing.Destroy();
-    }else if(e.Thing is "SuperShotgun"){
-      ammo = Actor.Spawn("CompanionAmmo", e.Thing.pos);
-      Inventory(ammo).Amount = 16;
-      e.Thing.Destroy();
-    }else if(e.Thing is "RocketLauncher"){
-      ammo = Actor.Spawn("CompanionAmmo", e.Thing.pos);
-      Inventory(ammo).Amount = 16;
-      e.Thing.Destroy();
-    }else if(e.Thing is "Chaingun"){
-      ammo = Actor.Spawn("CompanionAmmo", e.Thing.pos);
-      Inventory(ammo).Amount = 16;
-      e.Thing.Destroy();
-    }else if(e.Thing is "Chainsaw"){
-      ammo = Actor.Spawn("CompanionAmmo", e.Thing.pos);
-      Inventory(ammo).Amount = 8;
-      e.Thing.Destroy();
-    }else if(e.Thing is "BFG9000"){
-      ammo = Actor.Spawn("CompanionAmmo", e.Thing.pos);
-      Inventory(ammo).Amount = 300;
-      e.Thing.Destroy();
-    }else if(e.Thing is "PlasmaRifle"){
-      ammo = Actor.Spawn("CompanionAmmo", e.Thing.pos);
-      Inventory(ammo).Amount = 100;
+    Globals g = Globals(EventHandler.Find("Globals"));
+    String companionClass = g.getRandomCompanion();
+    
+    if(e.Thing is "Weapon" && !(e.thing is companionClass.."Gun")){
+      
+      let weapon = Actor.Spawn(companionClass.."Gun", (e.Thing.pos.x+Random(-1, 1), e.Thing.pos.y+Random(-1, 1), e.Thing.pos.z));
+
+      if(e.Thing is "Shotgun"){
+        let ammo = Actor.Spawn("CompanionAmmo", e.Thing.pos);
+        Inventory(ammo).Amount = 8;
+      }else if(e.Thing is "SuperShotgun"){
+        let ammo = Actor.Spawn("CompanionAmmo", e.Thing.pos);
+        Inventory(ammo).Amount = 16;
+      }else if(e.Thing is "RocketLauncher"){
+        let ammo = Actor.Spawn("CompanionAmmo", e.Thing.pos);
+        Inventory(ammo).Amount = 16;
+      }else if(e.Thing is "Chaingun"){
+        let ammo = Actor.Spawn("CompanionAmmo", e.Thing.pos);
+        Inventory(ammo).Amount = 16;
+      }else if(e.Thing is "Chainsaw"){
+        let ammo = Actor.Spawn("CompanionAmmo", e.Thing.pos);
+        Inventory(ammo).Amount = 8;
+      }else if(e.Thing is "BFG9000"){
+        let ammo = Actor.Spawn("CompanionAmmo", e.Thing.pos);
+        Inventory(ammo).Amount = 300;
+      }else if(e.Thing is "PlasmaRifle"){
+        let ammo = Actor.Spawn("CompanionAmmo", e.Thing.pos);
+        Inventory(ammo).Amount = 100;
+      }
       e.Thing.Destroy();
     }
+    
+    
 
     else if(e.Thing is "Ammo" && !(e.thing is "CommonAmmoFeatures") && !(e.thing is "CompanionAmmo")){
       Actor.Spawn("CompanionAmmo", e.Thing.pos);
