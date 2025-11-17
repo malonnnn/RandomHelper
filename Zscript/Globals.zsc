@@ -18,6 +18,8 @@ class Globals : EventHandler
     }
     String ac[] = {  // add your companion to top of list
       "ChillerSoul",
+      "Clusterfiend",
+      "Midasfiend",
       "BlackPanther",
       "BerserkerCommando",
       "Behemoth",

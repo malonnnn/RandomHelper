@@ -1,0 +1,10 @@
+Name: Clusterfiend and Midasfiend
+Difficulty: Medium
+Connections: None
+Summon: Clusterfiend, Midasfiend
+Melee: No
+Distance: Projectile
+Type: Demon
+Brightmaps: Yes
+Actor modification: No
+ACS: No

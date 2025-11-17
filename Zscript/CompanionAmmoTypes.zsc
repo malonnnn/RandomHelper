@@ -50,6 +50,22 @@ class ChillerSoulAmmo : CommonAmmoFeatures
   }
 }
 
+class ClusterfiendAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CEADA1";
+  }
+}
+
+class MidasfiendAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "GEADA1";
+  }
+}
+
 Class MarineCompanionFistAmmo : CommonAmmoFeatures
 {
   Default

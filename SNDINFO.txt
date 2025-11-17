@@ -955,3 +955,16 @@ Celt/idle CELTIDLE
 Celt/IceShot KXICEPJ1
 Celt/IceHit KXICEPJ2
 Celt/CometDeath KXICEPJ3
+
+// Clusterfiend
+clust/death CLUSTDTH
+clust/pain CLUSTPAIN
+clust/sight CLUSTSIGHT
+clust/fire CLUSTDTH
+clust/split1 CLUSTPAIN
+clust/split4 CLUSTSIGHT
+
+// Midasfiend
+midas/death MIDASDTH
+midas/pain MIDASPAIN
+midas/sight MIDASSIGHT
