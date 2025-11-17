@@ -42,6 +42,14 @@ class CompanionZombieManAmmo : CommonAmmoFeatures
   }
 }
 
+class ChillerSoulAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CHSLA1";
+  }
+}
+
 Class MarineCompanionFistAmmo : CommonAmmoFeatures
 {
   Default

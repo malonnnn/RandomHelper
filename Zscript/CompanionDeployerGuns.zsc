@@ -16,6 +16,24 @@ class CompanionZombieManGun : BaseDeployer
   }
 }
 
+class ChillerSoulGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Chiller Soul";
+    Weapon.AmmoType2 "ChillerSoulAmmo";
+    Inventory.PickupMessage "Got Chiller Soul!";
+    BaseDeployer.price 50;
+    Weapon.SlotPriority 50;
+  }
+  States
+  {
+    Spawn:
+      CHSL A -1;
+      Stop;
+  }
+}
+
 Class MarineCompanionPistolGun : BaseDeployer
 {
   Default
