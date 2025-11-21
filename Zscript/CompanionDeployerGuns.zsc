@@ -3129,3 +3129,21 @@ class CyberHellKnightGun : BaseDeployer
       Stop;
   }
 }
+
+class CySatyrGun : BaseDeployer
+{
+  Default
+  {
+    Tag "CySatyr";
+    Weapon.AmmoType2 "CySatyrAmmo";
+    Inventory.PickupMessage "Got Cyber Satyr!";
+    BaseDeployer.price 100;
+    Weapon.SlotPriority 100;
+  }
+  States
+  {
+    Spawn:
+      CSTY A -1;
+      Stop;
+  }
+}

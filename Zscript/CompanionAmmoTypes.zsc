@@ -1422,3 +1422,11 @@ class CyberHellKnightAmmo : CommonAmmoFeatures
     Inventory.Icon "CBO2A1";
   }
 }
+
+class CySatyrAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CSTYA1";
+  }
+}

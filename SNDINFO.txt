@@ -988,3 +988,7 @@ chknight/active	chkntact
 chknight/pain	chkntpai
 chknight/death	chkntdth
 cbaron/metal	cmetal
+cysatyr/sight DSCSTSIT
+cysatyr/active DSCSTACT
+cysatyr/pain DSCSTPAI
+cysatyr/death DSCSTDTH
