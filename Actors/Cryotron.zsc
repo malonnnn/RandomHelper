@@ -154,13 +154,13 @@ class Cryotron_Ball : ArachnotronPlasma
 		}
 		Loop;
 	Bounce:
-		ICEB # 0 BRIGHT A_SpawnItem("Cryotron_Flash");
+		ICEB # 0 BRIGHT A_SpawnItemEx("Cryotron_Flash");
 		Goto Spawn2;
 	Death:
 		TNT1 A 1 
 		{
 			A_StopSound (5);
-			A_SpawnItem("Cryotron_Flash");
+			A_SpawnItemEx("Cryotron_Flash");
 		}
 		Stop;
 	}

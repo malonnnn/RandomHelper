@@ -106,7 +106,7 @@ Class ZombieFreezeBlast : Actor
   States
   {
     Spawn:
-      FBLS A 6 bright A_SpawnItem("FreezeBlastTrail");
+      FBLS A 6 bright A_SpawnItemEx("FreezeBlastTrail");
       loop;
     Death:
       FBLS BCDE 4 bright;

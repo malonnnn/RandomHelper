@@ -292,7 +292,7 @@ Class SpiderSpawner : Actor //Projectile that makes spider
       {
         let g = Globals(EventHandler.Find("Globals"));
         g.createCompanion("Spider", pos);
-        //A_SpawnItem("Spider", 0, 0, 1);
+        //A_SpawnItemEx("Spider", 0, 0, 1);
       }
       Stop;
 	}
@@ -433,7 +433,7 @@ Class EyeBatSpawner : Actor
       {
         let g = Globals(EventHandler.Find("Globals"));
         g.createCompanion("SummonedBatFamiliar", pos);
-        //A_SpawnItem("SummonedBatFamiliar", 0, 0, 1);
+        //A_SpawnItemEx("SummonedBatFamiliar", 0, 0, 1);
       }
       Stop;
 	}

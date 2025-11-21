@@ -45,7 +45,7 @@ Class Defiler : Actor
       DEFI F 8 BRIGHT A_SpawnProjectile("DefilerBall", 15, 0, 45);
       Goto See;
     Heal:
-      DEFI N 10 BRIGHT A_SpawnItem("DefilerFire", 55);
+      DEFI N 10 BRIGHT A_SpawnItemEx("DefilerFire", 55);
       DEFI OP 10 BRIGHT;
       Goto See;
     Pain:

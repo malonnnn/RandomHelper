@@ -99,7 +99,7 @@ Class CarbineGuyBullet : Actor
       BLT2 A 1 Bright;
       Loop;
     Death:
-      BLT1 A 1 Bright A_spawnitem("CompanionBulletPuff");
+      BLT1 A 1 Bright A_SpawnItemEx("CompanionBulletPuff");
       Stop;
     XDeath:
       BLT1 A 0;

@@ -119,7 +119,7 @@ Class HellstormArchonComet : Actor
   States
   {
     Spawn:
-      ZRCB AAAABBBBCCCC 1 Bright A_SpawnItem("ArchonCometTrail",0,0);
+      ZRCB AAAABBBBCCCC 1 Bright A_SpawnItemEx("ArchonCometTrail",0,0);
       loop;
     Death:
       ZRCB J 0 Bright A_SetTranslucent (0.67,1);

@@ -92,7 +92,7 @@ Class DeathIncarnate : Actor
       INCX D 5 Bright A_NoBlocking();
       INCX D 0 Bright
       {
-        //A_SpawnItem("HS",0,32);
+        //A_SpawnItemEx("HS",0,32);
         let g = Globals(EventHandler.Find("Globals"));
         g.createCompanion("HS", pos);
       }

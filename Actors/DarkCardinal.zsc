@@ -150,7 +150,7 @@ Class pain_gernade : Actor
       Loop;
     Death:
       HEAD GHIJ 8;
-      HEAD k 8 A_SpawnItem("Fire", 0, 0);
+      HEAD k 8 A_SpawnItemEx("Fire", 0, 0);
       HEAD L -1;
       Stop;
 	}
@@ -174,7 +174,7 @@ Class Fire : Actor
       FIRE ABCD 6 Bright;
       FIRE E 6 Bright
       {
-        //A_SpawnItem("paingasm", 0, 0);
+        //A_SpawnItemEx("paingasm", 0, 0);
         Globals g = Globals(EventHandler.Find("Globals"));
         g.createCompanion("paingasm", pos);
       }
@@ -352,9 +352,9 @@ Class DeathBall : CompanionBaronBall
   {
     Spawn:
       BAL7 A 4 BRIGHT A_Tracer;
-      BAL7 A 0 BRIGHT A_SpawnItem("BallTail", 0, 0);
+      BAL7 A 0 BRIGHT A_SpawnItemEx("BallTail", 0, 0);
       BAL7 B 4 BRIGHT A_Tracer;
-      BAL7 A 0 BRIGHT A_SpawnItem("BallTail", 0, 0);
+      BAL7 A 0 BRIGHT A_SpawnItemEx("BallTail", 0, 0);
       Loop;
     Death:
       BAL7 CDE 6 BRIGHT;
@@ -397,7 +397,7 @@ Class CardinalPlasma : Actor
 	States
 	{
     Spawn:
-      CRTA J 1 Bright A_SpawnItem("plasmaTail", 0, 0);
+      CRTA J 1 Bright A_SpawnItemEx("plasmaTail", 0, 0);
       Loop;
     Death:
       TNT1 A 0 A_FaceTarget;

@@ -249,7 +249,7 @@ class Mine : Actor
       HMIN AAABBB 4 BRIGHT;
       Loop;
     Death:
-      HMIN A 0 A_SpawnItem("MineBase");
+      HMIN A 0 A_SpawnItemEx("MineBase");
       Stop;
   }
 }

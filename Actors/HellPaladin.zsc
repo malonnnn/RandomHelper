@@ -149,7 +149,7 @@ Class PaladinGrenade : Actor
   States
   {
 		Spawn:
-			PGRN A 1 Bright A_SpawnItem("PaladinGrenadeTrail");
+			PGRN A 1 Bright A_SpawnItemEx("PaladinGrenadeTrail");
 	  	Loop;
 		Death:
 			TNT1 A 0

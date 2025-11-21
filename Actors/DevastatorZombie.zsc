@@ -176,7 +176,7 @@ Class LiteShot : Actor
   States
   {
     Spawn:
-      DLIT AAABBBCCC 1 Bright A_SpawnItem ("LiteTrail",0,0,0);
+      DLIT AAABBBCCC 1 Bright A_SpawnItemEx ("LiteTrail",0,0,0);
       Loop;
     Death:
       DLIT DEFGHIJKLMNO 1 Bright;

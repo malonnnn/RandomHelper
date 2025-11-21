@@ -87,7 +87,7 @@ Class CheshireCacodemon : Actor
       TNT1 A 0 A_Jump(32, "Missile2","Fake","Teleport");
       SHSR B 5 A_FaceTarget;
       SHSR C 5 A_FaceTarget;
-      TNT1 A 0 A_SpawnItem("Ring",0,0,56);
+      TNT1 A 0 A_SpawnItemEx("Ring",0,0,56);
       SHSR D 5 BRIGHT A_SpawnProjectile("ChesBallA");
       Goto See;
     Missile2:
@@ -96,7 +96,7 @@ Class CheshireCacodemon : Actor
       TNT1 A 0 A_GiveInventory("ChesSlow",1);
       SHSR C 5 A_FaceTarget;
       TNT1 A 0 A_GiveInventory("ChesSlow",1);
-      TNT1 A 0 A_SpawnItem("Ring",0,0,56);
+      TNT1 A 0 A_SpawnItemEx("Ring",0,0,56);
       SHSR D 5 BRIGHT A_SpawnProjectile("ChesBallA");
       Goto See;
     Fake:
@@ -220,7 +220,7 @@ Class CheshireCacodemon : Actor
       TNT1 A 0 A_GiveInventory("CheshireUnmake",1);
       SLPS B 5 A_FaceTarget;
       SLPS C 5 A_FaceTarget;
-      TNT1 A 0 A_SpawnItem("Ring",0,0,56);
+      TNT1 A 0 A_SpawnItemEx("Ring",0,0,56);
       SLPS D 5 BRIGHT A_SpawnProjectile("ChesBallA");
       Goto ChesSee;
     UnFade:
@@ -552,7 +552,7 @@ Class ChesFake : Actor
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       SHSR B 5 A_FaceTarget;
       SHSR C 5 A_FaceTarget;
-      TNT1 A 0 A_SpawnItem("Ring",0,0,56);
+      TNT1 A 0 A_SpawnItemEx("Ring",0,0,56);
       SHSR D 5 BRIGHT A_SpawnProjectile("ChesBall2");
       Goto See+1;
     Death:

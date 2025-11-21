@@ -120,21 +120,21 @@ class DivineShadowAtkLarge : CompanionBFGBall
       goto SpawnLoop;
     SpawnLoop:
       TNT1 A 0 A_SeekerMissile(0, 3, SMF_PRECISE);
-      BFS2 G 1 BRIGHT A_SpawnItem("DivineShadowAtkTrail", 0, -16, false, false);
+      BFS2 G 1 BRIGHT A_SpawnItemEx("DivineShadowAtkTrail", 0, -16, false, false);
       TNT1 A 0 A_SeekerMissile(0, 3, SMF_PRECISE);
-      BFS2 G 1 BRIGHT A_SpawnItem("DivineShadowAtkTrail", 0, -16, false, false);
+      BFS2 G 1 BRIGHT A_SpawnItemEx("DivineShadowAtkTrail", 0, -16, false, false);
       TNT1 A 0 A_SeekerMissile(0, 3, SMF_PRECISE);
-      BFS2 G 1 BRIGHT A_SpawnItem("DivineShadowAtkTrail", 0, -16, false, false);
+      BFS2 G 1 BRIGHT A_SpawnItemEx("DivineShadowAtkTrail", 0, -16, false, false);
       TNT1 A 0 A_SeekerMissile(0, 3, SMF_PRECISE);
-      BFS2 G 1 BRIGHT A_SpawnItem("DivineShadowAtkTrail", 0, -16, false, false);
+      BFS2 G 1 BRIGHT A_SpawnItemEx("DivineShadowAtkTrail", 0, -16, false, false);
       TNT1 A 0 A_SeekerMissile(0, 3, SMF_PRECISE);
-      BFS2 H 1 BRIGHT A_SpawnItem("DivineShadowAtkTrail", 0, -16, false, false);
+      BFS2 H 1 BRIGHT A_SpawnItemEx("DivineShadowAtkTrail", 0, -16, false, false);
       TNT1 A 0 A_SeekerMissile(0, 3, SMF_PRECISE);
-      BFS2 H 1 BRIGHT A_SpawnItem("DivineShadowAtkTrail", 0, -16, false, false);
+      BFS2 H 1 BRIGHT A_SpawnItemEx("DivineShadowAtkTrail", 0, -16, false, false);
       TNT1 A 0 A_SeekerMissile(0, 3, SMF_PRECISE);
-      BFS2 H 1 BRIGHT A_SpawnItem("DivineShadowAtkTrail", 0, -16, false, false);
+      BFS2 H 1 BRIGHT A_SpawnItemEx("DivineShadowAtkTrail", 0, -16, false, false);
       TNT1 A 0 A_SeekerMissile(0, 3, SMF_PRECISE);
-      BFS2 H 1 BRIGHT A_SpawnItem("DivineShadowAtkTrail", 0, -16, false, false);
+      BFS2 H 1 BRIGHT A_SpawnItemEx("DivineShadowAtkTrail", 0, -16, false, false);
       loop;
     Death:
       BFE1 ABC 8 Bright;
