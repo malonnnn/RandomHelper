@@ -3165,3 +3165,21 @@ class DaedabusGun : BaseDeployer
       Stop;
   }
 }
+
+class DarknessRiftGun : BaseDeployer
+{
+  Default
+  {
+    Tag "DarknessRift";
+    Weapon.AmmoType2 "DarknessRiftAmmo";
+    Inventory.PickupMessage "Got DarknessRift!";
+    BaseDeployer.price 200;
+    Weapon.SlotPriority 200;
+  }
+  States
+  {
+    Spawn:
+      DRFT A -1;
+      Stop;
+  }
+}

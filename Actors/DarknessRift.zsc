@@ -1,0 +1,216 @@
+Class DarknessRift : Actor
+{
+  Default
+  {
+    Health 1500;
+    Radius 40;
+    Height 60;
+    Mass 0x7FFFFFFF;
+    Speed 4;
+    Bloodtype "None";
+    meleerange 128;
+    minmissilechance 232;
+    activesound "DarkRift/Active";
+    HitObituary "%o was choked by a darkness rift";
+    Obituary "%o overwhelmed by a darkness rift";
+    Monster;
+    +FRIENDLY
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    +NoBloodDecals
+    -Solid
+    +Float
+    +NoGravity
+    +NoTarget
+    +LookAllAround
+  }
+
+  States
+  {
+  Spawn:
+    TNT1 A 0 NoDelay A_StartSound("DarkRift/Loop", CHAN_7, 1.0, true);
+    TNT1 A 2 A_Look();
+    Loop;
+  See:
+    TNT1 A 2 A_Chase();
+    Loop;
+  Melee:
+    TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+    TNT1 A 2 A_CustomMeleeAttack(1);
+    Goto See;
+  Missile:
+    TNT1 A 0 A_Jump(200, "Spears", "RapidFire");
+    TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+    TNT1 A 2 A_SpawnItemEx("RiftMonsterSpawner");
+    Goto See;
+  Spears:
+    TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+    TNT1 A 2
+    {
+      A_SpawnProjectile("DarkRiftSpear", 30, 10, 0);
+      A_SpawnProjectile("DarkRiftSpear", 30, -10, 0);
+    }
+    Goto See;
+  RapidFire:
+    TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
+    TNT1 A 2 A_SpawnProjectile("DarkRiftBall", Random(0, 60), Random(-40, 40));
+    TNT1 A 2;
+    TNT1 A 2 A_SpawnProjectile("DarkRiftBall", Random(0, 60), Random(-40, 40));
+    TNT1 A 2;
+    TNT1 A 2 A_SpawnProjectile("DarkRiftBall", Random(0, 60), Random(-40, 40));
+    TNT1 A 2;
+    TNT1 A 2 A_SpawnProjectile("DarkRiftBall", Random(0, 60), Random(-40, 40));
+    TNT1 A 2;
+    TNT1 A 2 A_SpawnProjectile("DarkRiftBall", Random(0, 60), Random(-40, 40));
+    TNT1 A 2;
+    TNT1 A 2 A_SpawnProjectile("DarkRiftBall", Random(0, 60), Random(-40, 40));
+    TNT1 A 2;
+    TNT1 A 2 A_SpawnProjectile("DarkRiftBall", Random(0, 60), Random(-40, 40));
+    TNT1 A 2;
+    TNT1 A 0 A_Jump(128, "See");
+    TNT1 A 0 A_SpidReFire();
+    Loop;
+  Death:
+    TNT1 A 1 A_StopSound(CHAN_7);
+    Stop;
+  }
+
+  override void Tick()
+  {
+    super.tick();
+    A_SpawnItemEx("RiftCloud", 0, 0, 30, random(-4, 4), random(-4, 4), random(-2, 2), SXF_CLIENTSIDE);
+  }
+}
+
+Class RiftCloud : Actor
+{
+  Default
+  {
+    renderstyle "translucent";
+    alpha 0.7;
+    radius 0;
+    height 0;
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    +NoGravity
+    +NoBlockMap
+    +NoLiftDrop
+    +DontSquash
+    +NoTeleOther
+    +NonShootable
+  }
+
+  States
+  {
+  Spawn:
+    DRFT A 0 NoDelay A_Jump(256, "Spawn1", "Spawn2", "Spawn3");
+  Spawn1:
+    DRFT ABCDE 3 A_FadeOut(0.05);
+    Loop;
+  Spawn2:
+    DRFT FGHIJ 3 A_FadeOut(0.05);
+    Loop;
+  Spawn3:
+    DRFT KLMNO 3 A_FadeOut(0.05);
+    Loop;
+  }
+}
+
+Class RiftMonsterSpawner : Actor
+{
+  Default
+  {
+    radius 0;
+    height 0;
+    Species "Companion";
+    DamageFactor "Companion", 0;
+    +NoGravity
+    +NoBlockMap
+    +NoLiftDrop
+    +NoTarget
+    +DontSquash
+    +NoTeleOther
+    +NonShootable
+  }
+
+  States
+  {
+  Spawn:
+    //These monsters are just to show. This thing probably fits better in Heretic/Hexen anyway.
+    TNT1 A 0 NoDelay A_Jump(256, "SpawnHellKnight", "SpawnBaron", "SpawnMancubus", "SpawnRevenant", "SpawnArachnotron");
+  SpawnHellKnight:
+    TNT1 A 0 A_SpawnItemEx("CompanionHellKnight");
+    Stop;
+  SpawnBaron:
+    TNT1 A 0 A_SpawnItemEx("CompanionBaronOfHell");
+    Stop;
+  SpawnMancubus:
+    TNT1 A 0 A_SpawnItemEx("CompanionFatso");
+    Stop;
+  SpawnRevenant:
+    TNT1 A 0 A_SpawnItemEx("CompanionRevenant");
+    Stop;
+  SpawnArachnotron:
+    TNT1 A 0 A_SpawnItemEx("CompanionArachnotron");
+    Stop;
+  }
+}
+
+Class DarkRiftBall : Actor
+{
+  Default
+  {
+    Radius 6;
+    Height 8;
+    Species "Companion";
+    DamageType "Companion";
+    Speed 8;
+    DamageFunction 10;
+    Renderstyle "Translucent";
+    Alpha 0.8;
+    Scale 0.4;
+    SeeSound "imp/attack";
+    DeathSound "imp/shotx";
+    Projectile;
+    +Randomize
+  }
+
+  States
+  {
+  Spawn:
+    DRBL AABBCCDDEEFFGGHH 1 bright A_BishopMissileWeave();
+    Loop;
+  Death:
+    DRBL AIJKLM 3 bright;
+    Stop;
+  }
+}
+
+Class DarkRiftSpear : Actor
+{
+  Default
+  {
+    Radius 4;
+    Height 4;
+    Species "Companion";
+    DamageType "Companion";
+    Speed 30;
+    DamageFunction 20;
+    RenderStyle "Translucent";
+    Alpha 0.7;
+    SeeSound "DarkRift/Fire";
+    DeathSound "DarkRift/Hit";
+    Decal "PlasmaScorchLower";
+    Projectile;
+  }
+
+  States
+  {
+  Spawn:
+    DRBT A 1 bright;
+    Loop;
+  Death:
+    DRBT BCDE 5 bright;
+    Stop;
+  }
+}

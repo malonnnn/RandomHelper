@@ -1438,3 +1438,11 @@ class DaedabusAmmo : CommonAmmoFeatures
     Inventory.Icon "DAEDA1";
   }
 }
+
+class DarknessRiftAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "DRFTA0";
+  }
+}
