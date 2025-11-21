@@ -3111,3 +3111,21 @@ class AracknightGun : BaseDeployer
       Stop;
   }
 }
+
+class CyberHellKnightGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Cyber Hell Knight";
+    Weapon.AmmoType2 "CyberHellKnightAmmo";
+    Inventory.PickupMessage "Got Cyber Hell Knight!";
+    BaseDeployer.price 200;
+    Weapon.SlotPriority 200;
+  }
+  States
+  {
+    Spawn:
+      CBO2 A -1;
+      Stop;
+  }
+}

@@ -983,3 +983,8 @@ $limit	Cryotron/Attack	0
 Cryotron/Hit	CRYOHIT
 $limit	Cryotron/Hit	0
 Cryotron/Loop	CRYOLOOP
+chknight/sight	chkntsit
+chknight/active	chkntact
+chknight/pain	chkntpai
+chknight/death	chkntdth
+cbaron/metal	cmetal

@@ -152,6 +152,7 @@ version "4.8.0"
 #include "Actors/CheshireCacodemon.zsc"
 #include "Actors/Cryocubus.zsc"
 #include "Actors/Cryotron.zsc"
+#include "Actors/CyberHellKnight.zsc"
 
 Class Ver {
   static String get(){

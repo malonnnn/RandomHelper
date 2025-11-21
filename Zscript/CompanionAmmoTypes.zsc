@@ -1414,3 +1414,11 @@ class CeltAmmo : CommonAmmoFeatures
     Inventory.Icon "CELTA1C1";
   }
 }
+
+class CyberHellKnightAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "CBO2A1";
+  }
+}
