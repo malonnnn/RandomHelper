@@ -44,7 +44,7 @@ class CyberHellKnight : Actor
       CBO2 R 8 A_BruisAttack();
       goto See;
     Missile:
-      CBO2 E 0 A_Jump(80,5);
+      CBO2 E 0 A_Jump(80,6);
       CBO2 E 10 A_FaceTarget();
       CBO2 E 10 A_FaceTarget();
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
