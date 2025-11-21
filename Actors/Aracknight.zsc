@@ -27,11 +27,11 @@ class Aracknight : CompanionArachnotron
       ARAC A 20 Bright A_FaceTarget;
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       TNT1 A 0 A_FaceTarget;
-      ARAC H 4 Bright A_CustomMissile("AracknightMissile",20,0,0,0,0);
+      ARAC H 4 Bright A_SpawnProjectile("AracknightMissile",20,0,0,0,0);
       ARAC G 5 Bright;
       TNT1 A 0 A_FaceTarget;
-      TNT1 A 0 A_CustomMissile("AracknightMissile",20,0,-10,0,0);
-      ARAC H 4 Bright A_CustomMissile("AracknightMissile",20,0,10,0,0);
+      TNT1 A 0 A_SpawnProjectile("AracknightMissile",20,0,-10,0,0);
+      ARAC H 4 Bright A_SpawnProjectile("AracknightMissile",20,0,10,0,0);
       ARAC G 5 Bright;
       ARAC G 1 Bright A_SpidRefire;
       Goto Missile+1;

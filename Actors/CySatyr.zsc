@@ -67,7 +67,7 @@ class CySatyr : Actor
 		CSTX A 7;
 		CSTX B 5 BRIGHT A_XScream();
 		CSTX C 5 BRIGHT A_NoBlocking();
-		TNT1 A 0 A_custommissile("CySatyrArm",40,30,270);
+		TNT1 A 0 A_SpawnProjectile("CySatyrArm",40,30,270);
 		CSTX D 5;
 		CSTX E 5;
 		CSTX F 5;

@@ -34,8 +34,8 @@ class Clusterfiend : Actor
 		Missile:
 			CEAD B 5 A_FaceTarget;
 			CEAD C 5 A_FaceTarget;
-			CEAD D 3 Bright A_CustomMissile("SingleSplitBall");
-			CEAD D 2 Bright A_CustomMissile("ButtPlasma", 4,0, 180,CMF_AIMDIRECTION,0);
+			CEAD D 3 Bright A_SpawnProjectile("SingleSplitBall");
+			CEAD D 2 Bright A_SpawnProjectile("ButtPlasma", 4,0, 180,CMF_AIMDIRECTION,0);
 			TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
 			Goto See;
 		Pain:
@@ -95,8 +95,8 @@ class Midasfiend : Clusterfiend
 		Missile:
 			GEAD B 5 A_FaceTarget;
 			GEAD C 5 A_FaceTarget;
-			GEAD D 3 Bright A_CustomMissile("QuadrupleSplitBall");
-			GEAD D 2 Bright A_CustomMissile("ButtPlasma",4,0, 180,CMF_AIMDIRECTION,0);
+			GEAD D 3 Bright A_SpawnProjectile("QuadrupleSplitBall");
+			GEAD D 2 Bright A_SpawnProjectile("ButtPlasma",4,0, 180,CMF_AIMDIRECTION,0);
 			TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
 			Goto See;
 		Pain:
@@ -227,7 +227,7 @@ class SingleSplitBall : CacodemonBall
 		DoneCalculatingPitch:
 			TNT1 A 0 A_ChangeVelocity(0,0,0,CVF_REPLACE);
 			TNT1 A 0 A_JumpIf(user_surface == 0, "FinishDieing");
-			TNT1 A 0 A_CustomMissile("SmallerPlasma",0,0,0,CMF_AIMDIRECTION|CMF_TRACKOWNER,user_pitch/3);
+			TNT1 A 0 A_SpawnProjectile("SmallerPlasma",0,0,0,CMF_AIMDIRECTION|CMF_TRACKOWNER,user_pitch/3);
 		FinishDieing:
 			TNT1 A 0 A_StartSound("clust/split1");
 			TNT1 A 0 A_JumpIf(user_explode == 0, "MiniExplosion");
@@ -263,13 +263,13 @@ class QuadrupleSplitBall : CacodemonBall
 			Loop;
 		Death:
 			TNT1 A 0 A_SetAngle(angle+45);
-			TNT1 A 0 A_CustomMissile("SmallerPlasma",0,4,-90,CMF_AIMDIRECTION|CMF_TRACKOWNER);
+			TNT1 A 0 A_SpawnProjectile("SmallerPlasma",0,4,-90,CMF_AIMDIRECTION|CMF_TRACKOWNER);
 			TNT1 A 0 A_SetAngle(angle+90);
-			TNT1 A 0 A_CustomMissile("SmallerPlasma",0,4,-90,CMF_AIMDIRECTION|CMF_TRACKOWNER);
+			TNT1 A 0 A_SpawnProjectile("SmallerPlasma",0,4,-90,CMF_AIMDIRECTION|CMF_TRACKOWNER);
 			TNT1 A 0 A_SetAngle(angle+90);
-			TNT1 A 0 A_CustomMissile("SmallerPlasma",0,4,-90,CMF_AIMDIRECTION|CMF_TRACKOWNER);
+			TNT1 A 0 A_SpawnProjectile("SmallerPlasma",0,4,-90,CMF_AIMDIRECTION|CMF_TRACKOWNER);
 			TNT1 A 0 A_SetAngle(angle+90);
-			TNT1 A 0 A_CustomMissile("SmallerPlasma",0,4,-90,CMF_AIMDIRECTION|CMF_TRACKOWNER);
+			TNT1 A 0 A_SpawnProjectile("SmallerPlasma",0,4,-90,CMF_AIMDIRECTION|CMF_TRACKOWNER);
 			TNT1 A 0 A_SetAngle(angle+45);
 			CAL2 C 6;
 			CAL2 D 6;

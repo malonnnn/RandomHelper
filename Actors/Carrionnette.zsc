@@ -39,7 +39,7 @@ class Carrionnette : Actor
       TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
       TNT1 A 0 A_JumpIfCloser(640, "MayLeap");
       LANK EF 4 A_FaceTarget();
-      LANK G 2 A_CustomMissile("CarrionnetteShot", 48);
+      LANK G 2 A_SpawnProjectile("CarrionnetteShot", 48);
       LANK FE 2;
       Goto See;
     MayLeap:

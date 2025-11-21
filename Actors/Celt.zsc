@@ -57,35 +57,35 @@ class Celt : Actor
 	TNT1 A 0 A_Jump(128,"Clone");
   Spread:
     CELT EF 8 Bright A_FaceTarget();
-	CELT GGGGGGGGGGGGGGG 0 Bright A_CustomMissile ("CeltIceMiniShot",28,0,random(-10,10),2,random(-5,5));
+	CELT GGGGGGGGGGGGGGG 0 Bright A_SpawnProjectile ("CeltIceMiniShot",28,0,random(-10,10),2,random(-5,5));
     CELT H 3 Bright;
     CELT H 0 A_Jump(128,1);
 	Goto See;
     CELT IJ 8 Bright A_FaceTarget();
-    CELT KKKKKKKKKKKKKKK 0 Bright A_CustomMissile ("CeltIceMiniShot",28,0,random(-10,10),2,random(-5,5));
+    CELT KKKKKKKKKKKKKKK 0 Bright A_SpawnProjectile ("CeltIceMiniShot",28,0,random(-10,10),2,random(-5,5));
     CELT L 3 Bright;
     CELT L 0 A_Jump(64,"Ring");
     Goto See;
   AnotherSpread:
     CELT MN 8 Bright A_FaceTarget();
-    CELT O 0 Bright A_CustomMissile ("CeltIceBigShot",28,0,0,0);
-	CELT O 0 Bright A_CustomMissile ("CeltIceBigShot",28,0,15,0);
-	CELT O 0 Bright A_CustomMissile ("CeltIceBigShot",28,0,30,0);
-	CELT O 0 Bright A_CustomMissile ("CeltIceBigShot",28,0,45,0);
-	CELT O 0 Bright A_CustomMissile ("CeltIceBigShot",28,0,60,0);
-	CELT O 0 Bright A_CustomMissile ("CeltIceBigShot",28,0,75,0);
-	CELT O 0 Bright A_CustomMissile ("CeltIceBigShot",28,0,-15,0);
-	CELT O 0 Bright A_CustomMissile ("CeltIceBigShot",28,0,-30,0);
-	CELT O 0 Bright A_CustomMissile ("CeltIceBigShot",28,0,-45,0);
-	CELT O 0 Bright A_CustomMissile ("CeltIceBigShot",28,0,-60,0);
-	CELT O 0 Bright A_CustomMissile ("CeltIceBigShot",28,0,-75,0);
+    CELT O 0 Bright A_SpawnProjectile ("CeltIceBigShot",28,0,0,0);
+	CELT O 0 Bright A_SpawnProjectile ("CeltIceBigShot",28,0,15,0);
+	CELT O 0 Bright A_SpawnProjectile ("CeltIceBigShot",28,0,30,0);
+	CELT O 0 Bright A_SpawnProjectile ("CeltIceBigShot",28,0,45,0);
+	CELT O 0 Bright A_SpawnProjectile ("CeltIceBigShot",28,0,60,0);
+	CELT O 0 Bright A_SpawnProjectile ("CeltIceBigShot",28,0,75,0);
+	CELT O 0 Bright A_SpawnProjectile ("CeltIceBigShot",28,0,-15,0);
+	CELT O 0 Bright A_SpawnProjectile ("CeltIceBigShot",28,0,-30,0);
+	CELT O 0 Bright A_SpawnProjectile ("CeltIceBigShot",28,0,-45,0);
+	CELT O 0 Bright A_SpawnProjectile ("CeltIceBigShot",28,0,-60,0);
+	CELT O 0 Bright A_SpawnProjectile ("CeltIceBigShot",28,0,-75,0);
     CELT OP 4 Bright;
     Goto See;
   Ring:
     CELT MN 8 Bright A_FaceTarget();
 	Goto RingLooping;
   RingLooping:
-	TNT1 A 0 A_CustomMissile("CeltIceMiniShot2",28,0,user_celt,CMF_ABSOLUTEANGLE);
+	TNT1 A 0 A_SpawnProjectile("CeltIceMiniShot2",28,0,user_celt,CMF_ABSOLUTEANGLE);
 	TNT1 A 0 { user_celt += 2; }
 	TNT1 A 0 A_JumpIf(user_celt>360,1);
 	Loop;
@@ -99,13 +99,13 @@ class Celt : Actor
 	CELT A 0 Bright A_FaceTarget();
 	CELT NNNNNNNN 1 A_SpawnItemEx("KXCeltIceParticle", Random(24, 32), 0, 4, 0, 0, (Random(20, 35)*0.1), Random(0, 360), 128);
     CELT A 0 Bright A_FaceTarget();
-    CELT O 4 Bright A_CustomMissile ("CeltDiamondDust",28,0,0,0);
+    CELT O 4 Bright A_SpawnProjectile ("CeltDiamondDust",28,0,0,0);
     CELT P 4 Bright;
     Goto See;
   Clone:
     CELT QQQQQQQQQQ 1 A_SpawnItemEx("KXCeltIceParticle", Random(24, 32), 0, 4, 0, 0, (Random(20, 35)*0.1), Random(0, 360), 128);
-	CELT Q 0 A_CustomMissile ("CeltIceCloneSpawner",2,0,90,2,0);
-	CELT Q 0 A_CustomMissile ("CeltIceCloneSpawner",2,0,-90,2,0);
+	CELT Q 0 A_SpawnProjectile ("CeltIceCloneSpawner",2,0,90,2,0);
+	CELT Q 0 A_SpawnProjectile ("CeltIceCloneSpawner",2,0,-90,2,0);
 	CELT QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ 1 A_SpawnItemEx("KXCeltIceParticle", Random(24, 32), 0, 4, 0, 0, (Random(20, 35)*0.1), Random(0, 360), 128);
     Goto See;
   Pain:
@@ -408,12 +408,12 @@ class CeltIceClone : BaronOfHell
   Melee:
   Missile:
     CELT EF 8 Bright A_FaceTarget();
-	CELT GGGGGGGGGG 0 Bright A_CustomMissile ("CeltIceMiniShot",28,0,random(-10,10),2,random(-5,5));
+	CELT GGGGGGGGGG 0 Bright A_SpawnProjectile ("CeltIceMiniShot",28,0,random(-10,10),2,random(-5,5));
     CELT GH 3 Bright;
     CELT H 0 A_Jump(128,1);
 	Goto See;
     CELT IJ 8 Bright A_FaceTarget();
-    CELT KKKKKKKKKK 0 Bright A_CustomMissile ("CeltIceMiniShot",28,0,random(-10,10),2,random(-5,5));
+    CELT KKKKKKKKKK 0 Bright A_SpawnProjectile ("CeltIceMiniShot",28,0,random(-10,10),2,random(-5,5));
     CELT KL 3 Bright;
 	CELT H 0 A_Jump(128,"Missile");
     Goto See;
