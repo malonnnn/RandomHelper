@@ -1430,3 +1430,11 @@ class CySatyrAmmo : CommonAmmoFeatures
     Inventory.Icon "CSTYA1";
   }
 }
+
+class DaedabusAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "DAEDA1";
+  }
+}

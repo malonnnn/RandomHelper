@@ -154,6 +154,7 @@ version "4.8.0"
 #include "Actors/Cryotron.zsc"
 #include "Actors/CySatyr.zsc"
 #include "Actors/CyberHellKnight.zsc"
+#include "Actors/Daedabus.zsc"
 
 Class Ver {
   static String get(){

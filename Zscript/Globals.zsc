@@ -17,6 +17,7 @@ class Globals : EventHandler
       return;
     }
     String ac[] = {  // add your companion to top of list
+      "Daedabus",
       "CySatyr",
       "CyberHellKnight",
       "Cryotron",

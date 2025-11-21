@@ -3147,3 +3147,21 @@ class CySatyrGun : BaseDeployer
       Stop;
   }
 }
+
+class DaedabusGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Daedabus";
+    Weapon.AmmoType2 "DaedabusAmmo";
+    Inventory.PickupMessage "Got Daedabus!";
+    BaseDeployer.price 200;
+    Weapon.SlotPriority 200;
+  }
+  States
+  {
+    Spawn:
+      DAED A -1;
+      Stop;
+  }
+}
