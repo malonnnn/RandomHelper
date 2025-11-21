@@ -318,7 +318,7 @@ Class PowerWeaken : PowerDamage
 {
   Default
   {
-    DamageFactor "Companion", 0.5;
+    DamageFactor "Companion", 0;
   }
 }
 
@@ -326,7 +326,7 @@ Class PowerAmpDMG : PowerProtection
 {
   Default
   {
-    DamageFactor "Companion", 2.0;
+    DamageFactor "Companion", 0;
   }
 }
 

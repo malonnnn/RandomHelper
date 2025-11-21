@@ -978,3 +978,8 @@ weapons/maceex                 dsmaceex
 weapons/macefi                 dsmacefi
 weapons/firex2				   dsfirex2
 hielo/llama HIELOLLA
+Cryotron/Attack	CRYOSHOT
+$limit	Cryotron/Attack	0
+Cryotron/Hit	CRYOHIT
+$limit	Cryotron/Hit	0
+Cryotron/Loop	CRYOLOOP

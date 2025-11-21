@@ -34,6 +34,24 @@ class CryocubusGun : BaseDeployer
   }
 }
 
+class CryotronGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Cryotron";
+    Weapon.AmmoType2 "CryotronAmmo";
+    Inventory.PickupMessage "Got Cryotron!";
+    BaseDeployer.price 100;
+    Weapon.SlotPriority 100;
+  }
+  States
+  {
+    Spawn:
+      ICEA A -1;
+      Stop;
+  }
+}
+
 class CorpulentGun : BaseDeployer
 {
   Default

@@ -50,6 +50,14 @@ class CryocubusAmmo : CommonAmmoFeatures
   }
 }
 
+class CryotronAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "ICEAA1D1";
+  }
+}
+
 class CorpulentAmmo : CommonAmmoFeatures
 {
   Default
