@@ -150,6 +150,7 @@ version "4.8.0"
 #include "Actors/JetpackZombie.zsc"
 #include "Actors/KarasawaZombie.zsc"
 #include "Actors/CheshireCacodemon.zsc"
+#include "Actors/Cryocubus.zsc"
 
 Class Ver {
   static String get(){

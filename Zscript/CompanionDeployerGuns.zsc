@@ -16,6 +16,24 @@ class CompanionZombieManGun : BaseDeployer
   }
 }
 
+class CryocubusGun : BaseDeployer
+{
+  Default
+  {
+    Tag "Cryocubus";
+    Weapon.AmmoType2 "CryocubusAmmo";
+    Inventory.PickupMessage "Got Cryocubus!";
+    BaseDeployer.price 150;
+    Weapon.SlotPriority 150;
+  }
+  States
+  {
+    Spawn:
+      HIEL A -1;
+      Stop;
+  }
+}
+
 class CorpulentGun : BaseDeployer
 {
   Default

@@ -1,12 +1,14 @@
 There is a new companion in the "NewGuy" folder to be added to this project. Here is your todo list, in order
 
-1. Figure out the companion name by reading the files. For this example, the companion will be called Superman
-2. Move all sprites (not copy) from NewGuy/sprites/ to Sprites/Superman/ then delete the NewGuy/sprites folder
+1. Figure out the companion name by reading the files, pretend it's stored in a varable called $character
+2. Move all sprites (not copy) from NewGuy/sprites to Sprites/$character then delete the NewGuy/sprites folder
 3. Do the same for sounds, both moving and deleting
-4. Read NewGuy/SNDINFO.txt and add its contents to root SNDINFO.txt then delete NewGuy/SNDINFO.txt
-5. If the NewGuy character definition is in DECORATE, convert it to ZScript and name it Superman.zsc then delete the source file
-6. If the NewGuy character definition is not in DECORATE but already in ZScript, skip to step 10
-7. Make sure that classes with defaults extend Actor
-8. Make sure lines like RenderStyle Add become RenderStyle "Add"
-9. Add parantheses after function names, like A_FaceTarget becomes A_FaceTarget() when in frame states
-10. Read the README and apply any necessary changes
+4. Now check to see if the sprites have extensions, if not, add .png
+5. Now check to see if the sounds have extensions, if not, add .ogg
+6. Read NewGuy/SNDINFO.txt and add its contents to root SNDINFO.txt then delete NewGuy/SNDINFO.txt
+7. If the NewGuy character definition is in DECORATE, convert it to ZScript and name it $character.zsc then delete the source file
+8. If the NewGuy character definition is not in DECORATE but already in ZScript, skip to step 10
+9. Make sure that classes with defaults extend Actor
+10. Make sure lines like RenderStyle Add become RenderStyle "Add"
+11. Add parantheses after function names, like A_FaceTarget becomes A_FaceTarget() when in frame states
+12. Read the README and apply any necessary changes

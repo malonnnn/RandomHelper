@@ -1,80 +1,10 @@
-How to add monsters
-
-# 1.
-Convert decorate to ZScript
-
-# 2.
-Give this to all companions & their companions (if they have any)
-```
-+FRIENDLY
-Species "Companion";
-DamageFactor "Companion", 0;
-```
-as well as<br>
-`DamageTypes` changed to `"Companion"` in their Melee + Missile states
-
-# 3.
-All projectiles or +Missile actors/w damage set, get the following
-```
-Species "Companion";
-DamageType "Companion";
-```
-as well as<br>
-`DamageTypes` damange functions changed to `"Companion"` in their Death states
-
-# 4.
-All puffs to be replaced with `"CompanionBulletPuff"`<br>
-<br>
-_**This might mean altering the function to explicity add it in!**_<br><br>
-Example:<br>
-```
-A_Explode (5);
-```
-becomes
-```
-A_Explode (5, -1, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion")
-```
-<br>
-What? Where did you get those values after 5 and before `"CompanionBulletPuff"` and what do they mean?<br>
-<br>
-
-Where I got it:<br>
-https://zdoom.org/wiki/A_Explode<br>
-Find the rest here:<br>
-https://zdoom.org/wiki/Action_functions#Generic_monster_attacks<br>
-
-You will have to replace any functions found in the `Generic Monster Attacks`<br>
-(typically you only have to replace 2 or 3).
-
-# 5.
-Convert all deprecated functions to modern equivilants<br>
-Such as replace `A_PlaySound()` with `A_StartSound()`.<br>
-<br>
-Check the console for deprecated warnings when first loading the mod.<br>
-It will tell you if there's any deprecated functions found.
-
-# 6.
-Add<br>
-```
-TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER);
-```
-at appropriate locations<br>
-Be careful it doesnt interfere with Goto offsets<br>
-AKA `Goto+<number>`
-
-# 7
-Add new companion to `Globals.zsc`.<br>
-
-# 8.
-Add their DeployerGun by copy-pasting an editing an existing one<br>
-from `CompanionDeployerGuns.zsc`<br>
-`BaseDeployer.price` is price to spawn 1.<br>
-`SlotPriority` should be the same as price, this keeps all the monsters ordered
-by price from smallest to biggest when scrolling through with mousewheel.<br>
-
-# 9.
-Add their Ammo by copy-pasting an editing an existing one<br>
-from `CompanionAmmoTypes.zsc`<br>
-
-# 10.
-Add their include statment into `Zscript.zsc`<br>
+1. Convert DECORATE to ZScript: Rewrite the companion's actor definition using ZScript syntax.
+2. Companion Properties: Give the companion and any of its summoned actors these properties: +FRIENDLY, Species "Companion", DamageFactor "Companion", 0 (Immune to their own damage type). Change the DamageType in their Melee and Missile states to "Companion".
+3. Projectile Properties: All of the companion's projectiles (or +Missile actors) must have: Species "Companion", DamageType "Companion". Change the damage function DamageType in the projectile's Death states to "Companion".
+4. Replace Puffs: Replace all default bullet puffs with "CompanionBulletPuff". This requires changing simple functions to the full version. Example: Change A_Explode (5); to A_Explode (5, -1, XF_EXPLICITDAMAGETYPE, false, 0, 0, 10, "CompanionBulletPuff", "Companion"); Note: Check and replace any functions from the ZDoom wiki's "Generic Monster Attacks" list.
+5. Update Deprecated Functions: Replace all old functions (like A_PlaySound()) with their modern equivalents (like A_StartSound()). Check the console for warnings.
+6. Add Alert Function: Insert the following line in all the monster's attack states to make it alert others: TNT1 A 0 A_AlertMonsters(0, AMF_TARGETEMITTER); Caution: Do not disrupt any Goto+<number> offsets. This step might be the most important, so read the attack state logic very carefully, making sure it never fires when the attack isn't going to be successfully fired.
+7. Add to Globals: Define the new companion in the Globals.zsc file.
+8. Create Deployer Gun: Copy, edit, and add a new Deployer Gun actor in CompanionDeployerGuns.zsc. Set BaseDeployer.price for its cost. Set SlotPriority equal to the price for proper menu ordering.
+9. Create Ammo: Copy, edit, and add a new Ammo Type actor in CompanionAmmoTypes.zsc.
+10. Include in Zscript.zsc: Add an #include statement for the new companion's ZScript file to Zscript.zsc.

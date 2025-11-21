@@ -977,3 +977,4 @@ corpulent/death                dsma2dth
 weapons/maceex                 dsmaceex
 weapons/macefi                 dsmacefi
 weapons/firex2				   dsfirex2
+hielo/llama HIELOLLA

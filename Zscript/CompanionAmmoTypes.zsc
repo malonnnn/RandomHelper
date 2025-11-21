@@ -42,6 +42,14 @@ class CompanionZombieManAmmo : CommonAmmoFeatures
   }
 }
 
+class CryocubusAmmo : CommonAmmoFeatures
+{
+  Default
+  {
+    Inventory.Icon "HIELA1";
+  }
+}
+
 class CorpulentAmmo : CommonAmmoFeatures
 {
   Default
